@@ -20873,7 +20873,7 @@ ADMA3: This register is set by ADMA3. ADMA2 increments the address of this regis
           </fields>
         </register>
         <register>
-          <dim>9</dim>
+          <dim>11</dim>
           <dimIncrement>0x2</dimIncrement>
           <dimIndex>INIT,DS,HS,SDR12,SDR25,SDR50,SDR104,DDR50,rsv8,rsv9,UHS2</dimIndex>
           <name>PRESET[%s]</name>
@@ -23447,7 +23447,7 @@ is multiplied by WQOS to get weight score.</description>
           </fields>
         </register>
         <register>
-          <dim>3</dim>
+          <dim>7</dim>
           <dimIncrement>0x4</dimIncrement>
           <dimIndex>BASE0,BASE1,rsv2,rsv3,rsv4,rsv5,BASE6</dimIndex>
           <name>BR[%s]</name>
@@ -24780,7 +24780,7 @@ n:2^(3+n)</description>
       </addressBlock>
       <registers>
         <register>
-          <dim>127</dim>
+          <dim>318</dim>
           <dimIncrement>0x4</dimIncrement>
           <dimIndex>cpu0,cpx0,rsv2,rsv3,rsv4,rsv5,rsv6,rsv7,rsv8,rsv9,rsv10,rsv11,rsv12,rsv13,rsv14,rsv15,rsv16,rsv17,rsv18,rsv19,rsv20,pow_cpu0,rst_soc,rst_cpu0,rsv24,rsv25,rsv26,rsv27,rsv28,rsv29,rsv30,rsv31,clk_src_xtal,clk_src_pll0,clk_src_clk0_pll0,clk_src_clk1_pll0,clk_src_clk2_pll0,clk_src_pll1,clk_src_clk0_pll1,clk_src_clk1_pll1,clk_src_pll2,clk_src_clk0_pll2,clk_src_clk1_pll2,clk_src_pll0_ref,clk_src_pll1_ref,clk_src_pll2_ref,rsv46,rsv47,rsv48,rsv49,rsv50,rsv51,rsv52,rsv53,rsv54,rsv55,rsv56,rsv57,rsv58,rsv59,rsv60,rsv61,rsv62,rsv63,clk_top_cpu0,clk_top_mct0,clk_top_femc,clk_top_xpi0,clk_top_xpi1,clk_top_tmr0,clk_top_tmr1,clk_top_tmr2,clk_top_tmr3,clk_top_urt0,clk_top_urt1,clk_top_urt2,clk_top_urt3,clk_top_urt4,clk_top_urt5,clk_top_urt6,clk_top_urt7,clk_top_i2c0,clk_top_i2c1,clk_top_i2c2,clk_top_i2c3,clk_top_spi0,clk_top_spi1,clk_top_spi2,clk_top_spi3,clk_top_can0,clk_top_can1,clk_top_ptpc,clk_top_ana0,clk_top_ana1,clk_top_ana2,clk_top_ana3,clk_top_aud0,clk_top_aud1,clk_top_eth0,clk_top_ptp0,clk_top_ref0,clk_top_ref1,clk_top_ntm0,clk_top_sdc0,rsv104,rsv105,rsv106,rsv107,rsv108,rsv109,rsv110,rsv111,rsv112,rsv113,rsv114,rsv115,rsv116,rsv117,rsv118,rsv119,rsv120,rsv121,rsv122,rsv123,rsv124,rsv125,rsv126,rsv127,clk_top_adc0,clk_top_adc1,clk_top_adc2,clk_top_dac0,clk_top_i2s0,clk_top_i2s1,rsv134,rsv135,rsv136,rsv137,rsv138,rsv139,rsv140,rsv141,rsv142,rsv143,rsv144,rsv145,rsv146,rsv147,rsv148,rsv149,rsv150,rsv151,rsv152,rsv153,rsv154,rsv155,rsv156,rsv157,rsv158,rsv159,rsv160,rsv161,rsv162,rsv163,rsv164,rsv165,rsv166,rsv167,rsv168,rsv169,rsv170,rsv171,rsv172,rsv173,rsv174,rsv175,rsv176,rsv177,rsv178,rsv179,rsv180,rsv181,rsv182,rsv183,rsv184,rsv185,rsv186,rsv187,rsv188,rsv189,rsv190,rsv191,rsv192,rsv193,rsv194,rsv195,rsv196,rsv197,rsv198,rsv199,rsv200,rsv201,rsv202,rsv203,rsv204,rsv205,rsv206,rsv207,rsv208,rsv209,rsv210,rsv211,rsv212,rsv213,rsv214,rsv215,rsv216,rsv217,rsv218,rsv219,rsv220,rsv221,rsv222,rsv223,rsv224,rsv225,rsv226,rsv227,rsv228,rsv229,rsv230,rsv231,rsv232,rsv233,rsv234,rsv235,rsv236,rsv237,rsv238,rsv239,rsv240,rsv241,rsv242,rsv243,rsv244,rsv245,rsv246,rsv247,rsv248,rsv249,rsv250,rsv251,rsv252,rsv253,rsv254,rsv255,ahbp,axis,axic,femc,rom0,lmm0,ram0,mct0,xpi0,xpi1,sdp0,rng0,kman,dma0,dma1,ffa0,gpio,mbx0,wdg0,wdg1,tsns,tmr0,tmr1,tmr2,tmr3,urt0,urt1,urt2,urt3,urt4,urt5,urt6,urt7,i2c0,i2c1,i2c2,i2c3,spi0,spi1,spi2,spi3,can0,can1,ptpc,adc0,adc1,adc2,dac0,acmp,i2s0,i2s1,pdm0,dao,msyn,mot0,mot1,eth0,ntm0,sdc0,usb0,ref0,ref1</dimIndex>
           <name>RESOURCE[%s]</name>
