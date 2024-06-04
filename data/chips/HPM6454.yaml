@@ -1,0 +1,9 @@
+name: HPM6454
+family: HPM6400/HPM6700
+packages:
+  - name: HPM6454-BGA196
+    package: BGA196
+    pins: 196
+  - name: HPM6454-BGA289
+    package: BGA289
+    pins: 289

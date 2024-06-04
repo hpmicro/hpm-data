@@ -1,0 +1,19 @@
+name: HPM6450
+family: HPM6400/HPM6700
+packages:
+  - name: HPM6450-BGA196
+    package: BGA196
+    pins: 196
+  - name: HPM6450-BGA289
+    package: BGA289
+    pins: 289
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 2088
+_raw:
+  "| HPM6450 | Single-core 32-bit | 2088 | 4\xD7I2S, 1\xD7digital audio output\
+  \ | Gigabit | CAN FD | USB HS w/ PHY \xD72 | AES128/256, SHA-1/256 | 3\xD712 bits,\
+  \ 1\xD716 bits | 14\xD714 289BGA 0.8P,10\xD710 196BGA 0.65P |                  \
+  \         |     |"

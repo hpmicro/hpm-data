@@ -1,0 +1,47 @@
+name: HPM6750
+family: HPM6400/HPM6700
+packages:
+  - name: HPM6750-BGA196
+    package: BGA196
+    pins: 196
+  - name: HPM6750-BGA289
+    package: BGA289
+    pins: 289
+memory:
+  - address: 0x00000000
+    kind: ram
+    name: ILM
+    size: 262144 # 256K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 262144 # 256K
+  - address: 0x01080000
+    kind: ram
+    name: AXI_SRAM
+    size: 524288 # 512K
+  - address: 0x01100000
+    kind: ram
+    name: AXI_SRAM_NOCACHE # AXI SRAM1
+    size: 262144 # 256K
+  - address: 0x0117C000
+    kind: ram
+    name: SHARE_RAM
+    size: 16384 # 16K
+  - address: 0xF0300000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0xF40F0000
+    kind: ram
+    name: APB_SRAM
+    size: 8192 # 8K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M
+_raw:
+  "| HPM6750 | Dual-core 32-bit | 2088 | 4\xD7I2S, 1\xD7digital audio output |\
+  \ Gigabit | CAN FD | USB HS w/ PHY \xD72 | AES128/256, SHA-1/256 | 3\xD712 bits,\
+  \ 1\xD716 bits | 14\xD714 289BGA 0.8P,10\xD710 196BGA 0.65P | -40~105          \
+  \         |     |"

@@ -1,0 +1,23 @@
+name: HPM5301
+family: HPM5300
+packages:
+  - name: HPM5301-QFN48
+    package: QFN48
+    pins: 48
+memory:
+  - address: 0x00000000
+    kind: ram
+    name: ILM
+    size: 131072 # 128K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 131072 # 128K
+  - address: 0xf0400000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M

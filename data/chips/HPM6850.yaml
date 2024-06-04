@@ -1,0 +1,18 @@
+name: HPM6850
+family: HPM6800
+packages:
+  - name: HPM6850-BGA289
+    package: BGA289
+    pins: 289
+  - name: HPM6850-BGA417
+    package: BGA417
+    pins: 417
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 1064
+_raw:
+  "| HPM6850 | Single-core 32-bit | 1064 | 4 | Gigabit | CAN FD | USB HS w/ PHY\
+  \ \xD71 | AES128/256, SHA-1/256 | 1\xD716 bit | 17\xD717 417BGA P0.8 | \u221240\
+  \ \u223C 105 | 2.5D OpenVG GPU |"

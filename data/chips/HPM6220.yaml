@@ -1,0 +1,42 @@
+name: HPM6220
+family: HPM6200
+packages:
+  - name: HPM6220-BGA116
+    package: BGA116
+    pins: 116
+  - name: HPM6220-LQFP144
+    package: LQFP144
+    pins: 144
+memory:
+  - address: 0x00000000
+    kind: ram
+    name: ILM
+    size: 131072 # 128K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 131072 # 128K
+  - address: 0x01080000
+    kind: ram
+    name: AXI_SRAM_NOCACHE
+    size: 131072 # 128K
+  - address: 0x010A0000
+    kind: ram
+    name: AXI_SRAM
+    size: 114688 # 112K
+  - address: 0x0117C000
+    kind: ram
+    name: SHARE_RAM
+    size: 16384 # 16K
+  - address: 0xF0300000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M
+_raw:
+  "| HPM6220 | Single-core 32-bit | 800 |    |    |    | USB HS w/ PHY \xD71 |\
+  \ AES128/256, SHA-1/256 | 1\xD716 bit  |                                     | -40\u223C\
+  125 \xB0C Tj\uFF0C-40\u223C105 \xB0C Ta |     |"

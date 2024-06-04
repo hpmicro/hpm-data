@@ -1,0 +1,25 @@
+name: HPM6360
+family: HPM6300
+packages:
+  - name: HPM6360-BGA116
+    package: BGA116
+    pins: 116
+  - name: HPM6360-BGA172
+    package: BGA172
+    pins: 172
+  - name: HPM6360-LQFP100
+    package: LQFP100
+    pins: 100
+  - name: HPM6360-LQFP144
+    package: LQFP144
+    pins: 144
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 800
+_raw:
+  "| HPM6360 | Single-core 32-bit | 800 | 2\xD7I2S, 1\xD7digital audio output\
+  \ | 100M | CAN FD | USB HS w/ PHY \xD71 | AES128/256, SHA-1/256 | 3\xD716 bits |\
+  \ 20\xD720 144eLQFP P0.5,7\xD77 116BGA P0.5 | -40\u223C125 \xB0C Tj\uFF0C-40\u223C\
+  105 \xB0C Ta |     |"

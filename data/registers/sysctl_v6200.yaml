@@ -1,0 +1,690 @@
+block/AFFILIATE:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: Affiliate of Group.
+      byte_offset: 0
+      fieldset: AFFILIATE_VALUE
+    - name: SET
+      description: Affiliate of Group.
+      byte_offset: 4
+      fieldset: AFFILIATE_SET
+    - name: CLEAR
+      description: Affiliate of Group.
+      byte_offset: 8
+      fieldset: AFFILIATE_CLEAR
+    - name: TOGGLE
+      description: Affiliate of Group.
+      byte_offset: 12
+      fieldset: AFFILIATE_TOGGLE
+block/CPU:
+  description: no description available.
+  items:
+    - name: LP
+      description: CPU0 LP control.
+      byte_offset: 0
+      fieldset: LP
+    - name: LOCK
+      description: CPU0 Lock GPR.
+      byte_offset: 4
+      fieldset: LOCK
+    - name: GPR
+      description: no description available.
+      array:
+        len: 14
+        stride: 4
+      byte_offset: 8
+      fieldset: GPR
+    - name: WAKEUP_STATUS
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 64
+      fieldset: WAKEUP_STATUS
+    - name: WAKEUP_ENABLE
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 128
+      fieldset: WAKEUP_ENABLE
+block/GROUP0:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: Group setting.
+      byte_offset: 0
+      fieldset: GROUP0_VALUE
+    - name: SET
+      description: Group setting.
+      byte_offset: 4
+      fieldset: GROUP0_SET
+    - name: CLEAR
+      description: Group setting.
+      byte_offset: 8
+      fieldset: GROUP0_CLEAR
+    - name: TOGGLE
+      description: Group setting.
+      byte_offset: 12
+      fieldset: GROUP0_TOGGLE
+block/GROUP1:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: Group setting.
+      byte_offset: 0
+      fieldset: GROUP1_VALUE
+    - name: SET
+      description: Group setting.
+      byte_offset: 4
+      fieldset: GROUP1_SET
+    - name: CLEAR
+      description: Group setting.
+      byte_offset: 8
+      fieldset: GROUP1_CLEAR
+    - name: TOGGLE
+      description: Group setting.
+      byte_offset: 12
+      fieldset: GROUP1_TOGGLE
+block/MONITOR:
+  description: no description available.
+  items:
+    - name: control
+      description: Clock measure and monitor control.
+      byte_offset: 0
+      fieldset: MONITOR_control
+    - name: current
+      description: Clock measure result.
+      byte_offset: 4
+      fieldset: current
+    - name: low_limit
+      description: Clock lower limit.
+      byte_offset: 8
+      fieldset: low_limit
+    - name: high_limit
+      description: Clock upper limit.
+      byte_offset: 12
+      fieldset: high_limit
+block/POWER:
+  description: no description available.
+  items:
+    - name: status
+      description: Power Setting.
+      byte_offset: 0
+      fieldset: status
+    - name: lf_wait
+      description: Power Setting.
+      byte_offset: 4
+      fieldset: lf_wait
+    - name: off_wait
+      description: Power Setting.
+      byte_offset: 12
+      fieldset: off_wait
+block/RESET:
+  description: no description available.
+  items:
+    - name: control
+      description: Reset Setting.
+      byte_offset: 0
+      fieldset: RESET_control
+    - name: config
+      description: Reset Setting.
+      byte_offset: 4
+      fieldset: config
+    - name: counter
+      description: Reset Setting.
+      byte_offset: 12
+      fieldset: counter
+block/RETENTION:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: Retention Control.
+      byte_offset: 0
+      fieldset: RETENTION_VALUE
+    - name: SET
+      description: Retention Control.
+      byte_offset: 4
+      fieldset: RETENTION_SET
+    - name: CLEAR
+      description: Retention Control.
+      byte_offset: 8
+      fieldset: RETENTION_CLEAR
+    - name: TOGGLE
+      description: Retention Control.
+      byte_offset: 12
+      fieldset: RETENTION_TOGGLE
+block/SYSCTL:
+  description: SYSCTL.
+  items:
+    - name: RESOURCE
+      description: no description available.
+      array:
+        len: 322
+        stride: 4
+      byte_offset: 0
+      fieldset: RESOURCE
+    - name: GROUP0
+      description: no description available.
+      array:
+        len: 3
+        stride: 16
+      byte_offset: 2048
+      block: GROUP0
+    - name: GROUP1
+      description: no description available.
+      array:
+        len: 3
+        stride: 16
+      byte_offset: 2112
+      block: GROUP1
+    - name: AFFILIATE
+      description: no description available.
+      array:
+        len: 2
+        stride: 16
+      byte_offset: 2304
+      block: AFFILIATE
+    - name: RETENTION
+      description: no description available.
+      array:
+        len: 2
+        stride: 16
+      byte_offset: 2336
+      block: RETENTION
+    - name: POWER
+      description: no description available.
+      array:
+        len: 2
+        stride: 16
+      byte_offset: 4096
+      block: POWER
+    - name: RESET
+      description: no description available.
+      array:
+        len: 3
+        stride: 16
+      byte_offset: 5120
+      block: RESET
+    - name: CLOCK_CPU
+      description: no description available.
+      array:
+        len: 1
+        stride: 4
+      byte_offset: 6144
+      fieldset: CLOCK_CPU
+    - name: CLOCK
+      description: no description available.
+      array:
+        len: 39
+        stride: 4
+      byte_offset: 6148
+      fieldset: CLOCK
+    - name: ADCCLK
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 7168
+      fieldset: ADCCLK
+    - name: DACCLK
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 7180
+      fieldset: DACCLK
+    - name: global00
+      description: Clock senario.
+      byte_offset: 8192
+      fieldset: global00
+    - name: MONITOR
+      description: no description available.
+      array:
+        len: 4
+        stride: 32
+      byte_offset: 9216
+      block: MONITOR
+    - name: CPU
+      description: no description available.
+      array:
+        len: 2
+        stride: 1024
+      byte_offset: 10240
+      block: CPU
+fieldset/ADCCLK:
+  description: no description available.
+  fields:
+    - name: MUX
+      description: "current mux 0: ana clock 1: ahb clock."
+      bit_offset: 8
+      bit_size: 1
+    - name: PRESERVE
+      description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
+      bit_offset: 28
+      bit_size: 1
+    - name: LOC_BUSY
+      description: "local busy 0: a change is pending for current node 1: current node is changing status."
+      bit_offset: 30
+      bit_size: 1
+    - name: GLB_BUSY
+      description: "global busy 0: no changes pending to any clock 1: any of nodes is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/AFFILIATE_CLEAR:
+  description: Affiliate of Group.
+  fields:
+    - name: LINK
+      description: "Affiliate groups of cpu0, each bit represents a group 0: no effect 1: the group is not assigned to CPU0."
+      bit_offset: 0
+      bit_size: 4
+fieldset/AFFILIATE_SET:
+  description: Affiliate of Group.
+  fields:
+    - name: LINK
+      description: "Affiliate groups of cpu0，each bit represents a group 0: no effect 1: the group is assigned to CPU0."
+      bit_offset: 0
+      bit_size: 4
+fieldset/AFFILIATE_TOGGLE:
+  description: Affiliate of Group.
+  fields:
+    - name: LINK
+      description: "Affiliate groups of cpu0, each bit represents a group 0: no effect 1: toggle the result that whether the group is assigned to CPU0 before."
+      bit_offset: 0
+      bit_size: 4
+fieldset/AFFILIATE_VALUE:
+  description: Affiliate of Group.
+  fields:
+    - name: LINK
+      description: "Affiliate groups of cpu0, each bit represents a group bit0: cpu0 depends on group0 bit1: cpu0 depends on group1 bit2: cpu0 depends on group2 bit3: cpu0 depends on group3."
+      bit_offset: 0
+      bit_size: 4
+fieldset/CLOCK:
+  description: no description available.
+  fields:
+    - name: DIV
+      description: "clock divider 0: divider by 1 1: divider by 2 2: divider by 3 . . . 255: divider by 256."
+      bit_offset: 0
+      bit_size: 8
+    - name: MUX
+      description: current mux in clock component 0:osc0_clk0 1:pll0_clk0 2:pll0_clk1 3:pll0_clk2 4:pll1_clk0 5:pll1_clk1 6:pll2_clk0 7:pll2_clk1.
+      bit_offset: 8
+      bit_size: 3
+    - name: PRESERVE
+      description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
+      bit_offset: 28
+      bit_size: 1
+    - name: LOC_BUSY
+      description: "local busy 0: a change is pending for current node 1: current node is changing status."
+      bit_offset: 30
+      bit_size: 1
+    - name: GLB_BUSY
+      description: "global busy 0: no changes pending to any clock 1: any of nodes is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/CLOCK_CPU:
+  description: no description available.
+  fields:
+    - name: DIV
+      description: "clock divider 0: divider by 1 1: divider by 2 2: divider by 3 . . . 255: divider by 256."
+      bit_offset: 0
+      bit_size: 8
+    - name: MUX
+      description: current mux in clock component 0:osc0_clk0 1:pll0_clk0 2:pll0_clk1 3:pll0_clk2 4:pll1_clk0 5:pll1_clk1 6:pll2_clk0 7:pll2_clk1.
+      bit_offset: 8
+      bit_size: 3
+    - name: SUB0_DIV
+      description: "axi bus divider, the bus clock is generated by cpu_clock/div 0: divider by 1 1: divider by 2 …."
+      bit_offset: 16
+      bit_size: 4
+    - name: SUB1_DIV
+      description: "ahb bus divider, the bus clock is generated by cpu_clock/div 0: divider by 1 1: divider by 2 …."
+      bit_offset: 20
+      bit_size: 4
+    - name: PRESERVE
+      description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
+      bit_offset: 28
+      bit_size: 1
+    - name: LOC_BUSY
+      description: "local busy 0: a change is pending for current node 1: current node is changing status."
+      bit_offset: 30
+      bit_size: 1
+    - name: GLB_BUSY
+      description: "global busy 0: no changes pending to any clock 1: any of nodes is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DACCLK:
+  description: no description available.
+  fields:
+    - name: MUX
+      description: "current mux 0: ana clock 1: ahb clock."
+      bit_offset: 8
+      bit_size: 1
+    - name: PRESERVE
+      description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
+      bit_offset: 28
+      bit_size: 1
+    - name: LOC_BUSY
+      description: "local busy 0: a change is pending for current node 1: current node is changing status."
+      bit_offset: 30
+      bit_size: 1
+    - name: GLB_BUSY
+      description: "global busy 0: no changes pending to any clock 1: any of nodes is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/GPR:
+  description: no description available.
+  fields:
+    - name: GPR
+      description: register for software to handle resume, can save resume address or status.
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP0_CLEAR:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: no effect 1: delete periphera in this group，periphera is not needed."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP0_SET:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: no effect 1: add periphera into this group，periphera is needed."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP0_TOGGLE:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: no effect 1: toggle the result that whether periphera is needed before."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP0_VALUE:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: peripheral is not needed 1: periphera is needed."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP1_CLEAR:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: no effect 1: delete periphera in this group，periphera is not needed."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP1_SET:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: no effect 1: add periphera into this group，periphera is needed."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP1_TOGGLE:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: no effect 1: toggle the result that whether periphera is needed before."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GROUP1_VALUE:
+  description: Group setting.
+  fields:
+    - name: LINK
+      description: "denpendency on peripherals, index count from resource ahbp(0x400), each bit represents a peripheral 0: peripheral is not needed 1: periphera is needed."
+      bit_offset: 0
+      bit_size: 32
+fieldset/LOCK:
+  description: CPU0 Lock GPR.
+  fields:
+    - name: LOCK
+      description: Lock bit for CPU_LOCK.
+      bit_offset: 1
+      bit_size: 1
+    - name: GPR
+      description: Lock bit for CPU_DATA0 to CPU_DATA13, once set, this bit will not clear untile next reset.
+      bit_offset: 2
+      bit_size: 14
+fieldset/LP:
+  description: CPU0 LP control.
+  fields:
+    - name: MODE
+      description: "Low power mode, system behavior after WFI 00: CPU clock stop after WFI 01: System enter low power mode after WFI 10: Keep running after WFI 11: reserved."
+      bit_offset: 0
+      bit_size: 2
+    - name: RESET_FLAG
+      description: "CPU0 reset flag, indicate a reset event got active, write 1 to clear this bit 0: CPU0 reset not happened 1: CPU0 reset happened."
+      bit_offset: 8
+      bit_size: 1
+    - name: SLEEP_FLAG
+      description: "CPU0 sleep flag, indicate a sleep event got active, write 1 to clear this bit 0: CPU0 sleep not happened 1: CPU0 sleep happened."
+      bit_offset: 9
+      bit_size: 1
+    - name: WAKE_FLAG
+      description: "CPU0 wakeup flag, indicate a wakeup event got active, write 1 to clear this bit 0: CPU0 wakeup not happened 1: CPU0 wake up happened."
+      bit_offset: 10
+      bit_size: 1
+    - name: EXEC
+      description: "CPU0 is executing 0: CPU0 is not executing 1: CPU0 is executing."
+      bit_offset: 12
+      bit_size: 1
+    - name: WAKE
+      description: "CPU0 is waking up 0: CPU0 wake up not asserted 1: CPU0 wake up asserted."
+      bit_offset: 13
+      bit_size: 1
+    - name: HALT
+      description: "halt request for CPU0, 0: CPU0 will start to execute after reset or receive wakeup request 1: CPU0 will not start after reset, or wakeup after WFI."
+      bit_offset: 16
+      bit_size: 1
+    - name: WAKE_CNT
+      description: CPU0 wake up counter, counter satuated at 255, write 0x00 to clear.
+      bit_offset: 24
+      bit_size: 8
+fieldset/MONITOR_control:
+  description: Clock measure and monitor control.
+  fields:
+    - name: SELECTION
+      description: "clock measurement selection 0: clk_32k 1: clk_irc24m 2: clk_xtal_24m 3: clk_usb0_phy 8: clk0_osc0 9: clk0_pll0 10: clk1_pll0 11: clk2_pll0 12: clk0_pll1 13: clk1_pll1 14: clk0_pll2 15: clk1_pll2 128: clk_top_cpu0 129: clk_top_mct0 130: clk_top_mct1 131: clk_top_xpi0 132: clk_top_tmr0 133: clk_top_tmr1 134: clk_top_tmr2 135: clk_top_tmr3 136: clk_top_urt0 137: clk_top_urt1 138: clk_top_urt2 139: clk_top_urt3 140: clk_top_urt4 141: clk_top_urt5 142: clk_top_urt6 143: clk_top_urt7 144: clk_top_i2c0 145: clk_top_i2c1 146: clk_top_i2c2 147: clk_top_i2c3 148: clk_top_spi0 149: clk_top_spi1 150: clk_top_spi2 151: clk_top_spi3 152: clk_top_can0 153: clk_top_can1 154: clk_top_can2 155: clk_top_can3 156: clk_top_ptpc 157: clk_top_ana0 158: clk_top_ana1 159: clk_top_ana2 160: clk_top_ana3 161: clk_top_ana4 162: clk_top_ref0 163: clk_top_ref1 164: clk_top_lin0 165: clk_top_lin1 166: clk_top_lin2 167: clk_top_lin3."
+      bit_offset: 0
+      bit_size: 8
+    - name: REFERENCE
+      description: "reference clock selection, 0: 32k 1: 24M."
+      bit_offset: 8
+      bit_size: 1
+    - name: ACCURACY
+      description: "measurement accuracy, 0: resolution is 1kHz 1: resolution is 1Hz."
+      bit_offset: 9
+      bit_size: 1
+    - name: MODE
+      description: "work mode, 0: register value will be compared to measurement 1: upper and lower value will be recordered in register."
+      bit_offset: 10
+      bit_size: 1
+    - name: START
+      description: start measurement.
+      bit_offset: 12
+      bit_size: 1
+    - name: LOW
+      description: clock frequency lower than lower limit.
+      bit_offset: 14
+      bit_size: 1
+    - name: HIGH
+      description: clock frequency higher than upper limit.
+      bit_offset: 15
+      bit_size: 1
+    - name: DIV
+      description: output divider.
+      bit_offset: 16
+      bit_size: 8
+    - name: OUTEN
+      description: enable clock output.
+      bit_offset: 24
+      bit_size: 1
+    - name: DIV_BUSY
+      description: divider is applying new setting.
+      bit_offset: 27
+      bit_size: 1
+    - name: VALID
+      description: "result is ready for read 0: not ready 1: result is ready."
+      bit_offset: 31
+      bit_size: 1
+fieldset/RESET_control:
+  description: Reset Setting.
+  fields:
+    - name: RESET
+      description: "perform reset and release imediately 0: reset is released 1 reset is asserted and will release automatically."
+      bit_offset: 0
+      bit_size: 1
+    - name: HOLD
+      description: "perform reset and hold in reset, until ths bit cleared by software 0: reset is released for function 1: reset is assert and hold."
+      bit_offset: 4
+      bit_size: 1
+    - name: FLAG_WAKE
+      description: "flag represents wakeup reset happened from last clear of this bit 0: domain did not edurance wakeup reset cycle since last clear of this bit 1: domain enduranced wakeup reset cycle since last clear of this bit."
+      bit_offset: 30
+      bit_size: 1
+    - name: FLAG
+      description: "flag represents reset happened from last clear of this bit 0: domain did not edurance reset cycle since last clear of this bit 1: domain enduranced reset cycle since last clear of this bit."
+      bit_offset: 31
+      bit_size: 1
+fieldset/RESOURCE:
+  description: no description available.
+  fields:
+    - name: MODE
+      description: resource work mode 0:auto turn on and off as system required(recommended) 1:always on 2:always off 3:reserved.
+      bit_offset: 0
+      bit_size: 2
+    - name: LOC_BUSY
+      description: "local busy 0: no change is pending for current node 1: current node is changing status."
+      bit_offset: 30
+      bit_size: 1
+    - name: GLB_BUSY
+      description: "global busy 0: no changes pending to any nodes 1: any of nodes is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/RETENTION_CLEAR:
+  description: Retention Control.
+  fields:
+    - name: LINK
+      description: "retention setting while CPU0 enter stop mode, each bit represents a resource 0: no effect 1: no keep."
+      bit_offset: 0
+      bit_size: 10
+fieldset/RETENTION_SET:
+  description: Retention Control.
+  fields:
+    - name: LINK
+      description: "retention setting while CPU0 enter stop mode, each bit represents a resource 0: no effect 1: keep."
+      bit_offset: 0
+      bit_size: 10
+fieldset/RETENTION_TOGGLE:
+  description: Retention Control.
+  fields:
+    - name: LINK
+      description: "retention setting while CPU0 enter stop mode, each bit represents a resource 0: no effect 1: toggle the result that whether the resource is kept on while CPU0 stop before."
+      bit_offset: 0
+      bit_size: 10
+fieldset/RETENTION_VALUE:
+  description: Retention Control.
+  fields:
+    - name: LINK
+      description: "retention setting while CPU0 enter stop mode, each bit represents a resource bit00: soc_mem is kept on while cpu0 stop bit01: soc_ctx is kept on while cpu0 stop bit02: cpu0_mem is kept on while cpu0 stop bit03: cpu0_ctx is kept on while cpu0 stop bit04: cpu1_mem is kept on while cpu0 stop bit05: cpu1_ctx is kept on while cpu0 stop bit06: xtal_hold is kept on while cpu0 stop bit07: pll0_hold is kept on while cpu0 stop bit08: pll1_hold is kept on while cpu0 stop bit09: pll2_hold is kept on while cpu0 stop."
+      bit_offset: 0
+      bit_size: 10
+fieldset/WAKEUP_ENABLE:
+  description: no description available.
+  fields:
+    - name: ENABLE
+      description: IRQ wakeup enable.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAKEUP_STATUS:
+  description: no description available.
+  fields:
+    - name: STATUS
+      description: IRQ values.
+      bit_offset: 0
+      bit_size: 32
+fieldset/config:
+  description: Reset Setting.
+  fields:
+    - name: POST_WAIT
+      description: "time guard band for reset release 0: wait 0 cycle 1: wait 1 cycles . . . Note, clock cycle is base on 24M."
+      bit_offset: 0
+      bit_size: 8
+    - name: RSTCLK_NUM
+      description: "reset clock number(must be even number) 0: 0 cycle 1: 0 cycles 2: 2 cycles 3: 2 cycles . . . Note, clock cycle is base on 24M."
+      bit_offset: 8
+      bit_size: 8
+    - name: PRE_WAIT
+      description: "wait cycle numbers before assert reset 0: wait 0 cycle 1: wait 1 cycles . . . Note, clock cycle is base on 24M."
+      bit_offset: 16
+      bit_size: 8
+fieldset/counter:
+  description: Reset Setting.
+  fields:
+    - name: COUNTER
+      description: "self clear trigger counter, reset triggered when counter value is 1, write 0 will cancel reset 0: wait 0 cycle 1: wait 1 cycles . . . Note, clock cycle is base on 24M."
+      bit_offset: 0
+      bit_size: 20
+fieldset/current:
+  description: Clock measure result.
+  fields:
+    - name: FREQUENCY
+      description: self updating measure result.
+      bit_offset: 0
+      bit_size: 32
+fieldset/global00:
+  description: Clock senario.
+  fields:
+    - name: MUX
+      description: "global clock override request bit0: override to preset0 bit1: override to preset1 bit2: override to preset2 bit3: override to preset3."
+      bit_offset: 0
+      bit_size: 4
+fieldset/high_limit:
+  description: Clock upper limit.
+  fields:
+    - name: FREQUENCY
+      description: upper frequency.
+      bit_offset: 0
+      bit_size: 32
+fieldset/lf_wait:
+  description: Power Setting.
+  fields:
+    - name: WAIT
+      description: "wait time for low fan out power switch turn on, default value is 255 0: 0 clock cycle 1: 1 clock cycles . . . clock cycles count on 24MHz."
+      bit_offset: 0
+      bit_size: 20
+fieldset/low_limit:
+  description: Clock lower limit.
+  fields:
+    - name: FREQUENCY
+      description: lower frequency.
+      bit_offset: 0
+      bit_size: 32
+fieldset/off_wait:
+  description: Power Setting.
+  fields:
+    - name: WAIT
+      description: "wait time for power switch turn off, default value is 15 0: 0 clock cycle 1: 1 clock cycles . . . clock cycles count on 24MHz."
+      bit_offset: 0
+      bit_size: 20
+fieldset/status:
+  description: Power Setting.
+  fields:
+    - name: LF_ACK
+      description: "low fanout power switch feedback 0: low fanout power switches are turned on 1: low fanout power switches are truned off."
+      bit_offset: 8
+      bit_size: 1
+    - name: LF_DISABLE
+      description: "low fanout power switch disable 0: low fanout power switches are turned on 1: low fanout power switches are truned off."
+      bit_offset: 12
+      bit_size: 1
+    - name: FLAG_WAKE
+      description: "flag represents wakeup power cycle happened from last clear of this bit 0: power domain did not edurance wakeup power cycle since last clear of this bit 1: power domain enduranced wakeup power cycle since last clear of this bit."
+      bit_offset: 30
+      bit_size: 1
+    - name: FLAG
+      description: "flag represents power cycle happened from last clear of this bit 0: power domain did not edurance power cycle since last clear of this bit 1: power domain enduranced power cycle since last clear of this bit."
+      bit_offset: 31
+      bit_size: 1

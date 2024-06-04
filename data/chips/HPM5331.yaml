@@ -1,0 +1,34 @@
+name: HPM5331
+family: HPM5300
+packages:
+  - name: HPM5331-LQFP100
+    package: LQFP100
+    pins: 100
+  - name: HPM5331-LQFP64
+    package: LQFP64
+    pins: 64
+  - name: HPM5331-QFN48
+    package: QFN48
+    pins: 48
+memory:
+  - address: 0x00000000
+    kind: ram
+    name: ILM
+    size: 131072 # 128K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 131072 # 128K
+  - address: 0xf0400000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M
+_raw:
+  "| HPM5331 | Single-core 32-bit | 288 |    |    |    | USB HS w/ PHY \xD71 |\
+  \ AES128/256, SHA-1/256 | 2*16bit | 14\xD714 100LQFP P0.5\uFF0C10\xD710 64LQFP P0.5\uFF0C\
+  6\xD76 48QFN P0.4 | \u221240 \u223C 125\u25E6C Tj    \u221240 \u223C 105\u25E6C\
+  \ Ta |     |"
