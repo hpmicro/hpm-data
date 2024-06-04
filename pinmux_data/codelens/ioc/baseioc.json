@@ -1,0 +1,21 @@
+{
+    "member": "PAD",
+    "func_alt": "FUNC_CTL",
+    "func_padctl": "PAD_CTL",
+    "iomux_base": "IOC_PAD_{{func_alt}}_ALT_SELECT_SET(${index})",
+    "iomux_def": "IOC_${ballname}_{{func_alt}}_${signal}",
+    "iomux_undef_sigs":{
+        "^ANALOGS.*|^USBPHY.*" : "IOC_PAD_{{func_alt}}_ANALOG_MASK",
+        "LOOP_BACK": "IOC_${ballname}_{{func_alt}}_${signal} | IOC_PAD_{{func_alt}}_LOOP_BACK_MASK"
+    },
+    "pad_base": "IOC_PAD_{{func_padctl}}_${padctl}_SET(${value})",
+    "ballname_def": "IOC_PAD_${ballname}",
+    
+    "varchar_replace": {
+        ".": "_",
+        "[": "_",
+        "]": ""
+    },
+    "copyright": "\n * Copyright (c) ${year} hpmicro\n *\n * SPDX-License-Identifier: BSD-3-Clause",
+    "header_macro": "HPM_PINMUX_H"
+}
