@@ -32,3 +32,4 @@ The structured MCU DB of HPM MCUs. The home of hpm-metapac.
 
 - <https://www.hpmicro.com/>
 - <https://github.com/hpmicro/hpm_pinmux_tool>
+- <https://github.com/hpmicro/hpm_sdk>
