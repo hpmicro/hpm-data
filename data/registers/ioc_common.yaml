@@ -1,0 +1,75 @@
+block/IOC:
+  description: IOC.
+  items:
+    - name: PAD
+      description: no description available.
+      array:
+        len: 456
+        stride: 8
+      byte_offset: 0
+      block: PAD
+block/PAD:
+  description: no description available.
+  items:
+    - name: FUNC_CTL
+      description: ALT SELECT.
+      byte_offset: 0
+      fieldset: FUNC_CTL
+    - name: PAD_CTL
+      description: PAD SETTINGS.
+      byte_offset: 4
+      fieldset: PAD_CTL
+fieldset/FUNC_CTL:
+  description: ALT SELECT.
+  fields:
+    - name: ALT_SELECT
+      description: "alt select 0: ALT0 1: ALT1 ... 31:ALT31."
+      bit_offset: 0
+      bit_size: 5
+    - name: ANALOG
+      description: "select analog pin in pad 0: disable 1: enable."
+      bit_offset: 8
+      bit_size: 1
+    - name: LOOP_BACK
+      description: "force input on 0: disable 1: enable."
+      bit_offset: 16
+      bit_size: 1
+fieldset/PAD_CTL:
+  description: PAD SETTINGS.
+  fields:
+    - name: DS
+      description: "drive strength 1.8V Mode: 000: 260 Ohm 001: 260 Ohm 010: 130 Ohm 011: 88 Ohm 100: 65 Ohm 101: 52 Ohm 110: 43 Ohm 111: 37 Ohm 3.3V Mode: 000: 157 Ohm 001: 157 Ohm 010: 78 Ohm 011: 53 Ohm 100: 39 Ohm 101: 32 Ohm 110: 26 Ohm 111: 23 Ohm."
+      bit_offset: 0
+      bit_size: 3
+    - name: SPD
+      description: "additional 2-bit slew rate to select IO cell operation frequency range with reduced switching noise 00: Slow frequency slew rate(50Mhz) 01: Medium frequency slew rate(100 Mhz) 10: Fast frequency slew rate(150 Mhz) 11: Max frequency slew rate(200Mhz)."
+      bit_offset: 4
+      bit_size: 2
+    - name: SR
+      description: "slew rate 0: Slow slew rate 1: Fast slew rate."
+      bit_offset: 6
+      bit_size: 1
+    - name: OD
+      description: "open drain 0: open drain disable 1: open drain enable."
+      bit_offset: 8
+      bit_size: 1
+    - name: KE
+      description: "keeper capability enable 0: keeper disable 1: keeper enable."
+      bit_offset: 16
+      bit_size: 1
+    - name: PE
+      description: "pull enable 0: pull disable 1: pull enable."
+      bit_offset: 17
+      bit_size: 1
+    - name: PS
+      description: "pull select 0: pull down 1: pull up."
+      bit_offset: 18
+      bit_size: 1
+    - name: PRS
+      description: "select pull up/down internal resistance strength: For pull down, only have 100 Kohm resistance For pull up: 00: 100 KOhm 01: 47 KOhm 10: 22 KOhm 11: 22 KOhm."
+      bit_offset: 20
+      bit_size: 2
+    - name: HYS
+      description: "schmitt trigger enable 0: disable 1: enable."
+      bit_offset: 24
+      bit_size: 1

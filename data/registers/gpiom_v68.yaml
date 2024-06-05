@@ -1,0 +1,35 @@
+block/ASSIGN:
+  description: no description available.
+  items:
+    - name: PIN
+      description: no description available.
+      array:
+        len: 32
+        stride: 4
+      byte_offset: 0
+      fieldset: PIN
+block/GPIOM:
+  description: GPIOM.
+  items:
+    - name: ASSIGN
+      description: no description available.
+      array:
+        len: 16
+        stride: 128
+      byte_offset: 0
+      block: ASSIGN
+fieldset/PIN:
+  description: no description available.
+  fields:
+    - name: SELECT
+      description: "select which gpio controls chip pin, 0: soc gpio0; 2: cpu0 fastgpio."
+      bit_offset: 0
+      bit_size: 2
+    - name: HIDE
+      description: "pin value visibility to gpios, bit0: 1, invisible to soc gpio0; 0: visible to soc gpio0 bit1: 1, invisible to cpu0 fast gpio; 0: visible to cpu0 fast gpio."
+      bit_offset: 8
+      bit_size: 2
+    - name: LOCK
+      description: "lock fields in this register, lock can only be cleared by soc reset 0: fields can be changed 1: fields locked to current value, not changeable."
+      bit_offset: 31
+      bit_size: 1

@@ -1,0 +1,316 @@
+block/CHANNEL:
+  description: no description available.
+  items:
+    - name: CR
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CR
+    - name: CMP
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 4
+      fieldset: CMP
+    - name: RLD
+      description: Reload register.
+      byte_offset: 12
+      fieldset: RLD
+    - name: CNTUPTVAL
+      description: Counter update value register.
+      byte_offset: 16
+      fieldset: CNTUPTVAL
+    - name: CAPPOS
+      description: Capture rising edge register.
+      byte_offset: 32
+      fieldset: CAPPOS
+    - name: CAPNEG
+      description: Capture falling edge register.
+      byte_offset: 36
+      fieldset: CAPNEG
+    - name: CAPPRD
+      description: PWM period measure register.
+      byte_offset: 40
+      fieldset: CAPPRD
+    - name: CAPDTY
+      description: PWM duty cycle measure register.
+      byte_offset: 44
+      fieldset: CAPDTY
+    - name: CNT
+      description: Counter.
+      byte_offset: 48
+      fieldset: CNT
+block/TMR:
+  description: GPTMR0.
+  items:
+    - name: CHANNEL
+      description: no description available.
+      array:
+        len: 4
+        stride: 64
+      byte_offset: 0
+      block: CHANNEL
+    - name: SR
+      description: Status register.
+      byte_offset: 512
+      fieldset: SR
+    - name: IRQEN
+      description: Interrupt request enable register.
+      byte_offset: 516
+      fieldset: IRQEN
+    - name: GCR
+      description: Global control register.
+      byte_offset: 520
+      fieldset: GCR
+fieldset/CAPDTY:
+  description: PWM duty cycle measure register.
+  fields:
+    - name: MEAS_HIGH
+      description: This register contains the input signal duty cycle when channel is configured to input capture measure mode.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CAPNEG:
+  description: Capture falling edge register.
+  fields:
+    - name: CAPNEG
+      description: This register contains the counter value captured at input signal falling edge.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CAPPOS:
+  description: Capture rising edge register.
+  fields:
+    - name: CAPPOS
+      description: This register contains the counter value captured at input signal rising edge.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CAPPRD:
+  description: PWM period measure register.
+  fields:
+    - name: CAPPRD
+      description: This register contains the input signal period when channel is configured to input capture measure mode.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMP:
+  description: no description available.
+  fields:
+    - name: CMP
+      description: compare value 0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CNT:
+  description: Counter.
+  fields:
+    - name: COUNTER
+      description: 32 bit counter value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CNTUPTVAL:
+  description: Counter update value register.
+  fields:
+    - name: CNTUPTVAL
+      description: counter will be set to this value when software write cntupt bit in CR.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CR:
+  description: Control Register.
+  fields:
+    - name: CAPMODE
+      description: "This bitfield define the input capture mode 100: width measure mode, timer will calculate the input signal period and duty cycle 011: capture at both rising edge and falling edge 010: capture at falling edge 001: capture at rising edge 000: No capture."
+      bit_offset: 0
+      bit_size: 3
+    - name: DBGPAUSE
+      description: 1- counter will pause if chip is in debug mode.
+      bit_offset: 3
+      bit_size: 1
+    - name: SWSYNCIEN
+      description: 1- enable software sync. When this bit is set, counter will reset to RLD when swsynct bit is set.
+      bit_offset: 4
+      bit_size: 1
+    - name: DMAEN
+      description: 1- enable dma.
+      bit_offset: 5
+      bit_size: 1
+    - name: DMASEL
+      description: "select one of DMA request: 00- CMP0 flag 01- CMP1 flag 10- Input signal toggle captured 11- RLD flag, counter reload;."
+      bit_offset: 6
+      bit_size: 2
+    - name: CMPEN
+      description: 1- Enable the channel output compare function. The output signal can be generated per comparator (CMPx) settings.
+      bit_offset: 8
+      bit_size: 1
+    - name: CMPINIT
+      description: Output compare initial poliarity 1- The channel output initial level is high 0- The channel output initial level is low User should set this bit before set CMPEN to 1.
+      bit_offset: 9
+      bit_size: 1
+    - name: CEN
+      description: 1- counter enable.
+      bit_offset: 10
+      bit_size: 1
+    - name: SYNCIREN
+      description: 1- SYNCI is valid on its rising edge.
+      bit_offset: 11
+      bit_size: 1
+    - name: SYNCIFEN
+      description: 1- SYNCI is valid on its falling edge.
+      bit_offset: 12
+      bit_size: 1
+    - name: SYNCFLW
+      description: 1- enable this channel to reset counter to reload(RLD) together with its previous channel. This bit is not valid for channel 0.
+      bit_offset: 13
+      bit_size: 1
+    - name: CNTRST
+      description: 1- reset counter.
+      bit_offset: 14
+      bit_size: 1
+    - name: CNTUPT
+      description: 1- update counter to new value as CNTUPTVAL This bit will be auto cleared after 1 cycle.
+      bit_offset: 31
+      bit_size: 1
+fieldset/GCR:
+  description: Global control register.
+  fields:
+    - name: SWSYNCT
+      description: set this bitfield to trigger software counter sync event.
+      bit_offset: 0
+      bit_size: 4
+fieldset/IRQEN:
+  description: Interrupt request enable register.
+  fields:
+    - name: CH0RLDEN
+      description: 1- generate interrupt request when ch0rldf flag is set.
+      bit_offset: 0
+      bit_size: 1
+    - name: CH0CAPEN
+      description: 1- generate interrupt request when ch0capf flag is set.
+      bit_offset: 1
+      bit_size: 1
+    - name: CH0CMP0EN
+      description: 1- generate interrupt request when ch0cmp0f flag is set.
+      bit_offset: 2
+      bit_size: 1
+    - name: CH0CMP1EN
+      description: 1- generate interrupt request when ch0cmp1f flag is set.
+      bit_offset: 3
+      bit_size: 1
+    - name: CH1RLDEN
+      description: 1- generate interrupt request when ch1rldf flag is set.
+      bit_offset: 4
+      bit_size: 1
+    - name: CH1CAPEN
+      description: 1- generate interrupt request when ch1capf flag is set.
+      bit_offset: 5
+      bit_size: 1
+    - name: CH1CMP0EN
+      description: 1- generate interrupt request when ch1cmp0f flag is set.
+      bit_offset: 6
+      bit_size: 1
+    - name: CH1CMP1EN
+      description: 1- generate interrupt request when ch1cmp1f flag is set.
+      bit_offset: 7
+      bit_size: 1
+    - name: CH2RLDEN
+      description: 1- generate interrupt request when ch2rldf flag is set.
+      bit_offset: 8
+      bit_size: 1
+    - name: CH2CAPEN
+      description: 1- generate interrupt request when ch2capf flag is set.
+      bit_offset: 9
+      bit_size: 1
+    - name: CH2CMP0EN
+      description: 1- generate interrupt request when ch2cmp0f flag is set.
+      bit_offset: 10
+      bit_size: 1
+    - name: CH2CMP1EN
+      description: 1- generate interrupt request when ch2cmp1f flag is set.
+      bit_offset: 11
+      bit_size: 1
+    - name: CH3RLDEN
+      description: 1- generate interrupt request when ch3rldf flag is set.
+      bit_offset: 12
+      bit_size: 1
+    - name: CH3CAPEN
+      description: 1- generate interrupt request when ch3capf flag is set.
+      bit_offset: 13
+      bit_size: 1
+    - name: CH3CMP0EN
+      description: 1- generate interrupt request when ch3cmp0f flag is set.
+      bit_offset: 14
+      bit_size: 1
+    - name: CH3CMP1EN
+      description: 1- generate interrupt request when ch3cmp1f flag is set.
+      bit_offset: 15
+      bit_size: 1
+fieldset/RLD:
+  description: Reload register.
+  fields:
+    - name: RLD
+      description: reload value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SR:
+  description: Status register.
+  fields:
+    - name: CH0RLDF
+      description: channel 1 counter reload flag.
+      bit_offset: 0
+      bit_size: 1
+    - name: CH0CAPF
+      description: channel 1 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
+      bit_offset: 1
+      bit_size: 1
+    - name: CH0CMP0F
+      description: channel 1 compare value 1 match flag.
+      bit_offset: 2
+      bit_size: 1
+    - name: CH0CMP1F
+      description: channel 1 compare value 1 match flag.
+      bit_offset: 3
+      bit_size: 1
+    - name: CH1RLDF
+      description: channel 1 counter reload flag.
+      bit_offset: 4
+      bit_size: 1
+    - name: CH1CAPF
+      description: channel 1 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
+      bit_offset: 5
+      bit_size: 1
+    - name: CH1CMP0F
+      description: channel 1 compare value 1 match flag.
+      bit_offset: 6
+      bit_size: 1
+    - name: CH1CMP1F
+      description: channel 1 compare value 1 match flag.
+      bit_offset: 7
+      bit_size: 1
+    - name: CH2RLDF
+      description: channel 2 counter reload flag.
+      bit_offset: 8
+      bit_size: 1
+    - name: CH2CAPF
+      description: channel 2 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
+      bit_offset: 9
+      bit_size: 1
+    - name: CH2CMP0F
+      description: channel 2 compare value 1 match flag.
+      bit_offset: 10
+      bit_size: 1
+    - name: CH2CMP1F
+      description: channel 2 compare value 1 match flag.
+      bit_offset: 11
+      bit_size: 1
+    - name: CH3RLDF
+      description: channel 3 counter reload flag.
+      bit_offset: 12
+      bit_size: 1
+    - name: CH3CAPF
+      description: channel 3 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
+      bit_offset: 13
+      bit_size: 1
+    - name: CH3CMP0F
+      description: channel 3 compare value 1 match flag.
+      bit_offset: 14
+      bit_size: 1
+    - name: CH3CMP1F
+      description: channel 3 compare value 1 match flag.
+      bit_offset: 15
+      bit_size: 1

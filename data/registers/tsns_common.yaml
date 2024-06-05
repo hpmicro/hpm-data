@@ -1,0 +1,233 @@
+block/TSNS:
+  description: TSNS.
+  items:
+    - name: T
+      description: Temperature.
+      byte_offset: 0
+      fieldset: T
+    - name: TMAX
+      description: Maximum Temperature.
+      byte_offset: 4
+      fieldset: TMAX
+    - name: TMIN
+      description: Minimum Temperature.
+      byte_offset: 8
+      fieldset: TMIN
+    - name: AGE
+      description: Sample age.
+      byte_offset: 12
+      fieldset: AGE
+    - name: STATUS
+      description: Status.
+      byte_offset: 16
+      fieldset: STATUS
+    - name: CONFIG
+      description: Configuration.
+      byte_offset: 20
+      fieldset: CONFIG
+    - name: VALIDITY
+      description: Sample validity.
+      byte_offset: 24
+      fieldset: VALIDITY
+    - name: FLAG
+      description: Temperature flag.
+      byte_offset: 28
+      fieldset: FLAG
+    - name: UPPER_LIM_IRQ
+      description: Maximum temperature to interrupt.
+      byte_offset: 32
+      fieldset: UPPER_LIM_IRQ
+    - name: LOWER_LIM_IRQ
+      description: Minimum temperature to interrupt.
+      byte_offset: 36
+      fieldset: LOWER_LIM_IRQ
+    - name: UPPER_LIM_RST
+      description: Maximum temperature to reset.
+      byte_offset: 40
+      fieldset: UPPER_LIM_RST
+    - name: LOWER_LIM_RST
+      description: Minimum temperature to reset.
+      byte_offset: 44
+      fieldset: LOWER_LIM_RST
+    - name: ASYNC
+      description: Configuration in asynchronous mode.
+      byte_offset: 48
+      fieldset: ASYNC
+    - name: ADVAN
+      description: Advance configuration.
+      byte_offset: 56
+      fieldset: ADVAN
+fieldset/ADVAN:
+  description: Advance configuration.
+  fields:
+    - name: POS_ONLY
+      description: use positive compare polarity only.
+      bit_offset: 0
+      bit_size: 1
+    - name: NEG_ONLY
+      description: use negative compare polarity only.
+      bit_offset: 1
+      bit_size: 1
+    - name: SAMPLING
+      description: temperature sampling is working.
+      bit_offset: 16
+      bit_size: 1
+    - name: ACTIVE_IRQ
+      description: interrupt status of active mode.
+      bit_offset: 24
+      bit_size: 1
+    - name: ASYNC_IRQ
+      description: interrupt status of asynchronous mode.
+      bit_offset: 25
+      bit_size: 1
+fieldset/AGE:
+  description: Sample age.
+  fields:
+    - name: AGE
+      description: age of T register in 24MHz clock cycles.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ASYNC:
+  description: Configuration in asynchronous mode.
+  fields:
+    - name: VALUE
+      description: Value of async mode to compare.
+      bit_offset: 0
+      bit_size: 11
+    - name: POLARITY
+      description: Polarity of internal comparator.
+      bit_offset: 16
+      bit_size: 1
+    - name: ASYNC_TYPE
+      description: "Compare hotter than or colder than in asynchoronous mode 0: hotter than 1: colder than."
+      bit_offset: 24
+      bit_size: 1
+fieldset/CONFIG:
+  description: Configuration.
+  fields:
+    - name: ENABLE
+      description: "Enable temperature 0: disable, temperature sensor is shut down 1: enable. Temperature sensor enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: ASYNC
+      description: "Acynchronous mode, this mode can work without clock, only available function ios compare to certain ADC value 0: active mode 1: Async mode."
+      bit_offset: 1
+      bit_size: 1
+    - name: CONTINUOUS
+      description: "continuous mode that keep sampling temperature peridically 0: trigger mode 1: continuous mode."
+      bit_offset: 4
+      bit_size: 1
+    - name: AVERAGE
+      description: "Average time, default in 3 0: measure and return 1: twice and average 2: 4 times and average . . . 7: 128 times and average."
+      bit_offset: 8
+      bit_size: 3
+    - name: SPEED
+      description: "cycles of a progressive step in 24M clock, valid from 24-255, default 96 24: 24 cycle for a step 25: 25 cycle for a step 26: 26 cycle for a step ... 255: 255 cycle for a step."
+      bit_offset: 16
+      bit_size: 8
+    - name: COMPARE_MAX_EN
+      description: Enable compare for maximum temperature.
+      bit_offset: 24
+      bit_size: 1
+    - name: COMPARE_MIN_EN
+      description: Enable compare for minimum temperature.
+      bit_offset: 25
+      bit_size: 1
+    - name: RST_EN
+      description: Enable reset.
+      bit_offset: 30
+      bit_size: 1
+    - name: IRQ_EN
+      description: Enable interrupt.
+      bit_offset: 31
+      bit_size: 1
+fieldset/FLAG:
+  description: Temperature flag.
+  fields:
+    - name: IRQ
+      description: IRQ flag, write 1 to clear.
+      bit_offset: 0
+      bit_size: 1
+    - name: OVER_TEMP
+      description: Clear over temperature status, write 1 to clear.
+      bit_offset: 16
+      bit_size: 1
+    - name: UNDER_TEMP
+      description: Clear under temperature status, write 1 to clear.
+      bit_offset: 17
+      bit_size: 1
+    - name: RECORD_MAX_CLR
+      description: Clear maximum recorder of temerature, write 1 to clear.
+      bit_offset: 20
+      bit_size: 1
+    - name: RECORD_MIN_CLR
+      description: Clear minimum recorder of temerature, write 1 to clear.
+      bit_offset: 21
+      bit_size: 1
+fieldset/LOWER_LIM_IRQ:
+  description: Minimum temperature to interrupt.
+  fields:
+    - name: T
+      description: Minimum temperature for compare.
+      bit_offset: 0
+      bit_size: 32
+fieldset/LOWER_LIM_RST:
+  description: Minimum temperature to reset.
+  fields:
+    - name: T
+      description: Minimum temperature for compare.
+      bit_offset: 0
+      bit_size: 32
+fieldset/STATUS:
+  description: Status.
+  fields:
+    - name: TRIGGER
+      description: Software trigger for sensing in trigger mode, trigger will be ignored if in sensing or other mode.
+      bit_offset: 0
+      bit_size: 1
+    - name: VALID
+      description: "indicate value in T is valid or not 0: not valid 1:valid."
+      bit_offset: 31
+      bit_size: 1
+fieldset/T:
+  description: Temperature.
+  fields:
+    - name: T
+      description: Signed number of temperature in 256 x celsius degree.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TMAX:
+  description: Maximum Temperature.
+  fields:
+    - name: T
+      description: maximum temperature ever found.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TMIN:
+  description: Minimum Temperature.
+  fields:
+    - name: T
+      description: minimum temperature ever found.
+      bit_offset: 0
+      bit_size: 32
+fieldset/UPPER_LIM_IRQ:
+  description: Maximum temperature to interrupt.
+  fields:
+    - name: T
+      description: Maximum temperature for compare.
+      bit_offset: 0
+      bit_size: 32
+fieldset/UPPER_LIM_RST:
+  description: Maximum temperature to reset.
+  fields:
+    - name: T
+      description: Maximum temperature for compare.
+      bit_offset: 0
+      bit_size: 32
+fieldset/VALIDITY:
+  description: Sample validity.
+  fields:
+    - name: VALIDITY
+      description: time for temperature values to expire in 24M clock cycles.
+      bit_offset: 0
+      bit_size: 32

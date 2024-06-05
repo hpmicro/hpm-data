@@ -1,0 +1,289 @@
+block/PTPC:
+  description: PTPC.
+  items:
+    - name: PTPC
+      description: no description available.
+      array:
+        len: 2
+        stride: 4096
+      byte_offset: 0
+      block: PTPC_PTPC
+    - name: time_sel
+      description: No description available.
+      byte_offset: 8192
+      fieldset: time_sel
+    - name: int_sts
+      description: No description available.
+      byte_offset: 8196
+      fieldset: int_sts
+    - name: int_en
+      description: No description available.
+      byte_offset: 8200
+      fieldset: int_en
+    - name: ptpc_can_ts_sel
+      description: No description available.
+      byte_offset: 12288
+      fieldset: ptpc_can_ts_sel
+block/PTPC_PTPC:
+  description: no description available.
+  items:
+    - name: Ctrl0
+      description: Control Register 0.
+      byte_offset: 0
+      fieldset: Ctrl0
+    - name: ctrl1
+      description: Control Register 1.
+      byte_offset: 4
+      fieldset: ctrl1
+    - name: timeh
+      description: timestamp high.
+      byte_offset: 8
+      fieldset: timeh
+    - name: timel
+      description: timestamp low.
+      byte_offset: 12
+      fieldset: timel
+    - name: ts_updth
+      description: timestamp update high.
+      byte_offset: 16
+      fieldset: ts_updth
+    - name: ts_updtl
+      description: timestamp update low.
+      byte_offset: 20
+      fieldset: ts_updtl
+    - name: addend
+      description: No description available.
+      byte_offset: 24
+      fieldset: addend
+    - name: tarh
+      description: No description available.
+      byte_offset: 28
+      fieldset: tarh
+    - name: tarl
+      description: No description available.
+      byte_offset: 32
+      fieldset: tarl
+    - name: pps_ctrl
+      description: No description available.
+      byte_offset: 44
+      fieldset: pps_ctrl
+    - name: capt_snaph
+      description: No description available.
+      byte_offset: 48
+      fieldset: capt_snaph
+    - name: capt_snapl
+      description: No description available.
+      byte_offset: 52
+      fieldset: capt_snapl
+fieldset/Ctrl0:
+  description: Control Register 0.
+  fields:
+    - name: TIMER_ENABLE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: FINE_COARSE_SEL
+      description: "0: coarse update, ns counter add ss_incr[7:0] each clk 1: fine update, ns counter add ss_incr[7:0] each time addend counter overflow."
+      bit_offset: 1
+      bit_size: 1
+    - name: INIT_TIMER
+      description: initial timer with ts_updt, pulse, clear after set.
+      bit_offset: 2
+      bit_size: 1
+    - name: UPDATE_TIMER
+      description: update timer with +/- ts_updt, pulse, clear after set.
+      bit_offset: 3
+      bit_size: 1
+    - name: COMP_EN
+      description: set to enable compare, will be cleared by HW when compare event triggered.
+      bit_offset: 4
+      bit_size: 1
+    - name: CAPT_SNAP_NEG_EN
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: CAPT_SNAP_POS_EN
+      description: set will use posege of input capture signal to latch timestamp value.
+      bit_offset: 7
+      bit_size: 1
+    - name: CAPT_SNAP_KEEP
+      description: set will keep capture snap till software read capt_snapl. If this bit is set, software should read capt_snaph first to avoid wrong result. If this bit is cleared, capture result will be updated at each capture event.
+      bit_offset: 8
+      bit_size: 1
+    - name: SUBSEC_DIGITAL_ROLLOVER
+      description: Format for ns counter rollover, 1-digital, overflow time 1000000000/0x3B9ACA00 0-binary, overflow time 0x7FFFFFFF.
+      bit_offset: 9
+      bit_size: 1
+fieldset/addend:
+  description: No description available.
+  fields:
+    - name: ADDEND
+      description: used in fine update mode only.
+      bit_offset: 0
+      bit_size: 32
+fieldset/capt_snaph:
+  description: No description available.
+  fields:
+    - name: CAPT_SNAP_HIGH
+      description: take snapshot for input capture signal, at pos or neg or both; the result can be kept or updated at each event according to cfg0.bit8.
+      bit_offset: 0
+      bit_size: 32
+fieldset/capt_snapl:
+  description: No description available.
+  fields:
+    - name: CAPT_SNAP_LOW
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ctrl1:
+  description: Control Register 1.
+  fields:
+    - name: SS_INCR
+      description: constant value used to add ns counter; such as for 50MHz timer clock, set it to 8'd20.
+      bit_offset: 0
+      bit_size: 8
+fieldset/int_en:
+  description: No description available.
+  fields:
+    - name: PPS_INT_STS0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: CAPTURE_INT_STS0
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: COMP_INT_STS0
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: PPS_INT_STS1
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: CAPTURE_INT_STS1
+      description: No description available.
+      bit_offset: 17
+      bit_size: 1
+    - name: COMP_INT_STS1
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+fieldset/int_sts:
+  description: No description available.
+  fields:
+    - name: PPS_INT_STS0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: CAPTURE_INT_STS0
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: COMP_INT_STS0
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: PPS_INT_STS1
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: CAPTURE_INT_STS1
+      description: No description available.
+      bit_offset: 17
+      bit_size: 1
+    - name: COMP_INT_STS1
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+fieldset/pps_ctrl:
+  description: No description available.
+  fields:
+    - name: PPS_CTRL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+fieldset/ptpc_can_ts_sel:
+  description: No description available.
+  fields:
+    - name: TSU_TBIN0_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 6
+    - name: TSU_TBIN1_SEL
+      description: No description available.
+      bit_offset: 14
+      bit_size: 6
+    - name: TSU_TBIN2_SEL
+      description: No description available.
+      bit_offset: 20
+      bit_size: 6
+    - name: TSU_TBIN3_SEL
+      description: No description available.
+      bit_offset: 26
+      bit_size: 6
+fieldset/tarh:
+  description: No description available.
+  fields:
+    - name: TARGET_TIME_HIGH
+      description: used for generate compare signal if enabled.
+      bit_offset: 0
+      bit_size: 32
+fieldset/tarl:
+  description: No description available.
+  fields:
+    - name: TARGET_TIME_LOW
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/time_sel:
+  description: No description available.
+  fields:
+    - name: CAN0_TIME_SEL
+      description: set to use ptpc1 for canx clr to use ptpc0 for canx.
+      bit_offset: 0
+      bit_size: 1
+    - name: CAN1_TIME_SEL
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: CAN2_TIME_SEL
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: CAN3_TIME_SEL
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+fieldset/timeh:
+  description: timestamp high.
+  fields:
+    - name: TIMESTAMP_HIGH
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/timel:
+  description: timestamp low.
+  fields:
+    - name: TIMESTAMP_LOW
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ts_updth:
+  description: timestamp update high.
+  fields:
+    - name: SEC_UPDATE
+      description: together with ts_updtl, used to initial or update timestamp.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ts_updtl:
+  description: timestamp update low.
+  fields:
+    - name: NS_UPDATE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 31
+    - name: ADD_SUB
+      description: 1 for sub; 0 for add, used only at update.
+      bit_offset: 31
+      bit_size: 1

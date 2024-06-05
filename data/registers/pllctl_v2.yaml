@@ -1,0 +1,181 @@
+block/PLL:
+  description: no description available.
+  items:
+    - name: MFI
+      description: PLL0 multiple register.
+      byte_offset: 0
+      fieldset: MFI
+    - name: MFN
+      description: PLL0 fraction numerator register.
+      byte_offset: 4
+      fieldset: MFN
+    - name: MFD
+      description: PLL0 fraction demoninator register.
+      byte_offset: 8
+      fieldset: MFD
+    - name: SS_STEP
+      description: PLL0 spread spectrum step register.
+      byte_offset: 12
+      fieldset: SS_STEP
+    - name: SS_STOP
+      description: PLL0 spread spectrum stop register.
+      byte_offset: 16
+      fieldset: SS_STOP
+    - name: CONFIG
+      description: PLL0 confguration register.
+      byte_offset: 20
+      fieldset: CONFIG
+    - name: LOCKTIME
+      description: PLL0 lock time register.
+      byte_offset: 24
+      fieldset: LOCKTIME
+    - name: STEPTIME
+      description: PLL0 step time register.
+      byte_offset: 28
+      fieldset: STEPTIME
+    - name: ADVANCED
+      description: PLL0 advance configuration register.
+      byte_offset: 32
+      fieldset: ADVANCED
+    - name: DIV
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 64
+      fieldset: DIV
+block/PLLCTLV2:
+  description: PLLCTLV2.
+  items:
+    - name: XTAL
+      description: OSC configuration.
+      byte_offset: 0
+      fieldset: XTAL
+    - name: PLL
+      description: no description available.
+      array:
+        len: 5
+        stride: 128
+      byte_offset: 128
+      block: PLL
+fieldset/ADVANCED:
+  description: PLL0 advance configuration register.
+  fields:
+    - name: DITHER
+      description: Enable dither function.
+      bit_offset: 24
+      bit_size: 1
+    - name: SLOW
+      description: "Use slow lock flow, PLL lock expendite is disabled. This mode might be stabler. And software need config LOCKTIME field accordingly. 0: fast lock enabled, lock time is 100us 1: fast lock disabled, lock time is 400us."
+      bit_offset: 28
+      bit_size: 1
+fieldset/CONFIG:
+  description: PLL0 confguration register.
+  fields:
+    - name: REFSEL
+      description: "Select reference clock, This filed support changing while running, but application must take frequency error and jitter into consideration. And if MFN changed before reference switch, application need make sure time is enough for MFN updating. 0: XTAL24M 1: IRC24M."
+      bit_offset: 0
+      bit_size: 1
+    - name: SPREAD
+      description: Enable spread spectrum function. This field supports changing during PLL running.
+      bit_offset: 8
+      bit_size: 1
+fieldset/DIV:
+  description: no description available.
+  fields:
+    - name: DIV
+      description: "Divider factor, divider factor is DIV/5 + 1 0: divide by 1 1: divide by 1.2 2: divide by 1.4 . . . 63: divide by 13.6."
+      bit_offset: 0
+      bit_size: 6
+    - name: ENABLE
+      description: "Divider enable status 0: Divider is off 1: Divider is on."
+      bit_offset: 28
+      bit_size: 1
+    - name: RESPONSE
+      description: "Divider response status 0: Divider is not stable 1: Divider is stable for use."
+      bit_offset: 29
+      bit_size: 1
+    - name: BUSY
+      description: "Busy flag 0: divider is working 1: divider is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/LOCKTIME:
+  description: PLL0 lock time register.
+  fields:
+    - name: LOCKTIME
+      description: Lock time of PLL in 24M clock cycles, typical value is 2500. If MFI changed during PLL startup, PLL lock time may be longer than this setting.
+      bit_offset: 0
+      bit_size: 16
+fieldset/MFD:
+  description: PLL0 fraction demoninator register.
+  fields:
+    - name: MFD
+      description: Demoninator of fraction part,f=fref*(mfi + mfn/mfd). This field should not be changed during PLL enabled. If changed, change will take efftect when PLL re-enabled.
+      bit_offset: 0
+      bit_size: 30
+fieldset/MFI:
+  description: PLL0 multiple register.
+  fields:
+    - name: MFI
+      description: "loop back divider of PLL, support from 13 to 42, f=fref*(mfi + mfn/mfd) 0-15: invalid 16: divide by 16 17: divide by17 . . . 42: divide by 42 43~:invalid."
+      bit_offset: 0
+      bit_size: 7
+    - name: ENABLE
+      description: "PLL enable status 0: PLL is off 1: PLL is on."
+      bit_offset: 28
+      bit_size: 1
+    - name: RESPONSE
+      description: "PLL status 0: PLL is not stable 1: PLL is stable for use."
+      bit_offset: 29
+      bit_size: 1
+    - name: BUSY
+      description: "Busy flag 0: PLL is stable or shutdown 1: PLL is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/MFN:
+  description: PLL0 fraction numerator register.
+  fields:
+    - name: MFN
+      description: Numeratorof fractional part,f=fref*(mfi + mfn/mfd). This field supports changing while running.
+      bit_offset: 0
+      bit_size: 30
+fieldset/SS_STEP:
+  description: PLL0 spread spectrum step register.
+  fields:
+    - name: STEP
+      description: Step of spread spectrum modulator. This register should not be changed during PLL and spread spectrum enabled. If changed, new value will take effect when PLL disabled or spread spectrum disabled.
+      bit_offset: 0
+      bit_size: 30
+fieldset/SS_STOP:
+  description: PLL0 spread spectrum stop register.
+  fields:
+    - name: STOP
+      description: Stop point of spread spectrum modulator This register should not be changed during PLL and spread spectrum enabled. If changed, new value will take effect when PLL disabled or spread spectrum disabled.
+      bit_offset: 0
+      bit_size: 30
+fieldset/STEPTIME:
+  description: PLL0 step time register.
+  fields:
+    - name: STEPTIME
+      description: Step time for MFI on-the-fly change in 24M clock cycles, typical value is 2500.
+      bit_offset: 0
+      bit_size: 16
+fieldset/XTAL:
+  description: OSC configuration.
+  fields:
+    - name: RAMP_TIME
+      description: "Rampup time of XTAL oscillator in cycles of RC24M clock 0: 0 cycle 1: 1 cycle 2: 2 cycle 1048575: 1048575 cycles."
+      bit_offset: 0
+      bit_size: 20
+    - name: ENABLE
+      description: "Crystal oscillator enable status 0: Oscillator is off 1: Oscillator is on."
+      bit_offset: 28
+      bit_size: 1
+    - name: RESPONSE
+      description: "Crystal oscillator status 0: Oscillator is not stable 1: Oscillator is stable for use."
+      bit_offset: 29
+      bit_size: 1
+    - name: BUSY
+      description: "Busy flag 0: Oscillator is working or shutdown 1: Oscillator is changing status."
+      bit_offset: 31
+      bit_size: 1

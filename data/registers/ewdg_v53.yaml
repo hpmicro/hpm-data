@@ -1,0 +1,229 @@
+block/EWDG0:
+  description: EWDG0.
+  items:
+    - name: CTRL0
+      description: "wdog ctrl register 0 Note: Parity check is required once writing to this register. The result should be zero by modular two addition of all bits."
+      byte_offset: 0
+      fieldset: CTRL0
+    - name: CTRL1
+      description: "wdog ctrl register 1 Note: Parity check is required once writing to this register. The result should be zero by modular two addition of all bits."
+      byte_offset: 4
+      fieldset: CTRL1
+    - name: OT_INT_VAL
+      description: wdog timeout interrupt counter value.
+      byte_offset: 8
+      fieldset: OT_INT_VAL
+    - name: OT_RST_VAL
+      description: wdog timeout reset counter value.
+      byte_offset: 12
+      fieldset: OT_RST_VAL
+    - name: WDT_REFRESH_REG
+      description: wdog refresh register.
+      byte_offset: 16
+      fieldset: WDT_REFRESH_REG
+    - name: WDT_STATUS
+      description: wdog status register.
+      byte_offset: 20
+      fieldset: WDT_STATUS
+    - name: CFG_PROT
+      description: ctrl register protection register.
+      byte_offset: 24
+      fieldset: CFG_PROT
+    - name: REF_PROT
+      description: refresh protection register.
+      byte_offset: 28
+      fieldset: REF_PROT
+    - name: WDT_EN
+      description: Wdog enable.
+      byte_offset: 32
+      fieldset: WDT_EN
+    - name: REF_TIME
+      description: Refresh period value.
+      byte_offset: 36
+      fieldset: REF_TIME
+fieldset/CFG_PROT:
+  description: ctrl register protection register.
+  fields:
+    - name: UPD_PSD
+      description: The password of unlocking register update.
+      bit_offset: 0
+      bit_size: 16
+    - name: UPD_OT_TIME
+      description: The period in which register update has to be in after unlock The required period is less than： 128 * 2 ^ UPD_OT_TIME * bus_clock_cycle.
+      bit_offset: 16
+      bit_size: 4
+fieldset/CTRL0:
+  description: "wdog ctrl register 0 Note: Parity check is required once writing to this register. The result should be zero by modular two addition of all bits."
+  fields:
+    - name: EN_LP
+      description: "WDT enable or not in low power mode 2'b00: wdt is halted once in low power mode 2'b01: wdt will work with 1/4 normal clock freq in low power mode 2'b10: wdt will work with 1/2 normal clock freq in low power mode 2'b11: wdt will work with normal clock freq in low power mode."
+      bit_offset: 0
+      bit_size: 2
+    - name: EN_DBG
+      description: WTD enable or not in debug mode.
+      bit_offset: 2
+      bit_size: 1
+    - name: REF_UNLOCK_MEC
+      description: "Unlock refresh mechanism 00: the required unlock password is the same with refresh_psd_register 01: the required unlock password is a ring shift left value of refresh_psd_register 10: the required unlock password is always 16'h55AA, no matter what refresh_psd_register is 11: the required unlock password is a LSFR result of refresh_psd_register, the characteristic polynomial is X^15 + 1."
+      bit_offset: 3
+      bit_size: 2
+    - name: REF_LOCK
+      description: WDT refresh has to be unlocked firstly once refresh lock is enable.
+      bit_offset: 5
+      bit_size: 1
+    - name: WIN_UPPER
+      description: "The upper threshold of window value The window period upper limit is: lower_limit + (overtime_rst_value / 16) * upper_reg_value If this register value is zero, then no upper level limitation."
+      bit_offset: 12
+      bit_size: 3
+    - name: REF_OT_REQ
+      description: "If refresh event has to be limited into a period after refresh unlocked. Note: the refresh overtime counter works in bus clock domain, not in wdt function clock domain. The wdt divider doesn't take effect for refresh counter."
+      bit_offset: 15
+      bit_size: 1
+    - name: OT_SELF_CLEAR
+      description: overtime reset can be self released after 32 function cycles.
+      bit_offset: 17
+      bit_size: 1
+    - name: CFG_LOCK
+      description: The register is locked and unlock is needed before re-config registers Once the lock mechanism takes effect, the CTRL0, CTRL1, timeout int register, timeout rst register, needs unlock before re-config them. The register update needs to be finished in the required period defined by UPD_OT_TIME register.
+      bit_offset: 21
+      bit_size: 1
+    - name: WIN_LOWER
+      description: "Once window mode is opened, the lower counter value to refresh wdt 00: 4/8 overtime value 01: 5/8 of overtime value 10: 6/8 of overtime value 11: 7/8 of overtime value."
+      bit_offset: 22
+      bit_size: 2
+    - name: WIN_EN
+      description: window mode enable.
+      bit_offset: 24
+      bit_size: 1
+    - name: DIV_VALUE
+      description: clock divider, the clock divider works as 2 ^ div_value for wdt counter.
+      bit_offset: 25
+      bit_size: 3
+    - name: CLK_SEL
+      description: clock select 0：bus clock 1：ext clock.
+      bit_offset: 29
+      bit_size: 1
+fieldset/CTRL1:
+  description: "wdog ctrl register 1 Note: Parity check is required once writing to this register. The result should be zero by modular two addition of all bits."
+  fields:
+    - name: PARITY_FAIL_INT_EN
+      description: Parity error will trigger a interrupt.
+      bit_offset: 2
+      bit_size: 1
+    - name: PARITY_FAIL_RST_EN
+      description: Parity error will trigger a reset A parity check is required once writing to ctrl0 and ctrl1 register. The result should be zero by modular two addition of all bits.
+      bit_offset: 3
+      bit_size: 1
+    - name: UNL_CTL_FAIL_INT_EN
+      description: Unlock register update failure will trigger a interrupt.
+      bit_offset: 4
+      bit_size: 1
+    - name: UNL_CTL_FAIL_RST_EN
+      description: Unlock register update failure will trigger a reset.
+      bit_offset: 5
+      bit_size: 1
+    - name: CTL_VIO_INT_EN
+      description: Ctrl update violation will trigger a interrupt.
+      bit_offset: 6
+      bit_size: 1
+    - name: CTL_VIO_RST_EN
+      description: Ctrl update violation will trigger a reset The violation event is to try updating the locked register before unlock them.
+      bit_offset: 7
+      bit_size: 1
+    - name: OT_INT_EN
+      description: WDT can generate an interrupt warning before timeout.
+      bit_offset: 16
+      bit_size: 1
+    - name: OT_RST_EN
+      description: WDT overtime will generate a reset.
+      bit_offset: 17
+      bit_size: 1
+    - name: UNL_REF_FAIL_INT_EN
+      description: Refresh unlock fail will trigger a interrupt.
+      bit_offset: 20
+      bit_size: 1
+    - name: UNL_REF_FAIL_RST_EN
+      description: Refresh unlock fail will trigger a reset.
+      bit_offset: 21
+      bit_size: 1
+    - name: REF_FAIL_INT_EN
+      description: Refresh violation will trigger an interrupt.
+      bit_offset: 22
+      bit_size: 1
+    - name: REF_FAIL_RST_EN
+      description: "Refresh violation will trigger an reset. These event will be taken as a refresh violation: 1) Not refresh in the window once window mode is enabled 2) Not unlock refresh firstly if unlock is required 3) Not refresh in the required time after unlock, once refresh unlock overtime is enabled. 4) Not write the required word to refresh wdt."
+      bit_offset: 23
+      bit_size: 1
+fieldset/OT_INT_VAL:
+  description: wdog timeout interrupt counter value.
+  fields:
+    - name: OT_INT_VAL
+      description: WDT timeout interrupt value.
+      bit_offset: 0
+      bit_size: 16
+fieldset/OT_RST_VAL:
+  description: wdog timeout reset counter value.
+  fields:
+    - name: OT_RST_VAL
+      description: WDT timeout reset value.
+      bit_offset: 0
+      bit_size: 16
+fieldset/REF_PROT:
+  description: refresh protection register.
+  fields:
+    - name: REF_UNL_PSD
+      description: The password to unlock refreshing.
+      bit_offset: 0
+      bit_size: 16
+fieldset/REF_TIME:
+  description: Refresh period value.
+  fields:
+    - name: REFRESH_PERIOD
+      description: "The refresh period after refresh unlocked Note: the refresh overtime counter works in bus clock domain, not in wdt function clock domain. The wdt divider doesn't take effect for refresh counter."
+      bit_offset: 0
+      bit_size: 16
+fieldset/WDT_EN:
+  description: Wdog enable.
+  fields:
+    - name: WDOG_EN
+      description: Wdog is enabled, the re-written of this register is impacted by enable lock function.
+      bit_offset: 0
+      bit_size: 1
+fieldset/WDT_REFRESH_REG:
+  description: wdog refresh register.
+  fields:
+    - name: WDT_REFRESH_REG
+      description: "Write this register by 32'h5A45_524F to refresh wdog Note: Reading this register can read back wdt real time counter value, while it is only used by debug purpose."
+      bit_offset: 0
+      bit_size: 32
+fieldset/WDT_STATUS:
+  description: wdog status register.
+  fields:
+    - name: REF_VIO
+      description: Refresh fail Write one to clear the bit.
+      bit_offset: 0
+      bit_size: 1
+    - name: REF_UNL_FAIL
+      description: Refresh unlock fail Write one to clear the bit.
+      bit_offset: 1
+      bit_size: 1
+    - name: CTL_VIO
+      description: Violate register update protection mechanism Write one to clear the bit.
+      bit_offset: 2
+      bit_size: 1
+    - name: CTL_UNL_FAIL
+      description: Unlock ctrl reg update protection fail Write one to clear the bit.
+      bit_offset: 3
+      bit_size: 1
+    - name: OT_INT
+      description: Timeout happens, a interrupt will happen once enable bit set This bit can be cleared only by refreshing wdt or reset.
+      bit_offset: 4
+      bit_size: 1
+    - name: OT_RST
+      description: Timeout happens, a reset will happen once enable bit set This bit can be cleared only by refreshing wdt or reset.
+      bit_offset: 5
+      bit_size: 1
+    - name: PARITY_ERROR
+      description: parity error Write one to clear the bit.
+      bit_offset: 6
+      bit_size: 1

@@ -1,0 +1,113 @@
+block/CHN:
+  description: no description available.
+  items:
+    - name: pre_set
+      description: "&index0 pre set for crc setting."
+      byte_offset: 0
+      fieldset: pre_set
+    - name: clr
+      description: chn&index0 clear crc result and setting.
+      byte_offset: 4
+      fieldset: clr
+    - name: poly
+      description: chn&index0 poly.
+      byte_offset: 8
+      fieldset: poly
+    - name: init_data
+      description: chn&index0 init_data.
+      byte_offset: 12
+      fieldset: init_data
+    - name: xorout
+      description: chn&index0 xorout.
+      byte_offset: 16
+      fieldset: xorout
+    - name: misc_setting
+      description: chn&index0 misc_setting.
+      byte_offset: 20
+      fieldset: misc_setting
+    - name: data
+      description: chn&index0 data.
+      byte_offset: 24
+      fieldset: data
+    - name: result
+      description: chn&index0 result.
+      byte_offset: 28
+      fieldset: result
+block/CRC:
+  description: CRC.
+  items:
+    - name: CHN
+      description: no description available.
+      array:
+        len: 8
+        stride: 64
+      byte_offset: 0
+      block: CHN
+fieldset/clr:
+  description: chn&index0 clear crc result and setting.
+  fields:
+    - name: CLR
+      description: write 1 to clr crc setting and result for its channel. always read 0.
+      bit_offset: 0
+      bit_size: 1
+fieldset/data:
+  description: chn&index0 data.
+  fields:
+    - name: DATA
+      description: data for crc.
+      bit_offset: 0
+      bit_size: 32
+fieldset/init_data:
+  description: chn&index0 init_data.
+  fields:
+    - name: INIT_DATA
+      description: initial data of CRC.
+      bit_offset: 0
+      bit_size: 32
+fieldset/misc_setting:
+  description: chn&index0 misc_setting.
+  fields:
+    - name: POLY_WIDTH
+      description: crc data length.
+      bit_offset: 0
+      bit_size: 6
+    - name: REV_IN
+      description: "0: no wrap input bit order 1: wrap input bit order."
+      bit_offset: 8
+      bit_size: 1
+    - name: REV_OUT
+      description: "0: no wrap output bit order 1: wrap output bit order."
+      bit_offset: 16
+      bit_size: 1
+    - name: BYTE_REV
+      description: "0: no wrap input byte order 1: wrap input byte order."
+      bit_offset: 24
+      bit_size: 1
+fieldset/poly:
+  description: chn&index0 poly.
+  fields:
+    - name: POLY
+      description: poly setting.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pre_set:
+  description: "&index0 pre set for crc setting."
+  fields:
+    - name: PRE_SET
+      description: "0: no pre set 1: CRC32 2: CRC32-AUTOSAR 3: CRC16-CCITT 4: CRC16-XMODEM 5: CRC16-MODBUS 1: CRC32 2: CRC32-autosar 3: CRC16-ccitt 4: CRC16-xmodem 5: CRC16-modbus 6: crc16_dnp 7: crc16_x25 8: crc16_usb 9: crc16_maxim 10: crc16_ibm 11: crc8_maxim 12: crc8_rohc 13: crc8_itu 14: crc8 15: crc5_usb."
+      bit_offset: 0
+      bit_size: 8
+fieldset/result:
+  description: chn&index0 result.
+  fields:
+    - name: RESULT
+      description: crc result.
+      bit_offset: 0
+      bit_size: 32
+fieldset/xorout:
+  description: chn&index0 xorout.
+  fields:
+    - name: XOROUT
+      description: XOR for CRC result.
+      bit_offset: 0
+      bit_size: 32

@@ -1,0 +1,152 @@
+block/PDGO:
+  description: PDGO.
+  items:
+    - name: DGO_TURNOFF
+      description: trunoff control.
+      byte_offset: 0
+      fieldset: DGO_TURNOFF
+    - name: DGO_RC32K_CFG
+      description: RC32K CLOCK.
+      byte_offset: 4
+      fieldset: DGO_RC32K_CFG
+    - name: DGO_GPR00
+      description: Generic control 0.
+      byte_offset: 1536
+      fieldset: DGO_GPR00
+    - name: DGO_GPR01
+      description: Generic control 1.
+      byte_offset: 1540
+      fieldset: DGO_GPR01
+    - name: DGO_GPR02
+      description: Generic control 2.
+      byte_offset: 1544
+      fieldset: DGO_GPR02
+    - name: DGO_GPR03
+      description: Generic control 3.
+      byte_offset: 1548
+      fieldset: DGO_GPR03
+    - name: DGO_CTR0
+      description: control register 0.
+      byte_offset: 1792
+      fieldset: DGO_CTR0
+    - name: DGO_CTR1
+      description: control register 1.
+      byte_offset: 1796
+      fieldset: DGO_CTR1
+    - name: DGO_CTR2
+      description: control register 2.
+      byte_offset: 1800
+      fieldset: DGO_CTR2
+    - name: DGO_CTR3
+      description: control register 3.
+      byte_offset: 1804
+      fieldset: DGO_CTR3
+    - name: DGO_CTR4
+      description: control register 4.
+      byte_offset: 1808
+      fieldset: DGO_CTR4
+fieldset/DGO_CTR0:
+  description: control register 0.
+  fields:
+    - name: RETENTION
+      description: dgo register status retenion.
+      bit_offset: 16
+      bit_size: 1
+fieldset/DGO_CTR1:
+  description: control register 1.
+  fields:
+    - name: PIN_WAKEUP_STATUS
+      description: wakeup pin status.
+      bit_offset: 0
+      bit_size: 1
+    - name: WAKEUP_EN
+      description: permit wakeup pin or software wakeup.
+      bit_offset: 16
+      bit_size: 1
+    - name: AOTO_SYS_WAKEUP
+      description: "software wakeup： 0 : wakeup once； 1：auto wakeup Continuously."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DGO_CTR2:
+  description: control register 2.
+  fields:
+    - name: WAKEUP_PULLDN_DISABLE
+      description: wakeup pin pull down disable.
+      bit_offset: 16
+      bit_size: 1
+    - name: RESETN_PULLUP_DISABLE
+      description: resetn pin pull up disable.
+      bit_offset: 24
+      bit_size: 1
+fieldset/DGO_CTR3:
+  description: control register 3.
+  fields:
+    - name: WAKEUP_COUNTER
+      description: software wakeup counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DGO_CTR4:
+  description: control register 4.
+  fields:
+    - name: BANDGAP_LP_MODE
+      description: "Banggap work in low power mode, banggap function limited 0: banggap works in normal mode 1: banggap works in low power mode."
+      bit_offset: 0
+      bit_size: 1
+    - name: BANDGAP_LESS_POWER
+      description: "Banggap work in power save mode, banggap function normally 0: banggap works in high performance mode 1: banggap works in power saving mode."
+      bit_offset: 1
+      bit_size: 1
+fieldset/DGO_GPR00:
+  description: Generic control 0.
+  fields:
+    - name: GPR
+      description: Generic control.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DGO_GPR01:
+  description: Generic control 1.
+  fields:
+    - name: GPR
+      description: Generic control.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DGO_GPR02:
+  description: Generic control 2.
+  fields:
+    - name: GPR
+      description: Generic control.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DGO_GPR03:
+  description: Generic control 3.
+  fields:
+    - name: GPR
+      description: Generic control.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DGO_RC32K_CFG:
+  description: RC32K CLOCK.
+  fields:
+    - name: CAP_TRIM
+      description: capacitor trim bits.
+      bit_offset: 0
+      bit_size: 9
+    - name: CAPEX6_TRIM
+      description: IRC32K bit 6.
+      bit_offset: 22
+      bit_size: 1
+    - name: CAPEX7_TRIM
+      description: IRC32K bit 7.
+      bit_offset: 23
+      bit_size: 1
+    - name: IRC_TRIMMED
+      description: "IRC32K trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: irc is not trimmed 1: irc is trimmed."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DGO_TURNOFF:
+  description: trunoff control.
+  fields:
+    - name: COUNTER
+      description: trunoff counter, counter stops when it counts down to 0, the trunoff occurs when the counter value is 1.
+      bit_offset: 0
+      bit_size: 32

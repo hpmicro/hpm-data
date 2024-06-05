@@ -1,0 +1,369 @@
+block/AS:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO interrupt asynchronous value.
+      byte_offset: 0
+      fieldset: AS_VALUE
+    - name: SET
+      description: GPIO interrupt asynchronous set.
+      byte_offset: 4
+      fieldset: AS_SET
+    - name: CLEAR
+      description: GPIO interrupt asynchronous clear.
+      byte_offset: 8
+      fieldset: AS_CLEAR
+    - name: TOGGLE
+      description: GPIO interrupt asynchronous toggle.
+      byte_offset: 12
+      fieldset: AS_TOGGLE
+block/DI:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO input value.
+      byte_offset: 0
+      fieldset: DI_VALUE
+block/DO:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO output value.
+      byte_offset: 0
+      fieldset: DO_VALUE
+    - name: SET
+      description: GPIO output set.
+      byte_offset: 4
+      fieldset: DO_SET
+    - name: CLEAR
+      description: GPIO output clear.
+      byte_offset: 8
+      fieldset: DO_CLEAR
+    - name: TOGGLE
+      description: GPIO output toggle.
+      byte_offset: 12
+      fieldset: DO_TOGGLE
+block/GPIO:
+  description: FGPIO.
+  items:
+    - name: DI
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 0
+      block: DI
+    - name: DO
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 256
+      block: DO
+    - name: OE
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 512
+      block: OE
+    - name: IF
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 768
+      block: IF
+    - name: IE
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 1024
+      block: IE
+    - name: PL
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 1280
+      block: PL
+    - name: TP
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 1536
+      block: TP
+    - name: AS
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 1792
+      block: AS
+block/IE:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO interrupt enable value.
+      byte_offset: 0
+      fieldset: IE_VALUE
+    - name: SET
+      description: GPIO interrupt enable set.
+      byte_offset: 4
+      fieldset: IE_SET
+    - name: CLEAR
+      description: GPIO interrupt enable clear.
+      byte_offset: 8
+      fieldset: IE_CLEAR
+    - name: TOGGLE
+      description: GPIO interrupt enable toggle.
+      byte_offset: 12
+      fieldset: IE_TOGGLE
+block/IF:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO interrupt flag value.
+      byte_offset: 0
+      fieldset: IF_VALUE
+block/OE:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO direction value.
+      byte_offset: 0
+      fieldset: OE_VALUE
+    - name: SET
+      description: GPIO direction set.
+      byte_offset: 4
+      fieldset: OE_SET
+    - name: CLEAR
+      description: GPIO direction clear.
+      byte_offset: 8
+      fieldset: OE_CLEAR
+    - name: TOGGLE
+      description: GPIO direction toggle.
+      byte_offset: 12
+      fieldset: OE_TOGGLE
+block/PL:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO interrupt polarity value.
+      byte_offset: 0
+      fieldset: PL_VALUE
+    - name: SET
+      description: GPIO interrupt polarity set.
+      byte_offset: 4
+      fieldset: PL_SET
+    - name: CLEAR
+      description: GPIO interrupt polarity clear.
+      byte_offset: 8
+      fieldset: PL_CLEAR
+    - name: TOGGLE
+      description: GPIO interrupt polarity toggle.
+      byte_offset: 12
+      fieldset: PL_TOGGLE
+block/TP:
+  description: no description available.
+  items:
+    - name: VALUE
+      description: GPIO interrupt type value.
+      byte_offset: 0
+      fieldset: TP_VALUE
+    - name: SET
+      description: GPIO interrupt type set.
+      byte_offset: 4
+      fieldset: TP_SET
+    - name: CLEAR
+      description: GPIO interrupt type clear.
+      byte_offset: 8
+      fieldset: TP_CLEAR
+    - name: TOGGLE
+      description: GPIO interrupt type toggle.
+      byte_offset: 12
+      fieldset: TP_TOGGLE
+fieldset/AS_CLEAR:
+  description: GPIO interrupt asynchronous clear.
+  fields:
+    - name: IRQ_ASYNC
+      description: "GPIO interrupt asynchronous, each bit represents a bus bit 0: irq is triggered base on system clock 1: irq is triggered combinational Note: combinational interrupt is sensitive to environment noise."
+      bit_offset: 0
+      bit_size: 32
+fieldset/AS_SET:
+  description: GPIO interrupt asynchronous set.
+  fields:
+    - name: IRQ_ASYNC
+      description: "GPIO interrupt asynchronous, each bit represents a bus bit 0: irq is triggered base on system clock 1: irq is triggered combinational Note: combinational interrupt is sensitive to environment noise."
+      bit_offset: 0
+      bit_size: 32
+fieldset/AS_TOGGLE:
+  description: GPIO interrupt asynchronous toggle.
+  fields:
+    - name: IRQ_ASYNC
+      description: "GPIO interrupt asynchronous, each bit represents a bus bit 0: irq is triggered base on system clock 1: irq is triggered combinational Note: combinational interrupt is sensitive to environment noise."
+      bit_offset: 0
+      bit_size: 32
+fieldset/AS_VALUE:
+  description: GPIO interrupt asynchronous value.
+  fields:
+    - name: IRQ_ASYNC
+      description: "GPIO interrupt asynchronous, each bit represents a bus bit 0: irq is triggered base on system clock 1: irq is triggered combinational Note: combinational interrupt is sensitive to environment noise."
+      bit_offset: 0
+      bit_size: 32
+fieldset/DI_VALUE:
+  description: GPIO input value.
+  fields:
+    - name: INPUT
+      description: "GPIO input bus value, each bit represents a bus bit 0: low level presents on chip pin 1: high level presents on chip pin."
+      bit_offset: 0
+      bit_size: 32
+fieldset/DO_CLEAR:
+  description: GPIO output clear.
+  fields:
+    - name: OUTPUT
+      description: "GPIO output register value, each bit represents a bus bit 0: chip pin output low level when direction is output 1: chip pin output high level when direction is output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/DO_SET:
+  description: GPIO output set.
+  fields:
+    - name: OUTPUT
+      description: "GPIO output register value, each bit represents a bus bit 0: chip pin output low level when direction is output 1: chip pin output high level when direction is output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/DO_TOGGLE:
+  description: GPIO output toggle.
+  fields:
+    - name: OUTPUT
+      description: "GPIO output register value, each bit represents a bus bit 0: chip pin output low level when direction is output 1: chip pin output high level when direction is output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/DO_VALUE:
+  description: GPIO output value.
+  fields:
+    - name: OUTPUT
+      description: "GPIO output register value, each bit represents a bus bit 0: chip pin output low level when direction is output 1: chip pin output high level when direction is output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/IE_CLEAR:
+  description: GPIO interrupt enable clear.
+  fields:
+    - name: IRQ_EN
+      description: "GPIO interrupt enable, each bit represents a bus bit 0: irq is disabled 1: irq is enable."
+      bit_offset: 0
+      bit_size: 32
+fieldset/IE_SET:
+  description: GPIO interrupt enable set.
+  fields:
+    - name: IRQ_EN
+      description: "GPIO interrupt enable, each bit represents a bus bit 0: irq is disabled 1: irq is enable."
+      bit_offset: 0
+      bit_size: 32
+fieldset/IE_TOGGLE:
+  description: GPIO interrupt enable toggle.
+  fields:
+    - name: IRQ_EN
+      description: "GPIO interrupt enable, each bit represents a bus bit 0: irq is disabled 1: irq is enable."
+      bit_offset: 0
+      bit_size: 32
+fieldset/IE_VALUE:
+  description: GPIO interrupt enable value.
+  fields:
+    - name: IRQ_EN
+      description: "GPIO interrupt enable, each bit represents a bus bit 0: irq is disabled 1: irq is enable."
+      bit_offset: 0
+      bit_size: 32
+fieldset/IF_VALUE:
+  description: GPIO interrupt flag value.
+  fields:
+    - name: IRQ_FLAG
+      description: "GPIO interrupt flag, write 1 to clear this flag 0: no irq 1: irq pending."
+      bit_offset: 0
+      bit_size: 32
+fieldset/OE_CLEAR:
+  description: GPIO direction clear.
+  fields:
+    - name: DIRECTION
+      description: "GPIO direction, each bit represents a bus bit 0: input 1: output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/OE_SET:
+  description: GPIO direction set.
+  fields:
+    - name: DIRECTION
+      description: "GPIO direction, each bit represents a bus bit 0: input 1: output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/OE_TOGGLE:
+  description: GPIO direction toggle.
+  fields:
+    - name: DIRECTION
+      description: "GPIO direction, each bit represents a bus bit 0: input 1: output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/OE_VALUE:
+  description: GPIO direction value.
+  fields:
+    - name: DIRECTION
+      description: "GPIO direction, each bit represents a bus bit 0: input 1: output."
+      bit_offset: 0
+      bit_size: 32
+fieldset/PL_CLEAR:
+  description: GPIO interrupt polarity clear.
+  fields:
+    - name: IRQ_POL
+      description: "GPIO interrupt polarity, each bit represents a bus bit 0: irq is high level or rising edge 1: irq is low level or falling edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/PL_SET:
+  description: GPIO interrupt polarity set.
+  fields:
+    - name: IRQ_POL
+      description: "GPIO interrupt polarity, each bit represents a bus bit 0: irq is high level or rising edge 1: irq is low level or falling edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/PL_TOGGLE:
+  description: GPIO interrupt polarity toggle.
+  fields:
+    - name: IRQ_POL
+      description: "GPIO interrupt polarity, each bit represents a bus bit 0: irq is high level or rising edge 1: irq is low level or falling edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/PL_VALUE:
+  description: GPIO interrupt polarity value.
+  fields:
+    - name: IRQ_POL
+      description: "GPIO interrupt polarity, each bit represents a bus bit 0: irq is high level or rising edge 1: irq is low level or falling edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/TP_CLEAR:
+  description: GPIO interrupt type clear.
+  fields:
+    - name: IRQ_TYPE
+      description: "GPIO interrupt type, each bit represents a bus bit 0: irq is triggered by level 1: irq is triggered by edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/TP_SET:
+  description: GPIO interrupt type set.
+  fields:
+    - name: IRQ_TYPE
+      description: "GPIO interrupt type, each bit represents a bus bit 0: irq is triggered by level 1: irq is triggered by edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/TP_TOGGLE:
+  description: GPIO interrupt type toggle.
+  fields:
+    - name: IRQ_TYPE
+      description: "GPIO interrupt type, each bit represents a bus bit 0: irq is triggered by level 1: irq is triggered by edge."
+      bit_offset: 0
+      bit_size: 32
+fieldset/TP_VALUE:
+  description: GPIO interrupt type value.
+  fields:
+    - name: IRQ_TYPE
+      description: "GPIO interrupt type, each bit represents a bus bit 0: irq is triggered by level 1: irq is triggered by edge."
+      bit_offset: 0
+      bit_size: 32

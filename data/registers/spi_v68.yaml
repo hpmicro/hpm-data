@@ -1,0 +1,481 @@
+block/SPI:
+  description: SPI0.
+  items:
+    - name: wr_trans_cnt
+      description: Transfer count for write data.
+      byte_offset: 4
+      fieldset: wr_trans_cnt
+    - name: rd_trans_cnt
+      description: Transfer count for read data.
+      byte_offset: 8
+      fieldset: rd_trans_cnt
+    - name: TransFmt
+      description: Transfer Format Register.
+      byte_offset: 16
+      fieldset: TransFmt
+    - name: DirectIO
+      description: Direct IO Control Register.
+      byte_offset: 20
+      fieldset: DirectIO
+    - name: TransCtrl
+      description: Transfer Control Register.
+      byte_offset: 32
+      fieldset: TransCtrl
+    - name: Cmd
+      description: Command Register.
+      byte_offset: 36
+      fieldset: Cmd
+    - name: Addr
+      description: Address Register.
+      byte_offset: 40
+      fieldset: Addr
+    - name: Data
+      description: Data Register.
+      byte_offset: 44
+      fieldset: Data
+    - name: Ctrl
+      description: Control Register.
+      byte_offset: 48
+      fieldset: Ctrl
+    - name: Status
+      description: Status Register.
+      byte_offset: 52
+      fieldset: Status
+    - name: IntrEn
+      description: Interrupt Enable Register.
+      byte_offset: 56
+      fieldset: IntrEn
+    - name: IntrSt
+      description: Interrupt Status Register.
+      byte_offset: 60
+      fieldset: IntrSt
+    - name: Timing
+      description: Interface Timing Register.
+      byte_offset: 64
+      fieldset: Timing
+    - name: SlvSt
+      description: Slave Status Register.
+      byte_offset: 96
+      fieldset: SlvSt
+    - name: SlvDataCnt
+      description: Slave Data Count Register.
+      byte_offset: 100
+      fieldset: SlvDataCnt
+    - name: SlvDataWCnt
+      description: WCnt.
+      byte_offset: 104
+      fieldset: SlvDataWCnt
+    - name: SlvDataRCnt
+      description: RCnt.
+      byte_offset: 108
+      fieldset: SlvDataRCnt
+    - name: Config
+      description: Configuration Register.
+      byte_offset: 124
+      fieldset: Config
+fieldset/Addr:
+  description: Address Register.
+  fields:
+    - name: ADDR
+      description: SPI Address (Master mode only).
+      bit_offset: 0
+      bit_size: 32
+fieldset/Cmd:
+  description: Command Register.
+  fields:
+    - name: CMD
+      description: SPI Command.
+      bit_offset: 0
+      bit_size: 8
+fieldset/Config:
+  description: Configuration Register.
+  fields:
+    - name: RXFIFOSIZE
+      description: "Depth of RX FIFO 0x0: 2 words 0x1: 4 words 0x2: 8 words 0x3: 16 words 0x4: 32 words 0x5: 64 words 0x6: 128 words."
+      bit_offset: 0
+      bit_size: 4
+    - name: TXFIFOSIZE
+      description: "Depth of TX FIFO 0x0: 2 words 0x1: 4 words 0x2: 8 words 0x3: 16 words 0x4: 32 words 0x5: 64 words 0x6: 128 words."
+      bit_offset: 4
+      bit_size: 4
+    - name: DUALSPI
+      description: Support for Dual I/O SPI.
+      bit_offset: 8
+      bit_size: 1
+    - name: QUADSPI
+      description: Support for Quad I/O SPI.
+      bit_offset: 9
+      bit_size: 1
+    - name: SLAVE
+      description: Support for SPI Slave mode.
+      bit_offset: 14
+      bit_size: 1
+fieldset/Ctrl:
+  description: Control Register.
+  fields:
+    - name: SPIRST
+      description: SPI reset Write 1 to reset. It is automatically cleared to 0 after the reset operation completes.
+      bit_offset: 0
+      bit_size: 1
+    - name: RXFIFORST
+      description: Receive FIFO reset Write 1 to reset. It is automatically cleared to 0 after the reset operation completes.
+      bit_offset: 1
+      bit_size: 1
+    - name: TXFIFORST
+      description: Transmit FIFO reset Write 1 to reset. It is automatically cleared to 0 after the reset operation completes.
+      bit_offset: 2
+      bit_size: 1
+    - name: RXDMAEN
+      description: RX DMA enable.
+      bit_offset: 3
+      bit_size: 1
+    - name: TXDMAEN
+      description: TX DMA enable.
+      bit_offset: 4
+      bit_size: 1
+    - name: RXTHRES
+      description: Receive (RX) FIFO Threshold The RXFIFOInt interrupt or DMA request would be issued for consuming the RX FIFO when the RX data count is more than or equal to the RX FIFO threshold.
+      bit_offset: 8
+      bit_size: 8
+    - name: TXTHRES
+      description: Transmit (TX) FIFO Threshold The TXFIFOInt interrupt or DMA request would be issued to replenish the TX FIFO when the TX data count is less than or equal to the TX FIFO threshold.
+      bit_offset: 16
+      bit_size: 8
+    - name: CS_EN
+      description: No description available.
+      bit_offset: 24
+      bit_size: 4
+fieldset/Data:
+  description: Data Register.
+  fields:
+    - name: DATA
+      description: Data to transmit or the received data For writes, data is enqueued to the TX FIFO. The least significant byte is always transmitted first. If the TX FIFO is full and the SPIActive bit of the status register is 1, the ready signal hready/pready will be deasserted to insert wait states to the transfer. For reads, data is read and dequeued from the RX FIFO. The least significant byte is the first received byte. If the RX FIFO is empty and the SPIActive bit of the status register is 1, the ready signal hready/pready will be deasserted to insert wait states to the transfer. The FIFOs decouple the speed of the SPI transfers and the software鈥檚 generation/consumption of data. When the TX FIFO is empty, SPI transfers will hold until more data is written to the TX FIFO; when the RX FIFO is full, SPI transfers will hold until there is more room in the RX FIFO. If more data is written to the TX FIFO than the write transfer count (WrTranCnt), the remaining data will stay in the TX FIFO for the next transfer or until the TX FIFO is reset.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DirectIO:
+  description: Direct IO Control Register.
+  fields:
+    - name: CS_I
+      description: Status of the SPI CS (chip select) signal.
+      bit_offset: 0
+      bit_size: 1
+    - name: SCLK_I
+      description: Status of the SPI SCLK signal.
+      bit_offset: 1
+      bit_size: 1
+    - name: MOSI_I
+      description: Status of the SPI MOSI signal.
+      bit_offset: 2
+      bit_size: 1
+    - name: MISO_I
+      description: Status of the SPI MISO signal.
+      bit_offset: 3
+      bit_size: 1
+    - name: WP_I
+      description: Status of the SPI Flash write protect signal.
+      bit_offset: 4
+      bit_size: 1
+    - name: HOLD_I
+      description: Status of the SPI Flash hold signal.
+      bit_offset: 5
+      bit_size: 1
+    - name: CS_O
+      description: Output value for the SPI CS (chip select) signal.
+      bit_offset: 8
+      bit_size: 1
+    - name: SCLK_O
+      description: Output value for the SPI SCLK signal.
+      bit_offset: 9
+      bit_size: 1
+    - name: MOSI_O
+      description: Output value for the SPI MOSI signal.
+      bit_offset: 10
+      bit_size: 1
+    - name: MISO_O
+      description: Output value for the SPI MISO signal.
+      bit_offset: 11
+      bit_size: 1
+    - name: WP_O
+      description: Output value for the SPI Flash write protect signal.
+      bit_offset: 12
+      bit_size: 1
+    - name: HOLD_O
+      description: Output value for the SPI Flash hold signal.
+      bit_offset: 13
+      bit_size: 1
+    - name: CS_OE
+      description: Output enable for SPI CS (chip select) signal.
+      bit_offset: 16
+      bit_size: 1
+    - name: SCLK_OE
+      description: Output enable for the SPI SCLK signal.
+      bit_offset: 17
+      bit_size: 1
+    - name: MOSI_OE
+      description: Output enable for the SPI MOSI signal.
+      bit_offset: 18
+      bit_size: 1
+    - name: MISO_OE
+      description: Output enable fo the SPI MISO signal.
+      bit_offset: 19
+      bit_size: 1
+    - name: WP_OE
+      description: Output enable for the SPI Flash write protect signal.
+      bit_offset: 20
+      bit_size: 1
+    - name: HOLD_OE
+      description: Output enable for the SPI Flash hold signal.
+      bit_offset: 21
+      bit_size: 1
+    - name: DIRECTIOEN
+      description: "Enable Direct IO 0x0: Disable 0x1: Enable."
+      bit_offset: 24
+      bit_size: 1
+fieldset/IntrEn:
+  description: Interrupt Enable Register.
+  fields:
+    - name: RXFIFOORINTEN
+      description: Enable the SPI Receive FIFO Overrun interrupt. Control whether interrupts are triggered when the Receive FIFO overflows. (Slave mode only).
+      bit_offset: 0
+      bit_size: 1
+    - name: TXFIFOURINTEN
+      description: Enable the SPI Transmit FIFO Underrun interrupt. Control whether interrupts are triggered when the Transmit FIFO run out of data. (Slave mode only).
+      bit_offset: 1
+      bit_size: 1
+    - name: RXFIFOINTEN
+      description: Enable the SPI Receive FIFO Threshold interrupt. Control whether interrupts are triggered when the valid entries are greater than or equal to the RX FIFO threshold.
+      bit_offset: 2
+      bit_size: 1
+    - name: TXFIFOINTEN
+      description: Enable the SPI Transmit FIFO Threshold interrupt. Control whether interrupts are triggered when the valid entries are less than or equal to the TX FIFO threshold.
+      bit_offset: 3
+      bit_size: 1
+    - name: ENDINTEN
+      description: Enable the End of SPI Transfer interrupt. Control whether interrupts are triggered when SPI transfers end. (In slave mode, end of read status transaction doesn鈥檛 trigger this interrupt.).
+      bit_offset: 4
+      bit_size: 1
+    - name: SLVCMDEN
+      description: Enable the Slave Command Interrupt. Control whether interrupts are triggered whenever slave commands are received. (Slave mode only).
+      bit_offset: 5
+      bit_size: 1
+fieldset/IntrSt:
+  description: Interrupt Status Register.
+  fields:
+    - name: RXFIFOORINT
+      description: RX FIFO Overrun interrupt. This bit is set when RX FIFO Overrun interrupts occur. (Slave mode only).
+      bit_offset: 0
+      bit_size: 1
+    - name: TXFIFOURINT
+      description: TX FIFO Underrun interrupt. This bit is set when TX FIFO Underrun interrupts occur. (Slave mode only).
+      bit_offset: 1
+      bit_size: 1
+    - name: RXFIFOINT
+      description: RX FIFO Threshold interrupt. This bit is set when RX FIFO Threshold interrupts occur.
+      bit_offset: 2
+      bit_size: 1
+    - name: TXFIFOINT
+      description: TX FIFO Threshold interrupt. This bit is set when TX FIFO Threshold interrupts occur.
+      bit_offset: 3
+      bit_size: 1
+    - name: ENDINT
+      description: End of SPI Transfer interrupt. This bit is set when End of SPI Transfer interrupts occur.
+      bit_offset: 4
+      bit_size: 1
+    - name: SLVCMDINT
+      description: Slave Command Interrupt. This bit is set when Slave Command interrupts occur. (Slave mode only).
+      bit_offset: 5
+      bit_size: 1
+fieldset/SlvDataCnt:
+  description: Slave Data Count Register.
+  fields:
+    - name: RCNT
+      description: Slave received data count.
+      bit_offset: 0
+      bit_size: 10
+    - name: WCNT
+      description: Slave transmitted data count.
+      bit_offset: 16
+      bit_size: 10
+fieldset/SlvDataRCnt:
+  description: RCnt.
+  fields:
+    - name: VAL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SlvDataWCnt:
+  description: WCnt.
+  fields:
+    - name: VAL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SlvSt:
+  description: Slave Status Register.
+  fields:
+    - name: USR_STATUS
+      description: User defined status flags.
+      bit_offset: 0
+      bit_size: 16
+    - name: READY
+      description: Set this bit to indicate that the ATCSPI200 is ready for data transaction. When an SPI transaction other than slave status-reading command ends, this bit will be cleared to 0.
+      bit_offset: 16
+      bit_size: 1
+    - name: OVERRUN
+      description: Data overrun occurs in the last transaction.
+      bit_offset: 17
+      bit_size: 1
+    - name: UNDERRUN
+      description: Data underrun occurs in the last transaction.
+      bit_offset: 18
+      bit_size: 1
+fieldset/Status:
+  description: Status Register.
+  fields:
+    - name: SPIACTIVE
+      description: SPI register programming is in progress. In master mode, SPIActive becomes 1 after the SPI command register is written and becomes 0 after the transfer is finished. In slave mode, SPIActive becomes 1 after the SPI CS signal is asserted and becomes 0 after the SPI CS signal is deasserted. Note that due to clock synchronization, it may take at most two spi_clock cycles for SPIActive to change when the corresponding condition happens. Note this bit stays 0 when Direct IO Control or the memory-mapped interface is used.
+      bit_offset: 0
+      bit_size: 1
+    - name: RXNUM_5_0
+      description: Number of valid entries in the Receive FIFO.
+      bit_offset: 8
+      bit_size: 6
+    - name: RXEMPTY
+      description: Receive FIFO Empty flag.
+      bit_offset: 14
+      bit_size: 1
+    - name: RXFULL
+      description: Receive FIFO Full flag.
+      bit_offset: 15
+      bit_size: 1
+    - name: TXNUM_5_0
+      description: Number of valid entries in the Transmit FIFO.
+      bit_offset: 16
+      bit_size: 6
+    - name: TXEMPTY
+      description: Transmit FIFO Empty flag.
+      bit_offset: 22
+      bit_size: 1
+    - name: TXFULL
+      description: Transmit FIFO Full flag.
+      bit_offset: 23
+      bit_size: 1
+    - name: RXNUM_7_6
+      description: Number of valid entries in the Receive FIFO.
+      bit_offset: 24
+      bit_size: 2
+    - name: TXNUM_7_6
+      description: Number of valid entries in the Transmit FIFO.
+      bit_offset: 28
+      bit_size: 2
+fieldset/Timing:
+  description: Interface Timing Register.
+  fields:
+    - name: SCLK_DIV
+      description: The clock frequency ratio between the clock source and SPI interface SCLK. SCLK_period = ((SCLK_DIV + 1) * 2) * (Period of the SPI clock source) The SCLK_DIV value 0xff is a special value which indicates that the SCLK frequency should be the same as the spi_clock frequency.
+      bit_offset: 0
+      bit_size: 8
+    - name: CSHT
+      description: The minimum time that SPI CS should stay HIGH. SCLK_period * (CSHT + 1) / 2.
+      bit_offset: 8
+      bit_size: 4
+    - name: CS2SCLK
+      description: The minimum time between the edges of SPI CS and the edges of SCLK. SCLK_period * (CS2SCLK + 1) / 2.
+      bit_offset: 12
+      bit_size: 2
+fieldset/TransCtrl:
+  description: Transfer Control Register.
+  fields:
+    - name: RDTRANCNT
+      description: Transfer count for read data RdTranCnt indicates the number of units of data to be received from SPI bus and stored to the Data Register. The actual received count is (RdTranCnt+1). RdTransCnt only takes effect when TransMode is 0, 2, 3, 4, 5, 6 or 9. The size (bit-width) of a data unit is defined by the DataLen field of the Transfer Format Register. For TransMode 0, WrTranCnt must equal RdTranCnt.
+      bit_offset: 0
+      bit_size: 9
+    - name: DUMMYCNT
+      description: Dummy data count. The actual dummy count is (DummyCnt +1). The number of dummy cycles on the SPI interface will be (DummyCnt+1)* ((DataLen+1)/SPI IO width) The Data pins are put into the high impedance during the dummy data phase. DummyCnt is only used for TransMode 5, 6, 8 and 9, which has dummy data phases.
+      bit_offset: 9
+      bit_size: 2
+    - name: TOKENVALUE
+      description: "Token value (Master mode only) The value of the one-byte special token following the address phase for SPI read transfers. 0x0: token value = 0x00 0x1: token value = 0x69."
+      bit_offset: 11
+      bit_size: 1
+    - name: WRTRANCNT
+      description: Transfer count for write data WrTranCnt indicates the number of units of data to be transmitted to the SPI bus from the Data Register. The actual transfer count is (WrTranCnt+1). WrTranCnt only takes effect when TransMode is 0, 1, 3, 4, 5, 6 or 8. The size (bit-width) of a data unit is defined by the DataLen field of the Transfer Format Register. For TransMode 0, WrTranCnt must be equal to RdTranCnt.
+      bit_offset: 12
+      bit_size: 9
+    - name: TOKENEN
+      description: "Token transfer enable (Master mode only) Append a one-byte special token following the address phase for SPI read transfers. The value of the special token should be selected in TokenValue. 0x0: Disable the one-byte special token 0x1: Enable the one-byte special token."
+      bit_offset: 21
+      bit_size: 1
+    - name: DUALQUAD
+      description: "SPI data phase format 0x0: Regular (Single) mode 0x1: Dual I/O mode 0x2: Quad I/O mode 0x3: Reserved."
+      bit_offset: 22
+      bit_size: 2
+    - name: TRANSMODE
+      description: "Transfer mode The transfer sequence could be 0x0: Write and read at the same time 0x1: Write only 0x2: Read only 0x3: Write, Read 0x4: Read, Write 0x5: Write, Dummy, Read 0x6: Read, Dummy, Write 0x7: None Data (must enable CmdEn or AddrEn in master mode) 0x8: Dummy, Write 0x9: Dummy, Read 0xa~0xf: Reserved."
+      bit_offset: 24
+      bit_size: 4
+    - name: ADDRFMT
+      description: "SPI address phase format (Master mode only) 0x0: Address phase is the regular (single) mode 0x1: The format of the address phase is the same as the data phase (DualQuad)."
+      bit_offset: 28
+      bit_size: 1
+    - name: ADDREN
+      description: "SPI address phase enable (Master mode only) 0x0: Disable the address phase 0x1: Enable the address phase."
+      bit_offset: 29
+      bit_size: 1
+    - name: CMDEN
+      description: "SPI command phase enable (Master mode only) 0x0: Disable the command phase 0x1: Enable the command phase."
+      bit_offset: 30
+      bit_size: 1
+    - name: SLVDATAONLY
+      description: "Data-only mode (slave mode only) 0x0: Disable the data-only mode 0x1: Enable the data-only mode Note: This mode only works in the uni-directional regular (single) mode so MOSIBiDir, DualQuad and TransMode should be set to 0."
+      bit_offset: 31
+      bit_size: 1
+fieldset/TransFmt:
+  description: Transfer Format Register.
+  fields:
+    - name: CPHA
+      description: "SPI Clock Phase 0x0: Sampling data at odd SCLK edges 0x1: Sampling data at even SCLK edges."
+      bit_offset: 0
+      bit_size: 1
+    - name: CPOL
+      description: "SPI Clock Polarity 0x0: SCLK is LOW in the idle states 0x1: SCLK is HIGH in the idle states."
+      bit_offset: 1
+      bit_size: 1
+    - name: SLVMODE
+      description: "SPI Master/Slave mode selection 0x0: Master mode 0x1: Slave mode."
+      bit_offset: 2
+      bit_size: 1
+    - name: LSB
+      description: "Transfer data with the least significant bit first 0x0: Most significant bit first 0x1: Least significant bit first."
+      bit_offset: 3
+      bit_size: 1
+    - name: MOSIBIDIR
+      description: "Bi-directional MOSI in regular (single) mode 0x0: MOSI is uni-directional signal in regular mode. 0x1: MOSI is bi-directional signal in regular mode. This bi-directional signal replaces the two."
+      bit_offset: 4
+      bit_size: 1
+    - name: DATAMERGE
+      description: Enable Data Merge mode, which does automatic data split on write and data coalescing on read. This bit only takes effect when DataLen = 0x7. Under Data Merge mode, each write to the Data Register will transmit all fourbytes of the write data; each read from the Data Register will retrieve four bytes of received data as a single word data. When Data Merge mode is disabled, only the least (DataLen+1) significient bits of the Data Register are valid for read/write operations; no automatic data split/coalescing will be performed.
+      bit_offset: 7
+      bit_size: 1
+    - name: DATALEN
+      description: The length of each data unit in bits The actual bit number of a data unit is (DataLen + 1).
+      bit_offset: 8
+      bit_size: 5
+    - name: ADDRLEN
+      description: "Address length in bytes 0x0: 1 byte 0x1: 2 bytes 0x2: 3 bytes 0x3: 4 bytes."
+      bit_offset: 16
+      bit_size: 2
+fieldset/rd_trans_cnt:
+  description: Transfer count for read data.
+  fields:
+    - name: RDTRANCNT
+      description: Transfer count for read data RdTranCnt indicates the number of units of data to be received from SPI bus and stored to the Data Register. The actual received count is (RdTranCnt+1). RdTransCnt only takes effect when TransMode is 0, 2, 3, 4, 5, 6 or 9. The size (bit-width) of a data unit is defined by the DataLen field of the Transfer Format Register. For TransMode 0, WrTranCnt must equal RdTranCnt.
+      bit_offset: 0
+      bit_size: 32
+fieldset/wr_trans_cnt:
+  description: Transfer count for write data.
+  fields:
+    - name: WRTRANCNT
+      description: Transfer count for write data WrTranCnt indicates the number of units of data to be transmitted to the SPI bus from the Data Register. The actual transfer count is (WrTranCnt+1). WrTranCnt only takes effect when TransMode is 0, 1, 3, 4, 5, 6 or 8. The size (bit-width) of a data unit is defined by the DataLen field of the Transfer Format Register. For TransMode 0, WrTranCnt must be equal to RdTranCnt.
+      bit_offset: 0
+      bit_size: 32

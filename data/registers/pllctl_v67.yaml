@@ -1,0 +1,220 @@
+block/PLL:
+  description: no description available.
+  items:
+    - name: CFG0
+      description: PLLx config0.
+      byte_offset: 0
+      fieldset: CFG0
+    - name: CFG1
+      description: PLLx config1.
+      byte_offset: 4
+      fieldset: CFG1
+    - name: CFG2
+      description: PLLx config2.
+      byte_offset: 8
+      fieldset: CFG2
+    - name: FREQ
+      description: PLLx frac mode frequency adjust.
+      byte_offset: 12
+      fieldset: FREQ
+    - name: LOCK
+      description: PLLx lock control.
+      byte_offset: 16
+      fieldset: LOCK
+    - name: STATUS
+      description: PLLx status.
+      byte_offset: 32
+      fieldset: STATUS
+    - name: DIV0
+      description: PLLx divider0 control.
+      byte_offset: 64
+      fieldset: DIV0
+    - name: DIV1
+      description: PLLx divider1 control.
+      byte_offset: 68
+      fieldset: DIV1
+block/PLLCTL:
+  description: PLLCTL.
+  items:
+    - name: XTAL
+      description: Crystal control and status.
+      byte_offset: 0
+      fieldset: XTAL
+    - name: PLL
+      description: no description available.
+      array:
+        len: 5
+        stride: 128
+      byte_offset: 128
+      block: PLL
+fieldset/CFG0:
+  description: PLLx config0.
+  fields:
+    - name: DSMPD
+      description: "1: int mode; 0: frac mode."
+      bit_offset: 3
+      bit_size: 1
+    - name: SS_DISABLE_SSCG
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+    - name: SS_RESET
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: SS_DOWNSPREAD
+      description: Downspread control 1’b0 –> Center-Spread 1’b1 –> Downspread.
+      bit_offset: 7
+      bit_size: 1
+    - name: SS_DIVVAL
+      description: sscg divval, lock when lock_en[8]&~pll_ana_pd.
+      bit_offset: 8
+      bit_size: 6
+    - name: SS_SPREAD
+      description: lock when lock_en[14]&~pll_ana_pd.
+      bit_offset: 14
+      bit_size: 5
+    - name: POSTDIV1
+      description: lock when lock_en[20]&~pll_ana_pd.
+      bit_offset: 20
+      bit_size: 3
+    - name: REFDIV
+      description: refclk diverder, lock when lock_en[24]&~pll_ana_pd.
+      bit_offset: 24
+      bit_size: 6
+    - name: SS_RSTPTR
+      description: reset pointer, for sscg, lock when lock_en[31]&~pll_ana_pd&~pll_lock_comb.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CFG1:
+  description: PLLx config1.
+  fields:
+    - name: LOCK_CNT_CFG
+      description: used to wait lock if set larger than lock time; default 1500 24M cycle if refdiv is 1, 4500 cycle if refdiv is 3.
+      bit_offset: 15
+      bit_size: 1
+    - name: PLLPD_SW
+      description: "pll power down. pll_ana_pd = pllctrl_hw_en ? (pll_pd_soc|pll_pd_chg) : pllpd_sw; pll_pd_soc is just delay of soc enable, for soc to control pll on/off; pll_pd_chg is used to power down pll when div_chg_mode is 1, if software update pll parameter(fbdiv or frac), pll_ctrl will power down pll, update parameter, then power up pll. response to soc will not de-asserted at this sequence."
+      bit_offset: 25
+      bit_size: 1
+    - name: CLKEN_SW
+      description: "the clock enable used to gate pll output, should be set after lock, and clear before power down pll. pll_clock_enable = pllctrl_hw_en ? (pll_lock_comb & enable & pll_clk_enable_chg) : clken_sw;."
+      bit_offset: 26
+      bit_size: 1
+    - name: PLLCTRL_HW_EN
+      description: "1: hardware controll PLL settings, software can update register, but result unknown; suggested only update fbdiv and frac value 0: full software control PLL settings."
+      bit_offset: 31
+      bit_size: 1
+fieldset/CFG2:
+  description: PLLx config2.
+  fields:
+    - name: FBDIV_INT
+      description: fbdiv used in int mode.
+      bit_offset: 0
+      bit_size: 12
+fieldset/DIV0:
+  description: PLLx divider0 control.
+  fields:
+    - name: DIV
+      description: "Divider 0: divide by 1 1: divide by2 . . . 255: divide by 256."
+      bit_offset: 0
+      bit_size: 8
+    - name: ENABLE
+      description: "Crystal oscillator enable status 0: Oscillator is off 1: Oscillator is on."
+      bit_offset: 28
+      bit_size: 1
+    - name: RESPONSE
+      description: "Crystal oscillator status 0: Oscillator is not stable 1: Oscillator is stable for use."
+      bit_offset: 29
+      bit_size: 1
+    - name: BUSY
+      description: "Busy flag 0: divider is working 1: divider is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DIV1:
+  description: PLLx divider1 control.
+  fields:
+    - name: DIV
+      description: "Divider 0: divide by 1 1: divide by2 . . . 255: divide by 256."
+      bit_offset: 0
+      bit_size: 8
+    - name: ENABLE
+      description: "Crystal oscillator enable status 0: Oscillator is off 1: Oscillator is on."
+      bit_offset: 28
+      bit_size: 1
+    - name: RESPONSE
+      description: "Crystal oscillator status 0: Oscillator is not stable 1: Oscillator is stable for use."
+      bit_offset: 29
+      bit_size: 1
+    - name: BUSY
+      description: "Busy flag 0: divider is working 1: divider is changing status."
+      bit_offset: 31
+      bit_size: 1
+fieldset/FREQ:
+  description: PLLx frac mode frequency adjust.
+  fields:
+    - name: FBDIV_FRAC
+      description: fbdiv used in frac mode.
+      bit_offset: 0
+      bit_size: 8
+    - name: FRAC
+      description: "PLL output frequency is : Fout = Fref/refdiv*(fbdiv + frac/2^24)/postdiv1 for default refdiv=1 and postdiv1=1, 24MHz refclk Fout is 24*fbdiv in int mode if frac is set to 0x800000, Fout is 24*(fbdiv+0.5) Fout is 24*fbdiv in int mode if frac is set to 0x200000, Fout is 24*(fbdiv+0.125)."
+      bit_offset: 8
+      bit_size: 24
+fieldset/LOCK:
+  description: PLLx lock control.
+  fields:
+    - name: LOCK_SS_DIVVAL
+      description: "lock bit of field ss_divval 0: field is open foe software to change 1: field is locked, not changeable."
+      bit_offset: 8
+      bit_size: 1
+    - name: LOCK_SS_SPEAD
+      description: "lock bit of field ss_spead 0: field is open foe software to change 1: field is locked, not changeable."
+      bit_offset: 14
+      bit_size: 1
+    - name: LOCK_POSTDIV1
+      description: "lock bit of field postdiv1 0: field is open foe software to change 1: field is locked, not changeable."
+      bit_offset: 20
+      bit_size: 1
+    - name: LOCK_REFDIV
+      description: "lock bit of field refdiv 0: field is open foe software to change 1: field is locked, not changeable."
+      bit_offset: 24
+      bit_size: 1
+    - name: LOCK_SS_RSTPTR
+      description: "lock bit of field ss_rstptr 0: field is open foe software to change 1: field is locked, not changeable."
+      bit_offset: 31
+      bit_size: 1
+fieldset/STATUS:
+  description: PLLx status.
+  fields:
+    - name: PLL_LOCK_SYNC
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: PLL_LOCK_COMB
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: RESPONSE
+      description: response to SYSCTL, PLL is power down when both enable and response are 0.
+      bit_offset: 2
+      bit_size: 1
+    - name: ENABLE
+      description: enable from SYSCTL block.
+      bit_offset: 27
+      bit_size: 1
+fieldset/XTAL:
+  description: Crystal control and status.
+  fields:
+    - name: RAMP_TIME
+      description: "Rampup time of XTAL oscillator in cycles of IRC24M clock 0: 0 cycle 1: 1 cycle 2: 2 cycle 1048575: 1048575 cycles."
+      bit_offset: 0
+      bit_size: 20
+    - name: ENABLE
+      description: "Crystal oscillator enable status 0: Oscillator is off 1: Oscillator is on."
+      bit_offset: 28
+      bit_size: 1
+    - name: RESPONSE
+      description: "Crystal oscillator status 0: Oscillator is not stable 1: Oscillator is stable for use."
+      bit_offset: 29
+      bit_size: 1

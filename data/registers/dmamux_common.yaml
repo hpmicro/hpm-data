@@ -1,0 +1,21 @@
+block/DMAMUX:
+  description: DMAMUX.
+  items:
+    - name: MUXCFG
+      description: no description available.
+      array:
+        len: 64 # diffs, max is 64
+        stride: 4
+      byte_offset: 0
+      fieldset: MUXCFG
+fieldset/MUXCFG:
+  description: no description available.
+  fields:
+    - name: SOURCE
+      description: DMA Channel Source Specifies which DMA source, if any, is routed to a particular DMA channel. See the "DMA MUX Mapping".
+      bit_offset: 0
+      bit_size: 7
+    - name: ENABLE
+      description: DMA Mux Channel Enable Enables the channel for DMA Mux. The DMA has separate channel enables/disables, which should be used to disable or reconfigure a DMA channel. 0b - DMA Mux channel is disabled 1b - DMA Mux channel is enabled.
+      bit_offset: 31
+      bit_size: 1

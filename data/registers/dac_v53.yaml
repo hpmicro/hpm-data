@@ -1,0 +1,317 @@
+block/DAC0:
+  description: DAC0.
+  items:
+    - name: cfg0
+      description: No description available.
+      byte_offset: 0
+      fieldset: cfg0
+    - name: cfg1
+      description: No description available.
+      byte_offset: 4
+      fieldset: cfg1
+    - name: cfg2
+      description: No description available.
+      byte_offset: 8
+      fieldset: cfg2
+    - name: STEP_CFG
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 16
+      fieldset: STEP_CFG
+    - name: BUF_ADDR
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 32
+      fieldset: BUF_ADDR
+    - name: buf_length
+      description: No description available.
+      byte_offset: 40
+      fieldset: buf_length
+    - name: irq_sts
+      description: No description available.
+      byte_offset: 48
+      fieldset: irq_sts
+    - name: irq_en
+      description: No description available.
+      byte_offset: 52
+      fieldset: irq_en
+    - name: dma_en
+      description: No description available.
+      byte_offset: 56
+      fieldset: dma_en
+    - name: ana_cfg0
+      description: No description available.
+      byte_offset: 64
+      fieldset: ana_cfg0
+    - name: cfg0_bak
+      description: No description available.
+      byte_offset: 68
+      fieldset: cfg0_bak
+    - name: status0
+      description: No description available.
+      byte_offset: 72
+      fieldset: status0
+fieldset/BUF_ADDR:
+  description: no description available.
+  fields:
+    - name: BUF_STOP
+      description: set to stop read point at end of bufffer0.
+      bit_offset: 0
+      bit_size: 1
+    - name: BUF_START_ADDR
+      description: buffer start address, should be 4-byte aligned AHB burst can't cross 1K-byte boundary, user should config the address/length/burst to avoid such issue.
+      bit_offset: 2
+      bit_size: 30
+fieldset/STEP_CFG:
+  description: no description available.
+  fields:
+    - name: START_POINT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 12
+    - name: STEP_NUM
+      description: "output data change step_num each DAC clock cycle. Ex: if step_num=3, output data sequence is 0,3,6,9 NOTE: user should make sure end_point can be reached if step_num is not 1 if step_num is 0, output data will always at start point."
+      bit_offset: 12
+      bit_size: 4
+    - name: END_POINT
+      description: No description available.
+      bit_offset: 16
+      bit_size: 12
+    - name: UP_DOWN
+      description: 0 for up, 1 for down.
+      bit_offset: 28
+      bit_size: 1
+    - name: ROUND_MODE
+      description: "0: stop at end point; 1: reload start point, step again."
+      bit_offset: 29
+      bit_size: 1
+fieldset/ana_cfg0:
+  description: No description available.
+  fields:
+    - name: DAC12BIT_EN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: BYPASS_CALI_GM
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: CALI_DELTA_V_CFG
+      description: No description available.
+      bit_offset: 2
+      bit_size: 2
+    - name: DAC_CONFIG
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: DAC12BIT_LP_MODE
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+fieldset/buf_length:
+  description: No description available.
+  fields:
+    - name: BUF0_LEN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 16
+    - name: BUF1_LEN
+      description: buffer length, 1 indicate one 32bit date, 256K-byte max for one buffer.
+      bit_offset: 16
+      bit_size: 16
+fieldset/cfg0:
+  description: No description available.
+  fields:
+    - name: HBURST_CFG
+      description: "DAC support following fixed burst only 000-SINGLE; 011-INCR4; 101: INCR8 others are reserved."
+      bit_offset: 0
+      bit_size: 3
+    - name: BUF_DATA_MODE
+      description: "data structure for buffer mode, 0: each 32-bit data contains 2 points, b11:0 for first, b27:16 for second. 1: each 32-bit data contains 1 point, b11:0 for first."
+      bit_offset: 3
+      bit_size: 1
+    - name: DAC_MODE
+      description: "00: direct mode, DAC output the fixed configured data(from sw_dac_data) 01: step mode, DAC output from start_point to end point, with configured step, can step up or step down 10: buffer mode, read data from buffer, then output to analog, internal DMA will load next burst if enough space in local FIFO; 11: trigger mode, DAC output from external trigger signals Note: Trigger mode is not supported in hpm63xx and hpm62xx families."
+      bit_offset: 4
+      bit_size: 2
+    - name: HW_TRIG_EN
+      description: set to use trigger signal from trigger_mux, user should config it to pulse in single mode, and level in continual mode.
+      bit_offset: 6
+      bit_size: 1
+    - name: TRIG_MODE
+      description: "0: single mode, one trigger pulse will send one 12bit data to DAC analog; 1: continual mode, if trigger signal(either or HW) is set, DAC will send data if FIFO is not empty, if trigger signal is clear, DAC will stop send data."
+      bit_offset: 7
+      bit_size: 1
+    - name: SYNC_MODE
+      description: "1: sync dac clock and ahb clock. all HW trigger signals are pulse in sync mode, can get faster response; 0: async dac clock and ahb_clock all HW trigger signals should be level and should be more than one dac clock cycle, used to get accurate output frequency(which may not be divided from AHB clock)."
+      bit_offset: 8
+      bit_size: 1
+    - name: DMA_AHB_EN
+      description: set to enable internal DMA, it will read one burst if enough space in FIFO. Should only be used in buffer mode.
+      bit_offset: 9
+      bit_size: 1
+    - name: SW_DAC_DATA
+      description: dac data used in direct mode(dac_mode==2'b10).
+      bit_offset: 16
+      bit_size: 12
+fieldset/cfg0_bak:
+  description: No description available.
+  fields:
+    - name: HBURST_CFG
+      description: "DAC support following fixed burst only 000-SINGLE; 011-INCR4; 101: INCR8 others are reserved."
+      bit_offset: 0
+      bit_size: 3
+    - name: BUF_DATA_MODE
+      description: "data structure for buffer mode, 0: each 32-bit data contains 2 points, b11:0 for first, b27:16 for second. 1: each 32-bit data contains 1 point, b11:0 for first."
+      bit_offset: 3
+      bit_size: 1
+    - name: DAC_MODE
+      description: "00: direct mode, DAC output the fixed configured data(from sw_dac_data) 01: step mode, DAC output from start_point to end point, with configured step, can step up or step down 10: buffer mode, read data from buffer, then output to analog, internal DMA will load next burst if enough space in local FIFO;."
+      bit_offset: 4
+      bit_size: 2
+    - name: HW_TRIG_EN
+      description: set to use trigger signal from trigger_mux, user should config it to pulse in single mode, and level in continual mode.
+      bit_offset: 6
+      bit_size: 1
+    - name: TRIG_MODE
+      description: "0: single mode, one trigger pulse will send one 12bit data to DAC analog; 1: continual mode, if trigger signal(either or HW) is set, DAC will send data if FIFO is not empty, if trigger signal is clear, DAC will stop send data."
+      bit_offset: 7
+      bit_size: 1
+    - name: SYNC_MODE
+      description: "1: sync dac clock and ahb clock. all HW trigger signals are pulse in sync mode, can get faster response; 0: async dac clock and ahb_clock all HW trigger signals should be level and should be more than one dac clock cycle, used to get accurate output frequency(which may not be divided from AHB clock)."
+      bit_offset: 8
+      bit_size: 1
+    - name: DMA_AHB_EN
+      description: set to enable internal DMA, it will read one burst if enough space in FIFO. Should only be used in buffer mode.
+      bit_offset: 9
+      bit_size: 1
+    - name: SW_DAC_DATA
+      description: dac data used in direct mode(dac_mode==2'b10).
+      bit_offset: 16
+      bit_size: 12
+fieldset/cfg1:
+  description: No description available.
+  fields:
+    - name: DIV_CFG
+      description: "step mode and buffer mode: defines how many clk_dac cycles to change data to analog, should configured to less than 1MHz data rate. Direct mode and trigger mode: defines how many clk_dac cycles to accpet the input data, dac will not accept new written data or trigger data before the clock cycles passed. should configured to less than 1MHz. Note: For direct mode and trigger mode, this config is not supported in hpm63xx and hpm62xx families."
+      bit_offset: 0
+      bit_size: 16
+    - name: ANA_DIV_CFG
+      description: "clock divider config for ana_clk to dac analog; 00: div2 01: div4 10: div6 11: div8."
+      bit_offset: 16
+      bit_size: 2
+    - name: ANA_CLK_EN
+      description: set to enable analog clock(divided by ana_div_cfg) need to be set in direct mode and trigger mode.
+      bit_offset: 18
+      bit_size: 1
+fieldset/cfg2:
+  description: No description available.
+  fields:
+    - name: STEP_SW_TRIG0
+      description: software trigger0 for step mode, W1C in single mode. RW in continual mode.
+      bit_offset: 0
+      bit_size: 1
+    - name: STEP_SW_TRIG1
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: STEP_SW_TRIG2
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: STEP_SW_TRIG3
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: BUF_SW_TRIG
+      description: software trigger for buffer mode, W1C in single mode. RW in continual mode.
+      bit_offset: 4
+      bit_size: 1
+    - name: FIFO_CLR
+      description: set to clear FIFO content(set both read/write pointer to 0).
+      bit_offset: 5
+      bit_size: 1
+    - name: DMA_RST0
+      description: set to reset dma read pointer to buf0_start_addr.
+      bit_offset: 6
+      bit_size: 1
+    - name: DMA_RST1
+      description: set to reset dma read pointer to buf1_start_addr; if set both dma_rst0&dma_rst1, will set to buf0_start_addr user can set fifo_clr bit when use dma_rst*.
+      bit_offset: 7
+      bit_size: 1
+fieldset/dma_en:
+  description: No description available.
+  fields:
+    - name: BUF0_CMPT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: BUF1_CMPT
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: STEP_CMPT
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+fieldset/irq_en:
+  description: No description available.
+  fields:
+    - name: BUF0_CMPT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: BUF1_CMPT
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: FIFO_EMPTY
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: AHB_ERROR
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: STEP_CMPT
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+fieldset/irq_sts:
+  description: No description available.
+  fields:
+    - name: BUF0_CMPT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: BUF1_CMPT
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: FIFO_EMPTY
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: AHB_ERROR
+      description: set if hresp==2'b01(ERROR).
+      bit_offset: 3
+      bit_size: 1
+    - name: STEP_CMPT
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+fieldset/status0:
+  description: No description available.
+  fields:
+    - name: CUR_BUF_INDEX
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: CUR_BUF_OFFSET
+      description: No description available.
+      bit_offset: 8
+      bit_size: 16

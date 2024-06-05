@@ -1,0 +1,147 @@
+block/CFG:
+  description: no description available.
+  items:
+    - name: cfg0
+      description: No description available.
+      byte_offset: 0
+      fieldset: cfg0
+    - name: cfg1
+      description: No description available.
+      byte_offset: 4
+      fieldset: cfg1
+    - name: cfg2
+      description: No description available.
+      byte_offset: 8
+      fieldset: cfg2
+block/OPAMP0:
+  description: OPAMP0.
+  items:
+    - name: ctrl0
+      description: control reg.
+      byte_offset: 0
+      fieldset: ctrl0
+    - name: status
+      description: status reg.
+      byte_offset: 4
+      fieldset: status
+    - name: ctrl1
+      description: control reg1.
+      byte_offset: 8
+      fieldset: ctrl1
+    - name: CFG
+      description: no description available.
+      array:
+        len: 8
+        stride: 16
+      byte_offset: 16
+      block: CFG
+fieldset/cfg0:
+  description: No description available.
+  fields:
+    - name: VIP_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 3
+    - name: VIM_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 3
+    - name: MILLER_SEL
+      description: No description available.
+      bit_offset: 24
+      bit_size: 3
+    - name: DISABLE_PM_CAP
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+fieldset/cfg1:
+  description: No description available.
+  fields:
+    - name: GAIN_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 3
+    - name: MODE
+      description: No description available.
+      bit_offset: 3
+      bit_size: 5
+    - name: VBYPASS_LV
+      description: No description available.
+      bit_offset: 29
+      bit_size: 1
+    - name: EN_LV
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: HW_TRIG_EN
+      description: "set to enable hardware trigger from moto system. NOTE: when sw_preset is enabled, this bit will not take effert."
+      bit_offset: 31
+      bit_size: 1
+fieldset/cfg2:
+  description: No description available.
+  fields:
+    - name: CHANNEL
+      description: No description available.
+      bit_offset: 24
+      bit_size: 3
+fieldset/ctrl0:
+  description: control reg.
+  fields:
+    - name: VIP_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 3
+    - name: VBYPASS
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: MILLER_SEL
+      description: No description available.
+      bit_offset: 4
+      bit_size: 3
+    - name: DISABLE_PM_CAP
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: GAIN_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 3
+    - name: MODE
+      description: No description available.
+      bit_offset: 11
+      bit_size: 5
+    - name: VIM_SEL
+      description: No description available.
+      bit_offset: 16
+      bit_size: 3
+    - name: EN_LV
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+fieldset/ctrl1:
+  description: control reg1.
+  fields:
+    - name: SW_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 3
+    - name: SW_PRESET
+      description: "set to use preset defined by sw_sel. NOTE: when set, the hardware trigger will not be used."
+      bit_offset: 31
+      bit_size: 1
+fieldset/status:
+  description: status reg.
+  fields:
+    - name: CUR_PRESET
+      description: current selected preset.
+      bit_offset: 16
+      bit_size: 3
+    - name: PRESET_ACT
+      description: 1 for preset active; one of cur_preset is selected for OPAMP; 0 for no preset, OPAMP use cfg0 parameters.
+      bit_offset: 19
+      bit_size: 1
+    - name: TRIG_CONFLICT
+      description: if more than one hardware trigger is set, will put all trigger input here; write any value to clear.
+      bit_offset: 20
+      bit_size: 8

@@ -1,0 +1,63 @@
+block/IOC:
+  description: IOC.
+  items:
+    - name: PAD
+      description: no description available.
+      array:
+        len: 492
+        stride: 8
+      byte_offset: 0
+      block: PAD
+block/PAD:
+  description: no description available.
+  items:
+    - name: FUNC_CTL
+      description: ALT SELECT.
+      byte_offset: 0
+      fieldset: FUNC_CTL
+    - name: PAD_CTL
+      description: PAD SETTINGS.
+      byte_offset: 4
+      fieldset: PAD_CTL
+fieldset/FUNC_CTL:
+  description: ALT SELECT.
+  fields:
+    - name: ALT_SELECT
+      description: "alt select 0: ALT0 1: ALT1 … 31:ALT31."
+      bit_offset: 0
+      bit_size: 5
+    - name: ANALOG
+      description: "select analog pin in pad 0: disable 1: enable."
+      bit_offset: 8
+      bit_size: 1
+    - name: LOOP_BACK
+      description: "force input on 0: disable 1: enable."
+      bit_offset: 16
+      bit_size: 1
+fieldset/PAD_CTL:
+  description: PAD SETTINGS.
+  fields:
+    - name: DS
+      description: "drive strength for high-speed IO 3.3V: 000: 85.61Ohm 001: 61.2 Ohm 010: 42.88Ohm 011: 35.76Ohm 111: 30.67Ohm for high-speed IO 1.8V: 000: 84.07Ohm 001: 60.14Ohm 010: 42.15Ohm 011: 35.19Ohm 111: 30.2 Ohm for general IO: 00: 4mA 01: 8mA 11: 12mA."
+      bit_offset: 0
+      bit_size: 3
+    - name: PE
+      description: "pull enable 0: pull disable 1: pull enable."
+      bit_offset: 4
+      bit_size: 1
+    - name: PS
+      description: "pull select 0: pull down 1: pull up."
+      bit_offset: 11
+      bit_size: 1
+    - name: SMT
+      description: "schmitt trigger enable, only available in high-speed IO 0: disable 1: enable."
+      bit_offset: 12
+      bit_size: 1
+    - name: OD
+      description: "open drain 0: open drain disable 1: open drain enable."
+      bit_offset: 13
+      bit_size: 1
+    - name: MS
+      description: "pin voltage select, only available in high-speed IO 0: 3.3V 1: 1.8V."
+      bit_offset: 14
+      bit_size: 1

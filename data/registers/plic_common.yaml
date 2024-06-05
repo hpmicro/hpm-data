@@ -1,0 +1,157 @@
+block/PLIC:
+  description: PLIC.
+  items:
+    - name: feature
+      description: Feature enable register.
+      byte_offset: 0
+      fieldset: feature
+    - name: PRIORITY
+      description: no description available.
+      array:
+        len: 127
+        stride: 4
+      byte_offset: 4
+      fieldset: PRIORITY
+    - name: PENDING
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 4096
+      fieldset: PENDING
+    - name: TRIGGER
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 4224
+      fieldset: TRIGGER
+    - name: NUMBER
+      description: Number of supported interrupt sources and targets.
+      byte_offset: 4352
+      fieldset: NUMBER
+    - name: INFO
+      description: Version and the maximum priority.
+      byte_offset: 4356
+      fieldset: INFO
+    - name: TARGETINT
+      description: no description available.
+      array:
+        len: 2
+        stride: 128
+      byte_offset: 8192
+      block: TARGETINT
+    - name: TARGETCONFIG
+      description: no description available.
+      array:
+        len: 2
+        stride: 4096
+      byte_offset: 2097152
+      block: TARGETCONFIG
+block/TARGETCONFIG:
+  description: no description available.
+  items:
+    - name: THRESHOLD
+      description: Target0 priority threshold.
+      byte_offset: 0
+      fieldset: THRESHOLD
+    - name: CLAIM
+      description: Target claim and complete.
+      byte_offset: 4
+      fieldset: CLAIM
+    - name: PPS
+      description: Preempted priority stack.
+      byte_offset: 1024
+      fieldset: PPS
+block/TARGETINT:
+  description: no description available.
+  items:
+    - name: INTEN
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 0
+      fieldset: INTEN
+fieldset/CLAIM:
+  description: Target claim and complete.
+  fields:
+    - name: INTERRUPT_ID
+      description: On reads, indicating the interrupt source that has being claimed. On writes, indicating the interrupt source that has been handled (completed).
+      bit_offset: 0
+      bit_size: 10
+fieldset/INFO:
+  description: Version and the maximum priority.
+  fields:
+    - name: VERSION
+      description: The version of the PLIC design.
+      bit_offset: 0
+      bit_size: 16
+    - name: MAX_PRIORITY
+      description: The maximum priority supported.
+      bit_offset: 16
+      bit_size: 16
+fieldset/INTEN:
+  description: no description available.
+  fields:
+    - name: INTERRUPT
+      description: The interrupt enable bit for interrupt. Every interrupt source occupies 1 bit.
+      bit_offset: 0
+      bit_size: 32
+fieldset/NUMBER:
+  description: Number of supported interrupt sources and targets.
+  fields:
+    - name: NUM_INTERRUPT
+      description: The number of supported interrupt sources.
+      bit_offset: 0
+      bit_size: 16
+    - name: NUM_TARGET
+      description: The number of supported targets.
+      bit_offset: 16
+      bit_size: 16
+fieldset/PENDING:
+  description: no description available.
+  fields:
+    - name: INTERRUPT
+      description: The interrupt pending status of inpterrupt sources. Every interrupt source occupies 1 bit.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PPS:
+  description: Preempted priority stack.
+  fields:
+    - name: PRIORITY_PREEMPTED
+      description: Each bit indicates if the corresponding priority level has been preempted by a higher-priority interrupt.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PRIORITY:
+  description: no description available.
+  fields:
+    - name: PRIORITY
+      description: "Interrupt source priority. The valid range of this field is 0-7. 0: Never interrupt 1-7: Interrupt source priority. The larger the value, the higher the priority."
+      bit_offset: 0
+      bit_size: 32
+fieldset/THRESHOLD:
+  description: Target0 priority threshold.
+  fields:
+    - name: THRESHOLD
+      description: Interrupt priority threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRIGGER:
+  description: no description available.
+  fields:
+    - name: INTERRUPT
+      description: "The interrupt trigger type of interrupt sources. Every interrupt source occupies 1 bit. 0: Level-triggered interrupt 1: Edge-triggered interrupt."
+      bit_offset: 0
+      bit_size: 32
+fieldset/feature:
+  description: Feature enable register.
+  fields:
+    - name: PREEMPT
+      description: "Preemptive priority interrupt enable 0: Disabled 1: Enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: VECTORED
+      description: "Vector mode enable 0: Disabled 1: Enabled."
+      bit_offset: 1
+      bit_size: 1

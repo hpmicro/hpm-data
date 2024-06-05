@@ -1,0 +1,36 @@
+block/PLICSW:
+  description: PLICSW.
+  items:
+    - name: PENDING
+      description: Pending status.
+      byte_offset: 4096
+      fieldset: PENDING
+    - name: INTEN
+      description: Interrupt enable.
+      byte_offset: 8192
+      fieldset: INTEN
+    - name: CLAIM
+      description: Claim and complete.
+      byte_offset: 2097156
+      fieldset: CLAIM
+fieldset/CLAIM:
+  description: Claim and complete.
+  fields:
+    - name: INTERRUPT_ID
+      description: On reads, indicating the interrupt source that has being claimed. On writes, indicating the interrupt source that has been handled (completed).
+      bit_offset: 0
+      bit_size: 1
+fieldset/INTEN:
+  description: Interrupt enable.
+  fields:
+    - name: INTERRUPT
+      description: enable software interrupt.
+      bit_offset: 0
+      bit_size: 1
+fieldset/PENDING:
+  description: Pending status.
+  fields:
+    - name: INTERRUPT
+      description: writing 1 to trigger software interrupt.
+      bit_offset: 1
+      bit_size: 1
