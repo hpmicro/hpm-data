@@ -7,3 +7,12 @@ packages:
   - name: HPM6420-BGA289
     package: BGA289
     pins: 289
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 2088
+cores:
+  - name: TODO
+    ip-core: TODO
+    peripherals: []

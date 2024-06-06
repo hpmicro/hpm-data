@@ -21,3 +21,8 @@ memory:
     kind: flash
     name: XPI0
     size: 1048576 # 1M
+cores:
+  - name: RV32-IMAFDCPB # D25
+    ip-core: Andes D25
+    include_peripherals:
+      - "../family/HPM5300.yaml"

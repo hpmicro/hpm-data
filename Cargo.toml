@@ -1,0 +1,10 @@
+
+[workspace]
+resolver = "2"
+members = [
+    "hpm-data-gen",
+    "hpm-data-serde",
+    "hpm-metapac-gen",
+    "hpm-data-macros",
+]
+exclude = ["build"]

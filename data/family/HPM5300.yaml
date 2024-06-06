@@ -7,4 +7,92 @@
   pins:
     # OBS pins
 
+# input output and alternate function
 
+- name: IOC
+  address: 0xF4040000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+- name: PIOC
+  address: 0xF4118000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+
+- name: FGPIO
+  address: 0x000C0000
+  registers:
+    kind: gpio
+    version: v53
+    block: GPIO
+- name: GPIO0
+  address: 0xF00D0000
+  registers:
+    kind: gpio
+    version: v53
+    block: GPIO
+- name: PGPIO
+  address: 0xF411C000
+  registers:
+    kind: gpio
+    version: v53
+    block: GPIO
+
+- name: GPIOM
+  address: 0xF00D8000
+  registers:
+    kind: gpiom
+    version: v53
+    block: GPIOM
+
+
+- name: OTP
+  address: 0xF3050000
+  registers:
+    kind: otp
+    version: common
+    block: OTP
+
+
+- name: GPTMR0
+  address: 0xF0000000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR1
+  address: 0xF0004000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR2
+  address: 0xF0008000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR3
+  address: 0xF000C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: PTMR
+  address: 0xF4120000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+
+## communication peripherals
+
+- name: UART0
+  address: 0xF0040000
+  registers:
+    kind: uart
+    version: common
+    block: UART

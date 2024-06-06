@@ -12,6 +12,10 @@ memory:
     kind: ram
     name: SRAM
     size: 800
+cores:
+  - name: TODO
+    ip-core: TODO
+    peripherals: []
 _raw:
   "| HPM6320 | Single-core 32-bit | 800 | 2\xD7I2S, 1\xD7digital audio output\
   \ | 100M |    | USB HS w/ PHY \xD71 | AES128/256, SHA-1/256 | 1\xD716 bit  | 20\xD7\

@@ -650,7 +650,7 @@ fieldset/RETENTION:
 enum/CLOCK_MUX:
   description: no description available.
   bit_size: 3
-  values:
+  variants:
     - name: osc0_clk0
       value: 0
     - name: pll0_clk0
@@ -670,7 +670,7 @@ enum/CLOCK_MUX:
 enum/LP_MODE:
   description: In low power mode, the behavior after setting CPU WFI
   bit_size: 2
-  values:
+  variants:
     - name: WAIT
       value: 0
     - name: STOP

@@ -40,3 +40,7 @@ memory:
     kind: flash
     name: XPI0
     size: 1048576 # 1M
+cores:
+  - name: TODO
+    ip-core: TODO
+    peripherals: []

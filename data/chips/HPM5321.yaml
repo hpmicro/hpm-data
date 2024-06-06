@@ -27,7 +27,10 @@ memory:
     kind: flash
     name: XPI0
     size: 1048576 # 1M
-
+cores:
+  - name: RV32-IMAFDCPB # D25
+    ip-core: Andes D25
+    peripherals: []
 _raw:
   "| HPM5321 | Single-core 32-bit | 288 |    |    | CAN FD | USB HS w/ PHY \xD7\
   1 | AES128/256, SHA-1/256 | 2*16bit | 14\xD714 100LQFP P0.5 10\xD710 64LQFP P0.5\

@@ -36,6 +36,11 @@ memory:
     kind: flash
     name: XPI0
     size: 1048576 # 1M
+cores:
+  - name: TODO
+    ip-core: TODO
+    peripherals: []
+
 _raw:
   "| HPM6220 | Single-core 32-bit | 800 |    |    |    | USB HS w/ PHY \xD71 |\
   \ AES128/256, SHA-1/256 | 1\xD716 bit  |                                     | -40\u223C\

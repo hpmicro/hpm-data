@@ -4,3 +4,12 @@ packages:
   - name: HPM6330-LQFP80
     package: LQFP80
     pins: 80
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 800
+cores:
+  - name: TODO
+    ip-core: TODO
+    peripherals: []

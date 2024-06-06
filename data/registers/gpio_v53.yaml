@@ -44,7 +44,7 @@ block/DO:
       byte_offset: 12
       fieldset: DO_TOGGLE
 block/GPIO:
-  description: FGPIO.
+  description: FGPIO, GPIO0, PGPIO
   items:
     - name: DI
       description: no description available.
