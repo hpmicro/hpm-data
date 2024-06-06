@@ -1,0 +1,24 @@
+- name: UART4
+  address: 0xF0050000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART5
+  address: 0xF0054000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART6
+  address: 0xF0058000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART7
+  address: 0xF005C000
+  registers:
+    kind: uart
+    version: v53
+    block: UART

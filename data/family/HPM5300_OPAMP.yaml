@@ -1,0 +1,12 @@
+- name: OPAMP0
+  address: 0xF30A0000
+  registers:
+    kind: opamp
+    version: v53
+    block: OPAMP
+- name: OPAMP1
+  address: 0xF30A4000
+  registers:
+    kind: opamp
+    version: v53
+    block: OPAMP

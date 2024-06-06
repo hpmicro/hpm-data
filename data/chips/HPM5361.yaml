@@ -33,6 +33,10 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/HPM5300.yaml"
+      - "../family/HPM5300_GPTMR23.yaml"
+      - "../family/HPM5300_UART4567.yaml"
+      - "../family/HPM5300_ADC1.yaml"
+      - "../family/HPM5300_DAC.yaml"
     include_interrupts: "../interrupts/HPM5361.yaml"
 
 

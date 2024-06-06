@@ -1,4 +1,4 @@
-block/ADC3:
+block/ADC:
   description: ADC3.
   items:
     - name: CONFIG

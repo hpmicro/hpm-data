@@ -69,18 +69,6 @@
     kind: tmr
     version: common
     block: TMR
-- name: GPTMR2
-  address: 0xF0008000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR3
-  address: 0xF000C000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
 - name: PTMR
   address: 0xF4120000
   registers:
@@ -114,33 +102,84 @@
     kind: uart
     version: v53
     block: UART
-- name: UART4
-  address: 0xF0050000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART5
-  address: 0xF0054000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART6
-  address: 0xF0058000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART7
-  address: 0xF005C000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
+
 - name: PUART
   address: 0xF4124000
   registers:
     kind: uart
     version: v53
     block: UART
+
+- name: SPI0
+  address: 0xF0070000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI1
+  address: 0xF0074000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI2
+  address: 0xF0078000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI3
+  address: 0xF007C000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+
+- name: I2C0
+  address: 0xF0060000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C1
+  address: 0xF0064000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C2
+  address: 0xF0068000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C3
+  address: 0xF006C000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+
+# Analog peripherals
+
+- name: ADC0
+  address: 0xF3080000
+  registers:
+    kind: adc16
+    version: v53
+    block: ADC
+# ADC1 is optional
+
+- name: ACMP
+  address: 0xF30B0000
+  registers:
+    kind: acmp
+    version: common
+    block: ACMP
+
+- name: TSNS
+  address: 0xF4104000
+  registers:
+    kind: tsns
+    version: common
+    block: TSNS

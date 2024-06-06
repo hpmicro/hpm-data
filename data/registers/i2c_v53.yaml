@@ -1,4 +1,4 @@
-block/I2C0:
+block/I2C:
   description: I2C0.
   items:
     - name: Cfg

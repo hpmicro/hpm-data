@@ -1,0 +1,12 @@
+- name: DAC0
+  address: 0xF3090000
+  registers:
+    kind: dac
+    version: v53
+    block: DAC
+- name: DAC1
+  address: 0xF3094000
+  registers:
+    kind: dac
+    version: v53
+    block: DAC

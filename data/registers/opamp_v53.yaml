@@ -13,7 +13,7 @@ block/CFG:
       description: No description available.
       byte_offset: 8
       fieldset: cfg2
-block/OPAMP0:
+block/OPAMP:
   description: OPAMP0.
   items:
     - name: ctrl0

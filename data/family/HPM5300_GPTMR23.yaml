@@ -1,0 +1,12 @@
+- name: GPTMR2
+  address: 0xF0008000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR3
+  address: 0xF000C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR

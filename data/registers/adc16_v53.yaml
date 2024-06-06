@@ -1,4 +1,4 @@
-block/ADC0:
+block/ADC:
   description: ADC0.
   items:
     - name: CONFIG

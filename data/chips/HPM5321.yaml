@@ -30,7 +30,12 @@ memory:
 cores:
   - name: RV32-IMAFDCPB # D25
     ip-core: Andes D25
-    peripherals: []
+    include_peripherals:
+      - "../family/HPM5300.yaml"
+      - "../family/HPM5300_GPTMR23.yaml"
+      - "../family/HPM5300_UART4567.yaml"
+      - "../family/HPM5300_ADC1.yaml"
+
 _raw:
   "| HPM5321 | Single-core 32-bit | 288 |    |    | CAN FD | USB HS w/ PHY \xD7\
   1 | AES128/256, SHA-1/256 | 2*16bit | 14\xD714 100LQFP P0.5 10\xD710 64LQFP P0.5\
