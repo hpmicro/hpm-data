@@ -58,14 +58,6 @@ impl Gen {
 
         let mut peripheral_versions: BTreeMap<String, String> = BTreeMap::new();
 
-        let gpio_base = core
-            .peripherals
-            .iter()
-            .find(|p| p.name == "GPIOA")
-            .expect("GPIOA must exist")
-            .address as u32;
-        let gpio_stride = 0x400;
-
         for p in &core.peripherals {
             let mut ir_peri = ir::Peripheral {
                 name: p.name.clone(),
@@ -88,10 +80,6 @@ impl Gen {
                     }
                 }
                 ir_peri.block = Some(format!("{}::{}", bi.kind, bi.block));
-
-                if bi.kind == "gpio" {
-                    assert_eq!(0, (p.address as u32 - gpio_base) % gpio_stride);
-                }
             }
 
             dev.peripherals.push(ir_peri);
@@ -107,12 +95,15 @@ impl Gen {
 
         ir.devices.insert("".to_string(), dev);
 
+        /*
         let mut extra = format!(
             "pub fn GPIO(n: usize) -> gpio::Gpio {{
             unsafe {{ gpio::Gpio::from_ptr(({} + {}*n) as _) }}
         }}",
             gpio_base, gpio_stride,
         );
+        */
+        let mut extra = format!("");
 
         for (module, version) in &peripheral_versions {
             self.all_peripheral_versions
@@ -129,7 +120,7 @@ impl Gen {
         let flash_regions: Vec<&MemoryRegion> = chip
             .memory
             .iter()
-            .filter(|x| x.kind == MemoryRegionKind::Flash && x.name.starts_with("BANK_"))
+            .filter(|x| x.kind == MemoryRegionKind::Flash && x.name.starts_with("XPI"))
             .collect();
         let first_flash = flash_regions.first().unwrap();
         let total_flash_size = flash_regions
@@ -151,6 +142,7 @@ impl Gen {
         )
         .unwrap();
 
+        /*
         let write_sizes: HashSet<_> = flash_regions
             .iter()
             .map(|r| r.settings.as_ref().unwrap().write_size)
@@ -162,6 +154,7 @@ impl Gen {
             write_sizes.iter().next().unwrap()
         )
         .unwrap();
+        */
 
         // Cleanups!
         transform::sort::Sort {}.run(&mut ir).unwrap();
@@ -192,10 +185,10 @@ impl Gen {
             ".vector_table.interrupts",
             ".vector_table.external_interrupts",
         );
-        let data = data.replace("__INTERRUPTS", "__EXTERNAL_INTERRUPTS");
+        //let data = data.replace("__INTERRUPTS", "__EXTERNAL_INTERRUPTS");
         // trim system vector, 0 to 15
         // [Vector { _reserved : 0 } , Vector { _reserved : 0 } , Vector { _reserved : 0 }  ...
-        let data = Regex::new(r#"\[(Vector \{ _reserved : 0 \} , ){16}"#)
+        /*let data = Regex::new(r#"\[(Vector \{ _reserved : 0 \} , ){16}"#)
             .unwrap()
             .replace_all(&data, "[");
         if data.contains("[Vector { _reserved : 0 }") {
@@ -211,6 +204,7 @@ impl Gen {
                 )
             },
         );
+        */
 
         // Remove inner attributes like #![no_std]
         let data = Regex::new("# *! *\\[.*\\]").unwrap().replace_all(&data, "");
@@ -272,7 +266,6 @@ impl Gen {
             pub static METADATA: Metadata = Metadata {{
                 name: {:?},
                 family: {:?},
-                line: {:?},
                 memory: {},
                 peripherals: PERIPHERALS,
                 // nvic_priority_bits: 0,
@@ -478,7 +471,7 @@ fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     let flash = chip
         .memory
         .iter()
-        .filter(|r| r.kind == MemoryRegionKind::Flash && r.name.starts_with("BANK_"));
+        .filter(|r| r.kind == MemoryRegionKind::Flash && r.name.starts_with("XPI"));
     let (flash_address, flash_size) = flash
         .clone()
         .map(|r| (r.address, r.size))

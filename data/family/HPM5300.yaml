@@ -94,5 +94,53 @@
   address: 0xF0040000
   registers:
     kind: uart
-    version: common
+    version: v53
+    block: UART
+- name: UART1
+  address: 0xF0044000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART2
+  address: 0xF0048000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART3
+  address: 0xF004C000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART4
+  address: 0xF0050000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART5
+  address: 0xF0054000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART6
+  address: 0xF0058000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: UART7
+  address: 0xF005C000
+  registers:
+    kind: uart
+    version: v53
+    block: UART
+- name: PUART
+  address: 0xF4124000
+  registers:
+    kind: uart
+    version: v53
     block: UART

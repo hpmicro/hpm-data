@@ -33,6 +33,8 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/HPM5300.yaml"
+    include_interrupts: "../interrupts/HPM5361.yaml"
+
 
 _raw:
   "| HPM5361 | Single-core 32-bit | 288 |    |    | CAN FD | USB HS w/ PHY \xD7\

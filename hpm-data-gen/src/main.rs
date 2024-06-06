@@ -1,6 +1,5 @@
 use std::{collections::HashMap, path::Path};
 
-mod dma;
 mod registers;
 
 #[macro_export]
@@ -115,7 +114,7 @@ fn main() -> anyhow::Result<()> {
         }
 
         // DMA includes and dma_channels
-        dma::handle_chip_dma_include(&meta_yaml_path, &mut chip)?;
+        // dma::handle_chip_dma_include(&meta_yaml_path, &mut chip)?;
 
         println!(
             "chip: {}, peripherals: {}",
