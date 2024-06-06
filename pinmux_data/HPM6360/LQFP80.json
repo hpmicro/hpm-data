@@ -1,0 +1,495 @@
+{
+  "name": "LQFP80",
+  "package": "LQFP80",
+  "type": "LQFP",
+  "rows": 20,
+  "cols": 20,
+  "info": {
+    "packageType": "eLQFP 12x12mm/0.5mm",
+    "pinout": 80
+  },
+  "coordinates": [
+    {
+      "row": 2,
+      "col": 3,
+      "packName": 80,
+      "ballName": "PA21"
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "packName": 79,
+      "ballName": "PA22"
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "packName": 78,
+      "ballName": "PA23"
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "packName": 77,
+      "ballName": "PA24"
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "packName": 76,
+      "ballName": "PA25"
+    },
+    {
+      "row": 2,
+      "col": 8,
+      "packName": 75,
+      "ballName": "PA26"
+    },
+    {
+      "row": 2,
+      "col": 11,
+      "packName": 72,
+      "ballName": "PB00"
+    },
+    {
+      "row": 2,
+      "col": 12,
+      "packName": 71,
+      "ballName": "PB01"
+    },
+    {
+      "row": 2,
+      "col": 13,
+      "packName": 70,
+      "ballName": "PB11"
+    },
+    {
+      "row": 2,
+      "col": 14,
+      "packName": 69,
+      "ballName": "PB12"
+    },
+    {
+      "row": 2,
+      "col": 15,
+      "packName": 68,
+      "ballName": "PB13"
+    },
+    {
+      "row": 2,
+      "col": 18,
+      "packName": 65,
+      "ballName": "PB14"
+    },
+    {
+      "row": 2,
+      "col": 19,
+      "packName": 64,
+      "ballName": "PB15"
+    },
+    {
+      "row": 2,
+      "col": 20,
+      "packName": 63,
+      "ballName": "PB16"
+    },
+    {
+      "row": 2,
+      "col": 21,
+      "packName": 62,
+      "ballName": "PB17"
+    },
+    {
+      "row": 2,
+      "col": 22,
+      "packName": 61,
+      "ballName": "PB18"
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "packName": 1,
+      "ballName": "PA20"
+    },
+    {
+      "row": 3,
+      "col": 23,
+      "packName": 60,
+      "ballName": "PB19"
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "packName": 2,
+      "ballName": "PA19"
+    },
+    {
+      "row": 4,
+      "col": 23,
+      "packName": 59,
+      "ballName": "PB20"
+    },
+    {
+      "row": 5,
+      "col": 23,
+      "packName": 58,
+      "ballName": "PB21"
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "packName": 5,
+      "ballName": "PA18"
+    },
+    {
+      "row": 8,
+      "col": 2,
+      "packName": 6,
+      "ballName": "PA17"
+    },
+    {
+      "row": 9,
+      "col": 2,
+      "packName": 7,
+      "ballName": "PA16"
+    },
+    {
+      "row": 9,
+      "col": 23,
+      "packName": 54,
+      "ballName": "PB22"
+    },
+    {
+      "row": 10,
+      "col": 23,
+      "packName": 53,
+      "ballName": "PB23"
+    },
+    {
+      "row": 11,
+      "col": 23,
+      "packName": 52,
+      "ballName": "PB24"
+    },
+    {
+      "row": 12,
+      "col": 2,
+      "packName": 10,
+      "ballName": "PA05"
+    },
+    {
+      "row": 12,
+      "col": 23,
+      "packName": 51,
+      "ballName": "PB25"
+    },
+    {
+      "row": 13,
+      "col": 2,
+      "packName": 11,
+      "ballName": "PA04"
+    },
+    {
+      "row": 14,
+      "col": 2,
+      "packName": 12,
+      "ballName": "PA03"
+    },
+    {
+      "row": 15,
+      "col": 2,
+      "packName": 13,
+      "ballName": "PA02"
+    },
+    {
+      "row": 16,
+      "col": 2,
+      "packName": 14,
+      "ballName": "PA01"
+    },
+    {
+      "row": 17,
+      "col": 2,
+      "packName": 15,
+      "ballName": "PA00"
+    },
+    {
+      "row": 19,
+      "col": 23,
+      "packName": 44,
+      "ballName": "PC06"
+    },
+    {
+      "row": 20,
+      "col": 23,
+      "packName": 43,
+      "ballName": "PC07"
+    },
+    {
+      "row": 21,
+      "col": 23,
+      "packName": 42,
+      "ballName": "PC08"
+    },
+    {
+      "row": 22,
+      "col": 23,
+      "packName": 41,
+      "ballName": "PC09"
+    },
+    {
+      "row": 23,
+      "col": 3,
+      "packName": 21,
+      "ballName": "PY07"
+    },
+    {
+      "row": 23,
+      "col": 4,
+      "packName": 22,
+      "ballName": "PY06"
+    },
+    {
+      "row": 23,
+      "col": 5,
+      "packName": 23,
+      "ballName": "PY05"
+    },
+    {
+      "row": 23,
+      "col": 6,
+      "packName": 24,
+      "ballName": "PY04"
+    },
+    {
+      "row": 23,
+      "col": 7,
+      "packName": 25,
+      "ballName": "PY03"
+    },
+    {
+      "row": 23,
+      "col": 8,
+      "packName": 26,
+      "ballName": "PY02"
+    },
+    {
+      "row": 23,
+      "col": 9,
+      "packName": 27,
+      "ballName": "PY01"
+    },
+    {
+      "row": 23,
+      "col": 10,
+      "packName": 28,
+      "ballName": "PY00"
+    },
+    {
+      "row": 23,
+      "col": 17,
+      "packName": 35,
+      "ballName": "PC15"
+    },
+    {
+      "row": 23,
+      "col": 18,
+      "packName": 36,
+      "ballName": "PC14"
+    },
+    {
+      "row": 23,
+      "col": 19,
+      "packName": 37,
+      "ballName": "PC13"
+    },
+    {
+      "row": 23,
+      "col": 20,
+      "packName": 38,
+      "ballName": "PC12"
+    },
+    {
+      "row": 23,
+      "col": 21,
+      "packName": 39,
+      "ballName": "PC11"
+    },
+    {
+      "row": 23,
+      "col": 22,
+      "packName": 40,
+      "ballName": "PC10"
+    }
+  ],
+  "other_coords": [
+    {
+      "row": 2,
+      "col": 9,
+      "packName": 74,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 2,
+      "col": 10,
+      "packName": 73,
+      "ballName": "VSS"
+    },
+    {
+      "row": 2,
+      "col": 16,
+      "packName": 67,
+      "ballName": "VIO_01"
+    },
+    {
+      "row": 2,
+      "col": 17,
+      "packName": 66,
+      "ballName": "VSS"
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "packName": 3,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "packName": 4,
+      "ballName": "VSS"
+    },
+    {
+      "row": 6,
+      "col": 23,
+      "packName": 57,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 7,
+      "col": 23,
+      "packName": 56,
+      "ballName": "VSS"
+    },
+    {
+      "row": 8,
+      "col": 23,
+      "packName": 55,
+      "ballName": "VIO_01/VPLL"
+    },
+    {
+      "row": 10,
+      "col": 2,
+      "packName": 8,
+      "ballName": "VSS"
+    },
+    {
+      "row": 11,
+      "col": 2,
+      "packName": 9,
+      "ballName": "VIO_00/VIO_01"
+    },
+    {
+      "row": 13,
+      "col": 23,
+      "packName": 50,
+      "ballName": "XTALO"
+    },
+    {
+      "row": 14,
+      "col": 23,
+      "packName": 49,
+      "ballName": "XTALI"
+    },
+    {
+      "row": 15,
+      "col": 23,
+      "packName": 48,
+      "ballName": "VSS"
+    },
+    {
+      "row": 16,
+      "col": 23,
+      "packName": 47,
+      "ballName": "VIO_02/VANA"
+    },
+    {
+      "row": 17,
+      "col": 23,
+      "packName": 46,
+      "ballName": "VREFH"
+    },
+    {
+      "row": 18,
+      "col": 2,
+      "packName": 16,
+      "ballName": "VSS"
+    },
+    {
+      "row": 18,
+      "col": 23,
+      "packName": 45,
+      "ballName": "VREFL"
+    },
+    {
+      "row": 19,
+      "col": 2,
+      "packName": 17,
+      "ballName": "VDD_SOC/DCDC_SNS"
+    },
+    {
+      "row": 20,
+      "col": 2,
+      "packName": 18,
+      "ballName": "DCDC_GND"
+    },
+    {
+      "row": 21,
+      "col": 2,
+      "packName": 19,
+      "ballName": "DCDC_LP"
+    },
+    {
+      "row": 22,
+      "col": 2,
+      "packName": 20,
+      "ballName": "DCDC_IN"
+    },
+    {
+      "row": 23,
+      "col": 11,
+      "packName": 29,
+      "ballName": "VSS"
+    },
+    {
+      "row": 23,
+      "col": 12,
+      "packName": 30,
+      "ballName": "VDD_OTPCAP"
+    },
+    {
+      "row": 23,
+      "col": 13,
+      "packName": 31,
+      "ballName": "VDD_PMCCAP"
+    },
+    {
+      "row": 23,
+      "col": 14,
+      "packName": 32,
+      "ballName": "VPMC/VBAT"
+    },
+    {
+      "row": 23,
+      "col": 15,
+      "packName": 33,
+      "ballName": "VSS"
+    },
+    {
+      "row": 23,
+      "col": 16,
+      "packName": 34,
+      "ballName": "VDD_SOC"
+    }
+  ]
+}

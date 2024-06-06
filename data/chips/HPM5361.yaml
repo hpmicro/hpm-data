@@ -29,6 +29,7 @@ memory:
     size: 1048576 # 1M
 cores:
   - name: RV32-IMAFDCPB # D25
+    ip-core: Andes D25
     peripherals: []
 
 _raw:

@@ -1,0 +1,879 @@
+{
+    "name": "LQFP144",
+    "package": "LQFP144",
+    "type": "LQFP",
+    "rows": 36,
+    "cols": 36,
+    "info": {
+        "packageType": "eLQFP 20x20mm/0.5mm",
+        "pinout": 144
+    },
+    "coordinates": [
+        {
+            "row": 2,
+            "col": 3,
+            "packName": 144,
+            "ballName": "PA23"
+        },
+        {
+            "row": 2,
+            "col": 4,
+            "packName": 143,
+            "ballName": "PA24"
+        },
+        {
+            "row": 2,
+            "col": 5,
+            "packName": 142,
+            "ballName": "PA25"
+        },
+        {
+            "row": 2,
+            "col": 6,
+            "packName": 141,
+            "ballName": "PA26"
+        },
+        {
+            "row": 2,
+            "col": 8,
+            "packName": 139,
+            "ballName": "PA27"
+        },
+        {
+            "row": 2,
+            "col": 9,
+            "packName": 138,
+            "ballName": "PA28"
+        },
+        {
+            "row": 2,
+            "col": 10,
+            "packName": 137,
+            "ballName": "PA29"
+        },
+        {
+            "row": 2,
+            "col": 11,
+            "packName": 136,
+            "ballName": "PA30"
+        },
+        {
+            "row": 2,
+            "col": 12,
+            "packName": 135,
+            "ballName": "PA31"
+        },
+        {
+            "row": 2,
+            "col": 13,
+            "packName": 134,
+            "ballName": "PB00"
+        },
+        {
+            "row": 2,
+            "col": 15,
+            "packName": 132,
+            "ballName": "PB01"
+        },
+        {
+            "row": 2,
+            "col": 16,
+            "packName": 131,
+            "ballName": "PB02"
+        },
+        {
+            "row": 2,
+            "col": 17,
+            "packName": 130,
+            "ballName": "PB03"
+        },
+        {
+            "row": 2,
+            "col": 18,
+            "packName": 129,
+            "ballName": "PB04"
+        },
+        {
+            "row": 2,
+            "col": 19,
+            "packName": 128,
+            "ballName": "PB05"
+        },
+        {
+            "row": 2,
+            "col": 20,
+            "packName": 127,
+            "ballName": "PB06"
+        },
+        {
+            "row": 2,
+            "col": 22,
+            "packName": 125,
+            "ballName": "PB07"
+        },
+        {
+            "row": 2,
+            "col": 23,
+            "packName": 124,
+            "ballName": "PB08"
+        },
+        {
+            "row": 2,
+            "col": 24,
+            "packName": 123,
+            "ballName": "PB09"
+        },
+        {
+            "row": 2,
+            "col": 25,
+            "packName": 122,
+            "ballName": "PB10"
+        },
+        {
+            "row": 2,
+            "col": 26,
+            "packName": 121,
+            "ballName": "PB11"
+        },
+        {
+            "row": 2,
+            "col": 28,
+            "packName": 119,
+            "ballName": "PB12"
+        },
+        {
+            "row": 2,
+            "col": 29,
+            "packName": 118,
+            "ballName": "PB13"
+        },
+        {
+            "row": 2,
+            "col": 30,
+            "packName": 117,
+            "ballName": "PB14"
+        },
+        {
+            "row": 2,
+            "col": 31,
+            "packName": 116,
+            "ballName": "PB15"
+        },
+        {
+            "row": 2,
+            "col": 32,
+            "packName": 115,
+            "ballName": "PB16"
+        },
+        {
+            "row": 2,
+            "col": 33,
+            "packName": 114,
+            "ballName": "PB17"
+        },
+        {
+            "row": 2,
+            "col": 35,
+            "packName": 112,
+            "ballName": "PB18"
+        },
+        {
+            "row": 2,
+            "col": 36,
+            "packName": 111,
+            "ballName": "PB19"
+        },
+        {
+            "row": 2,
+            "col": 37,
+            "packName": 110,
+            "ballName": "PB20"
+        },
+        {
+            "row": 2,
+            "col": 38,
+            "packName": 109,
+            "ballName": "PB21"
+        },
+        {
+            "row": 3,
+            "col": 2,
+            "packName": 1,
+            "ballName": "PA22"
+        },
+        {
+            "row": 3,
+            "col": 39,
+            "packName": 108,
+            "ballName": "PB22"
+        },
+        {
+            "row": 4,
+            "col": 2,
+            "packName": 2,
+            "ballName": "PA21"
+        },
+        {
+            "row": 4,
+            "col": 39,
+            "packName": 107,
+            "ballName": "PB23"
+        },
+        {
+            "row": 5,
+            "col": 2,
+            "packName": 3,
+            "ballName": "PA20"
+        },
+        {
+            "row": 5,
+            "col": 39,
+            "packName": 106,
+            "ballName": "PB24"
+        },
+        {
+            "row": 6,
+            "col": 2,
+            "packName": 4,
+            "ballName": "PA19"
+        },
+        {
+            "row": 6,
+            "col": 39,
+            "packName": 105,
+            "ballName": "PB25"
+        },
+        {
+            "row": 8,
+            "col": 2,
+            "packName": 6,
+            "ballName": "PA18"
+        },
+        {
+            "row": 8,
+            "col": 39,
+            "packName": 103,
+            "ballName": "PB26"
+        },
+        {
+            "row": 9,
+            "col": 2,
+            "packName": 7,
+            "ballName": "PA17"
+        },
+        {
+            "row": 9,
+            "col": 39,
+            "packName": 102,
+            "ballName": "PB27"
+        },
+        {
+            "row": 10,
+            "col": 2,
+            "packName": 8,
+            "ballName": "PA16"
+        },
+        {
+            "row": 10,
+            "col": 39,
+            "packName": 101,
+            "ballName": "PB28"
+        },
+        {
+            "row": 11,
+            "col": 2,
+            "packName": 9,
+            "ballName": "PA15"
+        },
+        {
+            "row": 11,
+            "col": 39,
+            "packName": 100,
+            "ballName": "PB29"
+        },
+        {
+            "row": 12,
+            "col": 2,
+            "packName": 10,
+            "ballName": "PA14"
+        },
+        {
+            "row": 12,
+            "col": 39,
+            "packName": 99,
+            "ballName": "PB30"
+        },
+        {
+            "row": 13,
+            "col": 2,
+            "packName": 11,
+            "ballName": "PA13"
+        },
+        {
+            "row": 13,
+            "col": 39,
+            "packName": 98,
+            "ballName": "PB31"
+        },
+        {
+            "row": 14,
+            "col": 39,
+            "packName": 97,
+            "ballName": "PC00"
+        },
+        {
+            "row": 15,
+            "col": 2,
+            "packName": 13,
+            "ballName": "PA12"
+        },
+        {
+            "row": 15,
+            "col": 39,
+            "packName": 96,
+            "ballName": "PC01"
+        },
+        {
+            "row": 16,
+            "col": 2,
+            "packName": 14,
+            "ballName": "PA11"
+        },
+        {
+            "row": 16,
+            "col": 39,
+            "packName": 95,
+            "ballName": "PC02"
+        },
+        {
+            "row": 17,
+            "col": 2,
+            "packName": 15,
+            "ballName": "PA10"
+        },
+        {
+            "row": 18,
+            "col": 2,
+            "packName": 16,
+            "ballName": "PA09"
+        },
+        {
+            "row": 19,
+            "col": 2,
+            "packName": 17,
+            "ballName": "PA08"
+        },
+        {
+            "row": 21,
+            "col": 2,
+            "packName": 19,
+            "ballName": "PA07"
+        },
+        {
+            "row": 22,
+            "col": 2,
+            "packName": 20,
+            "ballName": "PA06"
+        },
+        {
+            "row": 23,
+            "col": 2,
+            "packName": 21,
+            "ballName": "PA05"
+        },
+        {
+            "row": 24,
+            "col": 2,
+            "packName": 22,
+            "ballName": "PA04"
+        },
+        {
+            "row": 26,
+            "col": 2,
+            "packName": 24,
+            "ballName": "PA03"
+        },
+        {
+            "row": 27,
+            "col": 2,
+            "packName": 25,
+            "ballName": "PA02"
+        },
+        {
+            "row": 28,
+            "col": 2,
+            "packName": 26,
+            "ballName": "PA01"
+        },
+        {
+            "row": 28,
+            "col": 39,
+            "packName": 83,
+            "ballName": "PC03"
+        },
+        {
+            "row": 29,
+            "col": 2,
+            "packName": 27,
+            "ballName": "PA00"
+        },
+        {
+            "row": 29,
+            "col": 39,
+            "packName": 82,
+            "ballName": "PC04"
+        },
+        {
+            "row": 30,
+            "col": 39,
+            "packName": 81,
+            "ballName": "PC05"
+        },
+        {
+            "row": 31,
+            "col": 39,
+            "packName": 80,
+            "ballName": "PC06"
+        },
+        {
+            "row": 32,
+            "col": 39,
+            "packName": 79,
+            "ballName": "PC07"
+        },
+        {
+            "row": 33,
+            "col": 39,
+            "packName": 78,
+            "ballName": "PC08"
+        },
+        {
+            "row": 35,
+            "col": 2,
+            "packName": 33,
+            "ballName": "PY07"
+        },
+        {
+            "row": 35,
+            "col": 39,
+            "packName": 76,
+            "ballName": "PC09"
+        },
+        {
+            "row": 36,
+            "col": 2,
+            "packName": 34,
+            "ballName": "PY06"
+        },
+        {
+            "row": 36,
+            "col": 39,
+            "packName": 75,
+            "ballName": "PC10"
+        },
+        {
+            "row": 37,
+            "col": 2,
+            "packName": 35,
+            "ballName": "PY05"
+        },
+        {
+            "row": 37,
+            "col": 39,
+            "packName": 74,
+            "ballName": "PC11"
+        },
+        {
+            "row": 38,
+            "col": 2,
+            "packName": 36,
+            "ballName": "PY04"
+        },
+        {
+            "row": 38,
+            "col": 39,
+            "packName": 73,
+            "ballName": "PC12"
+        },
+        {
+            "row": 39,
+            "col": 3,
+            "packName": 37,
+            "ballName": "PY03"
+        },
+        {
+            "row": 39,
+            "col": 4,
+            "packName": 38,
+            "ballName": "PY02"
+        },
+        {
+            "row": 39,
+            "col": 6,
+            "packName": 40,
+            "ballName": "PY01"
+        },
+        {
+            "row": 39,
+            "col": 8,
+            "packName": 42,
+            "ballName": "PY00"
+        },
+        {
+            "row": 39,
+            "col": 13,
+            "packName": 47,
+            "ballName": "PZ07"
+        },
+        {
+            "row": 39,
+            "col": 14,
+            "packName": 48,
+            "ballName": "PZ06"
+        },
+        {
+            "row": 39,
+            "col": 15,
+            "packName": 49,
+            "ballName": "PZ05"
+        },
+        {
+            "row": 39,
+            "col": 16,
+            "packName": 50,
+            "ballName": "PZ04"
+        },
+        {
+            "row": 39,
+            "col": 17,
+            "packName": 51,
+            "ballName": "PZ03"
+        },
+        {
+            "row": 39,
+            "col": 18,
+            "packName": 52,
+            "ballName": "PZ02"
+        },
+        {
+            "row": 39,
+            "col": 19,
+            "packName": 53,
+            "ballName": "PZ01"
+        },
+        {
+            "row": 39,
+            "col": 20,
+            "packName": 54,
+            "ballName": "PZ00"
+        },
+        {
+            "row": 39,
+            "col": 22,
+            "packName": 56,
+            "ballName": "PC27"
+        },
+        {
+            "row": 39,
+            "col": 23,
+            "packName": 57,
+            "ballName": "PC26"
+        },
+        {
+            "row": 39,
+            "col": 24,
+            "packName": 58,
+            "ballName": "PC25"
+        },
+        {
+            "row": 39,
+            "col": 25,
+            "packName": 59,
+            "ballName": "PC24"
+        },
+        {
+            "row": 39,
+            "col": 26,
+            "packName": 60,
+            "ballName": "PC23"
+        },
+        {
+            "row": 39,
+            "col": 28,
+            "packName": 62,
+            "ballName": "PC22"
+        },
+        {
+            "row": 39,
+            "col": 29,
+            "packName": 63,
+            "ballName": "PC21"
+        },
+        {
+            "row": 39,
+            "col": 30,
+            "packName": 64,
+            "ballName": "PC20"
+        },
+        {
+            "row": 39,
+            "col": 31,
+            "packName": 65,
+            "ballName": "PC19"
+        },
+        {
+            "row": 39,
+            "col": 32,
+            "packName": 66,
+            "ballName": "PC18"
+        },
+        {
+            "row": 39,
+            "col": 33,
+            "packName": 67,
+            "ballName": "PC17"
+        },
+        {
+            "row": 39,
+            "col": 35,
+            "packName": 69,
+            "ballName": "PC16"
+        },
+        {
+            "row": 39,
+            "col": 36,
+            "packName": 70,
+            "ballName": "PC15"
+        },
+        {
+            "row": 39,
+            "col": 37,
+            "packName": 71,
+            "ballName": "PC14"
+        },
+        {
+            "row": 39,
+            "col": 38,
+            "packName": 72,
+            "ballName": "PC13"
+        }
+    ],
+    "other_coords": [
+        {
+            "row": 2,
+            "col": 7,
+            "packName": 140,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 2,
+            "col": 14,
+            "packName": 133,
+            "ballName": "VIO_01"
+        },
+        {
+            "row": 2,
+            "col": 21,
+            "packName": 126,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 2,
+            "col": 27,
+            "packName": 120,
+            "ballName": "VIO_01"
+        },
+        {
+            "row": 2,
+            "col": 34,
+            "packName": 113,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 7,
+            "col": 2,
+            "packName": 5,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 7,
+            "col": 39,
+            "packName": 104,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 14,
+            "col": 2,
+            "packName": 12,
+            "ballName": "VIO_01"
+        },
+        {
+            "row": 17,
+            "col": 39,
+            "packName": 94,
+            "ballName": "VIO_01"
+        },
+        {
+            "row": 18,
+            "col": 39,
+            "packName": 93,
+            "ballName": "USB_DM"
+        },
+        {
+            "row": 19,
+            "col": 39,
+            "packName": 92,
+            "ballName": "USB_DP"
+        },
+        {
+            "row": 20,
+            "col": 2,
+            "packName": 18,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 20,
+            "col": 39,
+            "packName": 91,
+            "ballName": "USBVBUS"
+        },
+        {
+            "row": 21,
+            "col": 39,
+            "packName": 90,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 22,
+            "col": 39,
+            "packName": 89,
+            "ballName": "XTALO"
+        },
+        {
+            "row": 23,
+            "col": 39,
+            "packName": 88,
+            "ballName": "XTALI"
+        },
+        {
+            "row": 24,
+            "col": 39,
+            "packName": 87,
+            "ballName": "VANA"
+        },
+        {
+            "row": 25,
+            "col": 2,
+            "packName": 23,
+            "ballName": "VIO_00"
+        },
+        {
+            "row": 25,
+            "col": 39,
+            "packName": 86,
+            "ballName": "VIO_02"
+        },
+        {
+            "row": 26,
+            "col": 39,
+            "packName": 85,
+            "ballName": "VREFH"
+        },
+        {
+            "row": 27,
+            "col": 39,
+            "packName": 84,
+            "ballName": "VREFL"
+        },
+        {
+            "row": 30,
+            "col": 2,
+            "packName": 28,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 31,
+            "col": 2,
+            "packName": 29,
+            "ballName": "DCDC_SNS"
+        },
+        {
+            "row": 32,
+            "col": 2,
+            "packName": 30,
+            "ballName": "DCDC_GND"
+        },
+        {
+            "row": 33,
+            "col": 2,
+            "packName": 31,
+            "ballName": "DCDC_LP"
+        },
+        {
+            "row": 34,
+            "col": 2,
+            "packName": 32,
+            "ballName": "DCDC_IN"
+        },
+        {
+            "row": 34,
+            "col": 39,
+            "packName": 77,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 39,
+            "col": 5,
+            "packName": 39,
+            "ballName": "VDD_OTPCAP"
+        },
+        {
+            "row": 39,
+            "col": 7,
+            "packName": 41,
+            "ballName": "VDD_PMCCAP"
+        },
+        {
+            "row": 39,
+            "col": 9,
+            "packName": 43,
+            "ballName": "VPMC"
+        },
+        {
+            "row": 39,
+            "col": 10,
+            "packName": 44,
+            "ballName": "RTC_XTALI"
+        },
+        {
+            "row": 39,
+            "col": 11,
+            "packName": 45,
+            "ballName": "RTC_XTALO"
+        },
+        {
+            "row": 39,
+            "col": 12,
+            "packName": 46,
+            "ballName": "VBAT"
+        },
+        {
+            "row": 39,
+            "col": 21,
+            "packName": 55,
+            "ballName": "VDD_SOC"
+        },
+        {
+            "row": 39,
+            "col": 27,
+            "packName": 61,
+            "ballName": "VIO_02"
+        },
+        {
+            "row": 39,
+            "col": 34,
+            "packName": 68,
+            "ballName": "VDD_SOC"
+        }
+    ]
+}

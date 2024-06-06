@@ -1,0 +1,413 @@
+{
+  "name": "LQFP64",
+  "package": "LQFP64",
+  "type": "LQFP",
+  "rows": 16,
+  "cols": 16,
+  "info": {
+    "packageType": "LQFP 14x14mm/0.5mm",
+    "pinout": 64
+  },
+  "coordinates": [
+    {
+      "row": 2,
+      "col": 3,
+      "packName": 64,
+      "ballName": "PA04"
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "packName": 63,
+      "ballName": "PA05"
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "packName": 62,
+      "ballName": "PA06"
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "packName": 61,
+      "ballName": "PA07"
+    },
+    {
+      "row": 2,
+      "col": 10,
+      "packName": 57,
+      "ballName": "PA24"
+    },
+    {
+      "row": 2,
+      "col": 11,
+      "packName": 56,
+      "ballName": "PA25"
+    },
+    {
+      "row": 2,
+      "col": 12,
+      "packName": 55,
+      "ballName": "PA26"
+    },
+    {
+      "row": 2,
+      "col": 13,
+      "packName": 54,
+      "ballName": "PA27"
+    },
+    {
+      "row": 2,
+      "col": 14,
+      "packName": 53,
+      "ballName": "PA28"
+    },
+    {
+      "row": 2,
+      "col": 15,
+      "packName": 52,
+      "ballName": "PA29"
+    },
+    {
+      "row": 2,
+      "col": 16,
+      "packName": 51,
+      "ballName": "PA30"
+    },
+    {
+      "row": 2,
+      "col": 17,
+      "packName": 50,
+      "ballName": "PA31"
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "packName": 1,
+      "ballName": "PA08"
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "packName": 2,
+      "ballName": "PA09"
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "packName": 3,
+      "ballName": "PA10"
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "packName": 4,
+      "ballName": "PA11"
+    },
+    {
+      "row": 10,
+      "col": 2,
+      "packName": 8,
+      "ballName": "PA12"
+    },
+    {
+      "row": 10,
+      "col": 19,
+      "packName": 41,
+      "ballName": "PB00"
+    },
+    {
+      "row": 11,
+      "col": 2,
+      "packName": 9,
+      "ballName": "PA13"
+    },
+    {
+      "row": 11,
+      "col": 19,
+      "packName": 40,
+      "ballName": "PB01"
+    },
+    {
+      "row": 12,
+      "col": 2,
+      "packName": 10,
+      "ballName": "PA03"
+    },
+    {
+      "row": 13,
+      "col": 2,
+      "packName": 11,
+      "ballName": "PA02"
+    },
+    {
+      "row": 15,
+      "col": 19,
+      "packName": 36,
+      "ballName": "PB08"
+    },
+    {
+      "row": 16,
+      "col": 19,
+      "packName": 35,
+      "ballName": "PB09"
+    },
+    {
+      "row": 17,
+      "col": 2,
+      "packName": 15,
+      "ballName": "PA01"
+    },
+    {
+      "row": 17,
+      "col": 19,
+      "packName": 34,
+      "ballName": "PB10"
+    },
+    {
+      "row": 18,
+      "col": 2,
+      "packName": 16,
+      "ballName": "PA00"
+    },
+    {
+      "row": 18,
+      "col": 19,
+      "packName": 33,
+      "ballName": "PB11"
+    },
+    {
+      "row": 19,
+      "col": 11,
+      "packName": 25,
+      "ballName": "PY03"
+    },
+    {
+      "row": 19,
+      "col": 12,
+      "packName": 26,
+      "ballName": "PY02"
+    },
+    {
+      "row": 19,
+      "col": 13,
+      "packName": 27,
+      "ballName": "PY01"
+    },
+    {
+      "row": 19,
+      "col": 14,
+      "packName": 28,
+      "ballName": "PY00"
+    },
+    {
+      "row": 19,
+      "col": 15,
+      "packName": 29,
+      "ballName": "PB15"
+    },
+    {
+      "row": 19,
+      "col": 16,
+      "packName": 30,
+      "ballName": "PB14"
+    },
+    {
+      "row": 19,
+      "col": 17,
+      "packName": 31,
+      "ballName": "PB13"
+    },
+    {
+      "row": 19,
+      "col": 18,
+      "packName": 32,
+      "ballName": "PB12"
+    }
+  ],
+  "other_coords": [
+    {
+      "row": 2,
+      "col": 7,
+      "packName": 60,
+      "ballName": "VIO_B00"
+    },
+    {
+      "row": 2,
+      "col": 8,
+      "packName": 59,
+      "ballName": "VSS"
+    },
+    {
+      "row": 2,
+      "col": 9,
+      "packName": 58,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 2,
+      "col": 18,
+      "packName": 49,
+      "ballName": "XTALO"
+    },
+    {
+      "row": 3,
+      "col": 19,
+      "packName": 48,
+      "ballName": "XTALI"
+    },
+    {
+      "row": 4,
+      "col": 19,
+      "packName": 47,
+      "ballName": "VIO_B00"
+    },
+    {
+      "row": 5,
+      "col": 19,
+      "packName": 46,
+      "ballName": "VSS"
+    },
+    {
+      "row": 6,
+      "col": 19,
+      "packName": 45,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "packName": 5,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 7,
+      "col": 19,
+      "packName": 44,
+      "ballName": "VANA"
+    },
+    {
+      "row": 8,
+      "col": 2,
+      "packName": 6,
+      "ballName": "VSS"
+    },
+    {
+      "row": 8,
+      "col": 19,
+      "packName": 43,
+      "ballName": "VREFH"
+    },
+    {
+      "row": 9,
+      "col": 2,
+      "packName": 7,
+      "ballName": "VIO_B00"
+    },
+    {
+      "row": 9,
+      "col": 19,
+      "packName": 42,
+      "ballName": "VREFL"
+    },
+    {
+      "row": 12,
+      "col": 19,
+      "packName": 39,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 13,
+      "col": 19,
+      "packName": 38,
+      "ballName": "VSS"
+    },
+    {
+      "row": 14,
+      "col": 2,
+      "packName": 12,
+      "ballName": "VDD_SOC"
+    },
+    {
+      "row": 14,
+      "col": 19,
+      "packName": 37,
+      "ballName": "VIO_B01"
+    },
+    {
+      "row": 15,
+      "col": 2,
+      "packName": 13,
+      "ballName": "VSS"
+    },
+    {
+      "row": 16,
+      "col": 2,
+      "packName": 14,
+      "ballName": "VDD_OTPCAP"
+    },
+    {
+      "row": 19,
+      "col": 3,
+      "packName": 17,
+      "ballName": "RESETN"
+    },
+    {
+      "row": 19,
+      "col": 4,
+      "packName": 18,
+      "ballName": "WAKEUP"
+    },
+    {
+      "row": 19,
+      "col": 5,
+      "packName": 19,
+      "ballName": "DCDC_GND"
+    },
+    {
+      "row": 19,
+      "col": 6,
+      "packName": 20,
+      "ballName": "DCDC_LP"
+    },
+    {
+      "row": 19,
+      "col": 7,
+      "packName": 21,
+      "ballName": "DCDC_IN"
+    },
+    {
+      "row": 19,
+      "col": 8,
+      "packName": 22,
+      "ballName": "VPMC"
+    },
+    {
+      "row": 19,
+      "col": 9,
+      "packName": 23,
+      "ballName": "VSS"
+    },
+    {
+      "row": 19,
+      "col": 10,
+      "packName": 24,
+      "ballName": "VDD_PMCCAP"
+    }
+  ],
+  "special_pins": [
+    {
+      "name": "PA24",
+      "modules": {
+        "USBPHY": "USBPHY.A.USB_DP"
+      }
+    },
+    {
+      "name": "PA25",
+      "modules": {
+        "USBPHY": "USBPHY.A.USB_DM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+- name: SYSCTL
+  address: 0xF4000000
+  registers:
+    kind: sysctl
+    version: v53
+    block: SYSCTL
+  pins:
+    # OBS pins
+
+
