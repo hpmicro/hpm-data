@@ -468,49 +468,73 @@ fn gen_opts() -> generate::Options {
 fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     let mut memory_x = String::new();
 
-    let flash = chip
+    // names:
+    // AHB_SRAM
+    // APB_SRAM
+    // AXI_SRAM
+    // AXI_SRAM_NONCACHEABLE
+    // DLM
+    // ILM
+    // NONCACHEABLE_RAM
+    // SDRAM
+    // SDRAM_NONCACHEABLE
+    // SHARE_RAM
+    // XPI0
+
+    let xpi0 = chip
         .memory
         .iter()
         .filter(|r| r.kind == MemoryRegionKind::Flash && r.name.starts_with("XPI"));
-    let (flash_address, flash_size) = flash
+    let (flash_address, flash_size) = xpi0
         .clone()
         .map(|r| (r.address, r.size))
         .reduce(|acc, el| (u32::min(acc.0, el.0), acc.1 + el.1))
         .unwrap();
-    let ram = chip
+    let dlm = chip
         .memory
         .iter()
-        .find(|r| r.kind == MemoryRegionKind::Ram)
+        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "DLM")
         .unwrap();
-    let otp = chip
+    let ilm = chip
         .memory
         .iter()
-        .find(|r| r.kind == MemoryRegionKind::Flash && r.name == "OTP");
+        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "DLM")
+        .unwrap();
+    let axi_sram = chip
+        .memory
+        .iter()
+        .find(|r| r.kind == MemoryRegionKind::Flash && r.name == "AXI_SRAM");
 
     write!(memory_x, "MEMORY\n{{\n").unwrap();
     writeln!(
         memory_x,
-        "    FLASH : ORIGIN = 0x{:08x}, LENGTH = {:>4}K /* {} */",
+        "    XPI0 : ORIGIN = 0x{:08x}, LENGTH = {:>4}K /* {} */",
         flash_address,
         flash_size / 1024,
-        flash
-            .map(|x| x.name.as_ref())
+        xpi0.map(|x| x.name.as_ref())
             .collect::<Vec<&str>>()
             .join(" + ")
     )
     .unwrap();
     writeln!(
         memory_x,
-        "    RAM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
-        ram.address,
-        ram.size / 1024,
+        "    DLM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+        dlm.address,
+        dlm.size / 1024,
     )
     .unwrap();
-    if let Some(otp) = otp {
+    writeln!(
+        memory_x,
+        "    ILM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+        ilm.address,
+        ilm.size / 1024,
+    )
+    .unwrap();
+    if let Some(axi_sram) = axi_sram {
         writeln!(
             memory_x,
-            "    OTP   : ORIGIN = 0x{:08x}, LENGTH = {:>4}",
-            otp.address, otp.size,
+            "    AXI_SRAM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}",
+            axi_sram.address, axi_sram.size,
         )
         .unwrap();
     }
@@ -519,12 +543,12 @@ fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     write!(
         memory_x,
         r#"
-REGION_ALIAS("REGION_TEXT", FLASH);
-REGION_ALIAS("REGION_RODATA", FLASH);
-REGION_ALIAS("REGION_DATA", RAM);
-REGION_ALIAS("REGION_BSS", RAM);
-REGION_ALIAS("REGION_HEAP", RAM);
-REGION_ALIAS("REGION_STACK", RAM);
+REGION_ALIAS("REGION_TEXT", XPI0);
+REGION_ALIAS("REGION_RODATA", XPI0);
+REGION_ALIAS("REGION_DATA", DLM);
+REGION_ALIAS("REGION_BSS", DLM);
+REGION_ALIAS("REGION_HEAP", DLM;
+REGION_ALIAS("REGION_STACK", DLM);
     "#
     )
     .unwrap();

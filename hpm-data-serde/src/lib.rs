@@ -303,6 +303,21 @@ where
         Ok(1024
             * u32::from_str_radix(&s[..s.len() - 2], 10)
                 .expect(&format!("error while parsering {:?}", s)))
+    } else if s.ends_with("M") {
+        Ok(1024
+            * 1024
+            * u32::from_str_radix(&s[..s.len() - 1], 10)
+                .expect(&format!("error while parsering {:?}", s)))
+    } else if s.ends_with("MiB") {
+        Ok(1024
+            * 1024
+            * u32::from_str_radix(&s[..s.len() - 3], 10)
+                .expect(&format!("error while parsering {:?}", s)))
+    } else if s.ends_with("MB") {
+        Ok(1024
+            * 1024
+            * u32::from_str_radix(&s[..s.len() - 2], 10)
+                .expect(&format!("error while parsering {:?}", s)))
     } else {
         // parse pure digits here
         Ok(s.parse().unwrap())
