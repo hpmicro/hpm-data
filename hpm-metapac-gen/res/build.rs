@@ -29,12 +29,12 @@ fn main() {
 
     let chip_core_name = match env::vars()
         .map(|(a, _)| a)
-        .filter(|x| x.starts_with("CARGO_FEATURE_CH32") || x.starts_with("CARGO_FEATURE_CH6"))
+        .filter(|x| x.starts_with("CARGO_FEATURE_HPM"))
         .get_one()
     {
         Ok(x) => x,
-        Err(GetOneError::None) => panic!("No ch32xx/ch6xx Cargo feature enabled"),
-        Err(GetOneError::Multiple) => panic!("Multiple ch32xx/ch6xx Cargo features enabled"),
+        Err(GetOneError::None) => panic!("No hpmxxxx Cargo feature enabled"),
+        Err(GetOneError::Multiple) => panic!("Multiple hpmxxxx Cargo features enabled"),
     }
     .strip_prefix("CARGO_FEATURE_")
     .unwrap()
@@ -55,11 +55,11 @@ fn main() {
         chip_core_name
     );
     println!(
-        "cargo:rustc-env=hpm_METAPAC_PAC_PATH=chips/{}/pac.rs",
+        "cargo:rustc-env=HPM_METAPAC_PAC_PATH=chips/{}/pac.rs",
         chip_core_name
     );
     println!(
-        "cargo:rustc-env=hpm_METAPAC_METADATA_PATH=chips/{}/metadata.rs",
+        "cargo:rustc-env=HPM_METAPAC_METADATA_PATH=chips/{}/metadata.rs",
         chip_core_name
     );
 

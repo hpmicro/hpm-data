@@ -12,7 +12,7 @@ case "$CMD" in
         echo TODO $CMD
     ;;
     install-chiptool)
-        cargo install --git https://github.com/embassy-rs/chiptool
+        cargo install --git https://github.com/ch32-rs/chiptool
     ;;
     extract-all)
         peri=$1

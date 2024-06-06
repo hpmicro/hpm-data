@@ -7,12 +7,12 @@
 pub mod common;
 
 #[cfg(feature = "pac")]
-include!(env!("hpm_METAPAC_PAC_PATH"));
+include!(env!("HPM_METAPAC_PAC_PATH"));
 
 #[cfg(feature = "metadata")]
 pub mod metadata {
     include!("metadata.rs");
-    include!(env!("hpm_METAPAC_METADATA_PATH"));
+    include!(env!("HPM_METAPAC_METADATA_PATH"));
 }
 
 pub unsafe trait InterruptNumber: Copy {

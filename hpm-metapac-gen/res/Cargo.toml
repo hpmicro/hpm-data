@@ -5,31 +5,20 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/hpm-rs/hpm-data"
 homepage = "https://github.com/hpm-rs/hpm-data"
-description = "Peripheral Access Crate (PAC) for all WCH's MCU chips, including metadata."
+description = "Peripheral Access Crate (PAC) for all HPM's MCU chips, including metadata."
 authors = ["Andelf <andelf@gmail.com>"]
 documentation = "https://docs.rs/hpm-metapac"
 categories = ["embedded", "no-std", "hardware-support"]
-keywords = ["wch", "ch32", "svd2rust", "no_std", "embedded"]
+keywords = ["hpm", "hpmicro", "svd2rust", "no_std", "embedded"]
 readme = "README.md"
 
 # `cargo publish` is unable to figure out which .rs files are needed due to the include! magic.
 include = ["**/*.rs", "**/*.x", "Cargo.toml"]
 
 [package.metadata.docs.rs]
-features = ["ch32v307vct6", "pac", "metadata"]
-default-target = "riscv32imac-unknown-none-eabihf"
+features = ["hpm5361", "pac", "metadata"]
+default-target = "riscv32imafc-unknown-none-elf"
 targets = []
-
-[package.metadata.embassy_docs]
-features = ["pac", "metadata"]
-flavors = [
-    { regex_feature = "ch32v0.*", target = "riscv32i-unknown-none-eabi" },
-    { regex_feature = "ch32v1.*", target = "riscv32imac-unknown-none-elf" },
-    { regex_feature = "ch32v2.*", target = "riscv32imac-unknown-none-elf" },
-    { regex_feature = "ch32v3.*", target = "riscv32imacf-unknown-none-elf" },
-    { regex_feature = "ch32x0.*", target = "riscv32imac-unknown-none-elf" },
-    { regex_feature = "ch32l1.*", target = "riscv32imac-unknown-none-elf" },
-]
 
 [dependencies]
 riscv = "0.11.1"
