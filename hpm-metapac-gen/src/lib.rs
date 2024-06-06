@@ -508,24 +508,21 @@ fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     write!(memory_x, "MEMORY\n{{\n").unwrap();
     writeln!(
         memory_x,
-        "    XPI0 : ORIGIN = 0x{:08x}, LENGTH = {:>4}K /* {} */",
+        "    XPI0  : ORIGIN = 0x{:08x}, LENGTH = {:>4}K /* bootheader and firmware */",
         flash_address,
         flash_size / 1024,
-        xpi0.map(|x| x.name.as_ref())
-            .collect::<Vec<&str>>()
-            .join(" + ")
     )
     .unwrap();
     writeln!(
         memory_x,
-        "    DLM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+        "    DLM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K /* data local memory */",
         dlm.address,
         dlm.size / 1024,
     )
     .unwrap();
     writeln!(
         memory_x,
-        "    ILM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+        "    ILM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K /* instruction local memory */",
         ilm.address,
         ilm.size / 1024,
     )
