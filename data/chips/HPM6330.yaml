@@ -13,3 +13,5 @@ cores:
   - name: TODO
     ip-core: TODO
     peripherals: []
+    include_peripherals:
+      - "../family/COMMON.yaml"

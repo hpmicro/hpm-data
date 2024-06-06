@@ -16,6 +16,8 @@ cores:
   - name: TODO
     ip-core: TODO
     peripherals: []
+    include_peripherals:
+      - "../family/COMMON.yaml"
 _raw:
   "| HPM6880 | Single-core 32-bit | 1064 | 4 | Gigabit | CAN FD | USB HS w/ PHY\
   \ \xD71 | AES128/256, SHA-1/256 | 1\xD716 bit | 17\xD717 417BGA P0.8 | \u221240\

@@ -7,6 +7,27 @@
   pins:
     # OBS pins
 
+- name: PLLCTL
+  address: 0xF40C0000
+  registers:
+    kind: pllctl
+    version: v2
+    block: PLLCTLV2
+
+- name: PDGO
+  address: 0xF4134000
+  registers:
+    kind: pdgo
+    version: v53
+    block: PDGO
+
+- name: PCFG
+  address: 0xF4104000
+  registers:
+    kind: pcfg
+    version: v53
+    block: PCFG
+
 # input output and alternate function
 
 - name: IOC

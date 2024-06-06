@@ -31,6 +31,7 @@ cores:
   - name: RV32-IMAFDCPB # D25
     ip-core: Andes D25
     include_peripherals:
+      - "../family/COMMON.yaml"
       - "../family/HPM5300.yaml"
       - "../family/HPM5300_GPTMR23.yaml"
       - "../family/HPM5300_ADC1.yaml"

@@ -22,6 +22,8 @@ cores:
   - name: TODO
     ip-core: TODO
     peripherals: []
+    include_peripherals:
+      - "../family/COMMON.yaml"
 _raw:
   "| HPM6364 | Single-core 32-bit | 800 | 2\xD7I2S, 1\xD7digital audio output\
   \ | 100M | CAN FD | USB HS w/ PHY \xD71 | AES128/256, SHA-1/256 | 3\xD716 bits |\
