@@ -76,6 +76,7 @@ fieldset/CONFIG:
       description: "Select reference clock, This filed support changing while running, but application must take frequency error and jitter into consideration. And if MFN changed before reference switch, application need make sure time is enough for MFN updating. 0: XTAL24M 1: IRC24M."
       bit_offset: 0
       bit_size: 1
+      enum: REFSEL
     - name: SPREAD
       description: Enable spread spectrum function. This field supports changing during PLL running.
       bit_offset: 8
@@ -179,3 +180,13 @@ fieldset/XTAL:
       description: "Busy flag 0: Oscillator is working or shutdown 1: Oscillator is changing status."
       bit_offset: 31
       bit_size: 1
+enum/REFSEL:
+  description: "Select reference clock, This filed support changing while running, but application must take frequency error and jitter into consideration. And if MFN changed before reference switch, application need make sure time is enough for MFN updating."
+  bit_size: 1
+  variants:
+    - name: XTAL24M
+      description: XTAL24M
+      value: 0
+    - name: IRC24M
+      description: IRC24M
+      value: 1
