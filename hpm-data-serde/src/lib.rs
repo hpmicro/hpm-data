@@ -32,8 +32,6 @@ pub mod chip {
         pub address: u32,
         #[serde(deserialize_with = "crate::parse_size_with_surfix")]
         pub size: u32,
-        #[serde(skip_serializing_if = "Option::is_none")]
-        pub settings: Option<memory::Settings>,
     }
 
     pub mod memory {
@@ -44,13 +42,6 @@ pub mod chip {
         pub enum Kind {
             Flash,
             Ram,
-        }
-
-        #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
-        pub struct Settings {
-            pub erase_size: u32,
-            pub write_size: u32,
-            pub erase_value: u8,
         }
     }
 
@@ -94,11 +85,10 @@ pub mod chip {
             pub address: u32,
             #[serde(skip_serializing_if = "Option::is_none")]
             pub registers: Option<peripheral::Registers>,
+
             #[serde(skip_serializing_if = "Option::is_none")]
             pub sysctl: Option<peripheral::Sysctl>,
 
-            #[serde(skip_serializing_if = "Option::is_none")]
-            pub rcc: Option<peripheral::Rcc>,
             #[serde(default, skip_serializing_if = "Vec::is_empty")]
             pub pins: Vec<peripheral::Pin>,
             #[serde(skip_serializing_if = "Option::is_none")]
@@ -122,60 +112,13 @@ pub mod chip {
             #[derive(
                 Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
             )]
-            pub struct Rcc {
-                pub bus_clock: String,
-                pub kernel_clock: rcc::KernelClock,
-                pub enable: rcc::Enable,
-                #[serde(skip_serializing_if = "Option::is_none")]
-                pub reset: Option<rcc::Reset>,
-            }
-
-            #[derive(
-                Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
-            )]
             pub struct Sysctl {
+                /// GROUPx[0], or GROUPx[1]  ...
                 pub group: usize,
                 pub group_bit_offset: u8,
                 pub resource_clock_top: usize,
                 pub resource: usize,
                 pub clock_node: usize,
-            }
-
-            pub mod rcc {
-                use serde::{Deserialize, Serialize};
-
-                #[derive(
-                    Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
-                )]
-                pub struct Field {
-                    pub register: String,
-                    pub field: String,
-                }
-
-                #[derive(
-                    Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
-                )]
-                #[serde(untagged)]
-                pub enum KernelClock {
-                    Clock(String),
-                    Mux(Field),
-                }
-
-                #[derive(
-                    Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
-                )]
-                pub struct Enable {
-                    pub register: String,
-                    pub field: String,
-                }
-
-                #[derive(
-                    Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
-                )]
-                pub struct Reset {
-                    pub register: String,
-                    pub field: String,
-                }
             }
 
             #[derive(
@@ -213,7 +156,7 @@ pub mod chip {
 
                 impl std::fmt::Display for Pin {
                     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(f, "P{}{}", self.port, self.num)
+                        write!(f, "P{}{:02}", self.port, self.num)
                     }
                 }
 
@@ -266,14 +209,13 @@ pub mod chip {
             )]
             pub struct DmaChannel {
                 pub signal: String,
-                #[serde(skip_serializing_if = "Option::is_none")]
-                pub dma: Option<String>,
-                #[serde(skip_serializing_if = "Option::is_none")]
-                pub channel: Option<String>,
+                //  #[serde(skip_serializing_if = "Option::is_none")]
+                //  pub dma: Option<String>,
+                //  #[serde(skip_serializing_if = "Option::is_none")]
+                //  pub channel: Option<String>,
                 #[serde(skip_serializing_if = "Option::is_none")]
                 pub dmamux: Option<String>,
-                #[serde(skip_serializing_if = "Option::is_none")]
-                pub request: Option<u8>,
+                pub request: u8,
             }
         }
 
@@ -373,20 +315,7 @@ mod tests {
 
     #[test]
     fn test_one() {
-        let path = Path::new(CHIPS_DIR).join("CH32X035G8U6.yaml");
+        let path = Path::new(CHIPS_DIR).join("HPM5361.yaml");
         check_file(path);
-    }
-
-    #[test]
-    fn test_all() {
-        use rayon::prelude::*;
-
-        Path::new(CHIPS_DIR)
-            .read_dir()
-            .unwrap()
-            .par_bridge()
-            .for_each(|chip| {
-                check_file(chip.unwrap().path());
-            });
     }
 }

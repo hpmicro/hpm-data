@@ -346,7 +346,6 @@ pub struct Core {
     pub name: String,
     pub peripherals: Vec<Peripheral>,
     #[serde(default)]
-    //pub nvic_priority_bits: Option<u8>,
     pub interrupts: Vec<Interrupt>,
     pub dma_channels: Vec<DmaChannel>,
 }
@@ -373,7 +372,7 @@ pub struct Peripheral {
     #[serde(default)]
     pub registers: Option<PeripheralRegisters>,
     #[serde(default)]
-    pub rcc: Option<PeripheralRcc>,
+    pub sysctl: Option<PeripheralSysctl>,
     #[serde(default)]
     pub pins: Vec<PeripheralPin>,
     #[serde(default)]
@@ -390,7 +389,7 @@ impl std::fmt::Debug for Peripheral {
             .field("name", &self.name)
             .field("address", &format_args!("{:#x}", self.address))
             .field("registers", &self.registers)
-            .field("rcc", &self.rcc)
+            .field("sysctl", &self.sysctl)
             .field("pins", &self.pins)
             .field("dma_channels", &self.dma_channels)
             .field("interrupts", &self.interrupts)
@@ -405,15 +404,12 @@ pub struct PeripheralInterrupt {
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
-pub struct PeripheralRcc {
-    pub bus_clock: String,
-    pub kernel_clock: PeripheralRccKernelClock,
-    #[serde(default)]
-    pub enable: Option<PeripheralRccRegister>,
-    #[serde(default)]
-    pub reset: Option<PeripheralRccRegister>,
-    #[serde(default)]
-    pub stop_mode: StopMode,
+pub struct PeripheralSysctl {
+    pub group: usize,
+    pub group_bit_offset: u8,
+    pub resource_clock_top: usize,
+    pub resource: usize,
+    pub clock_node: usize,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
@@ -448,17 +444,13 @@ pub struct PeripheralPin {
 pub struct DmaChannel {
     pub name: String,
     pub dma: String,
-    pub channel: u32,
-    pub dmamux: Option<String>,
-    pub dmamux_channel: Option<u32>,
+    pub channel: u32, // channel in DMAMUX
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize, Hash)]
 pub struct PeripheralDmaChannel {
     pub signal: String,
-    pub channel: Option<String>,
     pub dmamux: Option<String>,
-    pub dma: Option<String>,
     pub request: Option<u32>,
 }
 

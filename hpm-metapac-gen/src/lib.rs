@@ -142,20 +142,6 @@ impl Gen {
         )
         .unwrap();
 
-        /*
-        let write_sizes: HashSet<_> = flash_regions
-            .iter()
-            .map(|r| r.settings.as_ref().unwrap().write_size)
-            .collect();
-        assert_eq!(1, write_sizes.len());
-        writeln!(
-            &mut extra,
-            "pub const WRITE_SIZE: usize = {};",
-            write_sizes.iter().next().unwrap()
-        )
-        .unwrap();
-        */
-
         // Cleanups!
         transform::sort::Sort {}.run(&mut ir).unwrap();
         transform::Sanitize {}.run(&mut ir).unwrap();
@@ -179,32 +165,6 @@ impl Gen {
         let data = data.replace("pub use cortex_m_rt :: interrupt ;", "");
         let data = data.replace("cortex_m :: interrupt ", "crate ");
         let data = data.replace("cortex_m", "riscv"); // FIXME
-
-        // match riscv-rt interrupt name
-        //let data = data.replace(
-        //    ".vector_table.interrupts",
-        //    ".vector_table.external_interrupts",
-        //);
-        //let data = data.replace("__INTERRUPTS", "__EXTERNAL_INTERRUPTS");
-        // trim system vector, 0 to 15
-        // [Vector { _reserved : 0 } , Vector { _reserved : 0 } , Vector { _reserved : 0 }  ...
-        /*let data = Regex::new(r#"\[(Vector \{ _reserved : 0 \} , ){16}"#)
-            .unwrap()
-            .replace_all(&data, "[");
-        if data.contains("[Vector { _reserved : 0 }") {
-            panic!("Unexpected Vector 16 {{ _reserved : 0 }}");
-        }
-        // Fix vector size: : [Vector; (\d+)] =
-        let data = Regex::new(r#": \[Vector ; (\d+)\]"#).unwrap().replace_all(
-            &data,
-            |caps: &regex::Captures| {
-                format!(
-                    ": [Vector ; {}]",
-                    caps.get(1).unwrap().as_str().parse::<usize>().unwrap() - 16
-                )
-            },
-        );
-        */
 
         // Remove inner attributes like #![no_std]
         let data = Regex::new("# *! *\\[.*\\]").unwrap().replace_all(&data, "");
@@ -268,7 +228,6 @@ impl Gen {
                 family: {:?},
                 memory: {},
                 peripherals: PERIPHERALS,
-                // nvic_priority_bits: 0,
                 interrupts: INTERRUPTS,
                 dma_channels: DMA_CHANNELS,
             }};",
@@ -276,7 +235,6 @@ impl Gen {
             &chip.name,
             &chip.family,
             stringify(&chip.memory),
-            //&core.nvic_priority_bits,
         );
 
         let mut file = File::create(chip_dir.join("metadata.rs")).unwrap();

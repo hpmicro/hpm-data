@@ -1,5 +1,7 @@
 use std::{collections::HashMap, path::Path};
 
+mod dma;
+mod pinmux;
 mod registers;
 
 #[macro_export]
@@ -114,6 +116,11 @@ fn main() -> anyhow::Result<()> {
 
             // generate dma channels
             if let Some(gen) = &mut core.gen_dma_channels.take() {
+                assert!(
+                    core.dma_channels.is_empty(),
+                    "DMA channels already filled, cannot generate"
+                );
+
                 let &hdma_chs = gen.get("HDMA").expect("HDMA not found");
                 for ch in 0..hdma_chs {
                     core.dma_channels
@@ -135,22 +142,10 @@ fn main() -> anyhow::Result<()> {
                     }
                 }
             }
-
-            // append dmamux from includes
-            if let Some(inc_path) = &mut core.include_dmamux.take() {
-                let dma_yaml_path = meta_yaml_path.parent().unwrap().join(&inc_path);
-                let content = std::fs::read_to_string(&dma_yaml_path)?;
-                let dmamux: HashMap<String, usize> = serde_yaml::from_str(&content)?;
-                let mut dma_channels: Vec<(String, usize)> = dmamux.into_iter().collect();
-                dma_channels.sort_by_key(|(_, number)| *number);
-                println!("dma_channels: {:#?}", dma_channels);
-
-                //           core.dma_channels.extend(dma_channels);
-            }
         }
 
         // DMA includes and dma_channels
-        // dma::handle_chip_dma_include(&meta_yaml_path, &mut chip)?;
+        dma::handle_chip_dmamux_include(&meta_yaml_path, &mut chip)?;
 
         println!(
             "chip: {}, peripherals: {}",

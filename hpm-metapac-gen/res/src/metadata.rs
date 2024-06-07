@@ -240,8 +240,6 @@ pub struct DmaChannel {
 #[derive(Debug, Eq, PartialEq, Clone)]
 pub struct PeripheralDmaChannel {
     pub signal: &'static str,
-    pub channel: Option<&'static str>,
     pub dmamux: Option<&'static str>,
-    pub dma: Option<&'static str>,
     pub request: Option<u32>,
 }
