@@ -181,10 +181,10 @@ impl Gen {
         let data = data.replace("cortex_m", "riscv"); // FIXME
 
         // match riscv-rt interrupt name
-        let data = data.replace(
-            ".vector_table.interrupts",
-            ".vector_table.external_interrupts",
-        );
+        //let data = data.replace(
+        //    ".vector_table.interrupts",
+        //    ".vector_table.external_interrupts",
+        //);
         //let data = data.replace("__INTERRUPTS", "__EXTERNAL_INTERRUPTS");
         // trim system vector, 0 to 15
         // [Vector { _reserved : 0 } , Vector { _reserved : 0 } , Vector { _reserved : 0 }  ...
@@ -284,7 +284,6 @@ impl Gen {
 
         // ==============================
         // generate device.x
-
         File::create(chip_dir.join("device.x"))
             .unwrap()
             .write_all(device_x.as_bytes())

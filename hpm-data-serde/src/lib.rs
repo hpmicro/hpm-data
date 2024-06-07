@@ -15,8 +15,6 @@ pub struct Chip {
 }
 
 pub mod chip {
-    use std::collections::BTreeMap;
-
     use serde::{Deserialize, Serialize};
 
     #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
@@ -76,7 +74,7 @@ pub mod chip {
         #[serde(skip_serializing_if = "Option::is_none")]
         pub include_interrupts: Option<String>,
         #[serde(skip_serializing_if = "Option::is_none")]
-        pub include_dma_channels: Option<BTreeMap<String, String>>,
+        pub include_dma_channels: Option<String>,
         #[serde(skip_serializing_if = "Option::is_none")]
         pub include_peripherals: Option<Vec<String>>,
     }
