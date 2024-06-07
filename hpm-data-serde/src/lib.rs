@@ -15,6 +15,8 @@ pub struct Chip {
 }
 
 pub mod chip {
+    use std::collections::BTreeMap;
+
     use serde::{Deserialize, Serialize};
 
     #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
@@ -74,9 +76,13 @@ pub mod chip {
         #[serde(skip_serializing_if = "Option::is_none")]
         pub include_interrupts: Option<String>,
         #[serde(skip_serializing_if = "Option::is_none")]
-        pub include_dma_channels: Option<String>,
+        pub include_dmamux: Option<String>,
         #[serde(skip_serializing_if = "Option::is_none")]
         pub include_peripherals: Option<Vec<String>>,
+
+        // gen fields, auto gen from properties
+        #[serde(skip_serializing_if = "Option::is_none")]
+        pub gen_dma_channels: Option<BTreeMap<String, usize>>,
     }
 
     pub mod core {
@@ -93,8 +99,6 @@ pub mod chip {
 
             #[serde(skip_serializing_if = "Option::is_none")]
             pub rcc: Option<peripheral::Rcc>,
-            #[serde(skip_serializing_if = "Option::is_none")]
-            pub remap: Option<peripheral::Remap>,
             #[serde(default, skip_serializing_if = "Vec::is_empty")]
             pub pins: Vec<peripheral::Pin>,
             #[serde(skip_serializing_if = "Option::is_none")]
@@ -177,19 +181,11 @@ pub mod chip {
             #[derive(
                 Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
             )]
-            pub struct Remap {
-                pub register: String,
-                pub field: String,
-            }
-
-            #[derive(
-                Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
-            )]
             pub struct Pin {
                 pub pin: pin::Pin,
                 pub signal: String,
                 #[serde(skip_serializing_if = "Option::is_none")]
-                pub remap: Option<u8>,
+                pub alt: Option<u8>,
             }
 
             pub mod pin {
@@ -291,6 +287,7 @@ pub mod chip {
         pub struct DmaChannels {
             pub name: String,
             pub dma: String,
+            // DMAMUX output channel
             pub channel: u8,
         }
     }

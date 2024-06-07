@@ -111,6 +111,42 @@ fn main() -> anyhow::Result<()> {
                     core.peripherals.extend(peripherals);
                 }
             }
+
+            // generate dma channels
+            if let Some(gen) = &mut core.gen_dma_channels.take() {
+                let &hdma_chs = gen.get("HDMA").expect("HDMA not found");
+                for ch in 0..hdma_chs {
+                    core.dma_channels
+                        .push(hpm_data_serde::chip::core::DmaChannels {
+                            name: format!("HDMA_MUX{}", ch),
+                            dma: "HDMA".to_string(),
+                            channel: ch as _,
+                        });
+                }
+
+                if let Some(&xdma_ch) = gen.get("XDMA") {
+                    for ch in 0..xdma_ch {
+                        core.dma_channels
+                            .push(hpm_data_serde::chip::core::DmaChannels {
+                                name: format!("XDMA_MUX{}", ch),
+                                dma: "XDMA".to_string(),
+                                channel: (hdma_chs + ch) as _, // xdma starts after hdma
+                            });
+                    }
+                }
+            }
+
+            // append dmamux from includes
+            if let Some(inc_path) = &mut core.include_dmamux.take() {
+                let dma_yaml_path = meta_yaml_path.parent().unwrap().join(&inc_path);
+                let content = std::fs::read_to_string(&dma_yaml_path)?;
+                let dmamux: HashMap<String, usize> = serde_yaml::from_str(&content)?;
+                let mut dma_channels: Vec<(String, usize)> = dmamux.into_iter().collect();
+                dma_channels.sort_by_key(|(_, number)| *number);
+                println!("dma_channels: {:#?}", dma_channels);
+
+                //           core.dma_channels.extend(dma_channels);
+            }
         }
 
         // DMA includes and dma_channels
