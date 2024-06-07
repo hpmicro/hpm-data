@@ -1,0 +1,260 @@
+block/CHCTRL:
+  description: no description available.
+  items:
+    - name: Ctrl
+      description: Channel n Control Register.
+      byte_offset: 0
+      fieldset: Ctrl
+    - name: TranSize
+      description: Channel n Transfer Size Register.
+      byte_offset: 4
+      fieldset: TranSize
+    - name: SrcAddr
+      description: Channel n Source Address Low Part Register.
+      byte_offset: 8
+      fieldset: SrcAddr
+    - name: SrcAddrH
+      description: Channel n Source Address High Part Register.
+      byte_offset: 12
+      fieldset: SrcAddrH
+    - name: DstAddr
+      description: Channel n Destination Address Low Part Register.
+      byte_offset: 16
+      fieldset: DstAddr
+    - name: DstAddrH
+      description: Channel n Destination Address High Part Register.
+      byte_offset: 20
+      fieldset: DstAddrH
+    - name: LLPointer
+      description: Channel n Linked List Pointer Low Part Register.
+      byte_offset: 24
+      fieldset: LLPointer
+    - name: LLPointerH
+      description: Channel n Linked List Pointer High Part Register.
+      byte_offset: 28
+      fieldset: LLPointerH
+block/DMA:
+  description: HDMA.
+  items:
+    - name: DMACfg
+      description: DMAC Configuration Register.
+      byte_offset: 16
+      fieldset: DMACfg
+    - name: DMACtrl
+      description: DMAC Control Register.
+      byte_offset: 32
+      fieldset: DMACtrl
+    - name: ChAbort
+      description: Channel Abort Register.
+      byte_offset: 36
+      fieldset: ChAbort
+    - name: IntStatus
+      description: Interrupt Status Register.
+      byte_offset: 48
+      fieldset: IntStatus
+    - name: ChEN
+      description: Channel Enable Register.
+      byte_offset: 52
+      fieldset: ChEN
+    - name: CHCTRL
+      description: no description available.
+      array:
+        len: 8
+        stride: 32
+      byte_offset: 64
+      block: CHCTRL
+fieldset/ChAbort:
+  description: Channel Abort Register.
+  fields:
+    - name: CHABORT
+      description: "Write 1 to bit n to abort channel n. The bits should only be set when the corresponding channels are enabled. Otherwise, the writes will be ignored for channels that are not enabled. (N: Number of channels)."
+      bit_offset: 0
+      bit_size: 32
+fieldset/ChEN:
+  description: Channel Enable Register.
+  fields:
+    - name: CHEN
+      description: Alias of the Enable field of all ChnCtrl registers.
+      bit_offset: 0
+      bit_size: 32
+fieldset/Ctrl:
+  description: Channel n Control Register.
+  fields:
+    - name: ENABLE
+      description: "Channel enable bit 0x0: Disable 0x1: Enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: INTTCMASK
+      description: "Channel terminal count interrupt mask 0x0: Allow the terminal count interrupt to be triggered 0x1: Disable the terminal count interrupt."
+      bit_offset: 1
+      bit_size: 1
+    - name: INTERRMASK
+      description: "Channel error interrupt mask 0x0: Allow the error interrupt to be triggered 0x1: Disable the error interrupt."
+      bit_offset: 2
+      bit_size: 1
+    - name: INTABTMASK
+      description: "Channel abort interrupt mask 0x0: Allow the abort interrupt to be triggered 0x1: Disable the abort interrupt."
+      bit_offset: 3
+      bit_size: 1
+    - name: DSTREQSEL
+      description: Destination DMA request select. Select the request/ack handshake pair that the destination device is connected to.
+      bit_offset: 4
+      bit_size: 4
+    - name: SRCREQSEL
+      description: Source DMA request select. Select the request/ack handshake pair that the source device is connected to.
+      bit_offset: 8
+      bit_size: 4
+    - name: DSTADDRCTRL
+      description: "Destination address control 0x0: Increment address 0x1: Decrement address 0x2: Fixed address 0x3: Reserved, setting the field with this value triggers the error exception."
+      bit_offset: 12
+      bit_size: 2
+    - name: SRCADDRCTRL
+      description: "Source address control 0x0: Increment address 0x1: Decrement address 0x2: Fixed address 0x3: Reserved, setting the field with this value triggers the error exception."
+      bit_offset: 14
+      bit_size: 2
+    - name: DSTMODE
+      description: "Destination DMA handshake mode 0x0: Normal mode 0x1: Handshake mode."
+      bit_offset: 16
+      bit_size: 1
+    - name: SRCMODE
+      description: "Source DMA handshake mode 0x0: Normal mode 0x1: Handshake mode."
+      bit_offset: 17
+      bit_size: 1
+    - name: DSTWIDTH
+      description: "Destination transfer width. Both the total transfer byte number and the burst transfer byte number should be aligned to the destination transfer width; otherwise the error event will be triggered. For example, destination transfer width should be set as byte transfer if total transfer byte is not aligned to half-word. See field SrcBurstSize above for the definition of burst transfer byte number and section 3.2.8 for the definition of the total transfer byte number. 0x0: Byte transfer 0x1: Half-word transfer 0x2: Word transfer 0x3: Double word transfer 0x4: Quad word transfer 0x5: Eight word transfer 0x6-x7: Reserved, setting this field with a reserved value triggers the error exception for XDMA, the maximum allowed value is 0x3, for HDMA, the maximum allowed value is 0x2."
+      bit_offset: 18
+      bit_size: 3
+    - name: SRCWIDTH
+      description: "Source transfer width 0x0: Byte transfer 0x1: Half-word transfer 0x2: Word transfer 0x3: Double word transfer 0x4: Quad word transfer 0x5: Eight word transfer 0x6-x7: Reserved, setting this field with a reserved value triggers the error exception for XDMA, the maximum allowed value is 0x3, for HDMA, the maximum allowed value is 0x2."
+      bit_offset: 21
+      bit_size: 3
+    - name: SRCBURSTSIZE
+      description: "Source burst size. This field indicates the number of transfers before DMA channel re-arbitration. The burst transfer byte number is (SrcBurstSize * SrcWidth). 0x0: 1 transfer 0x1: 2 transfers 0x2: 4 transfers 0x3: 8 transfers 0x4: 16 transfers 0x5: 32 transfers 0x6: 64 transfers 0x7: 128 transfers 0x8: 256 transfers 0x9:512 transfers 0xa: 1024 transfers 0xb-0xf: Reserved, setting this field with a reserved value triggers the error exception for XDMA, the maximum allowed value is 0xa; for HDMA, the maximum allowed value is 0x7."
+      bit_offset: 24
+      bit_size: 4
+    - name: PRIORITY
+      description: "Channel priority level 0x0: Lower priority 0x1: Higher priority."
+      bit_offset: 29
+      bit_size: 1
+    - name: DSTBUSINFIDX
+      description: "Bus interface index that destination data is written to 0x0: Data is written to bus interface 0 0x1: Data is written to bus interface 1."
+      bit_offset: 30
+      bit_size: 1
+    - name: SRCBUSINFIDX
+      description: "Bus interface index that source data is read from 0x0: Data is read from bus interface 0 0x1: Data is read from bus interface."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DMACfg:
+  description: DMAC Configuration Register.
+  fields:
+    - name: CHANNELNUM
+      description: "Channel number 0x1: 1 channel 0x2: 2 channels ... 0x8: 8 channels Others: Invalid."
+      bit_offset: 0
+      bit_size: 4
+    - name: FIFODEPTH
+      description: "FIFO depth 0x4: 4 entries 0x8: 8 entries 0x10: 16 entries 0x20: 32 entries Others: Invalid."
+      bit_offset: 4
+      bit_size: 6
+    - name: REQNUM
+      description: "Request/acknowledge pair number 0x0: 0 pair 0x1: 1 pair 0x2: 2 pairs ... 0x10: 16 pairs."
+      bit_offset: 10
+      bit_size: 5
+    - name: BUSNUM
+      description: "AXI bus interface number 0x0: 1 AXI bus 0x1: 2 AXI busses."
+      bit_offset: 15
+      bit_size: 1
+    - name: CORENUM
+      description: "DMA core number 0x0: 1 core 0x1: 2 cores."
+      bit_offset: 16
+      bit_size: 1
+    - name: ADDRWIDTH
+      description: "AXI bus address width 0x18: 24 bits 0x19: 25 bits ... 0x40: 64 bits Others: Invalid."
+      bit_offset: 17
+      bit_size: 7
+    - name: DATAWIDTH
+      description: "AXI bus data width 0x0: 32 bits 0x1: 64 bits 0x2: 128 bits 0x3: 256 bits."
+      bit_offset: 24
+      bit_size: 2
+    - name: REQSYNC
+      description: "DMA request synchronization. The DMA request synchronization should be configured to avoid signal integrity problems when the request signal is not clocked by the system bus clock, which the DMA control logic operates in. If the request synchronization is not configured, the request signal is sampled directly without synchronization. 0x0: Request synchronization is not configured 0x1: Request synchronization is configured."
+      bit_offset: 30
+      bit_size: 1
+    - name: CHAINXFR
+      description: "Chain transfer 0x0: Chain transfer is not configured 0x1: Chain transfer is configured."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DMACtrl:
+  description: DMAC Control Register.
+  fields:
+    - name: RESET
+      description: "Software reset control. Write 1 to this bit to reset the DMA core and disable all channels. Note: The software reset may cause the in-completion of AXI transaction."
+      bit_offset: 0
+      bit_size: 1
+fieldset/DstAddr:
+  description: Channel n Destination Address Low Part Register.
+  fields:
+    - name: DSTADDRL
+      description: Low part of the destination starting address. When the transfer completes, the value of {DstAddrH,DstAddrL} is updated to the ending address. This address must be aligned to the destination transfer size; otherwise the error event will be triggered.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DstAddrH:
+  description: Channel n Destination Address High Part Register.
+  fields:
+    - name: DSTADDRH
+      description: High part of the destination starting address. When the transfer completes, the value of {DstAddrH,DstAddrL} is updated to the ending address. This address must be aligned to the destination transfer size; otherwise the error event will be triggered. This register exists only when the address bus width is wider than 32 bits.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IntStatus:
+  description: Interrupt Status Register.
+  fields:
+    - name: ERROR
+      description: "The error status, one bit per channel. The error status is set when a channel transfer encounters the following error events: - Bus error - Unaligned address - Unaligned transfer width - Reserved configuration 0x0: Channel n has no error status 0x1: Channel n has error status."
+      bit_offset: 0
+      bit_size: 8
+    - name: ABORT
+      description: "The abort status of channel, one bit per channel. The abort status is set when a channel transfer is aborted. 0x0: Channel n has no abort status 0x1: Channel n has abort status."
+      bit_offset: 8
+      bit_size: 8
+    - name: TC
+      description: "The terminal count status, one bit per channel. The terminal count status is set when a channel transfer finishes without the abort or error event. 0x0: Channel n has no terminal count status 0x1: Channel n has terminal count status."
+      bit_offset: 16
+      bit_size: 8
+fieldset/LLPointer:
+  description: Channel n Linked List Pointer Low Part Register.
+  fields:
+    - name: LLDBUSINFIDX
+      description: "Bus interface index that the next descriptor is read from 0x0: The next descriptor is read from bus interface 0."
+      bit_offset: 0
+      bit_size: 1
+    - name: LLPOINTERL
+      description: Low part of the pointer to the next descriptor. The pointer must be double word aligned.
+      bit_offset: 3
+      bit_size: 29
+fieldset/LLPointerH:
+  description: Channel n Linked List Pointer High Part Register.
+  fields:
+    - name: LLPOINTERH
+      description: High part of the pointer to the next descriptor. This register exists only when the address bus width is wider than 32 bits.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SrcAddr:
+  description: Channel n Source Address Low Part Register.
+  fields:
+    - name: SRCADDRL
+      description: Low part of the source starting address. When the transfer completes, the value of {SrcAddrH,SrcAddrL} is updated to the ending address. This address must be aligned to the source transfer size; otherwise, an error event will be triggered.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SrcAddrH:
+  description: Channel n Source Address High Part Register.
+  fields:
+    - name: SRCADDRH
+      description: High part of the source starting address. When the transfer completes, the value of {SrcAddrH,SrcAddrL} is updated to the ending address. This register exists only when the address bus width is wider than 32 bits.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TranSize:
+  description: Channel n Transfer Size Register.
+  fields:
+    - name: TRANSIZE
+      description: Total transfer size from source. The total number of transferred bytes is (TranSize * SrcWidth). This register is cleared when the DMA transfer is done. If a channel is enabled with zero total transfer size, the error event will be triggered and the transfer will be terminated.
+      bit_offset: 0
+      bit_size: 32

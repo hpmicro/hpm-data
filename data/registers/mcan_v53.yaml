@@ -1,4 +1,4 @@
-block/MCAN0:
+block/MCAN:
   description: MCAN0.
   items:
     - name: ENDN

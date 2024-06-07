@@ -1,4 +1,4 @@
-block/EWDG0:
+block/WDG:
   description: EWDG0.
   items:
     - name: CTRL0
@@ -9,10 +9,6 @@ block/EWDG0:
       description: "wdog ctrl register 1 Note: Parity check is required once writing to this register. The result should be zero by modular two addition of all bits."
       byte_offset: 4
       fieldset: CTRL1
-    - name: OT_INT_VAL
-      description: wdog timeout interrupt counter value.
-      byte_offset: 8
-      fieldset: OT_INT_VAL
     - name: OT_RST_VAL
       description: wdog timeout reset counter value.
       byte_offset: 12
@@ -130,10 +126,6 @@ fieldset/CTRL1:
       description: Ctrl update violation will trigger a reset The violation event is to try updating the locked register before unlock them.
       bit_offset: 7
       bit_size: 1
-    - name: OT_INT_EN
-      description: WDT can generate an interrupt warning before timeout.
-      bit_offset: 16
-      bit_size: 1
     - name: OT_RST_EN
       description: WDT overtime will generate a reset.
       bit_offset: 17
@@ -154,13 +146,6 @@ fieldset/CTRL1:
       description: "Refresh violation will trigger an reset. These event will be taken as a refresh violation: 1) Not refresh in the window once window mode is enabled 2) Not unlock refresh firstly if unlock is required 3) Not refresh in the required time after unlock, once refresh unlock overtime is enabled. 4) Not write the required word to refresh wdt."
       bit_offset: 23
       bit_size: 1
-fieldset/OT_INT_VAL:
-  description: wdog timeout interrupt counter value.
-  fields:
-    - name: OT_INT_VAL
-      description: WDT timeout interrupt value.
-      bit_offset: 0
-      bit_size: 16
 fieldset/OT_RST_VAL:
   description: wdog timeout reset counter value.
   fields:
@@ -214,10 +199,6 @@ fieldset/WDT_STATUS:
     - name: CTL_UNL_FAIL
       description: Unlock ctrl reg update protection fail Write one to clear the bit.
       bit_offset: 3
-      bit_size: 1
-    - name: OT_INT
-      description: Timeout happens, a interrupt will happen once enable bit set This bit can be cleared only by refreshing wdt or reset.
-      bit_offset: 4
       bit_size: 1
     - name: OT_RST
       description: Timeout happens, a reset will happen once enable bit set This bit can be cleared only by refreshing wdt or reset.

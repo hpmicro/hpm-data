@@ -1,0 +1,24 @@
+- name: MCAN0
+  address: 0xF0280000
+  registers:
+    kind: mcan
+    version: v53
+    block: MCAN
+- name: MCAN1
+  address: 0xF0284000
+  registers:
+    kind: mcan
+    version: v53
+    block: MCAN
+- name: MCAN2
+  address: 0xF0288000
+  registers:
+    kind: mcan
+    version: v53
+    block: MCAN
+- name: MCAN3
+  address: 0xF028C000
+  registers:
+    kind: mcan
+    version: v53
+    block: MCAN

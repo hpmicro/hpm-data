@@ -69,7 +69,6 @@
     version: v53
     block: GPIOM
 
-
 - name: OTP
   address: 0xF3050000
   registers:
@@ -77,6 +76,42 @@
     version: common
     block: OTP
 
+# DMA and mail box
+
+- name: HDMA
+  address: 0xF00C8000
+  registers:
+    kind: dma
+    version: v53
+    block: DMA
+- name: DMAMUX
+  address: 0xF00C4000
+  registers:
+    kind: dmamux
+    version: common
+    block: DMAMUX
+
+- name: MBX0A
+  address: 0xF00A0000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX0B
+  address: 0xF00A4000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+
+- name: CRC
+  address: 0xF0080000
+  registers:
+    kind: crc
+    version: common
+    block: CRC
+
+# timers
 
 - name: GPTMR0
   address: 0xF0000000
@@ -96,6 +131,25 @@
     kind: tmr
     version: common
     block: TMR
+
+- name: WDG0
+  address: 0xF00B0000
+  registers:
+    kind: wdg
+    version: v53
+    block: WDG
+- name: WDG1
+  address: 0xF00B4000
+  registers:
+    kind: wdg
+    version: v53
+    block: WDG
+- name: PWDG
+  address: 0xF4128000
+  registers:
+    kind: wdg
+    version: v53
+    block: WDG
 
 ## communication peripherals
 

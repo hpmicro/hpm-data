@@ -36,6 +36,9 @@ cores:
       - "../family/HPM5300_GPTMR23.yaml"
       - "../family/HPM5300_UART4567.yaml"
       - "../family/HPM5300_ADC1.yaml"
+      - "../family/HPM5300_MCAN.yaml"
+    include_interrupts: "../interrupts/HPM5361.yaml"
+    include_dma_channels: "../dma/HPM5361.yaml"
 
 _raw:
   "| HPM5321 | Single-core 32-bit | 288 |    |    | CAN FD | USB HS w/ PHY \xD7\
