@@ -1,6 +1,7 @@
 use std::{collections::HashMap, path::Path};
 
 mod dma;
+mod interrupts;
 mod pinmux;
 mod registers;
 
@@ -146,6 +147,9 @@ fn main() -> anyhow::Result<()> {
 
         // DMA includes and dma_channels
         dma::handle_chip_dmamux_include(&meta_yaml_path, &mut chip)?;
+
+        // fill peripheral interrupts
+        interrupts::fill_peripheral_interrupts(&mut chip)?;
 
         println!(
             "chip: {}, peripherals: {}",
