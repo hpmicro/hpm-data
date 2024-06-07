@@ -1,16 +1,13 @@
-use std::{
-    collections::{HashMap, HashSet},
-    path::Path,
-};
+use std::{collections::HashMap, path::Path};
 
 fn parse_signal(signal_name: &str, periph_name: &str) -> String {
     if signal_name.contains("_") {
-        let mut surfix = signal_name.split("_").last().unwrap();
+        let suffix = signal_name.split("_").last().unwrap();
 
         if signal_name.starts_with("GPTMR") || signal_name.starts_with("NTMR") {
-            format!("CH{}", surfix)
+            format!("CH{}", suffix)
         } else {
-            surfix.to_string()
+            suffix.to_string()
         }
     } else {
         periph_name.to_string()
