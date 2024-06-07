@@ -91,6 +91,9 @@ pub mod chip {
             #[serde(skip_serializing_if = "Option::is_none")]
             pub registers: Option<peripheral::Registers>,
             #[serde(skip_serializing_if = "Option::is_none")]
+            pub sysctl: Option<peripheral::Sysctl>,
+
+            #[serde(skip_serializing_if = "Option::is_none")]
             pub rcc: Option<peripheral::Rcc>,
             #[serde(skip_serializing_if = "Option::is_none")]
             pub remap: Option<peripheral::Remap>,
@@ -123,6 +126,17 @@ pub mod chip {
                 pub enable: rcc::Enable,
                 #[serde(skip_serializing_if = "Option::is_none")]
                 pub reset: Option<rcc::Reset>,
+            }
+
+            #[derive(
+                Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+            )]
+            pub struct Sysctl {
+                pub group: usize,
+                pub group_bit_offset: u8,
+                pub resource_clock_top: usize,
+                pub resource: usize,
+                pub clock_node: usize,
             }
 
             pub mod rcc {
