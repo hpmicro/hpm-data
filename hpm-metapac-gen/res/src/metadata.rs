@@ -128,7 +128,6 @@ pub struct Metadata {
     pub line: &'static str,
     pub memory: &'static [MemoryRegion],
     pub peripherals: &'static [Peripheral],
-    // pub nvic_priority_bits: Option<u8>,
     pub interrupts: &'static [Interrupt],
     pub dma_channels: &'static [DmaChannel],
 }
@@ -172,7 +171,7 @@ pub struct Peripheral {
     pub name: &'static str,
     pub address: u64,
     pub registers: Option<PeripheralRegisters>,
-    pub rcc: Option<PeripheralRcc>,
+    pub sysctl: Option<PeripheralSysctl>,
     pub pins: &'static [PeripheralPin],
     pub dma_channels: &'static [PeripheralDmaChannel],
     pub interrupts: &'static [PeripheralInterrupt],
@@ -193,32 +192,12 @@ pub struct PeripheralInterrupt {
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]
-pub struct PeripheralRcc {
-    pub bus_clock: &'static str,
-    pub kernel_clock: PeripheralRccKernelClock,
-    pub enable: Option<PeripheralRccRegister>,
-    pub reset: Option<PeripheralRccRegister>,
-    pub stop_mode: StopMode,
-}
-
-#[derive(Debug, Eq, PartialEq, Clone)]
-pub struct PeripheralRccRegister {
-    pub register: &'static str,
-    pub field: &'static str,
-}
-
-#[derive(Debug, Eq, PartialEq, Clone)]
-pub enum PeripheralRccKernelClock {
-    Clock(&'static str),
-    Mux(PeripheralRccRegister),
-}
-
-#[derive(Debug, Eq, PartialEq, Clone, Default)]
-pub enum StopMode {
-    #[default]
-    Stop1, // Peripheral prevents chip from entering Stop1
-    Stop2,   // Peripheral prevents chip from entering Stop2
-    Standby, // Peripheral does not prevent chip from entering Stop
+pub struct PeripheralSysctl {
+    pub group: usize,
+    pub group_bit_offset: u8,
+    pub resource_clock_top: usize,
+    pub resource: usize,
+    pub clock_node: usize,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]

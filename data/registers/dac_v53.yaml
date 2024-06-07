@@ -1,4 +1,4 @@
-block/DAC0:
+block/DAC:
   description: DAC0.
   items:
     - name: cfg0
