@@ -28,4 +28,4 @@ cores:
       - "../family/COMMON.yaml"
       - "../family/HPM5300.yaml"
     include_interrupts: "../interrupts/HPM5361.yaml"
-    include_dma_channels: "../dma/HPM5301.yaml"
+    include_dmamux: "../dmamux/HPM5301.yaml"

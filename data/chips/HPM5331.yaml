@@ -38,7 +38,7 @@ cores:
       - "../family/HPM5300_DAC.yaml"
       - "../family/HPM5300_OPAMP.yaml"
     include_interrupts: "../interrupts/HPM5361.yaml"
-    include_dma_channels: "../dma/HPM5361.yaml"
+    include_dmamux: "../dmamux/HPM5361.yaml"
 
 _raw:
   "| HPM5331 | Single-core 32-bit | 288 |    |    |    | USB HS w/ PHY \xD71 |\
