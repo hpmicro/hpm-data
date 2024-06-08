@@ -1,10 +1,10 @@
 [package]
 name = "hpm-metapac"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/hpm-rs/hpm-data"
-homepage = "https://github.com/hpm-rs/hpm-data"
+repository = "https://github.com/andelf/hpm-data"
+homepage = "https://github.com/andelf/hpm-data"
 description = "Peripheral Access Crate (PAC) for all HPM's MCU chips, including metadata."
 authors = ["Andelf <andelf@gmail.com>"]
 documentation = "https://docs.rs/hpm-metapac"

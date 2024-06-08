@@ -4,3 +4,5 @@ tmp/
 Cargo.lock
 build/
 **/trash
+
+hpm_sdk/

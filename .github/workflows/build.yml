@@ -1,0 +1,33 @@
+name: metapac build
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths-ignore:
+      - '*.md'
+  push:
+    branches: ["main"]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use nightly Rust
+      run: |
+        rustup default nightly
+        rustup target add riscv32imafc-unknown-none-elf
+    - name: Prepare dependencies
+      run: |
+        ./d download-all
+    - name: Build
+      run: |
+        ./d gen
+    - name: Test
+      run: |
+        cd build/hpm-metapac/
+        cargo build --features pac,metadata,rt,memory-x,hpm5361 --target riscv32imafc-unknown-none-elf
+        cargo doc --features pac,metadata,rt,memory-x,hpm5361 --target riscv32imafc-unknown-none-elf

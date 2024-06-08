@@ -9,7 +9,7 @@ shift
 
 case "$CMD" in
     download-all)
-        echo TODO $CMD
+        git clone https://github.com/hpmicro/hpm_sdk.git
     ;;
     install-chiptool)
         cargo install --git https://github.com/ch32-rs/chiptool
