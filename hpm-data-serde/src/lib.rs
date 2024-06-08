@@ -115,11 +115,11 @@ pub mod chip {
             )]
             pub struct Sysctl {
                 /// GROUPx[0], or GROUPx[1]  ...
-                pub group: usize,
+                pub group_link: usize,
                 pub group_bit_offset: u8,
-                pub resource_clock_top: usize,
+                pub resource_clock_top: Option<usize>,
                 pub resource: usize,
-                pub clock_node: usize,
+                pub clock_node: Option<usize>,
             }
 
             #[derive(

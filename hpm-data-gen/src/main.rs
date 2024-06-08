@@ -1,7 +1,4 @@
-use std::{
-    collections::HashMap,
-    path::{Path, PathBuf},
-};
+use std::{collections::HashMap, path::Path};
 
 mod dma;
 mod interrupts;
@@ -164,6 +161,7 @@ fn main() -> anyhow::Result<()> {
                 data_dir.join("pinmux/HPM6750.json")
             }
             name if name.starts_with("HPM68") => data_dir.join("pinmux/HPM6880.json"),
+            name if name.starts_with("HPM63") => data_dir.join("pinmux/HPM6364.json"),
             _ => {
                 println!("TODO: handle pinmux for {}", chip.name);
                 continue;
@@ -186,12 +184,8 @@ fn main() -> anyhow::Result<()> {
     }
 
     stopwatch.section("Handle SYSCTL info");
-    let sdk_path = std::env::var("HPM_SDK_BASE")
-        .map(PathBuf::from)
-        .unwrap_or_else(|_| data_dir.parent().unwrap().join("hpm_sdk"));
     for chip in &mut chips {
-
-        // todo
+        sysctl::add_sysctl_from_sdk(data_dir, chip)?;
     }
 
     stopwatch.section("Writing chip data");

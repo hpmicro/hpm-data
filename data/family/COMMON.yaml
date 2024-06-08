@@ -1,22 +1,3 @@
-- name: MCHTMR
-  address: 0xE6000000
-  registers:
-    kind: mchtmr
-    version: common
-    block: MCHTMR
-  sysctl:
-    # GROUPx[0], or GROUPx[1]  ...
-    group: 0
-    group_bit_offset: 2
-    # SYSCTL_RESOURCE_CLK_TOP_MCT0
-    # sysctl_resource_clk_top_mchtmr0
-    # index, addr offset = 0x104
-    resource_clock_top: 65
-    # SYSCTL_RESOURCE_MCT0
-    resource: 258
-    # SYSCTL_CLOCK_CLK_TOP_MCT0
-    clock_node: 0
-
 - name: PLIC
   address: 0xE4000000
   registers:

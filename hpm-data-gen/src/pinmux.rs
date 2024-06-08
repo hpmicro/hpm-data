@@ -43,8 +43,12 @@ const PERIPHERAL_LIST: &[&str] = &[
     "GPTMR", "I2C", "SPI", "UART", "MCAN", "USB", "I2S", "PWM", "ACMP", "CAM",
 ];
 
-fn normalize_func(_module: &str, func: &str) -> String {
-    func.replace("[", "").replace("]", "")
+fn normalize_func(module: &str, func: &str) -> String {
+    if module == "SYSCTL" {
+        func.replace("CLK_", "").replace("[", "").replace("]", "")
+    } else {
+        func.replace("[", "").replace("]", "")
+    }
 }
 
 pub fn handle_pinmux<P: AsRef<Path>>(
@@ -56,7 +60,7 @@ pub fn handle_pinmux<P: AsRef<Path>>(
 
     let pins = pinmux.data;
 
-    println!("Found {} pins", pins.len());
+    // println!("Found {} pins", pins.len());
 
     // peripheral_name, signal_name, pin_name, alt_num
     let mut pinmux_alt_defs: HashSet<(String, String, String, u32)> = HashSet::new();

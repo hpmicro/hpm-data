@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use stm32_data_macros::EnumDebug;
+use hpm_data_macros::EnumDebug;
 
 #[derive(Debug)]
 struct A {
