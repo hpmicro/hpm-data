@@ -125,7 +125,6 @@ pub mod ir {
 pub struct Metadata {
     pub name: &'static str,
     pub family: &'static str,
-    pub line: &'static str,
     pub memory: &'static [MemoryRegion],
     pub peripherals: &'static [Peripheral],
     pub interrupts: &'static [Interrupt],
@@ -212,8 +211,6 @@ pub struct DmaChannel {
     pub name: &'static str,
     pub dma: &'static str,
     pub channel: u32,
-    pub dmamux: Option<&'static str>,
-    pub dmamux_channel: Option<u32>,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]

@@ -18,7 +18,6 @@ use data::*;
 struct Metadata<'a> {
     name: &'a str,
     family: &'a str,
-    line: &'a str,
     memory: &'a [MemoryRegion],
     peripherals: &'a [Peripheral],
     interrupts: &'a [Interrupt],
@@ -222,7 +221,6 @@ impl Gen {
 
         let data = format!(
             "include!(\"../{}\");
-            use crate::metadata::PeripheralRccKernelClock::{{Clock, Mux}};
             pub static METADATA: Metadata = Metadata {{
                 name: {:?},
                 family: {:?},

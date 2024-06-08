@@ -413,27 +413,6 @@ pub struct PeripheralSysctl {
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
-#[serde(untagged)]
-pub enum PeripheralRccKernelClock {
-    Clock(String),
-    Mux(PeripheralRccRegister),
-}
-
-#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
-pub struct PeripheralRccRegister {
-    pub register: String,
-    pub field: String,
-}
-
-#[derive(EnumDebug, Eq, PartialEq, Clone, Deserialize, Default)]
-pub enum StopMode {
-    #[default]
-    Stop1, // Peripheral prevents chip from entering Stop1
-    Stop2,   // Peripheral prevents chip from entering Stop2
-    Standby, // Peripheral does not prevent chip from entering Stop
-}
-
-#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
 pub struct PeripheralPin {
     pub pin: String,
     pub signal: String,
