@@ -1,9 +1,13 @@
-use std::{collections::HashMap, path::Path};
+use std::{
+    collections::HashMap,
+    path::{Path, PathBuf},
+};
 
 mod dma;
 mod interrupts;
 mod pinmux;
 mod registers;
+mod sysctl;
 
 #[macro_export]
 macro_rules! regex {
@@ -57,11 +61,6 @@ fn main() -> anyhow::Result<()> {
 
     let mut stopwatch = Stopwatch::new();
 
-    //stopwatch.section("Parsing headers");
-    //let headers = header::Headers::parse()?;
-
-    //stopwatch.section("Parsing other stuff");
-
     stopwatch.section("Parsing registers");
     let registers = registers::Registers::parse()?;
     registers.write()?;
@@ -82,12 +81,21 @@ fn main() -> anyhow::Result<()> {
 
     std::fs::create_dir_all("build/data/chips")?;
 
+    let mut chips = vec![];
     for name in &chip_meta_files {
         let meta_yaml_path = data_dir.join(&format!("chips/{}.yaml", name));
         let content = std::fs::read_to_string(&meta_yaml_path)?;
-        let mut chip: hpm_data_serde::Chip = serde_yaml::from_str(&content)?;
+        let chip: hpm_data_serde::Chip = serde_yaml::from_str(&content)?;
 
-        // handle include_x
+        chips.push(chip);
+    }
+    chips.sort_by_key(|chip| chip.name.clone());
+
+    stopwatch.section("Handle includes");
+
+    let meta_yaml_path = data_dir.join("chips/DUMMY.yaml");
+
+    for chip in &mut chips {
         for core in &mut chip.cores {
             if let Some(inc_path) = core.include_interrupts.take() {
                 let interrupts_yaml_path = meta_yaml_path.parent().unwrap().join(&inc_path);
@@ -144,55 +152,58 @@ fn main() -> anyhow::Result<()> {
                 }
             }
         }
+    }
 
-        // DMA includes and dma_channels
-        dma::handle_chip_dmamux_include(&meta_yaml_path, &mut chip)?;
+    stopwatch.section("Handle PINMUX");
 
-        // fill peripheral interrupts
-        interrupts::fill_peripheral_interrupts(&mut chip)?;
+    for chip in &mut chips {
+        let pinmux_path = match &chip.name {
+            name if name.starts_with("HPM53") => data_dir.join("pinmux/HPM5361.json"),
+            name if name.starts_with("HPM62") => data_dir.join("pinmux/HPM6284.json"),
+            name if name.starts_with("HPM67") || name.starts_with("HPM64") => {
+                data_dir.join("pinmux/HPM6750.json")
+            }
+            name if name.starts_with("HPM68") => data_dir.join("pinmux/HPM6880.json"),
+            _ => {
+                println!("TODO: handle pinmux for {}", chip.name);
+                continue;
+            }
+        };
 
+        pinmux::handle_pinmux(&pinmux_path, chip)?;
+    }
+
+    stopwatch.section("Handle peripheral interrupts");
+    // fill peripheral interrupts
+    for chip in &mut chips {
+        interrupts::fill_peripheral_interrupts(chip)?;
+    }
+
+    stopwatch.section("Handle DMAMUX");
+    // matching DMAMUX source to peripherals
+    for chip in &mut chips {
+        dma::handle_chip_dmamux_include(&meta_yaml_path, chip)?;
+    }
+
+    stopwatch.section("Handle SYSCTL info");
+    let sdk_path = std::env::var("HPM_SDK_BASE")
+        .map(PathBuf::from)
+        .unwrap_or_else(|_| data_dir.parent().unwrap().join("hpm_sdk"));
+    for chip in &mut chips {
+
+        // todo
+    }
+
+    stopwatch.section("Writing chip data");
+    for chip in &chips {
         println!(
             "chip: {}, peripherals: {}",
             chip.name,
             chip.cores[0].peripherals.len()
         );
         let dump = serde_json::to_string_pretty(&chip)?;
-        std::fs::write(format!("build/data/chips/{name}.json"), dump)?;
+        std::fs::write(format!("build/data/chips/{}.json", chip.name), dump)?;
     }
-
-    // stopwatch.section("Parsing memories");
-    //let memories = memory::Memories::parse()?;
-
-    // stopwatch.section("Parsing interrupts");
-    //let chip_interrupts = interrupts::ChipInterrupts::parse()?;
-
-    // stopwatch.section("Parsing RCC registers");
-    //let peripheral_to_clock = rcc::ParsedRccs::parse(&registers)?;
-
-    // stopwatch.section("Parsing docs");
-    // let docs = docs::Docs::parse()?;
-
-    // stopwatch.section("Parsing DMA");
-    //let dma_channels = dma::DmaChannels::parse()?;
-
-    // stopwatch.section("Parsing GPIO AF");
-    // let af = gpio_af::Af::parse()?;
-
-    //let (chips, chip_groups) = chips::parse_groups()?;
-
-    //stopwatch.section("Processing chips");
-    /* chips::dump_all_chips(
-        chip_groups,
-        //  headers,
-        // af,
-        chip_interrupts,
-        peripheral_to_clock,
-        //  dma_channels,
-        chips,
-        memories,
-        docs,
-    )?;
-    */
 
     stopwatch.stop();
 
