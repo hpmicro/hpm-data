@@ -38,8 +38,8 @@ memory:
     name: XPI0
     size: 1048576 # 1M
 cores:
-  - name: TODO
-    ip-core: TODO
+  - name: RV32-IMAFDCP
+    ip-core: Andes D45
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
