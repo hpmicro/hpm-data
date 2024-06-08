@@ -1,0 +1,5370 @@
+{
+    "statusCode": 200,
+    "message": "success",
+    "data": [
+        {
+            "name": "PA00",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[00]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[00]"
+                },
+                "GPTMR1.A.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "A",
+                    "func": "COMP[0]"
+                },
+                "UART0.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "MCAN0.A.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "PWM0.A.FAULT[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "FAULT[0]"
+                },
+                "PWM1.A.P[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[0]"
+                },
+                "TRGM0.A.P[00]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[00]"
+                },
+                "PWM1.D.FAULT[0]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "FAULT[0]"
+                },
+                "SYSCTL.A.CLK_OBS[0]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "A",
+                    "func": "CLK_OBS[0]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA01",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[01]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[01]"
+                },
+                "GPTMR1.A.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "A",
+                    "func": "CAPT[0]"
+                },
+                "UART0.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "MCAN0.A.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "PWM0.A.FAULT[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "FAULT[1]"
+                },
+                "PWM1.A.P[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[1]"
+                },
+                "TRGM0.A.P[01]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[01]"
+                },
+                "ACMP.B.COMP[0]": {
+                    "index": "19",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "B",
+                    "func": "COMP[0]"
+                },
+                "SYSCTL.A.CLK_OBS[1]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "A",
+                    "func": "CLK_OBS[1]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA02",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[02]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[02]"
+                },
+                "GPTMR1.A.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "A",
+                    "func": "COMP[1]"
+                },
+                "UART0.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART0.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "I2C0.A.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C0",
+                    "group": "A",
+                    "func": "SCL"
+                },
+                "MCAN0.A.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "A",
+                    "func": "STBY"
+                },
+                "ACMP.A.COMP[0]": {
+                    "index": "16",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "A",
+                    "func": "COMP[0]"
+                },
+                "PWM1.A.P[2]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[2]"
+                },
+                "TRGM0.A.P[02]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[02]"
+                },
+                "ACMP.B.COMP[1]": {
+                    "index": "19",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "B",
+                    "func": "COMP[1]"
+                },
+                "QEI1.A.F": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "A",
+                    "func": "F"
+                },
+                "SYSCTL.A.CLK_OBS[2]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "A",
+                    "func": "CLK_OBS[2]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA03",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[03]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[03]"
+                },
+                "GPTMR1.A.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "A",
+                    "func": "CAPT[1]"
+                },
+                "UART0.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "I2C0.A.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C0",
+                    "group": "A",
+                    "func": "SDA"
+                },
+                "SPI3.A.CS[3]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "CS[3]"
+                },
+                "MCAN1.A.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "A",
+                    "func": "STBY"
+                },
+                "ACMP.A.COMP[1]": {
+                    "index": "16",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "A",
+                    "func": "COMP[1]"
+                },
+                "PWM1.A.P[3]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[3]"
+                },
+                "TRGM0.A.P[03]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[03]"
+                },
+                "PWM1.D.FAULT[1]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "FAULT[1]"
+                },
+                "QEI1.A.H1": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "A",
+                    "func": "H1"
+                },
+                "SYSCTL.A.CLK_OBS[3]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "A",
+                    "func": "CLK_OBS[3]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA04",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[04]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[04]"
+                },
+                "UART1.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "SPI0.A.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI0",
+                    "group": "A",
+                    "func": "CS[0]"
+                },
+                "MCAN1.A.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "PWM0.A.P[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[0]"
+                },
+                "PWM1.A.P[4]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[4]"
+                },
+                "TRGM0.A.P[04]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[04]"
+                },
+                "RDC0.A.EXC_P": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "A",
+                    "func": "EXC_P"
+                },
+                "QEI1.A.A": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "A",
+                    "func": "A"
+                },
+                "QEO1.A.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "A",
+                    "func": "A"
+                },
+                "SEI1.A.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "JTAG.A.TDO": {
+                    "index": "24",
+                    "module": "JTAG",
+                    "instance": "JTAG",
+                    "group": "A",
+                    "func": "TDO"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA05",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[05]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[05]"
+                },
+                "GPTMR1.A.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "A",
+                    "func": "COMP[2]"
+                },
+                "UART1.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART1.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "SPI0.A.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI0",
+                    "group": "A",
+                    "func": "SCLK"
+                },
+                "MCAN1.A.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "PWM0.A.P[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[1]"
+                },
+                "PWM1.A.P[5]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[5]"
+                },
+                "TRGM0.A.P[05]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[05]"
+                },
+                "RDC0.A.EXC_N": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "A",
+                    "func": "EXC_N"
+                },
+                "QEI1.A.B": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "A",
+                    "func": "B"
+                },
+                "QEO1.A.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "A",
+                    "func": "B"
+                },
+                "SEI1.A.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "A",
+                    "func": "CK"
+                },
+                "JTAG.A.TDI": {
+                    "index": "24",
+                    "module": "JTAG",
+                    "instance": "JTAG",
+                    "group": "A",
+                    "func": "TDI"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA06",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[06]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[06]"
+                },
+                "GPTMR0.A.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "A",
+                    "func": "CAPT[0]"
+                },
+                "UART1.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "I2C1.A.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C1",
+                    "group": "A",
+                    "func": "SDA"
+                },
+                "SPI0.A.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI0",
+                    "group": "A",
+                    "func": "MISO"
+                },
+                "PWM0.A.P[2]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[2]"
+                },
+                "PWM1.A.P[6]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[6]"
+                },
+                "TRGM0.A.P[06]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[06]"
+                },
+                "QEI1.A.Z": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "A",
+                    "func": "Z"
+                },
+                "QEO1.A.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "A",
+                    "func": "Z"
+                },
+                "SEI1.A.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "A",
+                    "func": "TX"
+                },
+                "JTAG.A.TCK": {
+                    "index": "24",
+                    "module": "JTAG",
+                    "instance": "JTAG",
+                    "group": "A",
+                    "func": "TCK"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA07",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[07]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[07]"
+                },
+                "GPTMR0.A.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "A",
+                    "func": "COMP[0]"
+                },
+                "UART1.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "I2C1.A.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C1",
+                    "group": "A",
+                    "func": "SCL"
+                },
+                "SPI0.A.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI0",
+                    "group": "A",
+                    "func": "MOSI"
+                },
+                "PWM0.A.P[3]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[3]"
+                },
+                "PWM1.A.P[7]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "P[7]"
+                },
+                "TRGM0.A.P[07]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "A",
+                    "func": "P[07]"
+                },
+                "QEI1.A.H0": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "A",
+                    "func": "H0"
+                },
+                "SEI1.A.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "A",
+                    "func": "RX"
+                },
+                "JTAG.A.TMS": {
+                    "index": "24",
+                    "module": "JTAG",
+                    "instance": "JTAG",
+                    "group": "A",
+                    "func": "TMS"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA08",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[08]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[08]"
+                },
+                "GPTMR0.A.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "A",
+                    "func": "COMP[1]"
+                },
+                "UART2.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "I2C2.A.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "A",
+                    "func": "SCL"
+                },
+                "SPI3.A.CS[2]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "CS[2]"
+                },
+                "MCAN2.A.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "PWM0.A.P[4]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[4]"
+                },
+                "PWM0.D.FAULT[0]": {
+                    "index": "18",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "FAULT[0]"
+                },
+                "JTAG.A.TRST": {
+                    "index": "24",
+                    "module": "JTAG",
+                    "instance": "JTAG",
+                    "group": "A",
+                    "func": "TRST"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA09",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[09]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[09]"
+                },
+                "GPTMR0.A.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "A",
+                    "func": "CAPT[1]"
+                },
+                "UART2.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "I2C2.A.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "A",
+                    "func": "SDA"
+                },
+                "SPI3.A.CS[1]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "CS[1]"
+                },
+                "MCAN2.A.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "PWM0.A.P[5]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[5]"
+                },
+                "PWM0.D.FAULT[1]": {
+                    "index": "18",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "FAULT[1]"
+                },
+                "SOC.A.REF0": {
+                    "index": "24",
+                    "module": "SOC",
+                    "instance": "SOC",
+                    "group": "A",
+                    "func": "REF0"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA10",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[10]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[10]"
+                },
+                "GPTMR0.A.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "A",
+                    "func": "COMP[2]"
+                },
+                "UART2.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART2.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "SPI3.A.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "CS[0]"
+                },
+                "MCAN2.A.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "A",
+                    "func": "STBY"
+                },
+                "PWM0.A.P[6]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[6]"
+                },
+                "PWM1.A.FAULT[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "FAULT[0]"
+                },
+                "ACMP.C.COMP[0]": {
+                    "index": "18",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "C",
+                    "func": "COMP[0]"
+                },
+                "QEI1.B.A": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "B",
+                    "func": "A"
+                },
+                "QEO0.A.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "A",
+                    "func": "A"
+                },
+                "SEI1.B.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "B",
+                    "func": "DE"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA11",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[11]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[11]"
+                },
+                "UART2.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "SPI3.A.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "SCLK"
+                },
+                "PWM0.A.P[7]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "A",
+                    "func": "P[7]"
+                },
+                "PWM1.A.FAULT[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "A",
+                    "func": "FAULT[1]"
+                },
+                "ACMP.C.COMP[1]": {
+                    "index": "18",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "C",
+                    "func": "COMP[1]"
+                },
+                "QEI1.B.B": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "B",
+                    "func": "B"
+                },
+                "QEO0.A.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "A",
+                    "func": "B"
+                },
+                "SEI1.B.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "B",
+                    "func": "CK"
+                },
+                "EWDG0.B.RST": {
+                    "index": "24",
+                    "module": "EWDG",
+                    "instance": "EWDG0",
+                    "group": "B",
+                    "func": "RST"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA12",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[12]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[12]"
+                },
+                "UART3.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "I2C3.A.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "A",
+                    "func": "SDA"
+                },
+                "SPI3.A.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "MISO"
+                },
+                "PWM0.B.P[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[0]"
+                },
+                "PWM1.B.FAULT[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "FAULT[0]"
+                },
+                "PWM0.E.FAULT[0]": {
+                    "index": "18",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "FAULT[0]"
+                },
+                "RDC0.B.EXC_P": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "B",
+                    "func": "EXC_P"
+                },
+                "QEI1.B.Z": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "B",
+                    "func": "Z"
+                },
+                "QEO0.A.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "A",
+                    "func": "Z"
+                },
+                "SEI1.B.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "B",
+                    "func": "TX"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA13",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[13]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[13]"
+                },
+                "GPTMR1.A.COMP[3]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "A",
+                    "func": "COMP[3]"
+                },
+                "UART3.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART3.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "I2C3.A.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "A",
+                    "func": "SCL"
+                },
+                "SPI3.A.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "MOSI"
+                },
+                "MCAN3.A.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "A",
+                    "func": "STBY"
+                },
+                "PWM0.B.P[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[1]"
+                },
+                "PWM1.B.FAULT[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "FAULT[1]"
+                },
+                "PWM0.E.FAULT[1]": {
+                    "index": "18",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "FAULT[1]"
+                },
+                "RDC0.B.EXC_N": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "B",
+                    "func": "EXC_N"
+                },
+                "QEI1.B.H0": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "B",
+                    "func": "H0"
+                },
+                "SEI1.B.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "B",
+                    "func": "RX"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA14",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[14]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[14]"
+                },
+                "UART3.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "SPI3.A.DAT2": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "DAT2"
+                },
+                "MCAN3.A.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "PWM0.B.P[2]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[2]"
+                },
+                "ACMP.D.COMP[0]": {
+                    "index": "18",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "D",
+                    "func": "COMP[0]"
+                },
+                "QEI1.B.H1": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "B",
+                    "func": "H1"
+                },
+                "EWDG1.B.RST": {
+                    "index": "24",
+                    "module": "EWDG",
+                    "instance": "EWDG1",
+                    "group": "B",
+                    "func": "RST"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA15",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[15]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[15]"
+                },
+                "GPTMR0.A.COMP[3]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "A",
+                    "func": "COMP[3]"
+                },
+                "UART3.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "SPI3.A.DAT3": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "A",
+                    "func": "DAT3"
+                },
+                "MCAN3.A.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "PWM0.B.P[3]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[3]"
+                },
+                "ACMP.D.COMP[1]": {
+                    "index": "18",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "D",
+                    "func": "COMP[1]"
+                },
+                "QEI1.B.F": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "B",
+                    "func": "F"
+                },
+                "SOC.B.REF0": {
+                    "index": "24",
+                    "module": "SOC",
+                    "instance": "SOC",
+                    "group": "B",
+                    "func": "REF0"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA16",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[16]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[16]"
+                },
+                "GPTMR3.A.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "A",
+                    "func": "COMP[0]"
+                },
+                "UART4.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART4",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "MCAN0.B.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "PWM0.B.P[4]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[4]"
+                },
+                "PWM1.B.P[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[0]"
+                },
+                "TRGM0.B.P[04]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[04]"
+                },
+                "QEO0.B.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "B",
+                    "func": "A"
+                },
+                "SEI1.C.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "C",
+                    "func": "DE"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA17",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[17]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[17]"
+                },
+                "GPTMR3.A.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "A",
+                    "func": "CAPT[0]"
+                },
+                "UART4.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART4",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "MCAN0.B.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "PWM0.B.P[5]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[5]"
+                },
+                "PWM1.B.P[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[1]"
+                },
+                "TRGM0.B.P[05]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[05]"
+                },
+                "QEO0.B.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "B",
+                    "func": "B"
+                },
+                "SEI1.C.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "C",
+                    "func": "CK"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA18",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[18]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[18]"
+                },
+                "GPTMR3.A.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "A",
+                    "func": "COMP[1]"
+                },
+                "UART4.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART4",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART4.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART4",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "I2C0.B.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C0",
+                    "group": "B",
+                    "func": "SCL"
+                },
+                "MCAN0.B.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "B",
+                    "func": "STBY"
+                },
+                "PWM0.B.P[6]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[6]"
+                },
+                "PWM1.B.P[2]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[2]"
+                },
+                "TRGM0.B.P[06]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[06]"
+                },
+                "QEO0.B.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "B",
+                    "func": "Z"
+                },
+                "SEI1.C.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "C",
+                    "func": "TX"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA19",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[19]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[19]"
+                },
+                "GPTMR3.A.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "A",
+                    "func": "CAPT[1]"
+                },
+                "UART4.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART4",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "I2C0.B.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C0",
+                    "group": "B",
+                    "func": "SDA"
+                },
+                "SPI1.A.CS[3]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "CS[3]"
+                },
+                "MCAN1.B.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "B",
+                    "func": "STBY"
+                },
+                "PWM0.B.P[7]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "P[7]"
+                },
+                "PWM1.B.P[3]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[3]"
+                },
+                "TRGM0.B.P[07]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[07]"
+                },
+                "SEI1.C.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "C",
+                    "func": "RX"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA20",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[20]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[20]"
+                },
+                "UART5.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART5",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "SPI2.B.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "B",
+                    "func": "CS[0]"
+                },
+                "MCAN1.B.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "PWM0.B.FAULT[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "FAULT[0]"
+                },
+                "PWM1.B.P[4]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[4]"
+                },
+                "TRGM0.B.P[00]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[00]"
+                },
+                "QEI0.A.A": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "A",
+                    "func": "A"
+                },
+                "QEO0.C.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "C",
+                    "func": "A"
+                },
+                "SEI0.A.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "A",
+                    "func": "DE"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA21",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[21]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[21]"
+                },
+                "GPTMR3.A.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "A",
+                    "func": "COMP[2]"
+                },
+                "UART5.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART5",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART5.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART5",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "SPI2.B.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "B",
+                    "func": "SCLK"
+                },
+                "MCAN1.B.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "PWM0.B.FAULT[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "B",
+                    "func": "FAULT[1]"
+                },
+                "PWM1.B.P[5]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[5]"
+                },
+                "TRGM0.B.P[01]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[01]"
+                },
+                "QEI0.A.B": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "A",
+                    "func": "B"
+                },
+                "QEO0.C.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "C",
+                    "func": "B"
+                },
+                "SEI0.A.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "A",
+                    "func": "CK"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA22",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[22]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[22]"
+                },
+                "GPTMR2.A.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "A",
+                    "func": "CAPT[0]"
+                },
+                "UART5.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART5",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "I2C1.B.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C1",
+                    "group": "B",
+                    "func": "SDA"
+                },
+                "SPI2.B.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "B",
+                    "func": "MISO"
+                },
+                "PWM1.B.P[6]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[6]"
+                },
+                "TRGM0.B.P[02]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[02]"
+                },
+                "PWM1.E.FAULT[0]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "FAULT[0]"
+                },
+                "QEI0.A.Z": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "A",
+                    "func": "Z"
+                },
+                "QEO0.C.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "C",
+                    "func": "Z"
+                },
+                "SEI0.A.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "A",
+                    "func": "TX"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA23",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[23]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[23]"
+                },
+                "GPTMR2.A.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "A",
+                    "func": "COMP[0]"
+                },
+                "UART5.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART5",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "I2C1.B.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C1",
+                    "group": "B",
+                    "func": "SCL"
+                },
+                "SPI2.B.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "B",
+                    "func": "MOSI"
+                },
+                "PWM1.B.P[7]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "B",
+                    "func": "P[7]"
+                },
+                "TRGM0.B.P[03]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "B",
+                    "func": "P[03]"
+                },
+                "PWM1.E.FAULT[1]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "FAULT[1]"
+                },
+                "QEI0.A.H0": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "A",
+                    "func": "H0"
+                },
+                "SEI0.A.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "A",
+                    "func": "RX"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA24",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[24]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[24]"
+                },
+                "GPTMR2.A.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "A",
+                    "func": "COMP[1]"
+                },
+                "UART6.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART6",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "I2C2.B.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "B",
+                    "func": "SCL"
+                },
+                "SPI1.A.CS[2]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "CS[2]"
+                },
+                "MCAN2.B.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "XPI0.AC.CA_CS1": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_CS1"
+                },
+                "PWM0.C.P[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[0]"
+                },
+                "PWM1.C.P[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[0]"
+                },
+                "TRGM0.C.P[00]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[00]"
+                },
+                "QEI0.A.H1": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "A",
+                    "func": "H1"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA25",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[25]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[25]"
+                },
+                "GPTMR2.A.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "A",
+                    "func": "CAPT[1]"
+                },
+                "UART6.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART6",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "I2C2.B.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "B",
+                    "func": "SDA"
+                },
+                "SPI1.A.CS[1]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "CS[1]"
+                },
+                "MCAN2.B.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "XPI0.A.CA_DQS": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "A",
+                    "func": "CA_DQS"
+                },
+                "PWM0.C.P[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[1]"
+                },
+                "PWM1.C.P[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[1]"
+                },
+                "TRGM0.C.P[01]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[01]"
+                },
+                "QEI0.A.F": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "A",
+                    "func": "F"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA26",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[26]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[26]"
+                },
+                "GPTMR2.A.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "A",
+                    "func": "COMP[2]"
+                },
+                "UART6.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART6",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART6.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART6",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "SPI1.A.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "CS[0]"
+                },
+                "MCAN2.B.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "B",
+                    "func": "STBY"
+                },
+                "XPI0.AC.CA_D[3]": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_D[3]"
+                },
+                "PWM0.C.P[2]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[2]"
+                },
+                "PWM1.C.P[2]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[2]"
+                },
+                "TRGM0.C.P[02]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[02]"
+                },
+                "QEI0.B.A": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "B",
+                    "func": "A"
+                },
+                "QEO0.D.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "D",
+                    "func": "A"
+                },
+                "SEI0.B.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "B",
+                    "func": "DE"
+                },
+                "SYSCTL.B.CLK_OBS[0]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "B",
+                    "func": "CLK_OBS[0]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA27",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[27]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[27]"
+                },
+                "UART6.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART6",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "SPI1.A.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "SCLK"
+                },
+                "XPI0.AC.CA_SCLK": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_SCLK"
+                },
+                "PWM0.C.P[3]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[3]"
+                },
+                "PWM1.C.P[3]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[3]"
+                },
+                "TRGM0.C.P[03]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[03]"
+                },
+                "QEI0.B.B": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "B",
+                    "func": "B"
+                },
+                "QEO0.D.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "D",
+                    "func": "B"
+                },
+                "SEI0.B.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "B",
+                    "func": "CK"
+                },
+                "SYSCTL.B.CLK_OBS[1]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "B",
+                    "func": "CLK_OBS[1]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA28",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[28]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[28]"
+                },
+                "UART7.A.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART7",
+                    "group": "A",
+                    "func": "CTS"
+                },
+                "I2C3.B.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "B",
+                    "func": "SDA"
+                },
+                "SPI1.A.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "MISO"
+                },
+                "XPI0.AC.CA_D[0]": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_D[0]"
+                },
+                "PWM0.C.P[4]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[4]"
+                },
+                "PWM1.C.P[4]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[4]"
+                },
+                "TRGM0.C.P[04]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[04]"
+                },
+                "RDC0.C.EXC_P": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "C",
+                    "func": "EXC_P"
+                },
+                "QEI0.B.Z": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "B",
+                    "func": "Z"
+                },
+                "QEO0.D.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO0",
+                    "group": "D",
+                    "func": "Z"
+                },
+                "SEI0.B.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "B",
+                    "func": "TX"
+                },
+                "SYSCTL.B.CLK_OBS[2]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "B",
+                    "func": "CLK_OBS[2]"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA29",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[29]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[29]"
+                },
+                "GPTMR3.A.COMP[3]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "A",
+                    "func": "COMP[3]"
+                },
+                "UART7.A.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART7",
+                    "group": "A",
+                    "func": "DE"
+                },
+                "UART7.A.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART7",
+                    "group": "A",
+                    "func": "RTS"
+                },
+                "I2C3.B.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "B",
+                    "func": "SCL"
+                },
+                "SPI1.A.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "MOSI"
+                },
+                "MCAN3.B.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "B",
+                    "func": "STBY"
+                },
+                "XPI0.AC.CA_D[2]": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_D[2]"
+                },
+                "PWM0.C.P[5]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[5]"
+                },
+                "PWM1.C.P[5]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[5]"
+                },
+                "TRGM0.C.P[05]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[05]"
+                },
+                "RDC0.C.EXC_N": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "C",
+                    "func": "EXC_N"
+                },
+                "QEI0.B.H0": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "B",
+                    "func": "H0"
+                },
+                "SEI0.B.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "B",
+                    "func": "RX"
+                },
+                "SYSCTL.B.CLK_OBS[3]": {
+                    "index": "24",
+                    "module": "SYSCTL",
+                    "instance": "SYSCTL",
+                    "group": "B",
+                    "func": "CLK_OBS[3]"
+                },
+                "USB0.A.OC": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "A",
+                    "func": "OC"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA30",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[30]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[30]"
+                },
+                "UART7.A.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART7",
+                    "group": "A",
+                    "func": "RXD"
+                },
+                "SPI1.A.DAT2": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "DAT2"
+                },
+                "MCAN3.B.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "XPI0.AC.CA_D[1]": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_D[1]"
+                },
+                "PWM0.C.P[6]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[6]"
+                },
+                "PWM1.C.P[6]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[6]"
+                },
+                "TRGM0.C.P[06]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[06]"
+                },
+                "QEI0.B.H1": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "B",
+                    "func": "H1"
+                },
+                "SOC.C.REF0": {
+                    "index": "24",
+                    "module": "SOC",
+                    "instance": "SOC",
+                    "group": "C",
+                    "func": "REF0"
+                },
+                "USB0.A.PWR": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "A",
+                    "func": "PWR"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PA31",
+            "type": "",
+            "bank": "B00",
+            "alts": {
+                "GPIO.A.A[31]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "A[31]"
+                },
+                "GPTMR2.A.COMP[3]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "A",
+                    "func": "COMP[3]"
+                },
+                "UART7.A.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART7",
+                    "group": "A",
+                    "func": "TXD"
+                },
+                "SPI1.A.DAT3": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI1",
+                    "group": "A",
+                    "func": "DAT3"
+                },
+                "MCAN3.B.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "XPI0.AC.CA_CS0": {
+                    "index": "14",
+                    "module": "XPI",
+                    "instance": "XPI0",
+                    "group": "AC",
+                    "func": "CA_CS0"
+                },
+                "PWM0.C.P[7]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "P[7]"
+                },
+                "PWM1.C.P[7]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "P[7]"
+                },
+                "TRGM0.C.P[07]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "C",
+                    "func": "P[07]"
+                },
+                "QEI0.B.F": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "B",
+                    "func": "F"
+                },
+                "USB0.A.ID": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "A",
+                    "func": "ID"
+                }
+            },
+            "specials": {}
+        },
+        {
+            "name": "PB00",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[00]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[00]"
+                },
+                "GPTMR1.B.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "B",
+                    "func": "COMP[0]"
+                },
+                "UART0.B.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "MCAN0.C.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "C",
+                    "func": "TXD"
+                },
+                "PWM0.D.P[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[0]"
+                },
+                "PWM1.C.FAULT[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "FAULT[0]"
+                },
+                "TRGM0.D.P[04]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[04]"
+                },
+                "ACMP.E.COMP[0]": {
+                    "index": "19",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "E",
+                    "func": "COMP[0]"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN15": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN15"
+                    },
+                    "ADC1.A.IN15": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN15"
+                    },
+                    "ACMP.A.CMP0_INN7": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN7"
+                    },
+                    "OPA0.A.OUT": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "OUT"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB01",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[01]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[01]"
+                },
+                "GPTMR1.B.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "B",
+                    "func": "CAPT[0]"
+                },
+                "UART0.B.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "MCAN0.C.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "C",
+                    "func": "RXD"
+                },
+                "PWM0.D.P[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[1]"
+                },
+                "PWM1.C.FAULT[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "C",
+                    "func": "FAULT[1]"
+                },
+                "TRGM0.D.P[05]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[05]"
+                },
+                "ACMP.E.COMP[1]": {
+                    "index": "19",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "E",
+                    "func": "COMP[1]"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN14": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN14"
+                    },
+                    "ADC1.A.IN14": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN14"
+                    },
+                    "ACMP.A.CMP1_INN7": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN7"
+                    },
+                    "OPA1.A.OUT": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "OUT"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB02",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[02]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[02]"
+                },
+                "GPTMR1.B.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "B",
+                    "func": "COMP[1]"
+                },
+                "UART0.B.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "B",
+                    "func": "DE"
+                },
+                "UART0.B.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "B",
+                    "func": "RTS"
+                },
+                "I2C0.C.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C0",
+                    "group": "C",
+                    "func": "SCL"
+                },
+                "MCAN0.C.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN0",
+                    "group": "C",
+                    "func": "STBY"
+                },
+                "PWM0.D.P[2]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[2]"
+                },
+                "ACMP.F.COMP[1]": {
+                    "index": "17",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "F",
+                    "func": "COMP[1]"
+                },
+                "TRGM0.D.P[06]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[06]"
+                },
+                "PWM0.G.FAULT[0]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "G",
+                    "func": "FAULT[0]"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN12": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN12"
+                    },
+                    "ADC1.A.IN12": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN12"
+                    },
+                    "ACMP.A.CMP0_INP7": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP7"
+                    },
+                    "OPA0.A.EXT": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "EXT"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB03",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[03]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[03]"
+                },
+                "GPTMR1.B.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "B",
+                    "func": "CAPT[1]"
+                },
+                "UART0.B.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "B",
+                    "func": "CTS"
+                },
+                "I2C0.C.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C0",
+                    "group": "C",
+                    "func": "SDA"
+                },
+                "SPI2.A.CS[3]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "CS[3]"
+                },
+                "MCAN1.C.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "C",
+                    "func": "STBY"
+                },
+                "PWM0.D.P[3]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[3]"
+                },
+                "ACMP.F.COMP[0]": {
+                    "index": "17",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "F",
+                    "func": "COMP[0]"
+                },
+                "TRGM0.D.P[07]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[07]"
+                },
+                "PWM0.G.FAULT[1]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "G",
+                    "func": "FAULT[1]"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN8": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN8"
+                    },
+                    "ADC1.A.IN8": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN8"
+                    },
+                    "ACMP.A.CMP1_INP7": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP7"
+                    },
+                    "OPA1.A.EXT": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "EXT"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB04",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[04]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[04]"
+                },
+                "UART1.B.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "B",
+                    "func": "CTS"
+                },
+                "SPI3.B.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "B",
+                    "func": "CS[0]"
+                },
+                "MCAN1.C.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "C",
+                    "func": "RXD"
+                },
+                "PWM0.D.P[4]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[4]"
+                },
+                "PWM1.D.P[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[0]"
+                },
+                "TRGM0.D.P[00]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[00]"
+                },
+                "QEI1.C.A": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "C",
+                    "func": "A"
+                },
+                "QEO1.B.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "B",
+                    "func": "A"
+                },
+                "SEI0.C.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "C",
+                    "func": "DE"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN0": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN0"
+                    },
+                    "ADC1.A.IN0": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN0"
+                    },
+                    "ACMP.A.CMP0_INN5": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN5"
+                    },
+                    "ACMP.A.CMP1_INN5": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN5"
+                    },
+                    "OPA0.A.INP0": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INP0"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB05",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[05]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[05]"
+                },
+                "GPTMR1.B.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "B",
+                    "func": "COMP[2]"
+                },
+                "UART1.B.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "B",
+                    "func": "DE"
+                },
+                "UART1.B.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "B",
+                    "func": "RTS"
+                },
+                "SPI3.B.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "B",
+                    "func": "SCLK"
+                },
+                "MCAN1.C.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN1",
+                    "group": "C",
+                    "func": "TXD"
+                },
+                "PWM0.D.P[5]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[5]"
+                },
+                "PWM1.D.P[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[1]"
+                },
+                "TRGM0.D.P[01]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[01]"
+                },
+                "QEI1.C.B": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "C",
+                    "func": "B"
+                },
+                "QEO1.B.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "B",
+                    "func": "B"
+                },
+                "SEI0.C.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "C",
+                    "func": "CK"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN13": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN13"
+                    },
+                    "ADC1.A.IN13": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN13"
+                    },
+                    "ACMP.A.CMP0_INN3": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN3"
+                    },
+                    "ACMP.A.CMP1_INN3": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN3"
+                    },
+                    "OPA0.A.INN0": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INN0"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB06",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[06]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[06]"
+                },
+                "GPTMR0.B.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "B",
+                    "func": "CAPT[0]"
+                },
+                "UART1.B.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "I2C1.C.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C1",
+                    "group": "C",
+                    "func": "SDA"
+                },
+                "SPI3.B.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "B",
+                    "func": "MISO"
+                },
+                "PWM0.D.P[6]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[6]"
+                },
+                "PWM1.D.P[2]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[2]"
+                },
+                "TRGM0.D.P[02]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[02]"
+                },
+                "RDC0.D.EXC_P": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "D",
+                    "func": "EXC_P"
+                },
+                "QEI1.C.Z": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "C",
+                    "func": "Z"
+                },
+                "QEO1.B.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "B",
+                    "func": "Z"
+                },
+                "SEI0.C.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "C",
+                    "func": "TX"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN9": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN9"
+                    },
+                    "ADC1.A.IN9": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN9"
+                    },
+                    "ACMP.A.CMP0_INP5": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP5"
+                    },
+                    "ACMP.A.CMP1_INP5": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP5"
+                    },
+                    "OPA0.A.INP1": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INP1"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB07",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[07]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[07]"
+                },
+                "GPTMR0.B.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "B",
+                    "func": "COMP[0]"
+                },
+                "UART1.B.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "I2C1.C.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C1",
+                    "group": "C",
+                    "func": "SCL"
+                },
+                "SPI3.B.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI3",
+                    "group": "B",
+                    "func": "MOSI"
+                },
+                "PWM0.D.P[7]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "D",
+                    "func": "P[7]"
+                },
+                "PWM1.D.P[3]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[3]"
+                },
+                "TRGM0.D.P[03]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "D",
+                    "func": "P[03]"
+                },
+                "RDC0.D.EXC_N": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "D",
+                    "func": "EXC_N"
+                },
+                "QEI1.C.H0": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "C",
+                    "func": "H0"
+                },
+                "SEI0.C.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "C",
+                    "func": "RX"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN10": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN10"
+                    },
+                    "ADC1.A.IN10": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN10"
+                    },
+                    "ACMP.A.CMP0_INP3": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP3"
+                    },
+                    "ACMP.A.CMP1_INP3": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP3"
+                    },
+                    "OPA0.A.INN1": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INN1"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB08",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[08]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[08]"
+                },
+                "GPTMR0.B.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "B",
+                    "func": "COMP[1]"
+                },
+                "UART2.B.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "I2C2.C.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "C",
+                    "func": "SCL"
+                },
+                "SPI2.A.CS[2]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "CS[2]"
+                },
+                "MCAN2.C.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "C",
+                    "func": "TXD"
+                },
+                "ACMP.G.COMP[0]": {
+                    "index": "16",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "G",
+                    "func": "COMP[0]"
+                },
+                "PWM1.D.P[4]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[4]"
+                },
+                "QEI1.C.H1": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "C",
+                    "func": "H1"
+                },
+                "QEO1.C.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "C",
+                    "func": "A"
+                },
+                "SEI1.D.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "D",
+                    "func": "DE"
+                },
+                "USB0.B.ID": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "B",
+                    "func": "ID"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN11": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN11"
+                    },
+                    "ADC1.A.IN11": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN11"
+                    },
+                    "DAC0.A.OUT": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "DAC0",
+                        "group": "A",
+                        "func": "OUT"
+                    },
+                    "ACMP.A.CMP0_INN6": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN6"
+                    },
+                    "ACMP.A.CMP1_INN6": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN6"
+                    },
+                    "OPA0.A.INP2": {
+                        "index": "ANALOG_F",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INP2"
+                    },
+                    "OPA1.A.INP2": {
+                        "index": "ANALOG_G",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INP2"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB09",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[09]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[09]"
+                },
+                "GPTMR0.B.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "B",
+                    "func": "CAPT[1]"
+                },
+                "UART2.B.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "I2C2.C.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "C",
+                    "func": "SDA"
+                },
+                "SPI2.A.CS[1]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "CS[1]"
+                },
+                "MCAN2.C.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "C",
+                    "func": "RXD"
+                },
+                "ACMP.G.COMP[1]": {
+                    "index": "16",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "G",
+                    "func": "COMP[1]"
+                },
+                "PWM1.D.P[5]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[5]"
+                },
+                "QEI1.C.F": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI1",
+                    "group": "C",
+                    "func": "F"
+                },
+                "QEO1.C.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "C",
+                    "func": "B"
+                },
+                "SEI1.D.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "D",
+                    "func": "CK"
+                },
+                "USB0.B.OC": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "B",
+                    "func": "OC"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN1": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN1"
+                    },
+                    "ADC1.A.IN1": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN1"
+                    },
+                    "DAC1.A.OUT": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "DAC1",
+                        "group": "A",
+                        "func": "OUT"
+                    },
+                    "ACMP.A.CMP0_INP6": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP6"
+                    },
+                    "ACMP.A.CMP1_INP6": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP6"
+                    },
+                    "OPA0.A.INN2": {
+                        "index": "ANALOG_F",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INN2"
+                    },
+                    "OPA1.A.INN2": {
+                        "index": "ANALOG_G",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INN2"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB10",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[10]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[10]"
+                },
+                "GPTMR0.B.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "B",
+                    "func": "COMP[2]"
+                },
+                "UART2.B.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "B",
+                    "func": "DE"
+                },
+                "UART2.B.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "B",
+                    "func": "RTS"
+                },
+                "SPI2.A.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "CS[0]"
+                },
+                "MCAN2.C.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "C",
+                    "func": "STBY"
+                },
+                "ACMP.H.COMP[0]": {
+                    "index": "16",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "H",
+                    "func": "COMP[0]"
+                },
+                "PWM1.D.P[6]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[6]"
+                },
+                "QEI0.C.H1": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "C",
+                    "func": "H1"
+                },
+                "QEO1.C.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "C",
+                    "func": "Z"
+                },
+                "SEI1.D.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "D",
+                    "func": "TX"
+                },
+                "USB0.BC.PWR": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "BC",
+                    "func": "PWR"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN2": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN2"
+                    },
+                    "ADC1.A.IN2": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN2"
+                    },
+                    "ACMP.A.CMP0_INP4": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP4"
+                    },
+                    "ACMP.A.CMP1_INP4": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP4"
+                    },
+                    "OPA0.A.INP3": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INP3"
+                    },
+                    "OPA1.A.INP3": {
+                        "index": "ANALOG_F",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INP3"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB11",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[11]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[11]"
+                },
+                "UART2.B.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART2",
+                    "group": "B",
+                    "func": "CTS"
+                },
+                "SPI2.A.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "SCLK"
+                },
+                "ACMP.H.COMP[1]": {
+                    "index": "16",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "H",
+                    "func": "COMP[1]"
+                },
+                "PWM1.D.P[7]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "D",
+                    "func": "P[7]"
+                },
+                "QEI0.C.F": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "C",
+                    "func": "F"
+                },
+                "SEI1.D.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI1",
+                    "group": "D",
+                    "func": "RX"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN3": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN3"
+                    },
+                    "ADC1.A.IN3": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN3"
+                    },
+                    "ACMP.A.CMP0_INN4": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN4"
+                    },
+                    "ACMP.A.CMP1_INN4": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN4"
+                    },
+                    "OPA0.A.INN3": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA0",
+                        "group": "A",
+                        "func": "INN3"
+                    },
+                    "OPA1.A.INN3": {
+                        "index": "ANALOG_F",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INN3"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB12",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[12]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[12]"
+                },
+                "UART3.B.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "B",
+                    "func": "CTS"
+                },
+                "I2C3.C.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "C",
+                    "func": "SDA"
+                },
+                "SPI2.A.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "MISO"
+                },
+                "PWM1.G.FAULT[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "G",
+                    "func": "FAULT[0]"
+                },
+                "PWM1.E.P[0]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[0]"
+                },
+                "TRGM0.E.P[00]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[00]"
+                },
+                "QEI0.C.A": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "C",
+                    "func": "A"
+                },
+                "QEO1.D.A": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "D",
+                    "func": "A"
+                },
+                "SEI0.D.DE": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "D",
+                    "func": "DE"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN4": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN4"
+                    },
+                    "ADC1.A.IN4": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN4"
+                    },
+                    "ACMP.A.CMP0_INN2": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN2"
+                    },
+                    "ACMP.A.CMP1_INN2": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN2"
+                    },
+                    "OPA1.A.INP0": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INP0"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB13",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[13]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[13]"
+                },
+                "GPTMR1.B.COMP[3]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR1",
+                    "group": "B",
+                    "func": "COMP[3]"
+                },
+                "UART3.B.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "B",
+                    "func": "DE"
+                },
+                "UART3.B.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "B",
+                    "func": "RTS"
+                },
+                "I2C3.C.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "C",
+                    "func": "SCL"
+                },
+                "SPI2.A.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "MOSI"
+                },
+                "MCAN3.C.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "C",
+                    "func": "STBY"
+                },
+                "PWM1.G.FAULT[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "G",
+                    "func": "FAULT[1]"
+                },
+                "PWM1.E.P[1]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[1]"
+                },
+                "TRGM0.E.P[01]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[01]"
+                },
+                "QEI0.C.B": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "C",
+                    "func": "B"
+                },
+                "QEO1.D.B": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "D",
+                    "func": "B"
+                },
+                "SEI0.D.CK": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "D",
+                    "func": "CK"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN5": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN5"
+                    },
+                    "ADC1.A.IN5": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN5"
+                    },
+                    "ACMP.A.CMP0_INP2": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP2"
+                    },
+                    "ACMP.A.CMP1_INP2": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP2"
+                    },
+                    "OPA1.A.INN0": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INN0"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB14",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[14]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[14]"
+                },
+                "UART3.B.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "B",
+                    "func": "RXD"
+                },
+                "SPI2.A.DAT2": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "DAT2"
+                },
+                "MCAN3.C.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "C",
+                    "func": "RXD"
+                },
+                "PWM0.C.FAULT[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "FAULT[0]"
+                },
+                "PWM1.E.P[2]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[2]"
+                },
+                "TRGM0.E.P[02]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[02]"
+                },
+                "RDC0.E.EXC_P": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "E",
+                    "func": "EXC_P"
+                },
+                "QEI0.C.Z": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "C",
+                    "func": "Z"
+                },
+                "QEO1.D.Z": {
+                    "index": "21",
+                    "module": "QEO",
+                    "instance": "QEO1",
+                    "group": "D",
+                    "func": "Z"
+                },
+                "SEI0.D.TX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "D",
+                    "func": "TX"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN6": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN6"
+                    },
+                    "ADC1.A.IN6": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN6"
+                    },
+                    "ACMP.A.CMP0_INN1": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INN1"
+                    },
+                    "ACMP.A.CMP1_INN1": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INN1"
+                    },
+                    "OPA1.A.INP1": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INP1"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PB15",
+            "type": "",
+            "bank": "B01",
+            "alts": {
+                "GPIO.A.B[15]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "B[15]"
+                },
+                "GPTMR0.B.COMP[3]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR0",
+                    "group": "B",
+                    "func": "COMP[3]"
+                },
+                "UART3.B.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART3",
+                    "group": "B",
+                    "func": "TXD"
+                },
+                "SPI2.A.DAT3": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "A",
+                    "func": "DAT3"
+                },
+                "MCAN3.C.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "C",
+                    "func": "TXD"
+                },
+                "PWM0.C.FAULT[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "C",
+                    "func": "FAULT[1]"
+                },
+                "PWM1.E.P[3]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[3]"
+                },
+                "TRGM0.E.P[03]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[03]"
+                },
+                "RDC0.E.EXC_N": {
+                    "index": "19",
+                    "module": "RDC",
+                    "instance": "RDC0",
+                    "group": "E",
+                    "func": "EXC_N"
+                },
+                "QEI0.C.H0": {
+                    "index": "20",
+                    "module": "QEI",
+                    "instance": "QEI0",
+                    "group": "C",
+                    "func": "H0"
+                },
+                "SEI0.D.RX": {
+                    "index": "22",
+                    "module": "SEI",
+                    "instance": "SEI0",
+                    "group": "D",
+                    "func": "RX"
+                }
+            },
+            "specials": {
+                "ANALOGS": {
+                    "ADC0.A.IN7": {
+                        "index": "ANALOG_A",
+                        "module": "ANALOGS",
+                        "instance": "ADC0",
+                        "group": "A",
+                        "func": "IN7"
+                    },
+                    "ADC1.A.IN7": {
+                        "index": "ANALOG_B",
+                        "module": "ANALOGS",
+                        "instance": "ADC1",
+                        "group": "A",
+                        "func": "IN7"
+                    },
+                    "ACMP.A.CMP0_INP1": {
+                        "index": "ANALOG_C",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP0_INP1"
+                    },
+                    "ACMP.A.CMP1_INP1": {
+                        "index": "ANALOG_D",
+                        "module": "ANALOGS",
+                        "instance": "ACMP",
+                        "group": "A",
+                        "func": "CMP1_INP1"
+                    },
+                    "OPA1.A.INN1": {
+                        "index": "ANALOG_E",
+                        "module": "ANALOGS",
+                        "instance": "OPA1",
+                        "group": "A",
+                        "func": "INN1"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY00",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[00]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[00]"
+                },
+                "GPTMR3.B.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "B",
+                    "func": "COMP[0]"
+                },
+                "UART0.G.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "G",
+                    "func": "TXD"
+                },
+                "MCAN2.D.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "D",
+                    "func": "TXD"
+                },
+                "PWM0.E.P[0]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[0]"
+                },
+                "PWM1.E.P[4]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[4]"
+                },
+                "PWM0.F.FAULT[0]": {
+                    "index": "18",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "F",
+                    "func": "FAULT[0]"
+                },
+                "USB0.C.ID": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "C",
+                    "func": "ID"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[00]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[00]"
+                    },
+                    "PMIC1.A.PUART.TXD": {
+                        "index": "1",
+                        "module": "PMIC",
+                        "instance": "PMIC1",
+                        "group": "A",
+                        "func": "PUART.TXD"
+                    },
+                    "PMIC2.A.PTMR.COMP[0]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "A",
+                        "func": "PTMR.COMP[0]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY01",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[01]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[01]"
+                },
+                "GPTMR3.B.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "B",
+                    "func": "CAPT[0]"
+                },
+                "UART0.G.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "G",
+                    "func": "RXD"
+                },
+                "MCAN2.D.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "D",
+                    "func": "RXD"
+                },
+                "PWM0.E.P[1]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[1]"
+                },
+                "PWM1.E.P[5]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[5]"
+                },
+                "PWM0.F.FAULT[1]": {
+                    "index": "18",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "F",
+                    "func": "FAULT[1]"
+                },
+                "EWDG0.C.RST": {
+                    "index": "24",
+                    "module": "EWDG",
+                    "instance": "EWDG0",
+                    "group": "C",
+                    "func": "RST"
+                },
+                "USB0.C.OC": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "C",
+                    "func": "OC"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[01]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[01]"
+                    },
+                    "PMIC1.A.PUART.RXD": {
+                        "index": "1",
+                        "module": "PMIC",
+                        "instance": "PMIC1",
+                        "group": "A",
+                        "func": "PUART.RXD"
+                    },
+                    "PMIC2.A.PTMR.COMP[1]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "A",
+                        "func": "PTMR.COMP[1]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY02",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[02]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[02]"
+                },
+                "GPTMR3.B.COMP[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "B",
+                    "func": "COMP[1]"
+                },
+                "UART0.G.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "G",
+                    "func": "DE"
+                },
+                "UART0.G.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "G",
+                    "func": "RTS"
+                },
+                "I2C2.D.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "D",
+                    "func": "SCL"
+                },
+                "MCAN2.D.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN2",
+                    "group": "D",
+                    "func": "STBY"
+                },
+                "PWM0.E.P[2]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[2]"
+                },
+                "PWM1.E.P[6]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[6]"
+                },
+                "ACMP.I.COMP[0]": {
+                    "index": "18",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "I",
+                    "func": "COMP[0]"
+                },
+                "PWM1.F.FAULT[0]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "F",
+                    "func": "FAULT[0]"
+                },
+                "EWDG1.C.RST": {
+                    "index": "24",
+                    "module": "EWDG",
+                    "instance": "EWDG1",
+                    "group": "C",
+                    "func": "RST"
+                },
+                "USB0.C.PWR": {
+                    "index": "25",
+                    "module": "USB",
+                    "instance": "USB0",
+                    "group": "C",
+                    "func": "PWR"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[02]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[02]"
+                    },
+                    "PMIC1.A.PUART.RTS": {
+                        "index": "1",
+                        "module": "PMIC",
+                        "instance": "PMIC1",
+                        "group": "A",
+                        "func": "PUART.RTS"
+                    },
+                    "PMIC2.A.PTMR.COMP[2]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "A",
+                        "func": "PTMR.COMP[2]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY03",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[03]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[03]"
+                },
+                "GPTMR3.B.CAPT[1]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "B",
+                    "func": "CAPT[1]"
+                },
+                "UART0.G.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART0",
+                    "group": "G",
+                    "func": "CTS"
+                },
+                "I2C2.D.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C2",
+                    "group": "D",
+                    "func": "SDA"
+                },
+                "MCAN3.D.STBY": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "D",
+                    "func": "STBY"
+                },
+                "PWM0.E.P[3]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[3]"
+                },
+                "PWM1.E.P[7]": {
+                    "index": "17",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "E",
+                    "func": "P[7]"
+                },
+                "ACMP.I.COMP[1]": {
+                    "index": "18",
+                    "module": "ACMP",
+                    "instance": "ACMP",
+                    "group": "I",
+                    "func": "COMP[1]"
+                },
+                "PWM1.F.FAULT[1]": {
+                    "index": "19",
+                    "module": "PWM",
+                    "instance": "PWM1",
+                    "group": "F",
+                    "func": "FAULT[1]"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[03]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[03]"
+                    },
+                    "PMIC1.A.PUART.CTS": {
+                        "index": "1",
+                        "module": "PMIC",
+                        "instance": "PMIC1",
+                        "group": "A",
+                        "func": "PUART.CTS"
+                    },
+                    "PMIC2.A.PTMR.COMP[3]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "A",
+                        "func": "PTMR.COMP[3]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY04",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[04]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[04]"
+                },
+                "UART1.G.CTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "G",
+                    "func": "CTS"
+                },
+                "SPI2.C.CS[0]": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "C",
+                    "func": "CS[0]"
+                },
+                "MCAN3.D.RXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "D",
+                    "func": "RXD"
+                },
+                "PWM0.E.P[4]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[4]"
+                },
+                "TRGM0.E.P[04]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[04]"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[04]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[04]"
+                    },
+                    "PMIC2.B.PTMR.COMP[0]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "B",
+                        "func": "PTMR.COMP[0]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY05",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[05]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[05]"
+                },
+                "GPTMR3.B.COMP[2]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR3",
+                    "group": "B",
+                    "func": "COMP[2]"
+                },
+                "UART1.G.DE": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "G",
+                    "func": "DE"
+                },
+                "UART1.G.RTS": {
+                    "index": "3",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "G",
+                    "func": "RTS"
+                },
+                "SPI2.C.SCLK": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "C",
+                    "func": "SCLK"
+                },
+                "MCAN3.D.TXD": {
+                    "index": "7",
+                    "module": "MCAN",
+                    "instance": "MCAN3",
+                    "group": "D",
+                    "func": "TXD"
+                },
+                "PWM0.E.P[5]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[5]"
+                },
+                "TRGM0.E.P[05]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[05]"
+                },
+                "EWDG0.A.RST": {
+                    "index": "24",
+                    "module": "EWDG",
+                    "instance": "EWDG0",
+                    "group": "A",
+                    "func": "RST"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[05]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[05]"
+                    },
+                    "PMIC1.A.PEWDG.RST": {
+                        "index": "1",
+                        "module": "PMIC",
+                        "instance": "PMIC1",
+                        "group": "A",
+                        "func": "PEWDG.RST"
+                    },
+                    "PMIC2.A.PTMR.CAPT[0]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "A",
+                        "func": "PTMR.CAPT[0]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY06",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[06]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[06]"
+                },
+                "GPTMR2.B.CAPT[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "B",
+                    "func": "CAPT[0]"
+                },
+                "UART1.G.RXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "G",
+                    "func": "RXD"
+                },
+                "I2C3.D.SDA": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "D",
+                    "func": "SDA"
+                },
+                "SPI2.C.MISO": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "C",
+                    "func": "MISO"
+                },
+                "PWM0.E.P[6]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[6]"
+                },
+                "TRGM0.E.P[06]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[06]"
+                },
+                "EWDG1.A.RST": {
+                    "index": "24",
+                    "module": "EWDG",
+                    "instance": "EWDG1",
+                    "group": "A",
+                    "func": "RST"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[06]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[06]"
+                    },
+                    "PMIC2.B.PTMR.COMP[1]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "B",
+                        "func": "PTMR.COMP[1]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "PY07",
+            "type": "",
+            "bank": "VPMC",
+            "alts": {
+                "GPIO.A.Y[07]": {
+                    "index": "0",
+                    "module": "GPIO",
+                    "instance": "GPIO",
+                    "group": "A",
+                    "func": "Y[07]"
+                },
+                "GPTMR2.B.COMP[0]": {
+                    "index": "1",
+                    "module": "GPTMR",
+                    "instance": "GPTMR2",
+                    "group": "B",
+                    "func": "COMP[0]"
+                },
+                "UART1.G.TXD": {
+                    "index": "2",
+                    "module": "UART",
+                    "instance": "UART1",
+                    "group": "G",
+                    "func": "TXD"
+                },
+                "I2C3.D.SCL": {
+                    "index": "4",
+                    "module": "I2C",
+                    "instance": "I2C3",
+                    "group": "D",
+                    "func": "SCL"
+                },
+                "SPI2.C.MOSI": {
+                    "index": "5",
+                    "module": "SPI",
+                    "instance": "SPI2",
+                    "group": "C",
+                    "func": "MOSI"
+                },
+                "PWM0.E.P[7]": {
+                    "index": "16",
+                    "module": "PWM",
+                    "instance": "PWM0",
+                    "group": "E",
+                    "func": "P[7]"
+                },
+                "TRGM0.E.P[07]": {
+                    "index": "18",
+                    "module": "TRGM",
+                    "instance": "TRGM0",
+                    "group": "E",
+                    "func": "P[07]"
+                }
+            },
+            "specials": {
+                "PMIC": {
+                    "PMIC0.A.PGPIO.Y[07]": {
+                        "index": "0",
+                        "module": "PMIC",
+                        "instance": "PMIC0",
+                        "group": "A",
+                        "func": "PGPIO.Y[07]"
+                    },
+                    "PMIC2.A.PTMR.CAPT[1]": {
+                        "index": "2",
+                        "module": "PMIC",
+                        "instance": "PMIC2",
+                        "group": "A",
+                        "func": "PTMR.CAPT[1]"
+                    }
+                }
+            }
+        }
+    ]
+}
