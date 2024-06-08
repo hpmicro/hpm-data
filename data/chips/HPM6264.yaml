@@ -1,10 +1,11 @@
 name: HPM6264
-family: HPM6200
+family: HPM6200 Series
+sub_family: HPM6200, Single-core, Full Featured
 packages:
-  - name: HPM6264-BGA116
+  - name: HPM6264xEP
     package: BGA116
     pins: 116
-  - name: HPM6264-LQFP144
+  - name: HPM6264xPA
     package: LQFP144
     pins: 144
 memory:

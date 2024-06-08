@@ -1,10 +1,11 @@
 name: HPM6220
-family: HPM6200
+family: HPM6200 Series
+sub_family: HPM6200, Single-core, Basic
 packages:
-  - name: HPM6220-BGA116
+  - name: HPM6220xEP
     package: BGA116
     pins: 116
-  - name: HPM6220-LQFP144
+  - name: HPM6220xPA
     package: LQFP144
     pins: 144
 memory:

@@ -1,10 +1,11 @@
 name: HPM6350
-family: HPM6300
+family: HPM6300 Series
+sub_family: HPM6300, No CANFD
 packages:
-  - name: HPM6350-BGA116
+  - name: HPM6350xEP
     package: BGA116
     pins: 116
-  - name: HPM6350-LQFP144
+  - name: HPM6350xPA
     package: LQFP144
     pins: 144
 memory:

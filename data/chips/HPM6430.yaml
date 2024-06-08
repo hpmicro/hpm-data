@@ -1,10 +1,11 @@
 name: HPM6430
-family: HPM6400/HPM6700
+family: HPM6 Series
+sub_family: HPM6400, Single-core
 packages:
-  - name: HPM6430-BGA196
+  - name: HPM6430xAN
     package: BGA196
     pins: 196
-  - name: HPM6430-BGA289
+  - name: HPM6430xVM
     package: BGA289
     pins: 289
 memory:

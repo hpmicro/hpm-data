@@ -1,10 +1,11 @@
 name: HPM6240
-family: HPM6200
+family: HPM6200 Series
+sub_family: HPM6200, Single-core, No PWM
 packages:
-  - name: HPM6240-BGA116
+  - name: HPM6240xEP
     package: BGA116
     pins: 116
-  - name: HPM6240-LQFP144
+  - name: HPM6240xPA
     package: LQFP144
     pins: 144
 memory:

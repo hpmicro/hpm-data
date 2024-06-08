@@ -1,11 +1,11 @@
-name: HPM6454
+name: HPM64G0
 family: HPM6 Series
-sub_family: HPM6400, Single-core
+sub_family: HPM6400, Single-core, 1GHz
 packages:
-  - name: HPM6454xAN
+  - name: HPM64G0xAN
     package: BGA196
     pins: 196
-  - name: HPM6454xVM
+  - name: HPM64G0xVM
     package: BGA289
     pins: 289
 memory:

@@ -1,10 +1,11 @@
 name: HPM6850
-family: HPM6800
+family: HPM6800 Series
+sub_family: HPM6800, Multimedia
 packages:
   - name: HPM6850-BGA289
     package: BGA289
     pins: 289
-  - name: HPM6850-BGA417
+  - name: HPM6850xBD
     package: BGA417
     pins: 417
 memory:

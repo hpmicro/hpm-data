@@ -1,13 +1,14 @@
 name: HPM6280
-family: HPM6200
+family: HPM6200 Series
+sub_family: HPM6200, Dual-core, Full Featured
 packages:
-  - name: HPM6280-BGA116
+  - name: HPM6280xEP
     package: BGA116
     pins: 116
-  - name: HPM6280-LQFP100
+  - name: HPM6280xCB
     package: LQFP100
     pins: 100
-  - name: HPM6280-LQFP144
+  - name: HPM6280xPA
     package: LQFP144
     pins: 144
 memory:

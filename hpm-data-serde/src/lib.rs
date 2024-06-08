@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 pub struct Chip {
     pub name: String,
     pub family: String,
+    pub sub_family: String,
     // pub device_id: u32,
     #[serde(default)]
     pub keywords: Vec<String>,

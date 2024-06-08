@@ -1,13 +1,14 @@
 name: HPM6284
-family: HPM6200
+family: HPM6200 Series
+sub_family: HPM6200, Dual-core, Full Featured, 4MB Flash
 packages:
-  - name: HPM6284-BGA116
+  - name: HPM6284xEP
     package: BGA116
     pins: 116
-  - name: HPM6284-LQFP100
+  - name: HPM6284xCB
     package: LQFP100
     pins: 100
-  - name: HPM6284-LQFP144
+  - name: HPM6284xPA
     package: LQFP144
     pins: 144
 memory:

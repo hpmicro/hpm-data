@@ -1,13 +1,14 @@
 name: HPM5331
-family: HPM5300
+family: HPM5300 Series
+sub_family: HPM5300, Single-core, Motor Control
 packages:
-  - name: HPM5331-LQFP100
+  - name: HPM5331xCB
     package: LQFP100
     pins: 100
-  - name: HPM5331-LQFP64
+  - name: HPM5331xCF
     package: LQFP64
     pins: 64
-  - name: HPM5331-QFN48
+  - name: HPM5331xEG
     package: QFN48
     pins: 48
 memory:

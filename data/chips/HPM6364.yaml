@@ -1,16 +1,17 @@
 name: HPM6364
-family: HPM6300
+family: HPM6300 Series
+sub_family: HPM6300, Full Featured, 4MB Flash
 packages:
-  - name: HPM6364-BGA116
+  - name: HPM6364xEP
     package: BGA116
     pins: 116
-  - name: HPM6364-BGA172
+  - name: HPM6364xDC
     package: BGA172
     pins: 172
-  - name: HPM6364-LQFP100
+  - name: HPM6364xCB
     package: LQFP100
     pins: 100
-  - name: HPM6364-LQFP144
+  - name: HPM6364xPA
     package: LQFP144
     pins: 144
 memory:

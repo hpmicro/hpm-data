@@ -1,5 +1,6 @@
 name: HPM6330
-family: HPM6300
+family: HPM6300 Series
+sub_family: HPM6300, Basic Enhanced
 packages:
   - name: HPM6330-LQFP80
     package: LQFP80
