@@ -15,19 +15,19 @@ memory:
   - address: 0x00000000
     kind: ram
     name: ILM
-    size: 131072 # 128K
+    size: 128K
   - address: 0x00080000
     kind: ram
     name: DLM
-    size: 131072 # 128K
+    size: 128K
   - address: 0xf0400000
     kind: ram
     name: AHB_SRAM
-    size: 32768 # 32K
+    size: 32K
   - address: 0x80000000
     kind: flash
     name: XPI0
-    size: 1048576 # 1M
+    size: 1M
 cores:
   - name: RV32-IMAFDCPB # D25
     ip-core: Andes D25
@@ -36,6 +36,8 @@ cores:
       - "../family/HPM5300.yaml"
       - "../family/HPM5300_GPTMR23.yaml"
       - "../family/HPM5300_UART4567.yaml"
+      - "../family/HPM5300_SPI23.yaml"
+      - "../family/HPM5300_I2C23.yaml"
       - "../family/HPM5300_ADC1.yaml"
       - "../family/HPM5300_MCAN.yaml"
     include_interrupts: "../interrupts/HPM5361.yaml"

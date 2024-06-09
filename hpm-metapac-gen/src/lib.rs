@@ -453,12 +453,20 @@ fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     let ilm = chip
         .memory
         .iter()
-        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "DLM")
+        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "ILM")
         .unwrap();
     let axi_sram = chip
         .memory
         .iter()
-        .find(|r| r.kind == MemoryRegionKind::Flash && r.name == "AXI_SRAM");
+        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "AXI_SRAM");
+    let ahb_sram = chip
+        .memory
+        .iter()
+        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "AHB_SRAM");
+    let sdram = chip
+        .memory
+        .iter()
+        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "SDRAM");
 
     write!(memory_x, "MEMORY\n{{\n").unwrap();
     writeln!(
@@ -485,8 +493,27 @@ fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     if let Some(axi_sram) = axi_sram {
         writeln!(
             memory_x,
-            "    AXI_SRAM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}",
-            axi_sram.address, axi_sram.size,
+            "    AXI_SRAM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+            axi_sram.address,
+            axi_sram.size / 1024,
+        )
+        .unwrap();
+    }
+    if let Some(ahb_sram) = ahb_sram {
+        writeln!(
+            memory_x,
+            "    AHB_SRAM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+            ahb_sram.address,
+            ahb_sram.size / 1024,
+        )
+        .unwrap();
+    }
+    if let Some(sdram) = sdram {
+        writeln!(
+            memory_x,
+            "    SDRAM   : ORIGIN = 0x{:08x}, LENGTH = {:>4}K",
+            sdram.address,
+            sdram.size / 1024,
         )
         .unwrap();
     }

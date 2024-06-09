@@ -1,0 +1,49 @@
+name: HPM64A0
+family: HPM6400 Series
+sub_family: HPM6400, Automotive
+packages:
+  - name: HPM64A0xAN
+    package: BGA196
+    pins: 196
+  - name: HPM64A0xVM
+    package: BGA289
+    pins: 289
+memory:
+  - address: 0x00000000
+    kind: ram
+    name: ILM
+    size: 262144 # 256K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 262144 # 256K
+  - address: 0x01080000
+    kind: ram
+    name: AXI_SRAM
+    size: 524288 # 512K
+  - address: 0x01100000
+    kind: ram
+    name: AXI_SRAM_NOCACHE # AXI SRAM1
+    size: 262144 # 256K
+  - address: 0x0117C000
+    kind: ram
+    name: SHARE_RAM
+    size: 16384 # 16K
+  - address: 0xF0300000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0xF40F0000
+    kind: ram
+    name: APB_SRAM
+    size: 8192 # 8K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M
+cores:
+  - name: RV32-IMAFDCP
+    ip-core: Andes D45
+    peripherals: []
+    include_peripherals:
+      - "../family/COMMON.yaml"

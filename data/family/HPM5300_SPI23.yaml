@@ -1,0 +1,12 @@
+- name: SPI2
+  address: 0xF0078000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI3
+  address: 0xF007C000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
