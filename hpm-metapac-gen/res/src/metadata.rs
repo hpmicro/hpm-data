@@ -129,6 +129,27 @@ pub struct Metadata {
     pub peripherals: &'static [Peripheral],
     pub interrupts: &'static [Interrupt],
     pub dma_channels: &'static [DmaChannel],
+    pub resources: &'static [Resource],
+    pub clocks: &'static [Clock],
+    pub pins: &'static [IoPin],
+}
+
+#[derive(Debug, Eq, PartialEq, Clone)]
+pub struct Resource {
+    pub name: &'static str,
+    pub index: u32,
+}
+
+#[derive(Debug, Eq, PartialEq, Clone)]
+pub struct Clock {
+    pub name: &'static str,
+    pub index: u32,
+}
+
+#[derive(Debug, Eq, PartialEq, Clone)]
+pub struct IoPin {
+    pub name: &'static str,
+    pub index: u32,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]

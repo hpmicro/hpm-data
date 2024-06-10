@@ -141,6 +141,46 @@ impl Gen {
         )
         .unwrap();
 
+        // ==============================
+        // Generate Register Block indices
+        {
+            writeln!(&mut extra, "pub mod resources {{").unwrap();
+            for res in &core.resources {
+                writeln!(
+                    &mut extra,
+                    "    pub const {}: usize = {};",
+                    res.name.to_ascii_uppercase(),
+                    res.index
+                )
+                .unwrap();
+            }
+            writeln!(&mut extra, "}}").unwrap();
+
+            writeln!(&mut extra, "pub mod clocks {{").unwrap();
+            for clk in &core.clocks {
+                writeln!(
+                    &mut extra,
+                    "    pub const {}: usize = {};",
+                    clk.name.to_ascii_uppercase(),
+                    clk.index
+                )
+                .unwrap();
+            }
+            writeln!(&mut extra, "}}").unwrap();
+
+            writeln!(&mut extra, "pub mod pins {{").unwrap();
+            for pin in &core.pins {
+                writeln!(
+                    &mut extra,
+                    "    pub const {}: usize = {};",
+                    pin.name.to_ascii_uppercase(),
+                    pin.index
+                )
+                .unwrap();
+            }
+            writeln!(&mut extra, "}}").unwrap();
+        }
+
         // Cleanups!
         transform::sort::Sort {}.run(&mut ir).unwrap();
         transform::Sanitize {}.run(&mut ir).unwrap();
@@ -195,10 +235,17 @@ impl Gen {
                 pub(crate) static PERIPHERALS: &[Peripheral] = {};
                 pub(crate) static INTERRUPTS: &[Interrupt] = {};
                 pub(crate) static DMA_CHANNELS: &[DmaChannel] = {};
+                pub(crate) static RESOURCES: &[Resource] = {};
+                pub(crate) static CLOCKS: &[Clock] = {};
+                pub(crate) static PINS: &[IoPin] = {};
+
             ",
             stringify(&core.peripherals),
             stringify(&core.interrupts),
             stringify(&core.dma_channels),
+            stringify(&core.resources),
+            stringify(&core.clocks),
+            stringify(&core.pins),
         )
         .unwrap();
 
@@ -233,6 +280,9 @@ impl Gen {
                 peripherals: PERIPHERALS,
                 interrupts: INTERRUPTS,
                 dma_channels: DMA_CHANNELS,
+                resources: RESOURCES,
+                clocks: CLOCKS,
+                pins: PINS,
             }};",
             deduped_file,
             &chip.name,

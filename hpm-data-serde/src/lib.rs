@@ -64,6 +64,14 @@ pub mod chip {
         #[serde(default)]
         pub dma_channels: Vec<core::DmaChannels>,
 
+        // Register block index helper
+        #[serde(default)]
+        pub resources: Vec<core::Resource>,
+        #[serde(default)]
+        pub clocks: Vec<core::Clock>,
+        #[serde(default)]
+        pub pins: Vec<core::IoPin>,
+
         // include fields, for common peripherals
         #[serde(skip_serializing_if = "Option::is_none")]
         pub include_interrupts: Option<String>,
@@ -232,6 +240,27 @@ pub mod chip {
             pub dma: String,
             // DMAMUX output channel
             pub channel: u8,
+        }
+
+        #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+        pub struct Resource {
+            pub name: String,
+            // SYSCTL
+            pub index: usize,
+        }
+
+        #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+        pub struct Clock {
+            pub name: String,
+            // SYSCTL.CLOCK
+            pub index: usize,
+        }
+
+        #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+        pub struct IoPin {
+            pub name: String,
+            // IOC pad index
+            pub index: usize,
         }
     }
 }

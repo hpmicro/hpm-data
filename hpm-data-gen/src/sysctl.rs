@@ -13,7 +13,8 @@ fn match_peripheral_name(chip_name: &str, sdk_name: &str, periph_name: &str) -> 
         .replace("URT", "UART")
         .replace("OPA", "OPAMP")
         .replace("CRC0", "CRC")
-        .replace("KMAN", "KEYM");
+        .replace("KMAN", "KEYM")
+        .replace("SDP0", "SDP");
 
     if chip_name.starts_with("HPM53") || chip_name.starts_with("HPM68") {
         pname = pname.replace("CAN", "MCAN")
@@ -86,6 +87,21 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
 
     // build Systick info
     for core in &mut chip.cores {
+        core.resources = resources
+            .iter()
+            .map(|(name, idx)| hpm_data_serde::chip::core::Resource {
+                name: name.clone(),
+                index: *idx as _,
+            })
+            .collect();
+        core.clocks = clocks
+            .iter()
+            .map(|(name, idx)| hpm_data_serde::chip::core::Clock {
+                name: name.clone(),
+                index: *idx as _,
+            })
+            .collect();
+
         for periph in &mut core.peripherals {
             let resource = resources
                 .iter()

@@ -3,6 +3,7 @@ use std::{collections::HashMap, path::Path};
 mod dma;
 mod interrupts;
 mod pinmux;
+mod pins;
 mod registers;
 mod sysctl;
 
@@ -186,6 +187,11 @@ fn main() -> anyhow::Result<()> {
     stopwatch.section("Handle SYSCTL info");
     for chip in &mut chips {
         sysctl::add_sysctl_from_sdk(data_dir, chip)?;
+    }
+
+    stopwatch.section("Handle IOC pins");
+    for chip in &mut chips {
+        pins::add_ioc_pins_from_sdk(data_dir, chip)?;
     }
 
     stopwatch.section("Writing chip data");

@@ -339,6 +339,29 @@ pub struct Core {
     #[serde(default)]
     pub interrupts: Vec<Interrupt>,
     pub dma_channels: Vec<DmaChannel>,
+
+    #[serde(default)]
+    pub resources: Vec<Resource>,
+    #[serde(default)]
+    pub clocks: Vec<Clock>,
+    #[serde(default)]
+    pub pins: Vec<IoPin>,
+}
+
+#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
+pub struct Resource {
+    pub name: String,
+    pub index: u32,
+}
+#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
+pub struct Clock {
+    pub name: String,
+    pub index: u32,
+}
+#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
+pub struct IoPin {
+    pub name: String,
+    pub index: u32,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
