@@ -142,19 +142,19 @@ block/RETENTION:
     - name: VALUE
       description: Retention Control.
       byte_offset: 0
-      fieldset: RETENTION_VALUE
+      fieldset: RETENTION
     - name: SET
       description: Retention Control.
       byte_offset: 4
-      fieldset: RETENTION_SET
+      fieldset: RETENTION
     - name: CLEAR
       description: Retention Control.
       byte_offset: 8
-      fieldset: RETENTION_CLEAR
+      fieldset: RETENTION
     - name: TOGGLE
       description: Retention Control.
       byte_offset: 12
-      fieldset: RETENTION_TOGGLE
+      fieldset: RETENTION
 block/SYSCTL:
   description: SYSCTL.
   items:
@@ -300,6 +300,7 @@ fieldset/CLOCK:
       description: clock source selection 0:osc0_clk0 1:pll0_clk0 2:pll1_clk0 3:pll1_clk1 4:pll2_clk0 5:pll2_clk1 6:pll3_clk0 7:pll4_clk0.
       bit_offset: 8
       bit_size: 4
+      enum: CLOCK_MUX
     - name: LOC_BUSY
       description: "local busy 0: a change is pending for current node 1: current node is changing status."
       bit_offset: 30
@@ -513,28 +514,7 @@ fieldset/RESOURCE:
       description: "global busy 0: no changes pending to any nodes 1: any of nodes is changing status."
       bit_offset: 31
       bit_size: 1
-fieldset/RETENTION_CLEAR:
-  description: Retention Control.
-  fields:
-    - name: LINK
-      description: retention setting while system sleep.
-      bit_offset: 0
-      bit_size: 18
-fieldset/RETENTION_SET:
-  description: Retention Control.
-  fields:
-    - name: LINK
-      description: retention setting while system sleep.
-      bit_offset: 0
-      bit_size: 18
-fieldset/RETENTION_TOGGLE:
-  description: Retention Control.
-  fields:
-    - name: LINK
-      description: retention setting while system sleep.
-      bit_offset: 0
-      bit_size: 18
-fieldset/RETENTION_VALUE:
+fieldset/RETENTION:
   description: Retention Control.
   fields:
     - name: LINK
@@ -638,3 +618,31 @@ fieldset/status:
       description: "flag represents power cycle happened from last clear of this bit 0: power domain did not edurance power cycle since last clear of this bit 1: power domain enduranced power cycle since last clear of this bit."
       bit_offset: 31
       bit_size: 1
+enum/CLOCK_MUX:
+  description: no description available.
+  bit_size: 4
+  variants:
+    - name: CLK_24M
+      description: 24MHz
+      value: 0
+    - name: PLL0CLK0
+      description: Dfaults to 648MHz. Default clock source for CPU0
+      value: 1
+    - name: PLL1CLK0
+      description: Defaults to 266MHz
+      value: 2
+    - name: PLL1CLK1
+      description: Defaults to 400MHz
+      value: 3
+    - name: PLL2CLK0
+      description: Defaults to 333MHz
+      value: 4
+    - name: PLL2CLK1
+      description: Defaults to 250MHz
+      value: 5
+    - name: PLL3CLK0
+      description: Defaults to 614MHz. Default clock source for audio subsystem
+      value: 6
+    - name: PLL4CLK0
+      description: Defaults to 594MHz. Default clock source for video subsystem
+      value: 7

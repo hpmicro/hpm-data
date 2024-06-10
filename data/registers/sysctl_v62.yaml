@@ -142,19 +142,19 @@ block/RETENTION:
     - name: VALUE
       description: Retention Control.
       byte_offset: 0
-      fieldset: RETENTION_VALUE
+      fieldset: RETENTION
     - name: SET
       description: Retention Control.
       byte_offset: 4
-      fieldset: RETENTION_SET
+      fieldset: RETENTION
     - name: CLEAR
       description: Retention Control.
       byte_offset: 8
-      fieldset: RETENTION_CLEAR
+      fieldset: RETENTION
     - name: TOGGLE
       description: Retention Control.
       byte_offset: 12
-      fieldset: RETENTION_TOGGLE
+      fieldset: RETENTION
 block/SYSCTL:
   description: SYSCTL.
   items:
@@ -311,6 +311,7 @@ fieldset/CLOCK:
       description: current mux in clock component 0:osc0_clk0 1:pll0_clk0 2:pll0_clk1 3:pll0_clk2 4:pll1_clk0 5:pll1_clk1 6:pll2_clk0 7:pll2_clk1.
       bit_offset: 8
       bit_size: 3
+      enum: CLOCK_MUX
     - name: PRESERVE
       description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
       bit_offset: 28
@@ -563,28 +564,7 @@ fieldset/RESOURCE:
       description: "global busy 0: no changes pending to any nodes 1: any of nodes is changing status."
       bit_offset: 31
       bit_size: 1
-fieldset/RETENTION_CLEAR:
-  description: Retention Control.
-  fields:
-    - name: LINK
-      description: "retention setting while CPU0 enter stop mode, each bit represents a resource 0: no effect 1: no keep."
-      bit_offset: 0
-      bit_size: 10
-fieldset/RETENTION_SET:
-  description: Retention Control.
-  fields:
-    - name: LINK
-      description: "retention setting while CPU0 enter stop mode, each bit represents a resource 0: no effect 1: keep."
-      bit_offset: 0
-      bit_size: 10
-fieldset/RETENTION_TOGGLE:
-  description: Retention Control.
-  fields:
-    - name: LINK
-      description: "retention setting while CPU0 enter stop mode, each bit represents a resource 0: no effect 1: toggle the result that whether the resource is kept on while CPU0 stop before."
-      bit_offset: 0
-      bit_size: 10
-fieldset/RETENTION_VALUE:
+fieldset/RETENTION:
   description: Retention Control.
   fields:
     - name: LINK
@@ -688,3 +668,31 @@ fieldset/status:
       description: "flag represents power cycle happened from last clear of this bit 0: power domain did not edurance power cycle since last clear of this bit 1: power domain enduranced power cycle since last clear of this bit."
       bit_offset: 31
       bit_size: 1
+enum/CLOCK_MUX:
+  description: no description available.
+  bit_size: 3
+  variants:
+    - name: CLK_24M
+      description: 24MHz
+      value: 0
+    - name: PLL0CLK0
+      description: Dfaults to 400MHz. Default clock source for CPU0
+      value: 1
+    - name: PLL0CLK1
+      description: Defaults to 333MHz
+      value: 2
+    - name: PLL0CLK2
+      description: Defaults to 250MHz
+      value: 3
+    - name: PLL1CLK0
+      description: Defaults to 48MHz
+      value: 4
+    - name: PLL1CLK1
+      description: Defaults to 320MHz
+      value: 5
+    - name: PLL2CLK0
+      description: Defaults to 516.096MHz
+      value: 6
+    - name: PLL2CLK1
+      description: Defaults to 451.584MHz
+      value: 7

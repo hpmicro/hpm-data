@@ -651,21 +651,29 @@ enum/CLOCK_MUX:
   description: no description available.
   bit_size: 3
   variants:
-    - name: osc0_clk0
+    - name: CLK_24M
+      description: 24MHz
       value: 0
-    - name: pll0_clk0
+    - name: PLL0CLK0
+      description: Dfaults to 720MHz. Default clock source for CPU0
       value: 1
-    - name: pll0_clk1
+    - name: PLL0CLK1
+      description: Defaults to 600MHz
       value: 2
-    - name: pll0_clk2
+    - name: PLL0CLK2
+      description: Defaults to 400MHz
       value: 3
-    - name: pll1_clk0
+    - name: PLL1CLK0
+      description: Defaults to 800MHz
       value: 4
-    - name: pll1_clk1
+    - name: PLL1CLK1
+      description: Defaults to 666MHz
       value: 5
-    - name: pll1_clk2
+    - name: PLL1CLK2
+      description: Defaults to 500MHz
       value: 6
-    - name: pll1_clk3
+    - name: PLL1CLK3
+      description: Defaults to 266MHz
       value: 7
 enum/LP_MODE:
   description: In low power mode, the behavior after setting CPU WFI
