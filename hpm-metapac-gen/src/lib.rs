@@ -165,6 +165,11 @@ impl Gen {
         let data = data.replace("cortex_m :: interrupt ", "crate ");
         let data = data.replace("cortex_m", "riscv"); // FIXME
 
+        // avoid collision with riscv-rt
+        // In AndeStar V5 RISC-V core, the interrupt can be vectored.
+        // The first item is core trap handler.
+        let data = data.replace("__INTERRUPTS", "__VECTORED_INTERRUPTS");
+
         // Remove inner attributes like #![no_std]
         let data = Regex::new("# *! *\\[.*\\]").unwrap().replace_all(&data, "");
 
