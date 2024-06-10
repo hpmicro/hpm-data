@@ -1,0 +1,95 @@
+block/BCFG:
+  description: BCFG.
+  items:
+    - name: VBG_CFG
+      description: Bandgap config.
+      byte_offset: 0
+      fieldset: VBG_CFG
+    - name: IRC32K_CFG
+      description: On-chip 32k oscillator config.
+      byte_offset: 8
+      fieldset: IRC32K_CFG
+    - name: XTAL32K_CFG
+      description: XTAL 32K config.
+      byte_offset: 12
+      fieldset: XTAL32K_CFG
+    - name: CLK_CFG
+      description: Clock config.
+      byte_offset: 16
+      fieldset: CLK_CFG
+fieldset/CLK_CFG:
+  description: Clock config.
+  fields:
+    - name: FORCE_XTAL
+      description: force switch to crystal.
+      bit_offset: 4
+      bit_size: 1
+    - name: KEEP_IRC
+      description: force irc32k run.
+      bit_offset: 16
+      bit_size: 1
+    - name: XTAL_SEL
+      description: crystal selected.
+      bit_offset: 28
+      bit_size: 1
+fieldset/IRC32K_CFG:
+  description: On-chip 32k oscillator config.
+  fields:
+    - name: CAP_TRIM
+      description: capacitor trim bits.
+      bit_offset: 0
+      bit_size: 9
+    - name: CAPEX6_TRIM
+      description: IRC32K bit 6.
+      bit_offset: 22
+      bit_size: 1
+    - name: CAPEX7_TRIM
+      description: IRC32K bit 7.
+      bit_offset: 23
+      bit_size: 1
+    - name: IRC_TRIMMED
+      description: "IRC32K trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: irc is not trimmed 1: irc is trimmed."
+      bit_offset: 31
+      bit_size: 1
+fieldset/VBG_CFG:
+  description: Bandgap config.
+  fields:
+    - name: VBG_P50
+      description: Bandgap 0.50V output trim.
+      bit_offset: 0
+      bit_size: 5
+    - name: VBG_P65
+      description: Bandgap 0.65V output trim.
+      bit_offset: 8
+      bit_size: 5
+    - name: VBG_1P0
+      description: Bandgap 1.0V output trim.
+      bit_offset: 16
+      bit_size: 5
+    - name: POWER_SAVE
+      description: "Bandgap works in power save mode 0: not in power save mode 1: bandgap work in power save mode."
+      bit_offset: 24
+      bit_size: 1
+    - name: VBG_TRIMMED
+      description: "Bandgap trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: bandgap is not trimmed 1: bandgap is trimmed."
+      bit_offset: 31
+      bit_size: 1
+fieldset/XTAL32K_CFG:
+  description: XTAL 32K config.
+  fields:
+    - name: AMP
+      description: crystal 32k amplifier.
+      bit_offset: 0
+      bit_size: 2
+    - name: CFG
+      description: crystal 32k config.
+      bit_offset: 4
+      bit_size: 1
+    - name: GMSEL
+      description: crystal 32k gm selection.
+      bit_offset: 8
+      bit_size: 2
+    - name: HYST_EN
+      description: crystal 32k hysteres enable.
+      bit_offset: 12
+      bit_size: 1

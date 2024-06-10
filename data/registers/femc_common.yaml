@@ -1,0 +1,449 @@
+block/FEMC:
+  description: FEMC.
+  items:
+    - name: CTRL
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: IOCTRL
+      description: IO Mux Control Register.
+      byte_offset: 4
+      fieldset: IOCTRL
+    - name: BMW0
+      description: Bus (AXI) Weight Control Register 0.
+      byte_offset: 8
+      fieldset: BMW0
+    - name: BMW1
+      description: Bus (AXI) Weight Control Register 1.
+      byte_offset: 12
+      fieldset: BMW1
+    - name: BR
+      description: no description available.
+      array:
+        len: 7
+        stride: 4
+      byte_offset: 16
+      fieldset: BR
+    - name: INTEN
+      description: Interrupt Enable Register.
+      byte_offset: 56
+      fieldset: INTEN
+    - name: INTR
+      description: Interrupt Status Register.
+      byte_offset: 60
+      fieldset: INTR
+    - name: SDRCTRL0
+      description: SDRAM Control Register 0.
+      byte_offset: 64
+      fieldset: SDRCTRL0
+    - name: SDRCTRL1
+      description: SDRAM Control Register 1.
+      byte_offset: 68
+      fieldset: SDRCTRL1
+    - name: SDRCTRL2
+      description: SDRAM Control Register 2.
+      byte_offset: 72
+      fieldset: SDRCTRL2
+    - name: SDRCTRL3
+      description: SDRAM Control Register 3.
+      byte_offset: 76
+      fieldset: SDRCTRL3
+    - name: SRCTRL0
+      description: SRAM control register 0.
+      byte_offset: 112
+      fieldset: SRCTRL0
+    - name: SRCTRL1
+      description: SRAM control register 1.
+      byte_offset: 116
+      fieldset: SRCTRL1
+    - name: SADDR
+      description: IP Command Control Register 0.
+      byte_offset: 144
+      fieldset: SADDR
+    - name: DATSZ
+      description: IP Command Control Register 1.
+      byte_offset: 148
+      fieldset: DATSZ
+    - name: BYTEMSK
+      description: IP Command Control Register 2.
+      byte_offset: 152
+      fieldset: BYTEMSK
+    - name: IPCMD
+      description: IP Command Register.
+      byte_offset: 156
+      fieldset: IPCMD
+    - name: IPTX
+      description: TX DATA Register.
+      byte_offset: 160
+      fieldset: IPTX
+    - name: IPRX
+      description: RX DATA Register.
+      byte_offset: 176
+      fieldset: IPRX
+    - name: STAT0
+      description: Status Register 0.
+      byte_offset: 192
+      fieldset: STAT0
+    - name: DLYCFG
+      description: Delay Line Config Register.
+      byte_offset: 336
+      fieldset: DLYCFG
+fieldset/BMW0:
+  description: Bus (AXI) Weight Control Register 0.
+  fields:
+    - name: QOS
+      description: Weight of QOS calculation. AXI bus access has AxQOS signal set, which is used as a priority indicator for the associated write or read transaction. A higher value indicates a higher priority transaction. AxQOS is multiplied by WQOS to get weight score.
+      bit_offset: 0
+      bit_size: 4
+    - name: AGE
+      description: Weight of AGE calculation. Each command in queue has an age signal to indicate its wait period. It is multiplied by WAGE to get weight score.
+      bit_offset: 4
+      bit_size: 4
+    - name: SH
+      description: Weight of Slave Hit without read/write switch. This weight score is valid when queue command's slave is same as current executing command without read/write operation switch.
+      bit_offset: 8
+      bit_size: 8
+    - name: RWS
+      description: Weight of slave hit with Read/Write Switch. This weight score is valid when queue command's slave is same as current executing command with read/write operation switch.
+      bit_offset: 16
+      bit_size: 8
+fieldset/BMW1:
+  description: Bus (AXI) Weight Control Register 1.
+  fields:
+    - name: QOS
+      description: Weight of QOS calculation. AXI bus access has AxQOS signal set, which is used as a priority indicator for the associated write or read transaction. A higher value indicates a higher priority transaction. AxQOS is multiplied by WQOS to get weight score.
+      bit_offset: 0
+      bit_size: 4
+    - name: AGE
+      description: Weight of AGE calculation. Each command in queue has an age signal to indicate its wait period. It is multiplied by WAGE to get weight score.
+      bit_offset: 4
+      bit_size: 4
+    - name: PH
+      description: Weight of Slave Hit without read/write switch. This weight score is valid when queue command's slave is same as current executing command without read/write operation switch.
+      bit_offset: 8
+      bit_size: 8
+    - name: RWS
+      description: Weight of slave hit with Read/Write Switch. This weight score is valid when queue command's slave is same as current executing command with read/write operation switch.
+      bit_offset: 16
+      bit_size: 8
+    - name: BR
+      description: Weight of Bank Rotation. This weight score is valid when queue command's bank is not same as current executing command.
+      bit_offset: 24
+      bit_size: 8
+fieldset/BR:
+  description: no description available.
+  fields:
+    - name: VLD
+      description: Valid.
+      bit_offset: 0
+      bit_size: 1
+    - name: SIZE
+      description: Memory size 00000b - 4KB 00001b - 8KB 00010b - 16KB 00011b - 32KB 00100b - 64KB 00101b - 128KB 00110b - 256KB 00111b - 512KB 01000b - 1MB 01001b - 2MB 01010b - 4MB 01011b - 8MB 01100b - 16MB 01101b - 32MB 01110b - 64MB 01111b - 128MB 10000b - 256MB 10001b - 512MB 10010b - 1GB 10011b - 2GB 10100-11111b - 4GB.
+      bit_offset: 1
+      bit_size: 5
+    - name: BASE
+      description: Base Address This field determines high position 20 bits of SoC level Base Address. SoC level Base Address low position 12 bits are all zero.
+      bit_offset: 12
+      bit_size: 20
+fieldset/BYTEMSK:
+  description: IP Command Control Register 2.
+  fields:
+    - name: BM0
+      description: Byte Mask for Byte 0 (IPTXD bit 7:0) 0b - Byte Unmasked 1b - Byte Masked.
+      bit_offset: 0
+      bit_size: 1
+    - name: BM1
+      description: Byte Mask for Byte 1 (IPTXD bit 15:8) 0b - Byte Unmasked 1b - Byte Masked.
+      bit_offset: 1
+      bit_size: 1
+    - name: BM2
+      description: Byte Mask for Byte 2 (IPTXD bit 23:16) 0b - Byte Unmasked 1b - Byte Masked.
+      bit_offset: 2
+      bit_size: 1
+    - name: BM3
+      description: Byte Mask for Byte 3 (IPTXD bit 31:24) 0b - Byte Unmasked 1b - Byte Masked.
+      bit_offset: 3
+      bit_size: 1
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+    - name: RST
+      description: Software Reset Reset all internal logic in SEMC except configuration register.
+      bit_offset: 0
+      bit_size: 1
+    - name: DIS
+      description: Module Disable 0b - Module enabled 1b - Module disabled.
+      bit_offset: 1
+      bit_size: 1
+    - name: DQS
+      description: DQS (read strobe) mode 0b - Dummy read strobe loopbacked internally 1b - Dummy read strobe loopbacked from DQS pad.
+      bit_offset: 2
+      bit_size: 1
+    - name: CTO
+      description: Command Execution timeout cycles When Command Execution time exceed this timeout cycles, IPCMDERR or AXICMDERR interrupt is generated. When CTO is set to zero, timeout cycle is 256*1024 cycle. otherwisee timeout cycle is CTO*1024 cycle.
+      bit_offset: 16
+      bit_size: 8
+    - name: BTO
+      description: "Bus timeout cycles AXI Bus timeout cycle is as following (255*(2^BTO)): 00000b - 255*1 00001-11110b - 255*2 - 255*2^30 11111b - 255*2^31."
+      bit_offset: 24
+      bit_size: 5
+fieldset/DATSZ:
+  description: IP Command Control Register 1.
+  fields:
+    - name: DATSZ
+      description: Data Size in Byte When IP command is not a write/read operation, DATSZ field would be ignored. 000b - 4 001b - 1 010b - 2 011b - 3 100b - 4 101b - 4 110b - 4 111b - 4.
+      bit_offset: 0
+      bit_size: 3
+fieldset/DLYCFG:
+  description: Delay Line Config Register.
+  fields:
+    - name: DLYEN
+      description: delay line enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: DLYSEL
+      description: delay line select, 0 for 1 cell, 31 for all 32 cells.
+      bit_offset: 1
+      bit_size: 5
+    - name: OE
+      description: delay clock output enable, should be set after setting DLYEN and DLYSEL.
+      bit_offset: 13
+      bit_size: 1
+fieldset/INTEN:
+  description: Interrupt Enable Register.
+  fields:
+    - name: IPCMDDONE
+      description: IP command done interrupt enable 0b - Interrupt is disabled 1b - Interrupt is enabled.
+      bit_offset: 0
+      bit_size: 1
+    - name: IPCMDERR
+      description: IP command error interrupt enable 0b - Interrupt is disabled 1b - Interrupt is enabled.
+      bit_offset: 1
+      bit_size: 1
+    - name: AXICMDERR
+      description: AXI command error interrupt enable 0b - Interrupt is disabled 1b - Interrupt is enabled.
+      bit_offset: 2
+      bit_size: 1
+    - name: AXIBUSERR
+      description: AXI BUS error interrupt enable 0b - Interrupt is disabled 1b - Interrupt is enabled.
+      bit_offset: 3
+      bit_size: 1
+fieldset/INTR:
+  description: Interrupt Status Register.
+  fields:
+    - name: IPCMDDONE
+      description: IP command normal done interrupt.
+      bit_offset: 0
+      bit_size: 1
+    - name: IPCMDERR
+      description: "IP command error done interrupt IP command error interrupt is generated in following case: • IP Command Address target invalid device space • IP Command Code unsupported • IP Command triggered when previous command."
+      bit_offset: 1
+      bit_size: 1
+    - name: AXICMDERR
+      description: AXI command error interrupt AXI command error interrupt is generated when AXI command execution timeout.
+      bit_offset: 2
+      bit_size: 1
+    - name: AXIBUSERR
+      description: "AXI bus error interrupt AXI Bus error interrupt is generated in following cases: • AXI address is invalid • AXI 8-bit or 16-bit WRAP write/read."
+      bit_offset: 3
+      bit_size: 1
+fieldset/IOCTRL:
+  description: IO Mux Control Register.
+  fields:
+    - name: IO_CSX
+      description: IO_CSX output selection 0001b - SDRAM CS1 0110b - SRAM CE#.
+      bit_offset: 4
+      bit_size: 4
+fieldset/IPCMD:
+  description: IP Command Register.
+  fields:
+    - name: CMD
+      description: "SDRAM Commands: • 0x8: READ • 0x9: WRITE • 0xA: MODESET • 0xB: ACTIVE • 0xC: AUTO REFRESH • 0xD: SELF REFRESH • 0xE: PRECHARGE • 0xF: PRECHARGE ALL • Others: RSVD NOTE: SELF REFRESH is sent to all SDRAM devices because they shared same CLK pin."
+      bit_offset: 0
+      bit_size: 16
+    - name: KEY
+      description: This field should be written with 0x5AA5 when trigging an IP command for all device types. The memory device is selected by BRx settings and IPCR0 registers.
+      bit_offset: 16
+      bit_size: 16
+fieldset/IPRX:
+  description: RX DATA Register.
+  fields:
+    - name: DAT
+      description: Data.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IPTX:
+  description: TX DATA Register.
+  fields:
+    - name: DAT
+      description: Data.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SADDR:
+  description: IP Command Control Register 0.
+  fields:
+    - name: SA
+      description: Slave address.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SDRCTRL0:
+  description: SDRAM Control Register 0.
+  fields:
+    - name: PORTSZ
+      description: Port Size 00b - 8bit 01b - 16bit 10b - 32bit.
+      bit_offset: 0
+      bit_size: 2
+    - name: HIGHBAND
+      description: "high band select 0: use data[15:0] for 16bit SDRAM; 1: use data[31:16] for 16bit SDRAM; only used when Port Size is 16bit(PORTSZ=01b)."
+      bit_offset: 3
+      bit_size: 1
+    - name: BURSTLEN
+      description: Burst Length 000b - 1 001b - 2 010b - 4 011b - 8 100b - 8 101b - 8 110b - 8 111b - 8.
+      bit_offset: 4
+      bit_size: 3
+    - name: COL8
+      description: Column 8 selection bit 0b - Column address bit number is decided by COL field. 1b - Column address bit number is 8. COL field is ignored.
+      bit_offset: 7
+      bit_size: 1
+    - name: COL
+      description: Column address bit number 00b - 12 bit 01b - 11 bit 10b - 10 bit 11b - 9 bit.
+      bit_offset: 8
+      bit_size: 2
+    - name: CAS
+      description: CAS Latency 00b - 1 01b - 1 10b - 2 11b - 3.
+      bit_offset: 10
+      bit_size: 2
+    - name: BANK2
+      description: 2 Bank selection bit 0b - SDRAM device has 4 banks. 1b - SDRAM device has 2 banks.
+      bit_offset: 14
+      bit_size: 1
+fieldset/SDRCTRL1:
+  description: SDRAM Control Register 1.
+  fields:
+    - name: PRE2ACT
+      description: PRECHARGE to ACT/Refresh wait time It is promised PRE2ACT+1 clock cycles delay between PRECHARGE/PRECHARGE_ALL commandto ACTIVE/REFRESH command. This could help to meet tRP timing requirement by SDRAM device.
+      bit_offset: 0
+      bit_size: 4
+    - name: ACT2RW
+      description: ACT to Read/Write wait time It is promised ACT2RW+1 clock cycles delay between ACTIVE command to READ/WRITE command.This could help to meet tRCD timing requirement by SDRAM device.
+      bit_offset: 4
+      bit_size: 4
+    - name: RFRC
+      description: Refresh recovery time It is promised RFRC+1 clock cycles delay between REFRESH command to ACTIVE command. Thiscould help to meet tRFC timing requirement by SDRAM device.
+      bit_offset: 8
+      bit_size: 5
+    - name: WRC
+      description: Write recovery time It is promised WRC+1 clock cycles delay between WRITE command to PRECHARGE/PRECHARGE_ALL command. This could help to meet tWR timing requirement by SDRAM device.
+      bit_offset: 13
+      bit_size: 3
+    - name: CKEOFF
+      description: CKE OFF minimum time It is promised clock suspend last at leat CKEOFF+1 clock cycles.
+      bit_offset: 16
+      bit_size: 4
+    - name: ACT2PRE
+      description: ACT to Precharge minimum time It is promised ACT2PRE+1 clock cycles delay between ACTIVE command to PRECHARGE/PRECHARGE_ALL command.
+      bit_offset: 20
+      bit_size: 4
+fieldset/SDRCTRL2:
+  description: SDRAM Control Register 2.
+  fields:
+    - name: SRRC
+      description: Self Refresh Recovery time It is promised SRRC+1 clock cycles delay between Self-REFRESH command to any command.
+      bit_offset: 0
+      bit_size: 8
+    - name: REF2REF
+      description: Refresh to Refresh wait time It is promised REF2REF+1 clock cycles delay between REFRESH command to REFRESH command. This could help to meet tRFC timing requirement by SDRAM device.
+      bit_offset: 8
+      bit_size: 8
+    - name: ACT2ACT
+      description: ACT to ACT wait time It is promised ACT2ACT+1 clock cycles delay between ACTIVE command to ACTIVE command. This could help to meet tRRD timing requirement by SDRAM device.
+      bit_offset: 16
+      bit_size: 8
+    - name: ITO
+      description: SDRAM Idle timeout It closes all opened pages if the SDRAM idle time lasts more than idle timeout period. SDRAM is considered idle when there is no AXI Bus transfer and no SDRAM command pending. 00000000b - IDLE timeout period is 256*Prescale period. 00000001-11111111b - IDLE timeout period is ITO*Prescale period.
+      bit_offset: 24
+      bit_size: 8
+fieldset/SDRCTRL3:
+  description: SDRAM Control Register 3.
+  fields:
+    - name: REN
+      description: Refresh enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: REBL
+      description: Refresh burst length It could send multiple Auto-Refresh command in one burst when REBL is set to non-zero. The number of Auto-Refresh command cycle sent to all SDRAM device in one refresh period is as following. 000b - 1 001b - 2 010b - 3 011b - 4 100b - 5 101b - 6 110b - 7 111b - 8.
+      bit_offset: 1
+      bit_size: 3
+    - name: PRESCALE
+      description: "Prescaler timer period Prescaler timer period is as following: 00000000b - 256*16 clock cycles 00000001-11111111b - PRESCALE*16 clock cycles."
+      bit_offset: 8
+      bit_size: 8
+    - name: RT
+      description: "Refresh timer period Refresh timer period is as following: 00000000b - 256*Prescaler period 00000001-11111111b - RT*Prescaler period."
+      bit_offset: 16
+      bit_size: 8
+    - name: UT
+      description: "Refresh urgent threshold Internal refresh request is generated on every Refresh period. Before internal request timer count up to urgent request threshold, the refresh request is considered as normal refresh request. Normal refresh request is handled in lower priority than any pending AXI command or IP command to SDRAM device. When internal request timer count up to this urgent threshold, refresh request is considered as urgent refresh request. Urgent refresh request is handled in higher priority than any pending AXI command or IP command to SDRAM device. NOTE: When urgent threshold is no less than refresh period, refresh request is always considered as urgent refresh request. Refresh urgent threshold is as follwoing: 00000000b - 256*Prescaler period 00000001-11111111b - UT*Prescaler period."
+      bit_offset: 24
+      bit_size: 8
+fieldset/SRCTRL0:
+  description: SRAM control register 0.
+  fields:
+    - name: PORTSZ
+      description: port size 0b - 8bit 1b - 16bit.
+      bit_offset: 0
+      bit_size: 1
+    - name: ADM
+      description: address data mode 00b - address and data MUX mode 11b - address and data non-MUX mode.
+      bit_offset: 8
+      bit_size: 2
+    - name: ADVP
+      description: ADV polarity 0b - ADV is active low 1b - ADV is active high.
+      bit_offset: 10
+      bit_size: 1
+    - name: ADVH
+      description: ADV hold state 0b - ADV is high during address hold state 1b - ADV is low during address hold state.
+      bit_offset: 11
+      bit_size: 1
+fieldset/SRCTRL1:
+  description: SRAM control register 1.
+  fields:
+    - name: CES
+      description: Chip enable setup time, is CES+1 clock cycles.
+      bit_offset: 0
+      bit_size: 4
+    - name: CEH
+      description: Chip enable hold time, is CEH+1 clock cycles.
+      bit_offset: 4
+      bit_size: 4
+    - name: AS
+      description: Address setup time, is AS+1 clock cycles.
+      bit_offset: 8
+      bit_size: 4
+    - name: AH
+      description: Address hold time, is AH+1 clock cycles.
+      bit_offset: 12
+      bit_size: 4
+    - name: WEL
+      description: WE low time, is WEL+1 clock cycles.
+      bit_offset: 16
+      bit_size: 4
+    - name: WEH
+      description: WE high time, is WEH+1 clock cycles.
+      bit_offset: 20
+      bit_size: 4
+    - name: OEL
+      description: OE low time, is OEL+1 clock cycles.
+      bit_offset: 24
+      bit_size: 4
+    - name: OEH
+      description: OE high time, is OEH+1 clock cycles.
+      bit_offset: 28
+      bit_size: 4
+fieldset/STAT0:
+  description: Status Register 0.
+  fields:
+    - name: IDLE
+      description: Indicating whether it is in IDLE state. When IDLE=1, it is in IDLE state. There is no pending AXI command in internal queue and no pending device access.
+      bit_offset: 0
+      bit_size: 1

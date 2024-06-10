@@ -47,6 +47,7 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6700_6400.yaml"
     gen_dma_channels:
       HDMA: 8
       XDMA: 8

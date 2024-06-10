@@ -1,0 +1,67 @@
+block/WDG:
+  description: WDG0.
+  items:
+    - name: CTRL
+      description: Control Register.
+      byte_offset: 16
+      fieldset: CTRL
+    - name: Restart
+      description: Restart Register.
+      byte_offset: 20
+      fieldset: Restart
+    - name: WrEn
+      description: Write Protection Register.
+      byte_offset: 24
+      fieldset: WrEn
+    - name: St
+      description: Status Register.
+      byte_offset: 28
+      fieldset: St
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+    - name: EN
+      description: "Enable or disable the watchdog timer 0: Disable 1: Enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: CLKSEL
+      description: "Clock source of timer: 0: EXTCLK 1: PCLK."
+      bit_offset: 1
+      bit_size: 1
+    - name: INTEN
+      description: "Enable or disable the watchdog interrupt 0: Disable 1: Enable."
+      bit_offset: 2
+      bit_size: 1
+    - name: RSTEN
+      description: "Enable or disable the watchdog reset 0: Disable 1: Enable."
+      bit_offset: 3
+      bit_size: 1
+    - name: INTTIME
+      description: "The timer interval of the interrupt stage: 0: Clock period x 2^6 1: Clock period x 2^8 2: Clock period x 2^10 3: Clock period x 2^11 4: Clock period x 2^12 5: Clock period x 2^13 6: Clock period x 2^14 7: Clock period x 2^15 8: Clock period x 2^17 9: Clock period x 2^19 10: Clock period x 2^21 11: Clock period x 2^23 12: Clock period x 2^25 13: Clock period x 2^27 14: Clock period x 2^29 15: Clock period x 2^31."
+      bit_offset: 4
+      bit_size: 4
+    - name: RSTTIME
+      description: "The time interval of the reset stage: 0: Clock period x 2^7 1: Clock period x 2^8 2: Clock period x 2^9 3: Clock period x 2^10 4: Clock period x 2^11 5: Clock period x 2^12 6: Clock period x 2^13 7: Clock period x 2^14."
+      bit_offset: 8
+      bit_size: 3
+fieldset/Restart:
+  description: Restart Register.
+  fields:
+    - name: RESTART
+      description: Write the magic number ATCWDT200_RESTART_NUM to restart the watchdog timer.
+      bit_offset: 0
+      bit_size: 16
+fieldset/St:
+  description: Status Register.
+  fields:
+    - name: INTEXPIRED
+      description: "The status of the watchdog interrupt timer 0: timer is not expired yet 1: timer is expired."
+      bit_offset: 0
+      bit_size: 1
+fieldset/WrEn:
+  description: Write Protection Register.
+  fields:
+    - name: WEN
+      description: Write the magic code to disable the write protection of the Control Register and the Restart Register.
+      bit_offset: 0
+      bit_size: 16

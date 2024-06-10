@@ -1,0 +1,470 @@
+- name: SYSCTL
+  address: 0xF4000000
+  registers:
+    kind: sysctl
+    version: v67
+    block: SYSCTL
+
+- name: PLLCTL
+  address: 0xF4100000
+  registers:
+    kind: pllctl
+    version: v67
+    block: PLLCTL
+
+- name: BCFG
+  address: 0xF5008000
+  registers:
+    kind: bcfg
+    version: v67
+    block: BCFG
+
+- name: PCFG
+  address: 0xF40C4000
+  registers:
+    kind: pcfg
+    version: v67
+    block: PCFG
+
+- name: MCHTMR
+  address: 0xE6000000
+  registers:
+    kind: mchtmr
+    version: common
+    block: MCHTMR
+
+# input output and alternate function
+
+- name: IOC
+  address: 0xF4040000
+  registers:
+    kind: ioc
+    version: v67
+    block: IOC
+- name: PIOC
+  address: 0xF40D8000
+  registers:
+    kind: ioc
+    version: v67
+    block: IOC
+- name: BIOC
+  address: 0xF5010000
+  registers:
+    kind: ioc
+    version: v67
+    block: IOC
+
+- name: FGPIO
+  address: 0x000C0000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: GPIO0
+  address: 0xF0000000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: GPIO1
+  address: 0xF0004000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: PGPIO
+  address: 0xF40DC000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: BGPIO
+  address: 0xF5014000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+
+- name: GPIOM
+  address: 0xF0008000
+  registers:
+    kind: gpiom
+    version: v67
+    block: GPIOM
+
+- name: OTPSHW
+  address: 0xF4080000
+  registers:
+    kind: otpshw
+    version: common
+    block: OTPSHW
+- name: OTP
+  address: 0xF40C8000
+  registers:
+    kind: otp
+    version: common
+    block: OTP
+
+- name: FEMC
+  address: 0xF0008000
+  registers:
+    kind: femc
+    version: common
+    block: FEMC
+
+- name: SDXC0
+  address: 0xF2030000
+  registers:
+    kind: sdxc
+    version: v67
+    block: SDXC
+- name: SDXC1
+  address: 0xF2034000
+  registers:
+    kind: sdxc
+    version: v67
+    block: SDXC
+
+# DMA and mail box
+
+- name: HDMA
+  address: 0xF00C4000
+  registers:
+    kind: dma
+    version: v67
+    block: DMA
+- name: XDMA
+  address: 0xF3048000
+  registers:
+    kind: dma
+    version: v67
+    block: DMA
+
+- name: DMAMUX
+  address: 0xF00C0000
+  registers:
+    kind: dmamux
+    version: common
+    block: DMAMUX
+
+- name: MBX0A
+  address: 0xF00A0000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX0B
+  address: 0xF00A4000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX1A
+  address: 0xF00A8000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX1B
+  address: 0xF00AC000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+
+# timers
+
+- name: NTMR0
+  address: 0xF2010000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: NTMR1
+  address: 0xF2014000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR0
+  address: 0xF3000000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR1
+  address: 0xF3004000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR2
+  address: 0xF3008000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR3
+  address: 0xF300C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR4
+  address: 0xF3010000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR5
+  address: 0xF3014000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR6
+  address: 0xF3018000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR7
+  address: 0xF301C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: PTMR
+  address: 0xF40E0000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+
+- name: WDG0
+  address: 0xF0090000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+- name: WDG1
+  address: 0xF0094000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+- name: WDG2
+  address: 0xF0098000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+- name: WDG3
+  address: 0xF009C000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+- name: PWDG
+  address: 0xF40E8000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+
+## communication peripherals
+
+- name: UART0
+  address: 0xF0040000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART1
+  address: 0xF0044000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART2
+  address: 0xF0048000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART3
+  address: 0xF004C000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART4
+  address: 0xF0050000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART5
+  address: 0xF0054000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART6
+  address: 0xF0058000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART7
+  address: 0xF005C000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+
+- name: PUART
+  address: 0xF40E4000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+
+- name: SPI0
+  address: 0xF0030000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+- name: SPI1
+  address: 0xF0034000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+- name: SPI2
+  address: 0xF0038000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+- name: SPI3
+  address: 0xF003C000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+
+- name: I2C0
+  address: 0xF3020000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+- name: I2C1
+  address: 0xF3024000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+- name: I2C2
+  address: 0xF3028000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+- name: I2C3
+  address: 0xF302C000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+
+- name: CAN0
+  address: 0xF0080000
+  registers:
+    kind: can
+    version: v67
+    block: CAN
+- name: CAN1
+  address: 0xF0084000
+  registers:
+    kind: can
+    version: v67
+    block: CAN
+
+- name: PTPC
+  address: 0xF00B0000
+  registers:
+    kind: ptpc
+    version: common
+    block: PTPC
+
+- name: ENET0
+  address: 0xF00D0000
+  registers:
+    kind: enet
+    version: v67
+    block: ENET
+- name: ENET1
+  address: 0xF00D4000
+  registers:
+    kind: enet
+    version: v67
+    block: ENET
+
+- name: USB0
+  address: 0xF2020000
+  registers:
+    kind: usb
+    version: v67
+    block: USB
+- name: USB1
+  address: 0xF2024000
+  registers:
+    kind: usb
+    version: v67
+    block: USB
+
+# ENET & SDXC control
+- name: CONCTL
+  address: 0xF2040000
+  registers:
+    kind: conctl
+    version: v67
+    block: CONCTL
+
+# Analog peripherals
+
+- name: ADC0
+  address: 0xF0010000
+  registers:
+    kind: adc12
+    version: v67
+    block: ADC
+- name: ADC1
+  address: 0xF0014000
+  registers:
+    kind: adc12
+    version: v67
+    block: ADC
+- name: ADC2
+  address: 0xF0018000
+  registers:
+    kind: adc12
+    version: v67
+    block: ADC
+
+- name: ADC3
+  address: 0xF001C000
+  registers:
+    kind: adc16
+    version: v67
+    block: ADC
+
+- name: ACMP
+  address: 0xF0020000
+  registers:
+    kind: acmp
+    version: common
+    block: ACMP

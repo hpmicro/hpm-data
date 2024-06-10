@@ -1,0 +1,158 @@
+block/CONCTL:
+  description: CONCTL.
+  items:
+    - name: ctrl0
+      description: No description available.
+      byte_offset: 0
+      fieldset: ctrl0
+    - name: ctrl2
+      description: No description available.
+      byte_offset: 8
+      fieldset: ctrl2
+    - name: ctrl3
+      description: No description available.
+      byte_offset: 12
+      fieldset: ctrl3
+    - name: ctrl4
+      description: No description available.
+      byte_offset: 16
+      fieldset: ctrl4
+    - name: ctrl5
+      description: No description available.
+      byte_offset: 20
+      fieldset: ctrl5
+fieldset/ctrl0:
+  description: No description available.
+  fields:
+    - name: ENET0_TXCLK_DLY_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 5
+    - name: ENET0_RXCLK_DLY_SEL
+      description: No description available.
+      bit_offset: 5
+      bit_size: 5
+    - name: ENET1_TXCLK_DLY_SEL
+      description: No description available.
+      bit_offset: 10
+      bit_size: 5
+    - name: ENET1_RXCLK_DLY_SEL
+      description: No description available.
+      bit_offset: 15
+      bit_size: 5
+fieldset/ctrl2:
+  description: No description available.
+  fields:
+    - name: ENET0_RMII_TXCLK_SEL
+      description: "default to use internal clk. set from pad， two option here: internal 50MHz clock out to pad then in; use external clock;."
+      bit_offset: 10
+      bit_size: 1
+    - name: ENET0_FLOWCTRL
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: ENET0_PHY_INTF_SEL
+      description: 000:Reserved 001:RGMII 100:RMII 111:Reserved.
+      bit_offset: 13
+      bit_size: 3
+    - name: ENET0_REFCLK_OE
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: ENET0_LPI_IRQ_EN
+      description: ENET0 LPI IRQ Enable.
+      bit_offset: 29
+      bit_size: 1
+fieldset/ctrl3:
+  description: No description available.
+  fields:
+    - name: ENET1_RMII_TXCLK_SEL
+      description: No description available.
+      bit_offset: 10
+      bit_size: 1
+    - name: ENET1_FLOWCTRL
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: ENET1_PHY_INTF_SEL
+      description: No description available.
+      bit_offset: 13
+      bit_size: 3
+    - name: ENET1_REFCLK_OE
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: ENET1_LPI_IRQ_EN
+      description: ENET1 LPI Interrupt Enable.
+      bit_offset: 29
+      bit_size: 1
+fieldset/ctrl4:
+  description: No description available.
+  fields:
+    - name: SDXC0_GPR_CCLK_RX_DLY_SW_FORCE
+      description: force use sw DLL config.
+      bit_offset: 11
+      bit_size: 1
+    - name: SDXC0_GPR_CCLK_RX_DLY_SW_SEL
+      description: No description available.
+      bit_offset: 12
+      bit_size: 5
+    - name: SDXC0_GPR_STROBE_IN_ENABLE
+      description: enable strobe clock, maybe used when update strobe DLL.
+      bit_offset: 17
+      bit_size: 1
+    - name: SDXC0_GPR_TUNING_STROBE_SEL
+      description: for strobe DLL, default 7taps(1ns).
+      bit_offset: 18
+      bit_size: 5
+    - name: SDXC0_GPR_TUNING_CARD_CLK_SEL
+      description: for card clock DLL, default 0.
+      bit_offset: 23
+      bit_size: 5
+    - name: SDXC0_CARDCLK_INV_EN
+      description: card clock inverter enable.
+      bit_offset: 28
+      bit_size: 1
+    - name: SDXC0_WKP_IRQ_EN
+      description: wakeup irq enable.
+      bit_offset: 30
+      bit_size: 1
+    - name: SDXC0_SYS_IRQ_EN
+      description: system irq enable.
+      bit_offset: 31
+      bit_size: 1
+fieldset/ctrl5:
+  description: No description available.
+  fields:
+    - name: SDXC1_GPR_CCLK_RX_DLY_SW_FORCE
+      description: No description available.
+      bit_offset: 11
+      bit_size: 1
+    - name: SDXC1_GPR_CCLK_RX_DLY_SW_SEL
+      description: No description available.
+      bit_offset: 12
+      bit_size: 5
+    - name: SDXC1_GPR_STROBE_IN_ENABLE
+      description: No description available.
+      bit_offset: 17
+      bit_size: 1
+    - name: SDXC1_GPR_TUNING_STROBE_SEL
+      description: No description available.
+      bit_offset: 18
+      bit_size: 5
+    - name: SDXC1_GPR_TUNING_CARD_CLK_SEL
+      description: No description available.
+      bit_offset: 23
+      bit_size: 5
+    - name: SDXC1_CARDCLK_INV_EN
+      description: card clock inverter enable.
+      bit_offset: 28
+      bit_size: 1
+    - name: SDXC1_WKP_IRQ_EN
+      description: wakeup irq enable.
+      bit_offset: 30
+      bit_size: 1
+    - name: SDXC1_SYS_IRQ_EN
+      description: system irq enable.
+      bit_offset: 31
+      bit_size: 1
