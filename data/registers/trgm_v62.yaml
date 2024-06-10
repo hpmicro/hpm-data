@@ -1,0 +1,80 @@
+block/TRGM:
+  description: TRGM0.
+  items:
+    - name: FILTCFG
+      description: no description available.
+      array:
+        len: 20
+        stride: 4
+      byte_offset: 0
+      fieldset: FILTCFG
+    - name: TRGOCFG
+      description: no description available.
+      array:
+        len: 68
+        stride: 4
+      byte_offset: 256
+      fieldset: TRGOCFG
+    - name: DMACFG
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 768
+      fieldset: DMACFG
+    - name: GCR
+      description: General Control Register.
+      byte_offset: 1024
+      fieldset: GCR
+fieldset/DMACFG:
+  description: no description available.
+  fields:
+    - name: DMASRCSEL
+      description: This field selects one of the DMA requests as the DMA request output.
+      bit_offset: 0
+      bit_size: 5
+fieldset/FILTCFG:
+  description: no description available.
+  fields:
+    - name: FILTLEN
+      description: This bitfields defines the filter counter length.
+      bit_offset: 0
+      bit_size: 12
+    - name: SYNCEN
+      description: set to enable sychronization input signal with TRGM clock.
+      bit_offset: 12
+      bit_size: 1
+    - name: MODE
+      description: This bitfields defines the filter mode 000-bypass; 100-rapid change mode; 101-delay filter mode; 110-stalbe low mode; 111-stable high mode.
+      bit_offset: 13
+      bit_size: 3
+    - name: OUTINV
+      description: 1- Filter will invert the output 0- Filter will not invert the output.
+      bit_offset: 16
+      bit_size: 1
+fieldset/GCR:
+  description: General Control Register.
+  fields:
+    - name: TRGOPEN
+      description: The bitfield enable the TRGM outputs.
+      bit_offset: 0
+      bit_size: 12
+fieldset/TRGOCFG:
+  description: no description available.
+  fields:
+    - name: TRIGOSEL
+      description: This bitfield selects one of the TRGM inputs as output.
+      bit_offset: 0
+      bit_size: 7
+    - name: REDG2PEN
+      description: 1- The selected input signal rising edge will be convert to an pulse on output.
+      bit_offset: 7
+      bit_size: 1
+    - name: FEDG2PEN
+      description: 1- The selected input signal falling edge will be convert to an pulse on output.
+      bit_offset: 8
+      bit_size: 1
+    - name: OUTINV
+      description: 1- Invert the output.
+      bit_offset: 9
+      bit_size: 1

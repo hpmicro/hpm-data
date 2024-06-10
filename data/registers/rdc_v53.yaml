@@ -1,0 +1,725 @@
+block/RDC:
+  description: RDC.
+  items:
+    - name: rdc_ctl
+      description: rdc control.
+      byte_offset: 0
+      fieldset: rdc_ctl
+    - name: acc_i
+      description: accumulate result of i_channel.
+      byte_offset: 4
+      fieldset: acc_i
+    - name: acc_q
+      description: accumulate result of q_channel.
+      byte_offset: 8
+      fieldset: acc_q
+    - name: in_ctl
+      description: input channel selection.
+      byte_offset: 12
+      fieldset: in_ctl
+    - name: out_ctl
+      description: output channel selection.
+      byte_offset: 16
+      fieldset: out_ctl
+    - name: exc_timming
+      description: excitation signal timming setting.
+      byte_offset: 52
+      fieldset: exc_timming
+    - name: exc_scaling
+      description: amplitude scaling for excitation.
+      byte_offset: 56
+      fieldset: exc_scaling
+    - name: exc_offset
+      description: amplitude offset setting.
+      byte_offset: 60
+      fieldset: exc_offset
+    - name: pwm_scaling
+      description: amplitude scaling for excitation.
+      byte_offset: 64
+      fieldset: pwm_scaling
+    - name: pwm_offset
+      description: amplitude offset setting.
+      byte_offset: 68
+      fieldset: pwm_offset
+    - name: trig_out0_cfg
+      description: Configuration for trigger out 0 in clock cycle.
+      byte_offset: 72
+      fieldset: trig_out0_cfg
+    - name: trig_out1_cfg
+      description: Configuration for trigger out 1 in clock cycle.
+      byte_offset: 76
+      fieldset: trig_out1_cfg
+    - name: pwm_dz
+      description: pwm dead zone control in clock cycle.
+      byte_offset: 80
+      fieldset: pwm_dz
+    - name: sync_out_ctrl
+      description: synchronize output signal control.
+      byte_offset: 84
+      fieldset: sync_out_ctrl
+    - name: exc_sync_dly
+      description: trigger in delay timming in soc bus cycle.
+      byte_offset: 88
+      fieldset: exc_sync_dly
+    - name: max_i
+      description: max value of i_channel.
+      byte_offset: 112
+      fieldset: max_i
+    - name: min_i
+      description: min value of i_channel.
+      byte_offset: 116
+      fieldset: min_i
+    - name: max_q
+      description: max value of q_channel.
+      byte_offset: 120
+      fieldset: max_q
+    - name: min_q
+      description: min value of q_channel.
+      byte_offset: 124
+      fieldset: min_q
+    - name: thrs_i
+      description: the offset setting for edge detection of the i_channel.
+      byte_offset: 128
+      fieldset: thrs_i
+    - name: thrs_q
+      description: the offset setting for edge detection of the q_channel.
+      byte_offset: 132
+      fieldset: thrs_q
+    - name: edg_det_ctl
+      description: the control for edge detection.
+      byte_offset: 136
+      fieldset: edg_det_ctl
+    - name: acc_scaling
+      description: scaling for accumulation result.
+      byte_offset: 140
+      fieldset: acc_scaling
+    - name: exc_period
+      description: period of excitation.
+      byte_offset: 144
+      fieldset: exc_period
+    - name: sync_delay_i
+      description: delay setting in clock cycle for synchronous signal.
+      byte_offset: 160
+      fieldset: sync_delay_i
+    - name: rise_delay_i
+      description: delay in clock cycle between excitation synchrnous signal and rising edge of i_channel data.
+      byte_offset: 168
+      fieldset: rise_delay_i
+    - name: fall_delay_i
+      description: delay in clock cycle between excitation synchrnous signal and falling edge of i_channel data.
+      byte_offset: 172
+      fieldset: fall_delay_i
+    - name: sample_rise_i
+      description: sample value on rising edge of rectify signal.
+      byte_offset: 176
+      fieldset: sample_rise_i
+    - name: sample_fall_i
+      description: sample value on falling edge of rectify signal.
+      byte_offset: 180
+      fieldset: sample_fall_i
+    - name: acc_cnt_i
+      description: number of accumulation.
+      byte_offset: 184
+      fieldset: acc_cnt_i
+    - name: sign_cnt_i
+      description: sample counter of opposite sign with rectify signal.
+      byte_offset: 188
+      fieldset: sign_cnt_i
+    - name: sync_delay_q
+      description: delay setting in clock cycle for synchronous signal.
+      byte_offset: 192
+      fieldset: sync_delay_q
+    - name: rise_delay_q
+      description: delay in clock cycle between excitation synchrnous signal and rising edge of q_channel data.
+      byte_offset: 200
+      fieldset: rise_delay_q
+    - name: fall_delay_q
+      description: delay in clock cycle between excitation synchrnous signal and falling edge of q_channel data.
+      byte_offset: 204
+      fieldset: fall_delay_q
+    - name: sample_rise_q
+      description: sample value on rising edge of rectify signal.
+      byte_offset: 208
+      fieldset: sample_rise_q
+    - name: sample_fall_q
+      description: sample value on falling edge of rectify signal.
+      byte_offset: 212
+      fieldset: sample_fall_q
+    - name: acc_cnt_q
+      description: number of accumulation.
+      byte_offset: 216
+      fieldset: acc_cnt_q
+    - name: sign_cnt_q
+      description: sample counter of opposite sign with rectify signal.
+      byte_offset: 220
+      fieldset: sign_cnt_q
+    - name: amp_max
+      description: the maximum of acc amplitude.
+      byte_offset: 224
+      fieldset: amp_max
+    - name: amp_min
+      description: the minimum of acc amplitude.
+      byte_offset: 228
+      fieldset: amp_min
+    - name: int_en
+      description: the interrupt mask control.
+      byte_offset: 232
+      fieldset: int_en
+    - name: adc_int_state
+      description: the interrupt state.
+      byte_offset: 236
+      fieldset: adc_int_state
+fieldset/acc_cnt_i:
+  description: number of accumulation.
+  fields:
+    - name: CNT_POS
+      description: "sample number during the positive of rectify signal 1: 1 2: 2 …."
+      bit_offset: 0
+      bit_size: 16
+    - name: CNT_NEG
+      description: "sample number during the negtive of rectify signal 1: 1 2: 2 …."
+      bit_offset: 16
+      bit_size: 16
+fieldset/acc_cnt_q:
+  description: number of accumulation.
+  fields:
+    - name: CNT_POS
+      description: "sample number during the positive of rectify signal 1: 1 2: 2 …."
+      bit_offset: 0
+      bit_size: 16
+    - name: CNT_NEG
+      description: "sample number during the negtive of rectify signal 1: 1 2: 2 …."
+      bit_offset: 16
+      bit_size: 16
+fieldset/acc_i:
+  description: accumulate result of i_channel.
+  fields:
+    - name: ACC
+      description: accumulate result of i_channel, this is a signed number.
+      bit_offset: 0
+      bit_size: 32
+fieldset/acc_q:
+  description: accumulate result of q_channel.
+  fields:
+    - name: ACC
+      description: accumulate result of q_channel, this is a signed number.
+      bit_offset: 0
+      bit_size: 32
+fieldset/acc_scaling:
+  description: scaling for accumulation result.
+  fields:
+    - name: ACC_SHIFT
+      description: "Accumulation value shift control, this is a sign number. 0: {acc[39],acc[38:8]} 1: {acc[39],acc[37:7]} 2: {acc[39],acc[36:6]} … 7: {acc[39],acc[31:1]} 8: {acc[39],acc[30:0]} 9: acc/2^9 10: acc/2^10 … 15:acc/2^15."
+      bit_offset: 0
+      bit_size: 4
+    - name: TOXIC_LK
+      description: "Toxic accumulation data be removed control 1: enable 0: disable."
+      bit_offset: 8
+      bit_size: 1
+fieldset/adc_int_state:
+  description: the interrupt state.
+  fields:
+    - name: ACC_AMP_OVL_STA
+      description: accumulate ample underflow interrupt status.
+      bit_offset: 0
+      bit_size: 1
+    - name: ACC_AMP_OVH_STA
+      description: accumulate ample overflow interrupt status.
+      bit_offset: 1
+      bit_size: 1
+    - name: ACC_VLD_Q_OVL_STA
+      description: q_channel accumulate underflow interrupt status.
+      bit_offset: 2
+      bit_size: 1
+    - name: ACC_VLD_I_OVL_STA
+      description: i_channel accumulate underflow interrupt status.
+      bit_offset: 3
+      bit_size: 1
+    - name: ACC_VLD_Q_OVH_STA
+      description: q_channel accumulate overflow interrupt status.
+      bit_offset: 4
+      bit_size: 1
+    - name: ACC_VLD_I_OVH_STA
+      description: i_channel accumulate overflow interrupt status.
+      bit_offset: 5
+      bit_size: 1
+    - name: SAMPLE_FALLING_Q_STA
+      description: q_channel falling edge interrupt status.
+      bit_offset: 6
+      bit_size: 1
+    - name: SAMPLE_RISING_Q_STA
+      description: q_channel rising edge interrupt status.
+      bit_offset: 7
+      bit_size: 1
+    - name: SAMPLE_FALLING_I_STA
+      description: i_channel falling edge interrupt status.
+      bit_offset: 8
+      bit_size: 1
+    - name: SAMPLE_RISING_I_STA
+      description: i_channel rising edge interrupt status.
+      bit_offset: 9
+      bit_size: 1
+    - name: FALLING_DELAY_Q_STA
+      description: q_channel delayed rectify signal falling edge interrupt status.
+      bit_offset: 10
+      bit_size: 1
+    - name: RISING_DELAY_Q_STA
+      description: q_channel delayed rectify signal rising edge interrupt status.
+      bit_offset: 11
+      bit_size: 1
+    - name: FALLING_DELAY_I_STA
+      description: i_channel delayed rectify signal falling edge interrupt status.
+      bit_offset: 12
+      bit_size: 1
+    - name: RISING_DELAY_I_STA
+      description: i_channel delayed rectify signal rising edge interrupt status.
+      bit_offset: 13
+      bit_size: 1
+    - name: ACC_VLD_Q_STA
+      description: q_channel accumulate valid interrupt status for i_channel.
+      bit_offset: 14
+      bit_size: 1
+    - name: ACC_VLD_I_STA
+      description: i_channel accumulate valid interrupt status for i_channel.
+      bit_offset: 15
+      bit_size: 1
+fieldset/amp_max:
+  description: the maximum of acc amplitude.
+  fields:
+    - name: MAX
+      description: the maximum of acc amplitude.
+      bit_offset: 0
+      bit_size: 32
+fieldset/amp_min:
+  description: the minimum of acc amplitude.
+  fields:
+    - name: MIN
+      description: the minimum of acc amplitude.
+      bit_offset: 0
+      bit_size: 32
+fieldset/edg_det_ctl:
+  description: the control for edge detection.
+  fields:
+    - name: FILTER
+      description: "The continuous positive or negative number for edge detection 0: 1 1: 2 … 7: 8."
+      bit_offset: 0
+      bit_size: 3
+    - name: HOLD
+      description: The minimum edge distance in sample 0:1 sample 1:2 sample 2:3 samples … 63:64 samples.
+      bit_offset: 4
+      bit_size: 6
+fieldset/exc_offset:
+  description: amplitude offset setting.
+  fields:
+    - name: AMP_OFFSET
+      description: Offset for excitation.
+      bit_offset: 0
+      bit_size: 24
+fieldset/exc_period:
+  description: period of excitation.
+  fields:
+    - name: EXC_PERIOD
+      description: "The num in clock cycle for period of excitation 0: invalid value 1:1 cycle 2:2 cycles …."
+      bit_offset: 0
+      bit_size: 32
+fieldset/exc_scaling:
+  description: amplitude scaling for excitation.
+  fields:
+    - name: AMP_MAN
+      description: Amplitude scaling for excitation, amplitude = [table value] x man / 2^exp.
+      bit_offset: 0
+      bit_size: 4
+    - name: AMP_EXP
+      description: Amplitude scaling for excitation, amplitude = [table value] x man / 2^exp.
+      bit_offset: 4
+      bit_size: 4
+fieldset/exc_sync_dly:
+  description: trigger in delay timming in soc bus cycle.
+  fields:
+    - name: DELAY
+      description: "Trigger in delay timming in bus cycle from rising edge of trigger signal 0: 1 cycle 1: 2 cycle … 0xffffff: 2^24 cycle."
+      bit_offset: 0
+      bit_size: 24
+    - name: DISABLE
+      description: "Disable hardware trigger input 0: enable 1: disable."
+      bit_offset: 24
+      bit_size: 1
+fieldset/exc_timming:
+  description: excitation signal timming setting.
+  fields:
+    - name: SMP_RATE
+      description: "The period for excitation sample in clock cycle， 0: not allowed 1: 1 cycle 2: 2 cycles … 65535 : 65535 cycles."
+      bit_offset: 0
+      bit_size: 16
+    - name: SMP_NUM
+      description: "Number of sample every excitation period 0: 4 point 1: 8 point … 8: 1024 point."
+      bit_offset: 16
+      bit_size: 4
+    - name: PWM_PRD
+      description: "Pwm period in samples， 0：1 sample period 1: 2 sample period ... 15: 16 sample period."
+      bit_offset: 20
+      bit_size: 4
+    - name: SWAP
+      description: "Swap output of PWM and DAC 0: disable swap 1: swap output."
+      bit_offset: 24
+      bit_size: 1
+fieldset/fall_delay_i:
+  description: delay in clock cycle between excitation synchrnous signal and falling edge of i_channel data.
+  fields:
+    - name: FALL_DELAY
+      description: "Delay value on falling edge of i_channel data 0: 1 cycle 1: 2 cycles …."
+      bit_offset: 0
+      bit_size: 32
+fieldset/fall_delay_q:
+  description: delay in clock cycle between excitation synchrnous signal and falling edge of q_channel data.
+  fields:
+    - name: FALL_DELAY
+      description: "Delay value on falling edge of q_channel data 0: 1 cycle 1: 2 cycles …."
+      bit_offset: 0
+      bit_size: 32
+fieldset/in_ctl:
+  description: input channel selection.
+  fields:
+    - name: CH_I_SEL
+      description: "Input channel selection for i_channel 0: channel 0 selected 1: channel 1 selected … 31: channel 31 selected."
+      bit_offset: 0
+      bit_size: 5
+    - name: PORT_I_SEL
+      description: Input port selection for i_channel, 0:sel port0 1:sel port1.
+      bit_offset: 8
+      bit_size: 1
+    - name: CH_Q_SEL
+      description: "Input channel selection for q_channel 0: channel 0 selected 1: channel 1 selected … 31: channel 31 selected."
+      bit_offset: 12
+      bit_size: 5
+    - name: PORT_Q_SEL
+      description: Input port selection for q_channel, 0:sel port0 1:sel port1.
+      bit_offset: 20
+      bit_size: 1
+fieldset/int_en:
+  description: the interrupt mask control.
+  fields:
+    - name: ACC_AMP_OVL_EN
+      description: accumulate ample underflow interrupt enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: ACC_AMP_OVH_EN
+      description: accumulate ample overflow interrupt enable.
+      bit_offset: 1
+      bit_size: 1
+    - name: ACC_VLD_Q_OVL_EN
+      description: q_channel accumulate underflow interrupt enable.
+      bit_offset: 2
+      bit_size: 1
+    - name: ACC_VLD_I_OVL_EN
+      description: i_channel accumulate underflow interrupt enable.
+      bit_offset: 3
+      bit_size: 1
+    - name: ACC_VLD_Q_OVH_EN
+      description: q_channel accumulate overflow interrupt enable.
+      bit_offset: 4
+      bit_size: 1
+    - name: ACC_VLD_I_OVH_EN
+      description: i_channel accumulate overflow interrupt enable.
+      bit_offset: 5
+      bit_size: 1
+    - name: SAMPLE_FALLING_Q_EN
+      description: q_channel falling edge interrupt enable.
+      bit_offset: 6
+      bit_size: 1
+    - name: SAMPLE_RISING_Q_EN
+      description: q_channel rising edge interrupt enable.
+      bit_offset: 7
+      bit_size: 1
+    - name: SAMPLE_FALLING_I_EN
+      description: i_channel falling edge interrupt enable.
+      bit_offset: 8
+      bit_size: 1
+    - name: SAMPLE_RISING_I_EN
+      description: i_channel rising edge interrupt enable.
+      bit_offset: 9
+      bit_size: 1
+    - name: FALLING_DELAY_Q_EN
+      description: q_channel delayed rectify signal falling edge interrupt enable.
+      bit_offset: 10
+      bit_size: 1
+    - name: RISING_DELAY_Q_EN
+      description: q_channel delayed rectify signal rising edge interrupt enable.
+      bit_offset: 11
+      bit_size: 1
+    - name: FALLING_DELAY_I_EN
+      description: i_channel delayed rectify signal falling edge interrupt enable.
+      bit_offset: 12
+      bit_size: 1
+    - name: RISING_DELAY_I_EN
+      description: i_channel delayed rectify signal rising edge interrupt enable.
+      bit_offset: 13
+      bit_size: 1
+    - name: ACC_VLD_Q_EN
+      description: q_channel accumulate valid interrupt enable for i_channel.
+      bit_offset: 14
+      bit_size: 1
+    - name: ACC_VLD_I_EN
+      description: i_channel accumulate valid interrupt enable for i_channel.
+      bit_offset: 15
+      bit_size: 1
+    - name: INT_EN
+      description: enable interrupt output.
+      bit_offset: 31
+      bit_size: 1
+fieldset/max_i:
+  description: max value of i_channel.
+  fields:
+    - name: VALID
+      description: "Max value valid, write clear 0: max value is not valid 1: max value is valid."
+      bit_offset: 0
+      bit_size: 1
+    - name: MAX
+      description: Max value of i_channel, write clear.
+      bit_offset: 8
+      bit_size: 24
+fieldset/max_q:
+  description: max value of q_channel.
+  fields:
+    - name: VALID
+      description: "Max value valid, write clear 0: max value is not valid 1: max value is valid."
+      bit_offset: 0
+      bit_size: 1
+    - name: MAX
+      description: Max value of q_channel, write clear.
+      bit_offset: 8
+      bit_size: 24
+fieldset/min_i:
+  description: min value of i_channel.
+  fields:
+    - name: VALID
+      description: "Min value valid, write clear 0: min value is not valid 1: min value is valid."
+      bit_offset: 0
+      bit_size: 1
+    - name: MIN
+      description: Min value of i_channel, write clear.
+      bit_offset: 8
+      bit_size: 24
+fieldset/min_q:
+  description: min value of q_channel.
+  fields:
+    - name: VALID
+      description: "Min value valid, write clear 0: min value is not valid 1: min value is valid."
+      bit_offset: 0
+      bit_size: 1
+    - name: MIN
+      description: Min value of q_channel, write clear.
+      bit_offset: 8
+      bit_size: 24
+fieldset/out_ctl:
+  description: output channel selection.
+  fields:
+    - name: CH_I_SEL
+      description: Output channel selection for i_channel.
+      bit_offset: 0
+      bit_size: 5
+    - name: CH_Q_SEL
+      description: Output channel selection for q_channel.
+      bit_offset: 8
+      bit_size: 5
+fieldset/pwm_dz:
+  description: pwm dead zone control in clock cycle.
+  fields:
+    - name: DZ_P
+      description: "Exc_p dead zone in clock cycle before swap 0: no dead zone 1: 1 cycle dead zone 2: 2 cycle dead zone …."
+      bit_offset: 0
+      bit_size: 8
+    - name: DZ_N
+      description: "Exc_n dead zone in clock cycle before swap 0: no dead zone 1: 1 cycle dead zone 2: 2 cycle dead zone …."
+      bit_offset: 8
+      bit_size: 8
+fieldset/pwm_offset:
+  description: amplitude offset setting.
+  fields:
+    - name: AMP_OFFSET
+      description: Offset for excitation.
+      bit_offset: 0
+      bit_size: 24
+fieldset/pwm_scaling:
+  description: amplitude scaling for excitation.
+  fields:
+    - name: AMP_MAN
+      description: Amplitude scaling for excitation, amplitude = [table value] x man / 2^exp.
+      bit_offset: 0
+      bit_size: 4
+    - name: AMP_EXP
+      description: Amplitude scaling for excitation, amplitude = [table value] x man / 2^exp.
+      bit_offset: 4
+      bit_size: 4
+    - name: DITHER
+      description: "Enable dither of pwm 0: disable 1: enable."
+      bit_offset: 8
+      bit_size: 1
+    - name: P_POL
+      description: "Polarity of exc_p signal 0: high active 1: low active."
+      bit_offset: 12
+      bit_size: 1
+    - name: N_POL
+      description: "Polarity of exc_n signal 0: high active 1: low active."
+      bit_offset: 13
+      bit_size: 1
+fieldset/rdc_ctl:
+  description: rdc control.
+  fields:
+    - name: EXC_EN
+      description: "Enable rdc excite signal 0: rdc disable 1: rdc enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: EXC_START
+      description: "Write 1 start excite signal, always read 0 0: no effect 1: start excite signal."
+      bit_offset: 1
+      bit_size: 1
+    - name: ACC_EN
+      description: "Enable rdc accumulate 0: rdc disable 1: rdc enable."
+      bit_offset: 2
+      bit_size: 1
+    - name: RECTIFY_SEL
+      description: "Select reference point of rectify signal 0: 0 phase of internal exciting signal 1: 90 phase of internal exciting signal 2: 180 phase of internal exciting signal 3: 270 phase of internal exciting signal 4: use value on external pin 5: use invert value on external pin."
+      bit_offset: 4
+      bit_size: 3
+    - name: ACC_LEN
+      description: "Accumulate time, support on the fly change 0：1 cycle 1：2 cycles … 255: 256 cycles."
+      bit_offset: 12
+      bit_size: 8
+    - name: TS_SEL
+      description: "Time stamp selection for accumulation 0: end of accumulation 1: start of accumulation 2: center of accumulation."
+      bit_offset: 20
+      bit_size: 2
+fieldset/rise_delay_i:
+  description: delay in clock cycle between excitation synchrnous signal and rising edge of i_channel data.
+  fields:
+    - name: RISE_DELAY
+      description: "Delay value on rising edge of i_channel data 0: 1 cycle 1: 2 cycles …."
+      bit_offset: 0
+      bit_size: 32
+fieldset/rise_delay_q:
+  description: delay in clock cycle between excitation synchrnous signal and rising edge of q_channel data.
+  fields:
+    - name: RISE_DELAY
+      description: "Delay value on rising edge of q_channel data 0: 1 cycle 1: 2 cycles …."
+      bit_offset: 0
+      bit_size: 32
+fieldset/sample_fall_i:
+  description: sample value on falling edge of rectify signal.
+  fields:
+    - name: VALUE
+      description: sample value on falling edge of rectify signal.
+      bit_offset: 8
+      bit_size: 24
+fieldset/sample_fall_q:
+  description: sample value on falling edge of rectify signal.
+  fields:
+    - name: VALUE
+      description: sample value on falling edge of rectify signal.
+      bit_offset: 8
+      bit_size: 24
+fieldset/sample_rise_i:
+  description: sample value on rising edge of rectify signal.
+  fields:
+    - name: VALUE
+      description: sample value on rising edge of rectify signal.
+      bit_offset: 8
+      bit_size: 24
+fieldset/sample_rise_q:
+  description: sample value on rising edge of rectify signal.
+  fields:
+    - name: VALUE
+      description: sample value on rising edge of rectify signal.
+      bit_offset: 8
+      bit_size: 24
+fieldset/sign_cnt_i:
+  description: sample counter of opposite sign with rectify signal.
+  fields:
+    - name: CNT_POS
+      description: Negative sample counter during positive rectify signal.
+      bit_offset: 0
+      bit_size: 16
+    - name: CNT_NEG
+      description: Positive sample counter during negative rectify signal.
+      bit_offset: 16
+      bit_size: 16
+fieldset/sign_cnt_q:
+  description: sample counter of opposite sign with rectify signal.
+  fields:
+    - name: CNT_POS
+      description: Negative sample counter during positive rectify signal.
+      bit_offset: 0
+      bit_size: 16
+    - name: CNT_NEG
+      description: Positive sample counter during negative rectify signal.
+      bit_offset: 16
+      bit_size: 16
+fieldset/sync_delay_i:
+  description: delay setting in clock cycle for synchronous signal.
+  fields:
+    - name: DELAY
+      description: "Delay in clock cycle for synchronous signal, the value shoud less than half of exc_period.exc_period. 0: invalid value 1: 1 cycles 2: 2 cycles ..."
+      bit_offset: 0
+      bit_size: 32
+fieldset/sync_delay_q:
+  description: delay setting in clock cycle for synchronous signal.
+  fields:
+    - name: DELAY
+      description: "Delay in clock cycle for synchronous signal, the value shoud less than half of exc_period.exc_period. 0: invalid value 1: 1 cycles 2: 2 cycles ..."
+      bit_offset: 0
+      bit_size: 32
+fieldset/sync_out_ctrl:
+  description: synchronize output signal control.
+  fields:
+    - name: SYNC_OUT_SEL
+      description: "Select output synchornize signal 0: 0 phase of internal exciting signal 1: 90 phase of internal exciting signal 2: 180 phase of internal exciting signal 3: 270 phase of internal exciting signal."
+      bit_offset: 0
+      bit_size: 2
+    - name: MAX2TRIG_EN
+      description: "Enable trigger out from the max point of exciting signal 1: enable 0: disable."
+      bit_offset: 4
+      bit_size: 1
+    - name: MIN2TRIG_EN
+      description: "Enable trigger out from the min point of exciting signal 1: enable 0: disable."
+      bit_offset: 5
+      bit_size: 1
+    - name: PWM_OUT_DLY
+      description: "Delay bettween the delyed trigger and the first pwm pulse in clock cycle 1: 1 cycle 2: 2 cycle …."
+      bit_offset: 16
+      bit_size: 16
+fieldset/thrs_i:
+  description: the offset setting for edge detection of the i_channel.
+  fields:
+    - name: THRS
+      description: "The offset setting for edge detection of the i_channel, signed number … 2: the offset is 0x800000+2 1: the offset is 0x800000+1 0: the offset is 0x800000 -1: the offset is 0x800000-1 -2: the offset is 0x800000-2 …."
+      bit_offset: 8
+      bit_size: 24
+fieldset/thrs_q:
+  description: the offset setting for edge detection of the q_channel.
+  fields:
+    - name: THRS
+      description: "The offset setting for edge detection of the q_channel, signed number … 2: the offset is 0x800000+2 1: the offset is 0x800000+1 0: the offset is 0x800000 -1: the offset is 0x800000-1 -2: the offset is 0x800000-2 …."
+      bit_offset: 8
+      bit_size: 24
+fieldset/trig_out0_cfg:
+  description: Configuration for trigger out 0 in clock cycle.
+  fields:
+    - name: LEAD_TIM
+      description: "Lead time for trigger out0 from center of low level , this is a signed value … 2: 2 cycle befor center of low level 1: 1 cycle before center of low level 0: center of low level -1: 1cycle after center of low level -2: 2cycle after center of low level."
+      bit_offset: 0
+      bit_size: 20
+    - name: ENABLE
+      description: "Enable trigger out0 0: disable 1: enable."
+      bit_offset: 20
+      bit_size: 1
+fieldset/trig_out1_cfg:
+  description: Configuration for trigger out 1 in clock cycle.
+  fields:
+    - name: LEAD_TIM
+      description: "Lead time for trigger out0 from center of hight level , this is a signed value … 2: 2 cycle befor center of hight level 1: 1 cycle before center of hight level 0: center of hight level -1: 1cycle after center of hight level -2: 2cycle after center of hight level."
+      bit_offset: 0
+      bit_size: 20
+    - name: ENABLE
+      description: "Enable trigger out1 0: disable 1: enable."
+      bit_offset: 20
+      bit_size: 1

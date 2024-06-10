@@ -1,4 +1,4 @@
-block/USB0:
+block/USB:
   description: USB0.
   items:
     - name: GPTIMER0LD

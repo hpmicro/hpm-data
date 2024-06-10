@@ -1,0 +1,363 @@
+block/COUNT:
+  description: no description available.
+  items:
+    - name: z
+      description: Z counter.
+      byte_offset: 0
+      fieldset: z
+    - name: ph
+      description: Phase counter.
+      byte_offset: 4
+      fieldset: ph
+    - name: spd
+      description: Speed counter.
+      byte_offset: 8
+      fieldset: spd
+    - name: tmr
+      description: Timer counter.
+      byte_offset: 12
+      fieldset: tmr
+block/QEI:
+  description: QEI0.
+  items:
+    - name: cr
+      description: Control register.
+      byte_offset: 0
+      fieldset: cr
+    - name: phcfg
+      description: Phase configure register.
+      byte_offset: 4
+      fieldset: phcfg
+    - name: wdgcfg
+      description: Watchdog configure register.
+      byte_offset: 8
+      fieldset: wdgcfg
+    - name: phidx
+      description: Phase index register.
+      byte_offset: 12
+      fieldset: phidx
+    - name: trgoen
+      description: Tigger output enable register.
+      byte_offset: 16
+      fieldset: trgoen
+    - name: readen
+      description: Read event enable register.
+      byte_offset: 20
+      fieldset: readen
+    - name: zcmp
+      description: Z comparator.
+      byte_offset: 24
+      fieldset: zcmp
+    - name: phcmp
+      description: Phase comparator.
+      byte_offset: 28
+      fieldset: phcmp
+    - name: spdcmp
+      description: Speed comparator.
+      byte_offset: 32
+      fieldset: spdcmp
+    - name: dmaen
+      description: DMA request enable register.
+      byte_offset: 36
+      fieldset: dmaen
+    - name: sr
+      description: Status register.
+      byte_offset: 40
+      fieldset: sr
+    - name: irqen
+      description: Interrupt request register.
+      byte_offset: 44
+      fieldset: irqen
+    - name: COUNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 16
+      byte_offset: 48
+      block: COUNT
+    - name: SPDHIS
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 112
+      fieldset: SPDHIS
+fieldset/SPDHIS:
+  description: no description available.
+  fields:
+    - name: SPDHIS0
+      description: copy of spdcnt, load from spdcnt after any transition from a = low, b = low.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cr:
+  description: Control register.
+  fields:
+    - name: ENCTYP
+      description: 00-abz; 01-pd; 10-ud; 11-reserved.
+      bit_offset: 0
+      bit_size: 2
+    - name: RSTCNT
+      description: 1- reset zcnt, spdcnt and tmrcnt to 0. reset phcnt to phidx.
+      bit_offset: 4
+      bit_size: 1
+    - name: SNAPEN
+      description: 1- load phcnt, zcnt, spdcnt and tmrcnt into their snap registers when snapi input assert.
+      bit_offset: 5
+      bit_size: 1
+    - name: HFDIR0
+      description: 1- HOMEF will set at H falling edge when dir == 1 (positive rotation direction).
+      bit_offset: 8
+      bit_size: 1
+    - name: HFDIR1
+      description: 1- HOMEF will set at H falling edge when dir == 1 (negative rotation direction).
+      bit_offset: 9
+      bit_size: 1
+    - name: HRDIR0
+      description: 1- HOMEF will set at H rising edge when dir == 0 (positive rotation direction).
+      bit_offset: 10
+      bit_size: 1
+    - name: HRDIR1
+      description: 1- HOMEF will set at H rising edge when dir == 1 (negative rotation direction).
+      bit_offset: 11
+      bit_size: 1
+    - name: PAUSEZ
+      description: 1- pause zcnt when PAUSE assert.
+      bit_offset: 12
+      bit_size: 1
+    - name: PAUSEPH
+      description: 1- pause phcnt when PAUSE assert.
+      bit_offset: 13
+      bit_size: 1
+    - name: PAUSESPD
+      description: 1- pause spdcnt when PAUSE assert.
+      bit_offset: 14
+      bit_size: 1
+    - name: HRSTZ
+      description: 1- reset zcnt when H assert.
+      bit_offset: 16
+      bit_size: 1
+    - name: HRSTPH
+      description: 1- reset phcnt when H assert.
+      bit_offset: 17
+      bit_size: 1
+    - name: HRSTSPD
+      description: 1- reset spdcnt when H assert.
+      bit_offset: 18
+      bit_size: 1
+    - name: READ
+      description: 1- load phcnt, zcnt, spdcnt and tmrcnt into their read registers. Hardware auto-clear; read as 0.
+      bit_offset: 31
+      bit_size: 1
+fieldset/dmaen:
+  description: DMA request enable register.
+  fields:
+    - name: ZPHFEN
+      description: 1- generate dma request when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPFEN
+      description: 1- generate dma request when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEFEN
+      description: 1- generate dma request when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGFEN
+      description: 1- generate dma request when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/irqen:
+  description: Interrupt request register.
+  fields:
+    - name: ZPHIE
+      description: 1- generate interrupt when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPIE
+      description: 1- generate interrupt when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEIE
+      description: 1- generate interrupt when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGIE
+      description: 1- generate interrupt when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/ph:
+  description: Phase counter.
+  fields:
+    - name: PHCNT
+      description: phcnt value.
+      bit_offset: 0
+      bit_size: 21
+    - name: BSTAT
+      description: 1- b input is high 0- b input is low.
+      bit_offset: 25
+      bit_size: 1
+    - name: ASTAT
+      description: 1- a input is high 0- a input is low.
+      bit_offset: 26
+      bit_size: 1
+    - name: DIR
+      description: 1- reverse rotation 0- forward rotation.
+      bit_offset: 30
+      bit_size: 1
+fieldset/phcfg:
+  description: Phase configure register.
+  fields:
+    - name: PHMAX
+      description: maximum phcnt number, phcnt will rollover to 0 when it upcount to phmax.
+      bit_offset: 0
+      bit_size: 21
+    - name: PHCALIZ
+      description: 1- phcnt will set to phidx when Z input assert.
+      bit_offset: 21
+      bit_size: 1
+    - name: ZCNTCFG
+      description: 1- zcnt will increment when phcnt upcount to phmax, decrement when phcnt downcount to 0 0- zcnt will increment or decrement when Z input assert.
+      bit_offset: 22
+      bit_size: 1
+fieldset/phcmp:
+  description: Phase comparator.
+  fields:
+    - name: PHCMP
+      description: phcnt position compare value.
+      bit_offset: 0
+      bit_size: 21
+    - name: DIRCMP
+      description: 0- position compare need positive rotation 1- position compare need negative rotation.
+      bit_offset: 29
+      bit_size: 1
+    - name: DIRCMPDIS
+      description: 1- postion compare not include rotation direction.
+      bit_offset: 30
+      bit_size: 1
+    - name: ZCMPDIS
+      description: 1- postion compare not include zcnt.
+      bit_offset: 31
+      bit_size: 1
+fieldset/phidx:
+  description: Phase index register.
+  fields:
+    - name: PHIDX
+      description: phcnt reset value, phcnt will reset to phidx when phcaliz set to 1.
+      bit_offset: 0
+      bit_size: 21
+fieldset/readen:
+  description: Read event enable register.
+  fields:
+    - name: ZPHFEN
+      description: 1- load counters to their read registers when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPFEN
+      description: 1- load counters to their read registers when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEFEN
+      description: 1- load counters to their read registers when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGFEN
+      description: 1- load counters to their read registers when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/spd:
+  description: Speed counter.
+  fields:
+    - name: SPDCNT
+      description: spdcnt value.
+      bit_offset: 0
+      bit_size: 28
+    - name: BSTAT
+      description: 1- b input is high 0- b input is low.
+      bit_offset: 29
+      bit_size: 1
+    - name: ASTAT
+      description: 1- a input is high 0- a input is low.
+      bit_offset: 30
+      bit_size: 1
+    - name: DIR
+      description: 1- reverse rotation 0- forward rotation.
+      bit_offset: 31
+      bit_size: 1
+fieldset/spdcmp:
+  description: Speed comparator.
+  fields:
+    - name: SPDCMP
+      description: spdcnt position compare value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/sr:
+  description: Status register.
+  fields:
+    - name: ZPHF
+      description: z input flag.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPF
+      description: postion compare match flag.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEF
+      description: home flag.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGF
+      description: watchdog flag.
+      bit_offset: 31
+      bit_size: 1
+fieldset/tmr:
+  description: Timer counter.
+  fields:
+    - name: TMRCNT
+      description: 32 bit free run timer.
+      bit_offset: 0
+      bit_size: 32
+fieldset/trgoen:
+  description: Tigger output enable register.
+  fields:
+    - name: ZPHFEN
+      description: 1- enable trigger output when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPFEN
+      description: 1- enable trigger output when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEFEN
+      description: 1- enable trigger output when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGFEN
+      description: 1- enable trigger output when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/wdgcfg:
+  description: Watchdog configure register.
+  fields:
+    - name: WDGTO
+      description: watch dog timeout value.
+      bit_offset: 0
+      bit_size: 31
+    - name: WDGEN
+      description: 1- enable wdog counter.
+      bit_offset: 31
+      bit_size: 1
+fieldset/z:
+  description: Z counter.
+  fields:
+    - name: ZCNT
+      description: zcnt value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/zcmp:
+  description: Z comparator.
+  fields:
+    - name: ZCMP
+      description: zcnt postion compare value.
+      bit_offset: 0
+      bit_size: 32

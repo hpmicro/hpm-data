@@ -260,6 +260,13 @@
     version: common
     block: PTPC
 
+- name: USB0
+  address: 0xF300C000
+  registers:
+    kind: usb
+    version: v53
+    block: USB
+
 # Analog peripherals
 
 - name: ADC0

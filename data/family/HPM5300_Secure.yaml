@@ -1,0 +1,34 @@
+- name: SDP
+  address: 0xF3040000
+  registers:
+    kind: sdp
+    version: v53
+    block: SDP
+
+- name: RNG
+  address: 0xF00C8000
+  registers:
+    kind: rng
+    version: common
+    block: RNG
+
+- name: KEYM
+  address: 0xF3054000
+  registers:
+    kind: keym
+    version: common
+    block: KEYM
+
+- name: SEC
+  address: 0xF3044000
+  registers:
+    kind: sec
+    version: common
+    block: SEC
+
+- name: PMON
+  address: 0xF3048000
+  registers:
+    kind: pmon
+    version: common
+    block: PMON

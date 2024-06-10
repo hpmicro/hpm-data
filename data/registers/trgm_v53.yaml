@@ -1,0 +1,200 @@
+block/TRGM:
+  description: TRGM0.
+  items:
+    - name: FILTCFG
+      description: no description available.
+      array:
+        len: 28
+        stride: 4
+      byte_offset: 0
+      fieldset: FILTCFG
+    - name: TRGOCFG
+      description: no description available.
+      array:
+        len: 137
+        stride: 4
+      byte_offset: 256
+      fieldset: TRGOCFG
+    - name: DMACFG
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 1024
+      fieldset: DMACFG
+    - name: GCR
+      description: General Control Register.
+      byte_offset: 1280
+      fieldset: GCR
+    - name: ADC_MATRIX_SEL
+      description: adc matrix select register.
+      byte_offset: 1296
+      fieldset: ADC_MATRIX_SEL
+    - name: DAC_MATRIX_SEL
+      description: dac matrix select register.
+      byte_offset: 1300
+      fieldset: DAC_MATRIX_SEL
+    - name: POS_MATRIX_SEL0
+      description: position matrix select register0.
+      byte_offset: 1304
+      fieldset: POS_MATRIX_SEL0
+    - name: POS_MATRIX_SEL1
+      description: position matrix select register1.
+      byte_offset: 1308
+      fieldset: POS_MATRIX_SEL1
+    - name: TRGM_IN
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 1536
+      fieldset: TRGM_IN
+    - name: TRGM_OUT
+      description: no description available.
+      array:
+        len: 5
+        stride: 4
+      byte_offset: 1568
+      fieldset: TRGM_OUT
+fieldset/ADC_MATRIX_SEL:
+  description: adc matrix select register.
+  fields:
+    - name: QEI0_ADC0_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 8
+    - name: QEI0_ADC1_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
+    - name: QEI1_ADC0_SEL
+      description: No description available.
+      bit_offset: 16
+      bit_size: 8
+    - name: QEI1_ADC1_SEL
+      description: 0-adc0; 1-adc1; 2-rdc_adc0; 3-rdc_adc1; bit7 is used to invert adc_value; others reserved.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DAC_MATRIX_SEL:
+  description: dac matrix select register.
+  fields:
+    - name: ACMP0_DAC_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 8
+    - name: ACMP1_DAC_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
+    - name: DAC0_DAC_SEL
+      description: No description available.
+      bit_offset: 16
+      bit_size: 8
+    - name: DAC1_DAC_SEL
+      description: 0-qeo0_dac0; 1-qeo0_dac1; 2-qeo0_dac2; 3-qeo1_dac0; 4-qeo1_dac1; 5-qeo1_dac2; 6-rdc_dac0; 7-rdc_dac1; bit7 is used to invert dac_value; others reserved.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DMACFG:
+  description: no description available.
+  fields:
+    - name: DMASRCSEL
+      description: This field selects one of the DMA requests as the DMA request output.
+      bit_offset: 0
+      bit_size: 6
+    - name: DMAMUX_EN
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
+fieldset/FILTCFG:
+  description: no description available.
+  fields:
+    - name: FILTLEN_BASE
+      description: This bitfields defines the filter counter length.
+      bit_offset: 0
+      bit_size: 9
+    - name: FILTLEN_SHIFT
+      description: No description available.
+      bit_offset: 9
+      bit_size: 3
+    - name: SYNCEN
+      description: set to enable sychronization input signal with TRGM clock.
+      bit_offset: 12
+      bit_size: 1
+    - name: MODE
+      description: This bitfields defines the filter mode 000-bypass; 100-rapid change mode; 101-delay filter mode; 110-stalbe low mode; 111-stable high mode.
+      bit_offset: 13
+      bit_size: 3
+    - name: OUTINV
+      description: 1- Filter will invert the output 0- Filter will not invert the output.
+      bit_offset: 16
+      bit_size: 1
+fieldset/GCR:
+  description: General Control Register.
+  fields:
+    - name: TRGOPEN
+      description: The bitfield enable the TRGM outputs.
+      bit_offset: 0
+      bit_size: 8
+fieldset/POS_MATRIX_SEL0:
+  description: position matrix select register0.
+  fields:
+    - name: SEI_POSIN0_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 8
+    - name: SEI_POSIN1_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
+    - name: MMC0_POSIN_SEL
+      description: No description available.
+      bit_offset: 16
+      bit_size: 8
+    - name: MMC1_POSIN_SEL
+      description: 0-sei_pos_out0; 1-sei_pos_out1; 2-qei0_pos; 3-qei1_pos; 4-mmc0_pos_out0; 5-mmc0_pos_out1; 6-mmc1_pos_out0; 7-mmc1_pos_out1; bit7 is used to invert position value; others reserved.
+      bit_offset: 24
+      bit_size: 8
+fieldset/POS_MATRIX_SEL1:
+  description: position matrix select register1.
+  fields:
+    - name: QEO0_POS_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 8
+    - name: QEO1_POS_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
+fieldset/TRGM_IN:
+  description: no description available.
+  fields:
+    - name: TRGM_IN
+      description: mmc1_trig_out[1:0], mmc0_trig_out[1:0],sync_pulse[3:0],moto_gpio_in_sync[7:0],//31:16 gtmr3_to_motor_sync[1:0],gtmr2_to_motor_sync[1:0],gtmr1_to_motor_sync[1:0],gtmr0_to_motor_sync[1:0], //15:8 acmp_out_sync[1:0],can2mot_event_sync[1:0],usb0_sof_tog_sync,pwm_debug,1'b1,1'b0 //7:0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRGM_OUT:
+  description: no description available.
+  fields:
+    - name: TRGM_OUT
+      description: motor_to_opamp0[7:0] = trig_mux_out[7:0]; motor_to_opamp1[7:0] = trig_mux_out[15:8]; motor_to_gtmr0_capt[1:0] = trig_mux_out[17:16]; motor_to_gtmr0_sync = trig_mux_out[18]; motor_to_gtmr1_capt[1:0] = trig_mux_out[20:19]; motor_to_gtmr1_sync = trig_mux_out[21]; motor_to_gtmr2_capt[1:0] = trig_mux_out[23:22]; motor_to_gtmr2_sync = trig_mux_out[24]; motor_to_gtmr3_capt[1:0] = trig_mux_out[26:25]; motor_to_gtmr3_sync = trig_mux_out[27]; acmp_window[1:0] = trig_mux_out[29:28]; dac0_buf_trigger = trig_mux_out[30]; dac1_buf_trigger = trig_mux_out[31]; dac0_step_trigger[3:0] = {trig_mux_out[24:22],trig_mux_out[30]};//use same buf_trig, and gtmr2 dac1_step_trigger[3:0] = {trig_mux_out[27:25],trig_mux_out[31]}; //use same buf_trig, and gtmr3.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRGOCFG:
+  description: no description available.
+  fields:
+    - name: TRIGOSEL
+      description: This bitfield selects one of the TRGM inputs as output.
+      bit_offset: 0
+      bit_size: 7
+    - name: REDG2PEN
+      description: 1- The selected input signal rising edge will be convert to an pulse on output.
+      bit_offset: 9
+      bit_size: 1
+    - name: FEDG2PEN
+      description: 1- The selected input signal falling edge will be convert to an pulse on output.
+      bit_offset: 10
+      bit_size: 1
+    - name: OUTINV
+      description: 1- Invert the output.
+      bit_offset: 11
+      bit_size: 1

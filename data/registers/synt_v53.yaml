@@ -1,0 +1,115 @@
+block/SYNT:
+  description: SYNT.
+  items:
+    - name: gcr
+      description: Global control register.
+      byte_offset: 0
+      fieldset: gcr
+    - name: rld
+      description: Counter reload register.
+      byte_offset: 4
+      fieldset: rld
+    - name: timestamp_new
+      description: timestamp new value register.
+      byte_offset: 8
+      fieldset: timestamp_new
+    - name: cnt
+      description: Counter.
+      byte_offset: 12
+      fieldset: cnt
+    - name: timestamp_sav
+      description: timestamp trig save value.
+      byte_offset: 16
+      fieldset: timestamp_sav
+    - name: timestamp_cur
+      description: timestamp read value.
+      byte_offset: 20
+      fieldset: timestamp_cur
+    - name: CMP
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 32
+      fieldset: CMP
+fieldset/CMP:
+  description: no description available.
+  fields:
+    - name: CMP
+      description: comparator value, the output will assert when counter count to this value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cnt:
+  description: Counter.
+  fields:
+    - name: CNT
+      description: counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/gcr:
+  description: Global control register.
+  fields:
+    - name: CEN
+      description: 1- Enable counter.
+      bit_offset: 0
+      bit_size: 1
+    - name: CRST
+      description: 1- Reset counter.
+      bit_offset: 1
+      bit_size: 1
+    - name: COUNTER_DEBUG_EN
+      description: set to enable cpu_debug_mode to stop the counter.
+      bit_offset: 2
+      bit_size: 1
+    - name: TIMESTAMP_ENABLE
+      description: set to enable the timesamp , clr to stop.
+      bit_offset: 4
+      bit_size: 1
+    - name: TIMESTAMP_DEBUG_EN
+      description: set to enable cpu_debug_mode to stop the timesamp.
+      bit_offset: 5
+      bit_size: 1
+    - name: TIMESTAMP_RESET
+      description: reset timesamp to 0, auto clr.
+      bit_offset: 28
+      bit_size: 1
+    - name: TIMESTAMP_SET_NEW
+      description: set the timesamp to new value, auto clr.
+      bit_offset: 29
+      bit_size: 1
+    - name: TIMESTAMP_DEC_NEW
+      description: set to decrease the timesamp with new value, auto clr.
+      bit_offset: 30
+      bit_size: 1
+    - name: TIMESTAMP_INC_NEW
+      description: set to increase the timesamp with new value, auto clr.
+      bit_offset: 31
+      bit_size: 1
+fieldset/rld:
+  description: Counter reload register.
+  fields:
+    - name: RLD
+      description: counter reload value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/timestamp_cur:
+  description: timestamp read value.
+  fields:
+    - name: VALUE
+      description: current timesamp value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/timestamp_new:
+  description: timestamp new value register.
+  fields:
+    - name: VALUE
+      description: new value for timesamp , can be used as set/inc/dec.
+      bit_offset: 0
+      bit_size: 32
+fieldset/timestamp_sav:
+  description: timestamp trig save value.
+  fields:
+    - name: VALUE
+      description: use the trigger to save timesamp here.
+      bit_offset: 0
+      bit_size: 32

@@ -1,0 +1,123 @@
+block/KEYM:
+  description: KEYM.
+  items:
+    - name: SOFTMKEY
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 0
+      fieldset: SOFTMKEY
+    - name: SOFTPKEY
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 32
+      fieldset: SOFTPKEY
+    - name: SEC_KEY_CTL
+      description: secure key generation.
+      byte_offset: 64
+      fieldset: SEC_KEY_CTL
+    - name: NSC_KEY_CTL
+      description: non-secure key generation.
+      byte_offset: 68
+      fieldset: NSC_KEY_CTL
+    - name: RNG
+      description: Random number interface behavior.
+      byte_offset: 72
+      fieldset: RNG
+    - name: READ_CONTROL
+      description: key read out control.
+      byte_offset: 76
+      fieldset: READ_CONTROL
+fieldset/NSC_KEY_CTL:
+  description: non-secure key generation.
+  fields:
+    - name: KEY_SEL
+      description: "non-secure symmtric key synthesize setting, key is a XOR of following bit0: fuse mk, 0: not selected, 1:selected bit1: zmk from batt, 0: not selected, 1:selected bit2: software key 0: not selected, 1:selected."
+      bit_offset: 0
+      bit_size: 3
+    - name: FMK_SEL
+      description: "fuse symmetric key selection 0: use scramble version of fuse symmetric key 1: use origin value in fuse symmetric key."
+      bit_offset: 4
+      bit_size: 1
+    - name: ZMK_SEL
+      description: "batt symmetric key selection 0: use scramble version of software symmetric key 1: use origin value in software symmetric key."
+      bit_offset: 8
+      bit_size: 1
+    - name: SMK_SEL
+      description: "software symmetric key selection 0: use scramble version of software symmetric key 1: use origin value in software symmetric key."
+      bit_offset: 12
+      bit_size: 1
+    - name: SK_VAL
+      description: "session key valid 0: session key is all 0's and not usable 1: session key is valid."
+      bit_offset: 16
+      bit_size: 1
+    - name: LOCK_NSC_CTL
+      description: block non-secure state key setting being changed.
+      bit_offset: 31
+      bit_size: 1
+fieldset/READ_CONTROL:
+  description: key read out control.
+  fields:
+    - name: BLOCK_SMK_READ
+      description: "symmetric key readout control, if this bit is written to 1, it will hold 1 until next reset 0: key can be read out 1: key cannot be read out."
+      bit_offset: 0
+      bit_size: 1
+    - name: BLOCK_PK_READ
+      description: "asymmetric key readout control, if this bit is written to 1, it will hold 1 until next reset 0: key can be read out 1: key cannot be read out."
+      bit_offset: 16
+      bit_size: 1
+fieldset/RNG:
+  description: Random number interface behavior.
+  fields:
+    - name: RNG_XOR
+      description: "control how SFK is accepted from random number generator 0: SFK value replaced by random number input 1: SFK value exclusive or with random number input,this help generate random number using 2 rings inside RNG."
+      bit_offset: 0
+      bit_size: 1
+    - name: BLOCK_RNG_XOR
+      description: "block RNG_XOR bit from changing, if this bit is written to 1, it will hold 1 until next reset 0: RNG_XOR can be changed by software 1: RNG_XOR ignore software change from software."
+      bit_offset: 16
+      bit_size: 1
+fieldset/SEC_KEY_CTL:
+  description: secure key generation.
+  fields:
+    - name: KEY_SEL
+      description: "secure symmtric key synthesize setting, key is a XOR of following bit0: fuse mk, 0: not selected, 1:selected bit1: zmk from batt, 0: not selected, 1:selected bit2: software key 0: not selected, 1:selected."
+      bit_offset: 0
+      bit_size: 3
+    - name: FMK_SEL
+      description: "fuse symmetric key selection 0: use scramble version of fuse symmetric key 1: use alnertave scramble of fuse symmetric key."
+      bit_offset: 4
+      bit_size: 1
+    - name: ZMK_SEL
+      description: "batt symmetric key selection 0: use scramble version of software symmetric key 1: use origin value in software symmetric key."
+      bit_offset: 8
+      bit_size: 1
+    - name: SMK_SEL
+      description: "software symmetric key selection 0: use origin value in software symmetric key 1: use scramble version of software symmetric key."
+      bit_offset: 12
+      bit_size: 1
+    - name: SK_VAL
+      description: "session key valid 0: session key is all 0's and not usable 1: session key is valid."
+      bit_offset: 16
+      bit_size: 1
+    - name: LOCK_SEC_CTL
+      description: block secure state key setting being changed.
+      bit_offset: 31
+      bit_size: 1
+fieldset/SOFTMKEY:
+  description: no description available.
+  fields:
+    - name: KEY
+      description: software symmetric key key will be scambled to 4 variants for software to use, and replicable on same chip. scramble keys are chip different, and not replicable on different chip must be write sequencely from 0 - 7, otherwise key value will be treated as all 0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SOFTPKEY:
+  description: no description available.
+  fields:
+    - name: KEY
+      description: software asymmetric key key is derived from scrambles of fuse private key, software input key, SRK, and system security status. This key os read once, sencondary read will read out 0.
+      bit_offset: 0
+      bit_size: 32

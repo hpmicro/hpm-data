@@ -1,0 +1,1095 @@
+block/BR:
+  description: no description available.
+  items:
+    - name: BR_CTRL
+      description: Prediction Control Register.
+      byte_offset: 0
+      fieldset: BR_CTRL
+    - name: BR_TIMEOFF
+      description: Prediction Timing Offset Register.
+      byte_offset: 4
+      fieldset: BR_TIMEOFF
+    - name: BR_TRG_PERIOD
+      description: Prediction Triggering Period Offset Register.
+      byte_offset: 8
+      fieldset: BR_TRG_PERIOD
+    - name: BR_TRG_F_TIME
+      description: Prediction Triggering First Offset Register.
+      byte_offset: 12
+      fieldset: BR_TRG_F_TIME
+    - name: BR_ST
+      description: Prediction Status Register.
+      byte_offset: 16
+      fieldset: BR_ST
+    - name: BR_TRG_pos_cfg
+      description: Prediction Configuration postion trigger cfg.
+      byte_offset: 64
+      fieldset: BR_TRG_pos_cfg
+    - name: BR_TRG_pos_thr
+      description: Prediction Configuration postion threshold.
+      byte_offset: 68
+      fieldset: BR_TRG_pos_thr
+    - name: BR_TRG_rev_thr
+      description: Prediction Configuration revolutiom threshold.
+      byte_offset: 72
+      fieldset: BR_TRG_rev_thr
+    - name: BR_TRG_speed_cfg
+      description: Prediction Configuration speed trigger cfg.
+      byte_offset: 76
+      fieldset: BR_TRG_speed_cfg
+    - name: BR_TRG_speed_thr
+      description: Prediction Configuration speed threshold.
+      byte_offset: 80
+      fieldset: BR_TRG_speed_thr
+    - name: BR_INI_POS_TIME
+      description: Initialization timestamp for open-loop mode.
+      byte_offset: 192
+      fieldset: BR_INI_POS_TIME
+    - name: BR_INI_POS
+      description: Initialization position for open-loop mode.
+      byte_offset: 196
+      fieldset: BR_INI_POS
+    - name: BR_INI_REV
+      description: Initialization revolution for open-loop mode.
+      byte_offset: 200
+      fieldset: BR_INI_REV
+    - name: BR_INI_SPEED
+      description: Initialization speed for open-loop mode.
+      byte_offset: 204
+      fieldset: BR_INI_SPEED
+    - name: BR_INI_ACCEL
+      description: Initialization acceleration for open-loop mode.
+      byte_offset: 208
+      fieldset: BR_INI_ACCEL
+    - name: BR_INI_DELTA_POS_TIME
+      description: Initialization timestamp for delta mode in prediction mode.
+      byte_offset: 212
+      fieldset: BR_INI_DELTA_POS_TIME
+    - name: BR_INI_DELTA_POS
+      description: Initialization delta position for delta mode in prediction mode.
+      byte_offset: 216
+      fieldset: BR_INI_DELTA_POS
+    - name: BR_INI_DELTA_REV
+      description: Initialization delta revolution for delta mode in prediction mode.
+      byte_offset: 220
+      fieldset: BR_INI_DELTA_REV
+    - name: BR_INI_DELTA_SPEED
+      description: Initialization delta speed for delta mode in prediction mode.
+      byte_offset: 224
+      fieldset: BR_INI_DELTA_SPEED
+    - name: BR_INI_DELTA_ACCEL
+      description: Initialization delta acceleration for delta mode in prediction mode.
+      byte_offset: 228
+      fieldset: BR_INI_DELTA_ACCEL
+    - name: BR_CUR_POS_TIME
+      description: Monitor of the output timestamp.
+      byte_offset: 236
+      fieldset: BR_CUR_POS_TIME
+    - name: BR_CUR_POS
+      description: Monitor of the output position.
+      byte_offset: 240
+      fieldset: BR_CUR_POS
+    - name: BR_CUR_REV
+      description: Monitor of the output revolution.
+      byte_offset: 244
+      fieldset: BR_CUR_REV
+    - name: BR_CUR_SPEED
+      description: Monitor of the output speed.
+      byte_offset: 248
+      fieldset: BR_CUR_SPEED
+    - name: BR_CUR_ACCEL
+      description: Monitor of the output acceleration.
+      byte_offset: 252
+      fieldset: BR_CUR_ACCEL
+block/COEF_TRG_CFG:
+  description: no description available.
+  items:
+    - name: err_thr
+      description: Tracking Configuration coef trigger cfg&index0.
+      byte_offset: 0
+      fieldset: err_thr
+    - name: P
+      description: Tracking Configuration coef trigger cfg&index0 P.
+      byte_offset: 4
+      fieldset: P
+    - name: I
+      description: Tracking Configuration coef trigger cfg&index0 I.
+      byte_offset: 8
+      fieldset: I
+    - name: A
+      description: Tracking Configuration coef trigger cfg&index0 A.
+      byte_offset: 12
+      fieldset: A
+    - name: TIME
+      description: Tracking Configuration coef trigger cfg&index0 time.
+      byte_offset: 16
+      fieldset: TIME
+block/MMC:
+  description: MMC0.
+  items:
+    - name: CR
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CR
+    - name: STA
+      description: Status Register.
+      byte_offset: 4
+      fieldset: STA
+    - name: INT_EN
+      description: Interrupt Enable Register.
+      byte_offset: 8
+      fieldset: INT_EN
+    - name: SYSCLK_FREQ
+      description: System Clock Frequency Register.
+      byte_offset: 12
+      fieldset: SYSCLK_FREQ
+    - name: SYSCLK_PERIOD
+      description: System Clock Period Register.
+      byte_offset: 16
+      fieldset: SYSCLK_PERIOD
+    - name: OOSYNC_THETA_THR
+      description: Position Out-Of-Sync Threshold Regster.
+      byte_offset: 20
+      fieldset: OOSYNC_THETA_THR
+    - name: DiscreteCfg0
+      description: Discrete Mode Configuration 0 Register.
+      byte_offset: 24
+      fieldset: DiscreteCfg0
+    - name: DiscreteCfg1
+      description: Discrete Mode Configuration 1 Register.
+      byte_offset: 28
+      fieldset: DiscreteCfg1
+    - name: ContCfg0
+      description: Continuous Mode Configuration 0 Register.
+      byte_offset: 32
+      fieldset: ContCfg0
+    - name: INI_POS_TIME
+      description: The destined timestamp register for position initialization.
+      byte_offset: 36
+      fieldset: INI_POS_TIME
+    - name: INI_POS
+      description: The destined position register for position initialization.
+      byte_offset: 40
+      fieldset: INI_POS
+    - name: INI_REV
+      description: The destined revolution register for position initialization.
+      byte_offset: 44
+      fieldset: INI_REV
+    - name: INI_SPEED
+      description: The destined speed register for position initialization.
+      byte_offset: 48
+      fieldset: INI_SPEED
+    - name: INI_ACCEL
+      description: The destined accelerator register for position initialization.
+      byte_offset: 52
+      fieldset: INI_ACCEL
+    - name: INI_COEF_TIME
+      description: The destined timestamp register for coefficients initialization.
+      byte_offset: 56
+      fieldset: INI_COEF_TIME
+    - name: INI_PCOEF
+      description: The destined coefficient P register for coefficients initialization.
+      byte_offset: 60
+      fieldset: INI_PCOEF
+    - name: INI_ICOEF
+      description: The destined coefficient I register for coefficients initialization.
+      byte_offset: 64
+      fieldset: INI_ICOEF
+    - name: INI_ACOEF
+      description: The destined coefficient A register for coefficients initialization.
+      byte_offset: 68
+      fieldset: INI_ACOEF
+    - name: ESTM_TIM
+      description: The timestamp register for internal estimation.
+      byte_offset: 72
+      fieldset: ESTM_TIM
+    - name: ESTM_POS
+      description: The position register for the internal estimation.
+      byte_offset: 76
+      fieldset: ESTM_POS
+    - name: ESTM_REV
+      description: The revolution register for the internal estimation.
+      byte_offset: 80
+      fieldset: ESTM_REV
+    - name: ESTM_SPEED
+      description: The speed register for the internal estimation.
+      byte_offset: 84
+      fieldset: ESTM_SPEED
+    - name: ESTM_ACCEL
+      description: The accelerator register for theinternal estimation.
+      byte_offset: 88
+      fieldset: ESTM_ACCEL
+    - name: CUR_PCOEF
+      description: The coefficient P register for the internal estimation.
+      byte_offset: 92
+      fieldset: CUR_PCOEF
+    - name: CUR_ICOEF
+      description: The coefficient I register for the internal estimation.
+      byte_offset: 96
+      fieldset: CUR_ICOEF
+    - name: CUR_ACOEF
+      description: The coefficient A register for the internal estimation.
+      byte_offset: 100
+      fieldset: CUR_ACOEF
+    - name: INI_DELTA_POS_TIME
+      description: The destined timestamp register for delta position initialization.
+      byte_offset: 104
+      fieldset: INI_DELTA_POS_TIME
+    - name: INI_DELTA_POS
+      description: The destined delta position register for delta position initialization.
+      byte_offset: 108
+      fieldset: INI_DELTA_POS
+    - name: INI_DELTA_REV
+      description: The destined delta revolution register for delta position initialization.
+      byte_offset: 112
+      fieldset: INI_DELTA_REV
+    - name: INI_DELTA_SPEED
+      description: The destined delta speed register for delta position initialization.
+      byte_offset: 116
+      fieldset: INI_DELTA_SPEED
+    - name: INI_DELTA_ACCEL
+      description: The destined delta accelerator register for delta position initialization.
+      byte_offset: 120
+      fieldset: INI_DELTA_ACCEL
+    - name: pos_trg_cfg
+      description: Tracking Configuration pos trigger cfg.
+      byte_offset: 128
+      fieldset: pos_trg_cfg
+    - name: pos_trg_pos_thr
+      description: Tracking Configuration position threshold.
+      byte_offset: 132
+      fieldset: pos_trg_pos_thr
+    - name: pos_trg_rev_thr
+      description: Tracking Configuration revolution threshold.
+      byte_offset: 136
+      fieldset: pos_trg_rev_thr
+    - name: speed_trg_cfg
+      description: Tracking Configuration speed trigger cfg.
+      byte_offset: 140
+      fieldset: speed_trg_cfg
+    - name: speed_trg_thr
+      description: Tracking Configuration speed threshold.
+      byte_offset: 144
+      fieldset: speed_trg_thr
+    - name: COEF_TRG_CFG
+      description: no description available.
+      array:
+        len: 3
+        stride: 20
+      byte_offset: 160
+      block: COEF_TRG_CFG
+    - name: BR
+      description: no description available.
+      array:
+        len: 2
+        stride: 256
+      byte_offset: 256
+      block: BR
+    - name: BK0_TIMESTAMP
+      description: Monitor of the just received input timestamp for tracing logic.
+      byte_offset: 768
+      fieldset: BK0_TIMESTAMP
+    - name: BK0_POSITION
+      description: Monitor of the just received input position for tracing logic.
+      byte_offset: 772
+      fieldset: BK0_POSITION
+    - name: BK0_REVOLUTION
+      description: Monitor of the just received input revolution for tracing logic.
+      byte_offset: 776
+      fieldset: BK0_REVOLUTION
+    - name: BK0_SPEED
+      description: Monitor of the just received input speed for tracing logic.
+      byte_offset: 780
+      fieldset: BK0_SPEED
+    - name: BK0_ACCELERATOR
+      description: Monitor of the just received input acceleration for tracing logic.
+      byte_offset: 784
+      fieldset: BK0_ACCELERATOR
+    - name: BK1_TIMESTAMP
+      description: Monitor of the previous received input timestamp for tracing logic.
+      byte_offset: 800
+      fieldset: BK1_TIMESTAMP
+    - name: BK1_POSITION
+      description: Monitor of the previous received input position for tracing logic.
+      byte_offset: 804
+      fieldset: BK1_POSITION
+    - name: BK1_REVOLUTION
+      description: Monitor of the previous received input revolution for tracing logic.
+      byte_offset: 808
+      fieldset: BK1_REVOLUTION
+    - name: BK1_SPEED
+      description: Monitor of the previous received input speed for tracing logic.
+      byte_offset: 812
+      fieldset: BK1_SPEED
+    - name: BK1_ACCELERATOR
+      description: Monitor of the previous received input acceleration for tracing logic.
+      byte_offset: 816
+      fieldset: BK1_ACCELERATOR
+fieldset/A:
+  description: Tracking Configuration coef trigger cfg&index0 A.
+  fields:
+    - name: VAL
+      description: A0_Coef，fix<32, 19>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK0_ACCELERATOR:
+  description: Monitor of the just received input acceleration for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK0_POSITION:
+  description: Monitor of the just received input position for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK0_REVOLUTION:
+  description: Monitor of the just received input revolution for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK0_SPEED:
+  description: Monitor of the just received input speed for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK0_TIMESTAMP:
+  description: Monitor of the just received input timestamp for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK1_ACCELERATOR:
+  description: Monitor of the previous received input acceleration for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK1_POSITION:
+  description: Monitor of the previous received input position for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK1_REVOLUTION:
+  description: Monitor of the previous received input revolution for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK1_SPEED:
+  description: Monitor of the previous received input speed for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BK1_TIMESTAMP:
+  description: Monitor of the previous received input timestamp for tracing logic.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_CTRL:
+  description: Prediction Control Register.
+  fields:
+    - name: BR_EN
+      description: Branch Enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: F_TRG_TYPE
+      description: 1. First trigger by external trigger pin 0. First trigger by the timer When in CR[MANUAL_IO]=1 mode, it is the prediction trigger.
+      bit_offset: 1
+      bit_size: 1
+    - name: NF_TRG_TYPE
+      description: 1. Each non-first trigger by external trigger pin 0. Each non-first trigger by the timer.
+      bit_offset: 2
+      bit_size: 1
+    - name: PRED_MODE
+      description: 1:continuously repeat pred, 0:cal the pred based on a definite time-stamp offset, 2:programed one-shot prediction mode.
+      bit_offset: 4
+      bit_size: 2
+    - name: OPEN_LOOP_MODE
+      description: "1: in open loop mode 0: not in open loop mode."
+      bit_offset: 7
+      bit_size: 1
+    - name: INI_DELTA_POS_REQ
+      description: "1: Command to reload the delta pos. Auto clear 0:."
+      bit_offset: 8
+      bit_size: 1
+    - name: INI_DELTA_POS_CMD_MSK
+      description: "1: change 0: won't change bit 3: for delta accel bit 2: for delta speed bit 1: for delta revolution bit 0: for delta position."
+      bit_offset: 9
+      bit_size: 4
+    - name: INI_DELTA_POS_DONE_IE
+      description: Interrupt Enable for INI_DELTA_POS_DONE.
+      bit_offset: 13
+      bit_size: 1
+    - name: INI_DELTA_POS_TRG_TYPE
+      description: "0: Time Stamp in the configuration 1: Risedge of In Trg[0] 2: Risedge of In Trg[1] 3: Risedge of out trg[0] 4: Risedge of out trg[1] 5: Risedge of self pos trigger 6: Risedge of self speed trigger Others: no function."
+      bit_offset: 14
+      bit_size: 3
+    - name: INI_POS_CMD_MSK
+      description: "1: change 0: won't change bit 3: for accel bit 2: for speed bit 1: for revolution bit 0: for position."
+      bit_offset: 18
+      bit_size: 4
+    - name: INI_POS_TRG_TYPE
+      description: "0: Time Stamp in the configuration 1: Risedge of In Trg[0] 2: Risedge of In Trg[1] 3: Risedge of out trg[0] 4: Risedge of out trg[1] 5: Risedge of self pos trigger 6: Risedge of self speed trigger Others: no function."
+      bit_offset: 23
+      bit_size: 3
+    - name: POS_TRG_VALID_IE
+      description: Interrupt Enable for POS_TRG_VALID.
+      bit_offset: 29
+      bit_size: 1
+    - name: SPEED_TRG_VALID_IE
+      description: Interrupt Enable for SPEED_TRG_VALID.
+      bit_offset: 30
+      bit_size: 1
+fieldset/BR_CUR_ACCEL:
+  description: Monitor of the output acceleration.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_CUR_POS:
+  description: Monitor of the output position.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_CUR_POS_TIME:
+  description: Monitor of the output timestamp.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_CUR_REV:
+  description: Monitor of the output revolution.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_CUR_SPEED:
+  description: Monitor of the output speed.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_ACCEL:
+  description: Initialization acceleration for open-loop mode.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_DELTA_ACCEL:
+  description: Initialization delta acceleration for delta mode in prediction mode.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_DELTA_POS:
+  description: Initialization delta position for delta mode in prediction mode.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: ufix<32, 32>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_DELTA_POS_TIME:
+  description: Initialization timestamp for delta mode in prediction mode.
+  fields:
+    - name: VAL
+      description: "indicate the time to change the values. 0: instant change."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_DELTA_REV:
+  description: Initialization delta revolution for delta mode in prediction mode.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 0>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_DELTA_SPEED:
+  description: Initialization delta speed for delta mode in prediction mode.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_POS:
+  description: Initialization position for open-loop mode.
+  fields:
+    - name: VAL
+      description: the value ufix<32, 32>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_POS_TIME:
+  description: Initialization timestamp for open-loop mode.
+  fields:
+    - name: VAL
+      description: "indicate the time to change the values. 0: instant change."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_REV:
+  description: Initialization revolution for open-loop mode.
+  fields:
+    - name: VAL
+      description: the value ufix<32, 0>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_INI_SPEED:
+  description: Initialization speed for open-loop mode.
+  fields:
+    - name: VAL
+      description: the value fix<32, 19>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_ST:
+  description: Prediction Status Register.
+  fields:
+    - name: ERR_ID
+      description: The module's error ID output.
+      bit_offset: 0
+      bit_size: 4
+    - name: IDLE
+      description: "1: The prediction module is idle. 0: The prediction module is not idle."
+      bit_offset: 5
+      bit_size: 1
+    - name: INI_DELTA_POS_DONE
+      description: "1: the initialization of delta position command is done 0: the initialization of delta position command is not done."
+      bit_offset: 6
+      bit_size: 1
+    - name: POS_TRG_VLD
+      description: 1：self position trigger event found 0：self position trigger event not found yet.
+      bit_offset: 8
+      bit_size: 1
+    - name: SPEED_TRG_VLD
+      description: 1：self speed trigger event found 0：self speed trigger event not found yet.
+      bit_offset: 9
+      bit_size: 1
+    - name: OPEN_LOOP_ST
+      description: 1：in open loop mode 0：in closed loop mode.
+      bit_offset: 10
+      bit_size: 1
+fieldset/BR_TIMEOFF:
+  description: Prediction Timing Offset Register.
+  fields:
+    - name: VAL
+      description: ufix<32, 0> time offset incycles from the trigger time.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_TRG_F_TIME:
+  description: Prediction Triggering First Offset Register.
+  fields:
+    - name: VAL
+      description: uifx<32, 0> the time for the first trigger.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_TRG_PERIOD:
+  description: Prediction Triggering Period Offset Register.
+  fields:
+    - name: VAL
+      description: uifx<32, 0>, time offset incycles between each trigger time.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_TRG_pos_cfg:
+  description: Prediction Configuration postion trigger cfg.
+  fields:
+    - name: EN
+      description: 1-trigger valid; 0-Trigger not valid.
+      bit_offset: 0
+      bit_size: 1
+    - name: EDGE
+      description: "bit1: 0: (rising edge) pos inc greater than, 1: (falling edge) pos dec less than."
+      bit_offset: 1
+      bit_size: 1
+fieldset/BR_TRG_pos_thr:
+  description: Prediction Configuration postion threshold.
+  fields:
+    - name: VAL
+      description: For pos out trigger (pos). ufix<32, 32>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_TRG_rev_thr:
+  description: Prediction Configuration revolutiom threshold.
+  fields:
+    - name: VAL
+      description: For pos out trigger (rev) ufix<32, 0>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BR_TRG_speed_cfg:
+  description: Prediction Configuration speed trigger cfg.
+  fields:
+    - name: EN
+      description: 1-trigger valid; 0-Trigger not valid Normally it means either the max pos speed, or the min negative speed.
+      bit_offset: 0
+      bit_size: 1
+    - name: EDGE_SEL
+      description: "0: (rising edge) speed inc greater than, 1: (falling edge) speed dec less than."
+      bit_offset: 1
+      bit_size: 1
+    - name: COMP_TYPE
+      description: "Use abs value for comparion. 0: Use the speed with direction info (so not the abs value)."
+      bit_offset: 2
+      bit_size: 1
+fieldset/BR_TRG_speed_thr:
+  description: Prediction Configuration speed threshold.
+  fields:
+    - name: VAL
+      description: "For speed trigger. continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/CR:
+  description: Control Register.
+  fields:
+    - name: MOD_EN
+      description: Module Enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: DISCRETETRC
+      description: "1: Discrete position input 0: Continuous position input."
+      bit_offset: 1
+      bit_size: 1
+    - name: ADJOP
+      description: "1: use the input iposition whenever a new iposition comes, and force the predicted output stop at the boundaries. 0: Continuous tracking mode, without any boundary check."
+      bit_offset: 2
+      bit_size: 1
+    - name: SHADOW_RD_REQ
+      description: "1: Shadow Request for read of tracking parameters. Auto clear 0:."
+      bit_offset: 3
+      bit_size: 1
+    - name: INI_COEFS_CMD
+      description: "1: Command to reload the coefs. Auto clear 0:."
+      bit_offset: 4
+      bit_size: 1
+    - name: INI_COEFS_CMD_MSK
+      description: "1: change 0: won't change bit 2: for ACOEF bit 1: for ICOEF bit 0: for PCOEF."
+      bit_offset: 5
+      bit_size: 3
+    - name: INI_POS_REQ
+      description: "1: Command to reload the positions. Auto clear 0:."
+      bit_offset: 8
+      bit_size: 1
+    - name: INI_POS_CMD_MSK
+      description: "1: change 0: won't change bit 3: for accel bit 2: for speed bit 1: for revolution bit 0: for position."
+      bit_offset: 9
+      bit_size: 4
+    - name: POS_TYPE
+      description: "1: 32-bit for rev+pos, with each element occupying 16 bits 0: 32-bit for rev, and 32 bit for pos When CR[MANUAL_IO]==1, 1: means that the INI_POS is acting as INI_POS cmds 0: means that the INI_POS is simulating the input of iposition and itimestamp."
+      bit_offset: 13
+      bit_size: 1
+    - name: OPEN_LOOP_MODE
+      description: "1: in open loop mode 0: not in open loop mode."
+      bit_offset: 14
+      bit_size: 1
+    - name: INI_DELTA_POS_REQ
+      description: "1: Command to reload the delta pos. Auto clear 0:."
+      bit_offset: 15
+      bit_size: 1
+    - name: INI_DELTA_POS_CMD_MSK
+      description: "1: change 0: won't change bit 3: for delta accel bit 2: for delta speed bit 1: for delta revolution bit 0: for delta position."
+      bit_offset: 16
+      bit_size: 4
+    - name: INI_POS_TRG_TYPE
+      description: "0: Time Stamp in the configuration 1: Risedge of In Trg[0] 2: Risedge of In Trg[1] 3: Risedge of out trg[0] 4: Risedge of out trg[1] 5: triggered by self position trigger 6: triggered by self speed trigger Otherser: no function."
+      bit_offset: 20
+      bit_size: 3
+    - name: INI_DELTA_POS_TRG_TYPE
+      description: "0: Time Stamp in the configuration 1: Risedge of In Trg[0] 2: Risedge of In Trg[1] 3: Risedge of out trg[0] 4: Risedge of out trg[1] 5: triggered by self position trigger 6: triggered by self speed trigger Otherser: no function."
+      bit_offset: 23
+      bit_size: 3
+    - name: MS_COEF_EN
+      description: Multiple Coefficients Enable.
+      bit_offset: 26
+      bit_size: 1
+    - name: FRCACCELZERO
+      description: Zeroise the accelerator calculation.
+      bit_offset: 27
+      bit_size: 1
+    - name: INI_BR1_POS_REQ
+      description: Auto clear. Only effective in open_loop mode.
+      bit_offset: 28
+      bit_size: 1
+    - name: INI_BR0_POS_REQ
+      description: Auto clear. Only effective in open_loop mode.
+      bit_offset: 29
+      bit_size: 1
+    - name: SFTRST
+      description: Software reset, high active. When write 1 ,all internal logical will be reset. 0b - No action 1b - All MMC internal registers are forced into their reset state. Interface registers are not affected.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CUR_ACOEF:
+  description: The coefficient A register for the internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CUR_ICOEF:
+  description: The coefficient I register for the internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CUR_PCOEF:
+  description: The coefficient P register for the internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ContCfg0:
+  description: Continuous Mode Configuration 0 Register.
+  fields:
+    - name: HALF_CIRC_THETA
+      description: the theta for cal the clockwise or anticlockwise rotation between two adjacent inputs, ufix<32, 32>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DiscreteCfg0:
+  description: Discrete Mode Configuration 0 Register.
+  fields:
+    - name: POSMAX
+      description: Max ID Of Lines. For example-1, for 512 lines, it is 511. ufix<32, 0>.
+      bit_offset: 0
+      bit_size: 20
+fieldset/DiscreteCfg1:
+  description: Discrete Mode Configuration 1 Register.
+  fields:
+    - name: INV_POSMAX
+      description: "discrete mode: ufix<32, 0> of 1/(Number Of Lines) continuous mode: the max delta for tracking from the last received position, ufix<32, 32>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/ESTM_ACCEL:
+  description: The accelerator register for theinternal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ESTM_POS:
+  description: The position register for the internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ESTM_REV:
+  description: The revolution register for the internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ESTM_SPEED:
+  description: The speed register for the internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ESTM_TIM:
+  description: The timestamp register for internal estimation.
+  fields:
+    - name: VAL
+      description: the value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/I:
+  description: Tracking Configuration coef trigger cfg&index0 I.
+  fields:
+    - name: VAL
+      description: I0_Coef, fix<32, 21>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_ACCEL:
+  description: The destined accelerator register for position initialization.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_ACOEF:
+  description: The destined coefficient A register for coefficients initialization.
+  fields:
+    - name: VAL
+      description: the value, fix<32, 19>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_COEF_TIME:
+  description: The destined timestamp register for coefficients initialization.
+  fields:
+    - name: VAL
+      description: "indicate the time to change the values. 0: instant change."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_DELTA_ACCEL:
+  description: The destined delta accelerator register for delta position initialization.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_DELTA_POS:
+  description: The destined delta position register for delta position initialization.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: ufix <32, 32>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_DELTA_POS_TIME:
+  description: The destined timestamp register for delta position initialization.
+  fields:
+    - name: VAL
+      description: "indicate the time to change the values. 0: instant change."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_DELTA_REV:
+  description: The destined delta revolution register for delta position initialization.
+  fields:
+    - name: VAL
+      description: "the value continuous mode: fix<32, 0>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_DELTA_SPEED:
+  description: The destined delta speed register for delta position initialization.
+  fields:
+    - name: VAL
+      description: "the value； continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_ICOEF:
+  description: The destined coefficient I register for coefficients initialization.
+  fields:
+    - name: VAL
+      description: the value, fix<32, 21>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_PCOEF:
+  description: The destined coefficient P register for coefficients initialization.
+  fields:
+    - name: VAL
+      description: the value, fix<32, 15>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_POS:
+  description: The destined position register for position initialization.
+  fields:
+    - name: VAL
+      description: "the value； continuous mode: ufix<32, 32>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_POS_TIME:
+  description: The destined timestamp register for position initialization.
+  fields:
+    - name: VAL
+      description: "indicate the time to change the values. 0: instant change."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_REV:
+  description: The destined revolution register for position initialization.
+  fields:
+    - name: VAL
+      description: "the value； continuous mode: ufix<32, 0>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INI_SPEED:
+  description: The destined speed register for position initialization.
+  fields:
+    - name: VAL
+      description: "the value; continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/INT_EN:
+  description: Interrupt Enable Register.
+  fields:
+    - name: SHADOW_RD_DONE_IE
+      description: Interrupt Enable for SHADOW_RD_DONE.
+      bit_offset: 0
+      bit_size: 1
+    - name: INI_COEFS_CMD_DONE_IE
+      description: Interrupt Enable for INI_COEFS_CMD_DONE.
+      bit_offset: 1
+      bit_size: 1
+    - name: INI_POS_REQ_CMD_DONE_IE
+      description: Interrupt Enable for INI_POS_REQ_CMD_DONE.
+      bit_offset: 2
+      bit_size: 1
+    - name: OOSYNC_IE
+      description: Interrupt Enable for OOSYNC.
+      bit_offset: 4
+      bit_size: 1
+    - name: INI_BR1_POS_REQ_CMD_DONE_IE
+      description: Interrupt Enable for INI_BR1_POS_REQ_CMD_DONE.
+      bit_offset: 6
+      bit_size: 1
+    - name: INI_BR0_POS_REQ_CMD_DONE_IE
+      description: Interrupt Enable for INI_BR0_POS_REQ_CMD_DONE.
+      bit_offset: 7
+      bit_size: 1
+    - name: INI_DELTA_POS_REQ_CMD_DONE_IE
+      description: Interrupt Enable for INI_DELTA_POS_REQ_CMD_DONE.
+      bit_offset: 8
+      bit_size: 1
+    - name: POS_TRG_VLD_IE
+      description: Interrupt Enable for POS_TRG_VALID.
+      bit_offset: 9
+      bit_size: 1
+    - name: SPEED_TRG_VLD_IE
+      description: Interrupt Enable for SPEED_TRG_VALID.
+      bit_offset: 10
+      bit_size: 1
+fieldset/OOSYNC_THETA_THR:
+  description: Position Out-Of-Sync Threshold Regster.
+  fields:
+    - name: VAL
+      description: the threshold of theta difference between actual and prediction for out-of-sync determination，ufix<32, 32>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/P:
+  description: Tracking Configuration coef trigger cfg&index0 P.
+  fields:
+    - name: VAL
+      description: P0_Coef, fix<32, 15>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/STA:
+  description: Status Register.
+  fields:
+    - name: SHADOW_RD_DONE
+      description: Shadow ready for read. Auto cleared by setting CR[SHADOW_RD_REQ] as 1.
+      bit_offset: 0
+      bit_size: 1
+    - name: INI_COEFS_CMD_DONE
+      description: W1C.
+      bit_offset: 1
+      bit_size: 1
+    - name: INI_POS_REQ_CMD_DONE
+      description: W1C.
+      bit_offset: 2
+      bit_size: 1
+    - name: OOSYNC
+      description: Tracking module out-of sync. W1C.
+      bit_offset: 4
+      bit_size: 1
+    - name: IDLE
+      description: Tracking Module in Idle status.
+      bit_offset: 5
+      bit_size: 1
+    - name: INI_BR1_POS_REQ_CMD_DONE
+      description: W1C.
+      bit_offset: 6
+      bit_size: 1
+    - name: INI_BR0_POS_REQ_CMD_DONE
+      description: W1C.
+      bit_offset: 7
+      bit_size: 1
+    - name: INI_DELTA_POS_REQ_CMD_DONE
+      description: W1C.
+      bit_offset: 8
+      bit_size: 1
+    - name: POS_TRG_VALID
+      description: W1C.
+      bit_offset: 9
+      bit_size: 1
+    - name: SPEED_TRG_VALID
+      description: W1C.
+      bit_offset: 10
+      bit_size: 1
+    - name: ERR_ID
+      description: Tracking ERR_ID.
+      bit_offset: 28
+      bit_size: 4
+fieldset/SYSCLK_FREQ:
+  description: System Clock Frequency Register.
+  fields:
+    - name: VAL
+      description: system clock frequency, ufix<32, 0>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SYSCLK_PERIOD:
+  description: System Clock Period Register.
+  fields:
+    - name: VAL
+      description: round( the value of clock period * (2^24)*(2^20) ), ufix<32, 0>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TIME:
+  description: Tracking Configuration coef trigger cfg&index0 time.
+  fields:
+    - name: VAL
+      description: "CoefTime0: Time Stayed using this coefs (counted in input samples). Ideal value of tracing cycles should +1. ufix<32,0>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/err_thr:
+  description: Tracking Configuration coef trigger cfg&index0.
+  fields:
+    - name: VAL
+      description: "ErrThr0: Error Threshold 0, (abs(tracking error)>= will choose the coefs as below) Note: ErrThr0>ErrThr1>ErrThr2 ufix<31, 28>."
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_trg_cfg:
+  description: Tracking Configuration pos trigger cfg.
+  fields:
+    - name: EN
+      description: 1-trigger valid; 0-Trigger not valid".
+      bit_offset: 0
+      bit_size: 1
+    - name: EDGE
+      description: "0: (rising edge) pos inc greater than, 1: (falling edge) pos dec less than."
+      bit_offset: 1
+      bit_size: 1
+fieldset/pos_trg_pos_thr:
+  description: Tracking Configuration position threshold.
+  fields:
+    - name: VAL
+      description: For pos out trigger (pos). ufix<32, 32>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_trg_rev_thr:
+  description: Tracking Configuration revolution threshold.
+  fields:
+    - name: VAL
+      description: For pos out trigger (rev) fix<32, 0>.
+      bit_offset: 0
+      bit_size: 32
+fieldset/speed_trg_cfg:
+  description: Tracking Configuration speed trigger cfg.
+  fields:
+    - name: EN
+      description: 1-trigger valid; 0-Trigger not valid Normally it means either the max pos speed, or the min negative speed.
+      bit_offset: 0
+      bit_size: 1
+    - name: EDGE
+      description: "0: (rising edge) speed inc greater than, 1: (falling edge) speed dec less than."
+      bit_offset: 1
+      bit_size: 1
+    - name: COMP_TYPE
+      description: "1: Use abs value for comparion. 0: Use the speed with direction info (so not the abs value)."
+      bit_offset: 2
+      bit_size: 1
+fieldset/speed_trg_thr:
+  description: Tracking Configuration speed threshold.
+  fields:
+    - name: VAL
+      description: "For speed trigger. continuous mode: fix<32, 19>."
+      bit_offset: 0
+      bit_size: 32

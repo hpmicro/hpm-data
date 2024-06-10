@@ -1,0 +1,419 @@
+block/PWM:
+  description: PWM0.
+  items:
+    - name: unlk
+      description: Shadow registers unlock register.
+      byte_offset: 0
+      fieldset: unlk
+    - name: sta
+      description: Counter start register.
+      byte_offset: 4
+      fieldset: sta
+    - name: rld
+      description: Counter reload register.
+      byte_offset: 8
+      fieldset: rld
+    - name: CMP
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 12
+      fieldset: CMP
+    - name: frcmd
+      description: Force output mode register.
+      byte_offset: 120
+      fieldset: frcmd
+    - name: shlk
+      description: Shadow registers lock register.
+      byte_offset: 124
+      fieldset: shlk
+    - name: CHCFG
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 128
+      fieldset: CHCFG
+    - name: gcr
+      description: Global control register.
+      byte_offset: 240
+      fieldset: gcr
+    - name: shcr
+      description: Shadow register control register.
+      byte_offset: 244
+      fieldset: shcr
+    - name: CAPPOS
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 256
+      fieldset: CAPPOS
+    - name: cnt
+      description: Counter.
+      byte_offset: 368
+      fieldset: cnt
+    - name: CAPNEG
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 384
+      fieldset: CAPNEG
+    - name: cntcopy
+      description: Counter copy.
+      byte_offset: 496
+      fieldset: cntcopy
+    - name: PWMCFG
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 512
+      fieldset: PWMCFG
+    - name: sr
+      description: Status register.
+      byte_offset: 544
+      fieldset: sr
+    - name: irqen
+      description: Interrupt request enable register.
+      byte_offset: 548
+      fieldset: irqen
+    - name: dmaen
+      description: DMA request enable register.
+      byte_offset: 556
+      fieldset: dmaen
+    - name: CMPCFG
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 560
+      fieldset: CMPCFG
+fieldset/CAPNEG:
+  description: no description available.
+  fields:
+    - name: CAPNEG
+      description: counter value captured at input signal falling edge.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CAPPOS:
+  description: no description available.
+  fields:
+    - name: CAPPOS
+      description: counter value captured at input posedge.
+      bit_offset: 4
+      bit_size: 28
+fieldset/CHCFG:
+  description: no description available.
+  fields:
+    - name: OUTPOL
+      description: output polarity, set to 1 will invert the output.
+      bit_offset: 1
+      bit_size: 1
+    - name: CMPSELBEG
+      description: assign the first comparator for this output channel.
+      bit_offset: 16
+      bit_size: 5
+    - name: CMPSELEND
+      description: assign the last comparator for this output channel.
+      bit_offset: 24
+      bit_size: 5
+fieldset/CMP:
+  description: no description available.
+  fields:
+    - name: CMPJIT
+      description: jitter counter compare value.
+      bit_offset: 0
+      bit_size: 3
+    - name: CMPHLF
+      description: half clock counter compare value.
+      bit_offset: 3
+      bit_size: 1
+    - name: CMP
+      description: clock counter compare value, the compare output is 0 at default, set to 1 when compare value meet, and clr to 0 when timer reload. Software can invert the output by setting chan_cfg.out_polarity.
+      bit_offset: 4
+      bit_size: 24
+    - name: XCMP
+      description: extended counter compare value.
+      bit_offset: 28
+      bit_size: 4
+fieldset/CMPCFG:
+  description: no description available.
+  fields:
+    - name: CMPMODE
+      description: comparator mode 0- output compare mode 1- input capture mode.
+      bit_offset: 1
+      bit_size: 1
+    - name: CMPSHDWUPT
+      description: "This bitfield select when the comparator shadow register will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
+      bit_offset: 2
+      bit_size: 2
+    - name: XCNTCMPEN
+      description: This bitfield enable the comparator to compare xcmp with xcnt.
+      bit_offset: 4
+      bit_size: 4
+fieldset/PWMCFG:
+  description: no description available.
+  fields:
+    - name: DEADAREA
+      description: "This bitfield define the PWM pair deadarea length. The unit is 0.5 cycle. The minimum length of deadarea is 1 cycle. Note: user should configure pair bit and this bitfield before PWM output is enabled."
+      bit_offset: 0
+      bit_size: 20
+    - name: PAIR
+      description: 1- PWM output is in pair mode. Note the two PWM outputs need to be both set to pair mode. 0- PWM output is in indepandent mode.
+      bit_offset: 20
+      bit_size: 1
+    - name: FRCSRCSEL
+      description: Select sources for force output 0- force output is enabled when FRCI assert 1- force output is enabled by software write swfrc to 1.
+      bit_offset: 21
+      bit_size: 1
+    - name: FAULTRECTIME
+      description: "This bitfield select when to recover PWM output after fault condition removed. 00: immediately 01: after pwm timer counter reload time 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after software write faultclr bit in GCR register."
+      bit_offset: 22
+      bit_size: 2
+    - name: FAULTMODE
+      description: "This bitfield defines the PWM output status when fault condition happen 00: force output 0 01: force output 1 1x: output highz."
+      bit_offset: 24
+      bit_size: 2
+    - name: FRCSHDWUPT
+      description: "This bitfield select when the FRCMD shadow register will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
+      bit_offset: 26
+      bit_size: 2
+    - name: OEN
+      description: PWM output enable 1- output is enabled 0- output is disabled.
+      bit_offset: 28
+      bit_size: 1
+fieldset/cnt:
+  description: Counter.
+  fields:
+    - name: CNT
+      description: current clock counter value.
+      bit_offset: 4
+      bit_size: 24
+    - name: XCNT
+      description: current extended counter value.
+      bit_offset: 28
+      bit_size: 4
+fieldset/cntcopy:
+  description: Counter copy.
+  fields:
+    - name: CNT
+      description: current clock counter value.
+      bit_offset: 4
+      bit_size: 24
+    - name: XCNT
+      description: current extended counter value.
+      bit_offset: 28
+      bit_size: 4
+fieldset/dmaen:
+  description: DMA request enable register.
+  fields:
+    - name: CMPENX
+      description: comparator output compare or input capture flag DMA request enable.
+      bit_offset: 0
+      bit_size: 24
+    - name: RLDEN
+      description: reload flag DMA request enable.
+      bit_offset: 24
+      bit_size: 1
+    - name: HALFRLDEN
+      description: half reload flag DMA request enable.
+      bit_offset: 25
+      bit_size: 1
+    - name: XRLDEN
+      description: extended reload flag DMA request enable.
+      bit_offset: 26
+      bit_size: 1
+    - name: FAULTEN
+      description: fault condition DMA request enable.
+      bit_offset: 27
+      bit_size: 1
+fieldset/frcmd:
+  description: Force output mode register.
+  fields:
+    - name: FRCMD
+      description: "2bit for each PWM output channel (0-7); 00: force output 0 01: force output 1 10: output highz 11: no force."
+      bit_offset: 0
+      bit_size: 16
+fieldset/gcr:
+  description: Global control register.
+  fields:
+    - name: SWFRC
+      description: 1- write 1 to enable software force, if the frcsrcsel is set to 0, force will take effect.
+      bit_offset: 0
+      bit_size: 1
+    - name: FRCTIME
+      description: "This bit field select the force effective time 00: force immediately 01: force at main counter reload time 10: force at FRCSYNCI 11: no force."
+      bit_offset: 1
+      bit_size: 2
+    - name: XRLDSYNCEN
+      description: 1- pwm timer extended counter (xcnt) reset to extended reload value (xrld) by synci is enabled.
+      bit_offset: 5
+      bit_size: 1
+    - name: FAULTCLR
+      description: 1- Write 1 to clear the fault condition. The output will recover if FAULTRECTIME is set to 2b'11. User should write 1 to this bit after the active FAULT signal de-assert and before it re-assert again.
+      bit_offset: 6
+      bit_size: 1
+    - name: CEN
+      description: 1- enable the pwm timer counter 0- stop the pwm timer counter.
+      bit_offset: 7
+      bit_size: 1
+    - name: RLDSYNCEN
+      description: 1- pwm timer counter reset to reload value (rld) by synci is enabled.
+      bit_offset: 8
+      bit_size: 1
+    - name: FAULTEXPOL
+      description: external fault polarity 1-active low 0-active high.
+      bit_offset: 9
+      bit_size: 2
+    - name: FAULTE0EN
+      description: 1- enable the external fault input 0.
+      bit_offset: 11
+      bit_size: 1
+    - name: FAULTE1EN
+      description: 1- enable the external fault input 1.
+      bit_offset: 12
+      bit_size: 1
+    - name: FAULTRECHWSEL
+      description: Selec one of the 24 comparators as fault output recover trigger.
+      bit_offset: 13
+      bit_size: 5
+    - name: FAULTRECEDG
+      description: When hardware load is selected as output fault recover trigger and the selected channel is capture mode. This bit assign its effective edge of fault recover trigger. 1- Falling edge 0- Rising edge.
+      bit_offset: 18
+      bit_size: 1
+    - name: CMPSHDWSEL
+      description: This bitfield select one of the comparators as hardware event time to load comparator shadow registers.
+      bit_offset: 19
+      bit_size: 5
+    - name: HWSHDWEDG
+      description: When hardware event is selected as shawdow register effective time and the select comparator is configured as input capture mode. This bit assign its which edge is used as compare shadow register hardware load event. 1- Falling edge 0- Rising edge.
+      bit_offset: 24
+      bit_size: 1
+    - name: FRCPOL
+      description: polarity of input pwm_force, 1- active low 0- active high.
+      bit_offset: 26
+      bit_size: 1
+    - name: DEBUGFAULT
+      description: 1- enable debug mode output protection.
+      bit_offset: 27
+      bit_size: 1
+    - name: FAULTI0EN
+      description: 1- enable the internal fault input 0.
+      bit_offset: 28
+      bit_size: 1
+    - name: FAULTI1EN
+      description: 1- enable the internal fault input 1.
+      bit_offset: 29
+      bit_size: 1
+    - name: FAULTI2EN
+      description: 1- enable the internal fault input 2.
+      bit_offset: 30
+      bit_size: 1
+    - name: FAULTI3EN
+      description: 1- enable the internal fault input 3.
+      bit_offset: 31
+      bit_size: 1
+fieldset/irqen:
+  description: Interrupt request enable register.
+  fields:
+    - name: CMPIRQEX
+      description: comparator output compare or input capture flag interrupt enable.
+      bit_offset: 0
+      bit_size: 24
+    - name: RLDIRQE
+      description: reload flag interrupt enable.
+      bit_offset: 24
+      bit_size: 1
+    - name: HALFRLDIRQE
+      description: half reload flag interrupt enable.
+      bit_offset: 25
+      bit_size: 1
+    - name: XRLDIRQE
+      description: extended reload flag interrupt enable.
+      bit_offset: 26
+      bit_size: 1
+    - name: FAULTIRQE
+      description: fault condition interrupt enable.
+      bit_offset: 27
+      bit_size: 1
+fieldset/rld:
+  description: Counter reload register.
+  fields:
+    - name: RLD
+      description: pwm timer counter reload value.
+      bit_offset: 4
+      bit_size: 24
+    - name: XRLD
+      description: timeout counter extended reload point, counter will reload to xsta after reach this point.
+      bit_offset: 28
+      bit_size: 4
+fieldset/shcr:
+  description: Shadow register control register.
+  fields:
+    - name: SHLKEN
+      description: 1- enable shadow registers lock feature, 0- disable shadow registers lock, shlk bit will always be 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: CNTSHDWUPT
+      description: "This bitfield select when the counter related shadow registers (STA and RLD) will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
+      bit_offset: 1
+      bit_size: 2
+    - name: CNTSHDWSEL
+      description: This bitfield select one of the comparators as hardware event time to load the counter related shadow registers (STA and RLD).
+      bit_offset: 3
+      bit_size: 5
+    - name: FRCSHDWSEL
+      description: This bitfield select one of the comparators as hardware event time to load FRCMD shadow registers.
+      bit_offset: 8
+      bit_size: 5
+fieldset/shlk:
+  description: Shadow registers lock register.
+  fields:
+    - name: SHLK
+      description: write 1 to lock all shawdow register, write access is not permitted.
+      bit_offset: 31
+      bit_size: 1
+fieldset/sr:
+  description: Status register.
+  fields:
+    - name: CMPFX
+      description: comparator output compare or input capture flag.
+      bit_offset: 0
+      bit_size: 24
+    - name: RLDF
+      description: reload flag, this flag set when cnt count to rld value or when SYNCI assert.
+      bit_offset: 24
+      bit_size: 1
+    - name: HALFRLDF
+      description: half reload flag, this flag set when cnt count to rld/2.
+      bit_offset: 25
+      bit_size: 1
+    - name: XRLDF
+      description: extended reload flag, this flag set when xcnt count to xrld value or when SYNCI assert.
+      bit_offset: 26
+      bit_size: 1
+    - name: FAULTF
+      description: fault condition flag.
+      bit_offset: 27
+      bit_size: 1
+fieldset/sta:
+  description: Counter start register.
+  fields:
+    - name: STA
+      description: pwm timer counter start value sta/rld will be loaded from shadow register to work register at main counter reload time, or software write unlk.shunlk.
+      bit_offset: 4
+      bit_size: 24
+    - name: XSTA
+      description: pwm timer counter extended start point, should back to this value after reach xrld.
+      bit_offset: 28
+      bit_size: 4
+fieldset/unlk:
+  description: Shadow registers unlock register.
+  fields:
+    - name: SHUNLK
+      description: write 0xB0382607 to unlock the shadow registers of register offset from 0x04 to 0x78, otherwise the shadow registers can not be written.
+      bit_offset: 0
+      bit_size: 32

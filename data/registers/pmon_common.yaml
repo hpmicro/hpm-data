@@ -1,0 +1,61 @@
+block/MONITOR:
+  description: no description available.
+  items:
+    - name: CONTROL
+      description: Glitch and clock monitor control.
+      byte_offset: 0
+      fieldset: CONTROL
+    - name: STATUS
+      description: Glitch and clock monitor status.
+      byte_offset: 4
+      fieldset: STATUS
+block/PMON:
+  description: PMON.
+  items:
+    - name: MONITOR
+      description: no description available.
+      array:
+        len: 4
+        stride: 8
+      byte_offset: 0
+      block: MONITOR
+    - name: IRQ_FLAG
+      description: No description available.
+      byte_offset: 64
+      fieldset: IRQ_FLAG
+    - name: IRQ_ENABLE
+      description: No description available.
+      byte_offset: 68
+      fieldset: IRQ_ENABLE
+fieldset/CONTROL:
+  description: Glitch and clock monitor control.
+  fields:
+    - name: ENABLE
+      description: "enable glitch detector 0: detector disabled 1: detector enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: ACTIVE
+      description: "select glitch works in active mode or passve mode. 0: passive mode, depends on power glitch destroy DFF value 1: active mode, check glitch by DFF chain."
+      bit_offset: 4
+      bit_size: 1
+fieldset/IRQ_ENABLE:
+  description: No description available.
+  fields:
+    - name: ENABLE
+      description: "interrupt enable, each bit represents for one monitor 0: monitor interrupt disabled 1: monitor interrupt enabled."
+      bit_offset: 0
+      bit_size: 4
+fieldset/IRQ_FLAG:
+  description: No description available.
+  fields:
+    - name: FLAG
+      description: "interrupt flag, each bit represents for one monitor, write 1 to clear interrupt flag 0: no monitor interrupt 1: monitor interrupt happened."
+      bit_offset: 0
+      bit_size: 4
+fieldset/STATUS:
+  description: Glitch and clock monitor status.
+  fields:
+    - name: FLAG
+      description: "flag for glitch detected, write 1 to clear this flag 0: glitch not detected 1: glitch detected."
+      bit_offset: 0
+      bit_size: 1

@@ -1,0 +1,1751 @@
+block/CMD_CMD_TABLE:
+  description: no description available.
+  items:
+    - name: MIN
+      description: command start value.
+      byte_offset: 0
+      fieldset: MIN
+    - name: MAX
+      description: command end value.
+      byte_offset: 4
+      fieldset: MAX
+    - name: MSK
+      description: command compare bit enable.
+      byte_offset: 8
+      fieldset: MSK
+    - name: PTA
+      description: command pointer 0 - 3.
+      byte_offset: 16
+      fieldset: PTA
+    - name: PTB
+      description: command pointer 4 - 7.
+      byte_offset: 20
+      fieldset: PTB
+block/CMD_LATCH:
+  description: no description available.
+  items:
+    - name: TRAN
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 0
+      fieldset: TRAN
+    - name: CFG
+      description: Latch configuration.
+      byte_offset: 16
+      fieldset: CFG
+    - name: TIME
+      description: Latch time.
+      byte_offset: 24
+      fieldset: TIME
+    - name: STS
+      description: Latch status.
+      byte_offset: 28
+      fieldset: CMD_LATCH_STS
+block/CTRL:
+  description: no description available.
+  items:
+    - name: ENGINE_CTRL
+      description: Engine control register.
+      byte_offset: 0
+      fieldset: ENGINE_CTRL
+    - name: ENGINE_PTR_CFG
+      description: Pointer configuration register.
+      byte_offset: 4
+      fieldset: ENGINE_PTR_CFG
+    - name: ENGINE_WDG_CFG
+      description: Watch dog configuration register.
+      byte_offset: 8
+      fieldset: ENGINE_WDG_CFG
+    - name: ENGINE_EXE_STA
+      description: Execution status.
+      byte_offset: 16
+      fieldset: ENGINE_EXE_STA
+    - name: ENGINE_EXE_PTR
+      description: Execution pointer.
+      byte_offset: 20
+      fieldset: ENGINE_EXE_PTR
+    - name: ENGINE_EXE_INST
+      description: Execution instruction.
+      byte_offset: 24
+      fieldset: ENGINE_EXE_INST
+    - name: ENGINE_WDG_STA
+      description: Watch dog status.
+      byte_offset: 28
+      fieldset: ENGINE_WDG_STA
+    - name: XCVR_CTRL
+      description: Transceiver control register.
+      byte_offset: 32
+      fieldset: XCVR_CTRL
+    - name: XCVR_TYPE_CFG
+      description: Transceiver configuration register.
+      byte_offset: 36
+      fieldset: XCVR_TYPE_CFG
+    - name: XCVR_BAUD_CFG
+      description: Transceiver baud rate register.
+      byte_offset: 40
+      fieldset: XCVR_BAUD_CFG
+    - name: XCVR_DATA_CFG
+      description: Transceiver data timing configuration.
+      byte_offset: 44
+      fieldset: XCVR_DATA_CFG
+    - name: XCVR_CLK_CFG
+      description: Transceiver clock timing configuration.
+      byte_offset: 48
+      fieldset: XCVR_CLK_CFG
+    - name: XCVR_PIN
+      description: Transceiver pin status.
+      byte_offset: 56
+      fieldset: XCVR_PIN
+    - name: XCVR_STATE
+      description: FSM of asynchronous.
+      byte_offset: 60
+      fieldset: XCVR_STATE
+    - name: TRG_IN_CFG
+      description: Trigger input configuration.
+      byte_offset: 64
+      fieldset: TRG_IN_CFG
+    - name: TRG_SW
+      description: Software trigger.
+      byte_offset: 68
+      fieldset: TRG_SW
+    - name: TRG_PRD_CFG
+      description: Period trigger configuration.
+      byte_offset: 72
+      fieldset: TRG_PRD_CFG
+    - name: TRG_PRD
+      description: Trigger period.
+      byte_offset: 76
+      fieldset: TRG_PRD
+    - name: TRG_OUT_CFG
+      description: Trigger output configuration.
+      byte_offset: 80
+      fieldset: TRG_OUT_CFG
+    - name: TRG_PRD_STS
+      description: Period trigger status.
+      byte_offset: 96
+      fieldset: TRG_PRD_STS
+    - name: TRG_PRD_CNT
+      description: Period trigger counter.
+      byte_offset: 100
+      fieldset: TRG_PRD_CNT
+    - name: TRG_TABLE_CMD
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 128
+      fieldset: TRG_TABLE_CMD
+    - name: TRG_TABLE_TIME
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 160
+      fieldset: TRG_TABLE_TIME
+    - name: CMD_MODE
+      description: command register mode.
+      byte_offset: 192
+      fieldset: CMD_MODE
+    - name: CMD_IDX
+      description: command register configuration.
+      byte_offset: 196
+      fieldset: CMD_IDX
+    - name: CMD_CMD
+      description: command.
+      byte_offset: 224
+      fieldset: CMD_CMD
+    - name: CMD_SET
+      description: command bit set register.
+      byte_offset: 228
+      fieldset: CMD_SET
+    - name: CMD_CLR
+      description: command bit clear register.
+      byte_offset: 232
+      fieldset: CMD_CLR
+    - name: CMD_INV
+      description: command bit invert register.
+      byte_offset: 236
+      fieldset: CMD_INV
+    - name: CMD_IN
+      description: Commad input.
+      byte_offset: 240
+      fieldset: CMD_IN
+    - name: CMD_OUT
+      description: Command output.
+      byte_offset: 244
+      fieldset: CMD_OUT
+    - name: CMD_STS
+      description: Command status.
+      byte_offset: 248
+      fieldset: CMD_STS
+    - name: CMD_CMD_TABLE
+      description: no description available.
+      array:
+        len: 8
+        stride: 32
+      byte_offset: 256
+      block: CMD_CMD_TABLE
+    - name: CMD_LATCH
+      description: no description available.
+      array:
+        len: 4
+        stride: 32
+      byte_offset: 512
+      block: CMD_LATCH
+    - name: POS_SMP_EN
+      description: Sample selection register.
+      byte_offset: 640
+      fieldset: POS_SMP_EN
+    - name: POS_SMP_CFG
+      description: Sample configuration.
+      byte_offset: 644
+      fieldset: POS_SMP_CFG
+    - name: POS_SMP_DAT
+      description: Sample data.
+      byte_offset: 648
+      fieldset: POS_SMP_DAT
+    - name: POS_SMP_POS
+      description: Sample override position.
+      byte_offset: 656
+      fieldset: POS_SMP_POS
+    - name: POS_SMP_REV
+      description: Sample override revolution.
+      byte_offset: 660
+      fieldset: POS_SMP_REV
+    - name: POS_SMP_SPD
+      description: Sample override speed.
+      byte_offset: 664
+      fieldset: POS_SMP_SPD
+    - name: POS_SMP_ACC
+      description: Sample override accelerate.
+      byte_offset: 668
+      fieldset: POS_SMP_ACC
+    - name: POS_UPD_EN
+      description: Update configuration.
+      byte_offset: 672
+      fieldset: POS_UPD_EN
+    - name: POS_UPD_CFG
+      description: Update configuration.
+      byte_offset: 676
+      fieldset: POS_UPD_CFG
+    - name: POS_UPD_DAT
+      description: Update data.
+      byte_offset: 680
+      fieldset: POS_UPD_DAT
+    - name: POS_UPD_TIME
+      description: Update overide time.
+      byte_offset: 684
+      fieldset: POS_UPD_TIME
+    - name: POS_UPD_POS
+      description: Update override position.
+      byte_offset: 688
+      fieldset: POS_UPD_POS
+    - name: POS_UPD_REV
+      description: Update override revolution.
+      byte_offset: 692
+      fieldset: POS_UPD_REV
+    - name: POS_UPD_SPD
+      description: Update override speed.
+      byte_offset: 696
+      fieldset: POS_UPD_SPD
+    - name: POS_UPD_ACC
+      description: Update override accelerate.
+      byte_offset: 700
+      fieldset: POS_UPD_ACC
+    - name: POS_SMP_VAL
+      description: Sample valid.
+      byte_offset: 704
+      fieldset: POS_SMP_VAL
+    - name: POS_SMP_STS
+      description: Sample status.
+      byte_offset: 708
+      fieldset: POS_SMP_STS
+    - name: POS_TIME_IN
+      description: input time.
+      byte_offset: 716
+      fieldset: POS_TIME_IN
+    - name: POS_POS_IN
+      description: Input position.
+      byte_offset: 720
+      fieldset: POS_POS_IN
+    - name: POS_REV_IN
+      description: Input revolution.
+      byte_offset: 724
+      fieldset: POS_REV_IN
+    - name: POS_SPD_IN
+      description: Input speed.
+      byte_offset: 728
+      fieldset: POS_SPD_IN
+    - name: POS_ACC_IN
+      description: Input accelerate.
+      byte_offset: 732
+      fieldset: POS_ACC_IN
+    - name: POS_UPD_STS
+      description: Update status.
+      byte_offset: 740
+      fieldset: POS_UPD_STS
+    - name: IRQ_INT_EN
+      description: Interrupt Enable.
+      byte_offset: 768
+      fieldset: IRQ_INT_EN
+    - name: IRQ_INT_FLAG
+      description: Interrupt flag.
+      byte_offset: 772
+      fieldset: IRQ_INT_FLAG
+    - name: IRQ_INT_STS
+      description: Interrupt status.
+      byte_offset: 776
+      fieldset: IRQ_INT_STS
+    - name: IRQ_POINTER0
+      description: Match pointer 0.
+      byte_offset: 784
+      fieldset: IRQ_POINTER0
+    - name: IRQ_POINTER1
+      description: Match pointer 1.
+      byte_offset: 788
+      fieldset: IRQ_POINTER1
+    - name: IRQ_INSTR0
+      description: Match instruction 0.
+      byte_offset: 792
+      fieldset: IRQ_INSTR0
+    - name: IRQ_INSTR1
+      description: Match instruction 1.
+      byte_offset: 796
+      fieldset: IRQ_INSTR1
+block/DAT:
+  description: no description available.
+  items:
+    - name: MODE
+      description: No description available.
+      byte_offset: 0
+      fieldset: MODE
+    - name: IDX
+      description: Data register bit index.
+      byte_offset: 4
+      fieldset: IDX
+    - name: GOLD
+      description: Gold data for data check.
+      byte_offset: 8
+      fieldset: GOLD
+    - name: CRCINIT
+      description: CRC calculation initial vector.
+      byte_offset: 12
+      fieldset: CRCINIT
+    - name: CRCPOLY
+      description: CRC calculation polynomial.
+      byte_offset: 16
+      fieldset: CRCPOLY
+    - name: DATA
+      description: Data value.
+      byte_offset: 32
+      fieldset: DATA
+    - name: SET
+      description: Data bit set.
+      byte_offset: 36
+      fieldset: SET
+    - name: CLR
+      description: Data bit clear.
+      byte_offset: 40
+      fieldset: CLR
+    - name: INV
+      description: Data bit invert.
+      byte_offset: 44
+      fieldset: INV
+    - name: IN
+      description: Data input.
+      byte_offset: 48
+      fieldset: IN
+    - name: OUT
+      description: Data output.
+      byte_offset: 52
+      fieldset: OUT
+    - name: STS
+      description: Data status.
+      byte_offset: 56
+      fieldset: DAT_STS
+block/SEI:
+  description: SEI.
+  items:
+    - name: CTRL
+      description: no description available.
+      array:
+        len: 2
+        stride: 1024
+      byte_offset: 0
+      block: CTRL
+    - name: INSTR
+      description: no description available.
+      array:
+        len: 64
+        stride: 4
+      byte_offset: 13312
+      fieldset: INSTR
+    - name: DAT
+      description: no description available.
+      array:
+        len: 10
+        stride: 64
+      byte_offset: 14336
+      block: DAT
+fieldset/CFG:
+  description: Latch configuration.
+  fields:
+    - name: DELAY
+      description: Delay in system clock cycle, for state transition.
+      bit_offset: 0
+      bit_size: 16
+    - name: SELECT
+      description: "Output select 0: state0-state1 1: state1-state2 2: state2-state3 3: state3-state0."
+      bit_offset: 24
+      bit_size: 3
+    - name: EN
+      description: "Enable latch 0: disable 1: enable."
+      bit_offset: 31
+      bit_size: 1
+fieldset/CLR:
+  description: Data bit clear.
+  fields:
+    - name: DATA_CLR
+      description: DATA bit clear.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_CLR:
+  description: command bit clear register.
+  fields:
+    - name: DATA_CLR
+      description: DATA bit clear.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_CMD:
+  description: command.
+  fields:
+    - name: DATA
+      description: DATA.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_IDX:
+  description: command register configuration.
+  fields:
+    - name: MIN_BIT
+      description: Lowest bit index.
+      bit_offset: 0
+      bit_size: 5
+    - name: MAX_BIT
+      description: Highest bit index.
+      bit_offset: 8
+      bit_size: 5
+    - name: FIRST_BIT
+      description: First bit index for tranceive.
+      bit_offset: 16
+      bit_size: 5
+    - name: LAST_BIT
+      description: Last bit index for tranceive.
+      bit_offset: 24
+      bit_size: 5
+fieldset/CMD_IN:
+  description: Commad input.
+  fields:
+    - name: DATA_IN
+      description: Commad input.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_INV:
+  description: command bit invert register.
+  fields:
+    - name: DATA_TGL
+      description: DATA bit toggle.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_LATCH_STS:
+  description: Latch status.
+  fields:
+    - name: LAT_CNT
+      description: Latch counter.
+      bit_offset: 0
+      bit_size: 16
+    - name: STATE
+      description: State.
+      bit_offset: 24
+      bit_size: 3
+fieldset/CMD_MODE:
+  description: command register mode.
+  fields:
+    - name: MODE
+      description: "Data mode(CMD register only support data mode) 0: data mode 1: check mode 2: CRC mode."
+      bit_offset: 0
+      bit_size: 2
+    - name: REWIND
+      description: Write 1 to rewind read/write pointer, this is a self clear bit.
+      bit_offset: 8
+      bit_size: 1
+    - name: SIGNED
+      description: "Signed 0: unsigned value 1: signed value."
+      bit_offset: 9
+      bit_size: 1
+    - name: BORDER
+      description: "bit order 0: LSB first 1: MSB first."
+      bit_offset: 10
+      bit_size: 1
+    - name: WORDER
+      description: "word order 0: sample as bit order 1: different from bit order."
+      bit_offset: 11
+      bit_size: 1
+    - name: WLEN
+      description: "word length 0: 1 bit 1: 2 bit ... 31: 32 bit."
+      bit_offset: 16
+      bit_size: 5
+fieldset/CMD_OUT:
+  description: Command output.
+  fields:
+    - name: DATA_OUT
+      description: Command output.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_SET:
+  description: command bit set register.
+  fields:
+    - name: DATA_SET
+      description: DATA bit set.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CMD_STS:
+  description: Command status.
+  fields:
+    - name: BIT_IDX
+      description: Bit index.
+      bit_offset: 0
+      bit_size: 5
+    - name: WORD_CNT
+      description: Word counter.
+      bit_offset: 8
+      bit_size: 5
+    - name: WORD_IDX
+      description: Word index.
+      bit_offset: 16
+      bit_size: 5
+fieldset/CRCINIT:
+  description: CRC calculation initial vector.
+  fields:
+    - name: CRC_INIT
+      description: CRC initial value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CRCPOLY:
+  description: CRC calculation polynomial.
+  fields:
+    - name: CRC_POLY
+      description: CRC polymonial.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DATA:
+  description: Data value.
+  fields:
+    - name: DATA
+      description: DATA.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DAT_STS:
+  description: Data status.
+  fields:
+    - name: BIT_IDX
+      description: Bit index.
+      bit_offset: 0
+      bit_size: 5
+    - name: WORD_CNT
+      description: Word counter.
+      bit_offset: 8
+      bit_size: 5
+    - name: WORD_IDX
+      description: Word index.
+      bit_offset: 16
+      bit_size: 5
+    - name: CRC_IDX
+      description: CRC index.
+      bit_offset: 24
+      bit_size: 5
+fieldset/ENGINE_CTRL:
+  description: Engine control register.
+  fields:
+    - name: ENABLE
+      description: "Enable 0: disable 1: enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: REWIND
+      description: "Rewind execution pointer 0: run 1: clean status and rewind."
+      bit_offset: 4
+      bit_size: 1
+    - name: EXCEPT
+      description: "Explain timout as exception 0: when timeout, pointer move to next instruction 1: when timeout, pointer jump to timeout vector."
+      bit_offset: 8
+      bit_size: 1
+    - name: ARMING
+      description: "Wait for trigger before excuting 0: Execute on enable 1: Wait trigger before exection after enabled."
+      bit_offset: 16
+      bit_size: 1
+    - name: WATCH
+      description: "Enable watch dog 0: Watch dog disabled 1: Watch dog enabled."
+      bit_offset: 24
+      bit_size: 1
+fieldset/ENGINE_EXE_INST:
+  description: Execution instruction.
+  fields:
+    - name: INST
+      description: Current instruction.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ENGINE_EXE_PTR:
+  description: Execution pointer.
+  fields:
+    - name: POINTER
+      description: Current program pointer.
+      bit_offset: 0
+      bit_size: 8
+    - name: BIT_CNT
+      description: Bit count in send and receive instruction execution.
+      bit_offset: 16
+      bit_size: 5
+    - name: HALT_CNT
+      description: Halt count in halt instrution.
+      bit_offset: 24
+      bit_size: 5
+fieldset/ENGINE_EXE_STA:
+  description: Execution status.
+  fields:
+    - name: STALL
+      description: "Program finished 0: Program is executing 1: Program finished."
+      bit_offset: 0
+      bit_size: 1
+    - name: EXPIRE
+      description: "Watchdog timer expired 0: Not expired 1: Expired."
+      bit_offset: 8
+      bit_size: 1
+    - name: ARMED
+      description: "Waiting for trigger for execution 0: Not in waiting status 1: In waiting status."
+      bit_offset: 16
+      bit_size: 1
+    - name: TRIGERED
+      description: "Execution has been triggered 0: Execution not triggered 1: Execution triggered."
+      bit_offset: 20
+      bit_size: 1
+fieldset/ENGINE_PTR_CFG:
+  description: Pointer configuration register.
+  fields:
+    - name: POINTER_INIT
+      description: Initial execute pointer.
+      bit_offset: 0
+      bit_size: 8
+    - name: POINTER_WDOG
+      description: Pointer to the instruction that the program starts executing after the instruction timeout. The timeout is WDOG_TIME.
+      bit_offset: 8
+      bit_size: 8
+    - name: DAT_BASE
+      description: "Bias for data register access, if calculated index bigger than 32, index will wrap around 0: real data index 1: access index is 1 greater than instruction address 2: access index is 2 greater than instruction address ... 31: access index is 31 greater than instruction address."
+      bit_offset: 16
+      bit_size: 5
+    - name: DAT_CDM
+      description: "Select DATA register to receive CDM bit in BiSSC slave mode 0: ignore 1: command 2: data register 2 3: data register 3 ... 29:data register 29 30: value 0 when send, ignore in receive 31: value1 when send, ignore in receive."
+      bit_offset: 24
+      bit_size: 5
+fieldset/ENGINE_WDG_CFG:
+  description: Watch dog configuration register.
+  fields:
+    - name: WDOG_TIME
+      description: Time out count for each instruction, counter in bit time.
+      bit_offset: 0
+      bit_size: 16
+fieldset/ENGINE_WDG_STA:
+  description: Watch dog status.
+  fields:
+    - name: WDOG_CNT
+      description: Current watch dog counter value.
+      bit_offset: 0
+      bit_size: 16
+fieldset/GOLD:
+  description: Gold data for data check.
+  fields:
+    - name: GOLD_VALUE
+      description: Gold value for check mode.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IDX:
+  description: Data register bit index.
+  fields:
+    - name: MIN_BIT
+      description: Lowest bit index.
+      bit_offset: 0
+      bit_size: 5
+    - name: MAX_BIT
+      description: Highest bit index.
+      bit_offset: 8
+      bit_size: 5
+    - name: FIRST_BIT
+      description: First bit index for tranceive.
+      bit_offset: 16
+      bit_size: 5
+    - name: LAST_BIT
+      description: Last bit index for tranceive.
+      bit_offset: 24
+      bit_size: 5
+fieldset/IN:
+  description: Data input.
+  fields:
+    - name: DATA_IN
+      description: Data input.
+      bit_offset: 0
+      bit_size: 32
+fieldset/INSTR:
+  description: no description available.
+  fields:
+    - name: OPR
+      description: "[1] When OP is 0, this area is the halt time in baudrate, 0 represents infinite time. [2] When OP is 1, this area is the the pointer to the command table. OPR[4]=1, OPR[3:0] value is CMD_TABLE instruct pointer; OPR[4]=0, OPR[3:0]=0 is INIT_POINTER; OPR[4]=0, OPR[3:0]=1 is WDG_POINTER. [3] When OP is 2-7, this area is the data length as fellow: 0: 1 bit 1: 2 bit ... 31: 32 bit."
+      bit_offset: 0
+      bit_size: 5
+    - name: DAT
+      description: "DATA register 0: ignore data 1: command 2: data register 2 3: data register 3 ... 29: data register 29 30: value 0 when send, wait 0 in receive 31: value1 when send, wait 1 in receive."
+      bit_offset: 8
+      bit_size: 5
+    - name: CRC
+      description: "CRC register 0: don't calculate CRC 1: do not set this value 2: data register 2 3: data register 3 ... 29: data register 29 30: value 0 when send, wait 0 in receive 31: value1 when send, wait 1 in receive."
+      bit_offset: 16
+      bit_size: 5
+    - name: CK
+      description: "clock 0: low 1: rise-fall 2: fall-rise 3: high."
+      bit_offset: 24
+      bit_size: 2
+    - name: OP
+      description: "operation 0: halt 1: jump 2: send with timeout check 3: send without timout check 4: wait with timeout check 5: wait without timout check 6: receive with timeout check 7: receive without timout check."
+      bit_offset: 26
+      bit_size: 3
+fieldset/INV:
+  description: Data bit invert.
+  fields:
+    - name: DATA_INV
+      description: DATA bit toggle.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IRQ_INSTR0:
+  description: Match instruction 0.
+  fields:
+    - name: INSTR
+      description: Match instruction 0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IRQ_INSTR1:
+  description: Match instruction 1.
+  fields:
+    - name: INSTR
+      description: Match instruction 1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IRQ_INT_EN:
+  description: Interrupt Enable.
+  fields:
+    - name: STALL
+      description: Stall.
+      bit_offset: 0
+      bit_size: 1
+    - name: EXCEPT
+      description: Exception.
+      bit_offset: 1
+      bit_size: 1
+    - name: WDOG
+      description: Watch dog.
+      bit_offset: 2
+      bit_size: 1
+    - name: PTR0_ST
+      description: Pointer 0 start.
+      bit_offset: 4
+      bit_size: 1
+    - name: PTR1_ST
+      description: Pointer 1 start.
+      bit_offset: 5
+      bit_size: 1
+    - name: INSTR0_ST
+      description: Instruction 0 start.
+      bit_offset: 6
+      bit_size: 1
+    - name: INSTR1_ST
+      description: Instruction 1 start.
+      bit_offset: 7
+      bit_size: 1
+    - name: PTR0_END
+      description: Pointer 0 end.
+      bit_offset: 8
+      bit_size: 1
+    - name: PTR1_END
+      description: Pointer 1 end.
+      bit_offset: 9
+      bit_size: 1
+    - name: INSTR0_END
+      description: Instruction 0 end.
+      bit_offset: 10
+      bit_size: 1
+    - name: INSTR1_END
+      description: Instruction 1 end.
+      bit_offset: 11
+      bit_size: 1
+    - name: TRX_ERR
+      description: Transfer error.
+      bit_offset: 12
+      bit_size: 1
+    - name: TIMEOUT
+      description: Timeout.
+      bit_offset: 13
+      bit_size: 1
+    - name: LATCH0
+      description: Latch0.
+      bit_offset: 16
+      bit_size: 1
+    - name: LATCH1
+      description: Latch1.
+      bit_offset: 17
+      bit_size: 1
+    - name: LATCH2
+      description: Latch2.
+      bit_offset: 18
+      bit_size: 1
+    - name: LATCH3
+      description: Latch3.
+      bit_offset: 19
+      bit_size: 1
+    - name: SMP_ERR
+      description: Sample error.
+      bit_offset: 20
+      bit_size: 1
+    - name: TRIGER0
+      description: Trigger0.
+      bit_offset: 24
+      bit_size: 1
+    - name: TRIGER1
+      description: Trigger1.
+      bit_offset: 25
+      bit_size: 1
+    - name: TRIGER2
+      description: Trigger2.
+      bit_offset: 26
+      bit_size: 1
+    - name: TRIGER3
+      description: Trigger3.
+      bit_offset: 27
+      bit_size: 1
+    - name: TRG_ERR0
+      description: Trigger0 failed.
+      bit_offset: 28
+      bit_size: 1
+    - name: TRG_ERR1
+      description: Trigger1 failed.
+      bit_offset: 29
+      bit_size: 1
+    - name: TRG_ERR2
+      description: Trigger2 failed.
+      bit_offset: 30
+      bit_size: 1
+    - name: TRG_ERR3
+      description: Trigger3 failed.
+      bit_offset: 31
+      bit_size: 1
+fieldset/IRQ_INT_FLAG:
+  description: Interrupt flag.
+  fields:
+    - name: STALL
+      description: Stall.
+      bit_offset: 0
+      bit_size: 1
+    - name: EXCEPT
+      description: Exception.
+      bit_offset: 1
+      bit_size: 1
+    - name: WDOG
+      description: Watch dog.
+      bit_offset: 2
+      bit_size: 1
+    - name: PTR0_ST
+      description: Pointer 0 start.
+      bit_offset: 4
+      bit_size: 1
+    - name: PTR1_ST
+      description: Pointer 1 start.
+      bit_offset: 5
+      bit_size: 1
+    - name: INSTR0_ST
+      description: Instruction 0 start.
+      bit_offset: 6
+      bit_size: 1
+    - name: INSTR1_ST
+      description: Instruction 1 start.
+      bit_offset: 7
+      bit_size: 1
+    - name: PTR0_END
+      description: Pointer 0 end.
+      bit_offset: 8
+      bit_size: 1
+    - name: PTR1_END
+      description: Pointer 1 end.
+      bit_offset: 9
+      bit_size: 1
+    - name: INSTR0_END
+      description: Instruction 0 end.
+      bit_offset: 10
+      bit_size: 1
+    - name: INSTR1_END
+      description: Instruction 1 end.
+      bit_offset: 11
+      bit_size: 1
+    - name: TRX_ERR
+      description: Transfer error.
+      bit_offset: 12
+      bit_size: 1
+    - name: TIMEOUT
+      description: Timeout.
+      bit_offset: 13
+      bit_size: 1
+    - name: LATCH0
+      description: Latch0.
+      bit_offset: 16
+      bit_size: 1
+    - name: LATCH1
+      description: Latch1.
+      bit_offset: 17
+      bit_size: 1
+    - name: LATCH2
+      description: Latch2.
+      bit_offset: 18
+      bit_size: 1
+    - name: LATCH3
+      description: Latch3.
+      bit_offset: 19
+      bit_size: 1
+    - name: SMP_ERR
+      description: Sample error.
+      bit_offset: 20
+      bit_size: 1
+    - name: TRIGER0
+      description: Trigger0.
+      bit_offset: 24
+      bit_size: 1
+    - name: TRIGER1
+      description: Trigger1.
+      bit_offset: 25
+      bit_size: 1
+    - name: TRIGER2
+      description: Trigger2.
+      bit_offset: 26
+      bit_size: 1
+    - name: TRIGER3
+      description: Trigger3.
+      bit_offset: 27
+      bit_size: 1
+    - name: TRG_ERR0
+      description: Trigger0 failed.
+      bit_offset: 28
+      bit_size: 1
+    - name: TRG_ERR1
+      description: Trigger1 failed.
+      bit_offset: 29
+      bit_size: 1
+    - name: TRG_ERR2
+      description: Trigger2 failed.
+      bit_offset: 30
+      bit_size: 1
+    - name: TRG_ERR3
+      description: Trigger3 failed.
+      bit_offset: 31
+      bit_size: 1
+fieldset/IRQ_INT_STS:
+  description: Interrupt status.
+  fields:
+    - name: STALL
+      description: Stall.
+      bit_offset: 0
+      bit_size: 1
+    - name: EXCEPT
+      description: Exception.
+      bit_offset: 1
+      bit_size: 1
+    - name: WDOG
+      description: Watch dog.
+      bit_offset: 2
+      bit_size: 1
+    - name: PTR0_ST
+      description: Pointer 0 start.
+      bit_offset: 4
+      bit_size: 1
+    - name: PTR1_ST
+      description: Pointer 1 start.
+      bit_offset: 5
+      bit_size: 1
+    - name: INSTR0_ST
+      description: Instruction 0 start.
+      bit_offset: 6
+      bit_size: 1
+    - name: INSTR1_ST
+      description: Instruction 1 start.
+      bit_offset: 7
+      bit_size: 1
+    - name: PTR0_END
+      description: Pointer 0 end.
+      bit_offset: 8
+      bit_size: 1
+    - name: PTR1_END
+      description: Pointer 1 end.
+      bit_offset: 9
+      bit_size: 1
+    - name: INSTR0_END
+      description: Instruction 0 end.
+      bit_offset: 10
+      bit_size: 1
+    - name: INSTR1_END
+      description: Instruction 1 end.
+      bit_offset: 11
+      bit_size: 1
+    - name: TRX_ERR
+      description: Transfer error.
+      bit_offset: 12
+      bit_size: 1
+    - name: TIMEOUT
+      description: Timeout.
+      bit_offset: 13
+      bit_size: 1
+    - name: LATCH0
+      description: Latch0.
+      bit_offset: 16
+      bit_size: 1
+    - name: LATCH1
+      description: Latch1.
+      bit_offset: 17
+      bit_size: 1
+    - name: LATCH2
+      description: Latch2.
+      bit_offset: 18
+      bit_size: 1
+    - name: LATCH3
+      description: Latch3.
+      bit_offset: 19
+      bit_size: 1
+    - name: SMP_ERR
+      description: Sample error.
+      bit_offset: 20
+      bit_size: 1
+    - name: TRIGER0
+      description: Trigger0.
+      bit_offset: 24
+      bit_size: 1
+    - name: TRIGER1
+      description: Trigger1.
+      bit_offset: 25
+      bit_size: 1
+    - name: TRIGER2
+      description: Trigger2.
+      bit_offset: 26
+      bit_size: 1
+    - name: TRIGER3
+      description: Trigger3.
+      bit_offset: 27
+      bit_size: 1
+    - name: TRG_ERR0
+      description: Trigger0 failed.
+      bit_offset: 28
+      bit_size: 1
+    - name: TRG_ERR1
+      description: Trigger1 failed.
+      bit_offset: 29
+      bit_size: 1
+    - name: TRG_ERR2
+      description: Trigger2 failed.
+      bit_offset: 30
+      bit_size: 1
+    - name: TRG_ERR3
+      description: Trigger3 failed.
+      bit_offset: 31
+      bit_size: 1
+fieldset/IRQ_POINTER0:
+  description: Match pointer 0.
+  fields:
+    - name: POINTER
+      description: Match pointer 0.
+      bit_offset: 0
+      bit_size: 8
+fieldset/IRQ_POINTER1:
+  description: Match pointer 1.
+  fields:
+    - name: POINTER
+      description: Match pointer 1.
+      bit_offset: 0
+      bit_size: 8
+fieldset/MAX:
+  description: command end value.
+  fields:
+    - name: CMD_MAX
+      description: maximum command value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/MIN:
+  description: command start value.
+  fields:
+    - name: CMD_MIN
+      description: minimum command value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/MODE:
+  description: No description available.
+  fields:
+    - name: MODE
+      description: "Data mode 0: data mode 1: check mode 2: CRC mode."
+      bit_offset: 0
+      bit_size: 2
+    - name: REWIND
+      description: Write 1 to rewind read/write pointer, this is a self clear bit.
+      bit_offset: 8
+      bit_size: 1
+    - name: SIGNED
+      description: "Signed 0: unsigned value 1: signed value."
+      bit_offset: 9
+      bit_size: 1
+    - name: BORDER
+      description: "bit order 0: LSB first 1: MSB first."
+      bit_offset: 10
+      bit_size: 1
+    - name: WORDER
+      description: "word order 0: sample as bit order 1: different from bit order."
+      bit_offset: 11
+      bit_size: 1
+    - name: CRC_INV
+      description: "CRC invert 0: use CRC 1: use inverted CRC."
+      bit_offset: 12
+      bit_size: 1
+    - name: CRC_SHIFT
+      description: "CRC shift mode, this mode is used to perform repeat code check 0: CRC 1: shift mode."
+      bit_offset: 13
+      bit_size: 1
+    - name: WLEN
+      description: "word length 0: 1 bit 1: 2 bit ... 31: 32 bit."
+      bit_offset: 16
+      bit_size: 5
+    - name: CRC_LEN
+      description: "CRC length 0: 1 bit 1: 2 bit ... 31: 32 bit."
+      bit_offset: 24
+      bit_size: 5
+fieldset/MSK:
+  description: command compare bit enable.
+  fields:
+    - name: CMD_MASK
+      description: compare mask.
+      bit_offset: 0
+      bit_size: 32
+fieldset/OUT:
+  description: Data output.
+  fields:
+    - name: DATA_OUT
+      description: Data output.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_ACC_IN:
+  description: Input accelerate.
+  fields:
+    - name: ACC
+      description: Input accelerate.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_POS_IN:
+  description: Input position.
+  fields:
+    - name: POS
+      description: Input position.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_REV_IN:
+  description: Input revolution.
+  fields:
+    - name: REV
+      description: Input revolution.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_SMP_ACC:
+  description: Sample override accelerate.
+  fields:
+    - name: ACC
+      description: Sample override accelerate.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_SMP_CFG:
+  description: Sample configuration.
+  fields:
+    - name: WINDOW
+      description: Sample window, in clock cycle.
+      bit_offset: 0
+      bit_size: 16
+    - name: LAT_SEL
+      description: "Latch selection 0: latch 0 1: latch 1 2: latch 2 3: latch 3."
+      bit_offset: 16
+      bit_size: 2
+    - name: ONCE
+      description: "Sample one time 0: Sample during windows time 1: Close sample window after first sample."
+      bit_offset: 24
+      bit_size: 1
+fieldset/POS_SMP_DAT:
+  description: Sample data.
+  fields:
+    - name: DAT_SEL
+      description: Data register sampled, each bit represent a data register.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_SMP_EN:
+  description: Sample selection register.
+  fields:
+    - name: POS_SEL
+      description: Data register for position transfer.
+      bit_offset: 0
+      bit_size: 5
+    - name: POS_EN
+      description: Position include position.
+      bit_offset: 7
+      bit_size: 1
+    - name: REV_SEL
+      description: Data register for revolution transfer.
+      bit_offset: 8
+      bit_size: 5
+    - name: REV_EN
+      description: Position include revolution.
+      bit_offset: 15
+      bit_size: 1
+    - name: SPD_SEL
+      description: Data register for speed transfer.
+      bit_offset: 16
+      bit_size: 5
+    - name: SPD_EN
+      description: Position include speed.
+      bit_offset: 23
+      bit_size: 1
+    - name: ACC_SEL
+      description: Data register for acceleration transfer.
+      bit_offset: 24
+      bit_size: 5
+    - name: ACC_EN
+      description: Position include acceleration.
+      bit_offset: 31
+      bit_size: 1
+fieldset/POS_SMP_POS:
+  description: Sample override position.
+  fields:
+    - name: POS
+      description: Sample override position.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_SMP_REV:
+  description: Sample override revolution.
+  fields:
+    - name: REV
+      description: Sample override revolution.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_SMP_SPD:
+  description: Sample override speed.
+  fields:
+    - name: SPD
+      description: Sample override speed.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_SMP_STS:
+  description: Sample status.
+  fields:
+    - name: WIN_CNT
+      description: Sample window counter.
+      bit_offset: 0
+      bit_size: 16
+    - name: OCCUR
+      description: "Sample occured 0: Sample not happened 1: Sample occured."
+      bit_offset: 24
+      bit_size: 1
+fieldset/POS_SMP_VAL:
+  description: Sample valid.
+  fields:
+    - name: POS
+      description: Position include position.
+      bit_offset: 7
+      bit_size: 1
+    - name: REV
+      description: Position include revolution.
+      bit_offset: 15
+      bit_size: 1
+    - name: SPD
+      description: Position include speed.
+      bit_offset: 23
+      bit_size: 1
+    - name: ACC
+      description: Position include acceleration.
+      bit_offset: 31
+      bit_size: 1
+fieldset/POS_SPD_IN:
+  description: Input speed.
+  fields:
+    - name: SPD
+      description: Input speed.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_TIME_IN:
+  description: input time.
+  fields:
+    - name: TIME
+      description: input time.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_UPD_ACC:
+  description: Update override accelerate.
+  fields:
+    - name: ACC
+      description: Update override accelerate.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_UPD_CFG:
+  description: Update configuration.
+  fields:
+    - name: LAT_SEL
+      description: "Latch selection 0: latch 0 1: latch 1 2: latch 2 3: latch 3."
+      bit_offset: 16
+      bit_size: 2
+    - name: ONERR
+      description: "Sample one time 0: Sample during windows time 1: Close sample window after first sample."
+      bit_offset: 24
+      bit_size: 1
+    - name: TIME_OVRD
+      description: "Use override time 0: use time sample from motor group 1: use override time."
+      bit_offset: 31
+      bit_size: 1
+fieldset/POS_UPD_DAT:
+  description: Update data.
+  fields:
+    - name: DAT_SEL
+      description: Data register sampled, each bit represent a data register.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_UPD_EN:
+  description: Update configuration.
+  fields:
+    - name: POS_SEL
+      description: Data register for position transfer.
+      bit_offset: 0
+      bit_size: 5
+    - name: POS_EN
+      description: Position include position.
+      bit_offset: 7
+      bit_size: 1
+    - name: REV_SEL
+      description: Data register for revolution transfer.
+      bit_offset: 8
+      bit_size: 5
+    - name: REV_EN
+      description: Position include revolution.
+      bit_offset: 15
+      bit_size: 1
+    - name: SPD_SEL
+      description: Data register for speed transfer.
+      bit_offset: 16
+      bit_size: 5
+    - name: SPD_EN
+      description: Position include speed.
+      bit_offset: 23
+      bit_size: 1
+    - name: ACC_SEL
+      description: Data register for acceleration transfer.
+      bit_offset: 24
+      bit_size: 5
+    - name: ACC_EN
+      description: Position include acceleration.
+      bit_offset: 31
+      bit_size: 1
+fieldset/POS_UPD_POS:
+  description: Update override position.
+  fields:
+    - name: POS
+      description: Update override position.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_UPD_REV:
+  description: Update override revolution.
+  fields:
+    - name: REV
+      description: Update override revolution.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_UPD_SPD:
+  description: Update override speed.
+  fields:
+    - name: SPD
+      description: Update override speed.
+      bit_offset: 0
+      bit_size: 32
+fieldset/POS_UPD_STS:
+  description: Update status.
+  fields:
+    - name: UPD_ERR
+      description: "Update error 0: data receive normally 1: data receive error."
+      bit_offset: 24
+      bit_size: 1
+fieldset/POS_UPD_TIME:
+  description: Update overide time.
+  fields:
+    - name: TIME
+      description: Update override time.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PTA:
+  description: command pointer 0 - 3.
+  fields:
+    - name: PTR0
+      description: pointer0.
+      bit_offset: 0
+      bit_size: 8
+    - name: PTR1
+      description: pointer1.
+      bit_offset: 8
+      bit_size: 8
+    - name: PTR2
+      description: pointer2.
+      bit_offset: 16
+      bit_size: 8
+    - name: PTR3
+      description: pointer3.
+      bit_offset: 24
+      bit_size: 8
+fieldset/PTB:
+  description: command pointer 4 - 7.
+  fields:
+    - name: PTR4
+      description: pointer4.
+      bit_offset: 0
+      bit_size: 8
+    - name: PTR5
+      description: pointer5.
+      bit_offset: 8
+      bit_size: 8
+    - name: PTR6
+      description: pointer6.
+      bit_offset: 16
+      bit_size: 8
+    - name: PTR7
+      description: pointer7.
+      bit_offset: 24
+      bit_size: 8
+fieldset/SET:
+  description: Data bit set.
+  fields:
+    - name: DATA_SET
+      description: DATA bit set.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TIME:
+  description: Latch time.
+  fields:
+    - name: LAT_TIME
+      description: Latch time.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRAN:
+  description: no description available.
+  fields:
+    - name: OV_PTR
+      description: override pointer check.
+      bit_offset: 0
+      bit_size: 1
+    - name: OV_CLK
+      description: override clock check.
+      bit_offset: 1
+      bit_size: 1
+    - name: OV_TXD
+      description: override TX data check.
+      bit_offset: 2
+      bit_size: 1
+    - name: OV_TM
+      description: override timeout check.
+      bit_offset: 4
+      bit_size: 1
+    - name: CFG_PTR
+      description: "pointer 0: match 1: not match 2:entry 3:leave."
+      bit_offset: 8
+      bit_size: 2
+    - name: CFG_CLK
+      description: "clock 0: high 1: low 2: rise 3: fall."
+      bit_offset: 10
+      bit_size: 2
+    - name: CFG_TXD
+      description: "data send 0: high 1: low 2: rise 3: fall."
+      bit_offset: 12
+      bit_size: 2
+    - name: CFG_TM
+      description: "timeout 0: high 1: low 2: rise 3: fall."
+      bit_offset: 16
+      bit_size: 2
+    - name: POINTER
+      description: pointer.
+      bit_offset: 24
+      bit_size: 8
+fieldset/TRG_IN_CFG:
+  description: Trigger input configuration.
+  fields:
+    - name: IN0_SEL
+      description: "Trigger 0 sigal selection 0: trigger in 0 1: trigger in 1 ... 7: trigger in 7."
+      bit_offset: 0
+      bit_size: 3
+    - name: IN0_EN
+      description: "Enable trigger 0 0: disable trigger 1 1: enable trigger 1."
+      bit_offset: 7
+      bit_size: 1
+    - name: IN1_SEL
+      description: "Trigger 1 sigal selection 0: trigger in 0 1: trigger in 1 ... 7: trigger in 7."
+      bit_offset: 8
+      bit_size: 3
+    - name: IN1_EN
+      description: "Enable trigger 1 0: disable trigger 1 1: enable trigger 1."
+      bit_offset: 15
+      bit_size: 1
+    - name: SYNC_SEL
+      description: "Synchronize sigal selection (tigger 2) 0: trigger in 0 1: trigger in 1 ... 7: trigger in 7."
+      bit_offset: 16
+      bit_size: 3
+    - name: PRD_EN
+      description: "Enable period trigger (tigger 2) 0: periodical trigger disabled 1: periodical trigger enabled."
+      bit_offset: 23
+      bit_size: 1
+fieldset/TRG_OUT_CFG:
+  description: Trigger output configuration.
+  fields:
+    - name: OUT0_SEL
+      description: "Trigger 0 sigal selection 0: trigger out 0 1: trigger out 1 ... 7: trigger out 7."
+      bit_offset: 0
+      bit_size: 3
+    - name: OUT0_EN
+      description: "Enable trigger 0 0: disable trigger 1 1: enable trigger 1."
+      bit_offset: 7
+      bit_size: 1
+    - name: OUT1_SEL
+      description: "Trigger 1 sigal selection 0: trigger out 0 1: trigger out 1 ... 7: trigger out 7."
+      bit_offset: 8
+      bit_size: 3
+    - name: OUT1_EN
+      description: "Enable trigger 1 0: disable trigger 1 1: enable trigger 1."
+      bit_offset: 15
+      bit_size: 1
+    - name: OUT2_SEL
+      description: "Trigger 2 sigal selection 0: trigger out 0 1: trigger out 1 ... 7: trigger out 7."
+      bit_offset: 16
+      bit_size: 3
+    - name: OUT2_EN
+      description: "Enable trigger 2 0: disable trigger 2 1: enable trigger 2."
+      bit_offset: 23
+      bit_size: 1
+    - name: OUT3_SEL
+      description: "Trigger 3 sigal selection 0: trigger out 0 1: trigger out 1 ... 7: trigger out 7."
+      bit_offset: 24
+      bit_size: 3
+    - name: OUT3_EN
+      description: "Enable trigger 3 0: disable trigger 3 1: enable trigger 3."
+      bit_offset: 31
+      bit_size: 1
+fieldset/TRG_PRD:
+  description: Trigger period.
+  fields:
+    - name: PERIOD
+      description: Trigger period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRG_PRD_CFG:
+  description: Period trigger configuration.
+  fields:
+    - name: SYNC
+      description: "Synchronous 0: Not synchronous 1: Synchronous every trigger source."
+      bit_offset: 0
+      bit_size: 1
+    - name: ARMING
+      description: "Wait for trigger synchronous before trigger 0: Trigger directly 1: Wait trigger source before period trigger."
+      bit_offset: 16
+      bit_size: 1
+fieldset/TRG_PRD_CNT:
+  description: Period trigger counter.
+  fields:
+    - name: PERIOD_CNT
+      description: Trigger period counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRG_PRD_STS:
+  description: Period trigger status.
+  fields:
+    - name: ARMED
+      description: "Waiting for trigger 0: Not in waiting status 1: In waiting status."
+      bit_offset: 16
+      bit_size: 1
+    - name: TRIGERED
+      description: "Period has been triggered 0: Not triggered 1: Triggered."
+      bit_offset: 20
+      bit_size: 1
+fieldset/TRG_SW:
+  description: Software trigger.
+  fields:
+    - name: SOFT
+      description: "Software trigger (tigger 3). this bit is self-clear 0: trigger source disabled 1: trigger source enabled."
+      bit_offset: 0
+      bit_size: 1
+fieldset/TRG_TABLE_CMD:
+  description: no description available.
+  fields:
+    - name: CMD_TRIGGER0
+      description: Trigger command.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRG_TABLE_TIME:
+  description: no description available.
+  fields:
+    - name: TRIGGER0_TIME
+      description: Trigger time.
+      bit_offset: 0
+      bit_size: 32
+fieldset/XCVR_BAUD_CFG:
+  description: Transceiver baud rate register.
+  fields:
+    - name: BAUD_DIV
+      description: Baud rate, bit time in system clock cycle.
+      bit_offset: 0
+      bit_size: 16
+    - name: SYNC_POINT
+      description: Baud synchronous time, minmum bit time.
+      bit_offset: 16
+      bit_size: 16
+fieldset/XCVR_CLK_CFG:
+  description: Transceiver clock timing configuration.
+  fields:
+    - name: CK0_POINT
+      description: clock point 0 in system clcok cycle.
+      bit_offset: 0
+      bit_size: 16
+    - name: CK1_POINT
+      description: clock point 1 in system clcok cycle.
+      bit_offset: 16
+      bit_size: 16
+fieldset/XCVR_CTRL:
+  description: Transceiver control register.
+  fields:
+    - name: MODE
+      description: "Tranceiver mode 0: synchronous maaster 1: synchronous slave 2: asynchronous mode 3: asynchronous mode."
+      bit_offset: 0
+      bit_size: 2
+    - name: RESTART
+      description: "Restart tranceiver, this is a self clear bit 0: no effect 1: reset tranceiver."
+      bit_offset: 4
+      bit_size: 1
+    - name: PAR_CLR
+      description: "Clear parity error, this is a self clear bit 0: no effect 1: clear parity error."
+      bit_offset: 8
+      bit_size: 1
+    - name: TRISMP
+      description: "Tipple sampe 0: sample 1 time for data transition 1: sample 3 times in receive and result in 2oo3."
+      bit_offset: 12
+      bit_size: 1
+fieldset/XCVR_DATA_CFG:
+  description: Transceiver data timing configuration.
+  fields:
+    - name: RXD_POINT
+      description: data receive point in system clcok cycle.
+      bit_offset: 0
+      bit_size: 16
+    - name: TXD_POINT
+      description: data transmit point in system clcok cycle.
+      bit_offset: 16
+      bit_size: 16
+fieldset/XCVR_PIN:
+  description: Transceiver pin status.
+  fields:
+    - name: DO_TX
+      description: "TX output 0: data 0 1: data 1."
+      bit_offset: 0
+      bit_size: 1
+    - name: DI_TX
+      description: "TX state 0: data 0 1: data 1."
+      bit_offset: 1
+      bit_size: 1
+    - name: OE_TX
+      description: "TX drive state 0: input 1: output."
+      bit_offset: 2
+      bit_size: 1
+    - name: DO_DE
+      description: "DE output 0: data 0 1: data 1."
+      bit_offset: 8
+      bit_size: 1
+    - name: DI_DE
+      description: "DE state 0: data 0 1: data 1."
+      bit_offset: 9
+      bit_size: 1
+    - name: OE_DE
+      description: "DE drive state 0: input 1: output."
+      bit_offset: 10
+      bit_size: 1
+    - name: DO_RX
+      description: "RX output 0: data 0 1: data 1."
+      bit_offset: 16
+      bit_size: 1
+    - name: DI_RX
+      description: "RX state 0: data 0 1: data 1."
+      bit_offset: 17
+      bit_size: 1
+    - name: OE_RX
+      description: "RX drive state 0: input 1: output."
+      bit_offset: 18
+      bit_size: 1
+    - name: DO_CK
+      description: "CK output 0: data 0 1: data 1."
+      bit_offset: 24
+      bit_size: 1
+    - name: DI_CK
+      description: "CK state 0: data 0 1: data 1."
+      bit_offset: 25
+      bit_size: 1
+    - name: OE_CK
+      description: "CK drive state 0: input 1: output."
+      bit_offset: 26
+      bit_size: 1
+fieldset/XCVR_STATE:
+  description: FSM of asynchronous.
+  fields:
+    - name: SEND_STATE
+      description: FSM of asynchronous transmit.
+      bit_offset: 16
+      bit_size: 3
+    - name: RECV_STATE
+      description: FSM of asynchronous receive.
+      bit_offset: 24
+      bit_size: 3
+fieldset/XCVR_TYPE_CFG:
+  description: Transceiver configuration register.
+  fields:
+    - name: CK_IDLEV
+      description: "Idle state value of clock line 0: data'0' 1: data'1'."
+      bit_offset: 0
+      bit_size: 1
+    - name: DA_IDLEV
+      description: "Idle state value of data line 0: data'0' 1: data'1'."
+      bit_offset: 1
+      bit_size: 1
+    - name: CK_IDLEZ
+      description: "Idle state driver of clock line 0: output 1: high-Z."
+      bit_offset: 2
+      bit_size: 1
+    - name: DA_IDLEZ
+      description: "Idle state driver of data line 0: output 1: high-Z."
+      bit_offset: 3
+      bit_size: 1
+    - name: PAR_EN
+      description: "enable parity check for asynchronous mode 0: disable 1: enable."
+      bit_offset: 8
+      bit_size: 1
+    - name: PAR_POL
+      description: "Polarity of parity for asynchronous mode 0: even 1: odd."
+      bit_offset: 9
+      bit_size: 1
+    - name: DATA_LEN
+      description: "Number of data bit for asynchronous mode 0: 1 bit 1: 2 bit ... 31: 32 bit."
+      bit_offset: 16
+      bit_size: 5
+    - name: WAIT_LEN
+      description: "Number of extra stop bit for asynchronous mode 0: 1 bit 1: 2 bit ... 255: 256 bit."
+      bit_offset: 24
+      bit_size: 8

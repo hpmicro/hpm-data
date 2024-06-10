@@ -1,0 +1,54 @@
+block/SYNT:
+  description: SYNT.
+  items:
+    - name: gcr
+      description: Global control register.
+      byte_offset: 0
+      fieldset: gcr
+    - name: rld
+      description: Counter reload register.
+      byte_offset: 4
+      fieldset: rld
+    - name: cnt
+      description: Counter.
+      byte_offset: 12
+      fieldset: cnt
+    - name: CMP
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 32
+      fieldset: CMP
+fieldset/CMP:
+  description: no description available.
+  fields:
+    - name: CMP
+      description: comparator value, the output will assert when counter count to this value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cnt:
+  description: Counter.
+  fields:
+    - name: CNT
+      description: counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/gcr:
+  description: Global control register.
+  fields:
+    - name: CEN
+      description: 1- Enable counter.
+      bit_offset: 0
+      bit_size: 1
+    - name: CRST
+      description: 1- Reset counter.
+      bit_offset: 1
+      bit_size: 1
+fieldset/rld:
+  description: Counter reload register.
+  fields:
+    - name: RLD
+      description: counter reload value.
+      bit_offset: 0
+      bit_size: 32

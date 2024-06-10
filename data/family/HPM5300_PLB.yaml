@@ -1,0 +1,6 @@
+- name: PLB
+  address: 0xF0324000
+  registers:
+    kind: plb
+    version: v53
+    block: PLB

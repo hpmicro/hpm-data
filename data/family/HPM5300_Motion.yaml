@@ -1,0 +1,79 @@
+- name: PWM0
+  address: 0xF0318000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+- name: PWM1
+  address: 0xF031C000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+
+- name: TRGM0
+  address: 0xF033C000
+  registers:
+    kind: trgm
+    version: v53
+    block: TRGM
+
+- name: SYNT
+  address: 0xF0328000
+  registers:
+    kind: synt
+    version: v53
+    block: SYNT
+
+- name: QEI0
+  address: 0xF0300000
+  registers:
+    kind: qei
+    version: v53
+    block: QEI
+- name: QEI1
+  address: 0xF0304000
+  registers:
+    kind: qei
+    version: v53
+    block: QEI
+
+- name: QEO0
+  address: 0xF0308000
+  registers:
+    kind: qeo
+    version: v53
+    block: QEO
+- name: QEO1
+  address: 0xF030C000
+  registers:
+    kind: qeo
+    version: v53
+    block: QEO
+
+- name: MMC0
+  address: 0xF0310000
+  registers:
+    kind: mmc
+    version: v53
+    block: MMC
+- name: MMC1
+  address: 0xF0314000
+  registers:
+    kind: mmc
+    version: v53
+    block: MMC
+
+- name: RDC
+  address: 0xF0320000
+  registers:
+    kind: rdc
+    version: v53
+    block: RDC
+
+- name: SEI
+  address: 0xF032C000
+  registers:
+    kind: sei
+    version: v53
+    block: SEI
