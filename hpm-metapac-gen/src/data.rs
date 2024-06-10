@@ -309,7 +309,6 @@ pub struct MemoryRegion {
     pub kind: MemoryRegionKind,
     pub address: u32,
     pub size: u32,
-    pub settings: Option<FlashSettings>,
 }
 
 // Notice:
@@ -321,16 +320,8 @@ impl std::fmt::Debug for MemoryRegion {
             .field("kind", &self.kind)
             .field("address", &format_args!("{:#x}", self.address))
             .field("size", &self.size)
-            .field("settings", &self.settings)
             .finish()
     }
-}
-
-#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
-pub struct FlashSettings {
-    pub erase_size: u32,
-    pub write_size: u32,
-    pub erase_value: u8,
 }
 
 #[derive(EnumDebug, Eq, PartialEq, Clone, Deserialize)]
