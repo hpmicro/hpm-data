@@ -14,6 +14,7 @@ use regex::Regex;
 mod data;
 use data::*;
 
+/*
 #[derive(Debug, Eq, PartialEq, Clone)]
 struct Metadata<'a> {
     name: &'a str,
@@ -23,6 +24,7 @@ struct Metadata<'a> {
     interrupts: &'a [Interrupt],
     dma_channels: &'a [DmaChannel],
 }
+*/
 
 pub struct Options {
     pub chips: Vec<String>,
