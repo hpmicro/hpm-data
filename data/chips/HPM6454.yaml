@@ -19,3 +19,6 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+    gen_dma_channels:
+      HDMA: 8
+      XDMA: 8

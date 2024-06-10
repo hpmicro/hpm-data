@@ -46,6 +46,9 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+    gen_dma_channels:
+      HDMA: 8
+      XDMA: 8
 _raw:
   "| HPM6280 | Dual-core 32-bit | 800 |    |    | CAN FD | USB HS w/ PHY \xD7\
   1 | AES128/256, SHA-1/256 | 3\xD716 bits | 20\xD720 144eLQFP P0.5,7\xD77 116BGA\

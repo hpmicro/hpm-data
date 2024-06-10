@@ -30,3 +30,5 @@ cores:
       - "../family/HPM5300.yaml"
     include_interrupts: "../interrupts/HPM5361.yaml"
     include_dmamux: "../dmamux/HPM5301.yaml"
+    gen_dma_channels:
+      HDMA: 32
