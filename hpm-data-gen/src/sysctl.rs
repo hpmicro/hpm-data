@@ -7,15 +7,18 @@ use std::{
 
 // SDK name is 4 char name, like MCT0, CAN0, TMR0, etc.
 // Here, we need to convert it to the peripheral name used in hpm-data.
-fn match_peripheral_name(sdk_name: &str, periph_name: &str) -> bool {
-    let sdk_name = sdk_name
+fn match_peripheral_name(chip_name: &str, sdk_name: &str, periph_name: &str) -> bool {
+    let mut pname = sdk_name
         .replace("TMR", "GPTMR")
         .replace("URT", "UART")
         .replace("OPA", "OPAMP")
-        .replace("CAN", "MCAN")
         .replace("CRC0", "CRC");
 
-    sdk_name == periph_name
+    if chip_name.starts_with("HPM53") || chip_name.starts_with("HPM68") {
+        pname = pname.replace("CAN", "MCAN")
+    }
+
+    pname == periph_name
 }
 
 pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
@@ -26,7 +29,7 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
         .map(PathBuf::from)
         .unwrap_or_else(|_| data_dir.as_ref().parent().unwrap().join("hpm_sdk"));
 
-    let chip_name = chip.name.clone();
+    let chip_name = &chip.name;
 
     // Defined in hpm_sysctl_drv.h
     // This is the relation between the resource and the group link number.
@@ -85,7 +88,7 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
         for periph in &mut core.peripherals {
             let resource = resources
                 .iter()
-                .find(|(name, _)| match_peripheral_name(&name, &periph.name));
+                .find(|(name, _)| match_peripheral_name(&chip_name, &name, &periph.name));
 
             let Some(resource_info) = resource else {
                 continue;
@@ -94,7 +97,7 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
 
             let clock = clocks
                 .iter()
-                .find(|(name, _)| match_peripheral_name(&name, &periph.name))
+                .find(|(name, _)| match_peripheral_name(&chip_name, &name, &periph.name))
                 .map(|(_, no)| *no as usize);
 
             let sdk_clk_top_name = format!("CLK_TOP_{}", resource_info.0);
