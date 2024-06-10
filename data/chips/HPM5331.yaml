@@ -30,7 +30,7 @@ memory:
     size: 1M
 cores:
   - name: RV32-IMAFDCPB # D25
-    ip-core: Andes D25
+    ip-core: Andes D25F
     include_peripherals:
       - "../family/COMMON.yaml"
       - "../family/HPM5300.yaml"

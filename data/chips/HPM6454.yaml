@@ -1,5 +1,5 @@
 name: HPM6454
-family: HPM6 Series
+family: HPM6700/6400 Series
 sub_family: HPM6400, Single-core
 packages:
   - name: HPM6454xAN

@@ -1,5 +1,5 @@
 name: HPM6730
-family: HPM6 Series
+family: HPM6700/6400 Series
 sub_family: HPM6700, Dual-core
 packages:
   - name: HPM6730xAN

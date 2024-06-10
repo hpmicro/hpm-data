@@ -1,5 +1,5 @@
 name: HPM64G0
-family: HPM6 Series
+family: HPM6700/6400 Series
 sub_family: HPM6400, Single-core, 1GHz
 packages:
   - name: HPM64G0xAN
