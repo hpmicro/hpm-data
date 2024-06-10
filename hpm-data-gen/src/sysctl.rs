@@ -12,7 +12,8 @@ fn match_peripheral_name(chip_name: &str, sdk_name: &str, periph_name: &str) -> 
         .replace("TMR", "GPTMR")
         .replace("URT", "UART")
         .replace("OPA", "OPAMP")
-        .replace("CRC0", "CRC");
+        .replace("CRC0", "CRC")
+        .replace("KMAN", "KEYM");
 
     if chip_name.starts_with("HPM53") || chip_name.starts_with("HPM68") {
         pname = pname.replace("CAN", "MCAN")
