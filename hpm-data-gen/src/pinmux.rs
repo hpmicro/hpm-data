@@ -51,6 +51,19 @@ fn normalize_func(module: &str, func: &str) -> String {
     }
 }
 
+fn get_pmic_periph_and_func(func: &str) -> Option<(String, String)> {
+    // PUART, PTMR,
+    if let Some((periph, f)) = func.split_once(".") {
+        match periph {
+            "PUART" => Some(("PUART".to_string(), f.to_string())),
+            "PTMR" => Some(("PTMR".to_string(), f.replace("[", "").replace("]", ""))),
+            _ => None,
+        }
+    } else {
+        None
+    }
+}
+
 pub fn handle_pinmux<P: AsRef<Path>>(
     path: P,
     chip: &mut hpm_data_serde::Chip,
@@ -77,7 +90,19 @@ pub fn handle_pinmux<P: AsRef<Path>>(
                 ));
             }
         }
-        // TODO: handle ANALOGS, "PMIC"
+        // TODO: handle ANALOGS
+        if pin.specials.contains_key("PMIC") {
+            for (_alt_name, alt_def) in &pin.specials["PMIC"] {
+                if let Some((periph, signal_name)) = get_pmic_periph_and_func(&alt_def.func) {
+                    pinmux_alt_defs.insert((
+                        periph,
+                        signal_name,
+                        pin.name.clone(),
+                        alt_def.alt_num(),
+                    ));
+                }
+            }
+        }
     }
 
     // println!("Found {:#?} pinmux alt defs", pinmux_alt_defs);
