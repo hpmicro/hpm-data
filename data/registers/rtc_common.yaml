@@ -1,0 +1,121 @@
+block/RTC:
+  description: RTC.
+  items:
+    - name: SECOND
+      description: Second counter.
+      byte_offset: 0
+      fieldset: SECOND
+    - name: SUBSEC
+      description: Sub-second counter.
+      byte_offset: 4
+      fieldset: SUBSEC
+    - name: SEC_SNAP
+      description: Second counter snap shot.
+      byte_offset: 8
+      fieldset: SEC_SNAP
+    - name: SUB_SNAP
+      description: Sub-second counter snap shot.
+      byte_offset: 12
+      fieldset: SUB_SNAP
+    - name: ALARM0
+      description: RTC alarm0.
+      byte_offset: 16
+      fieldset: ALARM0
+    - name: ALARM0_INC
+      description: Alarm0 incremental.
+      byte_offset: 20
+      fieldset: ALARM0_INC
+    - name: ALARM1
+      description: RTC alarm1.
+      byte_offset: 24
+      fieldset: ALARM1
+    - name: ALARM1_INC
+      description: Alarm1 incremental.
+      byte_offset: 28
+      fieldset: ALARM1_INC
+    - name: ALARM_FLAG
+      description: RTC alarm flag.
+      byte_offset: 32
+      fieldset: ALARM_FLAG
+    - name: ALARM_EN
+      description: RTC alarm enable.
+      byte_offset: 36
+      fieldset: ALARM_EN
+fieldset/ALARM0:
+  description: RTC alarm0.
+  fields:
+    - name: ALARM
+      description: Alarm time for second counter, on each alarm match, alarm increase ALARM0_INC.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ALARM0_INC:
+  description: Alarm0 incremental.
+  fields:
+    - name: INCREASE
+      description: adder when ARLAM0 happen, helps to create periodical alarm.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ALARM1:
+  description: RTC alarm1.
+  fields:
+    - name: ALARM
+      description: Alarm time for second counter, on each alarm match, alarm increase ALARM0_INC.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ALARM1_INC:
+  description: Alarm1 incremental.
+  fields:
+    - name: INCREASE
+      description: adder when ARLAM0 happen, helps to create periodical alarm.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ALARM_EN:
+  description: RTC alarm enable.
+  fields:
+    - name: ENABLE0
+      description: "alarm0 mask 0: alarm0 disabled 1: alarm0 enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: ENABLE1
+      description: "alarm1 mask 0: alarm1 disabled 1: alarm1 enabled."
+      bit_offset: 1
+      bit_size: 1
+fieldset/ALARM_FLAG:
+  description: RTC alarm flag.
+  fields:
+    - name: ALARM0
+      description: alarm0 happen.
+      bit_offset: 0
+      bit_size: 1
+    - name: ALARM1
+      description: alarm1 happen.
+      bit_offset: 1
+      bit_size: 1
+fieldset/SECOND:
+  description: Second counter.
+  fields:
+    - name: SECOND
+      description: second counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SEC_SNAP:
+  description: Second counter snap shot.
+  fields:
+    - name: SEC_SNAP
+      description: second snap shot, write to take snap shot.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SUBSEC:
+  description: Sub-second counter.
+  fields:
+    - name: SUBSEC
+      description: sub second counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SUB_SNAP:
+  description: Sub-second counter snap shot.
+  fields:
+    - name: SUB_SNAP
+      description: sub second snap shot, write to take snap shot.
+      bit_offset: 0
+      bit_size: 32

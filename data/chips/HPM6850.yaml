@@ -19,6 +19,8 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+    include_interrupts: "../interrupts/HPM6850.yaml"
+    include_dmamux: "../dmamux/HPM6880.yaml"
 _raw:
   "| HPM6850 | Single-core 32-bit | 1064 | 4 | Gigabit | CAN FD | USB HS w/ PHY\
   \ \xD71 | AES128/256, SHA-1/256 | 1\xD716 bit | 17\xD717 417BGA P0.8 | \u221240\

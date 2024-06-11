@@ -15,16 +15,35 @@ packages:
     package: LQFP144
     pins: 144
 memory:
-  - address: 0
+  - address: 0x00000000
     kind: ram
-    name: SRAM
-    size: 800
+    name: ILM
+    size: 128K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 128K
+  - address: 0x01080000
+    kind: ram
+    name: AXI_SRAM
+    size: 524288 # 512K
+  - address: 0xF0300000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M
 cores:
   - name: RV32-IMAFDCP
     ip-core: Andes D45
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6300.yaml"
+    include_interrupts: "../interrupts/HPM6360.yaml"
+    include_dmamux: "../dmamux/HPM6360.yaml"
     gen_dma_channels:
       HDMA: 8
       XDMA: 8

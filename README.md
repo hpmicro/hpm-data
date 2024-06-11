@@ -11,7 +11,6 @@
 [badge-docs-rs]: https://img.shields.io/docsrs/hpm-metapac?style=for-the-badge
 [docs-rs]: https://docs.rs/hpm-metapac
 
-
 The structured MCU DB of HPM MCUs. The home of [hpm-metapac][docs-rs].
 
 ## MCU Family

@@ -2,21 +2,21 @@
   address: 0xF4000000
   registers:
     kind: sysctl
-    version: v67
+    version: v63
     block: SYSCTL
 
 - name: PLLCTL
   address: 0xF4100000
   registers:
     kind: pllctl
-    version: v67
-    block: PLLCTL
+    version: v2
+    block: PLLCTLV2
 
 - name: BCFG
   address: 0xF5008000
   registers:
     kind: bcfg
-    version: v67
+    version: v62
     block: BCFG
 
 - name: PCFG
@@ -39,19 +39,19 @@
   address: 0xF4040000
   registers:
     kind: ioc
-    version: v67
+    version: common
     block: IOC
 - name: PIOC
   address: 0xF40D8000
   registers:
     kind: ioc
-    version: v67
+    version: common
     block: IOC
 - name: BIOC
   address: 0xF5010000
   registers:
     kind: ioc
-    version: v67
+    version: common
     block: IOC
 
 - name: FGPIO
@@ -62,12 +62,6 @@
     block: GPIO
 - name: GPIO0
   address: 0xF0000000
-  registers:
-    kind: gpio
-    version: common
-    block: GPIO
-- name: GPIO1
-  address: 0xF0004000
   registers:
     kind: gpio
     version: common
@@ -89,7 +83,7 @@
   address: 0xF0008000
   registers:
     kind: gpiom
-    version: v67
+    version: v63
     block: GPIOM
 
 - name: OTPSHW
@@ -106,7 +100,7 @@
     block: OTP
 
 - name: FEMC
-  address: 0xF0008000
+  address: 0xF3050000
   registers:
     kind: femc
     version: common
@@ -116,16 +110,17 @@
   address: 0xF2030000
   registers:
     kind: sdxc
-    version: v67
-    block: SDXC
-- name: SDXC1
-  address: 0xF2034000
-  registers:
-    kind: sdxc
-    version: v67
+    version: v63
     block: SDXC
 
-# DMA and mail box
+# FFA, DMA and mail box
+
+- name: FFA
+  address: 0xF3058000
+  registers:
+    kind: ffa
+    version: common
+    block: FFA
 
 - name: HDMA
   address: 0xF00C4000
@@ -159,29 +154,11 @@
     kind: mbx
     version: common
     block: MBX
-- name: MBX1A
-  address: 0xF00A8000
-  registers:
-    kind: mbx
-    version: common
-    block: MBX
-- name: MBX1B
-  address: 0xF00AC000
-  registers:
-    kind: mbx
-    version: common
-    block: MBX
 
 # timers
 
 - name: NTMR0
   address: 0xF2010000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: NTMR1
-  address: 0xF2014000
   registers:
     kind: tmr
     version: common
@@ -210,30 +187,6 @@
     kind: tmr
     version: common
     block: TMR
-- name: GPTMR4
-  address: 0xF3010000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR5
-  address: 0xF3014000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR6
-  address: 0xF3018000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR7
-  address: 0xF301C000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
 - name: PTMR
   address: 0xF40E0000
   registers:
@@ -253,18 +206,6 @@
     kind: wdg
     version: v67
     block: WDG
-- name: WDG2
-  address: 0xF0098000
-  registers:
-    kind: wdg
-    version: v67
-    block: WDG
-- name: WDG3
-  address: 0xF009C000
-  registers:
-    kind: wdg
-    version: v67
-    block: WDG
 - name: PWDG
   address: 0xF40E8000
   registers:
@@ -272,12 +213,6 @@
     version: v67
     block: WDG
 
-- name: RTCSHW
-  address: 0xF501C000
-  registers:
-    kind: rtc
-    version: common
-    block: RTC
 - name: RTC
   address: 0xF5044000
   registers:
@@ -414,16 +349,10 @@
     block: PTPC
 
 - name: ENET0
-  address: 0xF00D0000
+  address: 0xF2000000
   registers:
     kind: enet
-    version: v67
-    block: ENET
-- name: ENET1
-  address: 0xF00D4000
-  registers:
-    kind: enet
-    version: v67
+    version: v63
     block: ENET
 
 - name: USB0
@@ -432,47 +361,26 @@
     kind: usb
     version: v67
     block: USB
-- name: USB1
-  address: 0xF2024000
-  registers:
-    kind: usb
-    version: v67
-    block: USB
-
-# ENET & SDXC control
-- name: CONCTL
-  address: 0xF2040000
-  registers:
-    kind: conctl
-    version: v67
-    block: CONCTL
 
 # Analog peripherals
 
 - name: ADC0
   address: 0xF0010000
   registers:
-    kind: adc12
-    version: v67
+    kind: adc16
+    version: v63
     block: ADC
 - name: ADC1
   address: 0xF0014000
   registers:
-    kind: adc12
-    version: v67
+    kind: adc16
+    version: v63
     block: ADC
 - name: ADC2
   address: 0xF0018000
   registers:
-    kind: adc12
-    version: v67
-    block: ADC
-
-- name: ADC3
-  address: 0xF001C000
-  registers:
     kind: adc16
-    version: v67
+    version: v63
     block: ADC
 
 - name: ACMP
@@ -481,3 +389,17 @@
     kind: acmp
     version: common
     block: ACMP
+
+- name: DAC
+  address: 0xF0024000
+  registers:
+    kind: dac
+    version: v63
+    block: DAC
+
+- name: TSNS
+  address: 0xF4104000
+  registers:
+    kind: tsns
+    version: common
+    block: TSNS
