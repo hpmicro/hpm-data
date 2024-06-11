@@ -22,6 +22,21 @@ The structured MCU DB of HPM MCUs. The home of [hpm-metapac][docs-rs].
 - HPM6800
 - HPM6E00 (announced)
 
+### Support status
+
+- [x] HPM5300
+- [x] HPM6700/HPM6400 basic peripherals
+- [x] HPM6300 basic peripherals
+
+### Metadata patch
+
+The `hpm-metapac` crate has a `metadata` feature, when enabled, it will provide the basic metadata of the currrent MCU:
+
+- Core name, basic info
+- All resources, for `SYSCTL`
+- All clocks, for `SYSCTL.CLOCK`
+- All GPIOs and it's PADs, for `IOC`
+
 ## Data Source
 
 - <https://www.hpmicro.com/>
