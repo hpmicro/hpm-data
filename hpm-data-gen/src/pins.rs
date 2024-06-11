@@ -26,6 +26,10 @@ pub fn add_ioc_pins_from_sdk<P: AsRef<Path>>(
         n if n.starts_with("HPM6830") => sdk_path.join("soc/HPM6830/hpm_ioc_regs.h"),
         n if n.starts_with("HPM6850") => sdk_path.join("soc/HPM6850/hpm_ioc_regs.h"),
         n if n.starts_with("HPM6880") => sdk_path.join("soc/HPM6880/hpm_ioc_regs.h"),
+        n if n.starts_with("HPM6E") => {
+            eprintln!("HPM6E Series is not supported yet");
+            return Ok(());
+        }
         _ => anyhow::bail!("Unknown chip: {}", chip_name),
     };
 

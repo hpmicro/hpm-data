@@ -1,0 +1,23 @@
+name: HPM6E50
+family: HPM6E00 Series
+sub_family: HPM6E00, Single-core
+packages:
+  - name: HPM6E50-BGA196
+    package: BGA196
+    pins: 196
+  - name: HPM6E50-BGA121
+    package: BGA121
+    pins: 121
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 1064
+cores:
+  - name: RV32-IMAFDCP
+    ip-core: Andes D45
+    peripherals: []
+    include_peripherals:
+      - "../family/COMMON.yaml"
+_raw:
+  "EtherCAT从栈控制器, 多达2轴电机控制"

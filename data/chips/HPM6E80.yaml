@@ -1,0 +1,23 @@
+name: HPM6E80
+family: HPM6E00 Series
+sub_family: HPM6E00, Dual-core
+packages:
+  - name: HPM6E80-BGA289
+    package: BGA289
+    pins: 289
+  - name: HPM6E80-BGA196
+    package: BGA196
+    pins: 196
+memory:
+  - address: 0
+    kind: ram
+    name: SRAM
+    size: 1064
+cores:
+  - name: RV32-IMAFDCP
+    ip-core: Andes D45
+    peripherals: []
+    include_peripherals:
+      - "../family/COMMON.yaml"
+_raw:
+  "千兆工业以太网互联+EtherCAT, 多达4轴电机控制"

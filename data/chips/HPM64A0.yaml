@@ -2,12 +2,6 @@ name: HPM64A0
 family: HPM6400 Series
 sub_family: HPM6400, Automotive
 packages:
-  - name: HPM64A0xAN
-    package: BGA196
-    pins: 196
-  - name: HPM64A0xVM
-    package: BGA289
-    pins: 289
 memory:
   - address: 0x00000000
     kind: ram
@@ -47,3 +41,5 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+_raw:
+  "HPM64A0 汽车级高性能MCU"
