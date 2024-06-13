@@ -1,0 +1,51 @@
+name: metapac publish
+
+on:
+  push:
+    branches: ["main"]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository == 'andelf/hpm-data' }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use nightly Rust
+      run: |
+        rustup default nightly
+        rustup component add rustfmt
+    - name: Deploy SSH key
+      run: |
+        mkdir ~/.ssh
+        echo "${{ secrets.NIGHTLIES_KEY }}" > ~/.ssh/id_rsa
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa github.com
+    - name: Build
+      run: |
+        COMMIT=$(git rev-parse HEAD)
+        COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+        mkdir -p build
+        git clone --depth 1 git@github.com:hpmicro-rs/hpm-metapac.git build/hpm-metapac/
+        ./d gen
+        cd build/hpm-metapac/
+        cp -v ../../README.md .
+        cp -v ../../LICENSE* .
+        find src -iname '*.rs' -exec rustfmt -v {} \;
+        git init
+        git add .
+        git config user.name "hpm-data builder"
+        git config user.email "action@github.com"
+        git commit -m "hpm-rs/hpm-data master $COMMIT" --allow-empty
+        git tag -a hpm-data-$COMMIT -m "Generated from hpm-data $COMMIT"
+    - name: Test
+      run: |
+        cd build/hpm-metapac/
+        cargo doc --features hpm5361,metadata
+    - name: Push
+      run: |
+        cd build/hpm-metapac/
+        git push origin main --follow-tags

@@ -13,6 +13,8 @@
 
 The structured MCU DB of HPM MCUs. The home of [hpm-metapac][docs-rs].
 
+All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hpm-data).
+
 ## MCU Family
 
 - HPM5300
