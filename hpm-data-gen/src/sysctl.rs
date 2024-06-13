@@ -8,13 +8,25 @@ use std::{
 // SDK name is 4 char name, like MCT0, CAN0, TMR0, etc.
 // Here, we need to convert it to the peripheral name used in hpm-data.
 fn match_peripheral_name(chip_name: &str, sdk_name: &str, periph_name: &str) -> bool {
+    if chip_name.starts_with("HPM67") || chip_name.starts_with("HPM64") {
+        return sdk_name == periph_name;
+    }
+
     let mut pname = sdk_name
-        .replace("TMR", "GPTMR")
+        .replace("MCT0", "MCHTMR")
+        .replace("_TMR", "_GPTMR")
         .replace("URT", "UART")
         .replace("OPA", "OPAMP")
         .replace("CRC0", "CRC")
         .replace("KMAN", "KEYM")
+        .replace("FFA0", "FFA")
+        .replace("MBX0", "MBX0A") // bind to A
+        .replace("MBX1", "MBX1A")
         .replace("SDP0", "SDP");
+
+    if pname.starts_with("TMR") {
+        pname = pname.replace("TMR", "GPTMR")
+    }
 
     if chip_name.starts_with("HPM53") || chip_name.starts_with("HPM68") {
         pname = pname.replace("CAN", "MCAN")
