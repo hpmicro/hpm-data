@@ -1,0 +1,101 @@
+block/DAO:
+  description: DAO.
+  items:
+    - name: CTRL
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: CMD
+      description: Command Register.
+      byte_offset: 8
+      fieldset: CMD
+    - name: RX_CFGR
+      description: Configuration Register.
+      byte_offset: 12
+      fieldset: RX_CFGR
+    - name: RXSLT
+      description: RX Slot Control Register.
+      byte_offset: 16
+      fieldset: RXSLT
+    - name: HPF_MA
+      description: HPF A Coef Register.
+      byte_offset: 20
+      fieldset: HPF_MA
+    - name: HPF_B
+      description: HPF B Coef Register.
+      byte_offset: 24
+      fieldset: HPF_B
+fieldset/CMD:
+  description: Command Register.
+  fields:
+    - name: RUN
+      description: Enable this module to run.
+      bit_offset: 0
+      bit_size: 1
+    - name: SFTRST
+      description: Self-clear.
+      bit_offset: 1
+      bit_size: 1
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+    - name: FALSE_RUN
+      description: the module continues to consume data, but all the pads are constant, thus no audio out.
+      bit_offset: 0
+      bit_size: 1
+    - name: FALSE_LEVEL
+      description: "the pad output in False run mode, or when the module is disabled 0: all low 1: all high 2: P-high, N-low 3. output is not enabled."
+      bit_offset: 1
+      bit_size: 2
+    - name: INVERT
+      description: all the outputs are inverted before sending to pad.
+      bit_offset: 3
+      bit_size: 1
+    - name: REMAP
+      description: "1: Use remap pwm version. The remap version is a version that one pwm output is tied to zero when the input pcm signal is positive or negative 0: Don't use remap pwm version."
+      bit_offset: 4
+      bit_size: 1
+    - name: LEFT_EN
+      description: Asserted to enable the left channel.
+      bit_offset: 5
+      bit_size: 1
+    - name: RIGHT_EN
+      description: Asserted to enable the right channel.
+      bit_offset: 6
+      bit_size: 1
+    - name: MONO
+      description: Asserted to let the left and right channel output the same value.
+      bit_offset: 7
+      bit_size: 1
+    - name: HPF_EN
+      description: Whether HPF is enabled. This HPF is used to filter out the DC part.
+      bit_offset: 17
+      bit_size: 1
+fieldset/HPF_B:
+  description: HPF B Coef Register.
+  fields:
+    - name: COEF
+      description: coef B of the Order-1 HPF.
+      bit_offset: 0
+      bit_size: 32
+fieldset/HPF_MA:
+  description: HPF A Coef Register.
+  fields:
+    - name: COEF
+      description: Composite value of coef A of the Order-1 HPF.
+      bit_offset: 0
+      bit_size: 32
+fieldset/RXSLT:
+  description: RX Slot Control Register.
+  fields:
+    - name: EN
+      description: Slot enable for the channels.
+      bit_offset: 0
+      bit_size: 32
+fieldset/RX_CFGR:
+  description: Configuration Register.
+  fields:
+    - name: CH_MAX
+      description: "CH_MAX[3:0] is the number if channels supported in TDM mode. When not in TDM mode, it must be set as 2. It must be an even number, so CH_MAX[0] is always 0. 4'h2: 2 channels 4'h4: 4 channels etc."
+      bit_offset: 6
+      bit_size: 5

@@ -1,0 +1,39 @@
+block/BMON:
+  description: BMON.
+  items:
+    - name: MONITOR
+      description: no description available.
+      array:
+        len: 2
+        stride: 16
+      byte_offset: 0
+      block: MONITOR
+block/MONITOR:
+  description: no description available.
+  items:
+    - name: CONTROL
+      description: Glitch and clock monitor control.
+      byte_offset: 0
+      fieldset: CONTROL
+    - name: STATUS
+      description: Glitch and clock monitor status.
+      byte_offset: 4
+      fieldset: STATUS
+fieldset/CONTROL:
+  description: Glitch and clock monitor control.
+  fields:
+    - name: ENABLE
+      description: "enable glitch detector 0: detector disabled 1: detector enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: ACTIVE
+      description: "select glitch works in active mode or passve mode. 0: passive mode, depends on power glitch destroy DFF value 1: active mode, check glitch by DFF chain."
+      bit_offset: 4
+      bit_size: 1
+fieldset/STATUS:
+  description: Glitch and clock monitor status.
+  fields:
+    - name: FLAG
+      description: "flag for glitch detected, write 1 to clear this flag 0: glitch not detected 1: glitch detected."
+      bit_offset: 0
+      bit_size: 1

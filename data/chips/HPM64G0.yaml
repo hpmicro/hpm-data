@@ -41,3 +41,10 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6700_6400.yaml"
+    include_interrupts: "../interrupts/HPM6750.yaml"
+    include_dmamux: "../dmamux/HPM6750.yaml"
+    gen_dma_channels:
+      HDMA: 8
+      XDMA: 8
+

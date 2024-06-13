@@ -1,0 +1,125 @@
+block/PSEC:
+  description: PSEC.
+  items:
+    - name: SECURE_STATE
+      description: Secure state.
+      byte_offset: 0
+      fieldset: SECURE_STATE
+    - name: SECURE_STATE_CONFIG
+      description: secure state configuration.
+      byte_offset: 4
+      fieldset: SECURE_STATE_CONFIG
+    - name: VIOLATION_CONFIG
+      description: Security violation config.
+      byte_offset: 8
+      fieldset: VIOLATION_CONFIG
+    - name: ESCALATE_CONFIG
+      description: Escalate behavior on security event.
+      byte_offset: 12
+      fieldset: ESCALATE_CONFIG
+    - name: EVENT
+      description: Event and escalate status.
+      byte_offset: 16
+      fieldset: EVENT
+    - name: LIFECYCLE
+      description: Lifecycle.
+      byte_offset: 20
+      fieldset: LIFECYCLE
+fieldset/ESCALATE_CONFIG:
+  description: Escalate behavior on security event.
+  fields:
+    - name: SEC_VIO_CFG
+      description: "configuration of secure state escalates, each bit represents one security event 0: event is not a security escalate 1: event is a security escalate."
+      bit_offset: 0
+      bit_size: 15
+    - name: LOCK_SEC
+      description: "Lock bit secure escalate setting, once locked, lock bit itself and configuration will keep value until next reset 0: not locked, configuration can be modified 1: register locked, write access to the configuration is ignored."
+      bit_offset: 15
+      bit_size: 1
+    - name: NSC_VIO_CFG
+      description: "configuration of non-secure state escalates, each bit represents one security event 0: event is not a security escalate 1: event is a security escalate."
+      bit_offset: 16
+      bit_size: 15
+    - name: LOCK_NSC
+      description: "Lock bit non-secure escalate setting, once locked, lock bit itself and configuration will keep value until next reset 0: not locked, configuration can be modified 1: register locked, write access to the configuration is ignored."
+      bit_offset: 31
+      bit_size: 1
+fieldset/EVENT:
+  description: Event and escalate status.
+  fields:
+    - name: PMIC_ESC_SEC
+      description: PMIC is escalting secure event.
+      bit_offset: 2
+      bit_size: 1
+    - name: PMIC_ESC_NSC
+      description: PMIC is escalating non-secure event.
+      bit_offset: 3
+      bit_size: 1
+    - name: EVENT
+      description: local event statue, each bit represents one security event.
+      bit_offset: 16
+      bit_size: 16
+fieldset/LIFECYCLE:
+  description: Lifecycle.
+  fields:
+    - name: LIFECYCLE
+      description: "lifecycle status, bit7: lifecycle_debate, bit6: lifecycle_scribe, bit5: lifecycle_no_ret, bit4: lifecycle_return, bit3: lifecycle_secure, bit2: lifecycle_nonsec, bit1: lifecycle_create, bit0: lifecycle_unknow."
+      bit_offset: 0
+      bit_size: 8
+fieldset/SECURE_STATE:
+  description: Secure state.
+  fields:
+    - name: PMIC_INS
+      description: "PMIC secure state one hot indicator 0: secure state is not in inspect state 1: secure state is in inspect state."
+      bit_offset: 4
+      bit_size: 1
+    - name: PMIC_SEC
+      description: "PMIC secure state one hot indicator 0: secure state is not in secure state 1: secure state is in secure state."
+      bit_offset: 5
+      bit_size: 1
+    - name: PMIC_NSC
+      description: "PMIC secure state one hot indicator 0: secure state is not in non-secure state 1: secure state is in non-secure state."
+      bit_offset: 6
+      bit_size: 1
+    - name: PMIC_FAIL
+      description: "PMIC secure state one hot indicator 0: secure state is not in fail state 1: secure state is in fail state."
+      bit_offset: 7
+      bit_size: 1
+    - name: ALLOW_SEC
+      description: "Secure state allow 0: system is not healthy to enter secure state, request to enter non-secure state will cause a fail state 1: system is healthy to enter secure state."
+      bit_offset: 16
+      bit_size: 1
+    - name: ALLOW_NSC
+      description: "Non-secure state allow 0: system is not healthy to enter non-secure state, request to enter non-secure state will cause a fail state 1: system is healthy to enter non-secure state."
+      bit_offset: 17
+      bit_size: 1
+fieldset/SECURE_STATE_CONFIG:
+  description: secure state configuration.
+  fields:
+    - name: ALLOW_RESTART
+      description: "allow secure state restart from fail state 0: restart is not allowed, only hardware reset can recover secure state 1: software is allowed to switch to inspect state from fail state."
+      bit_offset: 0
+      bit_size: 1
+    - name: LOCK
+      description: "Lock bit of allow restart setting, once locked, lock bit itself and configuration register will keep value until next reset 0: not locked, register can be modified 1: register locked, write access to the register is ignored."
+      bit_offset: 3
+      bit_size: 1
+fieldset/VIOLATION_CONFIG:
+  description: Security violation config.
+  fields:
+    - name: SEC_VIO_CFG
+      description: "configuration of secure state violations, each bit represents one security event 0: event is not a security violation 1: event is a security violation."
+      bit_offset: 0
+      bit_size: 15
+    - name: LOCK_SEC
+      description: "Lock bit secure violation setting, once locked, lock bit itself and configuration will keep value until next reset 0: not locked, configuration can be modified 1: register locked, write access to the configuration is ignored."
+      bit_offset: 15
+      bit_size: 1
+    - name: NSC_VIO_CFG
+      description: "configuration of non-secure state violations, each bit represents one security event 0: event is not a security violation 1: event is a security violation."
+      bit_offset: 16
+      bit_size: 15
+    - name: LOCK_NSC
+      description: "Lock bit non-secure violation setting, once locked, lock bit itself and configuration will keep value until next reset 0: not locked, configuration can be modified 1: register locked, write access to the configuration is ignored."
+      bit_offset: 31
+      bit_size: 1

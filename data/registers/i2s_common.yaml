@@ -1,0 +1,292 @@
+block/I2S:
+  description: I2S0.
+  items:
+    - name: CTRL
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: RFIFO_FILLINGS
+      description: Rx FIFO Filling Level.
+      byte_offset: 4
+      fieldset: RFIFO_FILLINGS
+    - name: TFIFO_FILLINGS
+      description: Tx FIFO Filling Level.
+      byte_offset: 8
+      fieldset: TFIFO_FILLINGS
+    - name: FIFO_THRESH
+      description: TX/RX FIFO Threshold setting.
+      byte_offset: 12
+      fieldset: FIFO_THRESH
+    - name: STA
+      description: Status Registers.
+      byte_offset: 16
+      fieldset: STA
+    - name: RXD
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 32
+      fieldset: RXD
+    - name: TXD
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 48
+      fieldset: TXD
+    - name: CFGR
+      description: Configruation Regsiters.
+      byte_offset: 80
+      fieldset: CFGR
+    - name: MISC_CFGR
+      description: Misc configuration Registers.
+      byte_offset: 88
+      fieldset: MISC_CFGR
+    - name: RXDSLOT
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 96
+      fieldset: RXDSLOT
+    - name: TXDSLOT
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 112
+      fieldset: TXDSLOT
+fieldset/CFGR:
+  description: Configruation Regsiters.
+  fields:
+    - name: CHSIZ
+      description: "Channel length (number of bits per audio channel) 0: 16-bit wide 1: 32-bit wide The bit write operation has a meaning only if DATLEN = 00 otherwise the channel length is fixed to 32-bit by hardware whatever the value filled in. Note: For correct operation, this bit should be configured when the I2S is disabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: DATSIZ
+      description: "Data length to be transferred 00: 16-bit data length 01: 24-bit data length 10: 32-bit data length 11: Not allowed Note: For correct operation, these bits should be configured when the I2S is disabled."
+      bit_offset: 1
+      bit_size: 2
+    - name: STD
+      description: "I2S standard selection 00: I2S Philips standard. 01: MSB justified standard (left justified) 10: LSB justified standard (right justified) 11: PCM standard Note: For correct operation, these bits should be configured when the I2S is disabled."
+      bit_offset: 3
+      bit_size: 2
+    - name: TDM_EN
+      description: "TDM mode 0: not TDM mode 1: TDM mode."
+      bit_offset: 5
+      bit_size: 1
+    - name: CH_MAX
+      description: "CH_MAX[4:0] s the number of channels supported in TDM mode. When not in TDM mode, it must be set as 2. It must be an even number, so CH_MAX[0] is always 0. 5'h2: 2 channels 5'h4: 4 channels ... 5‘h10: 16 channels (max)."
+      bit_offset: 6
+      bit_size: 5
+    - name: FRAME_EDGE
+      description: "The start edge of a frame 0: Falling edge indicates a new frame (Just like standard I2S Philips standard) 1: Rising edge indicates a new frame."
+      bit_offset: 11
+      bit_size: 1
+    - name: MCK_SEL_OP
+      description: asserted to use external clk source.
+      bit_offset: 12
+      bit_size: 1
+    - name: FCLK_SEL_OP
+      description: asserted to use external clk source.
+      bit_offset: 13
+      bit_size: 1
+    - name: BCLK_SEL_OP
+      description: asserted to use external clk source.
+      bit_offset: 14
+      bit_size: 1
+    - name: INV_MCLK_IN
+      description: Invert the MCLK pad input before using it internally. Only valid in MCLK slave mode.
+      bit_offset: 15
+      bit_size: 1
+    - name: INV_MCLK_OUT
+      description: Invert the MCLK before sending it out to pad. Only valid in MCLK master mode.
+      bit_offset: 16
+      bit_size: 1
+    - name: INV_FCLK_IN
+      description: Invert the FCLK pad input before using it internally. Only valid in FCLK slave mode.
+      bit_offset: 17
+      bit_size: 1
+    - name: INV_FCLK_OUT
+      description: Invert the FCLK before sending it out to pad. Only valid in FCLK master mode.
+      bit_offset: 18
+      bit_size: 1
+    - name: INV_BCLK_IN
+      description: Invert the BCLK pad input before using it internally. Only valid in BCLK slave mode.
+      bit_offset: 19
+      bit_size: 1
+    - name: INV_BCLK_OUT
+      description: Invert the BCLK before sending it out to pad. Only valid in BCLK master mode.
+      bit_offset: 20
+      bit_size: 1
+    - name: BCLK_DIV
+      description: "Linear prescaler to generate BCLK from MCLK. BCLK_DIV [8:0] = 0: BCLK=No CLK. BCLK_DIV [8:0] = 1: BCLK=MCLK/1 BCLK_DIV [8:0] = n: BCLK=MCLK/(n). Note: These bits should be configured when the I2S is disabled. It is used only when the I2S is in master mode."
+      bit_offset: 21
+      bit_size: 9
+    - name: BCLK_GATEOFF
+      description: Gate off the bclk. Asserted to gate-off the BCLK.
+      bit_offset: 30
+      bit_size: 1
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+    - name: I2S_EN
+      description: enable for the module.
+      bit_offset: 0
+      bit_size: 1
+    - name: RX_EN
+      description: enable for each RX data pad.
+      bit_offset: 1
+      bit_size: 4
+    - name: TX_EN
+      description: enable for each TX data pad.
+      bit_offset: 5
+      bit_size: 4
+    - name: RXFIFOCLR
+      description: Self-clear.
+      bit_offset: 9
+      bit_size: 1
+    - name: TXFIFOCLR
+      description: Self-clear.
+      bit_offset: 10
+      bit_size: 1
+    - name: RX_DMA_EN
+      description: Asserted to use DMA, else to use interrupt.
+      bit_offset: 11
+      bit_size: 1
+    - name: TX_DMA_EN
+      description: Asserted to use DMA, else to use interrupt.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERRIE
+      description: "Error interrupt enable This bit controls the generation of an interrupt when an error condition (UD, OV) occurs. 0: Error interrupt is masked 1: Error interrupt is enabled."
+      bit_offset: 13
+      bit_size: 1
+    - name: RXDAIE
+      description: "RX buffer data available interrupt enable 0: RXNE interrupt masked 1: RXNE interrupt not masked. Used to generate an interrupt request when the RXNE flag is set."
+      bit_offset: 14
+      bit_size: 1
+    - name: TXDNIE
+      description: "TX buffer data needed interrupt enable 0: TXE interrupt masked 1: TXE interrupt not masked. Used to generate an interrupt request when the TXE flag is set."
+      bit_offset: 15
+      bit_size: 1
+    - name: SFTRST_CLKGEN
+      description: software reset the CLK GEN module if asserted to be 1'b1. Self-clear.
+      bit_offset: 16
+      bit_size: 1
+    - name: SFTRST_TX
+      description: software reset the TX module if asserted to be 1'b1. Self-clear.
+      bit_offset: 17
+      bit_size: 1
+    - name: SFTRST_RX
+      description: software reset the RX module if asserted to be 1'b1. Self-clear.
+      bit_offset: 18
+      bit_size: 1
+fieldset/FIFO_THRESH:
+  description: TX/RX FIFO Threshold setting.
+  fields:
+    - name: RX
+      description: RX fifo threshold to trigger STA[rx_da]. When rx fifo filling is greater than or equal to the threshold, assert the rx_da flag.
+      bit_offset: 0
+      bit_size: 8
+    - name: TX
+      description: TX fifo threshold to trigger STA[tx_dn]. When tx fifo filling is smaller than or equal to the threshold, assert the tx_dn flag.
+      bit_offset: 8
+      bit_size: 8
+fieldset/MISC_CFGR:
+  description: Misc configuration Registers.
+  fields:
+    - name: MCLKOE
+      description: "Master clock output to pad enable 0: Master clock output is disabled 1: Master clock output is enabled Note: This bit should be configured when the I2S is disabled. It is used only when the I2S is in master mode."
+      bit_offset: 0
+      bit_size: 1
+    - name: MCLK_GATEOFF
+      description: Gate off the mclk. This mclk is the output of a glitch prone mux, so every time to switch the mclk, the gate off clock should be asserted at first. After the clock is switched, de-assert this bit to ungate off the mclk.
+      bit_offset: 13
+      bit_size: 1
+fieldset/RFIFO_FILLINGS:
+  description: Rx FIFO Filling Level.
+  fields:
+    - name: RX0
+      description: RX0 fifo fillings.
+      bit_offset: 0
+      bit_size: 8
+    - name: RX1
+      description: RX1 fifo fillings.
+      bit_offset: 8
+      bit_size: 8
+    - name: RX2
+      description: RX2 fifo fillings.
+      bit_offset: 16
+      bit_size: 8
+    - name: RX3
+      description: RX3 fifo fillings.
+      bit_offset: 24
+      bit_size: 8
+fieldset/RXD:
+  description: no description available.
+  fields:
+    - name: D
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/RXDSLOT:
+  description: no description available.
+  fields:
+    - name: EN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 16
+fieldset/STA:
+  description: Status Registers.
+  fields:
+    - name: RX_DA
+      description: Asserted when rx fifo data are available.
+      bit_offset: 1
+      bit_size: 4
+    - name: TX_DN
+      description: Asserted when tx fifo data are needed.
+      bit_offset: 5
+      bit_size: 4
+    - name: RX_OV
+      description: Asserted when rx fifo is overflow. Write 1 to any of these 4 bits will clear the overflow error.
+      bit_offset: 9
+      bit_size: 4
+    - name: TX_UD
+      description: Asserted when tx fifo is underflow. Should be ANDed with CTRL[tx_en] the for correct value. Write 1 to any of these 4 bits will clear the underflow error.
+      bit_offset: 13
+      bit_size: 4
+fieldset/TFIFO_FILLINGS:
+  description: Tx FIFO Filling Level.
+  fields:
+    - name: TX0
+      description: TX0 fifo fillings.
+      bit_offset: 0
+      bit_size: 8
+    - name: TX1
+      description: TX1 fifo fillings.
+      bit_offset: 8
+      bit_size: 8
+    - name: TX2
+      description: TX2 fifo fillings.
+      bit_offset: 16
+      bit_size: 8
+    - name: TX3
+      description: TX3 fifo fillings.
+      bit_offset: 24
+      bit_size: 8
+fieldset/TXD:
+  description: no description available.
+  fields:
+    - name: D
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TXDSLOT:
+  description: no description available.
+  fields:
+    - name: EN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 16

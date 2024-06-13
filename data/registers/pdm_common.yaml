@@ -1,0 +1,270 @@
+block/PDM:
+  description: PDM.
+  items:
+    - name: CTRL
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: CH_CTRL
+      description: Channel Control Register.
+      byte_offset: 4
+      fieldset: CH_CTRL
+    - name: ST
+      description: Status Register.
+      byte_offset: 8
+      fieldset: ST
+    - name: CH_CFG
+      description: Channel Configuration Register.
+      byte_offset: 12
+      fieldset: CH_CFG
+    - name: CIC_CFG
+      description: CIC configuration register.
+      byte_offset: 16
+      fieldset: CIC_CFG
+    - name: CTRL_INBUF
+      description: In Buf Control Register.
+      byte_offset: 20
+      fieldset: CTRL_INBUF
+    - name: CTRL_FILT0
+      description: Filter 0 Control Register.
+      byte_offset: 24
+      fieldset: CTRL_FILT0
+    - name: CTRL_FILT1
+      description: Filter 1 Control Register.
+      byte_offset: 28
+      fieldset: CTRL_FILT1
+    - name: RUN
+      description: Run Register.
+      byte_offset: 32
+      fieldset: RUN
+    - name: MEMAddr
+      description: Memory Access Address.
+      byte_offset: 36
+      fieldset: MEMAddr
+    - name: MEMData
+      description: Memory Access Data.
+      byte_offset: 40
+      fieldset: MEMData
+    - name: HPF_MA
+      description: HPF A Coef Register.
+      byte_offset: 44
+      fieldset: HPF_MA
+    - name: HPF_B
+      description: HPF B Coef Register.
+      byte_offset: 48
+      fieldset: HPF_B
+fieldset/CH_CFG:
+  description: Channel Configuration Register.
+  fields:
+    - name: CH0_TYPE
+      description: "Type of Channel 0 2'b00: dec-by-3 wiith filter type0 (CIC Compenstation+norm filter) 2'b01: dec-by-3 with filter type 1 (No CIC compenstation, only norm filter)."
+      bit_offset: 0
+      bit_size: 2
+    - name: CH1_TYPE
+      description: No description available.
+      bit_offset: 2
+      bit_size: 2
+    - name: CH2_TYPE
+      description: No description available.
+      bit_offset: 4
+      bit_size: 2
+    - name: CH3_TYPE
+      description: No description available.
+      bit_offset: 6
+      bit_size: 2
+    - name: CH4_TYPE
+      description: No description available.
+      bit_offset: 8
+      bit_size: 2
+    - name: CH5_TYPE
+      description: No description available.
+      bit_offset: 10
+      bit_size: 2
+    - name: CH6_TYPE
+      description: No description available.
+      bit_offset: 12
+      bit_size: 2
+    - name: CH7_TYPE
+      description: No description available.
+      bit_offset: 14
+      bit_size: 2
+    - name: CH8_TYPE
+      description: No description available.
+      bit_offset: 16
+      bit_size: 2
+    - name: CH9_TYPE
+      description: No description available.
+      bit_offset: 18
+      bit_size: 2
+fieldset/CH_CTRL:
+  description: Channel Control Register.
+  fields:
+    - name: CH_EN
+      description: Asserted to enable the channel. Ch8 & 9 are refs. Ch0-7 are pdm mics.
+      bit_offset: 0
+      bit_size: 10
+    - name: CH_POL
+      description: Asserted to select PDM_CLK high level captured, otherwise to select PDM_CLK low level captured.
+      bit_offset: 16
+      bit_size: 8
+fieldset/CIC_CFG:
+  description: CIC configuration register.
+  fields:
+    - name: CIC_DEC_RATIO
+      description: CIC decimation factor.
+      bit_offset: 0
+      bit_size: 8
+    - name: SGD
+      description: "Sigma_delta_order[1:0] 2'b00: 7 2'b01: 6 2'b10: 5 Others: unused."
+      bit_offset: 8
+      bit_size: 2
+    - name: POST_SCALE
+      description: the shift value after CIC results.
+      bit_offset: 10
+      bit_size: 6
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+    - name: HPF_EN
+      description: pdm high pass filter enable. This order-1 HPF only applies to the PDM mic data.
+      bit_offset: 0
+      bit_size: 1
+    - name: PDM_CLK_OE
+      description: pdm_clk_output_en.
+      bit_offset: 1
+      bit_size: 1
+    - name: PDM_CLK_DIV_BYPASS
+      description: asserted to bypass the pdm clock divider.
+      bit_offset: 2
+      bit_size: 1
+    - name: PDM_CLK_HFDIV
+      description: "The clock divider will work at least 4. 0: div-by-2, 1: div-by-4 . . . n: div-by-2*(n+1)."
+      bit_offset: 3
+      bit_size: 4
+    - name: CAPT_DLY
+      description: Capture cycle delay>=0, should be less than PDM_CLK_HFDIV.
+      bit_offset: 7
+      bit_size: 4
+    - name: DEC_AFT_CIC
+      description: decimation rate after CIC. Now it is forced to be 3.
+      bit_offset: 12
+      bit_size: 4
+    - name: CIC_SAT_ERR_IE
+      description: "Error interrupt enable This bit controls the generation of an interrupt when an error condition (CIC saturation) occurs. 0: Error interrupt is masked 1: Error interrupt is enabled."
+      bit_offset: 16
+      bit_size: 1
+    - name: CIC_OVLD_ERR_IE
+      description: CIC overload error interrupt enable.
+      bit_offset: 17
+      bit_size: 1
+    - name: OFIFO_OVFL_ERR_IE
+      description: output fifo overflow error interrupt enable.
+      bit_offset: 18
+      bit_size: 1
+    - name: FILT_CRX_ERR_IE
+      description: data accessed out of boundary error interruput enable. The error happens when the module cannot calculate the enough number of data in time.
+      bit_offset: 19
+      bit_size: 1
+    - name: USE_COEF_RAM
+      description: Asserted to use Coef RAM instead of Coef ROM.
+      bit_offset: 20
+      bit_size: 1
+    - name: SOF_FEDGE
+      description: asserted if the falling edge of the ref fclk from DAO is the start of a new frame. This is used to to align DAO feedback signal.
+      bit_offset: 23
+      bit_size: 1
+    - name: SFTRST
+      description: software reset the module. Self-clear.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CTRL_FILT0:
+  description: Filter 0 Control Register.
+  fields:
+    - name: COEF_START_ADDR
+      description: Starting address of Coef of filter type 2'b00 in coef memory.
+      bit_offset: 0
+      bit_size: 8
+    - name: COEF_LEN_M0
+      description: Coef length of filter type 2'b00 in coef memory.
+      bit_offset: 8
+      bit_size: 8
+fieldset/CTRL_FILT1:
+  description: Filter 1 Control Register.
+  fields:
+    - name: COEF_START_ADDR
+      description: Starting address of Coef of filter type 2'b01 in coef memory.
+      bit_offset: 0
+      bit_size: 8
+    - name: COEF_LEN_M1
+      description: Coef length of filter type 2'b01 in coef memory.
+      bit_offset: 8
+      bit_size: 8
+fieldset/CTRL_INBUF:
+  description: In Buf Control Register.
+  fields:
+    - name: START_ADDR
+      description: The starting address of channel 0 in filter data buffer.
+      bit_offset: 0
+      bit_size: 11
+    - name: PITCH
+      description: The spacing between starting address of adjacent channels.
+      bit_offset: 11
+      bit_size: 11
+    - name: MAX_PTR
+      description: The buf size-1 for each channel.
+      bit_offset: 22
+      bit_size: 8
+fieldset/HPF_B:
+  description: HPF B Coef Register.
+  fields:
+    - name: COEF
+      description: coef B of the Order-1 HPF.
+      bit_offset: 0
+      bit_size: 32
+fieldset/HPF_MA:
+  description: HPF A Coef Register.
+  fields:
+    - name: COEF
+      description: Composite value of coef A of the Order-1 HPF.
+      bit_offset: 0
+      bit_size: 32
+fieldset/MEMAddr:
+  description: Memory Access Address.
+  fields:
+    - name: ADDR
+      description: "0--0x0FFFFFFF: COEF_RAM 0x10000000--0x1FFFFFFF: DATA_RAM."
+      bit_offset: 0
+      bit_size: 32
+fieldset/MEMData:
+  description: Memory Access Data.
+  fields:
+    - name: DATA
+      description: The data write-to/read-from buffer.
+      bit_offset: 0
+      bit_size: 32
+fieldset/RUN:
+  description: Run Register.
+  fields:
+    - name: PDM_EN
+      description: Asserted to enable the module.
+      bit_offset: 0
+      bit_size: 1
+fieldset/ST:
+  description: Status Register.
+  fields:
+    - name: CIC_SAT_ERR
+      description: CIC saturation. Write 1 clear.
+      bit_offset: 0
+      bit_size: 1
+    - name: CIC_OVLD_ERR
+      description: CIC overload error. write 1 clear.
+      bit_offset: 1
+      bit_size: 1
+    - name: OFIFO_OVFL_ERR
+      description: output fifo overflow error. The reason may be sampling frequency mismatch, either fast or slow.
+      bit_offset: 2
+      bit_size: 1
+    - name: FILT_CRX_ERR
+      description: data accessed out of boundary error.
+      bit_offset: 3
+      bit_size: 1

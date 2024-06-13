@@ -1,0 +1,60 @@
+block/BKEY:
+  description: BKEY.
+  items:
+    - name: KEY
+      description: no description available.
+      array:
+        len: 2
+        stride: 32
+      byte_offset: 0
+      block: KEY
+    - name: ECC
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 64
+      fieldset: ECC
+    - name: SELECT
+      description: Key selection.
+      byte_offset: 72
+      fieldset: SELECT
+block/KEY:
+  description: no description available.
+  items:
+    - name: DATA
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 0
+      fieldset: DATA
+fieldset/DATA:
+  description: no description available.
+  fields:
+    - name: DATA
+      description: security key data.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ECC:
+  description: no description available.
+  fields:
+    - name: ECC
+      description: Parity check bits for key0.
+      bit_offset: 0
+      bit_size: 16
+    - name: RLOCK
+      description: "read lock to key0 0: key read enable 1: key always read as 0."
+      bit_offset: 30
+      bit_size: 1
+    - name: WLOCK
+      description: "write lock to key0 0: write enable 1: write ignored."
+      bit_offset: 31
+      bit_size: 1
+fieldset/SELECT:
+  description: Key selection.
+  fields:
+    - name: SELECT
+      description: "select key, key0 treated as secure key, in non-scure mode, only key1 can be selected 0: select key0 in secure mode, key1 in non-secure mode 1: select key1 in secure or nonsecure mode."
+      bit_offset: 0
+      bit_size: 1

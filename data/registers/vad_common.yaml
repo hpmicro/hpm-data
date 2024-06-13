@@ -1,0 +1,239 @@
+block/VAD:
+  description: VAD.
+  items:
+    - name: CTRL
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: FILTCTRL
+      description: Filter Control Register.
+      byte_offset: 4
+      fieldset: FILTCTRL
+    - name: DEC_CTRL0
+      description: Decision Control Register 0.
+      byte_offset: 8
+      fieldset: DEC_CTRL0
+    - name: DEC_CTRL1
+      description: Decision Control Register 1.
+      byte_offset: 12
+      fieldset: DEC_CTRL1
+    - name: DEC_CTRL2
+      description: Decision Control Register 2.
+      byte_offset: 16
+      fieldset: DEC_CTRL2
+    - name: ST
+      description: Status.
+      byte_offset: 24
+      fieldset: ST
+    - name: OFIFO
+      description: Out FIFO.
+      byte_offset: 28
+      fieldset: OFIFO
+    - name: RUN
+      description: Run Command Register.
+      byte_offset: 32
+      fieldset: RUN
+    - name: OFIFO_CTRL
+      description: Out FIFO Control Register.
+      byte_offset: 36
+      fieldset: OFIFO_CTRL
+    - name: CIC_CFG
+      description: CIC Configuration Register.
+      byte_offset: 40
+      fieldset: CIC_CFG
+    - name: COEF
+      description: no description available.
+      array:
+        len: 1
+        stride: 4
+      byte_offset: 160
+      fieldset: COEF
+fieldset/CIC_CFG:
+  description: CIC Configuration Register.
+  fields:
+    - name: POST_SCALE
+      description: the shift value after CIC results.
+      bit_offset: 10
+      bit_size: 6
+fieldset/COEF:
+  description: no description available.
+  fields:
+    - name: VAL
+      description: The current detected short time energy.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+    - name: CHNUM
+      description: the number of channels to be stored in buffer. Asserted to enable 2 channels.
+      bit_offset: 0
+      bit_size: 1
+    - name: CH_POL
+      description: Asserted to select PDM_CLK high level captured, otherwise to select PDM_CLK low level captured.
+      bit_offset: 1
+      bit_size: 2
+    - name: PDM_CLK_OE
+      description: pdm_clk_output_en.
+      bit_offset: 3
+      bit_size: 1
+    - name: PDM_CLK_DIV_BYPASS
+      description: asserted to bypass the pdm clock divider.
+      bit_offset: 4
+      bit_size: 1
+    - name: FIFO_THRSH
+      description: "OFIFO threshold to generate ofifo_av (when fillings >= threshold) (fifo size: max 16 items, 16*32bits)."
+      bit_offset: 5
+      bit_size: 4
+    - name: MEMBUF_DISABLE
+      description: asserted to disable membuf.
+      bit_offset: 9
+      bit_size: 1
+    - name: CIC_SAT_ERR_IE
+      description: CIC saturation Interrupt Enable.
+      bit_offset: 11
+      bit_size: 1
+    - name: CIC_OVLD_ERR_IE
+      description: CIC overload Interrupt Enable.
+      bit_offset: 12
+      bit_size: 1
+    - name: IIR_OVFL_ERR_IE
+      description: IIR overflow error interrupt enable.
+      bit_offset: 13
+      bit_size: 1
+    - name: IIR_OVLD_ERR_IE
+      description: IIR overload error interrupt enable.
+      bit_offset: 14
+      bit_size: 1
+    - name: OFIFO_OVFL_ERR_IE
+      description: OFIFO overflow error interrupt enable.
+      bit_offset: 15
+      bit_size: 1
+    - name: MEMBUF_EMPTY_IE
+      description: Buf empty interrupt enable.
+      bit_offset: 16
+      bit_size: 1
+    - name: OFIFO_AV_IE
+      description: OFIFO data available interrupt enable.
+      bit_offset: 17
+      bit_size: 1
+    - name: VAD_IE
+      description: VAD event interrupt enable.
+      bit_offset: 18
+      bit_size: 1
+    - name: PDM_CLK_HFDIV
+      description: "The clock divider will work at least 4. 0: div-by-2, 1: div-by-4 . . . n: div-by-2*(n+1)."
+      bit_offset: 20
+      bit_size: 4
+    - name: CAPT_DLY
+      description: Capture cycle delay>=0, should be less than PDM_CLK_HFDIV.
+      bit_offset: 24
+      bit_size: 4
+fieldset/DEC_CTRL0:
+  description: Decision Control Register 0.
+  fields:
+    - name: SUBBLK_LEN
+      description: length of sub-block.
+      bit_offset: 0
+      bit_size: 9
+    - name: BLK_CFG
+      description: asserted to have 3 sub-blocks, otherwise to have 2 sub-blocks.
+      bit_offset: 9
+      bit_size: 1
+    - name: NOISE_TOL
+      description: the value of amplitude for noise determination when calculationg ZCR.
+      bit_offset: 16
+      bit_size: 16
+fieldset/DEC_CTRL1:
+  description: Decision Control Register 1.
+  fields:
+    - name: ZCR_LOW
+      description: ZCR low limit.
+      bit_offset: 0
+      bit_size: 11
+    - name: ZCR_HIGH
+      description: ZCR high limit.
+      bit_offset: 11
+      bit_size: 11
+fieldset/DEC_CTRL2:
+  description: Decision Control Register 2.
+  fields:
+    - name: AMP_LOW
+      description: amplitude low limit.
+      bit_offset: 0
+      bit_size: 16
+    - name: AMP_HIGH
+      description: amplitude high limit.
+      bit_offset: 16
+      bit_size: 16
+fieldset/FILTCTRL:
+  description: Filter Control Register.
+  fields:
+    - name: IIR_SLOT_EN
+      description: IIR slot enable.
+      bit_offset: 0
+      bit_size: 8
+    - name: DECRATIO
+      description: "the decimation ratio of iir after CIC -1 2: means dec-by-3."
+      bit_offset: 8
+      bit_size: 3
+fieldset/OFIFO:
+  description: Out FIFO.
+  fields:
+    - name: D
+      description: "The PCM data. When there is only one channel, the samples are from Ch0, and the 2 samples in the 32-bits are: bit [31:16]: the samples earlier in time ([T-1]). Bit [15:0]: the samples later in time ([T]). When there is two channels, the samples in the 32-bits are: bit [31:16]: the samples belong to Ch 1 (when ch_pol[1:0]==2, the data is captured at the positive part of the pdm clk). bit [15:0]: the samples belong to Ch 0 (when ch_pol[1:0]==2, the data is captured at the negtive part of the pdm clk)."
+      bit_offset: 0
+      bit_size: 32
+fieldset/OFIFO_CTRL:
+  description: Out FIFO Control Register.
+  fields:
+    - name: EN
+      description: Asserted to enable OFIFO.
+      bit_offset: 0
+      bit_size: 1
+fieldset/RUN:
+  description: Run Command Register.
+  fields:
+    - name: VAD_EN
+      description: module enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: SFTRST
+      description: software reset. Self-clear.
+      bit_offset: 1
+      bit_size: 1
+fieldset/ST:
+  description: Status.
+  fields:
+    - name: CIC_SAT_ERR
+      description: CIC saturation.
+      bit_offset: 0
+      bit_size: 1
+    - name: CIC_OVLD_ERR
+      description: CIC overload.
+      bit_offset: 1
+      bit_size: 1
+    - name: IIR_OVFL
+      description: IIR oberflow.
+      bit_offset: 2
+      bit_size: 1
+    - name: IIR_OVLD
+      description: IIR overloading.
+      bit_offset: 3
+      bit_size: 1
+    - name: OFIFO_OVFL
+      description: OFIFO overflow.
+      bit_offset: 4
+      bit_size: 1
+    - name: MEMBUF_EMPTY
+      description: Buf empty.
+      bit_offset: 5
+      bit_size: 1
+    - name: OFIFO_AV
+      description: OFIFO data available.
+      bit_offset: 6
+      bit_size: 1
+    - name: VAD
+      description: VAD event found.
+      bit_offset: 7
+      bit_size: 1

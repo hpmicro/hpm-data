@@ -1,0 +1,500 @@
+block/CAM:
+  description: CAM0.
+  items:
+    - name: CR1
+      description: Control Register.
+      byte_offset: 0
+      fieldset: CR1
+    - name: INT_EN
+      description: Interrupt Enable Register.
+      byte_offset: 4
+      fieldset: INT_EN
+    - name: CR2
+      description: Control 2 Register.
+      byte_offset: 16
+      fieldset: CR2
+    - name: STA
+      description: Status Register.
+      byte_offset: 36
+      fieldset: STA
+    - name: DMASA_FB1
+      description: Pixel DMA Frame Buffer 1 Address.
+      byte_offset: 48
+      fieldset: DMASA_FB1
+    - name: DMASA_FB2
+      description: Pixel DMA Frame Buffer 2 Address.
+      byte_offset: 52
+      fieldset: DMASA_FB2
+    - name: BUF_PARA
+      description: Buffer Parameters Register.
+      byte_offset: 56
+      fieldset: BUF_PARA
+    - name: IDEAL_WN_SIZE
+      description: Ideal Image Size Register.
+      byte_offset: 60
+      fieldset: IDEAL_WN_SIZE
+    - name: CR18
+      description: Control CR18 Register.
+      byte_offset: 76
+      fieldset: CR18
+    - name: DMASA_UV1
+      description: Pixel UV DMA Frame Buffer 1 Address.
+      byte_offset: 80
+      fieldset: DMASA_UV1
+    - name: DMASA_UV2
+      description: Pixel UV DMA Frame Buffer 2 Address.
+      byte_offset: 84
+      fieldset: DMASA_UV2
+    - name: CR20
+      description: Control CR20 Register.
+      byte_offset: 88
+      fieldset: CR20
+    - name: CSC_COEF0
+      description: Color Space Conversion Config Register 0.
+      byte_offset: 112
+      fieldset: CSC_COEF0
+    - name: CSC_COEF1
+      description: Color Space Conversion Config Register 1.
+      byte_offset: 116
+      fieldset: CSC_COEF1
+    - name: CSC_COEF2
+      description: Color Space Conversion Config Register 2.
+      byte_offset: 120
+      fieldset: CSC_COEF2
+    - name: CLRKEY_LOW
+      description: Low Color Key Register.
+      byte_offset: 124
+      fieldset: CLRKEY_LOW
+    - name: CLRKEY_HIGH
+      description: High Color Key Register.
+      byte_offset: 128
+      fieldset: CLRKEY_HIGH
+    - name: HISTOGRAM_FIFO
+      description: no description available.
+      array:
+        len: 256
+        stride: 4
+      byte_offset: 144
+      fieldset: HISTOGRAM_FIFO
+    - name: ROI_WIDTH
+      description: Roi Width Config Register.
+      byte_offset: 1168
+      fieldset: ROI_WIDTH
+    - name: ROI_HEIGHT
+      description: Roi Width Config Register.
+      byte_offset: 1172
+      fieldset: ROI_HEIGHT
+    - name: PRO_CTRL
+      description: Pro Config Register.
+      byte_offset: 1176
+      fieldset: PRO_CTRL
+    - name: ACT_SIZE
+      description: actual size.
+      byte_offset: 1180
+      fieldset: ACT_SIZE
+    - name: VSYNC_VALID_CNT
+      description: vsync valid counter.
+      byte_offset: 1184
+      fieldset: VSYNC_VALID_CNT
+    - name: HSYNC_VALID_CNT
+      description: hsync valid counter.
+      byte_offset: 1188
+      fieldset: HSYNC_VALID_CNT
+    - name: VALID_MARGIN
+      description: valid margin.
+      byte_offset: 1192
+      fieldset: VALID_MARGIN
+    - name: ALARM_SET
+      description: alarm set.
+      byte_offset: 1196
+      fieldset: ALARM_SET
+fieldset/ACT_SIZE:
+  description: actual size.
+  fields:
+    - name: ACT_WIDTH
+      description: actual width after scale and/or roi.
+      bit_offset: 0
+      bit_size: 16
+    - name: ACT_HEIGHT
+      description: actual height after scale and/or roi.
+      bit_offset: 16
+      bit_size: 16
+fieldset/ALARM_SET:
+  description: alarm set.
+  fields:
+    - name: PRE_DIV
+      description: frequency division.
+      bit_offset: 0
+      bit_size: 16
+    - name: FATAL_NORMAL
+      description: "define signal duty cycles(base clock) 0x0: disable signal 0x1: high 1, low 15 0x2: high 2, low 14 …... 0xF: high 15, low 1."
+      bit_offset: 16
+      bit_size: 4
+    - name: SIG_NORMAL
+      description: "define signal duty cycles(base clock) 0x0: disable signal 0x1: high 1, low 15 0x2: high 2, low 14 …... 0xF: high 15, low 1."
+      bit_offset: 20
+      bit_size: 4
+fieldset/BUF_PARA:
+  description: Buffer Parameters Register.
+  fields:
+    - name: LINEBSP_STRIDE
+      description: Line Blank Space Stride. Indicates the space between the end of line image storage and the start of a new line storage in the frame buffer. The width of the line storage in frame buffer(in double words) minus the width of the image(in double words) is the stride. The stride should be double words aligned. The embedded DMA controller will skip the stride before starting to write the next row of the image.
+      bit_offset: 0
+      bit_size: 16
+fieldset/CLRKEY_HIGH:
+  description: High Color Key Register.
+  fields:
+    - name: LIMIT
+      description: Low range of color key applied to PS buffer. To disable PS colorkeying, set the low colorkey to 0xFFFFFF and the high colorkey to 0x000000.
+      bit_offset: 0
+      bit_size: 24
+fieldset/CLRKEY_LOW:
+  description: Low Color Key Register.
+  fields:
+    - name: LIMIT
+      description: Low range of color key applied to PS buffer. To disable PS colorkeying, set the low colorkey to 0xFFFFFF and the high colorkey to 0x000000.
+      bit_offset: 0
+      bit_size: 24
+fieldset/CR1:
+  description: Control Register.
+  fields:
+    - name: SENSOR_BIT_WIDTH
+      description: "the bit width of the sensor 0: 8 bits 1: 10 bits 3:24bits Others: Undefined."
+      bit_offset: 0
+      bit_size: 3
+    - name: COLOR_FORMATS
+      description: "input color formats: 0010b:24bit:RGB888 0011b:24bit:RGB666 0100b:16bit:RGB565 0101b:16bit:RGB444 0110b:16bit:RGB555 0111b: 16bit: YCbCr422 (Y0 Cb Y1 Cr, each 8-bit) YUV YCrCb Note: YUV420 is not supported. 1000b: 24bit: YUV444."
+      bit_offset: 3
+      bit_size: 4
+    - name: STORAGE_MODE
+      description: "00: Normal Mode (one plane mode) 01: Two Plane Mode (Y, UV plane) 10: Y-only Mode, byte sequence as Y0,Y1,Y2,Y3 11: Binary Mode, bit sequence is from LSB to MSB when CR20[BIG_END]=0."
+      bit_offset: 10
+      bit_size: 2
+    - name: INV_DATA
+      description: Invert Data Input. This bit enables or disables internal inverters on the data lines. 0 CAM_D data lines are directly applied to internal circuitry 1 CAM_D data lines are inverted before applied to internal circuitry.
+      bit_offset: 15
+      bit_size: 1
+    - name: SOF_INT_POL
+      description: SOF Interrupt Polarity. This bit controls the condition that generates an SOF interrupt. 0 SOF interrupt is generated on SOF falling edge 1 SOF interrupt is generated on SOF rising edge.
+      bit_offset: 17
+      bit_size: 1
+    - name: SYNC_RXFIFO_CLR
+      description: Synchronous Rx FIFO Clear. When asserted, this bit clears RXFIFO on every SOF.
+      bit_offset: 19
+      bit_size: 1
+    - name: ASYNC_RXFIFO_CLR
+      description: ASynchronous Rx FIFO Clear. When asserted, this bit clears RXFIFO immediately. It will be auto-cleared.
+      bit_offset: 20
+      bit_size: 1
+    - name: RESTART_BUSPTR
+      description: force to restart the bus pointer at the every end of the sof period, and at the same time, clr the fifo pointer.
+      bit_offset: 23
+      bit_size: 1
+    - name: PACK_DIR
+      description: Data Packing Direction. This bit Controls how 8-bit/10-bit image data is packed into 32-bit RX FIFO. 0 Pack from LSB first. For image data, 0x11, 0x22, 0x33, 0x44, it will appear as 0x44332211 in RX FIFO. 1 Pack from MSB first. For image data, 0x11, 0x22, 0x33, 0x44, it will appear as 0x11223344 in RX FIFO.
+      bit_offset: 24
+      bit_size: 1
+    - name: SWAP16_EN
+      description: "SWAP 16-Bit Enable. This bit enables the swapping of 16-bit data. Data is packed from 8-bit or 10-bit to 32-bit first (according to the setting of PACK_DIR) and then swapped as 16-bit words before being put into the RX FIFO. The action of the bit only affects the RX FIFO. NOTE: Example of swapping enabled: Data input to FIFO = 0x11223344 Data in RX FIFO = 0x 33441122 NOTE: Example of swapping disabled: Data input to FIFO = 0x11223344 Data in RX FIFO = 0x11223344 0 Disable swapping 1 Enable swapping."
+      bit_offset: 25
+      bit_size: 1
+    - name: INV_VSYNC
+      description: invert vsync pad input before it is used.
+      bit_offset: 26
+      bit_size: 1
+    - name: INV_HSYNC
+      description: invert hsync pad input before it is used.
+      bit_offset: 27
+      bit_size: 1
+    - name: INV_PIXCLK
+      description: invert pixclk pad input before it is used.
+      bit_offset: 28
+      bit_size: 1
+    - name: COLOR_EXT
+      description: If asserted, will change the output color to ARGB8888 mode. Used by input color as RGB565, RGB888, YUV888, etc. The byte sequence is B,G,R,A. Depends on correct CR2[ClrBitFormat] configuration.
+      bit_offset: 29
+      bit_size: 1
+    - name: INV_DEN
+      description: invert den pad input before it is used.
+      bit_offset: 30
+      bit_size: 1
+fieldset/CR18:
+  description: Control CR18 Register.
+  fields:
+    - name: AWQOS
+      description: AWQOS for bus fabric arbitration.
+      bit_offset: 7
+      bit_size: 4
+fieldset/CR2:
+  description: Control 2 Register.
+  fields:
+    - name: CLRBITFORMAT
+      description: Input Byte & bit sequence same as OV5640, except for Raw mode. Used only for internal ARGB conversion.
+      bit_offset: 0
+      bit_size: 4
+    - name: DMA_REQ_EN_RFF
+      description: DMA Request Enable for RxFIFO. This bit enables the dma request from RxFIFO to the embedded DMA controller. 0 Disable the dma request 1 Enable the dma request. The UV Rx FIFO is only enabled to filling data in 2 plane mode.
+      bit_offset: 5
+      bit_size: 1
+    - name: RXFF_LEVEL
+      description: RxFIFO Full Level. When the number of data in RxFIFO reaches this level, a RxFIFO full interrupt is generated, or an RXFIFO DMA request is sent. 000 4 Double words 001 8 Double words 010 16 Double words 011 24 Double words 100 32 Double words 101 48 Double words 110 64 Double words 111 96 Double words.
+      bit_offset: 9
+      bit_size: 3
+    - name: FRMCNT_RST
+      description: Frame Count Reset. Resets the Frame Counter. 0 Do not reset 1 Reset frame counter immediately.
+      bit_offset: 15
+      bit_size: 1
+    - name: FRMCNT_15_0
+      description: Frame Counter. This is a 16-bit Frame Counter (Wraps around automatically after reaching the maximum).
+      bit_offset: 16
+      bit_size: 16
+fieldset/CR20:
+  description: Control CR20 Register.
+  fields:
+    - name: THRESHOLD
+      description: Threshold to generate binary color. Bin 1 is output if the pixel is greater than the threshold.
+      bit_offset: 0
+      bit_size: 8
+    - name: BIG_END
+      description: Asserted when binary output is in big-endian type, which mean the right most data is at the LSBs. Take function only inside the 32-bit word.
+      bit_offset: 8
+      bit_size: 1
+    - name: HISTOGRAM_EN
+      description: histogarm enable.
+      bit_offset: 30
+      bit_size: 1
+    - name: BINARY_EN
+      description: binary picture output enable.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CSC_COEF0:
+  description: Color Space Conversion Config Register 0.
+  fields:
+    - name: Y_OFFSET
+      description: Two's compliment amplitude offset implicit in the Y data. For YUV, this is typically 0 and for YCbCr, this is typically -16 (0x1F0).
+      bit_offset: 0
+      bit_size: 9
+    - name: UV_OFFSET
+      description: Two's compliment phase offset implicit for CbCr data. Generally used for YCbCr to RGB conversion. YCbCr=0x180, YUV=0x000 (typically -128 or 0x180 to indicate normalized -0.5 to 0.5 range).
+      bit_offset: 9
+      bit_size: 9
+    - name: C0
+      description: Two's compliment Y multiplier coefficient. YUV=0x100 (1.000) YCbCr=0x12A (1.164).
+      bit_offset: 18
+      bit_size: 11
+    - name: ENABLE
+      description: Enable the CSC unit 0b - The CSC is bypassed and the input pixels are RGB data already 1b - The CSC is enabled and the pixels will be converted to RGB data.
+      bit_offset: 30
+      bit_size: 1
+    - name: YCBCR_MODE
+      description: This bit changes the behavior when performing U/V converting. 0b - Converting YUV to RGB data 1b - Converting YCbCr to RGB data.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CSC_COEF1:
+  description: Color Space Conversion Config Register 1.
+  fields:
+    - name: C4
+      description: Two's compliment Blue U/Cb multiplier coefficient. YUV=0x208 (2.032) YCbCr=0x204 (2.017).
+      bit_offset: 0
+      bit_size: 11
+    - name: C1
+      description: Two's compliment Red V/Cr multiplier coefficient. YUV=0x123 (1.140) YCbCr=0x198 (1.596).
+      bit_offset: 16
+      bit_size: 11
+fieldset/CSC_COEF2:
+  description: Color Space Conversion Config Register 2.
+  fields:
+    - name: C3
+      description: Two's compliment Green U/Cb multiplier coefficient. YUV=0x79C (-0.394) YCbCr=0x79C (-0.392).
+      bit_offset: 0
+      bit_size: 11
+    - name: C2
+      description: Two's compliment Green V/Cr multiplier coefficient. YUV=0x76B (-0.581) YCbCr=0x730 (-0.813).
+      bit_offset: 16
+      bit_size: 11
+fieldset/DMASA_FB1:
+  description: Pixel DMA Frame Buffer 1 Address.
+  fields:
+    - name: PTR
+      description: DMA Start Address in Frame Buffer1. Indicates the start address to write data. The embedded DMA controller will read data from RxFIFO and write it from this address through AHB bus. The address should be double words aligned. In Two-Plane Mode, Y buffer1.
+      bit_offset: 2
+      bit_size: 30
+fieldset/DMASA_FB2:
+  description: Pixel DMA Frame Buffer 2 Address.
+  fields:
+    - name: PTR
+      description: DMA Start Address in Frame Buffer2. Indicates the start address to write data. The embedded DMA controller will read data from RxFIFO and write it from this address through AHB bus. The address should be double words aligned. In Two-Plane Mode, Y buffer2.
+      bit_offset: 2
+      bit_size: 30
+fieldset/DMASA_UV1:
+  description: Pixel UV DMA Frame Buffer 1 Address.
+  fields:
+    - name: PTR
+      description: Two Plane UV Buffer Start Address 1.
+      bit_offset: 2
+      bit_size: 30
+fieldset/DMASA_UV2:
+  description: Pixel UV DMA Frame Buffer 2 Address.
+  fields:
+    - name: PTR
+      description: Two Plane UV Buffer Start Address 2.
+      bit_offset: 2
+      bit_size: 30
+fieldset/HISTOGRAM_FIFO:
+  description: no description available.
+  fields:
+    - name: HIST_Y
+      description: the appearance of bin x (x=(address-DATA0)/4).
+      bit_offset: 0
+      bit_size: 24
+fieldset/HSYNC_VALID_CNT:
+  description: hsync valid counter.
+  fields:
+    - name: HSYNC_VALID_CNT
+      description: hsync valid counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/IDEAL_WN_SIZE:
+  description: Ideal Image Size Register.
+  fields:
+    - name: WIDTH
+      description: Image Width. Indicates how many active pixels in a line of the image from the sensor. The number of bytes to be transferred is re-calculated automatically in hardware based on cr1[color_ext] and cr1[store_mode]. Default value is 2*pixel number. As the input data from the sensor is 8-bit/pixel format, the IMAGE_WIDTH should be a multiple of 8 pixels.
+      bit_offset: 0
+      bit_size: 16
+    - name: HEIGHT
+      description: Image Height. Indicates how many active pixels in a column of the image from the sensor.
+      bit_offset: 16
+      bit_size: 16
+fieldset/INT_EN:
+  description: Interrupt Enable Register.
+  fields:
+    - name: SOF_INT_EN
+      description: Start Of Frame (SOF) Interrupt Enable. This bit enables the SOF interrupt. 0 SOF interrupt disable 1 SOF interrupt enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: FB1_DMA_DONE_INTEN
+      description: Frame Buffer1 DMA Transfer Done Interrupt Enable. This bit enables the interrupt of Frame Buffer1 DMA transfer done. 0 Frame Buffer1 DMA Transfer Done interrupt disable 1 Frame Buffer1 DMA Transfer Done interrupt enable.
+      bit_offset: 2
+      bit_size: 1
+    - name: FB2_DMA_DONE_INTEN
+      description: Frame Buffer2 DMA Transfer Done Interrupt Enable. This bit enables the interrupt of Frame Buffer2 DMA transfer done. 0 Frame Buffer2 DMA Transfer Done interrupt disable 1 Frame Buffer2 DMA Transfer Done interrupt enable.
+      bit_offset: 3
+      bit_size: 1
+    - name: RF_OR_INTEN
+      description: RxFIFO Overrun Interrupt Enable. This bit enables the RX FIFO overrun interrupt. 0 RxFIFO overrun interrupt is disabled 1 RxFIFO overrun interrupt is enabled.
+      bit_offset: 6
+      bit_size: 1
+    - name: EOF_INT_EN
+      description: End-of-Frame Interrupt Enable. This bit enables and disables the EOF interrupt. 0 EOF interrupt is disabled. 1 EOF interrupt is generated when RX count value is reached.
+      bit_offset: 9
+      bit_size: 1
+    - name: HRESP_ERR_EN
+      description: Hresponse Error Enable. This bit enables the hresponse error interrupt. 0 Disable hresponse error interrupt 1 Enable hresponse error interrupt.
+      bit_offset: 11
+      bit_size: 1
+    - name: HIST_DONE_INT_EN
+      description: Enable hist done int.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_CL_BWID_CFG_INT_EN
+      description: The unsupported color (color_formats[3:0]) and bitwidth (sensor_bit_width[2:0]) configuation interrupt enable.
+      bit_offset: 13
+      bit_size: 1
+fieldset/PRO_CTRL:
+  description: Pro Config Register.
+  fields:
+    - name: SCALE_WIDTH_SELECT
+      description: 000 keep all pixel for width 001 keep 1 for every 2 pixel for width 010 keep 1 for every 3 pixel for width 011 keep 1 for every 4 pixel for width 100 keep 1 for every 5 pixel for width 101 keep 1 for every 6 pixel for width 110 keep 1 for every 7 pixel for width 111 keep 1 for every 8 pixel for width.
+      bit_offset: 0
+      bit_size: 3
+    - name: SCALE_HEIGHT_SELECT
+      description: 000 keep all pixel for height 001 keep 1 for every 2 pixel for height 010 keep 1 for every 3 pixel for height 011 keep 1 for every 4 pixel for height 100 keep 1 for every 5 pixel for height 101 keep 1 for every 6 pixel for height 110 keep 1 for every 7 pixel for height 111 keep 1 for every 8 pixel for height.
+      bit_offset: 3
+      bit_size: 3
+    - name: SCALE_UPDATE
+      description: scale configration update.
+      bit_offset: 6
+      bit_size: 1
+    - name: ROI_UPDATE
+      description: roi configration update.
+      bit_offset: 7
+      bit_size: 1
+    - name: ERR_INJECT
+      description: 0 generate alarm in normal mode 1 force to generate fatal alarm.
+      bit_offset: 14
+      bit_size: 1
+fieldset/ROI_HEIGHT:
+  description: Roi Width Config Register.
+  fields:
+    - name: ROI_HEIGHT_START
+      description: start address of height for roi.
+      bit_offset: 0
+      bit_size: 16
+    - name: ROI_HEIGHT_END
+      description: end address of height for roi.
+      bit_offset: 16
+      bit_size: 16
+fieldset/ROI_WIDTH:
+  description: Roi Width Config Register.
+  fields:
+    - name: ROI_WIDTH_START
+      description: start address of width for roi.
+      bit_offset: 0
+      bit_size: 16
+    - name: ROI_WIDTH_END
+      description: end address of width for roi.
+      bit_offset: 16
+      bit_size: 16
+fieldset/STA:
+  description: Status Register.
+  fields:
+    - name: HRESP_ERR_INT
+      description: Hresponse Error Interrupt Status. Indicates that a hresponse error has been detected. (Cleared by writing 1) 0 No hresponse error. 1 Hresponse error is detected.
+      bit_offset: 2
+      bit_size: 1
+    - name: SOF_INT
+      description: Start of Frame Interrupt Status. Indicates when SOF is detected. (Cleared by writing 1) 0 SOF is not detected. 1 SOF is detected.
+      bit_offset: 6
+      bit_size: 1
+    - name: EOF_INT
+      description: End of Frame (EOF) Interrupt Status. Indicates when EOF is detected. (Cleared by writing 1) 0 EOF is not detected. 1 EOF is detected.
+      bit_offset: 7
+      bit_size: 1
+    - name: DMA_TSF_DONE_FB1
+      description: DMA Transfer Done in Frame Buffer1. Indicates that the DMA transfer from RxFIFO to Frame Buffer1 is completed. It can trigger an interrupt if the corresponding enable bit is set in CAM_CR1. This bit can be cleared by by writing 1 or reflashing the RxFIFO dma controller in CAM_CR3. (Cleared by writing 1) 0 DMA transfer is not completed. 1 DMA transfer is completed.
+      bit_offset: 9
+      bit_size: 1
+    - name: DMA_TSF_DONE_FB2
+      description: DMA Transfer Done in Frame Buffer2. Indicates that the DMA transfer from RxFIFO to Frame Buffer2 is completed. It can trigger an interrupt if the corresponding enable bit is set in CAM_CR1. This bit can be cleared by by writing 1 or reflashing the RxFIFO dma controller in CAM_CR3. (Cleared by writing 1) 0 DMA transfer is not completed. 1 DMA transfer is completed.
+      bit_offset: 10
+      bit_size: 1
+    - name: RF_OR_INT
+      description: RxFIFO Overrun Interrupt Status. Indicates the overflow status of the RxFIFO register. (Cleared by writing 1) 0 RXFIFO has not overflowed. 1 RXFIFO has overflowed.
+      bit_offset: 13
+      bit_size: 1
+    - name: HIST_DONE
+      description: hist cal done.
+      bit_offset: 18
+      bit_size: 1
+    - name: ERR_CL_BWID_CFG
+      description: The unsupported color (color_formats[3:0]) and bitwidth (sensor_bit_width[2:0]) configuation found.
+      bit_offset: 19
+      bit_size: 1
+fieldset/VALID_MARGIN:
+  description: valid margin.
+  fields:
+    - name: VSYNC_VALID_MARGIN
+      description: vsync valid margin.
+      bit_offset: 0
+      bit_size: 16
+    - name: HSYNC_VALID_MARGIN
+      description: hsync valid margin.
+      bit_offset: 16
+      bit_size: 16
+fieldset/VSYNC_VALID_CNT:
+  description: vsync valid counter.
+  fields:
+    - name: VSYNC_VALID_CNT
+      description: vsync valid counter.
+      bit_offset: 0
+      bit_size: 32

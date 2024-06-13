@@ -1,0 +1,340 @@
+block/COUNT:
+  description: no description available.
+  items:
+    - name: w
+      description: W counter.
+      byte_offset: 0
+      fieldset: w
+    - name: v
+      description: V counter.
+      byte_offset: 4
+      fieldset: v
+    - name: u
+      description: U counter.
+      byte_offset: 8
+      fieldset: u
+    - name: tmr
+      description: Timer counter.
+      byte_offset: 12
+      fieldset: tmr
+block/HALL:
+  description: HALL0.
+  items:
+    - name: cr
+      description: Control Register.
+      byte_offset: 0
+      fieldset: cr
+    - name: phcfg
+      description: Phase configure register.
+      byte_offset: 4
+      fieldset: phcfg
+    - name: wdgcfg
+      description: Watchdog configure register.
+      byte_offset: 8
+      fieldset: wdgcfg
+    - name: uvwcfg
+      description: U,V,W configure register.
+      byte_offset: 12
+      fieldset: uvwcfg
+    - name: trgoen
+      description: Trigger output enable register.
+      byte_offset: 16
+      fieldset: trgoen
+    - name: readen
+      description: Read event enable register.
+      byte_offset: 20
+      fieldset: readen
+    - name: dmaen
+      description: DMA enable register.
+      byte_offset: 36
+      fieldset: dmaen
+    - name: sr
+      description: Status register.
+      byte_offset: 40
+      fieldset: sr
+    - name: irqen
+      description: Interrupt request enable register.
+      byte_offset: 44
+      fieldset: irqen
+    - name: COUNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 16
+      byte_offset: 48
+      block: COUNT
+    - name: HIS
+      description: no description available.
+      array:
+        len: 3
+        stride: 8
+      byte_offset: 112
+      block: HIS
+block/HIS:
+  description: no description available.
+  items:
+    - name: his0
+      description: history register 0.
+      byte_offset: 0
+      fieldset: his0
+    - name: his1
+      description: history register 1.
+      byte_offset: 4
+      fieldset: his1
+fieldset/cr:
+  description: Control Register.
+  fields:
+    - name: RSTCNT
+      description: set to reset all counter and related snapshots.
+      bit_offset: 4
+      bit_size: 1
+    - name: SNAPEN
+      description: 1- load ucnt, vcnt, wcnt and tmrcnt into their snap registers when snapi input assert.
+      bit_offset: 11
+      bit_size: 1
+    - name: READ
+      description: 1- load ucnt, vcnt, wcnt and tmrcnt into their read registers. Hardware auto-clear; read as 0.
+      bit_offset: 31
+      bit_size: 1
+fieldset/dmaen:
+  description: DMA enable register.
+  fields:
+    - name: WFEN
+      description: 1- generate dma request when w flag set.
+      bit_offset: 21
+      bit_size: 1
+    - name: VFEN
+      description: 1- generate dma request when v flag set.
+      bit_offset: 22
+      bit_size: 1
+    - name: UFEN
+      description: 1- generate dma request when u flag set.
+      bit_offset: 23
+      bit_size: 1
+    - name: PHDLYEN
+      description: 1- generate dma request when phdly flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: PHPREEN
+      description: 1- generate dma request when phpre flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: PHUPTEN
+      description: 1- generate dma request when phupt flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGEN
+      description: 1- generate dma request when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/his0:
+  description: history register 0.
+  fields:
+    - name: UHIS0
+      description: copy of ucnt when u signal transition from 0 to 1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/his1:
+  description: history register 1.
+  fields:
+    - name: UHIS1
+      description: copy of ucnt when u signal transition from 1 to 0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/irqen:
+  description: Interrupt request enable register.
+  fields:
+    - name: WFIE
+      description: 1- generate interrupt request when w flag set.
+      bit_offset: 21
+      bit_size: 1
+    - name: VFIE
+      description: 1- generate interrupt request when v flag set.
+      bit_offset: 22
+      bit_size: 1
+    - name: UFIE
+      description: 1- generate interrupt request when u flag set.
+      bit_offset: 23
+      bit_size: 1
+    - name: PHDLYIE
+      description: 1- generate interrupt request when phdly flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: PHPREIE
+      description: 1- generate interrupt request when phpre flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: PHUPTIE
+      description: 1- generate interrupt request when phupt flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGIE
+      description: 1- generate interrupt request when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/phcfg:
+  description: Phase configure register.
+  fields:
+    - name: DLYCNT
+      description: delay clock cycles number.
+      bit_offset: 0
+      bit_size: 24
+    - name: DLYSEL
+      description: "This bit select delay start time: 1- start counting delay after pre-trigger 0- start counting delay after u,v,w toggle."
+      bit_offset: 31
+      bit_size: 1
+fieldset/readen:
+  description: Read event enable register.
+  fields:
+    - name: WFEN
+      description: 1- load counters to their read registers when w flag set.
+      bit_offset: 21
+      bit_size: 1
+    - name: VFEN
+      description: 1- load counters to their read registers when v flag set.
+      bit_offset: 22
+      bit_size: 1
+    - name: UFEN
+      description: 1- load counters to their read registers when u flag set.
+      bit_offset: 23
+      bit_size: 1
+    - name: PHDLYEN
+      description: 1- load counters to their read registers when phdly flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: PHPREEN
+      description: 1- load counters to their read registers when phpre flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: PHUPTEN
+      description: 1- load counters to their read registers when phupt flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGEN
+      description: 1- load counters to their read registers when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/sr:
+  description: Status register.
+  fields:
+    - name: WF
+      description: w flag, will set when w signal toggle.
+      bit_offset: 21
+      bit_size: 1
+    - name: VF
+      description: v flag, will set when v signal toggle.
+      bit_offset: 22
+      bit_size: 1
+    - name: UF
+      description: u flag, will set when u signal toggle.
+      bit_offset: 23
+      bit_size: 1
+    - name: PHDLYF
+      description: phase update delay flag, will set DLYCNT cycles after any of u, v, w signal toggle or after the phpre flag depands on DLYSEL setting.
+      bit_offset: 28
+      bit_size: 1
+    - name: PHPREF
+      description: phase update pre flag, will set PRECNT cycles before any of u, v, w signal toggle.
+      bit_offset: 29
+      bit_size: 1
+    - name: PHUPTF
+      description: phase update flag, will set when any of u, v, w signal toggle.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGF
+      description: watchdog count timeout flag.
+      bit_offset: 31
+      bit_size: 1
+fieldset/tmr:
+  description: Timer counter.
+  fields:
+    - name: TIMER
+      description: 32 bit free run timer.
+      bit_offset: 0
+      bit_size: 32
+fieldset/trgoen:
+  description: Trigger output enable register.
+  fields:
+    - name: WFEN
+      description: 1- enable trigger output when w flag set.
+      bit_offset: 21
+      bit_size: 1
+    - name: VFEN
+      description: 1- enable trigger output when v flag set.
+      bit_offset: 22
+      bit_size: 1
+    - name: UFEN
+      description: 1- enable trigger output when u flag set.
+      bit_offset: 23
+      bit_size: 1
+    - name: PHDLYEN
+      description: 1- enable trigger output when phdly flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: PHPREEN
+      description: 1- enable trigger output when phpre flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: PHUPTEN
+      description: 1- enable trigger output when phupt flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGEN
+      description: 1- enable trigger output when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/u:
+  description: U counter.
+  fields:
+    - name: UCNT
+      description: ucnt counter.
+      bit_offset: 0
+      bit_size: 28
+    - name: WSTAT
+      description: this bit indicate W state.
+      bit_offset: 28
+      bit_size: 1
+    - name: VSTAT
+      description: this bit indicate V state.
+      bit_offset: 29
+      bit_size: 1
+    - name: USTAT
+      description: this bit indicate U state.
+      bit_offset: 30
+      bit_size: 1
+    - name: DIR
+      description: 1- reverse rotation 0- forward rotation.
+      bit_offset: 31
+      bit_size: 1
+fieldset/uvwcfg:
+  description: U,V,W configure register.
+  fields:
+    - name: PRECNT
+      description: the clock cycle number which the pre flag will set before the next uvw transition.
+      bit_offset: 0
+      bit_size: 24
+fieldset/v:
+  description: V counter.
+  fields:
+    - name: VCNT
+      description: vcnt counter.
+      bit_offset: 0
+      bit_size: 28
+fieldset/w:
+  description: W counter.
+  fields:
+    - name: WCNT
+      description: wcnt counter.
+      bit_offset: 0
+      bit_size: 28
+fieldset/wdgcfg:
+  description: Watchdog configure register.
+  fields:
+    - name: WDGTO
+      description: watch dog timeout value.
+      bit_offset: 0
+      bit_size: 31
+    - name: WDGEN
+      description: 1- enable wdog counter.
+      bit_offset: 31
+      bit_size: 1

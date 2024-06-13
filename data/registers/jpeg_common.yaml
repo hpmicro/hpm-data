@@ -1,0 +1,593 @@
+block/JPEG:
+  description: JPEG.
+  items:
+    - name: InDMA_MISC
+      description: In DMA Misc Control Register.
+      byte_offset: 0
+      fieldset: InDMA_MISC
+    - name: InDMABase
+      description: In DMA Buf Address.
+      byte_offset: 4
+      fieldset: InDMABase
+    - name: InDMA_Ctrl0
+      description: In DMA Buf Control 0 Register.
+      byte_offset: 12
+      fieldset: InDMA_Ctrl0
+    - name: InDMA_Ctrl1
+      description: In DMA Buf Control 1 Register.
+      byte_offset: 16
+      fieldset: InDMA_Ctrl1
+    - name: INXT_CMD
+      description: In DMA Next Command Register.
+      byte_offset: 20
+      fieldset: INXT_CMD
+    - name: OutDMA_MISC
+      description: Out DMA Misc Control Register.
+      byte_offset: 32
+      fieldset: OutDMA_MISC
+    - name: OutDMABase
+      description: Out DMA Buf Address.
+      byte_offset: 36
+      fieldset: OutDMABase
+    - name: OutDMA_Ctrl0
+      description: Out DMA Buf Control 0 Register.
+      byte_offset: 44
+      fieldset: OutDMA_Ctrl0
+    - name: OutDMA_Ctrl1
+      description: Out DMA Buf Control 1 Register.
+      byte_offset: 48
+      fieldset: OutDMA_Ctrl1
+    - name: ONXT_CMD
+      description: Out DMA Next Command Register.
+      byte_offset: 52
+      fieldset: ONXT_CMD
+    - name: CFG
+      description: Configuration Register.
+      byte_offset: 64
+      fieldset: CFG
+    - name: STAT
+      description: Status Register.
+      byte_offset: 68
+      fieldset: STAT
+    - name: Width
+      description: Image width register.
+      byte_offset: 72
+      fieldset: Width
+    - name: Height
+      description: Image height register.
+      byte_offset: 76
+      fieldset: Height
+    - name: BufAddr
+      description: Buf Access Addr.
+      byte_offset: 80
+      fieldset: BufAddr
+    - name: BufData
+      description: Buf Access Data.
+      byte_offset: 84
+      fieldset: BufData
+    - name: OutDMACnt
+      description: Out DMA Bytes Counter.
+      byte_offset: 88
+      fieldset: OutDMACnt
+    - name: CSC_COEF0
+      description: YUV2RGB coefficients Register 0.
+      byte_offset: 92
+      fieldset: CSC_COEF0
+    - name: CSC_COEF1
+      description: YUV2RGB coefficients Register 1.
+      byte_offset: 96
+      fieldset: CSC_COEF1
+    - name: CSC_COEF2
+      description: YUV2RGB coefficients Register 2.
+      byte_offset: 100
+      fieldset: CSC_COEF2
+    - name: RGB2YUV_COEF0
+      description: RGB2YUV coefficients Register 0.
+      byte_offset: 104
+      fieldset: RGB2YUV_COEF0
+    - name: RGB2YUV_COEF1
+      description: RGB2YUV coefficients Register 1.
+      byte_offset: 108
+      fieldset: RGB2YUV_COEF1
+    - name: RGB2YUV_COEF2
+      description: RGB2YUV coefficients Register 2.
+      byte_offset: 112
+      fieldset: RGB2YUV_COEF2
+    - name: RGB2YUV_COEF3
+      description: RGB2YUV coefficients Register 3.
+      byte_offset: 116
+      fieldset: RGB2YUV_COEF3
+    - name: RGB2YUV_COEF4
+      description: RGB2YUV coefficients Register 4.
+      byte_offset: 120
+      fieldset: RGB2YUV_COEF4
+    - name: ImgReg1
+      description: Image Control Register 1.
+      byte_offset: 132
+      fieldset: ImgReg1
+    - name: ImgReg2
+      description: Image Control Register 2.
+      byte_offset: 136
+      fieldset: ImgReg2
+    - name: ImgReg3
+      description: Image Control Register 3.
+      byte_offset: 140
+      fieldset: ImgReg3
+    - name: IMGREG
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 144
+      fieldset: IMGREG
+fieldset/BufAddr:
+  description: Buf Access Addr.
+  fields:
+    - name: ADDR
+      description: "ADDR[31:28] denotes the buffer type: 0x2: Qmem 0x3: HuffEnc 0x4: HuffMin 0x5: HuffBase 0x6: HuffSymb ADDR[27:0] is the address inside the buffer."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BufData:
+  description: Buf Access Data.
+  fields:
+    - name: DATA
+      description: The data write-to/read-from buffer. The n-th address read will be actually the data written for n-1 th address, and the actual stored location is n-1 th address.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CFG:
+  description: Configuration Register.
+  fields:
+    - name: JPEG_EN
+      description: 1b - Enabled.
+      bit_offset: 0
+      bit_size: 1
+    - name: MODE
+      description: "1: decoder, 0:encoder."
+      bit_offset: 1
+      bit_size: 1
+    - name: START
+      description: Asserted if to start a new encoder/decoder conversion. It will at first stop the inner JPEG module, then reset it, and then re-run it. It is a different mode from DMA phase mode. It cannot be configured in the DMA chain descriptor. It should be configured by the core processor. Auto clear.
+      bit_offset: 2
+      bit_size: 1
+    - name: JPEG_SFTRST
+      description: Software Reset.
+      bit_offset: 3
+      bit_size: 1
+    - name: JDATA_FORMAT
+      description: "3'b000: for 420, hy=2, vy=2, hc=1, vc=1 // 6 sub-blocks per MCU 3'b001: for 422h, hy=2, vy=1, hc=1, vc=1 // 4 sub-blocks per MCU 3'b010: for 422v, hy=1, vy=2, hc=1, vc=1 // 4 sub-blocks per MCU 3'b011: for 444, hy=1, vy=1, hc=1, vc=1 // 3 sub-blocks per MCU 3'b100: for 400, hy=2, vy=2, hc=0, vc=0 // 4 sub-blocks per MCU Others: Undefined."
+      bit_offset: 4
+      bit_size: 3
+    - name: CFG_OPATH_SEL
+      description: "2'b0:2-plane (Y- and UV- plane) or 1-plane (Y-only) as determined by the original data, byte sequence as Y0,Y1, or U,V 2'b01:ARGB8888, byte sequence as B,G,R,A 2'b10:RGB565, byte sequence as R,B 2'b11: YUV422H1P, byte sequence as Y0,U0,Y1,V0."
+      bit_offset: 7
+      bit_size: 2
+    - name: CLKGATE
+      description: Assert this bit to gate off clock when the module is not working. If reset to zero, the internal clock is always on.
+      bit_offset: 9
+      bit_size: 1
+    - name: MEM_DEBUG_CLK_SEL
+      description: asserted to use APB clock, so that the memory contents could be read out through APB interface.
+      bit_offset: 17
+      bit_size: 1
+    - name: CODEC_RESTART_ERR_IRQ_EN
+      description: The jpg endec restart error interrupt enable.
+      bit_offset: 18
+      bit_size: 1
+    - name: CODEC_OVER_IRQ_EN
+      description: The jpg endec process done interrupt enable.
+      bit_offset: 19
+      bit_size: 1
+    - name: CFG_IPATH_SEL
+      description: "2'b0:2-plane (Y- and UV- plane) or 1-plane (Y-only) as determined by the original data, byte sequence as Y0,Y1, or U,V 2'b01:ARGB8888, byte sequence as B,G,R,A 2'b10:RGB565, byte sequence as B,R 2'b11: YUV422H, byte sequence as Y0,U0,Y1,V0."
+      bit_offset: 20
+      bit_size: 2
+    - name: JD_UVSWAP
+      description: Normally the default CbCr sequence is that Cb macro block coming before Cr macro blk. If Cr macro block is first, set this bit to 1'b1. This bit only impact the color space conversion from/to RGB.
+      bit_offset: 22
+      bit_size: 1
+fieldset/CSC_COEF0:
+  description: YUV2RGB coefficients Register 0.
+  fields:
+    - name: Y_OFFSET
+      description: Two's compliment amplitude offset implicit in the Y data Y_OFFSET. For YUV, this is typically 0 and for YCbCr, this is typically -16 (0x1F0).
+      bit_offset: 0
+      bit_size: 9
+    - name: UV_OFFSET
+      description: Two's compliment phase offset implicit for CbCr data UV_OFFSET. Generally used for YCbCr to RGB conversion. YCbCr=0x180, YUV=0x000 (typically -128 or 0x180 to indicate normalized -0.5 to 0.5 range).
+      bit_offset: 9
+      bit_size: 9
+    - name: C0
+      description: Two's compliment Y multiplier coefficient C0. YUV=0x100 (1.000) YCbCr=0x12A (1.164).
+      bit_offset: 18
+      bit_size: 11
+    - name: ENABLE
+      description: Enable the CSC unit. 0b - The CSC is bypassed 1b - The CSC is enabled.
+      bit_offset: 30
+      bit_size: 1
+    - name: YCBCR_MODE
+      description: This bit changes the behavior when performing U/V converting. 0b - Converting YUV to RGB data 1b - Converting YCbCr to RGB data.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CSC_COEF1:
+  description: YUV2RGB coefficients Register 1.
+  fields:
+    - name: C4
+      description: Two's compliment Blue U/Cb multiplier coefficient C4. YUV=0x208 (2.032) YCbCr=0x204 (2.017).
+      bit_offset: 0
+      bit_size: 11
+    - name: C1
+      description: Two's compliment Red V/Cr multiplier coefficient C1. YUV=0x123 (1.140) YCbCr=0x198 (1.596).
+      bit_offset: 16
+      bit_size: 11
+fieldset/CSC_COEF2:
+  description: YUV2RGB coefficients Register 2.
+  fields:
+    - name: C3
+      description: Two's compliment Green U/Cb multiplier coefficient C3. YUV=0x79C (-0.394) YCbCr=0x79C (-0.392).
+      bit_offset: 0
+      bit_size: 11
+    - name: C2
+      description: Two's compliment Green V/Cr multiplier coefficient C2. YUV=0x76B (-0.581) YCbCr=0x730 (-0.813).
+      bit_offset: 16
+      bit_size: 11
+fieldset/Height:
+  description: Image height register.
+  fields:
+    - name: IMG
+      description: Image Height (it is the max index of pixel counting from 0, assuming the top left pixel is indexed as [0,0]).
+      bit_offset: 0
+      bit_size: 16
+fieldset/IMGREG:
+  description: no description available.
+  fields:
+    - name: HD
+      description: Encoder use only. The selection of the Huffman table for the encoding of the DC coefficients in the data units belonging to the color component.
+      bit_offset: 0
+      bit_size: 1
+    - name: HA
+      description: Encoder use only. The selection of the Huffman table for the encoding of the AC coefficients in the data units belonging to the color component.
+      bit_offset: 1
+      bit_size: 1
+    - name: QT
+      description: Encoder use only. The selection of the quantization table.
+      bit_offset: 2
+      bit_size: 2
+    - name: NBLOCK
+      description: Encoder use only. The number of data units (8x8 blocks of data) of the color componet contained in the MCU minus 1.
+      bit_offset: 4
+      bit_size: 4
+fieldset/INXT_CMD:
+  description: In DMA Next Command Register.
+  fields:
+    - name: EN
+      description: NXTCMD phase Enable Bit.
+      bit_offset: 0
+      bit_size: 1
+    - name: OP_VALID
+      description: asserted if there is either a DATA DMA phase or NXTCMD phase. Automatically cleared. Will trigger the InDMA transfer if CFG[JPEG_EN] is 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ADDR
+      description: The address pointing to the next command.
+      bit_offset: 2
+      bit_size: 30
+fieldset/ImgReg1:
+  description: Image Control Register 1.
+  fields:
+    - name: NCOL
+      description: Ncol is the number of color components in the image data to process minus 1. For example, for a grayscale image Ncol=0, for an RGB image, Ncol=2.
+      bit_offset: 0
+      bit_size: 2
+    - name: RE
+      description: Encoder Use only. Asseted to enable the Restart Marker processing. A Restart Marker is inserted in the outputted ECS (Entropy Coded Segment) every NRST+1 MCUs.
+      bit_offset: 2
+      bit_size: 1
+fieldset/ImgReg2:
+  description: Image Control Register 2.
+  fields:
+    - name: NMCU
+      description: Encoder Use only. The number of NMCU to be generated in encoder mode.
+      bit_offset: 0
+      bit_size: 26
+fieldset/ImgReg3:
+  description: Image Control Register 3.
+  fields:
+    - name: NRST
+      description: Encoder use only. It is the number of MCUs between two Restart Markers (if enabled) minus 1. The content of this register is ignored if the Re bit inregister 1 is not set.
+      bit_offset: 0
+      bit_size: 16
+fieldset/InDMABase:
+  description: In DMA Buf Address.
+  fields:
+    - name: ADDR
+      description: Y plane (or Encoded Bit Plane).
+      bit_offset: 0
+      bit_size: 32
+fieldset/InDMA_Ctrl0:
+  description: In DMA Buf Control 0 Register.
+  fields:
+    - name: PITCH
+      description: Pitch between the starting point of Rows. Only active when In_DMA_ID=Pixel..
+      bit_offset: 0
+      bit_size: 16
+    - name: TTLEN
+      description: Total length (Low 16 bits) in Bytes -1 for transfer when In_DMA_ID!=Pixel.
+      bit_offset: 16
+      bit_size: 16
+fieldset/InDMA_Ctrl1:
+  description: In DMA Buf Control 1 Register.
+  fields:
+    - name: ROWLEN
+      description: Total length (High 16 bits) in Bytes -1 for transfer. See reference in InDMA_Ctrl0[TTLEN].
+      bit_offset: 0
+      bit_size: 16
+fieldset/InDMA_MISC:
+  description: In DMA Misc Control Register.
+  fields:
+    - name: INDMA2D
+      description: Asserted if In_DMA_ID=Pixel.
+      bit_offset: 2
+      bit_size: 1
+    - name: IN_DMA_REQ
+      description: Asserted to request DMA. Automatically clear after DMA is done.
+      bit_offset: 3
+      bit_size: 1
+    - name: IN_DMA_ID
+      description: "0: Pixel (In) 1: ECS (In) 2: Qmem 3: HuffEnc 4: HuffMin 5: HuffBase 6: HuffSymb."
+      bit_offset: 4
+      bit_size: 3
+    - name: IRQ_EN
+      description: interrupt enable for all interrupt sources of In DMA module.
+      bit_offset: 7
+      bit_size: 1
+    - name: AXI_ERR_IRQ_EN
+      description: In DMA axi bus error inetrrupt enable.
+      bit_offset: 8
+      bit_size: 1
+    - name: IN_DMA_DONE_IRQ_EN
+      description: In DMA Done enable.
+      bit_offset: 9
+      bit_size: 1
+    - name: NXT_IRQ_EN
+      description: In DMA Next Interrupt Enable.
+      bit_offset: 10
+      bit_size: 1
+    - name: INDMA_RENEW
+      description: Renew In DMA. Default is to continue the write address counter when a new DMA request comes. Asserted to reset the write address counter.
+      bit_offset: 11
+      bit_size: 1
+    - name: PACK_DIR
+      description: "Decide the byte sequence of the 32-bit word {A3, A2, A1, A0}. The bit sequence in a byte is not changed. Only work for pixel data. 2'b00: no change {A3, A2, A1, A0} 2'b01: {A2, A3, A0, A1} 2'b10: {A1, A0, A3, A2} 2'b11: {A0, A1, A2, A3}."
+      bit_offset: 12
+      bit_size: 2
+    - name: INB13_SWAP
+      description: Swap bit[31:24] and bit [15:8] before pack dir operation. Only work for pixel data.
+      bit_offset: 14
+      bit_size: 1
+    - name: MAX_OT
+      description: max_ot when input are RGB pixels. For 16 bits per pixel, it can be set as 4. For 32 bits per pixel, it will be set as 2.
+      bit_offset: 15
+      bit_size: 4
+    - name: ARQOS
+      description: QoS for AXI read channel.
+      bit_offset: 19
+      bit_size: 4
+fieldset/ONXT_CMD:
+  description: Out DMA Next Command Register.
+  fields:
+    - name: EN
+      description: NXTCMD phase Enable Bit.
+      bit_offset: 0
+      bit_size: 1
+    - name: OP_VALID
+      description: asserted if there is either a DATA DMA phase or NXTCMD phase. Automatically cleared. Will trigger the OutDMA and NXTCMD phase transfer if CFG[JPEG_EN] is 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ADDR
+      description: The address pointing to the next command.
+      bit_offset: 2
+      bit_size: 30
+fieldset/OutDMABase:
+  description: Out DMA Buf Address.
+  fields:
+    - name: ADDR
+      description: Y plane (or Encoded Bit Plane).
+      bit_offset: 0
+      bit_size: 32
+fieldset/OutDMACnt:
+  description: Out DMA Bytes Counter.
+  fields:
+    - name: VAL
+      description: The out DMA counter.
+      bit_offset: 0
+      bit_size: 32
+fieldset/OutDMA_Ctrl0:
+  description: Out DMA Buf Control 0 Register.
+  fields:
+    - name: PITCH
+      description: Pitch between the starting point of Rows when Out_DMA_ID==Pixel.
+      bit_offset: 0
+      bit_size: 16
+    - name: TTLEN
+      description: Total length (Low 16 bits) in Bytes -1 for transfer when Out_DMA_ID!=Pixel. If Out_DMA_ID=ECS, it can be any value greater than the length of the ECS, for example, the number of encoded bytes.
+      bit_offset: 16
+      bit_size: 16
+fieldset/OutDMA_Ctrl1:
+  description: Out DMA Buf Control 1 Register.
+  fields:
+    - name: ROWLEN
+      description: Total length (High 16 bits) in Bytes -1 for transfer. See reference in OutDMA_Ctrl0[TTLEN].
+      bit_offset: 0
+      bit_size: 16
+fieldset/OutDMA_MISC:
+  description: Out DMA Misc Control Register.
+  fields:
+    - name: OUTDMA2D
+      description: Asserted if Out_DMA_ID==Pixel.
+      bit_offset: 2
+      bit_size: 1
+    - name: OUT_DMA_REQ
+      description: Asserted to enable Out DMA request.
+      bit_offset: 3
+      bit_size: 1
+    - name: OUT_DMA_ID
+      description: "0: Pixel (Out) 1: ECS (Out)."
+      bit_offset: 4
+      bit_size: 1
+    - name: IRQ_EN
+      description: interrupt enable for all interrupt sources of Out DMA module.
+      bit_offset: 5
+      bit_size: 1
+    - name: AXI_ERR_IRQ_EN
+      description: Out DMA axi bus error inetrrupt enable.
+      bit_offset: 6
+      bit_size: 1
+    - name: OUT_DMA_DONE_IRQ_EN
+      description: Out DMA Done interrupt Enable.
+      bit_offset: 7
+      bit_size: 1
+    - name: NXT_IRQ_EN
+      description: Out DMA Next Interrupt Enable.
+      bit_offset: 8
+      bit_size: 1
+    - name: ADD_ODMA_ENDINGS
+      description: Add 0xFFD9 to the ending of the odma stream when all original image pixels are processed by the encoder module.
+      bit_offset: 9
+      bit_size: 1
+    - name: INI_OUTCNT
+      description: Asserted to ini output counter.
+      bit_offset: 10
+      bit_size: 1
+    - name: EN_OUTCNT
+      description: Enable output counter (unit as bytes).
+      bit_offset: 11
+      bit_size: 1
+    - name: PACK_DIR
+      description: "Decide the byte sequence of the 32-bit word {A3, A2, A1, A0}. The bit sequence in a byte is not changed. All outdma data are impacted. 2'b00: no change {A3, A2, A1, A0} (This is used for ecs stream) 2'b01: {A2, A3, A0, A1} 2'b10: {A1, A0, A3, A2} 2'b11: {A0, A1, A2, A3}."
+      bit_offset: 12
+      bit_size: 2
+    - name: AWQOS
+      description: No description available.
+      bit_offset: 14
+      bit_size: 4
+fieldset/RGB2YUV_COEF0:
+  description: RGB2YUV coefficients Register 0.
+  fields:
+    - name: Y_OFFSET
+      description: CSC parameters Y_OFFSET.
+      bit_offset: 0
+      bit_size: 9
+    - name: UV_OFFSET
+      description: CSC parameters UV_OFFSET.
+      bit_offset: 9
+      bit_size: 9
+    - name: C0
+      description: CSC parameters C0.
+      bit_offset: 18
+      bit_size: 11
+    - name: ENABLE
+      description: Asserted to enable this RGB2YCbCr CSC stage.
+      bit_offset: 30
+      bit_size: 1
+    - name: YCBCR_MODE
+      description: Asserted to use YCrCb mode. Must be assigned as 1.
+      bit_offset: 31
+      bit_size: 1
+fieldset/RGB2YUV_COEF1:
+  description: RGB2YUV coefficients Register 1.
+  fields:
+    - name: C4
+      description: CSC parameters C4.
+      bit_offset: 0
+      bit_size: 11
+    - name: C1
+      description: CSC parameters C1.
+      bit_offset: 16
+      bit_size: 11
+fieldset/RGB2YUV_COEF2:
+  description: RGB2YUV coefficients Register 2.
+  fields:
+    - name: C3
+      description: CSC parameters C3.
+      bit_offset: 0
+      bit_size: 11
+    - name: C2
+      description: CSC parameters C2.
+      bit_offset: 16
+      bit_size: 11
+fieldset/RGB2YUV_COEF3:
+  description: RGB2YUV coefficients Register 3.
+  fields:
+    - name: C5
+      description: CSC parameters C5.
+      bit_offset: 0
+      bit_size: 11
+    - name: C6
+      description: CSC parameters C6.
+      bit_offset: 16
+      bit_size: 11
+fieldset/RGB2YUV_COEF4:
+  description: RGB2YUV coefficients Register 4.
+  fields:
+    - name: C7
+      description: CSC parameters C7.
+      bit_offset: 0
+      bit_size: 11
+    - name: C8
+      description: CSC parameters C8.
+      bit_offset: 16
+      bit_size: 11
+fieldset/STAT:
+  description: Status Register.
+  fields:
+    - name: RESTART_MARKER_ERROR
+      description: codec restart marker error interrupt.
+      bit_offset: 1
+      bit_size: 1
+    - name: CODEC_OVER
+      description: Coding or decoding process is over. DMA is not included. The module is completely not busy only when in_dma_transfer_done and out_dma_transfer_done, and codec_over are all asserted.
+      bit_offset: 2
+      bit_size: 1
+    - name: IN_DMA_TRANSFER_DONE
+      description: InDMA process done.
+      bit_offset: 3
+      bit_size: 1
+    - name: OUT_DMA_TRANSFER_DONE
+      description: OutDMA process done.
+      bit_offset: 4
+      bit_size: 1
+    - name: INXT_IRQ
+      description: InDMA next interrupt.
+      bit_offset: 5
+      bit_size: 1
+    - name: ONXT_IRQ
+      description: OutDMA next interrupt.
+      bit_offset: 6
+      bit_size: 1
+    - name: AXI_ERR
+      description: axi bus error.
+      bit_offset: 7
+      bit_size: 1
+    - name: AXI_WRITE_ERR
+      description: out-dma axi bus error.
+      bit_offset: 8
+      bit_size: 1
+    - name: AXI_READ_ERR
+      description: in-dma axi bus error.
+      bit_offset: 9
+      bit_size: 1
+    - name: AXI_ERR_ID
+      description: the axi err id.
+      bit_offset: 10
+      bit_size: 4
+    - name: BUSY
+      description: When 1 means that the module is busy doing conversion and data transfer.
+      bit_offset: 31
+      bit_size: 1
+fieldset/Width:
+  description: Image width register.
+  fields:
+    - name: IMG
+      description: Image Width (it is the max index of pixel counting from 0, assuming the top left pixel is indexed as [0,0]).
+      bit_offset: 0
+      bit_size: 16

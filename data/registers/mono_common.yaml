@@ -1,0 +1,29 @@
+block/MONO:
+  description: MONO.
+  items:
+    - name: MONOL
+      description: Low part of monotonic counter.
+      byte_offset: 0
+      fieldset: MONOL
+    - name: MONOH
+      description: High part of monotonic counter.
+      byte_offset: 4
+      fieldset: MONOH
+fieldset/MONOH:
+  description: High part of monotonic counter.
+  fields:
+    - name: COUNTER
+      description: high part of monotonica counter, write to this counter will cause counter increase by 1 if low part overflow.
+      bit_offset: 0
+      bit_size: 16
+    - name: EPOCH
+      description: Fuse value for high part of monotonica.
+      bit_offset: 16
+      bit_size: 16
+fieldset/MONOL:
+  description: Low part of monotonic counter.
+  fields:
+    - name: COUNTER
+      description: low part of monotonica counter, write to this counter will cause counter increase by 1.
+      bit_offset: 0
+      bit_size: 32
