@@ -1,0 +1,13 @@
+- name: ENET0
+  address: 0xF2000000
+  registers:
+    kind: enet
+    version: v63
+    block: ENET
+
+- name: USB0
+  address: 0xF2020000
+  registers:
+    kind: usb
+    version: v67
+    block: USB

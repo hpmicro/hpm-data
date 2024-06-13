@@ -47,4 +47,3 @@ cores:
     gen_dma_channels:
       HDMA: 8
       XDMA: 8
-

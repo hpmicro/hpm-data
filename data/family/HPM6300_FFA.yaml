@@ -1,0 +1,6 @@
+- name: FFA
+  address: 0xF3058000
+  registers:
+    kind: ffa
+    version: common
+    block: FFA

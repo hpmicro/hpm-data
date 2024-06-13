@@ -36,6 +36,14 @@ cores:
     include_peripherals:
       - "../family/COMMON.yaml"
       - "../family/HPM6300.yaml"
+      - "../family/HPM6300_FFA.yaml"
+      - "../family/HPM6300_USB_ENET.yaml"
+      - "../family/HPM6300_CAN.yaml"
+      - "../family/HPM6300_UART567.yaml"
+      - "../family/HPM6300_SPI3.yaml"
+      - "../family/HPM6300_I2C3.yaml"
+      - "../family/HPM6300_QEI_HALL.yaml"
+      - "../family/HPM6300_ADC23_DAC.yaml"
     include_interrupts: "../interrupts/HPM6360.yaml"
     include_dmamux: "../dmamux/HPM6360.yaml"
     gen_dma_channels:

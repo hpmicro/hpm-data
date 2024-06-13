@@ -1,0 +1,6 @@
+- name: I2C3
+  address: 0xF302C000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C

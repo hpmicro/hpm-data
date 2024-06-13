@@ -25,8 +25,10 @@ The structured MCU DB of HPM MCUs. The home of [hpm-metapac][docs-rs].
 ### Support status
 
 - [x] HPM5300
-- [x] HPM6700/HPM6400 basic peripherals
-- [x] HPM6300 basic peripherals
+- [x] HPM6700/HPM6400
+- [x] HPM6300
+- [ ] HPM6800
+- [ ] HPM6200
 
 ### Metadata patch
 

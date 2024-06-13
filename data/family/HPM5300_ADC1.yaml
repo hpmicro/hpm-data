@@ -1,8 +1,6 @@
-
 - name: ADC1
   address: 0xF3084000
   registers:
     kind: adc16
     version: v53
     block: ADC
-

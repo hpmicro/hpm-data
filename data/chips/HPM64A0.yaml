@@ -41,5 +41,4 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
-_raw:
-  "HPM64A0 汽车级高性能MCU"
+_raw: "HPM64A0 汽车级高性能MCU"

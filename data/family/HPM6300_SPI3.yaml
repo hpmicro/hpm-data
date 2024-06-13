@@ -1,0 +1,6 @@
+- name: SPI3
+  address: 0xF003C000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI

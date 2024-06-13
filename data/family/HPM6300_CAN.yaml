@@ -1,0 +1,12 @@
+- name: CAN0
+  address: 0xF0080000
+  registers:
+    kind: can
+    version: v67
+    block: CAN
+- name: CAN1
+  address: 0xF0084000
+  registers:
+    kind: can
+    version: v67
+    block: CAN

@@ -19,5 +19,4 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
-_raw:
-  "EtherCAT从栈控制器, 多达2轴电机控制"
+_raw: "EtherCAT从栈控制器, 多达2轴电机控制"

@@ -19,5 +19,4 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
-_raw:
-  "千兆工业以太网互联+EtherCAT, 多达4轴电机控制"
+_raw: "千兆工业以太网互联+EtherCAT, 多达4轴电机控制"
