@@ -266,7 +266,7 @@
     block: ACMP
 
 - name: TSNS
-  address: 0xF4104000
+  address: 0xF0090000
   registers:
     kind: tsns
     version: common
