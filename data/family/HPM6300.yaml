@@ -155,6 +155,67 @@
     version: common
     block: MBX
 
+# motor control
+
+- name: PWM0
+  address: 0xF0200000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+- name: PWM1
+  address: 0xF0210000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+
+- name: QEI0
+  address: 0xF0208000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI1
+  address: 0xF0218000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+
+- name: HALL0
+  address: 0xF0204000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL1
+  address: 0xF0214000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+
+- name: TRGM0
+  address: 0xF020C000
+  registers:
+    kind: trgm
+    version: v67
+    block: TRGM
+- name: TRGM1
+  address: 0xF021C000
+  registers:
+    kind: trgm
+    version: v67
+    block: TRGM
+
+- name: SYNT
+  address: 0xF0240000
+  registers:
+    kind: synt
+    version: v67
+    block: SYNT
+
 # timers
 
 - name: NTMR0
@@ -403,3 +464,76 @@
     kind: tsns
     version: common
     block: TSNS
+
+# security peripherals
+# seems the same as v67
+
+- name: SDP
+  address: 0xF304C000
+  registers:
+    kind: sdp
+    version: v53
+    block: SDP
+
+- name: RNG
+  address: 0xF00C8000
+  registers:
+    kind: rng
+    version: common
+    block: RNG
+
+- name: KEYM
+  address: 0xF00CC000
+  registers:
+    kind: keym
+    version: common
+    block: KEYM
+
+- name: BKEY
+  address: 0xF5048000
+  registers:
+    kind: bkey
+    version: common
+    block: BKEY
+
+- name: PSEC
+  address: 0xF40CC000
+  registers:
+    kind: psec
+    version: common
+    block: PSEC
+
+- name: PMON
+  address: 0xF40D0000
+  registers:
+    kind: pmon
+    version: common
+    block: PMON
+
+- name: BSEC
+  address: 0xF5040000
+  registers:
+    kind: bsec
+    version: common
+    block: BSEC
+
+- name: BMON
+  address: 0xF504C000
+  registers:
+    kind: bmon
+    version: common
+    block: BMON
+
+- name: TAMP
+  address: 0xF5050000
+  registers:
+    kind: tamp
+    version: v62
+    block: TAMP
+
+- name: MONO
+  address: 0xF5054000
+  registers:
+    kind: mono
+    version: common
+    block: MONO

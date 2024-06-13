@@ -19,6 +19,7 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6800.yaml"
     include_interrupts: "../interrupts/HPM6880.yaml"
     include_dmamux: "../dmamux/HPM6880.yaml"
 _raw:
