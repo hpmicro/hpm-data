@@ -30,6 +30,7 @@ jobs:
         COMMIT_MESSAGE=$(git log -1 --pretty=%B)
         mkdir -p build
         git clone --depth 1 git@github.com:hpmicro-rs/hpm-metapac.git build/hpm-metapac/
+        ./d download-all
         ./d gen
         cd build/hpm-metapac/
         cp -v ../../README.md .
