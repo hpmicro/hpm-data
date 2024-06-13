@@ -11,3 +11,11 @@
     kind: plicsw
     version: common
     block: PLICSW
+
+# pins are generated from the sdk
+- name: MCHTMR
+  address: 0xE6000000
+  registers:
+    kind: mchtmr
+    version: common
+    block: MCHTMR

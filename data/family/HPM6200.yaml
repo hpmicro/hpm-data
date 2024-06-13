@@ -1,0 +1,6 @@
+- name: SYSCTL
+  address: 0xF4000000
+  registers:
+    kind: sysctl
+    version: v62
+    block: SYSCTL
