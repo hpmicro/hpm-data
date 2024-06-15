@@ -47,7 +47,7 @@ case "$CMD" in
     ;;
     gen)
         rm -rf build/data
-        cargo run -p hpm-data-gen && cargo run -p hpm-metapac-gen -- "HPM53*" "HPM67*" "HPM64*" "HPM63*"
+        cargo run -p hpm-data-gen && cargo run -p hpm-metapac-gen -- "HPM53*" "HPM67*" "HPM64*" "HPM63*" "HPM68*"
     ;;
     ci)
         echo TODO $CMD
