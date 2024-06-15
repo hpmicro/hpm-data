@@ -39,13 +39,14 @@ memory:
   - address: 0x80000000
     kind: flash
     name: XPI0
-    size: 1048576 # 1M
+    size: 4194304 # 4M
 cores:
   - name: RV32-IMAFDCP
     ip-core: Andes D45
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6200.yaml"
     include_interrupts: "../interrupts/HPM6280.yaml"
     include_dmamux: "../dmamux/HPM6280.yaml"
     gen_dma_channels:

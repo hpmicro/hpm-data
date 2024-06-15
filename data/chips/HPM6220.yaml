@@ -43,6 +43,7 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6200.yaml"
     include_interrupts: "../interrupts/HPM6280.yaml"
     include_dmamux: "../dmamux/HPM6280.yaml"
     gen_dma_channels:
