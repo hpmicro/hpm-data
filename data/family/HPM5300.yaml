@@ -30,6 +30,13 @@
       signal: OBS3
       alt: 24
 
+- name: XPI0
+  address: 0xF3000000
+  registers:
+    kind: xpi
+    version: dummy
+    block: XPI
+
 - name: PLLCTL
   address: 0xF40C0000
   registers:

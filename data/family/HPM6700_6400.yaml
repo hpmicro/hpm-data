@@ -5,6 +5,19 @@
     version: v67
     block: SYSCTL
 
+- name: XPI0
+  address: 0xF3040000
+  registers:
+    kind: xpi
+    version: dummy
+    block: XPI
+- name: XPI1
+  address: 0xF3044000
+  registers:
+    kind: xpi
+    version: dummy
+    block: XPI
+
 - name: PLLCTL
   address: 0xF4100000
   registers:

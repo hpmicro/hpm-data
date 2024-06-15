@@ -4,3 +4,10 @@
     kind: sysctl
     version: v62
     block: SYSCTL
+
+- name: XPI0
+  address: 0xF3040000
+  registers:
+    kind: xpi
+    version: dummy
+    block: XPI
