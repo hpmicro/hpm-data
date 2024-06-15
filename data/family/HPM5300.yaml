@@ -57,6 +57,12 @@
     kind: pcfg
     version: v53
     block: PCFG
+- name: PPOR
+  address: 0xF4100000
+  registers:
+    kind: ppor
+    version: v53
+    block: PPOR
 
 # input output and alternate function
 

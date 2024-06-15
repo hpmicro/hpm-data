@@ -31,6 +31,18 @@
     kind: bcfg
     version: v67
     block: BCFG
+- name: BPOR
+  address: 0xF5004000
+  registers:
+    kind: bpor
+    version: v67
+    block: BPOR
+- name: BUTN
+  address: 0xF500C000
+  registers:
+    kind: butn
+    version: common
+    block: BUTN
 
 - name: PCFG
   address: 0xF40C4000
@@ -38,6 +50,12 @@
     kind: pcfg
     version: v67
     block: PCFG
+- name: PPOR
+  address: 0xF40C0000
+  registers:
+    kind: ppor
+    version: v67
+    block: PPOR
 
 # input output and alternate function
 

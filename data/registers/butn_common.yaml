@@ -1,0 +1,88 @@
+block/BUTN:
+  description: BUTN.
+  items:
+    - name: BTN_STATUS
+      description: Button status.
+      byte_offset: 0
+      fieldset: BTN_STATUS
+    - name: BTN_IRQ_MASK
+      description: Button interrupt mask.
+      byte_offset: 4
+      fieldset: BTN_IRQ_MASK
+    - name: LED_INTENSE
+      description: Debounce setting.
+      byte_offset: 8
+      fieldset: LED_INTENSE
+fieldset/BTN_IRQ_MASK:
+  description: Button interrupt mask.
+  fields:
+    - name: PBTN
+      description: "Power button press interrupt enable bit0: button pressed bit1: button confirmd bit2: button long pressed bit3: button long long pressed."
+      bit_offset: 0
+      bit_size: 4
+    - name: WBTN
+      description: "Wake button press interrupt enable bit0: button pressed bit1: button confirmd bit2: button long pressed bit3: button long long pressed."
+      bit_offset: 4
+      bit_size: 4
+    - name: DBTN
+      description: "Dual button press interrupt enable bit0: button pressed bit1: button confirmd bit2: button long pressed bit3: button long long pressed."
+      bit_offset: 8
+      bit_size: 4
+    - name: PCLICK
+      description: "power button click interrupt enable bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 16
+      bit_size: 3
+    - name: XPCLICK
+      description: "power button click status when wake button held interrupt enable bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 20
+      bit_size: 3
+    - name: WCLICK
+      description: "wake button click interrupt enable bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 24
+      bit_size: 3
+    - name: XWCLICK
+      description: "wake button click status when power button held interrupt enable bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 28
+      bit_size: 3
+fieldset/BTN_STATUS:
+  description: Button status.
+  fields:
+    - name: PBTN
+      description: "Power button press status, write 1 to clear flag bit0: button pressed bit1: button confirmd bit2: button long pressed bit3: button long long pressed."
+      bit_offset: 0
+      bit_size: 4
+    - name: WBTN
+      description: "Wake button press status, write 1 to clear flag bit0: button pressed bit1: button confirmd bit2: button long pressed bit3: button long long pressed."
+      bit_offset: 4
+      bit_size: 4
+    - name: DBTN
+      description: "Dual button press status, write 1 to clear flag bit0: button pressed bit1: button confirmd bit2: button long pressed bit3: button long long pressed."
+      bit_offset: 8
+      bit_size: 4
+    - name: PCLICK
+      description: "power button click status, write 1 to clear flag bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 16
+      bit_size: 3
+    - name: XPCLICK
+      description: "power button click status when wake button held, write 1 to clear flag bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 20
+      bit_size: 3
+    - name: WCLICK
+      description: "wake button click status, write 1 to clear flag bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 24
+      bit_size: 3
+    - name: XWCLICK
+      description: "wake button click status when power button held, write 1 to clear flag bit0: clicked bit1: double clicked bit2: tripple clicked."
+      bit_offset: 28
+      bit_size: 3
+fieldset/LED_INTENSE:
+  description: Debounce setting.
+  fields:
+    - name: PLED
+      description: Pbutton brightness 0.
+      bit_offset: 0
+      bit_size: 4
+    - name: RLED
+      description: Rbutton brightness 0.
+      bit_offset: 16
+      bit_size: 4
