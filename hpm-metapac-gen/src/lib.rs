@@ -123,7 +123,9 @@ impl Gen {
             .iter()
             .filter(|x| x.kind == MemoryRegionKind::Flash && x.name.starts_with("XPI"))
             .collect();
-        let first_flash = flash_regions.first().unwrap();
+        let first_flash = flash_regions
+            .first()
+            .expect("Cannot find FLASH(XPIx) region");
         let total_flash_size = flash_regions
             .iter()
             .map(|x| x.size)
