@@ -1,0 +1,1590 @@
+block/MIPI_DSI:
+  description: MIPI_DSI0.
+  items:
+    - name: version
+      description: version.
+      byte_offset: 0
+      fieldset: version
+    - name: pwr_up
+      description: power up.
+      byte_offset: 4
+      fieldset: pwr_up
+    - name: clkmgr_cfg
+      description: divide lanebyteclk for timeout.
+      byte_offset: 8
+      fieldset: clkmgr_cfg
+    - name: dpi_vcid
+      description: virtual channel ID for DPI traffic.
+      byte_offset: 12
+      fieldset: dpi_vcid
+    - name: dpi_color_coding
+      description: dpi color coding.
+      byte_offset: 16
+      fieldset: dpi_color_coding
+    - name: dpi_cfg_pol
+      description: the polarity of DPI signals.
+      byte_offset: 20
+      fieldset: dpi_cfg_pol
+    - name: dpi_lp_cmd_tim
+      description: the timing for low-power commands sent while in video mode.
+      byte_offset: 24
+      fieldset: dpi_lp_cmd_tim
+    - name: pckhdl_cfg
+      description: configures how EoTp, BTA, CRC and ECC to be used.
+      byte_offset: 44
+      fieldset: pckhdl_cfg
+    - name: gen_vcid
+      description: configures the virtual channel ID of read response to store and return to generic interface.
+      byte_offset: 48
+      fieldset: gen_vcid
+    - name: mode_cfg
+      description: configures the mode of operation between video or command mode.
+      byte_offset: 52
+      fieldset: mode_cfg
+    - name: vid_mode_cfg
+      description: several aspect of video mode operation.
+      byte_offset: 56
+      fieldset: vid_mode_cfg
+    - name: vid_pkt_size
+      description: configures the video packet size.
+      byte_offset: 60
+      fieldset: vid_pkt_size
+    - name: vid_num_chunks
+      description: configures the number of chunks to use.
+      byte_offset: 64
+      fieldset: vid_num_chunks
+    - name: vid_null_size
+      description: configures the size of null packets.
+      byte_offset: 68
+      fieldset: vid_null_size
+    - name: vid_hsa_time
+      description: configures the video HAS time.
+      byte_offset: 72
+      fieldset: vid_hsa_time
+    - name: vid_hbp_time
+      description: configure the video HBP time.
+      byte_offset: 76
+      fieldset: vid_hbp_time
+    - name: vid_hline_time
+      description: configures the overall time for each video line.
+      byte_offset: 80
+      fieldset: vid_hline_time
+    - name: vid_vsa_lines
+      description: configures the vsa period.
+      byte_offset: 84
+      fieldset: vid_vsa_lines
+    - name: vid_vbp_lines
+      description: configures the vbp period.
+      byte_offset: 88
+      fieldset: vid_vbp_lines
+    - name: vid_vfp_lines
+      description: configures the vfp period.
+      byte_offset: 92
+      fieldset: vid_vfp_lines
+    - name: vid_vactive_lines
+      description: configures the vertical resolution of video.
+      byte_offset: 96
+      fieldset: vid_vactive_lines
+    - name: CMD_MODE_CFG
+      description: This register configures several aspect of command mode operation, tearing effect, acknowledge for each packet and the speed mode to transmit each Data Type related to commands.
+      byte_offset: 104
+      fieldset: CMD_MODE_CFG
+    - name: gen_hdr
+      description: sets the header for new packets sent using the generic interface.
+      byte_offset: 108
+      fieldset: gen_hdr
+    - name: gen_pld_data
+      description: sets the payload for packets sent using the generic interface.
+      byte_offset: 112
+      fieldset: gen_pld_data
+    - name: cmd_pkt_status
+      description: information about the status of FIFOs related to DBI and Generic interface.
+      byte_offset: 116
+      fieldset: cmd_pkt_status
+    - name: to_cnt_cfg
+      description: configures the trigger timeout errors.
+      byte_offset: 120
+      fieldset: to_cnt_cfg
+    - name: hs_rd_to_cnt
+      description: configures the peripheral response timeout after high speed read operations.
+      byte_offset: 124
+      fieldset: hs_rd_to_cnt
+    - name: lp_rd_to_cnt
+      description: configures the peripheral response timeout after low-power read operation.
+      byte_offset: 128
+      fieldset: lp_rd_to_cnt
+    - name: hs_wr_to_cnt
+      description: configures the peripheral response timeout after high speed write operations.
+      byte_offset: 132
+      fieldset: hs_wr_to_cnt
+    - name: lp_wr_to_cnt
+      description: configures the peripheral response timeout after low power write operations.
+      byte_offset: 136
+      fieldset: lp_wr_to_cnt
+    - name: bta_to_cnt
+      description: configures the periphera response timeout after bus turnaround.
+      byte_offset: 140
+      fieldset: bta_to_cnt
+    - name: sdf_3d
+      description: sotres 3d control information for vss packets in video mode.
+      byte_offset: 144
+      fieldset: sdf_3d
+    - name: lpclk_ctrl
+      description: configures the possibility for using non continuous clock in the clock lane.
+      byte_offset: 148
+      fieldset: lpclk_ctrl
+    - name: phy_tmr_lpclk_cfg
+      description: sets the time that dsi host assumes in calculations for the clock lane to switch between high-speed and low-power.
+      byte_offset: 152
+      fieldset: phy_tmr_lpclk_cfg
+    - name: phy_tmr_cfg
+      description: sets the time that dsi host assumes in calculations for data lanes to switch between hs to lp.
+      byte_offset: 156
+      fieldset: phy_tmr_cfg
+    - name: phy_rstz
+      description: controls resets and the pll of d-phy.
+      byte_offset: 160
+      fieldset: phy_rstz
+    - name: phy_if_cfg
+      description: configures the number of active lanes.
+      byte_offset: 164
+      fieldset: phy_if_cfg
+    - name: phy_ulps_ctrl
+      description: configures entering and leaving ulps.
+      byte_offset: 168
+      fieldset: phy_ulps_ctrl
+    - name: phy_tx_triggers
+      description: configures the pins that activate triggers in the d-phy.
+      byte_offset: 172
+      fieldset: phy_tx_triggers
+    - name: phy_status
+      description: contains information about the status of the d-phy.
+      byte_offset: 176
+      fieldset: phy_status
+    - name: phy_tst_ctrl0
+      description: controls clock and clear pins of the d-phy vendor specific interface.
+      byte_offset: 180
+      fieldset: phy_tst_ctrl0
+    - name: phy_tst_ctrl1
+      description: controls data and enable pins of the d-phy.
+      byte_offset: 184
+      fieldset: phy_tst_ctrl1
+    - name: int_st0
+      description: controls the status of interrupt.
+      byte_offset: 188
+      fieldset: int_st0
+    - name: int_st1
+      description: the interrupt source related to timeout etc.
+      byte_offset: 192
+      fieldset: int_st1
+    - name: int_msk0
+      description: configures masks for the sources of interrupt that affec int_st0.
+      byte_offset: 196
+      fieldset: int_msk0
+    - name: int_msk1
+      description: configures masks for int_st1.
+      byte_offset: 200
+      fieldset: int_msk1
+    - name: phy_cal
+      description: controls the skew calibration of D-phy.
+      byte_offset: 204
+      fieldset: phy_cal
+    - name: int_force0
+      description: forces that affect the int_st0 register.
+      byte_offset: 216
+      fieldset: int_force0
+    - name: int_force1
+      description: forces interrupts that affect the int_st1 register.
+      byte_offset: 220
+      fieldset: int_force1
+    - name: phy_tmr_rd
+      description: configures times related to PHY to perform some operations in lane byte clock cycle.
+      byte_offset: 244
+      fieldset: phy_tmr_rd
+    - name: auto_ulps_min_time
+      description: configures the minimum time required by phy between ulpsactivenot and ulpsexitreq for clock and data lane.
+      byte_offset: 248
+      fieldset: auto_ulps_min_time
+    - name: phy_mode
+      description: select phy mode.
+      byte_offset: 252
+      fieldset: phy_mode
+    - name: vid_shadow_ctrl
+      description: controls dpi shadow feature.
+      byte_offset: 256
+      fieldset: vid_shadow_ctrl
+    - name: dpi_vcid_act
+      description: holds the value that controller is using for DPI_VCID.
+      byte_offset: 268
+      fieldset: dpi_vcid_act
+    - name: dpi_color_coding_act
+      description: holds the value that controller is using for DPI_COLOR_CODING.
+      byte_offset: 272
+      fieldset: dpi_color_coding_act
+    - name: dpi_lp_cmd_tim_act
+      description: holds value that controller is using for dpi_lp_cmd_time.
+      byte_offset: 280
+      fieldset: dpi_lp_cmd_tim_act
+    - name: vid_mode_cfg_act
+      description: holds value that controller is using for vid_mode_cfg.
+      byte_offset: 312
+      fieldset: vid_mode_cfg_act
+    - name: vid_pkt_size_act
+      description: holds value that controller is using for vid_pkt_size.
+      byte_offset: 316
+      fieldset: vid_pkt_size_act
+    - name: vid_num_chunks_act
+      description: holds value that controller is using for vid_num_chunks.
+      byte_offset: 320
+      fieldset: vid_num_chunks_act
+    - name: vid_null_size_act
+      description: holds the value that controller is using for vid_null_size.
+      byte_offset: 324
+      fieldset: vid_null_size_act
+    - name: vid_hsa_time_act
+      description: the value of vid_hsa_time.
+      byte_offset: 328
+      fieldset: vid_hsa_time_act
+    - name: vid_hbp_time_act
+      description: the value that controller is using for vid_hbp_time.
+      byte_offset: 332
+      fieldset: vid_hbp_time_act
+    - name: vid_hline_time_act
+      description: the value for vid_hline_time.
+      byte_offset: 336
+      fieldset: vid_hline_time_act
+    - name: vid_vsa_lines_act
+      description: value for vid_vsa_lines.
+      byte_offset: 340
+      fieldset: vid_vsa_lines_act
+    - name: vid_vbp_lines_act
+      description: value for vid_vbp_lines.
+      byte_offset: 344
+      fieldset: vid_vbp_lines_act
+    - name: vid_vfp_lines_act
+      description: value for vid_vfp_lines.
+      byte_offset: 348
+      fieldset: vid_vfp_lines_act
+    - name: vid_vactive_lines_act
+      description: value for vid_vactive_lines.
+      byte_offset: 352
+      fieldset: vid_vactive_lines_act
+    - name: vid_pkt_status
+      description: status of fifo related to dpi.
+      byte_offset: 360
+      fieldset: vid_pkt_status
+    - name: sdf_3d_act
+      description: value for sdf_3d.
+      byte_offset: 400
+      fieldset: sdf_3d_act
+fieldset/CMD_MODE_CFG:
+  description: This register configures several aspect of command mode operation, tearing effect, acknowledge for each packet and the speed mode to transmit each Data Type related to commands.
+  fields:
+    - name: TEAR_FX_EN
+      description: When set to 1, this bit enables the tearing effect acknowledge request.
+      bit_offset: 0
+      bit_size: 1
+    - name: ACK_RQST_EN
+      description: When set to 1, this bit enables the acknowledge request after each packet transmission.
+      bit_offset: 1
+      bit_size: 1
+    - name: GEN_SW_0P_TX
+      description: "This bit configures the Generic short read packet with two parameters command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 8
+      bit_size: 1
+    - name: GEN_SW_1P_TX
+      description: "This bit configures the Generic short read packet with two parameters command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 9
+      bit_size: 1
+    - name: GEN_SW_2P_TX
+      description: "This bit configures the Generic short read packet with two parameters command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 10
+      bit_size: 1
+    - name: GEN_SR_0P_TX
+      description: "This bit configures the Generic short read packet with two parameters command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 11
+      bit_size: 1
+    - name: GEN_SR_1P_TX
+      description: "This bit configures the Generic short read packet with two parameters command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 12
+      bit_size: 1
+    - name: GEN_SR_2P_TX
+      description: "This bit configures the Generic short read packet with two parameters command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 13
+      bit_size: 1
+    - name: GEN_LW_TX
+      description: "This bit configures the Generic long write packet command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 14
+      bit_size: 1
+    - name: DCS_SW_0P_TX
+      description: "This bit configures the DCS short write packet with zero parameter command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 16
+      bit_size: 1
+    - name: DCS_SW_1P_TX
+      description: "This bit configures the DCS short write packet with one parameter command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 17
+      bit_size: 1
+    - name: DCS_SR_0P_TX
+      description: "This bit configures the DCS short read packet with zero parameter command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 18
+      bit_size: 1
+    - name: DCS_LW_TX
+      description: "This bit configures the DCS long write packet command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 19
+      bit_size: 1
+    - name: MAX_RD_PKT_SIZE
+      description: "This bit configures the maximum read packet size command transmission type: 0x0 (HIGHSPEED): Transition type is High Speed 0x1 (LOWPOWER): Transition type is Low Power."
+      bit_offset: 24
+      bit_size: 1
+fieldset/auto_ulps_min_time:
+  description: configures the minimum time required by phy between ulpsactivenot and ulpsexitreq for clock and data lane.
+  fields:
+    - name: ULPS_MIN_TIME
+      description: configures the minimum time required by phy between ulpsactivenot and ulpsexitreq for clock and data lane.
+      bit_offset: 0
+      bit_size: 12
+fieldset/bta_to_cnt:
+  description: configures the periphera response timeout after bus turnaround.
+  fields:
+    - name: BTA_TO_CNT
+      description: sets the period for which dsi host keeps the link still after completing a bus turnaround.
+      bit_offset: 0
+      bit_size: 16
+fieldset/clkmgr_cfg:
+  description: divide lanebyteclk for timeout.
+  fields:
+    - name: TX_ESC_CLK_DIVISION
+      description: the division factor for the TX Escape clock source lanebyteclk.
+      bit_offset: 0
+      bit_size: 8
+    - name: TO_CLK_DIVISION
+      description: the timeout clock division factor for HS to LP and LP to HS transition error.
+      bit_offset: 8
+      bit_size: 8
+fieldset/cmd_pkt_status:
+  description: information about the status of FIFOs related to DBI and Generic interface.
+  fields:
+    - name: GEN_CMD_EMPTY
+      description: indicates the empty status of the generic command FIFO.
+      bit_offset: 0
+      bit_size: 1
+    - name: GEN_CMD_FULL
+      description: indicates the full status of the generic command FIFO.
+      bit_offset: 1
+      bit_size: 1
+    - name: GEN_PLD_W_EMPTY
+      description: indicates the empty status of the generic write payload FIFO.
+      bit_offset: 2
+      bit_size: 1
+    - name: GEN_PLD_W_FULL
+      description: indicates the full status of the generic write payload FIFO.
+      bit_offset: 3
+      bit_size: 1
+    - name: GEN_PLD_R_EMPTY
+      description: indicates the empty status of the generic read payload FIFO.
+      bit_offset: 4
+      bit_size: 1
+    - name: GEN_PLD_R_FULL
+      description: indicates the full status of the generic read payoad FIFO.
+      bit_offset: 5
+      bit_size: 1
+    - name: GEN_RD_CMD_BUSY
+      description: indicates a read command is issued and the entire response is not sotred in the FIFO.
+      bit_offset: 6
+      bit_size: 1
+    - name: GEN_BUFF_CMD_EMPTY
+      description: the empty status of the generic command internal buffer.
+      bit_offset: 16
+      bit_size: 1
+    - name: GEN_BUFF_CMD_FULL
+      description: the full status of the generic command internal buffer.
+      bit_offset: 17
+      bit_size: 1
+    - name: GEN_BUFF_PLD_EMPTY
+      description: the empty status of the generic payload internal buffer.
+      bit_offset: 18
+      bit_size: 1
+    - name: GEN_BUFF_PLD_FULL
+      description: the full status of the generic payload internal buffer.
+      bit_offset: 19
+      bit_size: 1
+fieldset/dpi_cfg_pol:
+  description: the polarity of DPI signals.
+  fields:
+    - name: DATAEN_ACTIVE_LOW
+      description: configures the data enable pin active low.
+      bit_offset: 0
+      bit_size: 1
+    - name: VSYNC_ACTIVE_LOW
+      description: configures the vertical synchronism pin as active low.
+      bit_offset: 1
+      bit_size: 1
+    - name: HSYNC_ACTIVE_LOW
+      description: configures the horizontal synchronism pin as active low.
+      bit_offset: 2
+      bit_size: 1
+    - name: SHUTD_ACTIVE_LOW
+      description: configures the shutdown pin as active low.
+      bit_offset: 3
+      bit_size: 1
+    - name: COLORM_ACTIVE_LOW
+      description: configures the color mode pin as active low.
+      bit_offset: 4
+      bit_size: 1
+fieldset/dpi_color_coding:
+  description: dpi color coding.
+  fields:
+    - name: DPI_COLOR_CODING
+      description: configures the DPI color for video mode.
+      bit_offset: 0
+      bit_size: 4
+    - name: LOOSELY18_EN
+      description: when set to 1, this bit activates loosely packed variant to 18-bit configurations.
+      bit_offset: 8
+      bit_size: 1
+fieldset/dpi_color_coding_act:
+  description: holds the value that controller is using for DPI_COLOR_CODING.
+  fields:
+    - name: DIP_COLOR_CODING
+      description: configures the DPI color for video mode.
+      bit_offset: 0
+      bit_size: 4
+    - name: LOOSELY18_EN
+      description: avtivates loosely packed variant to 18-bit configuration.
+      bit_offset: 8
+      bit_size: 1
+fieldset/dpi_lp_cmd_tim:
+  description: the timing for low-power commands sent while in video mode.
+  fields:
+    - name: INVACT_LPCMD_TIME
+      description: transmission of commands in low-power mode, defines the size in bytes of the largest packet that can fit in a line during the VACT region.
+      bit_offset: 0
+      bit_size: 8
+    - name: OUTVACT_LPCMD_TIME
+      description: transmission of commands in low-power mode, defines the size in bytes of the largest pachet that can fit in a line during the VSA VBP and VFP;.
+      bit_offset: 16
+      bit_size: 8
+fieldset/dpi_lp_cmd_tim_act:
+  description: holds value that controller is using for dpi_lp_cmd_time.
+  fields:
+    - name: INVACT_LPCMD_TIME
+      description: transmission of commands in low-power mode, it specifies the size in bytes of the lagest packet that can fit in a line during the vact regions.
+      bit_offset: 0
+      bit_size: 8
+    - name: OUTVACT_LPCMD_TIME
+      description: transmission of commands in low-power mode, it specifies the size in bytes of the lagest packet that can fit in a line during the VSA VBP and VFP regions.
+      bit_offset: 16
+      bit_size: 8
+fieldset/dpi_vcid:
+  description: virtual channel ID for DPI traffic.
+  fields:
+    - name: DPI_VCID
+      description: the DPI virtual channel id to the video mode packets.
+      bit_offset: 0
+      bit_size: 2
+fieldset/dpi_vcid_act:
+  description: holds the value that controller is using for DPI_VCID.
+  fields:
+    - name: DPI_VCID
+      description: specifies the DPI virtual channel id that is indexed to the video mode packets.
+      bit_offset: 0
+      bit_size: 2
+fieldset/gen_hdr:
+  description: sets the header for new packets sent using the generic interface.
+  fields:
+    - name: GEN_DT
+      description: configures the packet data type of the header packet.
+      bit_offset: 0
+      bit_size: 6
+    - name: GEN_VC
+      description: configures the virtual channel ID of the header packet.
+      bit_offset: 6
+      bit_size: 2
+    - name: GEN_WC_LSBYTE
+      description: configures the least significant byte of the header packet's word count for long packets or data0 for short packets.
+      bit_offset: 8
+      bit_size: 8
+    - name: GEN_WC_MSBYTE
+      description: configures the most significant byte of the header packet's word count for long packets or data 1 for shout packets.
+      bit_offset: 16
+      bit_size: 8
+fieldset/gen_pld_data:
+  description: sets the payload for packets sent using the generic interface.
+  fields:
+    - name: GEN_PLD_B1
+      description: indicates byte1 of the packet payload.
+      bit_offset: 0
+      bit_size: 8
+    - name: GEN_PLD_B2
+      description: indicates byte2 of the packet payload.
+      bit_offset: 8
+      bit_size: 8
+    - name: GEN_PLD_B3
+      description: indicates byte3 of the packet payload.
+      bit_offset: 16
+      bit_size: 8
+    - name: GEN_PLD_B4
+      description: indicates byte4 of the packet payload.
+      bit_offset: 24
+      bit_size: 8
+fieldset/gen_vcid:
+  description: configures the virtual channel ID of read response to store and return to generic interface.
+  fields:
+    - name: GEN_VCID_RX
+      description: indicates the generic interface read-back virtual channel identication.
+      bit_offset: 0
+      bit_size: 2
+    - name: GEN_VCID_TEAR_AUTO
+      description: indicates the virtual channel identification for tear effect by hardware.
+      bit_offset: 8
+      bit_size: 2
+    - name: GEN_VCID_TX_AUTO
+      description: indicates the generic interface virtual channel identification where generic packet is automatically generated and transmitted.
+      bit_offset: 16
+      bit_size: 2
+fieldset/hs_rd_to_cnt:
+  description: configures the peripheral response timeout after high speed read operations.
+  fields:
+    - name: HS_RD_TO_CNT
+      description: sets a period for which DWC_mipi_dsi_host keeps the link still after sending a high speed read operation;.
+      bit_offset: 0
+      bit_size: 16
+fieldset/hs_wr_to_cnt:
+  description: configures the peripheral response timeout after high speed write operations.
+  fields:
+    - name: HS_WR_TO_CNT
+      description: sets the period for which dwc_mipi_dsi_host keeps the link still after sending a high speed write operation.
+      bit_offset: 0
+      bit_size: 16
+fieldset/int_force0:
+  description: forces that affect the int_st0 register.
+  fields:
+    - name: FORCE_ACK_WITH_ERR0
+      description: force the SoT serror from the acknowledge error report.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR1
+      description: force the SoT sync error from the acknowledge error report.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR2
+      description: force the EoT sync error from the acknowledge error report.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR3
+      description: force the Escap mode entry command error from the acknowledge error report.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR4
+      description: force the LP transmit sync error from the acknowledge error report.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR5
+      description: force the peripheral timeout error from the acknowledge error report.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR6
+      description: force the false control error fro the acknowledge error report.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR7
+      description: force the reserved from the acknowledge error report.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR8
+      description: force the ecc error sigle-bit from the acknowledge error report.
+      bit_offset: 8
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_9
+      description: force the ECC error multi-bit from the acknowledge error report.
+      bit_offset: 9
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_10
+      description: force the checksum error from the acknowledge error report.
+      bit_offset: 10
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_11
+      description: force the not recongnized dsi data type from the acknowledge error report.
+      bit_offset: 11
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_12
+      description: force the dsi vc id invalid from the acknowledge error report.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_13
+      description: force the invalid transmission length from the acknowledge error report.
+      bit_offset: 13
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_14
+      description: force the reserved from the acknowledge error report.
+      bit_offset: 14
+      bit_size: 1
+    - name: FORCE_ACK_WITH_ERR_15
+      description: force the DSI protocal violation from the acknowledge error report.
+      bit_offset: 15
+      bit_size: 1
+    - name: FORCE_DPHY_ERRORS_0
+      description: force ErrEsc escape entry error from lane0.
+      bit_offset: 16
+      bit_size: 1
+    - name: FORCE_DPHY_ERRORS_1
+      description: force ErrSyncEsc low-power data transmission synchronization error from lane 0.
+      bit_offset: 17
+      bit_size: 1
+    - name: FORCE_DPHY_ERRORS_2
+      description: force control error ErrControl from lane0.
+      bit_offset: 18
+      bit_size: 1
+    - name: FORCE_DPHY_ERRORS_3
+      description: force LP0 contention error ErrContentionLP0 from lane0.
+      bit_offset: 19
+      bit_size: 1
+    - name: FORCE_DPHY_ERRORS_4
+      description: force LP1 contention error ErrContentionLP1 from lane0.
+      bit_offset: 20
+      bit_size: 1
+fieldset/int_force1:
+  description: forces interrupts that affect the int_st1 register.
+  fields:
+    - name: FORCE_TO_HS_TX
+      description: force that the high-speed transmission timeout counter reached the end and contention has been detected.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_TO_LP_TX
+      description: force that the low-power reception timeout counter reached the end and contention has been detected.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ECC_SIGLE_ERR
+      description: force that the ECC single error has been detected and corrected in a reveived packet.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ECC_MULTI_ERR
+      description: force that the ECC multiple error has been detected in a revieved packet.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_CRC_ERR
+      description: force that the CRC error has been detected in the reveived packet payload.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_PKT_SIZE_ERR
+      description: force that the packet size error has been detected during the packet reception.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_EOPT_ERR
+      description: force that the EoTp packet has not been received at the end of the incoming peripheral transmission.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_DPI_BPLD_WR_ERR
+      description: force the payload FIFO is full during a DPI pixel line storage.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_GEN_CMD_WR_ERR
+      description: force the system tried to write a command and FIFO is full.
+      bit_offset: 8
+      bit_size: 1
+    - name: FORCE_GEN_PLD_WR_ERR
+      description: force the system tried to write a payload and FIFO is full.
+      bit_offset: 9
+      bit_size: 1
+    - name: FORCE_GEN_PLD_SEND_ERR
+      description: force the payload FIFO become empty when packet build.
+      bit_offset: 10
+      bit_size: 1
+    - name: FORCE_GEN_PLD_RD_ERR
+      description: force that during a DCS read data, the payload FIFO becomes empty.
+      bit_offset: 11
+      bit_size: 1
+    - name: FORCE_GEN_PLD_RECEV_ERR
+      description: force that during a generic interface packet read back, the payload FIFO full.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_DPI_BUFF_PLD_UNDER
+      description: force an underflow when reading payload to build dsi packet for video mode.
+      bit_offset: 19
+      bit_size: 1
+    - name: FORCE_TEAR_REQUEST_ERR
+      description: force tear_request has occurred but tear effect is not active in dsi host and device.
+      bit_offset: 20
+      bit_size: 1
+fieldset/int_msk0:
+  description: configures masks for the sources of interrupt that affec int_st0.
+  fields:
+    - name: MASK_ACK_WITH_ERR0
+      description: disable the SoT serror from the acknowledge error report.
+      bit_offset: 0
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR1
+      description: disable the SoT sync error from the acknowledge error report.
+      bit_offset: 1
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR2
+      description: disable the EoT sync error from the acknowledge error report.
+      bit_offset: 2
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR3
+      description: disable the Escap mode entry command error from the acknowledge error report.
+      bit_offset: 3
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR4
+      description: disable the LP transmit sync error from the acknowledge error report.
+      bit_offset: 4
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR5
+      description: disable the peripheral timeout error from the acknowledge error report.
+      bit_offset: 5
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR6
+      description: disable the false control error fro the acknowledge error report.
+      bit_offset: 6
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR7
+      description: disable the reserved from the acknowledge error report.
+      bit_offset: 7
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR8
+      description: disable the ecc error sigle-bit from the acknowledge error report.
+      bit_offset: 8
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_9
+      description: disable the ECC error multi-bit from the acknowledge error report.
+      bit_offset: 9
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_10
+      description: disable the checksum error from the acknowledge error report.
+      bit_offset: 10
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_11
+      description: disable the not recongnized dsi data type from the acknowledge error report.
+      bit_offset: 11
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_12
+      description: disable the dsi vc id invalid from the acknowledge error report.
+      bit_offset: 12
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_13
+      description: disable the invalid transmission length from the acknowledge error report.
+      bit_offset: 13
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_14
+      description: disable the reserved from the acknowledge error report.
+      bit_offset: 14
+      bit_size: 1
+    - name: MASK_ACK_WITH_ERR_15
+      description: disable the DSI protocal violation from the acknowledge error report.
+      bit_offset: 15
+      bit_size: 1
+    - name: MASK_DPHY_ERRORS_0
+      description: disable ErrEsc escape entry error from lane0.
+      bit_offset: 16
+      bit_size: 1
+    - name: MASK_DPHY_ERRORS_1
+      description: disable ErrSyncEsc low-power data transmission synchronization error from lane 0.
+      bit_offset: 17
+      bit_size: 1
+    - name: MASK_DPHY_ERRORS_2
+      description: disable control error ErrControl from lane0.
+      bit_offset: 18
+      bit_size: 1
+    - name: MASK_DPHY_ERRORS_3
+      description: disable LP0 contention error ErrContentionLP0 from lane0.
+      bit_offset: 19
+      bit_size: 1
+    - name: MASK_DPHY_ERRORS_4
+      description: disable LP1 contention error ErrContentionLP1 from lane0.
+      bit_offset: 20
+      bit_size: 1
+fieldset/int_msk1:
+  description: configures masks for int_st1.
+  fields:
+    - name: MASK_TO_HS_TX
+      description: disable that the high-speed transmission timeout counter reached the end and contention has been detected.
+      bit_offset: 0
+      bit_size: 1
+    - name: MASK_TO_LP_TX
+      description: disable that the low-power reception timeout counter reached the end and contention has been detected.
+      bit_offset: 1
+      bit_size: 1
+    - name: MASK_ECC_SIGLE_ERR
+      description: disable that the ECC single error has been detected and corrected in a reveived packet.
+      bit_offset: 2
+      bit_size: 1
+    - name: MASK_ECC_MULTI_ERR
+      description: disable that the ECC multiple error has been detected in a revieved packet.
+      bit_offset: 3
+      bit_size: 1
+    - name: MASK_CRC_ERR
+      description: disable that the CRC error has been detected in the reveived packet payload.
+      bit_offset: 4
+      bit_size: 1
+    - name: MASK_PKT_SIZE_ERR
+      description: disable that the packet size error has been detected during the packet reception.
+      bit_offset: 5
+      bit_size: 1
+    - name: MASK_EOPT_ERR
+      description: disable that the EoTp packet has not been received at the end of the incoming peripheral transmission.
+      bit_offset: 6
+      bit_size: 1
+    - name: MASK_DPI_BPLD_WR_ERR
+      description: disable the payload FIFO is full during a DPI pixel line storage.
+      bit_offset: 7
+      bit_size: 1
+    - name: MASK_GEN_CMD_WR_ERR
+      description: disable the system tried to write a command and FIFO is full.
+      bit_offset: 8
+      bit_size: 1
+    - name: MASK_GEN_PLD_WR_ERR
+      description: disable the system tried to write a payload and FIFO is full.
+      bit_offset: 9
+      bit_size: 1
+    - name: MASK_GEN_PLD_SEND_ERR
+      description: disable the payload FIFO become empty when packet build.
+      bit_offset: 10
+      bit_size: 1
+    - name: MASK_GEN_PLD_RD_ERR
+      description: disable that during a DCS read data, the payload FIFO becomes empty.
+      bit_offset: 11
+      bit_size: 1
+    - name: MASK_GEN_PLD_RECEV_ERR
+      description: disable that during a generic interface packet read back, the payload FIFO full.
+      bit_offset: 12
+      bit_size: 1
+    - name: MASK_DPI_BUFF_PLD_UNDER
+      description: disable an underflow when reading payload to build dsi packet for video mode.
+      bit_offset: 19
+      bit_size: 1
+    - name: MASK_TEAR_REQUEST_ERR
+      description: disable tear_request has occurred but tear effect is not active in dsi host and device.
+      bit_offset: 20
+      bit_size: 1
+fieldset/int_st0:
+  description: controls the status of interrupt.
+  fields:
+    - name: ACK_WITH_ERR0
+      description: retrives the SoT serror from the acknowledge error report.
+      bit_offset: 0
+      bit_size: 1
+    - name: ACK_WITH_ERR1
+      description: retrives the SoT sync error from the acknowledge error report.
+      bit_offset: 1
+      bit_size: 1
+    - name: ACK_WITH_ERR2
+      description: retrives the EoT sync error from the acknowledge error report.
+      bit_offset: 2
+      bit_size: 1
+    - name: ACK_WITH_ERR3
+      description: retrives the Escap mode entry command error from the acknowledge error report.
+      bit_offset: 3
+      bit_size: 1
+    - name: ACK_WITH_ERR4
+      description: retrives the LP transmit sync error from the acknowledge error report.
+      bit_offset: 4
+      bit_size: 1
+    - name: ACK_WITH_ERR5
+      description: retrives the peripheral timeout error from the acknowledge error report.
+      bit_offset: 5
+      bit_size: 1
+    - name: ACK_WITH_ERR6
+      description: retrieves the false control error fro the acknowledge error report.
+      bit_offset: 6
+      bit_size: 1
+    - name: ACK_WITH_ERR7
+      description: retrieves the reserved from the acknowledge error report.
+      bit_offset: 7
+      bit_size: 1
+    - name: ACK_WITH_ERR8
+      description: retrives the ecc error sigle-bit from the acknowledge error report.
+      bit_offset: 8
+      bit_size: 1
+    - name: ACK_WITH_ERR_9
+      description: retrives the ECC error multi-bit from the acknowledge error report.
+      bit_offset: 9
+      bit_size: 1
+    - name: ACK_WITH_ERR_10
+      description: retrives the checksum error from the acknowledge error report.
+      bit_offset: 10
+      bit_size: 1
+    - name: ACK_WITH_ERR_11
+      description: retrives the not recongnized dsi data type from the acknowledge error report.
+      bit_offset: 11
+      bit_size: 1
+    - name: ACK_WITH_ERR_12
+      description: retrieves the dsi vc id invalid from the acknowledge error report.
+      bit_offset: 12
+      bit_size: 1
+    - name: ACK_WITH_ERR_13
+      description: retrives the invalid transmission length from the acknowledge error report.
+      bit_offset: 13
+      bit_size: 1
+    - name: ACK_WITH_ERR_14
+      description: retrives the reserved from the acknowledge error report.
+      bit_offset: 14
+      bit_size: 1
+    - name: ACK_WITH_ERR_15
+      description: retrives the DSI protocal violation from the acknowledge error report.
+      bit_offset: 15
+      bit_size: 1
+    - name: DPHY_ERRORS_0
+      description: indicates ErrEsc escape entry error from lane0.
+      bit_offset: 16
+      bit_size: 1
+    - name: DPHY_ERRORS_1
+      description: indicates ErrSyncEsc low-power data transmission synchronization error from lane 0.
+      bit_offset: 17
+      bit_size: 1
+    - name: DPHY_ERRORS_2
+      description: indicates control error ErrControl from lane0.
+      bit_offset: 18
+      bit_size: 1
+    - name: DPHY_ERRORS_3
+      description: indicates LP0 contention error ErrContentionLP0 from lane0.
+      bit_offset: 19
+      bit_size: 1
+    - name: DPHY_ERRORS_4
+      description: indicates LP1 contention error ErrContentionLP1 from lane0.
+      bit_offset: 20
+      bit_size: 1
+fieldset/int_st1:
+  description: the interrupt source related to timeout etc.
+  fields:
+    - name: TO_HS_TX
+      description: indicates that the high-speed transmission timeout counter reached the end and contention has been detected.
+      bit_offset: 0
+      bit_size: 1
+    - name: TO_LP_TX
+      description: indicates that the low-power reception timeout counter reached the end and contention has been detected.
+      bit_offset: 1
+      bit_size: 1
+    - name: ECC_SIGLE_ERR
+      description: indicates that the ECC single error has been detected and corrected in a reveived packet.
+      bit_offset: 2
+      bit_size: 1
+    - name: ECC_MULTI_ERR
+      description: indicates that the ECC multiple error has been detected in a revieved packet.
+      bit_offset: 3
+      bit_size: 1
+    - name: CRC_ERR
+      description: indicates that the CRC error has been detected in the reveived packet payload.
+      bit_offset: 4
+      bit_size: 1
+    - name: PKT_SIZE_ERR
+      description: indicates that the packet size error has been detected during the packet reception.
+      bit_offset: 5
+      bit_size: 1
+    - name: EOPT_ERR
+      description: indicates that the EoTp packet has not been received at the end of the incoming peripheral transmission.
+      bit_offset: 6
+      bit_size: 1
+    - name: DPI_BPLD_WR_ERR
+      description: indicates the payload FIFO is full during a DPI pixel line storage.
+      bit_offset: 7
+      bit_size: 1
+    - name: GEN_CMD_WR_ERR
+      description: indicates the system tried to write a command and FIFO is full.
+      bit_offset: 8
+      bit_size: 1
+    - name: GEN_PLD_WR_ERR
+      description: indicates the system tried to write a payload and FIFO is full.
+      bit_offset: 9
+      bit_size: 1
+    - name: GEN_PLD_SEND_ERR
+      description: indicates the payload FIFO become empty when packet build.
+      bit_offset: 10
+      bit_size: 1
+    - name: GEN_PLD_RD_ERR
+      description: indicates that during a DCS read data, the payload FIFO becomes empty.
+      bit_offset: 11
+      bit_size: 1
+    - name: GEN_PLD_RECEV_ERR
+      description: indicates that during a generic interface packet read back, the payload FIFO full.
+      bit_offset: 12
+      bit_size: 1
+    - name: DPI_BUFF_PLD_UNDER
+      description: indicates an underflow when reading payload to build dsi packet for video mode.
+      bit_offset: 19
+      bit_size: 1
+    - name: TEAR_REQUEST_ERR
+      description: indicates tear_request has occurred but tear effect is not active in dsi host and device.
+      bit_offset: 20
+      bit_size: 1
+fieldset/lp_rd_to_cnt:
+  description: configures the peripheral response timeout after low-power read operation.
+  fields:
+    - name: LP_RD_TO_CNT
+      description: sets a period for which dwc_mipi_dsi_host keeps the link still after sending a low power read operation.
+      bit_offset: 0
+      bit_size: 16
+fieldset/lp_wr_to_cnt:
+  description: configures the peripheral response timeout after low power write operations.
+  fields:
+    - name: LP_WR_TO_CNT
+      description: sets the period for which dsi host keeps the link still after sending a low power write operation.
+      bit_offset: 0
+      bit_size: 16
+fieldset/lpclk_ctrl:
+  description: configures the possibility for using non continuous clock in the clock lane.
+  fields:
+    - name: PHY_TXREQUESTCLKHS
+      description: controls the D-PHY PPI txrequestclkhs signal.
+      bit_offset: 0
+      bit_size: 1
+    - name: AUTO_CLKLANE_CTRL
+      description: enables the automatic mechanism to stop providing clock in the clock lane.
+      bit_offset: 1
+      bit_size: 1
+fieldset/mode_cfg:
+  description: configures the mode of operation between video or command mode.
+  fields:
+    - name: CMD_VIDEO_MODE
+      description: "0x0: video mode 0x1: command mode."
+      bit_offset: 0
+      bit_size: 1
+fieldset/pckhdl_cfg:
+  description: configures how EoTp, BTA, CRC and ECC to be used.
+  fields:
+    - name: EOTP_TX_EN
+      description: enable the EoTp transmission in high-speed.
+      bit_offset: 0
+      bit_size: 1
+    - name: EOTP_RX_EN
+      description: enable the EoTp reception.
+      bit_offset: 1
+      bit_size: 1
+    - name: BTA_EN
+      description: enable the bus turn-around request.
+      bit_offset: 2
+      bit_size: 1
+    - name: ECC_RX_EN
+      description: enable the ecc reception error correction and reporting.
+      bit_offset: 3
+      bit_size: 1
+    - name: CRC_RX_EN
+      description: enable the crc reception and error reporting.
+      bit_offset: 4
+      bit_size: 1
+    - name: EOTP_TX_LP_EN
+      description: enable the EoTp transmission in low-power.
+      bit_offset: 5
+      bit_size: 1
+fieldset/phy_cal:
+  description: controls the skew calibration of D-phy.
+  fields:
+    - name: TXSKEWCALHS
+      description: High-speed skew calibration is started when txskewcalhs is set high (assuming that PHY is in Stop state).
+      bit_offset: 0
+      bit_size: 1
+fieldset/phy_if_cfg:
+  description: configures the number of active lanes.
+  fields:
+    - name: N_LANES
+      description: configures the number of active data lanes.
+      bit_offset: 0
+      bit_size: 2
+    - name: PHY_STOP_WAIT_TIME
+      description: configures the minimum time phy needs to stay in stopstate before requesting an highspeed transmission.
+      bit_offset: 8
+      bit_size: 8
+fieldset/phy_mode:
+  description: select phy mode.
+  fields:
+    - name: PHY_MODE
+      description: sel DPHY or CPHY.
+      bit_offset: 0
+      bit_size: 1
+fieldset/phy_rstz:
+  description: controls resets and the pll of d-phy.
+  fields:
+    - name: PHY_SHUTDOWNZ
+      description: places the dphy macro in power down mode when set to 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_RSTZ
+      description: make the dphy in reset state when set to 0.
+      bit_offset: 1
+      bit_size: 1
+    - name: PHY_ENABLECLK
+      description: enable dphy clock lane.
+      bit_offset: 2
+      bit_size: 1
+    - name: PHY_FORCEPLL
+      description: when the d-phy is in ulps, enable the d-phy pll.
+      bit_offset: 3
+      bit_size: 1
+fieldset/phy_status:
+  description: contains information about the status of the d-phy.
+  fields:
+    - name: PHY_LOCK
+      description: This bit indicates the status of phylock D-PHY signal.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_DIRECTION
+      description: This bit indicates the status of phydirection D-PHY signal.
+      bit_offset: 1
+      bit_size: 1
+    - name: PHY_STOPSTATECLKLANE
+      description: This bit indicates the status of phystopstateclklane D-PHY signal.
+      bit_offset: 2
+      bit_size: 1
+    - name: PHY_ULPSACTIVENOTCLK
+      description: This bit indicates the status of phyulpsactivenotclk D-PHY signal.
+      bit_offset: 3
+      bit_size: 1
+    - name: PHY_STOPSTATE0LANE
+      description: This bit indicates the status of phystopstate0lane D-PHY signal.
+      bit_offset: 4
+      bit_size: 1
+    - name: PHY_ULPSACTIVENOT0LANE
+      description: This bit indicates the status of ulpsactivenot0lane D-PHY signal.
+      bit_offset: 5
+      bit_size: 1
+    - name: PHY_RXULPSESC0LANE
+      description: This bit indicates the status of rxulpsesc0lane D-PHY signa.
+      bit_offset: 6
+      bit_size: 1
+    - name: PHY_STOPSTATE1LANE
+      description: This bit indicates the status of phystopstate1lane D-PHY signal.
+      bit_offset: 7
+      bit_size: 1
+    - name: PHY_ULPSACTIVENOT1LANE
+      description: This bit indicates the status of ulpsactivenot1lane D-PHY signal.
+      bit_offset: 8
+      bit_size: 1
+    - name: PHY_STOPSTATE2LANE
+      description: This bit indicates the status of phystopstate2lane D-PHY signal.
+      bit_offset: 9
+      bit_size: 1
+    - name: PHY_ULPSACTIVENOT2LANE
+      description: This bit indicates the status of ulpsactivenot2lane D-PHY signa.
+      bit_offset: 10
+      bit_size: 1
+    - name: PHY_STOPSTATE3LANE
+      description: This bit indicates the status of phystopstate3lane D-PHY signal.
+      bit_offset: 11
+      bit_size: 1
+    - name: PHY_ULPSACTIVENOT3LANE
+      description: indicates the status of ulpsactivenot3lane d-phy signal.
+      bit_offset: 12
+      bit_size: 1
+fieldset/phy_tmr_cfg:
+  description: sets the time that dsi host assumes in calculations for data lanes to switch between hs to lp.
+  fields:
+    - name: PHY_LP2HS_TIME
+      description: This field configures the maximum time that the D-PHY data lanes take to go from low-power to high-speed transmission measured in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 10
+    - name: PHY_HS2LP_TIME
+      description: This field configures the maximum time that the D-PHY data lanes take to go from high-speed to low-power transmission measured in lane byte clock cycles.
+      bit_offset: 16
+      bit_size: 10
+fieldset/phy_tmr_lpclk_cfg:
+  description: sets the time that dsi host assumes in calculations for the clock lane to switch between high-speed and low-power.
+  fields:
+    - name: PHY_CLKLP2HS_TIME
+      description: configures the maximum time that the d-phy clock lane takes to go from low-power to high-speed transmission.
+      bit_offset: 0
+      bit_size: 10
+    - name: PHY_CLKHS2LP_TIME
+      description: configures the maximum time that the d-phy clock lane takes to go from high-speed to low-power transmission.
+      bit_offset: 16
+      bit_size: 10
+fieldset/phy_tmr_rd:
+  description: configures times related to PHY to perform some operations in lane byte clock cycle.
+  fields:
+    - name: MAX_RD_TIME
+      description: the maximum time required to perform a read command in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 15
+fieldset/phy_tst_ctrl0:
+  description: controls clock and clear pins of the d-phy vendor specific interface.
+  fields:
+    - name: PHY_TESTCLR
+      description: reserve.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_TESTCLK
+      description: reserve.
+      bit_offset: 1
+      bit_size: 1
+fieldset/phy_tst_ctrl1:
+  description: controls data and enable pins of the d-phy.
+  fields:
+    - name: PHY_TESTDIN
+      description: reserve.
+      bit_offset: 0
+      bit_size: 8
+    - name: PHY_TESTDOUT
+      description: reserve.
+      bit_offset: 8
+      bit_size: 8
+    - name: PHY_TESTEN
+      description: reserve.
+      bit_offset: 16
+      bit_size: 1
+fieldset/phy_tx_triggers:
+  description: configures the pins that activate triggers in the d-phy.
+  fields:
+    - name: PHY_TX_TRIGGERS
+      description: controls the trigger transmissions.
+      bit_offset: 0
+      bit_size: 4
+fieldset/phy_ulps_ctrl:
+  description: configures entering and leaving ulps.
+  fields:
+    - name: PHY_TXREQULPSCLK
+      description: ulps mode request on clock lane.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_TXEXITULPSCLK
+      description: ulps mode exit on clock lane.
+      bit_offset: 1
+      bit_size: 1
+    - name: PHY_TXREQULPSLAN
+      description: ulps mode request on all active data lanes.
+      bit_offset: 2
+      bit_size: 1
+    - name: PHY_TXEXITULPSLAN
+      description: ulps mode exit on all active data lanes.
+      bit_offset: 3
+      bit_size: 1
+fieldset/pwr_up:
+  description: power up.
+  fields:
+    - name: SHUTDOWNZ
+      description: "0x0: reset the core 0x1: power up the core."
+      bit_offset: 0
+      bit_size: 1
+fieldset/sdf_3d:
+  description: sotres 3d control information for vss packets in video mode.
+  fields:
+    - name: MODE_3D
+      description: defines 3D mode on/off.
+      bit_offset: 0
+      bit_size: 2
+    - name: FORMAT_3D
+      description: defines 3D image format.
+      bit_offset: 2
+      bit_size: 2
+    - name: SECOND_VSYNC
+      description: defines whether there is a second VSYNC pulse.
+      bit_offset: 4
+      bit_size: 1
+    - name: RIGHT_FIRST
+      description: "0x0: left eye is sent first 0x1:right eye is sent first."
+      bit_offset: 5
+      bit_size: 1
+    - name: SEND_3D_CFG
+      description: set the next vss packet to include 3d control payload in every vss packet.
+      bit_offset: 16
+      bit_size: 1
+fieldset/sdf_3d_act:
+  description: value for sdf_3d.
+  fields:
+    - name: MODE_3D
+      description: This field specifies 3D Mode On/Off and Display Orientation.
+      bit_offset: 0
+      bit_size: 2
+    - name: FORMAT_3D
+      description: This field specifies 3D Image Format.
+      bit_offset: 2
+      bit_size: 2
+    - name: SECOND_VSYNC
+      description: This field specifies whether there is a second VSYNC pulse between Left and Right Images, when 3D Image Format is Frame-based.
+      bit_offset: 4
+      bit_size: 1
+    - name: RIGHT_FIRST
+      description: This bit specifies the left/right order.
+      bit_offset: 5
+      bit_size: 1
+    - name: SEND_3D_CFG
+      description: When set, causes the next VSS packet to include 3D control payload in every VSS packet.
+      bit_offset: 16
+      bit_size: 1
+fieldset/to_cnt_cfg:
+  description: configures the trigger timeout errors.
+  fields:
+    - name: LPRX_TO_CNT
+      description: configures the timeout counter that triggers a low power reception timeout contention detection.
+      bit_offset: 0
+      bit_size: 16
+    - name: HSTX_TO_CNT
+      description: configures the timeout counter that triggers a high speed transmission timeout contention detection.
+      bit_offset: 16
+      bit_size: 16
+fieldset/version:
+  description: version.
+  fields:
+    - name: VERSION
+      description: version of DSI.
+      bit_offset: 0
+      bit_size: 32
+fieldset/vid_hbp_time:
+  description: configure the video HBP time.
+  fields:
+    - name: VID_HPB_TIME
+      description: configures the Horizontal back porch period in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/vid_hbp_time_act:
+  description: the value that controller is using for vid_hbp_time.
+  fields:
+    - name: VID_HBP_TIME
+      description: the horizontal back porch period in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/vid_hline_time:
+  description: configures the overall time for each video line.
+  fields:
+    - name: VID_HLINE_TIME
+      description: configures the size of the total line time in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 15
+fieldset/vid_hline_time_act:
+  description: the value for vid_hline_time.
+  fields:
+    - name: VID_HLINE_TIME
+      description: "the size of total line: hsa+hbp+hact+hfp."
+      bit_offset: 0
+      bit_size: 15
+fieldset/vid_hsa_time:
+  description: configures the video HAS time.
+  fields:
+    - name: VID_HSA_TIME
+      description: configure the Horizontal synchronism active period in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/vid_hsa_time_act:
+  description: the value of vid_hsa_time.
+  fields:
+    - name: VID_HSA_TIME
+      description: the horizontal synchronism active period in lane byte clock cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/vid_mode_cfg:
+  description: several aspect of video mode operation.
+  fields:
+    - name: VID_MODE_TYPE
+      description: indicates the video mode transmission type.
+      bit_offset: 0
+      bit_size: 2
+    - name: LP_VSA_EN
+      description: enable the return to low-power inside the VSA period when timing allows.
+      bit_offset: 8
+      bit_size: 1
+    - name: LP_VBP_EN
+      description: enable the return to low-power inside the VBP period when timing allows.
+      bit_offset: 9
+      bit_size: 1
+    - name: LP_VFP_EN
+      description: enable the return to low-power inside the VFP period when timing allows.
+      bit_offset: 10
+      bit_size: 1
+    - name: LP_VACT_EN
+      description: enable the return to low-power inside the VACT period when timing allows.
+      bit_offset: 11
+      bit_size: 1
+    - name: LP_HBP_EN
+      description: enable the return to low-power inside the HBP period when timing allows.
+      bit_offset: 12
+      bit_size: 1
+    - name: LP_HFP_EN
+      description: enable the return to low-power inside the HFP period when timing allows.
+      bit_offset: 13
+      bit_size: 1
+    - name: FRAME_BTA_ACK_EN
+      description: enable the request for an acknowledge response at the end of a frame.
+      bit_offset: 14
+      bit_size: 1
+    - name: LP_CMD_EN
+      description: enable command transmission only in low-power mode.
+      bit_offset: 15
+      bit_size: 1
+    - name: VPG_EN
+      description: enable video mode pattern generator.
+      bit_offset: 16
+      bit_size: 1
+    - name: VPG_MODE
+      description: "0x0: colorbar 0x1: berpattern, vertical only."
+      bit_offset: 20
+      bit_size: 1
+    - name: VPG_ORIENTATION
+      description: "indicates the color bar orientation : 0x0: vertical mode 0x1: horizontal mode."
+      bit_offset: 24
+      bit_size: 1
+fieldset/vid_mode_cfg_act:
+  description: holds value that controller is using for vid_mode_cfg.
+  fields:
+    - name: VID_MODE_TYPE
+      description: specifies the video mode transmission type.
+      bit_offset: 0
+      bit_size: 2
+    - name: LP_VSA_EN
+      description: enable the returne to low-power inside the VSA period when timing allows.
+      bit_offset: 2
+      bit_size: 1
+    - name: LP_VBP_EN
+      description: enable the returne to low-power inside the VBP period when timing allows.
+      bit_offset: 3
+      bit_size: 1
+    - name: LP_VFP_EN
+      description: enable the returne to low-power inside the VFP period when timing allows.
+      bit_offset: 4
+      bit_size: 1
+    - name: LP_VACT_EN
+      description: enable the returne to low-power inside the VACT period when timing allows.
+      bit_offset: 5
+      bit_size: 1
+    - name: LP_HBP_EN
+      description: enable the returne to low-power inside the HBP period when timing allows.
+      bit_offset: 6
+      bit_size: 1
+    - name: LP_HFP_EN
+      description: enable the returne to low-power inside the HFP period when timing allows.
+      bit_offset: 7
+      bit_size: 1
+    - name: FRAME_BTA_ACK_EN
+      description: enable the request for an acknowledge response at the end of a frame.
+      bit_offset: 8
+      bit_size: 1
+    - name: LP_CMD_EN
+      description: enable the command transmission only in low-power mode.
+      bit_offset: 9
+      bit_size: 1
+fieldset/vid_null_size:
+  description: configures the size of null packets.
+  fields:
+    - name: VID_NULL_SIZE
+      description: configures the number of bytes inside a null packet.
+      bit_offset: 0
+      bit_size: 13
+fieldset/vid_null_size_act:
+  description: holds the value that controller is using for vid_null_size.
+  fields:
+    - name: VID_NULL_SIZE
+      description: the number of bytes in side a null packet.
+      bit_offset: 0
+      bit_size: 13
+fieldset/vid_num_chunks:
+  description: configures the number of chunks to use.
+  fields:
+    - name: VID_NUM_CHUNKS
+      description: configures the number of chunks to be transmitted a line period.
+      bit_offset: 0
+      bit_size: 13
+fieldset/vid_num_chunks_act:
+  description: holds value that controller is using for vid_num_chunks.
+  fields:
+    - name: VID_NUM_CHUNKS
+      description: the number of chunks to be transmitted during a line period.
+      bit_offset: 0
+      bit_size: 13
+fieldset/vid_pkt_size:
+  description: configures the video packet size.
+  fields:
+    - name: VID_PKT_SIZE
+      description: configures the number of pixels in a single video packet.
+      bit_offset: 0
+      bit_size: 14
+fieldset/vid_pkt_size_act:
+  description: holds value that controller is using for vid_pkt_size.
+  fields:
+    - name: VID_PKT_SIZE
+      description: the number of pixels in a single video packet.
+      bit_offset: 0
+      bit_size: 14
+fieldset/vid_pkt_status:
+  description: status of fifo related to dpi.
+  fields:
+    - name: DPI_CMD_W_EMPTY
+      description: This bit indicates the empty status of write command FIFO for video Mode. This bit is set to 0 for command Mode.
+      bit_offset: 0
+      bit_size: 1
+    - name: DPI_CMD_W_FULL
+      description: This bit indicates the full status of write command FIFO for video Mode. This bit is set to 0 for command Mode.
+      bit_offset: 1
+      bit_size: 1
+    - name: DPI_PLD_W_EMPTY
+      description: This bit indicates the empty status of write payload FIFO for video Mode. This bit is set to 0 for command Mode.
+      bit_offset: 2
+      bit_size: 1
+    - name: DPI_PLD_W_FULL
+      description: This bit indicates the full status of write payload FIFO for video Mode. This bit is set to 0 for command Mode.
+      bit_offset: 3
+      bit_size: 1
+    - name: DPI_BUFF_PLD_EMPTY
+      description: This bit indicates the empty status of the payload internal buffer for video Mode. This bit is set to 0 for command Mod.
+      bit_offset: 16
+      bit_size: 1
+    - name: DPI_BUFF_PLD_FULL
+      description: This bit indicates the full status of the payload internal buffer for video Mode. This bit is set to 0 for command Mode.
+      bit_offset: 17
+      bit_size: 1
+fieldset/vid_shadow_ctrl:
+  description: controls dpi shadow feature.
+  fields:
+    - name: VID_SHADOW_EN
+      description: when set to 1, DPI receives the active configuration from the auxiliary register.
+      bit_offset: 0
+      bit_size: 1
+    - name: VID_SHADOW_REQ
+      description: when set to 1, request that the dpi register from regbank are copied to the auxiliary registers.
+      bit_offset: 8
+      bit_size: 1
+    - name: VID_SHADOW_PIN_REQ
+      description: when set to 1, the video request is done by external pin.
+      bit_offset: 16
+      bit_size: 1
+fieldset/vid_vactive_lines:
+  description: configures the vertical resolution of video.
+  fields:
+    - name: V_ACTIVE_LINES
+      description: configures the vertical active period measured in number of horizontal lines.
+      bit_offset: 0
+      bit_size: 14
+fieldset/vid_vactive_lines_act:
+  description: value for vid_vactive_lines.
+  fields:
+    - name: V_ACTIVE_LINES
+      description: vertical active period.
+      bit_offset: 0
+      bit_size: 14
+fieldset/vid_vbp_lines:
+  description: configures the vbp period.
+  fields:
+    - name: VBP_LINES
+      description: configures the vertical back porch period measured in number of horizontal lines.
+      bit_offset: 0
+      bit_size: 10
+fieldset/vid_vbp_lines_act:
+  description: value for vid_vbp_lines.
+  fields:
+    - name: VBP_LINES
+      description: vertical back porch period.
+      bit_offset: 0
+      bit_size: 10
+fieldset/vid_vfp_lines:
+  description: configures the vfp period.
+  fields:
+    - name: VFP_LINIES
+      description: configures the vertical front porch period measured in number of horizontal lines.
+      bit_offset: 0
+      bit_size: 10
+fieldset/vid_vfp_lines_act:
+  description: value for vid_vfp_lines.
+  fields:
+    - name: VFP_LINES
+      description: vertical porch period.
+      bit_offset: 0
+      bit_size: 10
+fieldset/vid_vsa_lines:
+  description: configures the vsa period.
+  fields:
+    - name: VSA_LINES
+      description: configures the verical synchronism active period measured in number of horizontal lines.
+      bit_offset: 0
+      bit_size: 10
+fieldset/vid_vsa_lines_act:
+  description: value for vid_vsa_lines.
+  fields:
+    - name: VSA_LINES
+      description: vertical synchronism active period.
+      bit_offset: 0
+      bit_size: 10

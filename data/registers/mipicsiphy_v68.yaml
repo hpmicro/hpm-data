@@ -1,0 +1,597 @@
+block/MIPI_CSI_PHY:
+  description: MIPI_CSI_PHY0.
+  items:
+    - name: soft_rst
+      description: soft reset control.
+      byte_offset: 0
+      fieldset: soft_rst
+    - name: phy_rcal
+      description: dphy resistor calibration.
+      byte_offset: 4
+      fieldset: phy_rcal
+    - name: ulp_rx_en
+      description: enable lprx and ulprx.
+      byte_offset: 8
+      fieldset: ulp_rx_en
+    - name: voffcal_out
+      description: hs-rx dc-offset auto-calibration results.
+      byte_offset: 12
+      fieldset: voffcal_out
+    - name: csi_ctl01
+      description: dphy hardcore control.
+      byte_offset: 16
+      fieldset: csi_ctl01
+    - name: csi_ctl23
+      description: dphy hardcore control.
+      byte_offset: 20
+      fieldset: csi_ctl23
+    - name: csi_vinit
+      description: ulp lp-rx input threshold voltage trimming for data lane.
+      byte_offset: 28
+      fieldset: csi_vinit
+    - name: clane_para
+      description: clock lane parameter.
+      byte_offset: 32
+      fieldset: clane_para
+    - name: t_hs_termen
+      description: t-termen of all datalane.
+      byte_offset: 36
+      fieldset: t_hs_termen
+    - name: t_hs_settle
+      description: t-settle of all data lanes.
+      byte_offset: 40
+      fieldset: t_hs_settle
+    - name: t_clane_init
+      description: t-init of clock lane.
+      byte_offset: 48
+      fieldset: t_clane_init
+    - name: t_lane_init0
+      description: t-init of data lane0.
+      byte_offset: 52
+      fieldset: t_lane_init0
+    - name: t_lane_init1
+      description: t-init of data lane1.
+      byte_offset: 56
+      fieldset: t_lane_init1
+    - name: tlpx_ctrl
+      description: the time of tlpx_ctrl of all lane.
+      byte_offset: 68
+      fieldset: tlpx_ctrl
+    - name: ne_swap
+      description: lane swap and dp/dn swap select.
+      byte_offset: 72
+      fieldset: ne_swap
+    - name: misc_info
+      description: misc info of dphyrx_pcs control.
+      byte_offset: 76
+      fieldset: misc_info
+    - name: bist_test0
+      description: bist test control.
+      byte_offset: 112
+      fieldset: bist_test0
+    - name: bist_test1
+      description: bist test control.
+      byte_offset: 116
+      fieldset: bist_test1
+    - name: bist_test2
+      description: bist test control.
+      byte_offset: 120
+      fieldset: bist_test2
+    - name: bist_test3
+      description: bist test control.
+      byte_offset: 124
+      fieldset: bist_test3
+    - name: burn_in_test0
+      description: burn-in test control.
+      byte_offset: 160
+      fieldset: burn_in_test0
+    - name: burn_in_test1
+      description: burn-in test control.
+      byte_offset: 164
+      fieldset: burn_in_test1
+    - name: burn_in_test2
+      description: bist test control.
+      byte_offset: 168
+      fieldset: burn_in_test2
+    - name: burn_in_test4
+      description: bist test control.
+      byte_offset: 176
+      fieldset: burn_in_test4
+    - name: burn_in_test5
+      description: burn-in test control.
+      byte_offset: 180
+      fieldset: burn_in_test5
+    - name: burn_in_test6
+      description: burn-in test control.
+      byte_offset: 184
+      fieldset: burn_in_test6
+    - name: burn_in_test9
+      description: burn-in test control.
+      byte_offset: 196
+      fieldset: burn_in_test9
+    - name: debug_info
+      description: debug data control.
+      byte_offset: 208
+      fieldset: debug_info
+    - name: debug_cfg_reg0
+      description: the hardcore interface control in debug mode.
+      byte_offset: 212
+      fieldset: debug_cfg_reg0
+    - name: debug_cfg_reg1
+      description: the hardcore interface control in debug mode.
+      byte_offset: 216
+      fieldset: debug_cfg_reg1
+    - name: debug_cfg_reg2
+      description: the hardcore interface control in debug mode.
+      byte_offset: 3346
+      fieldset: debug_cfg_reg2
+    - name: debug_cfg_reg3
+      description: the hardcore interface control in debug mode.
+      byte_offset: 3350
+      fieldset: debug_cfg_reg3
+    - name: debug_cfg_reg4
+      description: the hardcore interface control in debug mode.
+      byte_offset: 3360
+      fieldset: debug_cfg_reg4
+    - name: debug_cfg_reg5
+      description: the hardcore interface control in debug mode.
+      byte_offset: 3364
+      fieldset: debug_cfg_reg5
+fieldset/bist_test0:
+  description: bist test control.
+  fields:
+    - name: BIST_EN_SOFT
+      description: enable prbs bist test.
+      bit_offset: 0
+      bit_size: 1
+    - name: BIST_EN_SEL
+      description: the source of bist_en sel.
+      bit_offset: 1
+      bit_size: 1
+    - name: BIST_OK_LANE0
+      description: bist_ok of lane0.
+      bit_offset: 2
+      bit_size: 1
+    - name: BIST_OK_LANE1
+      description: bist_ok of lane1.
+      bit_offset: 3
+      bit_size: 1
+    - name: BIST_DONE_LAN0
+      description: bist_done of lane0.
+      bit_offset: 6
+      bit_size: 1
+    - name: BIST_DONE_LAN1
+      description: bist_done of lane1.
+      bit_offset: 7
+      bit_size: 1
+fieldset/bist_test1:
+  description: bist test control.
+  fields:
+    - name: PRBS_CHECK_NUM
+      description: the byte num of prbs bist check num.
+      bit_offset: 0
+      bit_size: 32
+fieldset/bist_test2:
+  description: bist test control.
+  fields:
+    - name: PRBS_ERR_THRESHOLD
+      description: the threshold of prbs bist error.
+      bit_offset: 0
+      bit_size: 16
+    - name: PRBS_SEED
+      description: the seed of prbs7.
+      bit_offset: 16
+      bit_size: 8
+fieldset/bist_test3:
+  description: bist test control.
+  fields:
+    - name: PRBS_ERR_NUM_LAN0
+      description: the byte num of mismatch data of data lane0 in bist mode.
+      bit_offset: 0
+      bit_size: 16
+    - name: PRBS_ERR_NUM_LAN1
+      description: the byte num of mismatch data of data lane1 in bist mode.
+      bit_offset: 16
+      bit_size: 16
+fieldset/burn_in_test0:
+  description: burn-in test control.
+  fields:
+    - name: BURN_IN_EN_SOFT
+      description: enable prbs burn_in test.
+      bit_offset: 0
+      bit_size: 1
+    - name: BURN_IN_EN_SEL
+      description: the source of prbs burn_in_en sel.
+      bit_offset: 1
+      bit_size: 1
+    - name: BURN_IN_OK_LAN0
+      description: burn_in_ok of lane0.
+      bit_offset: 2
+      bit_size: 1
+    - name: BURN_IN_OK_LAN1
+      description: burn_in_ok of lane1.
+      bit_offset: 3
+      bit_size: 1
+    - name: BURN_IN_OK_CLAN
+      description: burn_in_ok of clock lane.
+      bit_offset: 6
+      bit_size: 1
+fieldset/burn_in_test1:
+  description: burn-in test control.
+  fields:
+    - name: BURN_IN_SEED
+      description: the seed of prbs7 for brun-in test.
+      bit_offset: 0
+      bit_size: 8
+fieldset/burn_in_test2:
+  description: bist test control.
+  fields:
+    - name: BURN_IN_ERR_NUM_LAN0
+      description: the bit num of mismatch data on data lan0 in burn-in mode.
+      bit_offset: 0
+      bit_size: 16
+    - name: BURN_IN_ERR_NUM_LAN1
+      description: the bit num of mismatch data on data lan1 in burn-in mode.
+      bit_offset: 16
+      bit_size: 16
+fieldset/burn_in_test4:
+  description: bist test control.
+  fields:
+    - name: BURN_IN_ERR_NUM_CLAN
+      description: the bit num of mismatch data on clock lane in burn-in mode.
+      bit_offset: 0
+      bit_size: 16
+fieldset/burn_in_test5:
+  description: burn-in test control.
+  fields:
+    - name: BURN_IN_CHECK_NUM_LAN0
+      description: the checked bit num of lane0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/burn_in_test6:
+  description: burn-in test control.
+  fields:
+    - name: BURN_IN_CHECKED_NUM_LAN1
+      description: the checked bit num of lane1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/burn_in_test9:
+  description: burn-in test control.
+  fields:
+    - name: BURN_IN_CHECK_NUM_CLAN
+      description: the checked bit num of clock lane.
+      bit_offset: 0
+      bit_size: 32
+fieldset/clane_para:
+  description: clock lane parameter.
+  fields:
+    - name: T_CLK_SETTLE
+      description: the value of tclk-settle of clklane.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_CLK_TERMEN
+      description: time for the clock lane receiver to enable the HS line termination.
+      bit_offset: 8
+      bit_size: 8
+fieldset/csi_ctl01:
+  description: dphy hardcore control.
+  fields:
+    - name: CSI_CTL0_0
+      description: force data lane-n and clock lane hs-rx to be normal operation.
+      bit_offset: 0
+      bit_size: 1
+    - name: CSI_CTL0_1
+      description: force data lane-n and clock lane lp/ulprx to be normal operation.
+      bit_offset: 1
+      bit_size: 1
+    - name: CSI_CTL0_2
+      description: ulprx_lpen.
+      bit_offset: 2
+      bit_size: 1
+    - name: CSI_CTL0_3
+      description: hs_rx_voffcal_trim_polar.
+      bit_offset: 3
+      bit_size: 1
+    - name: CSI_CTL0_4
+      description: bypass hs_rx_voffcal_en.
+      bit_offset: 4
+      bit_size: 1
+    - name: CSI_CTL0_5
+      description: ulprx_vref_trim.
+      bit_offset: 5
+      bit_size: 2
+    - name: CSI_CTL0_6
+      description: clock lane hs-rx dc-offset trimming control.
+      bit_offset: 8
+      bit_size: 5
+    - name: CSI_CTL0_7
+      description: clock lane hs-rx dc-offset auto-calibration enable.
+      bit_offset: 13
+      bit_size: 1
+    - name: CSI_CTL1_0
+      description: force data lane-n and clock lane hs-rx to be normal operation.
+      bit_offset: 16
+      bit_size: 1
+    - name: CSI_CTL1_1
+      description: force data lane-n and clock lane lp/ulprx to be normal operation.
+      bit_offset: 17
+      bit_size: 1
+    - name: CSI_CTL1_2
+      description: ulprx_lpen.
+      bit_offset: 18
+      bit_size: 1
+    - name: CSI_CTL1_3
+      description: hs_rx_voffcal_trim_polar.
+      bit_offset: 19
+      bit_size: 1
+    - name: CSI_CTL1_4
+      description: bypass hs_rx_voffcal_en.
+      bit_offset: 20
+      bit_size: 1
+    - name: CSI_CTL1_5
+      description: ulprx_vref_trim.
+      bit_offset: 21
+      bit_size: 2
+    - name: CSI_CTL1_6
+      description: clock lane hs-rx dc-offset trimming control.
+      bit_offset: 24
+      bit_size: 5
+    - name: CSI_CTL1_7
+      description: clock lane hs-rx dc-offset auto-calibration enable.
+      bit_offset: 29
+      bit_size: 1
+fieldset/csi_ctl23:
+  description: dphy hardcore control.
+  fields:
+    - name: CSI_CTL3_0
+      description: data lane-0 hs-rx skew adjust with binary code.
+      bit_offset: 16
+      bit_size: 4
+    - name: CSI_CTL3_1
+      description: data lane-0 skew trimming enable.
+      bit_offset: 20
+      bit_size: 1
+    - name: CSI_CTL3_2
+      description: data lane-1 hs-rx skew adjust with binary code.
+      bit_offset: 24
+      bit_size: 4
+    - name: CSI_CTL3_3
+      description: data lane-1 skew trimming enable.
+      bit_offset: 28
+      bit_size: 1
+fieldset/csi_vinit:
+  description: ulp lp-rx input threshold voltage trimming for data lane.
+  fields:
+    - name: CSI_0_LPRX_VINIT
+      description: pt ft indicator in csi lane-0.
+      bit_offset: 0
+      bit_size: 4
+    - name: CSI_1_LPRX_VINIT
+      description: pt ft indicator in csi lane-1.
+      bit_offset: 4
+      bit_size: 4
+    - name: CSI_CLK_LPRX_VINT
+      description: pt ft indicator in csi clk lane.
+      bit_offset: 16
+      bit_size: 4
+    - name: CSI_LPRX_VREF_TRIM
+      description: pt ft indicator in csi clk data lane.
+      bit_offset: 20
+      bit_size: 4
+fieldset/debug_cfg_reg0:
+  description: the hardcore interface control in debug mode.
+  fields:
+    - name: DEBUG_CFG_REG0
+      description: debug config register0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_cfg_reg1:
+  description: the hardcore interface control in debug mode.
+  fields:
+    - name: DEBUG_CFG_REG1
+      description: debug config register1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_cfg_reg2:
+  description: the hardcore interface control in debug mode.
+  fields:
+    - name: DEBUG_CFG_REG2
+      description: debug config register2.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_cfg_reg3:
+  description: the hardcore interface control in debug mode.
+  fields:
+    - name: DEBUG_CFG_REG3
+      description: debug config register3.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_cfg_reg4:
+  description: the hardcore interface control in debug mode.
+  fields:
+    - name: DEBUG_CFG_REG4
+      description: debug config register4.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_cfg_reg5:
+  description: the hardcore interface control in debug mode.
+  fields:
+    - name: DEBUG_CFG_REG5
+      description: debug config register5.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_info:
+  description: debug data control.
+  fields:
+    - name: DEBUG_MODE_SEL
+      description: the debug bus sel.
+      bit_offset: 16
+      bit_size: 6
+fieldset/misc_info:
+  description: misc info of dphyrx_pcs control.
+  fields:
+    - name: LONG_SOTSYNC_EN
+      description: at least six zero is checked before sot swquence "00011101".
+      bit_offset: 0
+      bit_size: 1
+    - name: ULPS_LP10_SEL
+      description: the lp10 select signal in ulps_exit state.
+      bit_offset: 1
+      bit_size: 1
+fieldset/ne_swap:
+  description: lane swap and dp/dn swap select.
+  fields:
+    - name: LANE_SWAP_LANE0
+      description: data lane0 swap.
+      bit_offset: 0
+      bit_size: 2
+    - name: LANE_SWAP_LAN1
+      description: data lane1 swap.
+      bit_offset: 2
+      bit_size: 2
+    - name: DPDN_SWAP_LAN0
+      description: datalane0 dpdn swap.
+      bit_offset: 8
+      bit_size: 1
+    - name: DPDN_SWAP_LANE1
+      description: datalane1 dpdn swap.
+      bit_offset: 9
+      bit_size: 1
+fieldset/phy_rcal:
+  description: dphy resistor calibration.
+  fields:
+    - name: RCAL_EN
+      description: enable hs-rx terminal trimming.
+      bit_offset: 0
+      bit_size: 1
+    - name: RCAL_TRIM
+      description: default value of HS-RX terminal configure.
+      bit_offset: 1
+      bit_size: 4
+    - name: RCAL_CTL
+      description: rcal function control.
+      bit_offset: 5
+      bit_size: 8
+    - name: RCAL_OUT
+      description: hs-rx terminal trimming results.
+      bit_offset: 13
+      bit_size: 4
+    - name: RCAL_DONE
+      description: hs-rx terminal trimming done indicator signal.
+      bit_offset: 17
+      bit_size: 1
+fieldset/soft_rst:
+  description: soft reset control.
+  fields:
+    - name: CFG_CLK_SOFT_RST
+      description: the soft reset of clk_cfg domain.
+      bit_offset: 0
+      bit_size: 1
+    - name: HS_CLK_SOFT_RST
+      description: the soft reset of clk_hs domain.
+      bit_offset: 1
+      bit_size: 1
+fieldset/t_clane_init:
+  description: t-init of clock lane.
+  fields:
+    - name: T_CLK_INIT
+      description: initialization time of lock lane.
+      bit_offset: 0
+      bit_size: 24
+fieldset/t_hs_settle:
+  description: t-settle of all data lanes.
+  fields:
+    - name: T_D0_SETTLE
+      description: the value of ths-settle of data lane0.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_D1_SETTLE
+      description: the value of ths-settle of data lane1.
+      bit_offset: 8
+      bit_size: 8
+fieldset/t_hs_termen:
+  description: t-termen of all datalane.
+  fields:
+    - name: T_D0_TERMEN
+      description: the value of ths-termen of datalane0.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_D1_TERMEN
+      description: the value of ths-termen of datalane1.
+      bit_offset: 8
+      bit_size: 8
+fieldset/t_lane_init0:
+  description: t-init of data lane0.
+  fields:
+    - name: T_D0_INIT
+      description: initialization time of data lane.
+      bit_offset: 0
+      bit_size: 24
+fieldset/t_lane_init1:
+  description: t-init of data lane1.
+  fields:
+    - name: T_D1_INIT
+      description: initialization time of data lane.
+      bit_offset: 0
+      bit_size: 24
+fieldset/tlpx_ctrl:
+  description: the time of tlpx_ctrl of all lane.
+  fields:
+    - name: TLPX
+      description: the width of tlpx.
+      bit_offset: 0
+      bit_size: 8
+    - name: EN_TLPX_CHECK
+      description: enable the tlpx width check.
+      bit_offset: 8
+      bit_size: 1
+fieldset/ulp_rx_en:
+  description: enable lprx and ulprx.
+  fields:
+    - name: CSI_CLK_LPRX_EN
+      description: clock lane lp=rx receiver enable control.
+      bit_offset: 0
+      bit_size: 1
+    - name: CSI_1_LPRX_EN
+      description: data lane1 lp-rx receiver enable control.
+      bit_offset: 1
+      bit_size: 1
+    - name: CSI_CLK_ULPRX_EN
+      description: clock lane ulp-rx receiver enable control.
+      bit_offset: 5
+      bit_size: 1
+    - name: CSI_0_ULPRX_EN
+      description: data lane0 ulp-rx receiver enable control.
+      bit_offset: 6
+      bit_size: 1
+    - name: CSI_1_ULPRX_EN
+      description: data lane1 ulp-rx receiver enable control.
+      bit_offset: 7
+      bit_size: 1
+fieldset/voffcal_out:
+  description: hs-rx dc-offset auto-calibration results.
+  fields:
+    - name: CSI_1_VOFFCAL_OUT
+      description: data lane1 hs-rx dc-offset auto-calibration result.
+      bit_offset: 12
+      bit_size: 5
+    - name: CSI_1_VOFFCAL_DONE
+      description: data lane1 hs-rx dc-offset auto-calibration done.
+      bit_offset: 17
+      bit_size: 1
+    - name: CSI_O_VOFFCAL_OUT
+      description: data lane0 hs-rx dc-offset auto-calibration result.
+      bit_offset: 18
+      bit_size: 5
+    - name: CSI_0_VOFFCAL_DONE
+      description: data lane0 hs-rx dc-offset auto-calibration done.
+      bit_offset: 23
+      bit_size: 1
+    - name: CSI_CLK_VOFFCAL_OUT
+      description: clock lane hs-rx dc-offset auto-calibration results.
+      bit_offset: 24
+      bit_size: 5
+    - name: CSI_CLK_VOFFCAL_DONE
+      description: clock lane hs-rx dc-offset auto-calibration done.
+      bit_offset: 29
+      bit_size: 1

@@ -1,0 +1,1862 @@
+block/MIPI_CSI:
+  description: MIPI_CSI0.
+  items:
+    - name: version
+      description: version code.
+      byte_offset: 0
+      fieldset: version
+    - name: n_lanes
+      description: the number of active lanes.
+      byte_offset: 4
+      fieldset: n_lanes
+    - name: csi2_resetn
+      description: the internal logic of the controller goes into the reset state when active.
+      byte_offset: 8
+      fieldset: csi2_resetn
+    - name: int_st_main
+      description: contains the stateus of individual interrupt sources.
+      byte_offset: 12
+      fieldset: int_st_main
+    - name: data_ids_1
+      description: programs data type fields for data ID monitors.
+      byte_offset: 16
+      fieldset: data_ids_1
+    - name: data_ids_2
+      description: programs data type fields for data ID monitors.
+      byte_offset: 20
+      fieldset: data_ids_2
+    - name: int_st_ap_main
+      description: contains the status of individual interrupt sources.
+      byte_offset: 44
+      fieldset: int_st_ap_main
+    - name: phy_shutdownz
+      description: controls the phy shutdown mode.
+      byte_offset: 64
+      fieldset: phy_shutdownz
+    - name: dphy_rstz
+      description: controls the phy reset mode.
+      byte_offset: 68
+      fieldset: dphy_rstz
+    - name: phy_rx
+      description: contains the status of rx-related signals from phy.
+      byte_offset: 72
+      fieldset: phy_rx
+    - name: phy_stopstate
+      description: contains the stopstate signal status from phy.
+      byte_offset: 76
+      fieldset: phy_stopstate
+    - name: ipi_mode
+      description: selects how the ipi interface generates the video frame.
+      byte_offset: 128
+      fieldset: ipi_mode
+    - name: ipi_vcid
+      description: selects the vritual channel processed by ipi.
+      byte_offset: 132
+      fieldset: ipi_vcid
+    - name: ipi_data_type
+      description: selects the data type processed by ipi.
+      byte_offset: 136
+      fieldset: ipi_data_type
+    - name: ipi_mem_flash
+      description: control the flush of ipi memory.
+      byte_offset: 140
+      fieldset: ipi_mem_flash
+    - name: ipi_hsa_time
+      description: configures the video horizontal synchronism active time.
+      byte_offset: 144
+      fieldset: ipi_hsa_time
+    - name: ipi_hbp_time
+      description: configures the video horizontal synchronism back porch time.
+      byte_offset: 148
+      fieldset: ipi_hbp_time
+    - name: ipi_hsd_time
+      description: configures the vedeo Horizontal Sync Delay time.
+      byte_offset: 152
+      fieldset: ipi_hsd_time
+    - name: ipi_hline_time
+      description: configures the overall tiem for each video line.
+      byte_offset: 156
+      fieldset: ipi_hline_time
+    - name: ipi_softrstn
+      description: congtrols the ipi logic reset state.
+      byte_offset: 160
+      fieldset: ipi_softrstn
+    - name: ipi_adv_features
+      description: configures advanced features for ipi mode.
+      byte_offset: 172
+      fieldset: ipi_adv_features
+    - name: ipi_vsa_lines
+      description: configures the vertical synchronism active period.
+      byte_offset: 176
+      fieldset: ipi_vsa_lines
+    - name: ipi_vbp_lines
+      description: configures the verticall back porch period.
+      byte_offset: 180
+      fieldset: ipi_vbp_lines
+    - name: ipi_vfp_lines
+      description: configures the vertical front porch period.
+      byte_offset: 184
+      fieldset: ipi_vfp_lines
+    - name: ipi_vactive_lines
+      description: configures the vertical resolution of video.
+      byte_offset: 188
+      fieldset: ipi_vactive_lines
+    - name: vc_extension
+      description: active extra bits for virtual channel.
+      byte_offset: 200
+      fieldset: vc_extension
+    - name: phy_cal
+      description: contains the calibration signal status from synopsys d-phy.
+      byte_offset: 204
+      fieldset: phy_cal
+    - name: int_st_phy_fatal
+      description: groups the phy interruptions caused by phy packets discarded.
+      byte_offset: 224
+      fieldset: int_st_phy_fatal
+    - name: int_msk_phy_fatal
+      description: interrupt mask for int_st_phy_fatal.
+      byte_offset: 228
+      fieldset: int_msk_phy_fatal
+    - name: int_force_phy_fatal
+      description: interrupt force register for test purposes.
+      byte_offset: 232
+      fieldset: int_force_phy_fatal
+    - name: int_st_pkt_fatal
+      description: groups the fatal interruption related with packet construction.
+      byte_offset: 240
+      fieldset: int_st_pkt_fatal
+    - name: int_msk_pkt_fatal
+      description: interrupt mask for int_st_pkt_fatal.
+      byte_offset: 244
+      fieldset: int_msk_pkt_fatal
+    - name: int_force_pkt_fatal
+      description: interrupt force register is used for test purpos.
+      byte_offset: 248
+      fieldset: int_force_pkt_fatal
+    - name: int_st_phy
+      description: interruption caused by phy.
+      byte_offset: 272
+      fieldset: int_st_phy
+    - name: int_msk_phy
+      description: interrupt mask for int_st_phy.
+      byte_offset: 276
+      fieldset: int_msk_phy
+    - name: int_force_phy
+      description: interrupt force register.
+      byte_offset: 280
+      fieldset: int_force_phy
+    - name: int_st_ipi_fatal
+      description: fatal interruption caused by ipi interface.
+      byte_offset: 320
+      fieldset: int_st_ipi_fatal
+    - name: int_msk_ipi_fatal
+      description: interrupt mask for int_st_ipi_fatal.
+      byte_offset: 324
+      fieldset: int_msk_ipi_fatal
+    - name: int_force_ipi_fatal
+      description: interrupt force register.
+      byte_offset: 328
+      fieldset: int_force_ipi_fatal
+    - name: int_st_ap_generic
+      description: groups and notifies which interruption bits caused the interruption.
+      byte_offset: 384
+      fieldset: int_st_ap_generic
+    - name: int_msk_ap_generic
+      description: interrupt mask for int_st_ap_generic.
+      byte_offset: 388
+      fieldset: int_msk_ap_generic
+    - name: int_force_ap_generic
+      description: interrupt force register used for test purposes.
+      byte_offset: 392
+      fieldset: int_force_ap_generic
+    - name: int_st_ap_ipi_fatal
+      description: groups and notifies which interruption bits.
+      byte_offset: 400
+      fieldset: int_st_ap_ipi_fatal
+    - name: int_msk_ap_ipi_fatal
+      description: interrupt mask for int_st_ap_ipi_fatal controls.
+      byte_offset: 404
+      fieldset: int_msk_ap_ipi_fatal
+    - name: int_force_ap_ipi_fatal
+      description: interrupt force register.
+      byte_offset: 408
+      fieldset: int_force_ap_ipi_fatal
+    - name: int_st_bndry_frame_fatal
+      description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+      byte_offset: 640
+      fieldset: int_st_bndry_frame_fatal
+    - name: int_msk_bndry_frame_fatal
+      description: interrupt mask for int_st_bndry_frame_fatal.
+      byte_offset: 644
+      fieldset: int_msk_bndry_frame_fatal
+    - name: int_force_bndry_frame_fatal
+      description: interrupt force register is used for test purposes.
+      byte_offset: 648
+      fieldset: int_force_bndry_frame_fatal
+    - name: int_st_seq_frame_fatal
+      description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+      byte_offset: 656
+      fieldset: int_st_seq_frame_fatal
+    - name: int_msk_seq_frame_fatal
+      description: interrupt mask for int_st_seq_frame_fatal.
+      byte_offset: 660
+      fieldset: int_msk_seq_frame_fatal
+    - name: int_force_seq_frame_fatal
+      description: interrupt force register is used for test purposes.
+      byte_offset: 664
+      fieldset: int_force_seq_frame_fatal
+    - name: int_st_crc_frame_fatal
+      description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+      byte_offset: 672
+      fieldset: int_st_crc_frame_fatal
+    - name: int_msk_crc_frame_fatal
+      description: interrupt mask for int_st_crc_frame_fatal.
+      byte_offset: 676
+      fieldset: int_msk_crc_frame_fatal
+    - name: int_force_crc_frame_fatal
+      description: interrupt force register is used for test purposes.
+      byte_offset: 680
+      fieldset: int_force_crc_frame_fatal
+    - name: int_st_pld_crc_frame_fatal
+      description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+      byte_offset: 688
+      fieldset: int_st_pld_crc_frame_fatal
+    - name: int_msk_pld_crc_frame_fatal
+      description: interrupt mask for int_st_crc_frame_fatal.
+      byte_offset: 692
+      fieldset: int_msk_pld_crc_frame_fatal
+    - name: int_force_pld_crc_frame_fatal
+      description: interrupt force register is used for test purposes.
+      byte_offset: 696
+      fieldset: int_force_pld_crc_frame_fatal
+fieldset/csi2_resetn:
+  description: the internal logic of the controller goes into the reset state when active.
+  fields:
+    - name: CSI2_RESETN
+      description: DWC_mipi_csi2_host reset output, active low.
+      bit_offset: 0
+      bit_size: 1
+fieldset/data_ids_1:
+  description: programs data type fields for data ID monitors.
+  fields:
+    - name: DI0_DT
+      description: data type for programmed data ID 0.
+      bit_offset: 0
+      bit_size: 6
+    - name: DI1_DT
+      description: data type for programmed data ID 1.
+      bit_offset: 8
+      bit_size: 6
+    - name: DI2_DT
+      description: data type for programmed data ID 2.
+      bit_offset: 16
+      bit_size: 6
+    - name: DI3_DT
+      description: data type for programmed data ID 3.
+      bit_offset: 24
+      bit_size: 6
+fieldset/data_ids_2:
+  description: programs data type fields for data ID monitors.
+  fields:
+    - name: DI4_DT
+      description: data type for programmed data ID 4.
+      bit_offset: 0
+      bit_size: 6
+    - name: DI5_DT
+      description: data type for programmed data ID 5.
+      bit_offset: 8
+      bit_size: 6
+    - name: DI6_DT
+      description: data type for programmed data ID 6.
+      bit_offset: 16
+      bit_size: 6
+    - name: DI7_DT
+      description: data type for programmed data ID 7.
+      bit_offset: 24
+      bit_size: 6
+fieldset/dphy_rstz:
+  description: controls the phy reset mode.
+  fields:
+    - name: DPHY_RSTZ
+      description: phy reset output, active low.
+      bit_offset: 0
+      bit_size: 1
+fieldset/int_force_ap_generic:
+  description: interrupt force register used for test purposes.
+  fields:
+    - name: FORCE_APB_AP_ERR
+      description: No description available.
+      bit_offset: 0
+      bit_size: 2
+    - name: FORCE_REG_BANK_AP_ERR
+      description: No description available.
+      bit_offset: 2
+      bit_size: 2
+    - name: FORCE_DE_SKEW_AP_ERR
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_PIPELINE_DELAY_AP_ERR
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_DESCRAMBLER_AP_ERR
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_PHY_ADAPTER_AP_ERR
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_PACKET_ANALYZER_AP_ERR
+      description: No description available.
+      bit_offset: 8
+      bit_size: 2
+    - name: FORCE_PREP_OUTS_AP_ERR
+      description: No description available.
+      bit_offset: 10
+      bit_size: 2
+    - name: FORCE_ERR_MSGR_AP_ERR
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_ERR_HANDLE_AP_ERR
+      description: No description available.
+      bit_offset: 13
+      bit_size: 1
+    - name: FORCE_SYNCHRONIZER_FPCLK_AP_ERR
+      description: No description available.
+      bit_offset: 14
+      bit_size: 1
+    - name: FORCE_SYNCHRONIZER_RXBYTECLKHS_AP_ERR
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
+    - name: FORCE_SYNCHRONIZER_PIXCLK_AP_ERR
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+fieldset/int_force_ap_ipi_fatal:
+  description: interrupt force register.
+  fields:
+    - name: FORCE_PARITY_TX_ERR
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_PARITY_RX_ERR
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ECC_SINGLE_ERR
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ECC_MULTIPLE_ERR
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_CRC_ERR
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_REDUNDANCY_ERR
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+fieldset/int_force_bndry_frame_fatal:
+  description: interrupt force register is used for test purposes.
+  fields:
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: FORCE_ERR_F_BNDRY_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_force_crc_frame_fatal:
+  description: interrupt force register is used for test purposes.
+  fields:
+    - name: FORCE_ERR_F_CRC_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: FORCE_ERR_F_CRC_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_force_ipi_fatal:
+  description: interrupt force register.
+  fields:
+    - name: FORCE_PIXEL_IF_FIFO_UNDERFLOW
+      description: force for pixel_if_fifo_underflow.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_PIXEL_IF_FIFO_OVERFLOW
+      description: force for pixel_if_fifo_overflow.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_FRAME_SYNC_ERR
+      description: force for frame_sync_err.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_PIXEL_IF_FIFO_NEMPTY_FS
+      description: force pixel_if_fifo_nempty_fs.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_PIXEL_IF_HLINE_ERR
+      description: force pixel_if_hline_err.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_INT_EVENT_FIFO_OVERFLOW
+      description: force int_event_fifo_overflow.
+      bit_offset: 5
+      bit_size: 1
+fieldset/int_force_phy:
+  description: interrupt force register.
+  fields:
+    - name: FORCE_PHY_ERRSOTHS_0
+      description: force phy_errsoths_0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_PHY_ERRSOTHS_1
+      description: force phy_errsoths_1.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_PHY_ERRESC_0
+      description: force phy_erresc_0.
+      bit_offset: 16
+      bit_size: 1
+    - name: FORCE_PHY_ERRESC_1
+      description: force phy_erresc_1.
+      bit_offset: 17
+      bit_size: 1
+fieldset/int_force_phy_fatal:
+  description: interrupt force register for test purposes.
+  fields:
+    - name: FORCE_PHY_ERRSOTSYNCHS_0
+      description: force phy_errsotsynchs_0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_PHY_ERRSOTSYNCHS_1
+      description: force phy_errsotsynchs_1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_DESKEW
+      description: force err_deskew.
+      bit_offset: 8
+      bit_size: 1
+fieldset/int_force_pkt_fatal:
+  description: interrupt force register is used for test purpos.
+  fields:
+    - name: FORCE_ERR_ECC_DOUBLE
+      description: force err_ecc_double.
+      bit_offset: 0
+      bit_size: 1
+fieldset/int_force_pld_crc_frame_fatal:
+  description: interrupt force register is used for test purposes.
+  fields:
+    - name: FORCE_ERR_CRC_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: FORCE_ERR_CRC_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_force_seq_frame_fatal:
+  description: interrupt force register is used for test purposes.
+  fields:
+    - name: FORCE_ERR_F_SEQ_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: FORCE_ERR_F_SEQ_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_msk_ap_generic:
+  description: interrupt mask for int_st_ap_generic.
+  fields:
+    - name: MSK_APB_AP_ERR
+      description: No description available.
+      bit_offset: 0
+      bit_size: 2
+    - name: MSK_REG_BANK_AP_ERR
+      description: No description available.
+      bit_offset: 2
+      bit_size: 2
+    - name: MSK_DE_SKEW_AP_ERR
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: MSK_PIPELINE_DELAY_AP_ERR
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+    - name: MSK_DESCRAMBLER_AP_ERR
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: MSK_PHY_ADAPTER_AP_ERR
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: MSK_PACKET_ANALYZER_AP_ERR
+      description: No description available.
+      bit_offset: 8
+      bit_size: 2
+    - name: MSK_PREP_OUTS_AP_ERR
+      description: No description available.
+      bit_offset: 10
+      bit_size: 2
+    - name: MSK_ERR_MSGR_AP_ERR
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: MSK_ERR_HANDLE_AP_ERR
+      description: No description available.
+      bit_offset: 13
+      bit_size: 1
+    - name: MSK_SYNCHRONIZER_FPCLK_AP_ERR
+      description: No description available.
+      bit_offset: 14
+      bit_size: 1
+    - name: MSK_SYNCHRONIZER_RXBYTECLKHS_AP_ERR
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
+    - name: MSK_SYNCHRONIZER_PIXCLK_AP_ERR
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+fieldset/int_msk_ap_ipi_fatal:
+  description: interrupt mask for int_st_ap_ipi_fatal controls.
+  fields:
+    - name: MASK_PARITY_TX_ERR
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: MASK_PARITY_RX_ERR
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: MASK_ECC_SINGLE_ERR
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: MASK_ECC_MULTIPLE_ERR
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: MASK_CRC_ERR
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: MASK_REDUNDANCY_ERR
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+fieldset/int_msk_bndry_frame_fatal:
+  description: interrupt mask for int_st_bndry_frame_fatal.
+  fields:
+    - name: MSK_ERR_F_BNDRY_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: MSK_ERR_F_BNDRY_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_msk_crc_frame_fatal:
+  description: interrupt mask for int_st_crc_frame_fatal.
+  fields:
+    - name: MSK_ERR_F_CRC_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: MSK_ERR_F_CRC_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_msk_ipi_fatal:
+  description: interrupt mask for int_st_ipi_fatal.
+  fields:
+    - name: MSK_PIXEL_IF_FIFO_UNDERFLOW
+      description: mask for pixel_if_fifo_unterflow.
+      bit_offset: 0
+      bit_size: 1
+    - name: MSK_PIXEL_IF_FIFO_OVERFLOW
+      description: mask for pixel_if_fifo_overflow.
+      bit_offset: 1
+      bit_size: 1
+    - name: MSK_FRAME_SYNC_ERR
+      description: mask for pixel_if_frame_sync_err.
+      bit_offset: 2
+      bit_size: 1
+    - name: MSK_PIXEL_IF_FIFO_NEMPTY_FS
+      description: mask pixel_if_fifo_nempty_fs.
+      bit_offset: 3
+      bit_size: 1
+    - name: MSK_PIXEL_IF_HLINE_ERR
+      description: mask pixel_if_hline_err.
+      bit_offset: 4
+      bit_size: 1
+    - name: MSK_INT_EVENT_FIFO_OVERFLOW
+      description: mask int_event_fifo_overflow.
+      bit_offset: 5
+      bit_size: 1
+fieldset/int_msk_phy:
+  description: interrupt mask for int_st_phy.
+  fields:
+    - name: MASK_PHY_ERRSOTHS_0
+      description: mask for phy_errsoths_0.
+      bit_offset: 0
+      bit_size: 1
+    - name: MASK_PHY_ERRSOTHS_1
+      description: mask for phy_errsoths_1.
+      bit_offset: 1
+      bit_size: 1
+    - name: MASK_PHY_ERRESC_0
+      description: mask for phy_erresc_0.
+      bit_offset: 16
+      bit_size: 1
+    - name: MASK_PHY_ERRESC_1
+      description: mask for phy_erresc_1.
+      bit_offset: 17
+      bit_size: 1
+fieldset/int_msk_phy_fatal:
+  description: interrupt mask for int_st_phy_fatal.
+  fields:
+    - name: MASK_PHY_ERRSOTSYNCHS_0
+      description: mask for phy_errsotsynchs_0.
+      bit_offset: 0
+      bit_size: 1
+    - name: MASK_PHY_ERRSOTSYNCHS_1
+      description: mask for phy_errsotsynchs_1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_DESKEW
+      description: mask for err_deskew.
+      bit_offset: 8
+      bit_size: 1
+fieldset/int_msk_pkt_fatal:
+  description: interrupt mask for int_st_pkt_fatal.
+  fields:
+    - name: MASK_ERR_ECC_DOUBLE
+      description: mask for err_ecc_double.
+      bit_offset: 0
+      bit_size: 1
+fieldset/int_msk_pld_crc_frame_fatal:
+  description: interrupt mask for int_st_crc_frame_fatal.
+  fields:
+    - name: MSK_ERR_CRC_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: MSK_ERR_CRC_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_msk_seq_frame_fatal:
+  description: interrupt mask for int_st_seq_frame_fatal.
+  fields:
+    - name: MSK_ERR_F_SEQ_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: MSK_ERR_F_SEQ_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_st_ap_generic:
+  description: groups and notifies which interruption bits caused the interruption.
+  fields:
+    - name: APB_AP_ERR
+      description: ap error in apb block.
+      bit_offset: 0
+      bit_size: 2
+    - name: REG_BANK_AP_ERR
+      description: ap error in register bank block.
+      bit_offset: 2
+      bit_size: 2
+    - name: DE_SKEW_AP_ERR
+      description: ap error in de-skew block.
+      bit_offset: 4
+      bit_size: 1
+    - name: PIPELINE_DELAY_AP_ERR
+      description: ap error in pipeline delay block.
+      bit_offset: 5
+      bit_size: 1
+    - name: DESCRAMBLER_AP_ERR
+      description: ap error in descrambler block.
+      bit_offset: 6
+      bit_size: 1
+    - name: PHY_ADAPTER_AP_ERR
+      description: ap error in phy adapter block.
+      bit_offset: 7
+      bit_size: 1
+    - name: PACKET_ANALYZER_AP_ERR
+      description: ap error in packet analyzer block.
+      bit_offset: 8
+      bit_size: 2
+    - name: PREP_OUTS_AP_ERR
+      description: ap error in prepare outs block.
+      bit_offset: 10
+      bit_size: 2
+    - name: ERR_MSGR_AP_ERR
+      description: ap error in err msgr block.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_HANDLE_AP_ERR
+      description: ap error in error handler block.
+      bit_offset: 13
+      bit_size: 1
+    - name: SYNCHRONIZER_FPCLK_AP_ERR
+      description: ap error in synchronizer block for fpclk domain.
+      bit_offset: 14
+      bit_size: 1
+    - name: SYNCHRONIZER_RXBYTECLKHS_AP_ERR
+      description: ap error in synchronizer block for rxbyteclkhs domain.
+      bit_offset: 15
+      bit_size: 1
+    - name: SYNCHRONIZER_PIXCLK_AP_ERR
+      description: ap error in synchronizer block for pixclk domain.
+      bit_offset: 16
+      bit_size: 1
+fieldset/int_st_ap_ipi_fatal:
+  description: groups and notifies which interruption bits.
+  fields:
+    - name: PARITY_TX_ERR
+      description: ap parity tx error in ipi1.
+      bit_offset: 0
+      bit_size: 1
+    - name: PARITY_RX_ERR
+      description: ap parity rx error in ipi1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ECC_SINGLE_ERR
+      description: ap ecc sigle error in ipi1.
+      bit_offset: 2
+      bit_size: 1
+    - name: ECC_MULTIPLE_ERR
+      description: ap ecc multiple error in ipi1.
+      bit_offset: 3
+      bit_size: 1
+    - name: CRC_ERR
+      description: ap crc error in ipi1.
+      bit_offset: 4
+      bit_size: 1
+    - name: REDUNDANCY_ERR
+      description: ap redundancy error in ipi1.
+      bit_offset: 5
+      bit_size: 1
+fieldset/int_st_ap_main:
+  description: contains the status of individual interrupt sources.
+  fields:
+    - name: STATUS_INT_ST_AP_GENERIC
+      description: status of int_st_ap_generic.
+      bit_offset: 0
+      bit_size: 1
+    - name: STATUS_INT_PHY_FATAL
+      description: status of int_st_phy_fatal.
+      bit_offset: 1
+      bit_size: 1
+    - name: STATUS_INT_PKT_FATAL
+      description: status of int_st_pkt_fatal.
+      bit_offset: 2
+      bit_size: 1
+    - name: STATUS_INT_BNDRY_FRAME_FATAL
+      description: status of int_st_bndry_frame_fatal.
+      bit_offset: 3
+      bit_size: 1
+    - name: STATUS_INT_SEQ_FRAME_FATAL
+      description: status of status_int_seq_frame_fatal.
+      bit_offset: 4
+      bit_size: 1
+    - name: STATUS_INT_CRC_FRAME_FATAL
+      description: status of status_int_crc_frame_fatal.
+      bit_offset: 5
+      bit_size: 1
+    - name: STATUS_INT_PHY
+      description: status of int_st_phy.
+      bit_offset: 6
+      bit_size: 1
+    - name: STATUS_INT_PLD_CRC_FATAL
+      description: status of status_int_pld_crc_fatal.
+      bit_offset: 7
+      bit_size: 1
+    - name: STATUS_INT_DATA_ID
+      description: status of status_int_data_id.
+      bit_offset: 8
+      bit_size: 1
+    - name: STATUS_INT_ECC_CORRECTED
+      description: status of status_int_ecc_corrected.
+      bit_offset: 9
+      bit_size: 1
+    - name: STATUS_INT_LINE
+      description: status of int_st_line.
+      bit_offset: 10
+      bit_size: 1
+    - name: STATUS_INT_ST_AP_IPI_FATAL
+      description: status of int_st_ap_ipi_fatal.
+      bit_offset: 11
+      bit_size: 1
+    - name: STATUS_INT_IPI_FATAL
+      description: status of int_st_ipi_fatal.
+      bit_offset: 12
+      bit_size: 1
+fieldset/int_st_bndry_frame_fatal:
+  description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+  fields:
+    - name: ERR_F_BNDRY_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: ERR_F_BNDRY_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_st_crc_frame_fatal:
+  description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+  fields:
+    - name: ERR_F_CRC_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: ERR_F_CRC_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_st_ipi_fatal:
+  description: fatal interruption caused by ipi interface.
+  fields:
+    - name: PIXEL_IF_FIFO_UNDERFLOW
+      description: the fifo has become empty before the expected bumber of pixels could be extracted to the pixel intefcese.
+      bit_offset: 0
+      bit_size: 1
+    - name: PIXEL_IF_FIFO_OVERFLOW
+      description: the fifo of pixel interface has lost information because some data arrived and fifo is already full.
+      bit_offset: 1
+      bit_size: 1
+    - name: PIXEL_IF_FRAME_SYNC_ERR
+      description: whenever in controller mode, notifies if a new frame is received but previous has not been completed.
+      bit_offset: 2
+      bit_size: 1
+    - name: PIXEL_IF_FIFO_NEMPTY_FS
+      description: the fifo of pixel interface is not empty at the starat of a new frame.
+      bit_offset: 3
+      bit_size: 1
+    - name: PIXEL_IF_HLINE_ERR
+      description: horizontal line time error.
+      bit_offset: 4
+      bit_size: 1
+    - name: INT_EVENT_FIFO_OVERFLOW
+      description: reporting internal fifo overflow.
+      bit_offset: 5
+      bit_size: 1
+fieldset/int_st_main:
+  description: contains the stateus of individual interrupt sources.
+  fields:
+    - name: STATUS_INT_PHY_FATAL
+      description: status of int_st_phy_fatal.
+      bit_offset: 0
+      bit_size: 1
+    - name: STATUS_INT_PKT_FATAL
+      description: status of int_st_pkt_fatal.
+      bit_offset: 1
+      bit_size: 1
+    - name: STATUS_INT_BNDRY_FRAME_FATAL
+      description: status of int_st_bndry_frame_fatal.
+      bit_offset: 2
+      bit_size: 1
+    - name: STATUS_INT_SEQ_FRAME_FATAL
+      description: status of status_int_seq_frame_fatal.
+      bit_offset: 3
+      bit_size: 1
+    - name: STATUS_INT_CRC_FRAME_FATAL
+      description: status of status_int_crc_frame_fatal.
+      bit_offset: 4
+      bit_size: 1
+    - name: STATUS_INT_PLD_CRC_FATAL
+      description: status of status_int_pld_crc_fatal.
+      bit_offset: 5
+      bit_size: 1
+    - name: STATUS_INT_DATA_ID
+      description: status of status_int_data_id.
+      bit_offset: 6
+      bit_size: 1
+    - name: STATUS_INT_ECC_CORRECTED
+      description: status of status_int_ecc_corrected.
+      bit_offset: 7
+      bit_size: 1
+    - name: STATUS_INT_PHY
+      description: status of int_st_phy.
+      bit_offset: 16
+      bit_size: 1
+    - name: STATUS_INT_LINE
+      description: status of int_st_line.
+      bit_offset: 17
+      bit_size: 1
+    - name: STATUS_INT_IPI4_FATAL
+      description: status of int_st_ipi_fatal.
+      bit_offset: 18
+      bit_size: 1
+fieldset/int_st_phy:
+  description: interruption caused by phy.
+  fields:
+    - name: PHY_ERRSOTHS_0
+      description: start of transmission error on data lane 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_ERRSOTHS_1
+      description: start of transmission error on data lane 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: PHY_ERRESC_0
+      description: start of transmission error on data lane 0.
+      bit_offset: 16
+      bit_size: 1
+    - name: PHY_ERRESC_1
+      description: start of transmission error on data lane 1.
+      bit_offset: 17
+      bit_size: 1
+fieldset/int_st_phy_fatal:
+  description: groups the phy interruptions caused by phy packets discarded.
+  fields:
+    - name: PHY_ERRSOTSYNCHS_0
+      description: start of transmission error on data lane0.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_ERRSOTSYNCHS_1
+      description: start of transmission error on data lane1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_DESKEW
+      description: reports whenever data is lost due to an existent skew between lanes greater than 2 rxwordclkhs.
+      bit_offset: 8
+      bit_size: 1
+fieldset/int_st_pkt_fatal:
+  description: groups the fatal interruption related with packet construction.
+  fields:
+    - name: ERR_ECC_DOUBLE
+      description: header ecc contains at least 2 errors.
+      bit_offset: 0
+      bit_size: 1
+fieldset/int_st_pld_crc_frame_fatal:
+  description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+  fields:
+    - name: ERR_CRC_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: ERR_CRC_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/int_st_seq_frame_fatal:
+  description: fatal interruption related with matching frame start with frame end for a specific virtual channel.
+  fields:
+    - name: ERR_F_SEQ_MATCH_VC0
+      description: error matching frame start with frame end for virtual channel 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC1
+      description: error matching frame start with frame end for virtual channel 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC2
+      description: error matching frame start with frame end for virtual channel 2.
+      bit_offset: 2
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC3
+      description: error matching frame start with frame end for virtual channel 3.
+      bit_offset: 3
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC4
+      description: error matching frame start with frame end for virtual channel 4.
+      bit_offset: 4
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC5
+      description: error matching frame start with frame end for virtual channel 5.
+      bit_offset: 5
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC6
+      description: error matching frame start with frame end for virtual channel 6.
+      bit_offset: 6
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC7
+      description: error matching frame start with frame end for virtual channel 7.
+      bit_offset: 7
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC8
+      description: error matching frame start with frame end for virtual channel 8.
+      bit_offset: 8
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC9
+      description: error matching frame start with frame end for virtual channel 9.
+      bit_offset: 9
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC10
+      description: error matching frame start with frame end for virtual channel 10.
+      bit_offset: 10
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC11
+      description: error matching frame start with frame end for virtual channel 11.
+      bit_offset: 11
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC12
+      description: error matching frame start with frame end for virtual channel 12.
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC13
+      description: error matching frame start with frame end for virtual channel 13.
+      bit_offset: 13
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC14
+      description: error matching frame start with frame end for virtual channel 14.
+      bit_offset: 14
+      bit_size: 1
+    - name: ERR_F_SEQ_MATCH_VC15
+      description: error matching frame start with frame end for virtual channel 15.
+      bit_offset: 15
+      bit_size: 1
+fieldset/ipi_adv_features:
+  description: configures advanced features for ipi mode.
+  fields:
+    - name: IPI_DT_OVERWRITE
+      description: ignore datatype of the header using the programmed datatype for decoding.
+      bit_offset: 0
+      bit_size: 1
+    - name: IPI_DT
+      description: datatype to overwrite.
+      bit_offset: 8
+      bit_size: 6
+    - name: LINE_EVENT_SELECTION
+      description: "for camero mode, allows manual selection of the packet fo line delimiter as follows: 0x0-controller seletc it automaticlly 0x1-select packets from list programmed in 17:21."
+      bit_offset: 16
+      bit_size: 1
+    - name: EN_VIDEO
+      description: allows the use of video packets for ipi synchronization events.
+      bit_offset: 17
+      bit_size: 1
+    - name: EN_LINE_START
+      description: allows the use of line start packets for ipi synchronization events.
+      bit_offset: 18
+      bit_size: 1
+    - name: EN_NULL
+      description: allows the use of null packets for IPI synchronization events.
+      bit_offset: 19
+      bit_size: 1
+    - name: EN_BLANKING
+      description: allows the use of blankong packets for IPI synchronization events.
+      bit_offset: 20
+      bit_size: 1
+    - name: EN_EMBEDDED
+      description: allows the use of embendded packets for ipi synchronization events.
+      bit_offset: 21
+      bit_size: 1
+    - name: IPI_SYNC_EVENT_MODE
+      description: "for camera mode: 0x0- frame start do not trigger any sync event."
+      bit_offset: 24
+      bit_size: 1
+fieldset/ipi_data_type:
+  description: selects the data type processed by ipi.
+  fields:
+    - name: IPI_DATA_TYPE
+      description: data type of data to be processed by pixel interface.
+      bit_offset: 0
+      bit_size: 6
+    - name: EMBENDED_DATA
+      description: enable embedded data processing on ipi interface.
+      bit_offset: 8
+      bit_size: 1
+fieldset/ipi_hbp_time:
+  description: configures the video horizontal synchronism back porch time.
+  fields:
+    - name: IPI_HBP_TIME
+      description: configures the Horizontal Synchronism back porch period in pixclk cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/ipi_hline_time:
+  description: configures the overall tiem for each video line.
+  fields:
+    - name: IPI_HLIN_TIME
+      description: configures the size of the line time counted in pixclk cycles.
+      bit_offset: 0
+      bit_size: 15
+fieldset/ipi_hsa_time:
+  description: configures the video horizontal synchronism active time.
+  fields:
+    - name: IPI_HSA_TIME
+      description: configures the Horizontal Synchronism Active period in pixclk cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/ipi_hsd_time:
+  description: configures the vedeo Horizontal Sync Delay time.
+  fields:
+    - name: IPI_HSD_TIME
+      description: configures the Horizontal Sync Porch delay period in pixclk cycles.
+      bit_offset: 0
+      bit_size: 12
+fieldset/ipi_mem_flash:
+  description: control the flush of ipi memory.
+  fields:
+    - name: IPI_FLUSH
+      description: flush ipi memory, this bit is auto clear.
+      bit_offset: 0
+      bit_size: 1
+    - name: IPI_AUTO_FLUSH
+      description: memory is automatically flashed at each vsync.
+      bit_offset: 8
+      bit_size: 1
+fieldset/ipi_mode:
+  description: selects how the ipi interface generates the video frame.
+  fields:
+    - name: IPI_MODE
+      description: "indicates the video mode transmission type 0x0: camera timing 0x1:controller timing."
+      bit_offset: 0
+      bit_size: 1
+    - name: IPI_COLOR_COM
+      description: "if color mode components are deliverd as follows: 0x0 48bit intercase 0x1: 16bit interface."
+      bit_offset: 8
+      bit_size: 1
+    - name: IPI_CUT_THROUGH
+      description: cut-through mode state active when high.
+      bit_offset: 16
+      bit_size: 1
+    - name: IPI_ENABLE
+      description: enables the interface.
+      bit_offset: 24
+      bit_size: 1
+fieldset/ipi_softrstn:
+  description: congtrols the ipi logic reset state.
+  fields:
+    - name: IPI_SOFTRSTN
+      description: resets ipi one, active low.
+      bit_offset: 0
+      bit_size: 1
+fieldset/ipi_vactive_lines:
+  description: configures the vertical resolution of video.
+  fields:
+    - name: IPI_VACTIVE_LINES
+      description: configures the vertical active period measured in bumber of horizontal lines.
+      bit_offset: 0
+      bit_size: 14
+fieldset/ipi_vbp_lines:
+  description: configures the verticall back porch period.
+  fields:
+    - name: IPI_VBP_LINES
+      description: configuress the vertical back porch period measured in number of horizontal lines.
+      bit_offset: 0
+      bit_size: 10
+fieldset/ipi_vcid:
+  description: selects the vritual channel processed by ipi.
+  fields:
+    - name: IP_VCID
+      description: virtual channel of data to be processed by pixel interface.
+      bit_offset: 0
+      bit_size: 2
+    - name: IPI_VCX_0_1
+      description: virtual channel extension of data to be processed by pixel interface.
+      bit_offset: 2
+      bit_size: 2
+fieldset/ipi_vfp_lines:
+  description: configures the vertical front porch period.
+  fields:
+    - name: IPI_VFP_LINES
+      description: configures the vertical front porch period measured in number of horizontall lines.
+      bit_offset: 0
+      bit_size: 10
+fieldset/ipi_vsa_lines:
+  description: configures the vertical synchronism active period.
+  fields:
+    - name: IPI_VSA_LINES
+      description: configures the vertical synchronism active period measured in number of horizontal lines.
+      bit_offset: 0
+      bit_size: 10
+fieldset/n_lanes:
+  description: the number of active lanes.
+  fields:
+    - name: N_LANES
+      description: number of active data lanes.
+      bit_offset: 0
+      bit_size: 3
+fieldset/phy_cal:
+  description: contains the calibration signal status from synopsys d-phy.
+  fields:
+    - name: RXSKEWCALHS
+      description: a low-to-high transition on rxskewcalhs signal means the the phy has initiated the de-skew calibration.
+      bit_offset: 0
+      bit_size: 1
+fieldset/phy_rx:
+  description: contains the status of rx-related signals from phy.
+  fields:
+    - name: PHY_RXULPSESC_0
+      description: lane module 0 has entered the ultra low power mode.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_RXULLPSESC_1
+      description: lane module 1 has entered the ultra low power mode.
+      bit_offset: 1
+      bit_size: 1
+    - name: PHY_RXULPSCLKNOT
+      description: active low. Indicates the d-phy clock lane module has entered the Ultra low power state.
+      bit_offset: 16
+      bit_size: 1
+    - name: PHY_RXCLKACTIVEHS
+      description: indicates the d-phy clock lane is actively receiving a ddr clock.
+      bit_offset: 17
+      bit_size: 1
+fieldset/phy_shutdownz:
+  description: controls the phy shutdown mode.
+  fields:
+    - name: PHY_SHUTDOWNZ
+      description: shutdown input,active low.
+      bit_offset: 0
+      bit_size: 1
+fieldset/phy_stopstate:
+  description: contains the stopstate signal status from phy.
+  fields:
+    - name: PHY_STOPSTATEDATA_0
+      description: data lane 0 in stop state.
+      bit_offset: 0
+      bit_size: 1
+    - name: PHY_STOPSTATEDATA_1
+      description: data lane 1 in stop state.
+      bit_offset: 1
+      bit_size: 1
+    - name: PHY_STOPSTATECLK
+      description: d-phy clock lane in stop state.
+      bit_offset: 16
+      bit_size: 1
+fieldset/vc_extension:
+  description: active extra bits for virtual channel.
+  fields:
+    - name: VCX
+      description: "indicates status of virtual channel extension: 0-virtual channel extension is enable 1-legacy mode."
+      bit_offset: 0
+      bit_size: 1
+fieldset/version:
+  description: version code.
+  fields:
+    - name: VERSION
+      description: version code.
+      bit_offset: 0
+      bit_size: 32

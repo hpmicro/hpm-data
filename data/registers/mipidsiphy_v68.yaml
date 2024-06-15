@@ -1,0 +1,605 @@
+block/MIPI_DSI_PHY:
+  description: MIPI_DSI_PHY0.
+  items:
+    - name: clane_para0
+      description: timer counter about clock lane parameter.
+      byte_offset: 0
+      fieldset: clane_para0
+    - name: clane_para1
+      description: timer counter about clock lane parameter.
+      byte_offset: 4
+      fieldset: clane_para1
+    - name: clane_para2
+      description: timer counter about clock lane parameter.
+      byte_offset: 8
+      fieldset: clane_para2
+    - name: clane_para3
+      description: timer counter about clock lane parameter.
+      byte_offset: 12
+      fieldset: clane_para3
+    - name: dlane0_para0
+      description: timer counter about datalane0 parameter.
+      byte_offset: 16
+      fieldset: dlane0_para0
+    - name: dlane0_para1
+      description: timer counter about datalane0 parameter.
+      byte_offset: 20
+      fieldset: dlane0_para1
+    - name: dlane0_para2
+      description: timer counter about datalane0 parameter.
+      byte_offset: 24
+      fieldset: dlane0_para2
+    - name: dlane0_para3
+      description: timer counter about datalane0 parameter.
+      byte_offset: 28
+      fieldset: dlane0_para3
+    - name: dlane0_para4
+      description: timer counter about datalane0 parameter.
+      byte_offset: 32
+      fieldset: dlane0_para4
+    - name: dlane1_para0
+      description: timer counter about datalane1 parameter.
+      byte_offset: 36
+      fieldset: dlane1_para0
+    - name: dlane1_para1
+      description: timer counter about datalane1 parameter.
+      byte_offset: 40
+      fieldset: dlane1_para1
+    - name: dlane1_para2
+      description: timer counter about datalane1 parameter.
+      byte_offset: 44
+      fieldset: dlane1_para2
+    - name: dlane1_para3
+      description: timer counter about datalane1 parameter.
+      byte_offset: 48
+      fieldset: dlane1_para3
+    - name: dlane2_para0
+      description: timer counter about datalane2 parameter.
+      byte_offset: 52
+      fieldset: dlane2_para0
+    - name: dlane2_para1
+      description: timer counter about datalane2 parameter.
+      byte_offset: 56
+      fieldset: dlane2_para1
+    - name: dlane2_para2
+      description: timer counter about datalane2 parameter.
+      byte_offset: 60
+      fieldset: dlane2_para2
+    - name: dlane2_para3
+      description: timer counter about datalane2 parameter.
+      byte_offset: 64
+      fieldset: dlane2_para3
+    - name: dlane3_para0
+      description: timer counter about datalane3 parameter.
+      byte_offset: 68
+      fieldset: dlane3_para0
+    - name: dlane3_para1
+      description: timer counter about datalane3 parameter.
+      byte_offset: 72
+      fieldset: dlane3_para1
+    - name: dlane3_para2
+      description: timer counter about datalane3 parameter.
+      byte_offset: 76
+      fieldset: dlane3_para2
+    - name: dlane3_para3
+      description: timer counter about datalane3 parameter.
+      byte_offset: 80
+      fieldset: dlane3_para3
+    - name: common_para0
+      description: timing parameter for all lanes.
+      byte_offset: 84
+      fieldset: common_para0
+    - name: ctrl_para0
+      description: dphy control parameter.
+      byte_offset: 88
+      fieldset: ctrl_para0
+    - name: pll_ctrl_para0
+      description: dphy pll control parameter.
+      byte_offset: 92
+      fieldset: pll_ctrl_para0
+    - name: rcal_ctrl
+      description: dphy calibration control parameter.
+      byte_offset: 100
+      fieldset: rcal_ctrl
+    - name: trim_para
+      description: dphy trimming parameter.
+      byte_offset: 104
+      fieldset: trim_para
+    - name: test_para0
+      description: dphy test control parameter.
+      byte_offset: 108
+      fieldset: test_para0
+    - name: test_para1
+      description: dphy bist test control parameter.
+      byte_offset: 112
+      fieldset: test_para1
+    - name: misc_para
+      description: dphy control parameter.
+      byte_offset: 116
+      fieldset: misc_para
+    - name: clane_para4
+      description: dphy clock lane control parameter.
+      byte_offset: 120
+      fieldset: clane_para4
+    - name: interface_para
+      description: dphy clock lane control parameter.
+      byte_offset: 124
+      fieldset: interface_para
+    - name: pcs_reserved_pin_para
+      description: reserved the pins for pcs.
+      byte_offset: 128
+      fieldset: pcs_reserved_pin_para
+    - name: clane_data_para
+      description: parallel data about clock lane parameter.
+      byte_offset: 140
+      fieldset: clane_data_para
+    - name: pma_lane_sel_para
+      description: pma about clock lane select parameter.
+      byte_offset: 144
+      fieldset: pma_lane_sel_para
+fieldset/clane_data_para:
+  description: parallel data about clock lane parameter.
+  fields:
+    - name: CLANE_DATA
+      description: the parallel data about clock lane.
+      bit_offset: 0
+      bit_size: 8
+    - name: CLANE_DATA_SEL
+      description: select the data about clock lane.
+      bit_offset: 8
+      bit_size: 1
+fieldset/clane_para0:
+  description: timer counter about clock lane parameter.
+  fields:
+    - name: T_RST2ENLPTX_C
+      description: the soft reset of clk_cfg domain.
+      bit_offset: 0
+      bit_size: 16
+fieldset/clane_para1:
+  description: timer counter about clock lane parameter.
+  fields:
+    - name: T_INITTIME_C
+      description: the number of byteclk cycles that clklane drive LP-11 during initialization period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/clane_para2:
+  description: timer counter about clock lane parameter.
+  fields:
+    - name: T_CLKPRE_C
+      description: the number of byteclk cycles that hs clock shall be driven prior to data lane beginning the transition from lp to hs mode.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_CLKZERO_C
+      description: the number of byteclk cycles that clock lane clkp/n lines are at the hs-zero state hs-0 during a hs clock transmission.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_CLKPREPARE_C
+      description: the number of byteclk cycles that clock lane clkp/n lines are at the hs prepare state lp-00 during a hs clock transmission.
+      bit_offset: 16
+      bit_size: 8
+fieldset/clane_para3:
+  description: timer counter about clock lane parameter.
+  fields:
+    - name: T_HSEXIT_C
+      description: the number of byteclk cycles that the clock lane clkp/n lines are at hs-exit state after a hs clock transmission.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_CLKTRIAL_C
+      description: the number of byteclk cycles that the clock lane clkp/n lines are at state hs-tail sate hs-0 during a hs clock transmission.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_CLKPOST_C
+      description: the number of byteclk cycles that the clock lane should keep sending the hs-clock after the last associated data lane has transitioned to LP mode.
+      bit_offset: 16
+      bit_size: 8
+fieldset/clane_para4:
+  description: dphy clock lane control parameter.
+  fields:
+    - name: T_WAKEUP_C
+      description: the number of byteclk cycles from exiting ultra low power state to enabling the low-power driver.
+      bit_offset: 0
+      bit_size: 32
+fieldset/common_para0:
+  description: timing parameter for all lanes.
+  fields:
+    - name: T_LPX
+      description: the number of byteclk cycles of transmitted length of any low-power state period.
+      bit_offset: 0
+      bit_size: 8
+fieldset/ctrl_para0:
+  description: dphy control parameter.
+  fields:
+    - name: SU_IDDQ_EN
+      description: power down all modules inside su includes ivref, r-calibration and pll, high effective.
+      bit_offset: 0
+      bit_size: 1
+    - name: PWON_DSI
+      description: power on all dsi lane.
+      bit_offset: 1
+      bit_size: 1
+    - name: PWON_PLL
+      description: power on pll high active.
+      bit_offset: 2
+      bit_size: 1
+    - name: PWON_SEL
+      description: select the cource of PMA power on control signals.
+      bit_offset: 3
+      bit_size: 1
+    - name: EN_LPCD_D0
+      description: lp-cd enable for lane0.
+      bit_offset: 4
+      bit_size: 1
+    - name: EN_LPRX_D0
+      description: lp-rx enable for lane0.
+      bit_offset: 5
+      bit_size: 1
+    - name: EN_ULPRX_D0
+      description: ulp-rx enable for lane0.
+      bit_offset: 6
+      bit_size: 1
+    - name: VBG_RDY
+      description: the indicator signal of reference generator is ready.
+      bit_offset: 7
+      bit_size: 1
+fieldset/dlane0_para0:
+  description: timer counter about datalane0 parameter.
+  fields:
+    - name: T_RST2ENLPTX_D0
+      description: the number of byteclk cycles that datalane0 wait to enable lptx_en after reset release.
+      bit_offset: 0
+      bit_size: 16
+fieldset/dlane0_para1:
+  description: timer counter about datalane0 parameter.
+  fields:
+    - name: T_INITTIME_D0
+      description: the number of byteclk cycles that datalane0 drive lp-11 during initiaalization period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane0_para2:
+  description: timer counter about datalane0 parameter.
+  fields:
+    - name: T_HSEXIT_D0
+      description: the number of byteclk cycles that the datalane0 stay at state hs-exit sate after a hs clock transmission.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_HSTRAIL_D0
+      description: the number of byteclk cycles that the datalane0 stay at hs-trail state during a hs clock transmission.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_HSZERO_D0
+      description: the number of byteclk cycles that the datalane0 stay at hs-zero sate during a hs transmission.
+      bit_offset: 16
+      bit_size: 8
+    - name: T_HSPREPARE_D0
+      description: the number of byteclk cycles that the datalane0 stay at hs prepare state lp-00 during a hs transmission.
+      bit_offset: 24
+      bit_size: 8
+fieldset/dlane0_para3:
+  description: timer counter about datalane0 parameter.
+  fields:
+    - name: T_WAKEUP_D0
+      description: the number of byteclk cycles from exiting ultra low power sate to enabling the low-power driver.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane0_para4:
+  description: timer counter about datalane0 parameter.
+  fields:
+    - name: T_TAGET_D0
+      description: the number of byteclk cycles that the new transmitter drivers the bridge state after accepting control during bta.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_TASURE_D0
+      description: the number of byteclk cycles that the rx waits after a bridge state has been detected during a turnaround procedure.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_TAGO_D0
+      description: the number of byteclk cycles that the tx drives the bridge state during a turnaroud procedure.
+      bit_offset: 16
+      bit_size: 8
+fieldset/dlane1_para0:
+  description: timer counter about datalane1 parameter.
+  fields:
+    - name: T_RST2ENLPTX_D1
+      description: the number of byteclk cycles that datalane1 wait to enable lptx_en after reset release.
+      bit_offset: 0
+      bit_size: 16
+fieldset/dlane1_para1:
+  description: timer counter about datalane1 parameter.
+  fields:
+    - name: T_INITTIME_D1
+      description: the number of byteclk cycles that datalane1 drive lp-11 during initiaalization period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane1_para2:
+  description: timer counter about datalane1 parameter.
+  fields:
+    - name: T_HSEXIT_D1
+      description: the number of byteclk cycles that the datalane1 stay at state hs-exit sate after a hs clock transmission.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_HSTRAIL_D1
+      description: the number of byteclk cycles that the datalane1 stay at hs-trail state during a hs clock transmission.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_HSZERO_D1
+      description: the number of byteclk cycles that the datalane1 stay at hs-zero sate during a hs transmission.
+      bit_offset: 16
+      bit_size: 8
+    - name: T_HSPREPARE_D1
+      description: the number of byteclk cycles that the datalane1 stay at hs prepare state lp-00 during a hs transmission.
+      bit_offset: 24
+      bit_size: 8
+fieldset/dlane1_para3:
+  description: timer counter about datalane1 parameter.
+  fields:
+    - name: T_WAKEUP_D1
+      description: the number of byteclk cycles from exiting ultra low power sate to enabling the low-power driver.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane2_para0:
+  description: timer counter about datalane2 parameter.
+  fields:
+    - name: T_RST2ENLPTX_D2
+      description: the number of byteclk cycles that datalane2 wait to enable lptx_en after reset release.
+      bit_offset: 0
+      bit_size: 16
+fieldset/dlane2_para1:
+  description: timer counter about datalane2 parameter.
+  fields:
+    - name: T_INITTIME_D2
+      description: the number of byteclk cycles that datalane2 drive lp-11 during initiaalization period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane2_para2:
+  description: timer counter about datalane2 parameter.
+  fields:
+    - name: T_HSEXIT_D2
+      description: the number of byteclk cycles that the datalane2 stay at state hs-exit sate after a hs clock transmission.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_HSTRAIL_D2
+      description: the number of byteclk cycles that the datalane2 stay at hs-trail state during a hs clock transmission.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_HSZERO_D2
+      description: the number of byteclk cycles that the datalane2 stay at hs-zero sate during a hs transmission.
+      bit_offset: 16
+      bit_size: 8
+    - name: T_HSPREPARE_D2
+      description: the number of byteclk cycles that the datalane2 stay at hs prepare state lp-00 during a hs transmission.
+      bit_offset: 24
+      bit_size: 8
+fieldset/dlane2_para3:
+  description: timer counter about datalane2 parameter.
+  fields:
+    - name: T_WAKEUP_D2
+      description: the number of byteclk cycles from exiting ultra low power sate to enabling the low-power driver.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane3_para0:
+  description: timer counter about datalane3 parameter.
+  fields:
+    - name: T_RST2ENLPTX_D3
+      description: the number of byteclk cycles that datalane3 wait to enable lptx_en after reset release.
+      bit_offset: 0
+      bit_size: 16
+fieldset/dlane3_para1:
+  description: timer counter about datalane3 parameter.
+  fields:
+    - name: T_INITTIME_D3
+      description: the number of byteclk cycles that datalane3 drive lp-11 during initiaalization period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dlane3_para2:
+  description: timer counter about datalane3 parameter.
+  fields:
+    - name: T_HSEXIT_D3
+      description: the number of byteclk cycles that the datalane3 stay at state hs-exit sate after a hs clock transmission.
+      bit_offset: 0
+      bit_size: 8
+    - name: T_HSTRAIL_D3
+      description: the number of byteclk cycles that the datalane3 stay at hs-trail state during a hs clock transmission.
+      bit_offset: 8
+      bit_size: 8
+    - name: T_HSZERO_D3
+      description: the number of byteclk cycles that the datalane3 stay at hs-zero sate during a hs transmission.
+      bit_offset: 16
+      bit_size: 8
+    - name: T_HSPREPARE_D3
+      description: the number of byteclk cycles that the datalane3 stay at hs prepare state lp-00 during a hs transmission.
+      bit_offset: 24
+      bit_size: 8
+fieldset/dlane3_para3:
+  description: timer counter about datalane3 parameter.
+  fields:
+    - name: T_WAKEUP_D3
+      description: the number of byteclk cycles from exiting ultra low power sate to enabling the low-power driver.
+      bit_offset: 0
+      bit_size: 32
+fieldset/interface_para:
+  description: dphy clock lane control parameter.
+  fields:
+    - name: RXVALIDESC_EXTEND_VLD
+      description: the extend length of rxvalidesc.
+      bit_offset: 0
+      bit_size: 8
+    - name: TXREADYESC_EXTEND_VLD
+      description: the extend length of txreadyesc.
+      bit_offset: 8
+      bit_size: 8
+fieldset/misc_para:
+  description: dphy control parameter.
+  fields:
+    - name: PHYERR_MASK
+      description: mask the phy error.
+      bit_offset: 0
+      bit_size: 5
+    - name: LANE_NUM
+      description: the number of active data lanes.
+      bit_offset: 5
+      bit_size: 2
+    - name: DLL_SEL
+      description: the phase select of clk_rxesc.
+      bit_offset: 7
+      bit_size: 4
+fieldset/pcs_reserved_pin_para:
+  description: reserved the pins for pcs.
+  fields:
+    - name: INV_DSI_RCLK
+      description: pma clock dsi_rclk_i inverter signal.
+      bit_offset: 0
+      bit_size: 1
+    - name: INV_PCLK
+      description: pclk inverter signal.
+      bit_offset: 1
+      bit_size: 1
+    - name: INV_CLK_TXESC
+      description: clk_txesc inverter signal.
+      bit_offset: 2
+      bit_size: 1
+    - name: INV_CLK_TXHS
+      description: clk_txhs inverter signal.
+      bit_offset: 3
+      bit_size: 1
+    - name: CLK_TXHS_SEL_INNER
+      description: select the clock source of clk_txhs in pcs.
+      bit_offset: 4
+      bit_size: 1
+fieldset/pll_ctrl_para0:
+  description: dphy pll control parameter.
+  fields:
+    - name: DSI_PIXELCLK_DIV
+      description: pixell clock divided from pll output.
+      bit_offset: 0
+      bit_size: 4
+    - name: PLL_DIV
+      description: pll loop divider ratio control.
+      bit_offset: 4
+      bit_size: 15
+    - name: REFCLK_DIV
+      description: input reference clock divider ratio control.
+      bit_offset: 19
+      bit_size: 5
+    - name: RATE
+      description: data reate control signal.
+      bit_offset: 24
+      bit_size: 3
+    - name: PLL_LOCK
+      description: pll lock indication.
+      bit_offset: 27
+      bit_size: 1
+fieldset/pma_lane_sel_para:
+  description: pma about clock lane select parameter.
+  fields:
+    - name: PMA_DLANE1_SEL
+      description: select the channel 1 as the data lane.
+      bit_offset: 0
+      bit_size: 1
+    - name: PMA_DLANE2_SEL
+      description: select the channel 2 as the data lane.
+      bit_offset: 1
+      bit_size: 1
+    - name: PMA_DLANE3_SEL
+      description: select the channel 3 as the data lane.
+      bit_offset: 2
+      bit_size: 1
+    - name: PMA_DLANE4_SEL
+      description: select the channel 4 as the data lane.
+      bit_offset: 3
+      bit_size: 1
+fieldset/rcal_ctrl:
+  description: dphy calibration control parameter.
+  fields:
+    - name: RCAL_DONE
+      description: hs-tx output impedance trimming done indicator signal.
+      bit_offset: 0
+      bit_size: 1
+    - name: RCAL_CTRL
+      description: resistor calibration control, reserved for test.
+      bit_offset: 1
+      bit_size: 8
+    - name: RCAL_TRIM
+      description: default value of hs-tx output resistance configure.
+      bit_offset: 9
+      bit_size: 4
+    - name: RCAL_EN
+      description: enable hs-tx output impedance trimming.
+      bit_offset: 13
+      bit_size: 1
+fieldset/test_para0:
+  description: dphy test control parameter.
+  fields:
+    - name: FT_SEL
+      description: pt/ft test mode select.
+      bit_offset: 0
+      bit_size: 3
+    - name: FSET_EN
+      description: enable fast transmission between lp-tx and hs-tx.
+      bit_offset: 3
+      bit_size: 1
+    - name: ATEST_SEL
+      description: analog test signal select.
+      bit_offset: 4
+      bit_size: 2
+    - name: ATEST_EN
+      description: analog test signal enable.
+      bit_offset: 6
+      bit_size: 1
+    - name: BIST_N_OK
+      description: indicate prbs7 bist test is ok.
+      bit_offset: 7
+      bit_size: 5
+    - name: BIST_N_DONE
+      description: indicate prbs7 bist test is done.
+      bit_offset: 12
+      bit_size: 5
+    - name: ERROR_NUM
+      description: the byte num of mismatch data of lane in bist mode.
+      bit_offset: 17
+      bit_size: 6
+fieldset/test_para1:
+  description: dphy bist test control parameter.
+  fields:
+    - name: PRBS_SEL
+      description: prbs generator and checker pattern select signal.
+      bit_offset: 0
+      bit_size: 2
+    - name: BIST_SEL
+      description: bist mode select.
+      bit_offset: 2
+      bit_size: 1
+    - name: BIST_EN
+      description: bist enable.
+      bit_offset: 3
+      bit_size: 2
+    - name: BIST_BIT_ERROR
+      description: enable insert error in bist test pattern.
+      bit_offset: 5
+      bit_size: 1
+    - name: ERR_THRESHOLD
+      description: the threshold of prbs bit error.
+      bit_offset: 6
+      bit_size: 4
+    - name: CHECK_NUM
+      description: the byte num of prbs bist check num.
+      bit_offset: 10
+      bit_size: 22
+fieldset/trim_para:
+  description: dphy trimming parameter.
+  fields:
+    - name: LPCD_VREF_TRIM
+      description: lp-cd input threshold voltage trimming for lane0.
+      bit_offset: 0
+      bit_size: 4
+    - name: LPRX_VREF_TRIM
+      description: lp-rx input threshold voltage trimming for lane0.
+      bit_offset: 4
+      bit_size: 4
+    - name: LPTX_SR_TRIM
+      description: lp-tx output slew-rate trimming for lane0~4.
+      bit_offset: 8
+      bit_size: 3
+    - name: HSTX_AMP_TRIM
+      description: hs-tx output vod trimming for lane-0~4.
+      bit_offset: 11
+      bit_size: 3

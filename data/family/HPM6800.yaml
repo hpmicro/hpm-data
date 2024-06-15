@@ -4,3 +4,672 @@
     kind: sysctl
     version: v68
     block: SYSCTL
+
+- name: PLLCTL
+  address: 0xF40C0000
+  registers:
+    kind: pllctl
+    version: v2
+    block: PLLCTLV2
+
+- name: BCFG
+  address: 0xF4208000
+  registers:
+    kind: bcfg
+    version: v68
+    block: BCFG
+- name: BPOR
+  address: 0xF4204000
+  registers:
+    kind: bpor
+    version: v68
+    block: BPOR
+
+- name: PCFG
+  address: 0xF4104000
+  registers:
+    kind: pcfg
+    version: v68
+    block: PCFG
+- name: PPOR
+  address: 0xF4100000
+  registers:
+    kind: ppor
+    version: v68
+    block: PPOR
+
+# input output and alternate function
+
+- name: IOC
+  address: 0xF4040000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+- name: PIOC
+  address: 0xF4118000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+- name: BIOC
+  address: 0xF4210000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+
+- name: FGPIO
+  address: 0x000C0000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: GPIO0
+  address: 0xF00D0000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: PGPIO
+  address: 0xF411C000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: BGPIO
+  address: 0xF4214000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+
+- name: GPIOM
+  address: 0xF00D8000
+  registers:
+    kind: gpiom
+    version: v68
+    block: GPIOM
+
+# storage
+
+- name: DDRCTL
+  address: 0xF3010000
+  registers:
+    kind: ddrctl
+    version: v68
+    block: DDRCTL
+- name: DDRPHY
+  address: 0xF4150000
+  registers:
+    kind: ddrphy
+    version: v68
+    block: DDRPHY
+
+- name: OTP
+  address: 0xF3050000
+  registers:
+    kind: otp
+    version: common
+    block: OTP
+
+- name: XPI0
+  address: 0xF3000000
+  registers:
+    kind: xpi
+    version: dummy
+    block: XPI
+
+- name: SDXC0
+  address: 0xF1130000
+  registers:
+    kind: sdxc
+    version: v68
+    block: SDXC
+- name: SDXC1
+  address: 0xF1134000
+  registers:
+    kind: sdxc
+    version: v68
+    block: SDXC
+
+# FFA, CRC, DMA
+
+- name: FFA
+  address: 0xF3018000
+  registers:
+    kind: ffa
+    version: common
+    block: FFA
+
+- name: HDMA
+  address: 0xF00C8000
+  registers:
+    kind: dma
+    version: v53
+    block: DMA
+- name: XDMA
+  address: 0xF3008000
+  registers:
+    kind: dma
+    version: v53
+    block: DMA
+
+- name: DMAMUX
+  address: 0xF00C4000
+  registers:
+    kind: dmamux
+    version: common
+    block: DMAMUX
+
+- name: MBX0A
+  address: 0xF00A0000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX0B
+  address: 0xF00A4000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX1A
+  address: 0xF00A8000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX1B
+  address: 0xF00AC000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+
+- name: CRC
+  address: 0xF00C0000
+  registers:
+    kind: crc
+    version: common
+    block: CRC
+
+# visual processing
+
+- name: GPU
+  address: 0xF1080000
+  registers:
+    kind: gpu
+    version: v68
+    block: GPU
+
+- name: MIPI_DSI0
+  address: 0xF1020000
+  registers:
+    kind: mipidsi
+    version: v68
+    block: MIPI_DSI
+- name: MIPI_DSI1
+  address: 0xF1024000
+  registers:
+    kind: mipidsi
+    version: v68
+    block: MIPI_DSI
+
+- name: MIPI_DSI_PHY0
+  address: 0xF4140000
+  registers:
+    kind: mipidsiphy
+    version: v68
+    block: MIPI_DSI_PHY
+- name: MIPI_DSI_PHY1
+  address: 0xF4144000
+  registers:
+    kind: mipidsiphy
+    version: v68
+    block: MIPI_DSI_PHY
+
+- name: MIPI_CSI0
+  address: 0xF1028000
+  registers:
+    kind: mipicsi
+    version: v68
+    block: MIPI_CSI
+- name: MIPI_CSI1
+  address: 0xF102C000
+  registers:
+    kind: mipicsi
+    version: v68
+    block: MIPI_CSI
+
+- name: MIPI_CSI_PHY0
+  address: 0xF4148000
+  registers:
+    kind: mipicsiphy
+    version: v68
+    block: MIPI_CSI_PHY
+- name: MIPI_CSI_PHY1
+  address: 0xF414C000
+  registers:
+    kind: mipicsiphy
+    version: v68
+    block: MIPI_CSI_PHY
+
+- name: LCDC0
+  address: 0xF1000000
+  registers:
+    kind: lcdc
+    version: v68
+    block: LCDC
+- name: LCDC1
+  address: 0xF1004000
+  registers:
+    kind: lcdc
+    version: v68
+    block: LCDC
+
+- name: CAM0
+  address: 0xF1008000
+  registers:
+    kind: cam
+    version: v68
+    block: CAM
+- name: CAM1
+  address: 0xF100C000
+  registers:
+    kind: cam
+    version: v68
+    block: CAM
+
+- name: PDMA
+  address: 0xF1010000
+  registers:
+    kind: pdma
+    version: v68
+    block: PDMA
+
+- name: JPEG
+  address: 0xF1014000
+  registers:
+    kind: jpeg
+    version: common
+    block: JPEG
+
+- name: GWC0
+  address: 0xF1018000
+  registers:
+    kind: gwc
+    version: v68
+    block: GWC
+- name: GWC1
+  address: 0xF101C000
+  registers:
+    kind: gwc
+    version: v68
+    block: GWC
+
+- name: LVB
+  address: 0xF1030000
+  registers:
+    kind: lvb
+    version: v68
+    block: LVB
+
+- name: LCB
+  address: 0xF1038000
+  registers:
+    kind: lcb
+    version: v68
+    block: LCB
+
+- name: PIXELMUX
+  address: 0xF1034000
+  registers:
+    kind: pixelmux
+    version: v68
+    block: PIXEL_MUX
+
+# audio peripherals
+
+- name: I2S0
+  address: 0xF0200000
+  registers:
+    kind: i2s
+    version: common
+    block: I2S
+- name: I2S1
+  address: 0xF0204000
+  registers:
+    kind: i2s
+    version: common
+    block: I2S
+- name: I2S2
+  address: 0xF0208000
+  registers:
+    kind: i2s
+    version: common
+    block: I2S
+- name: I2S3
+  address: 0xF020C000
+  registers:
+    kind: i2s
+    version: common
+    block: I2S
+
+- name: PDM
+  address: 0xF0214000
+  registers:
+    kind: pdm
+    version: common
+    block: PDM
+
+- name: DAO
+  address: 0xF0210000
+  registers:
+    kind: dao
+    version: v68
+    block: DAO
+
+- name: VAD
+  address: 0xF412C000
+  registers:
+    kind: vad
+    version: common
+    block: VAD
+
+- name: SMIX
+  address: 0xF0218000
+  registers:
+    kind: smix
+    version: v68
+    block: SMIX
+
+# timers
+
+- name: GPTMR0
+  address: 0xF0080000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR1
+  address: 0xF0084000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR2
+  address: 0xF0088000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR3
+  address: 0xF008C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR4
+  address: 0xF0090000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR5
+  address: 0xF0094000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR6
+  address: 0xF0098000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR7
+  address: 0xF009C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: NTMR0
+  address: 0xF1110000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: PTMR
+  address: 0xF4120000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+
+- name: WDG0
+  address: 0xF00B0000
+  registers:
+    kind: wdg
+    version: v68
+    block: WDG
+- name: WDG1
+  address: 0xF00B4000
+  registers:
+    kind: wdg
+    version: v68
+    block: WDG
+- name: PWDG
+  address: 0xF4128000
+  registers:
+    kind: wdg
+    version: v68
+    block: WDG
+
+- name: RTCSHW
+  address: 0xF421C000
+  registers:
+    kind: rtc
+    version: common
+    block: RTC
+- name: RTC
+  address: 0xF4244000
+  registers:
+    kind: rtc
+    version: common
+    block: RTC
+
+# communication peripherals
+
+- name: UART0
+  address: 0xF0040000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART1
+  address: 0xF0044000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART2
+  address: 0xF0048000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART3
+  address: 0xF004C000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART4
+  address: 0xF0050000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART5
+  address: 0xF0054000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART6
+  address: 0xF0058000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: UART7
+  address: 0xF005C000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+- name: PUART
+  address: 0xF4124000
+  registers:
+    kind: uart
+    version: v68
+    block: UART
+
+- name: SPI0
+  address: 0xF0070000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI1
+  address: 0xF0074000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI2
+  address: 0xF0078000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI3
+  address: 0xF007C000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+
+- name: I2C0
+  address: 0xF0060000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C1
+  address: 0xF0064000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C2
+  address: 0xF0068000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C3
+  address: 0xF006C000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+
+- name: MCAN0
+  address: 0xF0280000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN1
+  address: 0xF0284000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN2
+  address: 0xF0288000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN3
+  address: 0xF028C000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN4
+  address: 0xF0290000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN5
+  address: 0xF0294000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN6
+  address: 0xF0298000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN7
+  address: 0xF029C000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+
+- name: PTPC
+  address: 0xF02FC000
+  registers:
+    kind: ptpc
+    version: common
+    block: PTPC
+
+- name: USB
+  address: 0xF1120000
+  registers:
+    kind: usb
+    version: v53
+    block: USB
+
+- name: ENET0
+  address: 0xF1100000
+  registers:
+    kind: enet
+    version: v68
+    block: ENET
+
+# analog peripherals
+
+- name: ADC0
+  address: 0xF00E0000
+  registers:
+    kind: adc16
+    version: v68
+    block: ADC
+
+- name: TSNS
+  address: 0xF4154000
+  registers:
+    kind: tsns
+    version: common
+    block: TSNS
+
+# security peripherals

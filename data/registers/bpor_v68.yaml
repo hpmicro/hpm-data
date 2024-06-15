@@ -1,0 +1,14 @@
+block/BPOR:
+  description: BPOR.
+  items:
+    - name: POR_CONFIG
+      description: Power on reset config.
+      byte_offset: 0
+      fieldset: POR_CONFIG
+fieldset/POR_CONFIG:
+  description: Power on reset config.
+  fields:
+    - name: RETENTION
+      description: "retention battery domain setting 0: battery reset on reset pin reset happen 1: battery domain retention when reset pin reset happen."
+      bit_offset: 0
+      bit_size: 1

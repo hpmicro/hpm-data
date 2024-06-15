@@ -9,10 +9,30 @@ packages:
     package: BGA417
     pins: 417
 memory:
-  - address: 0
+  - address: 0x00000000
     kind: ram
-    name: SRAM
-    size: 1064
+    name: ILM
+    size: 262144 # 256K
+  - address: 0x00080000
+    kind: ram
+    name: DLM
+    size: 262144 # 256K
+  - address: 0x01200000
+    kind: ram
+    name: AXI_SRAM
+    size: 524288 # 512K
+  - address: 0xF0400000
+    kind: ram
+    name: AHB_SRAM
+    size: 32768 # 32K
+  - address: 0xF4130000
+    kind: ram
+    name: APB_SRAM
+    size: 16384 # 16K
+  - address: 0x80000000
+    kind: flash
+    name: XPI0
+    size: 1048576 # 1M
 cores:
   - name: RV32-IMAFDCP
     ip-core: Andes D45
@@ -22,6 +42,9 @@ cores:
       - "../family/HPM6800.yaml"
     include_interrupts: "../interrupts/HPM6830.yaml"
     include_dmamux: "../dmamux/HPM6880.yaml"
+    gen_dma_channels:
+      HDMA: 32
+      XDMA: 32
 _raw:
   "| HPM6830 | Single-core 32-bit | 1064 |    | Gigabit | CAN FD | USB HS w/ PHY\
   \ \xD71 | AES128/256, SHA-1/256 | 1\xD716 bit | 17\xD717 417BGA P0.8 | \u221240\

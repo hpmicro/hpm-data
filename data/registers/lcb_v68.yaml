@@ -1,0 +1,151 @@
+block/LCB:
+  description: LCB.
+  items:
+    - name: CTRL
+      description: control register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: PHY_STAT
+      description: LVDS RX PHY Status register.
+      byte_offset: 100
+      fieldset: PHY_STAT
+    - name: PHY_POW_CTRL
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 104
+      fieldset: PHY_POW_CTRL
+    - name: PHY_D_CTRL
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 112
+      fieldset: PHY_D_CTRL
+    - name: PHY_CK_CTRL
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 128
+      fieldset: PHY_CK_CTRL
+    - name: PHY_ADJ_CTRL
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 136
+      fieldset: PHY_ADJ_CTRL
+    - name: PHY_SU_CTRL
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 144
+      fieldset: PHY_SU_CTRL
+fieldset/CTRL:
+  description: control register.
+  fields:
+    - name: MODE
+      description: "mode selection： 00: lvds display(4 line), two LVDS RX PHY must be LVDS display mode 01: cam link(4 line), two LVDS RX PHY must be LVDS display mode 10: sync code(2 line), LVDS RX PHY must be LVDS cameral mode 11: sync code(1line), LVDS RX PHY must be LVDS cameral mode."
+      bit_offset: 0
+      bit_size: 2
+    - name: DATA_WIDTH
+      description: "just for LVDS Display mode, data width: 1: 24bit 0: 18bit(3line)."
+      bit_offset: 4
+      bit_size: 1
+    - name: BIT_MAPPING
+      description: "just for LVDS Display mode, data protocol: 1: JEIDA standard 0: SPWG standard."
+      bit_offset: 5
+      bit_size: 1
+    - name: CAM_LINK_WIDTH
+      description: "just for CAM LINK mode, data width: 00: 24bit 01: 30bit 10: 36bit 11: reserved."
+      bit_offset: 6
+      bit_size: 2
+    - name: LVDS_RXCK_SEL
+      description: "just for LVDS Display mode and CAM LINK mode, clock selection: 1: LVDS1 RXCK 0: LVDS0 RXCK."
+      bit_offset: 8
+      bit_size: 1
+fieldset/PHY_ADJ_CTRL:
+  description: no description available.
+  fields:
+    - name: LVDS_DLL_TUNING_INT
+      description: "LVDS RX PHY RXCK line: DLL loop delay coarse adjustment initial signal 00000000: min ; 11111111: max."
+      bit_offset: 0
+      bit_size: 9
+    - name: LVDS_RX1_DLINE_ADJ
+      description: "LVDS RX PHY RX1 line: bit [7:0] : Lane N skew adjustment control signal between data and clock 0000000: max; 1111111: min bit 8 : Reserved."
+      bit_offset: 16
+      bit_size: 8
+    - name: LVDS_RX0_DLINE_ADJ
+      description: "LVDS RX PHY RX0 line: bit [7:0] : Lane N skew adjustment control signal between data and clock 0000000: max; 1111111: min bit 8 : Reserved."
+      bit_offset: 24
+      bit_size: 8
+fieldset/PHY_CK_CTRL:
+  description: no description available.
+  fields:
+    - name: RX_CTL
+      description: "bit 0 : DLL loop delay adjustment minimum control signal 0: used for RCKP/RCKN’s frequency is 40Mhz~70Mhz 1:used for RCKP/RCKN’s frequency is 70Mhz~110Mhz bit [2:1] : DLL loop delay adjustment current regulation control signal. 00: min; 11: max bit 3 : Reserved bit 4 : Clock Lane Skew adjust enable in LVDS Camera Mode. bit [7:5] : Bus width selection in LVDS Camera Mode 000: 4bit; 001:6bit; 010:7bit; 011:8bit; 100:9bit; 101:10bit; 110:11bit; 111:12bit. bit [10:8] : DDR Clock duty cycle adjust in LVDS Camera Mode. bit [15:11] : Reserved."
+      bit_offset: 0
+      bit_size: 16
+    - name: RX_RTERM
+      description: "Terminal impedance regulation control signal 0000: hi-z; 0001: 150ohm; 1000:100ohm; 1111:75ohm."
+      bit_offset: 16
+      bit_size: 4
+    - name: RX_VCOM
+      description: "bit 1: Receiver hysteresis enable signal. 0: enable; 1: disable bit 0: Terminal impedance common mode selection control signal. 0: floating; 1: Ground."
+      bit_offset: 20
+      bit_size: 2
+fieldset/PHY_D_CTRL:
+  description: no description available.
+  fields:
+    - name: RX_CTL
+      description: "bit 0 : Lane N Data MSB first enable signal. 0: LSB ; 1: MSB bit 1 : Lane N Data Polarity signal. 0: Not inverting; 1: Inverting bit [4:2] : Phase difference between the output first bit data (rxN[6:0]) and the input clock (RCKP/N) in LVDS Display Mode. bit 5 : Reserved bit 6 : Output data sampling clock control signal 0: Sampling using the rising edge of the clock pck. 1: Sampling using the falling edge of the clock pck. bit 7 : Reserved bit 8 : Data Lane N Skew adjust enable in LVDS Camera Mode. bit [12:9] : Data Lane N Skew adjust; 0000: min; 0111: default; 1111: max. bit [15:13] : Reserved."
+      bit_offset: 0
+      bit_size: 16
+    - name: RX_RTERM
+      description: "Terminal impedance regulation control signal 0000: hi-z; 0001: 150ohm; 1000:100ohm; 1111:75ohm."
+      bit_offset: 16
+      bit_size: 4
+    - name: RX_VCOM
+      description: "bit 1: Receiver hysteresis enable signal. 0: enable; 1: disable bit 0: Terminal impedance common mode selection control signal. 0: floating; 1: Ground."
+      bit_offset: 20
+      bit_size: 2
+fieldset/PHY_POW_CTRL:
+  description: no description available.
+  fields:
+    - name: RX0_PD
+      description: "Power down control signal of channel rx0 0: Normal operation 1: Power down channel."
+      bit_offset: 0
+      bit_size: 1
+    - name: RX1_PD
+      description: "Power down control signal of channel rx1 0: Normal operation 1: Power down channel."
+      bit_offset: 1
+      bit_size: 1
+    - name: RXCK_PD
+      description: "Power down control signal of channel rxck 0: Normal operation 1: Power down channel."
+      bit_offset: 2
+      bit_size: 1
+    - name: IDDQ_EN
+      description: "Power down control signal of channel rxck/rx1/rx0 0: Normal operation 1: Power down channel."
+      bit_offset: 3
+      bit_size: 1
+fieldset/PHY_STAT:
+  description: LVDS RX PHY Status register.
+  fields:
+    - name: LVDS0_RX_PHY_DLL_LOCK
+      description: LVDS0 RX PHY DLL Lock indication Signal, 1 means dll already locked.
+      bit_offset: 0
+      bit_size: 1
+    - name: LVDS1_RX_PHY_DLL_LOCK
+      description: LVDS1 RX PHY DLL Lock indication Signal, 1 means dll already locked.
+      bit_offset: 1
+      bit_size: 1
+fieldset/PHY_SU_CTRL:
+  description: no description available.
+  fields:
+    - name: SU_CTRL
+      description: "bit [2:0] : Reference voltage/current adjustment control signal. 000: min; 111: max bit [3] : Internal bias circuit selection signal. 0: from Bandgap Mode; 1: from self-bias mode bit [7:4] : Reserved."
+      bit_offset: 0
+      bit_size: 8

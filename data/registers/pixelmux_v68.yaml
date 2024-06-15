@@ -1,0 +1,878 @@
+block/PIXEL_MUX:
+  description: PIXEL_MUX.
+  items:
+    - name: PIXMUX
+      description: pixel path mux register.
+      byte_offset: 0
+      fieldset: PIXMUX
+    - name: DSI_SETTING
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 4
+      fieldset: DSI_SETTING
+    - name: MISC
+      description: common register.
+      byte_offset: 12
+      fieldset: MISC
+    - name: GPR_WR_D0
+      description: gpr write-read register 0.
+      byte_offset: 16
+      fieldset: GPR_WR_D0
+    - name: GPR_WR_D1
+      description: gpr write-read register 1.
+      byte_offset: 20
+      fieldset: GPR_WR_D1
+    - name: GPR_WR_D2
+      description: gpr write-read register 2.
+      byte_offset: 24
+      fieldset: GPR_WR_D2
+    - name: GPR_WR_D3
+      description: gpr write-read register 3.
+      byte_offset: 28
+      fieldset: GPR_WR_D3
+    - name: GPR_WR_D4
+      description: gpr write-read register 4.
+      byte_offset: 32
+      fieldset: GPR_WR_D4
+    - name: GPR_WR_D5
+      description: gpr write-read register 5.
+      byte_offset: 36
+      fieldset: GPR_WR_D5
+    - name: GPR_WR_D6
+      description: gpr write-read register 6.
+      byte_offset: 40
+      fieldset: GPR_WR_D6
+    - name: GPR_WR_D7
+      description: gpr write-read register 7.
+      byte_offset: 44
+      fieldset: GPR_WR_D7
+    - name: GPR_WR_D8
+      description: gpr write-read register 8.
+      byte_offset: 48
+      fieldset: GPR_WR_D8
+    - name: GPR_WR_D9
+      description: gpr write-read register 9.
+      byte_offset: 52
+      fieldset: GPR_WR_D9
+    - name: GPR_RO_D0
+      description: gpr read-only register 0.
+      byte_offset: 56
+      fieldset: GPR_RO_D0
+    - name: GPR_RO_D1
+      description: gpr read-only register 1.
+      byte_offset: 60
+      fieldset: GPR_RO_D1
+    - name: GPR_RO_D2
+      description: gpr read-only register 2.
+      byte_offset: 64
+      fieldset: GPR_RO_D2
+    - name: GPR_RO_D3
+      description: gpr read-only register 3.
+      byte_offset: 68
+      fieldset: GPR_RO_D3
+    - name: GPR_RO_D4
+      description: gpr read-only register 4.
+      byte_offset: 72
+      fieldset: GPR_RO_D4
+    - name: GPR_RO_D5
+      description: gpr read-only register 5.
+      byte_offset: 76
+      fieldset: GPR_RO_D5
+    - name: GPR_RO_D6
+      description: gpr read-only register 6.
+      byte_offset: 80
+      fieldset: GPR_RO_D6
+    - name: GPR_RO_D7
+      description: gpr read-only register 7.
+      byte_offset: 84
+      fieldset: GPR_RO_D7
+    - name: GPR_RO_D8
+      description: gpr read-only register 8.
+      byte_offset: 88
+      fieldset: GPR_RO_D8
+    - name: GPR_RO_D9
+      description: gpr read-only register 9.
+      byte_offset: 92
+      fieldset: GPR_RO_D9
+    - name: GPR_WR1_CLR_D0
+      description: gpr write1 set/no-write clr register.
+      byte_offset: 96
+      fieldset: GPR_WR1_CLR_D0
+fieldset/DSI_SETTING:
+  description: no description available.
+  fields:
+    - name: DSI_DATA_TYPE
+      description: "DSI input pixel data type: ‘h0: RGB565_CFG1 ‘h1: RGB565_CFG2 ‘h2: RGB565_CFG3 ‘h3: RGB666_CFG1 ‘h4: RGB666_CFG2 ‘h5: RGB888 ‘h6: RGB_10BIT ‘h7: RGB_12BIT, no support ‘h8:YUV422_12BIT,no support ‘h9: YUV422_10BIT, no support ‘ha: YUV422_8BIT, no support ‘hb: YUV420_8BIT,no support ‘hc~’hf: Reserved."
+      bit_offset: 0
+      bit_size: 4
+    - name: DSI_DATA_ENABLE
+      description: "DSI pixel data type enable: Bit0: RGB565_CFG1 Bit1: RGB565_CFG2 Bit2: RGB565_CFG3 Bit3: RGB666_CFG1 Bit4: RGB666_CFG2 Bit5: RGB888 Bit6: RGB_10BIT Bit7: RGB_12BIT, no support Bit8: YUV422_12BIT, no support Bit9: YUV422_10BIT, no support Bit10: YUV422_8BIT, no support Bit11:YUV420_8BIT,no support others: Reserved."
+      bit_offset: 16
+      bit_size: 16
+fieldset/GPR_RO_D0:
+  description: gpr read-only register 0.
+  fields:
+    - name: TX_PHY0_CTL_O
+      description: "{2'b0, tx_phy0_tx3_ctl_o,tx_phy0_tx2_ctl_o, tx_phy0_tx1_ctl_o,tx_phy0_tx0_ctl_o, tx_phy0_txck_ctl_o,tx_phy0_pll_dtest_o}."
+      bit_offset: 0
+      bit_size: 8
+    - name: TX_PHY1_CTL_O
+      description: "{2'b0, tx_phy1_tx3_ctl_o,tx_phy1_tx2_ctl_o, tx_phy1_tx1_ctl_o,tx_phy1_tx0_ctl_o, tx_phy1_txck_ctl_o,tx_phy1_pll_dtest_o}."
+      bit_offset: 8
+      bit_size: 8
+fieldset/GPR_RO_D1:
+  description: gpr read-only register 1.
+  fields:
+    - name: CSI0_STA_AP_IF_INT_STA
+      description: csi0 apb parity check interrupt satus.
+      bit_offset: 0
+      bit_size: 5
+    - name: CSI0_CFG_CSI_AP_DIAG_FAULTS
+      description: csi0 ap diag faults.
+      bit_offset: 5
+      bit_size: 12
+    - name: IRQ_CSI0_AP
+      description: interrupt of csi0 ap.
+      bit_offset: 17
+      bit_size: 1
+fieldset/GPR_RO_D2:
+  description: gpr read-only register 2.
+  fields:
+    - name: CSI1_STA_AP_IF_INT_STA
+      description: csi1 apb parity check interrupt satus.
+      bit_offset: 0
+      bit_size: 5
+    - name: CSI1_CFG_CSI_AP_DIAG_FAULTS
+      description: csi1 ap diag faults.
+      bit_offset: 5
+      bit_size: 12
+    - name: IRQ_CSI1_AP
+      description: interrupt of csi1 ap.
+      bit_offset: 17
+      bit_size: 1
+fieldset/GPR_RO_D3:
+  description: gpr read-only register 3.
+  fields:
+    - name: RX_PHY0_RX0_CTLO
+      description: rx phy0 rx0_ctlo.
+      bit_offset: 0
+      bit_size: 4
+    - name: RX_PHY0_RX1_CTLO
+      description: rx phy0 rx1_ctlo.
+      bit_offset: 4
+      bit_size: 4
+    - name: RX_PHY0_RXCK_CTLO
+      description: rx phy0 rxck_ctlo.
+      bit_offset: 8
+      bit_size: 8
+fieldset/GPR_RO_D4:
+  description: gpr read-only register 4.
+  fields:
+    - name: RX_PHY1_RX0_CTLO
+      description: rx phy1 rx0_ctlo.
+      bit_offset: 0
+      bit_size: 4
+    - name: RX_PHY1_RX1_CTLO
+      description: rx phy1 rx1_ctlo.
+      bit_offset: 4
+      bit_size: 4
+    - name: RX_PHY1_RXCK_CTLO
+      description: rx phy1 rxck_ctlo.
+      bit_offset: 8
+      bit_size: 8
+fieldset/GPR_RO_D5:
+  description: gpr read-only register 5.
+  fields:
+    - name: TX_PHY0_TX0_BIST_OUT
+      description: tx phy0 tx0_bist_out.
+      bit_offset: 0
+      bit_size: 1
+    - name: TX_PHY0_TX1_BIST_OUT
+      description: tx phy0 tx1_bist_out.
+      bit_offset: 1
+      bit_size: 1
+    - name: TX_PHY0_TX2_BIST_OUT
+      description: tx phy0 tx2_bist_out.
+      bit_offset: 2
+      bit_size: 1
+    - name: TX_PHY0_TX3_BIST_OUT
+      description: tx phy0 tx3_bist_out.
+      bit_offset: 3
+      bit_size: 1
+    - name: TX_PHY0_TXCK_BIST_OUT
+      description: tx phy0 txck_bist_out.
+      bit_offset: 4
+      bit_size: 1
+    - name: TX_PHY0_TX0_BIST_DONE
+      description: tx phy0 tx0_bist_done.
+      bit_offset: 5
+      bit_size: 1
+    - name: TX_PHY0_TX1_BIST_DONE
+      description: tx phy0 tx1_bist_done.
+      bit_offset: 6
+      bit_size: 1
+    - name: TX_PHY0_TX2_BIST_DONE
+      description: tx phy0 tx2_bist_done.
+      bit_offset: 7
+      bit_size: 1
+    - name: TX_PHY0_TX3_BIST_DONE
+      description: tx phy0 tx3_bist_done.
+      bit_offset: 8
+      bit_size: 1
+    - name: TX_PHY0_TXCK_BIST_DONE
+      description: tx phy0 txck_bist_done.
+      bit_offset: 9
+      bit_size: 1
+    - name: TX_PHY0_TXCK_BIST_OK_PAD
+      description: tx phy0 txck_ok_pad.
+      bit_offset: 10
+      bit_size: 1
+    - name: TX_PHY0_TXCK_BIST_DONE_PAD
+      description: tx phy0 txck_done_pad.
+      bit_offset: 11
+      bit_size: 1
+    - name: DSI0_PRBS_STATE
+      description: dsi0_prbs_state for debug only.
+      bit_offset: 12
+      bit_size: 4
+fieldset/GPR_RO_D6:
+  description: gpr read-only register 6.
+  fields:
+    - name: TX_PHY1_TX0_BIST_OUT
+      description: tx phy1 tx0_bist_out.
+      bit_offset: 0
+      bit_size: 1
+    - name: TX_PHY1_TX1_BIST_OUT
+      description: tx phy1 tx1_bist_out.
+      bit_offset: 1
+      bit_size: 1
+    - name: TX_PHY1_TX2_BIST_OUT
+      description: tx phy1 tx2_bist_out.
+      bit_offset: 2
+      bit_size: 1
+    - name: TX_PHY1_TX3_BIST_OUT
+      description: tx phy1 tx3_bist_out.
+      bit_offset: 3
+      bit_size: 1
+    - name: TX_PHY1_TXCK_BIST_OUT
+      description: tx phy1 txck_bist_out.
+      bit_offset: 4
+      bit_size: 1
+    - name: TX_PHY1_TX0_BIST_DONE
+      description: tx phy1 tx0_bist_done.
+      bit_offset: 5
+      bit_size: 1
+    - name: TX_PHY1_TX1_BIST_DONE
+      description: tx phy1 tx1_bist_done.
+      bit_offset: 6
+      bit_size: 1
+    - name: TX_PHY1_TX2_BIST_DONE
+      description: tx phy1 tx2_bist_done.
+      bit_offset: 7
+      bit_size: 1
+    - name: TX_PHY1_TX3_BIST_DONE
+      description: tx phy1 tx3_bist_done.
+      bit_offset: 8
+      bit_size: 1
+    - name: TX_PHY1_TXCK_BIST_DONE
+      description: tx phy1 txck_bist_done.
+      bit_offset: 9
+      bit_size: 1
+    - name: TX_PHY1_TXCK_BIST_OK_PAD
+      description: tx phy1 txck_ok_pad.
+      bit_offset: 10
+      bit_size: 1
+    - name: TX_PHY1_TXCK_BIST_DONE_PAD
+      description: tx phy1 txck_done_pad.
+      bit_offset: 11
+      bit_size: 1
+    - name: DSI1_PRBS_STATE
+      description: dsi1_prbs_state for debug only.
+      bit_offset: 12
+      bit_size: 4
+fieldset/GPR_RO_D7:
+  description: gpr read-only register 7.
+  fields:
+    - name: RX_PHY0_BIST_DONE_PAD
+      description: rx phy0 bist_done_pad.
+      bit_offset: 0
+      bit_size: 1
+    - name: RX_PHY0_BIST_OK_PAD
+      description: rx phy0 bist_ok_pad.
+      bit_offset: 1
+      bit_size: 1
+    - name: RX_PHY0_RX0_BIST_OUT
+      description: rx phy0 rx0_bist_out.
+      bit_offset: 2
+      bit_size: 1
+    - name: RX_PHY0_RX1_BIST_OUT
+      description: rx phy0 rx1_bist_out.
+      bit_offset: 3
+      bit_size: 1
+    - name: RX_PHY0_RX0_BIST_DONE
+      description: rx phy0 rx0_bist_done.
+      bit_offset: 4
+      bit_size: 1
+    - name: RX_PHY0_RX1_BIST_DONE
+      description: rx phy0 rx1_bist_done.
+      bit_offset: 5
+      bit_size: 1
+    - name: RX_PHY0_BURN_IN_OK_PAD
+      description: rx_phy0_burn_in_ok_pad.
+      bit_offset: 6
+      bit_size: 1
+fieldset/GPR_RO_D8:
+  description: gpr read-only register 8.
+  fields:
+    - name: RX_PHY1_BIST_DONE_PAD
+      description: rx phy1 bist_done_pad.
+      bit_offset: 0
+      bit_size: 1
+    - name: RX_PHY1_BIST_OK_PAD
+      description: rx phy1 bist_ok_pad.
+      bit_offset: 1
+      bit_size: 1
+    - name: RX_PHY1_RX0_BIST_OUT
+      description: rx phy1 rx0_bist_out.
+      bit_offset: 2
+      bit_size: 1
+    - name: RX_PHY1_RX1_BIST_OUT
+      description: rx phy1 rx1_bist_out.
+      bit_offset: 3
+      bit_size: 1
+    - name: RX_PHY1_RX0_BIST_DONE
+      description: rx phy1 rx0_bist_done.
+      bit_offset: 4
+      bit_size: 1
+    - name: RX_PHY1_RX1_BIST_DONE
+      description: rx phy1 rx1_bist_done.
+      bit_offset: 5
+      bit_size: 1
+    - name: RX_PHY1_BURN_IN_OK_PAD
+      description: rx_phy1_burn_in_ok_pad.
+      bit_offset: 6
+      bit_size: 1
+fieldset/GPR_RO_D9:
+  description: gpr read-only register 9.
+  fields: []
+fieldset/GPR_WR1_CLR_D0:
+  description: gpr write1 set/no-write clr register.
+  fields:
+    - name: GPR_WR1_CLR_DATA
+      description: gpr register, write 1 /no-write set/clr matching bit.
+      bit_offset: 0
+      bit_size: 32
+fieldset/GPR_WR_D0:
+  description: gpr write-read register 0.
+  fields:
+    - name: DSI0_SOFT_RESET_N
+      description: dsi controller 0 reset, active low.
+      bit_offset: 0
+      bit_size: 1
+    - name: DSI1_SOFT_RESET_N
+      description: dsi controller 1 reset, active low.
+      bit_offset: 1
+      bit_size: 1
+    - name: CSI0_SOFT_RESET_N
+      description: csi controller 0 reset, active low.
+      bit_offset: 2
+      bit_size: 1
+    - name: CSI1_SOFT_RESET_N
+      description: csi controller 1 reset, active low.
+      bit_offset: 3
+      bit_size: 1
+    - name: DSI0_DPISHUTDN
+      description: dsi0 dpi shuntdown control.
+      bit_offset: 4
+      bit_size: 1
+    - name: DSI0_DPICOLORM
+      description: dsi0 dpi cholor mode control.
+      bit_offset: 5
+      bit_size: 1
+    - name: DSI0_DPIUPDATECFG
+      description: dsi0 dpi update configure.
+      bit_offset: 6
+      bit_size: 1
+    - name: DSI1_DPISHUTDN
+      description: dsi1 dpi shuntdown control.
+      bit_offset: 7
+      bit_size: 1
+    - name: DSI1_DPICOLORM
+      description: dsi1 dpi cholor mode control.
+      bit_offset: 8
+      bit_size: 1
+    - name: DSI1_DPIUPDATECFG
+      description: dsi1 dpi update configure.
+      bit_offset: 9
+      bit_size: 1
+    - name: CSI0_CFG_APB_SLVERROR_EN
+      description: csi0 apb interface error check enable.
+      bit_offset: 12
+      bit_size: 1
+    - name: CSI0_CFG_AP_IF_INT_EN
+      description: csi0 apb interface error interrupt enable.
+      bit_offset: 13
+      bit_size: 1
+    - name: CSI0_CFG_AP_IF_CHECK_EN
+      description: csi0 apb interface parity check enable.
+      bit_offset: 14
+      bit_size: 5
+    - name: CSI1_CFG_APB_SLVERROR_EN
+      description: csi1 apb interface error check enable.
+      bit_offset: 20
+      bit_size: 1
+    - name: CSI1_CFG_AP_IF_INT_EN
+      description: csi1 apb interface error interrupt enable.
+      bit_offset: 21
+      bit_size: 1
+    - name: CSI1_CFG_AP_IF_CHECK_EN
+      description: csi1 apb interface parity check enable.
+      bit_offset: 22
+      bit_size: 5
+fieldset/GPR_WR_D1:
+  description: gpr write-read register 1.
+  fields:
+    - name: LCDC0_P0_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 0
+      bit_size: 4
+    - name: LCDC0_P1_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 4
+      bit_size: 4
+    - name: LCDC1_P0_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 8
+      bit_size: 4
+    - name: LCDC1_P1_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 12
+      bit_size: 4
+    - name: PDMA_P0_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 16
+      bit_size: 4
+    - name: PDMA_P1_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 20
+      bit_size: 4
+    - name: JPEG_CTRL
+      description: "bit0: select cam0; bit1: select cam1; bit2: select jpeg; bit3: select pdma."
+      bit_offset: 24
+      bit_size: 4
+fieldset/GPR_WR_D2:
+  description: gpr write-read register 2.
+  fields:
+    - name: TX_PHY0_PLL_DIV
+      description: tx phy0 pll_div.
+      bit_offset: 0
+      bit_size: 15
+    - name: TX_PHY0_BYPS_CKDET
+      description: tx phy0 byps_ckdet.
+      bit_offset: 16
+      bit_size: 1
+    - name: TX_PHY0_SHUTDOWNZ
+      description: tx phy0 shutdownz, active low.
+      bit_offset: 17
+      bit_size: 1
+    - name: TX_PHY0_RESET_N
+      description: tx phy0 reset, active low.
+      bit_offset: 18
+      bit_size: 1
+    - name: TX_PHY0_IDDQ_EN
+      description: tx phy0 iddq_en.
+      bit_offset: 19
+      bit_size: 1
+    - name: TX_PHY0_REFCLK_DIV
+      description: tx phy0 refclk_div.
+      bit_offset: 20
+      bit_size: 4
+    - name: TX_PHY0_PHY_MODE
+      description: tx phy0 phy_mode.
+      bit_offset: 25
+      bit_size: 2
+    - name: TX_PHY0_RATE_LVDS
+      description: tx phy0 rate_lvds.
+      bit_offset: 27
+      bit_size: 2
+    - name: TX_PHY0_PORT_PLL_RDY_SEL
+      description: tx phy0 port_pll_rdy_sel.
+      bit_offset: 29
+      bit_size: 1
+fieldset/GPR_WR_D3:
+  description: gpr write-read register 3.
+  fields:
+    - name: TX_PHY0_PLL_CTRL
+      description: tx phy0 pll_ctrl.
+      bit_offset: 0
+      bit_size: 32
+fieldset/GPR_WR_D4:
+  description: gpr write-read register 4.
+  fields:
+    - name: TX_PHY0_CKPHY_CTL
+      description: tx phy0 ckphy_ctl.
+      bit_offset: 0
+      bit_size: 9
+    - name: TX_PHY0_DSI0_PRBS_START
+      description: tx phy0 dsi0_prbs_start.
+      bit_offset: 10
+      bit_size: 1
+    - name: TX_PHY0_DSI0_PRBS_DISABLE
+      description: tx phy0 dsi0_prbs_disable.
+      bit_offset: 11
+      bit_size: 1
+    - name: TX_PHY0_TX0_PAT_SEL
+      description: tx phy0 tx0_pat_sel.
+      bit_offset: 12
+      bit_size: 2
+    - name: TX_PHY0_TX1_PAT_SEL
+      description: tx phy0 tx1_pat_sel.
+      bit_offset: 14
+      bit_size: 2
+    - name: TX_PHY0_TX2_PAT_SEL
+      description: tx phy0 tx2_pat_sel.
+      bit_offset: 16
+      bit_size: 2
+    - name: TX_PHY0_TX3_PAT_SEL
+      description: tx phy0 tx3_pat_sel.
+      bit_offset: 18
+      bit_size: 2
+    - name: TX_PHY0_TXCK_PAT_SEL
+      description: tx phy0 txck_pat_sel.
+      bit_offset: 20
+      bit_size: 2
+    - name: TX_PHY0_TX0_LPBK_EN
+      description: tx_phy0 tx0_lpbk_en.
+      bit_offset: 22
+      bit_size: 1
+    - name: TX_PHY0_TX1_LPBK_EN
+      description: tx_phy0 tx1_lpbk_en.
+      bit_offset: 23
+      bit_size: 1
+    - name: TX_PHY0_TX2_LPBK_EN
+      description: tx_phy0 tx2_lpbk_en.
+      bit_offset: 24
+      bit_size: 1
+    - name: TX_PHY0_TX3_LPBK_EN
+      description: tx_phy0 tx3_lpbk_en.
+      bit_offset: 25
+      bit_size: 1
+    - name: TX_PHY0_TXCK_LPBK_EN
+      description: tx_phy0 txck_lpbk_en.
+      bit_offset: 26
+      bit_size: 1
+    - name: TX_PHY0_TX0_BIST_EN
+      description: tx phy0 tx0_bist_en.
+      bit_offset: 27
+      bit_size: 1
+    - name: TX_PHY0_TX1_BIST_EN
+      description: tx phy0 tx1_bist_en.
+      bit_offset: 28
+      bit_size: 1
+    - name: TX_PHY0_TX2_BIST_EN
+      description: tx phy0 tx2_bist_en.
+      bit_offset: 29
+      bit_size: 1
+    - name: TX_PHY0_TX3_BIST_EN
+      description: tx phy0 tx3_bist_en.
+      bit_offset: 30
+      bit_size: 1
+    - name: TX_PHY0_TXCK_BIST_EN
+      description: tx phy0 txck_bist_en.
+      bit_offset: 31
+      bit_size: 1
+fieldset/GPR_WR_D5:
+  description: gpr write-read register 5.
+  fields:
+    - name: TX_PHY1_PLL_DIV
+      description: tx phy1 pll_div.
+      bit_offset: 0
+      bit_size: 15
+    - name: TX_PHY1_BYPS_CKDET
+      description: tx phy1 byps_ckdet.
+      bit_offset: 16
+      bit_size: 1
+    - name: TX_PHY1_SHUTDOWNZ
+      description: tx phy1 shutdownz, active low.
+      bit_offset: 17
+      bit_size: 1
+    - name: TX_PHY1_RESET_N
+      description: tx phy1 reset, active low.
+      bit_offset: 18
+      bit_size: 1
+    - name: TX_PHY1_IDDQ_EN
+      description: tx phy1 iddq_en.
+      bit_offset: 19
+      bit_size: 1
+    - name: TX_PHY1_REFCLK_DIV
+      description: tx phy1 refclk_div.
+      bit_offset: 20
+      bit_size: 4
+    - name: TX_PHY1_PHY_MODE
+      description: tx phy1 phy_mode.
+      bit_offset: 25
+      bit_size: 2
+    - name: TX_PHY1_RATE_LVDS
+      description: tx phy1 rate_lvds.
+      bit_offset: 27
+      bit_size: 2
+    - name: TX_PHY1_PORT_PLL_RDY_SEL
+      description: tx phy1 port_pll_rdy_sel.
+      bit_offset: 29
+      bit_size: 1
+fieldset/GPR_WR_D6:
+  description: gpr write-read register 6.
+  fields:
+    - name: TX_PHY1_PLL_CTRL
+      description: tx phy1 pll_ctrl.
+      bit_offset: 0
+      bit_size: 32
+fieldset/GPR_WR_D7:
+  description: gpr write-read register 7.
+  fields:
+    - name: TX_PHY1_CKPHY_CTL
+      description: tx phy1 ckphy_ctl.
+      bit_offset: 0
+      bit_size: 9
+    - name: TX_PHY1_DSI0_PRBS_START
+      description: tx phy1 dsi0_prbs_start.
+      bit_offset: 10
+      bit_size: 1
+    - name: TX_PHY1_DSI0_PRBS_DISABLE
+      description: tx phy1 dsi0_prbs_disable.
+      bit_offset: 11
+      bit_size: 1
+    - name: TX_PHY1_TX0_PAT_SEL
+      description: tx phy1 tx0_pat_sel.
+      bit_offset: 12
+      bit_size: 2
+    - name: TX_PHY1_TX1_PAT_SEL
+      description: tx phy1 tx1_pat_sel.
+      bit_offset: 14
+      bit_size: 2
+    - name: TX_PHY1_TX2_PAT_SEL
+      description: tx phy1 tx2_pat_sel.
+      bit_offset: 16
+      bit_size: 2
+    - name: TX_PHY1_TX3_PAT_SEL
+      description: tx phy1 tx3_pat_sel.
+      bit_offset: 18
+      bit_size: 2
+    - name: TX_PHY1_TXCK_PAT_SEL
+      description: tx phy1 txck_pat_sel.
+      bit_offset: 20
+      bit_size: 2
+    - name: TX_PHY1_TX0_LPBK_EN
+      description: tx_phy1 tx0_lpbk_en.
+      bit_offset: 22
+      bit_size: 1
+    - name: TX_PHY1_TX1_LPBK_EN
+      description: tx_phy1 tx1_lpbk_en.
+      bit_offset: 23
+      bit_size: 1
+    - name: TX_PHY1_TX2_LPBK_EN
+      description: tx_phy1 tx2_lpbk_en.
+      bit_offset: 24
+      bit_size: 1
+    - name: TX_PHY1_TX3_LPBK_EN
+      description: tx_phy1 tx3_lpbk_en.
+      bit_offset: 25
+      bit_size: 1
+    - name: TX_PHY1_TXCK_LPBK_EN
+      description: tx_phy1 txck_lpbk_en.
+      bit_offset: 26
+      bit_size: 1
+    - name: TX_PHY1_TX0_BIST_EN
+      description: tx phy1 tx0_bist_en.
+      bit_offset: 27
+      bit_size: 1
+    - name: TX_PHY1_TX1_BIST_EN
+      description: tx phy1 tx1_bist_en.
+      bit_offset: 28
+      bit_size: 1
+    - name: TX_PHY1_TX2_BIST_EN
+      description: tx phy1 tx2_bist_en.
+      bit_offset: 29
+      bit_size: 1
+    - name: TX_PHY1_TX3_BIST_EN
+      description: tx phy1 tx3_bist_en.
+      bit_offset: 30
+      bit_size: 1
+    - name: TX_PHY1_TXCK_BIST_EN
+      description: tx phy1 txck_bist_en.
+      bit_offset: 31
+      bit_size: 1
+fieldset/GPR_WR_D8:
+  description: gpr write-read register 8.
+  fields:
+    - name: RX_PHY0_PHY_MODE
+      description: rx phy0 phy_mode.
+      bit_offset: 0
+      bit_size: 2
+    - name: RX_PHY0_BIST_CKIN_SEL
+      description: rx phy0 bist_ckin_sel.
+      bit_offset: 18
+      bit_size: 1
+    - name: RX_PHY0_BIST_EN
+      description: rx phy0 bist_en.
+      bit_offset: 19
+      bit_size: 1
+    - name: RX_PHY0_BIST_EN_PAD
+      description: rx phy0 bist_en_pad.
+      bit_offset: 20
+      bit_size: 1
+    - name: RX_PHY0_BIST_MODE
+      description: rx phy0 bist_mode.
+      bit_offset: 21
+      bit_size: 1
+    - name: RX_PHY0_RX0_BIST_EN
+      description: rx phy0 rx0_bist_en rx1_bist_en.
+      bit_offset: 22
+      bit_size: 1
+    - name: RX_PHY0_BIST_FREQ_TRIM
+      description: rx phy0 bist_freq_trim.
+      bit_offset: 24
+      bit_size: 4
+    - name: RX_PHY0_LPBK_MODE
+      description: rx phy0 lpbk_mode.
+      bit_offset: 28
+      bit_size: 2
+    - name: RX_PHY0_BURN_IN_EN_PAD
+      description: rx phy0 burn_in_en_pad.
+      bit_offset: 30
+      bit_size: 1
+    - name: RX_PHY0_BRUN_IN_MODE
+      description: rx phy0 burn_in_mode.
+      bit_offset: 31
+      bit_size: 1
+fieldset/GPR_WR_D9:
+  description: gpr write-read register 9.
+  fields:
+    - name: RX_PHY1_PHY_MODE
+      description: rx phy1 phy_mode.
+      bit_offset: 0
+      bit_size: 2
+    - name: RX_PHY1_BIST_CKIN_SEL
+      description: rx phy1 bist_ckin_sel.
+      bit_offset: 18
+      bit_size: 1
+    - name: RX_PHY1_BIST_EN
+      description: rx phy1 bist_en.
+      bit_offset: 19
+      bit_size: 1
+    - name: RX_PHY1_BIST_EN_PAD
+      description: rx phy1 bist_en_pad.
+      bit_offset: 20
+      bit_size: 1
+    - name: RX_PHY1_BIST_MODE
+      description: rx phy1 bist_mode.
+      bit_offset: 21
+      bit_size: 1
+    - name: RX_PHY1_RX0_BIST_EN
+      description: rx phy1 rx0_bist_en rx1_bist_en.
+      bit_offset: 22
+      bit_size: 1
+    - name: RX_PHY1_BIST_FREQ_TRIM
+      description: rx phy1 bist_freq_trim.
+      bit_offset: 24
+      bit_size: 4
+    - name: RX_PHY1_LPBK_MODE
+      description: rx phy1 lpbk_mode.
+      bit_offset: 28
+      bit_size: 2
+    - name: RX_PHY1_BURN_IN_EN_PAD
+      description: rx phy1 burn_in_en_pad.
+      bit_offset: 30
+      bit_size: 1
+    - name: RX_PHY1_BRUN_IN_MODE
+      description: rx phy1 burn_in_mode.
+      bit_offset: 31
+      bit_size: 1
+fieldset/MISC:
+  description: common register.
+  fields:
+    - name: LVB_DI0_CTL
+      description: LVB DI0 optional general purpose control which is usually unused by display.
+      bit_offset: 0
+      bit_size: 1
+    - name: LVB_DI1_CTL
+      description: LVB DI1 optional general purpose control which is usually unused by display.
+      bit_offset: 1
+      bit_size: 1
+fieldset/PIXMUX:
+  description: pixel path mux register.
+  fields:
+    - name: CAM0_SEL
+      description: "CAM0 pixel bus selection 111: Reserved 110: LCB1 101: LCB0 100: LCDC1 011: LCDC0 010: CSI1 001: CSI0 000: DVP."
+      bit_offset: 0
+      bit_size: 3
+    - name: CAM0_EN
+      description: CAM0 pixel bus enable.
+      bit_offset: 3
+      bit_size: 1
+    - name: CAM1_SEL
+      description: "CAM1 pixel bus selection 111: Reserved 110: LCB1 101: LCB0 100: LCDC1 011: LCDC0 010: CSI1 001: CSI0 000: DVP."
+      bit_offset: 4
+      bit_size: 3
+    - name: CAM1_EN
+      description: CAM1 pixel bus enable.
+      bit_offset: 7
+      bit_size: 1
+    - name: DSI0_SEL
+      description: "DSI1 pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 16
+      bit_size: 1
+    - name: DSI0_EN
+      description: DSI1 pixel bus enable.
+      bit_offset: 17
+      bit_size: 1
+    - name: DSI1_SEL
+      description: "DSI0 pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 18
+      bit_size: 1
+    - name: DSI1_EN
+      description: DSI0 pixel bus enable.
+      bit_offset: 19
+      bit_size: 1
+    - name: LVB_DI0_SEL
+      description: "LVB DI0 pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 20
+      bit_size: 1
+    - name: LVB_DI0_EN
+      description: LVB DI0 pixel bus enable.
+      bit_offset: 21
+      bit_size: 1
+    - name: LVB_DI1_SEL
+      description: "LVB DI1 pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 22
+      bit_size: 1
+    - name: LVB_DI1_EN
+      description: LVB DI1 pixel bus enable.
+      bit_offset: 23
+      bit_size: 1
+    - name: GWC0_SEL
+      description: "GWC0 pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 24
+      bit_size: 1
+    - name: GWC0_EN
+      description: GWC0 pixel bus enable.
+      bit_offset: 25
+      bit_size: 1
+    - name: GWC1_SEL
+      description: "GWC1 pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 26
+      bit_size: 1
+    - name: GWC1_EN
+      description: GWC1 pixel bus enable.
+      bit_offset: 27
+      bit_size: 1
+    - name: RGB_SEL
+      description: "RGB pixel bus selection 1: LCDC1 0: LCDC0."
+      bit_offset: 28
+      bit_size: 1
+    - name: RGB_EN
+      description: RGB pixel bus enable.
+      bit_offset: 29
+      bit_size: 1

@@ -1,0 +1,47 @@
+block/BPOR:
+  description: BPOR.
+  items:
+    - name: POR_CAUSE
+      description: Power on cause.
+      byte_offset: 0
+      fieldset: POR_CAUSE
+    - name: POR_SELECT
+      description: Power on select.
+      byte_offset: 4
+      fieldset: POR_SELECT
+    - name: POR_CONFIG
+      description: Power on reset config.
+      byte_offset: 8
+      fieldset: POR_CONFIG
+    - name: POR_CONTROL
+      description: Power down control.
+      byte_offset: 12
+      fieldset: POR_CONTROL
+fieldset/POR_CAUSE:
+  description: Power on cause.
+  fields:
+    - name: CAUSE
+      description: "Power on cause, each bit represnts one cause, write 1 to clear each bit bit0: wakeup button bit1: security violation bit2: RTC alarm 0 bit3: RTC alarm 1 bit4: GPIO."
+      bit_offset: 0
+      bit_size: 5
+fieldset/POR_CONFIG:
+  description: Power on reset config.
+  fields:
+    - name: RETENTION
+      description: "retention battery domain setting 0: battery reset on reset pin reset happen 1: battery domain retention when reset pin reset happen."
+      bit_offset: 0
+      bit_size: 1
+fieldset/POR_CONTROL:
+  description: Power down control.
+  fields:
+    - name: COUNTER
+      description: Chip power down counter, counter decreasing if value is not 0, power down of chip happens on counter value is 1.
+      bit_offset: 0
+      bit_size: 16
+fieldset/POR_SELECT:
+  description: Power on select.
+  fields:
+    - name: SELECT
+      description: "Power on cause select, each bit represnts one cause, value 1 enables corresponding cause bit0: wakeup button bit1: security violation bit2: RTC alarm 0 bit3: RTC alarm 1 bit4: GPIO."
+      bit_offset: 0
+      bit_size: 5

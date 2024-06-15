@@ -1,0 +1,370 @@
+block/GPU:
+  description: GPU.
+  items:
+    - name: AQHiClockControl
+      description: clock control register.
+      byte_offset: 0
+      fieldset: AQHiClockControl
+    - name: AQHildle
+      description: idle status register.
+      byte_offset: 4
+      fieldset: AQHildle
+    - name: AQIntrAcknowledge
+      description: interrupt acknoledge register.
+      byte_offset: 16
+      fieldset: AQIntrAcknowledge
+    - name: AQIntrEnbl
+      description: interrupt enable register.
+      byte_offset: 20
+      fieldset: AQIntrEnbl
+    - name: GCChipRev
+      description: chip revison register.
+      byte_offset: 36
+      fieldset: GCChipRev
+    - name: GCChipDate
+      description: chip date register.
+      byte_offset: 40
+      fieldset: GCChipDate
+    - name: gcregHIChipPatchRev
+      description: chip patch revision register.
+      byte_offset: 152
+      fieldset: gcregHIChipPatchRev
+    - name: gcProductID
+      description: product identification register.
+      byte_offset: 168
+      fieldset: gcProductID
+    - name: gcModulePowerControls
+      description: module power control register.
+      byte_offset: 256
+      fieldset: gcModulePowerControls
+    - name: gcModulePowerModuleControl
+      description: module power module control register.
+      byte_offset: 260
+      fieldset: gcModulePowerModuleControl
+    - name: gcModulePowerModuleStatus
+      description: module power module status register.
+      byte_offset: 264
+      fieldset: gcModulePowerModuleStatus
+    - name: AQMemoryFePageTable
+      description: fetch engine page table base address register.
+      byte_offset: 1024
+      fieldset: AQMemoryFePageTable
+    - name: AQMemoryDebug
+      description: memory debug register.
+      byte_offset: 1044
+      fieldset: AQMemoryDebug
+    - name: AQRegisterTimingControl
+      description: timing control register.
+      byte_offset: 1068
+      fieldset: AQRegisterTimingControl
+    - name: gcregFetchAddress
+      description: fetch command buffer base address register.
+      byte_offset: 1280
+      fieldset: gcregFetchAddress
+    - name: gcregFetchControl
+      description: fetch control register.
+      byte_offset: 1284
+      fieldset: gcregFetchControl
+    - name: gcregCurrentFetchAddress
+      description: current fetch command address register.
+      byte_offset: 1288
+      fieldset: gcregCurrentFetchAddress
+fieldset/AQHiClockControl:
+  description: clock control register.
+  fields:
+    - name: CLK2D_DIS
+      description: disable 2D/VG clock.
+      bit_offset: 1
+      bit_size: 1
+    - name: FSCALE_VAL
+      description: core clock frequency scale value.
+      bit_offset: 2
+      bit_size: 7
+    - name: FSCALE_CMD_LOAD
+      description: core clock frequency scale value enable.
+      bit_offset: 9
+      bit_size: 1
+    - name: DISABLE_RAM_CLOCK_GATING
+      description: disables clock gating for rams.
+      bit_offset: 10
+      bit_size: 1
+    - name: DISABLE_DEBUG_REGISTERS
+      description: disable debug registers.
+      bit_offset: 11
+      bit_size: 1
+    - name: SOFT_RESET
+      description: soft reset the IP.
+      bit_offset: 12
+      bit_size: 1
+    - name: DISABLE_RAM_POWER_OPTIMIZATION
+      description: disables ram power optimization.
+      bit_offset: 13
+      bit_size: 1
+    - name: IDLE3_D
+      description: 3D pipe is idle or not present.
+      bit_offset: 16
+      bit_size: 1
+    - name: IDLE2_D
+      description: 2D pipe is idle or not present.
+      bit_offset: 17
+      bit_size: 1
+    - name: IDLE_VG
+      description: vg pipe is idle.
+      bit_offset: 18
+      bit_size: 1
+    - name: ISOLATE_GPU
+      description: isolate GPU bit, used for power on/off.
+      bit_offset: 19
+      bit_size: 1
+fieldset/AQHildle:
+  description: idle status register.
+  fields:
+    - name: IDLE_FE
+      description: "0: fetch engine is busy 1:fetch engine is idle."
+      bit_offset: 0
+      bit_size: 1
+    - name: IDLE_DE
+      description: DE is dile or not present.
+      bit_offset: 1
+      bit_size: 1
+    - name: IDLE_PE
+      description: Pixel engine is idle.
+      bit_offset: 2
+      bit_size: 1
+    - name: IDLE_SH
+      description: SH is idle or not present.
+      bit_offset: 3
+      bit_size: 1
+    - name: IDLE_PA
+      description: PA is idle or not present.
+      bit_offset: 4
+      bit_size: 1
+    - name: IDLE_SE
+      description: SE is idle or not present.
+      bit_offset: 5
+      bit_size: 1
+    - name: IDLE_RA
+      description: RA is idle or not present.
+      bit_offset: 6
+      bit_size: 1
+    - name: IDLE_TX
+      description: TX is idle or not present.
+      bit_offset: 7
+      bit_size: 1
+    - name: IDLE_VG
+      description: Vector Graphics Engine is idle.
+      bit_offset: 8
+      bit_size: 1
+    - name: IDLE_IM
+      description: Image Engine is idle.
+      bit_offset: 9
+      bit_size: 1
+    - name: IDLE_FP
+      description: FP is idle or not present.
+      bit_offset: 10
+      bit_size: 1
+    - name: IDLE_TS
+      description: Tessellation Engine is idle.
+      bit_offset: 11
+      bit_size: 1
+    - name: IDLE_BLT
+      description: BLT is idle or not present.
+      bit_offset: 12
+      bit_size: 1
+    - name: AXI_LP
+      description: axi is in low power mode.
+      bit_offset: 31
+      bit_size: 1
+fieldset/AQIntrAcknowledge:
+  description: interrupt acknoledge register.
+  fields:
+    - name: INTR_VEC
+      description: for each interrupt event, 0=clear,1=interrupt active.
+      bit_offset: 0
+      bit_size: 32
+fieldset/AQIntrEnbl:
+  description: interrupt enable register.
+  fields:
+    - name: INTR_ENBL_VEC
+      description: 0=disable interrupt; 1=enable interrupt.
+      bit_offset: 0
+      bit_size: 32
+fieldset/AQMemoryDebug:
+  description: memory debug register.
+  fields:
+    - name: MAX_OUTSTANDING_READS
+      description: limits the total number of outstanding read requests.
+      bit_offset: 0
+      bit_size: 8
+    - name: ZCOMP_LIMIT
+      description: not relevant for vector graphics IP.
+      bit_offset: 24
+      bit_size: 6
+fieldset/AQMemoryFePageTable:
+  description: fetch engine page table base address register.
+  fields:
+    - name: BASE_ADDRESS
+      description: base address for the FE virtual address lookup table.
+      bit_offset: 12
+      bit_size: 20
+fieldset/AQRegisterTimingControl:
+  description: timing control register.
+  fields:
+    - name: FOR_RF1P
+      description: for 1 port ram.
+      bit_offset: 0
+      bit_size: 8
+    - name: FOR_RF2P
+      description: for 2 port ram.
+      bit_offset: 8
+      bit_size: 8
+    - name: FAST_RTC
+      description: RTC for fast rams.
+      bit_offset: 16
+      bit_size: 2
+    - name: FAST_WTC
+      description: WTC for fast rams.
+      bit_offset: 18
+      bit_size: 2
+    - name: POWER_DOWN
+      description: powerdown memory.
+      bit_offset: 20
+      bit_size: 1
+fieldset/GCChipDate:
+  description: chip date register.
+  fields:
+    - name: DATE
+      description: date.
+      bit_offset: 0
+      bit_size: 32
+fieldset/GCChipRev:
+  description: chip revison register.
+  fields:
+    - name: REV
+      description: revision.
+      bit_offset: 0
+      bit_size: 32
+fieldset/gcModulePowerControls:
+  description: module power control register.
+  fields:
+    - name: ENABLE_MODULE_CLOCK_GATING
+      description: enable module level clock gating.
+      bit_offset: 0
+      bit_size: 1
+    - name: DISABLE_STALL_MODULE_CLOCK_GATING
+      description: disable module level clock gating for stall condition.
+      bit_offset: 1
+      bit_size: 1
+    - name: DISABLE_STARVE_MODULE_CLOCK_GATING
+      description: disable module level clock gating for starve/idle condition.
+      bit_offset: 2
+      bit_size: 1
+    - name: TURN_ON_COUNTER
+      description: number of clock cycle gating the module if the modules is idle for this amout of clockk cycles.
+      bit_offset: 4
+      bit_size: 4
+    - name: TURN_OFF_COUNTER
+      description: counter value for clock gating the module if the module is idle for this amout of clock cycles.
+      bit_offset: 16
+      bit_size: 16
+fieldset/gcModulePowerModuleControl:
+  description: module power module control register.
+  fields:
+    - name: DISABLE_MODULE_CLOCK_GATING_FE
+      description: disables module level clock gating for FE.
+      bit_offset: 0
+      bit_size: 1
+    - name: DISABLE_MODULE_CLOCK_GATING_PE
+      description: disables module level clock gating for PE.
+      bit_offset: 2
+      bit_size: 1
+    - name: DISABLE_MODULE_CLOCK_GATING_VG
+      description: disables module lelvel clock gating for VG.
+      bit_offset: 8
+      bit_size: 1
+    - name: DISABLE_MODULE_CLOCK_GATING_IM
+      description: disables module level clock gating for IM.
+      bit_offset: 9
+      bit_size: 1
+    - name: DISABLE_MODULE_CLOCK_GATING_TS
+      description: disables module level clock gating for TS.
+      bit_offset: 11
+      bit_size: 1
+    - name: DISABLE_MODULE_CLOCKGATING_FLEXA
+      description: disables module level clock gating for flexa, not supported for all variants.
+      bit_offset: 12
+      bit_size: 1
+fieldset/gcModulePowerModuleStatus:
+  description: module power module status register.
+  fields:
+    - name: MODULE_CLOCK_GATED_FE
+      description: module level clock gating is on for FE.
+      bit_offset: 0
+      bit_size: 1
+    - name: MODULE_CLOCK_GATED_PE
+      description: module level clock gating is on for PE.
+      bit_offset: 2
+      bit_size: 1
+    - name: MODULE_CLOCK_GATED_VG
+      description: module level clock gating is on for VG.
+      bit_offset: 8
+      bit_size: 1
+    - name: MODULE_CLOCK_GATED_IM
+      description: module level clock gating is on for IM.
+      bit_offset: 9
+      bit_size: 1
+    - name: MODULE_CLOCK_GATED_TS
+      description: module level ckock gating is on for ts.
+      bit_offset: 11
+      bit_size: 1
+    - name: MODULE_CLOCK_GATED_FLEXA
+      description: module level ckock gating is on for flexa.
+      bit_offset: 12
+      bit_size: 1
+fieldset/gcProductID:
+  description: product identification register.
+  fields:
+    - name: GRADE_LEVEL
+      description: 0:None_no extra letter on the product name for this core 1:nano 5:nano ultra.
+      bit_offset: 0
+      bit_size: 4
+    - name: NUM
+      description: product number is 265.
+      bit_offset: 4
+      bit_size: 20
+    - name: TYPE
+      description: product type is 3:VG.
+      bit_offset: 24
+      bit_size: 4
+fieldset/gcregCurrentFetchAddress:
+  description: current fetch command address register.
+  fields:
+    - name: ADDRESS
+      description: address.
+      bit_offset: 0
+      bit_size: 32
+fieldset/gcregFetchAddress:
+  description: fetch command buffer base address register.
+  fields:
+    - name: TYPE
+      description: 0=system 2=vritual 1=local.
+      bit_offset: 0
+      bit_size: 2
+    - name: ADDRESS
+      description: address of command buffer.
+      bit_offset: 2
+      bit_size: 30
+fieldset/gcregFetchControl:
+  description: fetch control register.
+  fields:
+    - name: COUNT
+      description: number of 64bit words to fetch.
+      bit_offset: 0
+      bit_size: 21
+fieldset/gcregHIChipPatchRev:
+  description: chip patch revision register.
+  fields:
+    - name: PATCH_REV
+      description: patch revision.
+      bit_offset: 0
+      bit_size: 8

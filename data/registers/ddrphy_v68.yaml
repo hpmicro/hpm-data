@@ -1,0 +1,2894 @@
+block/DDRPHY:
+  description: DDRPHY.
+  items:
+    - name: RIDR
+      description: Revision Identification Register.
+      byte_offset: 0
+      fieldset: RIDR
+    - name: PIR
+      description: PHY Initialization Register (PIR).
+      byte_offset: 4
+      fieldset: PIR
+    - name: PGCR0
+      description: PHY General Configuration Registers 0-1 (PGCR0- 1).
+      byte_offset: 8
+      fieldset: PGCR0
+    - name: PGCR1
+      description: PHY General Configuration Registers 0-1 (PGCR0- 1).
+      byte_offset: 12
+      fieldset: PGCR1
+    - name: PGSR0
+      description: “PHY General Status Registers 0-1 (PGSR0-1)” on page 89.
+      byte_offset: 16
+      fieldset: PGSR0
+    - name: PGSR1
+      description: “PHY General Status Registers 0-1 (PGSR0-1)” on page 89.
+      byte_offset: 20
+      fieldset: PGSR1
+    - name: PLLCR
+      description: “PLL Control Register (PLLCR)” on page 91.
+      byte_offset: 24
+      fieldset: PLLCR
+    - name: PTR0
+      description: PHY Timing Registers 0-4 (PTR0-4).
+      byte_offset: 28
+      fieldset: PTR0
+    - name: PTR1
+      description: PHY Timing Registers 0-4 (PTR0-4).
+      byte_offset: 32
+      fieldset: PTR1
+    - name: PTR2
+      description: PHY Timing Registers 0-4 (PTR0-4).
+      byte_offset: 36
+      fieldset: PTR2
+    - name: PTR3
+      description: PHY Timing Registers 0-4 (PTR0-4).
+      byte_offset: 40
+      fieldset: PTR3
+    - name: PTR4
+      description: PHY Timing Registers 0-4 (PTR0-4).
+      byte_offset: 44
+      fieldset: PTR4
+    - name: ACMDLR
+      description: “AC Master Delay Line Register (ACMDLR)” on page 96.
+      byte_offset: 48
+      fieldset: ACMDLR
+    - name: ACBDLR
+      description: “AC Bit Delay Line Register (ACBDLR)” on page 96.
+      byte_offset: 52
+      fieldset: ACBDLR
+    - name: ACIOCR
+      description: “AC I/O Configuration Register (ACIOCR)” on page 97.
+      byte_offset: 56
+      fieldset: ACIOCR
+    - name: DXCCR
+      description: “DATX8 Common Configuration Register (DXCCR)” on page 99.
+      byte_offset: 60
+      fieldset: DXCCR
+    - name: DSGCR
+      description: “DDR System General Configuration Register (DSGCR)” on page 101.
+      byte_offset: 64
+      fieldset: DSGCR
+    - name: DCR
+      description: “DRAM Configuration Register (DCR)” on page 103.
+      byte_offset: 68
+      fieldset: DCR
+    - name: DTPR0
+      description: DRAM Timing Parameters Register 0-2 (DTPR0-2).
+      byte_offset: 72
+      fieldset: DTPR0
+    - name: DTPR1
+      description: DRAM Timing Parameters Register 0-2 (DTPR0-2).
+      byte_offset: 76
+      fieldset: DTPR1
+    - name: DTPR2
+      description: DRAM Timing Parameters Register 0-2 (DTPR0-2).
+      byte_offset: 80
+      fieldset: DTPR2
+    - name: MR
+      description: No description available.
+      byte_offset: 84
+      fieldset: MR
+    - name: MR0
+      description: “Mode Register 0 (MR0)” on page 108.
+      byte_offset: 84
+      fieldset: MR0
+    - name: EMR
+      description: No description available.
+      byte_offset: 88
+      fieldset: EMR
+    - name: MR1
+      description: “Mode Register 1 (MR1)” on page 111.
+      byte_offset: 88
+      fieldset: MR1
+    - name: EMR2
+      description: No description available.
+      byte_offset: 92
+      fieldset: EMR2
+    - name: MR2
+      description: “Mode Register 2/Extended Mode Register 2 (MR2/EMR2)” on page 114.
+      byte_offset: 92
+      fieldset: MR2
+    - name: EMR3
+      description: No description available.
+      byte_offset: 96
+      fieldset: EMR3
+    - name: MR3
+      description: “Mode Register 3 (MR3)” on page 116.
+      byte_offset: 96
+      fieldset: MR3
+    - name: ODTCR
+      description: “ODT Configuration Register (ODTCR)” on page 117.
+      byte_offset: 100
+      fieldset: ODTCR
+    - name: DTCR
+      description: “Data Training Configuration Register (DTCR)” on page 118.
+      byte_offset: 104
+      fieldset: DTCR
+    - name: DTAR0
+      description: Data Training Address Register 0-3 (DTAR0-3).
+      byte_offset: 108
+      fieldset: DTAR0
+    - name: DTAR1
+      description: Data Training Address Register 0-3 (DTAR0-3).
+      byte_offset: 112
+      fieldset: DTAR1
+    - name: DTAR2
+      description: Data Training Address Register 0-3 (DTAR0-3).
+      byte_offset: 116
+      fieldset: DTAR2
+    - name: DTAR3
+      description: Data Training Address Register 0-3 (DTAR0-3).
+      byte_offset: 120
+      fieldset: DTAR3
+    - name: DTDR0
+      description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+      byte_offset: 124
+      fieldset: DTDR0
+    - name: DTDR1
+      description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+      byte_offset: 128
+      fieldset: DTDR1
+    - name: DTEDR0
+      description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+      byte_offset: 132
+      fieldset: DTEDR0
+    - name: DTEDR1
+      description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+      byte_offset: 136
+      fieldset: DTEDR1
+    - name: PGCR2
+      description: “PHY General Configuration Register 2 (PGCR2)” on page 87.
+      byte_offset: 140
+      fieldset: PGCR2
+    - name: RDIMMGCR0
+      description: RDIMM General Configuration Register 0-1 (RDIMMGCR0-1).
+      byte_offset: 176
+      fieldset: RDIMMGCR0
+    - name: RDIMMGCR1
+      description: RDIMM General Configuration Register 0-1 (RDIMMGCR0-1).
+      byte_offset: 180
+      fieldset: RDIMMGCR1
+    - name: RDIMMCR0
+      description: RDIMM Control Register 0-1 (RDIMMCR0-1).
+      byte_offset: 184
+      fieldset: RDIMMCR0
+    - name: RDIMMCR1
+      description: RDIMM Control Register 0-1 (RDIMMCR0-1).
+      byte_offset: 188
+      fieldset: RDIMMCR1
+    - name: DCUAR
+      description: “DCU Address Register (DCUAR)” on page 129.
+      byte_offset: 192
+      fieldset: DCUAR
+    - name: DCUDR
+      description: “DCU Data Register (DCUDR)” on page 130.
+      byte_offset: 196
+      fieldset: DCUDR
+    - name: DCURR
+      description: “DCU Run Register (DCURR)” on page 130.
+      byte_offset: 200
+      fieldset: DCURR
+    - name: DCULR
+      description: “DCU Loop Register (DCULR)” on page 131.
+      byte_offset: 204
+      fieldset: DCULR
+    - name: DCUGCR
+      description: “DCU General Configuration Register (DCUGCR)” on page 132.
+      byte_offset: 208
+      fieldset: DCUGCR
+    - name: DCUTPR
+      description: “DCU Timing Parameter Register (DCUTPR)” on page 132.
+      byte_offset: 212
+      fieldset: DCUTPR
+    - name: DCUSR0
+      description: DCU Status Register 0-1 (DCUSR0-1).
+      byte_offset: 216
+      fieldset: DCUSR0
+    - name: DCUSR1
+      description: DCU Status Register 0-1 (DCUSR0-1).
+      byte_offset: 220
+      fieldset: DCUSR1
+    - name: BISTRR
+      description: “BIST Run Register (BISTRR)” on page 133.
+      byte_offset: 256
+      fieldset: BISTRR
+    - name: BISTWCR
+      description: “BIST Word Count Register (BISTWCR)” on page 136.
+      byte_offset: 260
+      fieldset: BISTWCR
+    - name: BISTMSKR0
+      description: BIST Mask Register 0-2 (BISTMSKR0-2).
+      byte_offset: 264
+      fieldset: BISTMSKR0
+    - name: BISTMSKR1
+      description: BIST Mask Register 0-2 (BISTMSKR0-2).
+      byte_offset: 268
+      fieldset: BISTMSKR1
+    - name: BISTMSKR2
+      description: BIST Mask Register 0-2 (BISTMSKR0-2).
+      byte_offset: 272
+      fieldset: BISTMSKR2
+    - name: BISTLSR
+      description: “BIST LFSR Seed Register (BISTLSR)” on page 137.
+      byte_offset: 276
+      fieldset: BISTLSR
+    - name: BISTAR0
+      description: BIST Address Register 0-2 (BISTAR0-2).
+      byte_offset: 280
+      fieldset: BISTAR0
+    - name: BISTAR1
+      description: BIST Address Register 0-2 (BISTAR0-2).
+      byte_offset: 284
+      fieldset: BISTAR1
+    - name: BISTAR2
+      description: BIST Address Register 0-2 (BISTAR0-2).
+      byte_offset: 288
+      fieldset: BISTAR2
+    - name: BISTUDPR
+      description: “BIST User Data Pattern Register (BISTUDPR)” on page 138.
+      byte_offset: 292
+      fieldset: BISTUDPR
+    - name: BISTGSR
+      description: “BIST General Status Register (BISTGSR)” on page 139.
+      byte_offset: 296
+      fieldset: BISTGSR
+    - name: BISTWER
+      description: “BIST Word Error Register (BISTWER)” on page 139.
+      byte_offset: 300
+      fieldset: BISTWER
+    - name: BISTBER0
+      description: BIST Bit Error Register 0-3 (BISTBER0-3).
+      byte_offset: 304
+      fieldset: BISTBER0
+    - name: BISTBER1
+      description: BIST Bit Error Register 0-3 (BISTBER0-3).
+      byte_offset: 308
+      fieldset: BISTBER1
+    - name: BISTBER2
+      description: BIST Bit Error Register 0-3 (BISTBER0-3).
+      byte_offset: 312
+      fieldset: BISTBER2
+    - name: BISTBER3
+      description: BIST Bit Error Register 0-3 (BISTBER0-3).
+      byte_offset: 316
+      fieldset: BISTBER3
+    - name: BISTWCSR
+      description: “BIST Word Count Status Register (BISTWCSR)” on page 141.
+      byte_offset: 320
+      fieldset: BISTWCSR
+    - name: BISTFWR0
+      description: BIST Fail Word Register 0-2 (BISTFWR0-2).
+      byte_offset: 324
+      fieldset: BISTFWR0
+    - name: BISTFWR1
+      description: BIST Fail Word Register 0-2 (BISTFWR0-2).
+      byte_offset: 328
+      fieldset: BISTFWR1
+    - name: BISTFWR2
+      description: BIST Fail Word Register 0-2 (BISTFWR0-2).
+      byte_offset: 332
+      fieldset: BISTFWR2
+    - name: AACR
+      description: “Anti-Aging Control Register (AACR)” on page 143.
+      byte_offset: 372
+      fieldset: AACR
+    - name: GPR0
+      description: General Purpose Register 0-1 (GPR0-1).
+      byte_offset: 376
+      fieldset: GPR0
+    - name: GPR1
+      description: General Purpose Register 0-1 (GPR0-1).
+      byte_offset: 380
+      fieldset: GPR1
+    - name: ZQ
+      description: no description available.
+      array:
+        len: 4
+        stride: 16
+      byte_offset: 384
+      block: ZQ
+    - name: DX
+      description: no description available.
+      array:
+        len: 9
+        stride: 64
+      byte_offset: 448
+      block: DX
+block/DX:
+  description: no description available.
+  items:
+    - name: GCR
+      description: “DATX8 General Configuration Register (DXnGCR)” on page 148.
+      byte_offset: 0
+      fieldset: GCR
+    - name: GSR0
+      description: DATX8 General Status Registers 0-2 (DXnGSR0-2).
+      byte_offset: 4
+      fieldset: GSR0
+    - name: GSR1
+      description: DATX8 General Status Registers 0-2 (DXnGSR0-2).
+      byte_offset: 8
+      fieldset: GSR1
+    - name: BDLR0
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 12
+      fieldset: BDLR0
+    - name: BDLR1
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 16
+      fieldset: BDLR1
+    - name: BDLR2
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 20
+      fieldset: BDLR2
+    - name: BDLR3
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 24
+      fieldset: BDLR3
+    - name: BDLR4
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 28
+      fieldset: BDLR4
+    - name: LCDLR0
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 32
+      fieldset: LCDLR0
+    - name: LCDLR1
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 36
+      fieldset: LCDLR1
+    - name: LCDLR2
+      description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+      byte_offset: 40
+      fieldset: LCDLR2
+    - name: MDLR
+      description: “DATX8 Master Delay Line Register (DXnMDLR)” on page 157.
+      byte_offset: 44
+      fieldset: MDLR
+    - name: GTR
+      description: “DATX8 General Timing Register (DXnGTR)” on page 159.
+      byte_offset: 48
+      fieldset: GTR
+    - name: GSR2
+      description: “DATX8 General Status Register 2 (DXnGSR2)” on page 152.
+      byte_offset: 52
+      fieldset: GSR2
+block/ZQ:
+  description: no description available.
+  items:
+    - name: CR0
+      description: Impedance Control Register 0-1 (ZQnCR0-1).
+      byte_offset: 0
+      fieldset: CR0
+    - name: CR1
+      description: Impedance Control Register 0-1 (ZQnCR0-1).
+      byte_offset: 4
+      fieldset: CR1
+    - name: SR0
+      description: Impedance Status Register 0-1 (ZQnSR0-1).
+      byte_offset: 8
+      fieldset: SR0
+    - name: SR1
+      description: Impedance Status Register 0-1 (ZQnSR0-1).
+      byte_offset: 12
+      fieldset: SR1
+fieldset/AACR:
+  description: “Anti-Aging Control Register (AACR)” on page 143.
+  fields:
+    - name: AATR
+      description: "Anti-Aging Toggle Rate: Defines the number of controller clock (ctl_clk) cycles after which the PUB will toggle the data going to DATX8 if the data channel between the controller/PUB and DATX8 has been idle for this long. The default value correspond to a toggling count of 4096 ctl_clk cycles. For a ctl_clk running at 533MHz the toggle rate will be approximately 7.68us. The default value may also be overridden by the macro DWC_AACR_AATR_DFLT."
+      bit_offset: 0
+      bit_size: 30
+    - name: AAENC
+      description: "Anti-Aging Enable Control: Enables, if set, the automatic toggling of the data going to the DATX8 when the data channel from the controller/PUB to DATX8 is idle for programmable number of clock cycles."
+      bit_offset: 30
+      bit_size: 1
+    - name: AAOENC
+      description: "Anti-Aging PAD Output Enable Control: Enables, if set, anti-aging toggling on the pad output enable signal “ctl_oe_n” going into the DATX8s. This will increase power consumption for the anti-aging feature."
+      bit_offset: 31
+      bit_size: 1
+fieldset/ACBDLR:
+  description: “AC Bit Delay Line Register (ACBDLR)” on page 96.
+  fields:
+    - name: CK0BD
+      description: "CK0 Bit Delay: Delay select for the BDL on CK0."
+      bit_offset: 0
+      bit_size: 6
+    - name: CK1BD
+      description: "CK1 Bit Delay: Delay select for the BDL on CK1."
+      bit_offset: 6
+      bit_size: 6
+    - name: CK2BD
+      description: "CK2 Bit Delay: Delay select for the BDL on CK2."
+      bit_offset: 12
+      bit_size: 6
+    - name: ACBD
+      description: "Address/Command Bit Delay: Delay select for the BDLs on address and command signals."
+      bit_offset: 18
+      bit_size: 6
+fieldset/ACIOCR:
+  description: “AC I/O Configuration Register (ACIOCR)” on page 97.
+  fields:
+    - name: ACIOM
+      description: "Address/Command I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for all address and command pins. This bit connects to bit [0] of the IOM pin on the D3F I/Os, and for other I/O libraries, it connects to the IOM pin of the I/O."
+      bit_offset: 0
+      bit_size: 1
+    - name: ACOE
+      description: "Address/Command Output Enable: Enables, when set, the output driver on the I/O for all address and command pins."
+      bit_offset: 1
+      bit_size: 1
+    - name: ACODT
+      description: "Address/Command On-Die Termination: Enables, when set, the on-die termination on the I/O for RAS#, CAS#, WE#, BA[2:0], and A[15:0] pins."
+      bit_offset: 2
+      bit_size: 1
+    - name: ACPDD1
+      description: "AC Power Down Driver: Powers down, when set, the output driver on the I/O for RAS#, CAS#, WE#, BA[2:0], and A[15:0] pins."
+      bit_offset: 3
+      bit_size: 1
+    - name: ACPDR
+      description: "AC Power Down Receiver: Powers down, when set, the input receiver on the I/O for RAS#, CAS#, WE#, BA[2:0], and A[15:0] pins."
+      bit_offset: 4
+      bit_size: 1
+    - name: CKODT
+      description: "CK On-Die Termination: Enables, when set, the on-die termination on the I/O for CK[0], CK[1], and CK[2] pins, respectively."
+      bit_offset: 5
+      bit_size: 3
+    - name: CKPDD1
+      description: "CK Power Down Driver: Powers down, when set, the output driver on the I/O for CK[0], CK[1], and CK[2] pins, respectively."
+      bit_offset: 8
+      bit_size: 3
+    - name: CKPDR
+      description: "CK Power Down Receiver: Powers down, when set, the input receiver on the I/O for CK[0], CK[1], and CK[2] pins, respectively."
+      bit_offset: 11
+      bit_size: 3
+    - name: RANKODT
+      description: "Rank On-Die Termination: Enables, when set, the on-die termination on the I/O for CKE[3:0], ODT[3:0], and CS#[3:0] pins. RANKODT[0] controls the on-die termination for CKE[0], ODT[0], and CS#[0], RANKODT[1] controls the on-die termination for CKE[1], ODT[1], and CS#[1], and so on."
+      bit_offset: 14
+      bit_size: 4
+    - name: CSPDD1
+      description: "CS# Power Down Driver: Powers down, when set, the output driver on the I/O for CS#[3:0] pins. CSPDD[0] controls the power down for CS#[0], CSPDD[1] controls the power down for CS#[1], and so on. CKE and ODT driver power down is controlled by DSGCR register."
+      bit_offset: 18
+      bit_size: 4
+    - name: RANKPDR
+      description: "Rank Power Down Receiver: Powers down, when set, the input receiver on the I/O CKE[3:0], ODT[3:0], and CS#[3:0] pins. RANKPDR[0] controls the power down for CKE[0], ODT[0], and CS#[0], RANKPDR[1] controls the power down for CKE[1], ODT[1], and CS#[1], and so on."
+      bit_offset: 22
+      bit_size: 4
+    - name: RSTODT
+      description: "SDRAM Reset On-Die Termination: Enables, when set, the on-die termination on the I/O for SDRAM RST# pin."
+      bit_offset: 26
+      bit_size: 1
+    - name: RSTPDD1
+      description: "SDRAM Reset Power Down Driver: Powers down, when set, the output driver on the I/O for SDRAM RST# pin."
+      bit_offset: 27
+      bit_size: 1
+    - name: RSTPDR
+      description: "SDRAM Reset Power Down Receiver: Powers down, when set, the input receiver on the I/O for SDRAM RST# pin."
+      bit_offset: 28
+      bit_size: 1
+    - name: RSTIOM
+      description: "SDRAM Reset I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for SDRAM Reset."
+      bit_offset: 29
+      bit_size: 1
+    - name: ACSR
+      description: "Address/Command Slew Rate (D3F I/O Only): Selects slew rate of the I/O for all address and command pins."
+      bit_offset: 30
+      bit_size: 2
+fieldset/ACMDLR:
+  description: “AC Master Delay Line Register (ACMDLR)” on page 96.
+  fields:
+    - name: IPRD
+      description: "Initial Period: Initial period measured by the master delay line calibration for VT drift compensation. This value is used as the denominator when calculating the ratios of updates during VT compensation."
+      bit_offset: 0
+      bit_size: 8
+    - name: TPRD
+      description: "Target Period: Target period measured by the master delay line calibration for VT drift compensation. This is the current measured value of the period and is continuously updated if the MDL is enabled to do so."
+      bit_offset: 8
+      bit_size: 8
+    - name: MDLD
+      description: "MDL Delay: Delay select for the LCDL for the Master Delay Line."
+      bit_offset: 16
+      bit_size: 8
+fieldset/BDLR0:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: DQ0WBD
+      description: "DQ0 Write Bit Delay: Delay select for the BDL on DQ0 write path."
+      bit_offset: 0
+      bit_size: 6
+    - name: DQ1WBD
+      description: "DQ1 Write Bit Delay: Delay select for the BDL on DQ1 write path."
+      bit_offset: 6
+      bit_size: 6
+    - name: DQ2WBD
+      description: "DQ2 Write Bit Delay: Delay select for the BDL on DQ2 write path."
+      bit_offset: 12
+      bit_size: 6
+    - name: DQ3WBD
+      description: "DQ3 Write Bit Delay: Delay select for the BDL on DQ3 write path."
+      bit_offset: 18
+      bit_size: 6
+    - name: DQ4WBD
+      description: "DQ4 Write Bit Delay: Delay select for the BDL on DQ4 write path."
+      bit_offset: 24
+      bit_size: 6
+fieldset/BDLR1:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: DQ5WBD
+      description: "DQ5 Write Bit Delay: Delay select for the BDL on DQ5 write path."
+      bit_offset: 0
+      bit_size: 6
+    - name: DQ6WBD
+      description: "DQ6 Write Bit Delay: Delay select for the BDL on DQ6 write path."
+      bit_offset: 6
+      bit_size: 6
+    - name: DQ7WBD
+      description: "DQ7 Write Bit Delay: Delay select for the BDL on DQ7 write path."
+      bit_offset: 12
+      bit_size: 6
+    - name: DMWBD
+      description: "DM Write Bit Delay: Delay select for the BDL on DM write path."
+      bit_offset: 18
+      bit_size: 6
+    - name: DSWBD
+      description: "DQS Write Bit Delay: Delay select for the BDL on DQS write path."
+      bit_offset: 24
+      bit_size: 6
+fieldset/BDLR2:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: DSOEBD
+      description: "DQS Output Enable Bit Delay: Delay select for the BDL on DQS output enable path."
+      bit_offset: 0
+      bit_size: 6
+    - name: DQOEBD
+      description: "DQ Output Enable Bit Delay: Delay select for the BDL on DQ/DM output enable path."
+      bit_offset: 6
+      bit_size: 6
+    - name: DSRBD
+      description: "DQS Read Bit Delay: Delay select for the BDL on DQS read path."
+      bit_offset: 12
+      bit_size: 6
+    - name: DSNRBD
+      description: "DQSN Read Bit Delay (Type B/B1 PHY Only): Delay select for the BDL on DQSN read path."
+      bit_offset: 18
+      bit_size: 6
+fieldset/BDLR3:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: DQ0RBD
+      description: "DQ0 Read Bit Delay: Delay select for the BDL on DQ0 read path."
+      bit_offset: 0
+      bit_size: 6
+    - name: DQ1RBD
+      description: "DQ1 Read Bit Delay: Delay select for the BDL on DQ1 read path."
+      bit_offset: 6
+      bit_size: 6
+    - name: DQ2RBD
+      description: "DQ2 Read Bit Delay: Delay select for the BDL on DQ2 read path."
+      bit_offset: 12
+      bit_size: 6
+    - name: DQ3RBD
+      description: "DQ3 Read Bit Delay: Delay select for the BDL on DQ3 read path."
+      bit_offset: 18
+      bit_size: 6
+    - name: DQ4RBD
+      description: "DQ4 Read Bit Delay: Delay select for the BDL on DQ4 read path."
+      bit_offset: 24
+      bit_size: 6
+fieldset/BDLR4:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: DQ5RBD
+      description: "DQ5 Read Bit Delay: Delay select for the BDL on DQ5 read path."
+      bit_offset: 0
+      bit_size: 6
+    - name: DQ6RBD
+      description: "DQ6 Read Bit Delay: Delay select for the BDL on DQ6 read path."
+      bit_offset: 6
+      bit_size: 6
+    - name: DQ7RBD
+      description: "DQ7 Read Bit Delay: Delay select for the BDL on DQ7 read path."
+      bit_offset: 12
+      bit_size: 6
+    - name: DMRBD
+      description: "DM Read Bit Delay: Delay select for the BDL on DM read path."
+      bit_offset: 18
+      bit_size: 6
+fieldset/BISTAR0:
+  description: BIST Address Register 0-2 (BISTAR0-2).
+  fields:
+    - name: BCOL
+      description: "BIST Column Address: Selects the SDRAM column address to be used during BIST. The lower bits of this address must be “0000” for BL16, “000” for BL8, “00” for BL4 and “0” for BL2."
+      bit_offset: 0
+      bit_size: 12
+    - name: BROW
+      description: "BIST Row Address: Selects the SDRAM row address to be used during BIST."
+      bit_offset: 12
+      bit_size: 16
+    - name: BBANK
+      description: "BIST Bank Address: Selects the SDRAM bank address to be used during BIST."
+      bit_offset: 28
+      bit_size: 3
+fieldset/BISTAR1:
+  description: BIST Address Register 0-2 (BISTAR0-2).
+  fields:
+    - name: BRANK
+      description: "BIST Rank: Selects the SDRAM rank to be used during BIST. Valid values range from 0 to maximum ranks minus 1."
+      bit_offset: 0
+      bit_size: 2
+    - name: BMRANK
+      description: "BIST Maximum Rank: Specifies the maximum SDRAM rank to be used during BIST. The default value is set to maximum ranks minus 1. Example default shown here is for a 4-rank system."
+      bit_offset: 2
+      bit_size: 2
+    - name: BAINC
+      description: "BIST Address Increment: Selects the value by which the SDRAM address is incremented for each write/read access. This value must be at the beginning of a burst boundary, i.e. the lower bits must be “0000” for BL16, “000” for BL8, “00” for BL4 and “0” for BL2."
+      bit_offset: 4
+      bit_size: 12
+fieldset/BISTAR2:
+  description: BIST Address Register 0-2 (BISTAR0-2).
+  fields:
+    - name: BMCOL
+      description: "BIST Maximum Column Address: Specifies the maximum SDRAM column address to be used during BIST before the address increments to the next row."
+      bit_offset: 0
+      bit_size: 12
+    - name: BMROW
+      description: "BIST Maximum Row Address: Specifies the maximum SDRAM row address to be used during BIST before the address increments to the next bank."
+      bit_offset: 12
+      bit_size: 16
+    - name: BMBANK
+      description: "BIST Maximum Bank Address: Specifies the maximum SDRAM bank address to be used during BIST before the address increments to the next rank."
+      bit_offset: 28
+      bit_size: 3
+fieldset/BISTBER0:
+  description: BIST Bit Error Register 0-3 (BISTBER0-3).
+  fields:
+    - name: ABER
+      description: "Address Bit Error: Each group of two bits indicate the bit error count on each of the."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BISTBER1:
+  description: BIST Bit Error Register 0-3 (BISTBER0-3).
+  fields:
+    - name: BABER
+      description: "Bank Address Bit Error: Each group of two bits indicate the bit error count on each of the up to 3 bank address bits. [1:0] is the error count for BA[0], [3:2] for BA[1], and so on."
+      bit_offset: 0
+      bit_size: 6
+    - name: WEBER
+      description: "WE# Bit Error: Indicates the number of bit errors on WE#."
+      bit_offset: 6
+      bit_size: 2
+    - name: CKEBER
+      description: "CKE Bit Error: Each group of two bits indicate the bit error count on each of the up to 4 CKE bits. [1:0] is the error count for CKE[0], [3:2] for CKE[1], and so on."
+      bit_offset: 8
+      bit_size: 8
+    - name: CSBER
+      description: "CS# Bit Error: Each group of two bits indicate the bit error count on each of the up to 4 CS# bits. [1:0] is the error count for CS#[0], [3:2] for CS#[1], and so on."
+      bit_offset: 16
+      bit_size: 8
+    - name: ODTBER
+      description: "ODT Bit Error: Each group of two bits indicates the bit error count on each of the up to 4 ODT bits. [1:0] is the error count for ODT[0], [3:2] for ODT[1], and so on."
+      bit_offset: 24
+      bit_size: 8
+fieldset/BISTBER2:
+  description: BIST Bit Error Register 0-3 (BISTBER0-3).
+  fields:
+    - name: DQBER0
+      description: "Data Bit Error: The error count for even DQS cycles. The first 16 bits indicate the error count for the first data beat (i.e. the data driven out on DQ[7:0] on the rising edge of DQS). The second 16 bits indicate the error on the second data beat (i.e. the error count of the data driven out on DQ[7:0] on the falling edge of DQS). For each of the 16-bit group, the first 2 bits are for DQ[0], the second for DQ[1], and so on."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BISTBER3:
+  description: BIST Bit Error Register 0-3 (BISTBER0-3).
+  fields:
+    - name: DQBER1
+      description: "Data Bit Error: The error count for odd DQS cycles. The first 16 bits indicate the error count for the first data beat (i.e. the data driven out on DQ[7:0] on the rising edge of DQS). The second 16 bits indicate the error on the second data beat (i.e. the error count of the data driven out on DQ[7:0] on the falling edge of DQS). For each of the 16-bit group, the first 2 bits are for DQ[0], the second for DQ[1], and so on."
+      bit_offset: 0
+      bit_size: 32
+fieldset/BISTFWR0:
+  description: BIST Fail Word Register 0-2 (BISTFWR0-2).
+  fields:
+    - name: AWEBS
+      description: Bit status during a word error for each of the up to 16 address bits.
+      bit_offset: 0
+      bit_size: 16
+    - name: BAWEBS
+      description: Bit status during a word error for each of the up to 3 bank address bits.
+      bit_offset: 16
+      bit_size: 3
+    - name: WEWEBS
+      description: Bit status during a word error for the WE#.
+      bit_offset: 19
+      bit_size: 1
+    - name: CKEWEBS
+      description: Bit status during a word error for each of the up to 4 CKE bits.
+      bit_offset: 20
+      bit_size: 4
+    - name: CSWEBS
+      description: Bit status during a word error for each of the up to 4 CS# bits.
+      bit_offset: 24
+      bit_size: 4
+    - name: ODTWEBS
+      description: Bit status during a word error for each of the up to 4 ODT bits.
+      bit_offset: 28
+      bit_size: 4
+fieldset/BISTFWR1:
+  description: BIST Fail Word Register 0-2 (BISTFWR0-2).
+  fields:
+    - name: RASWEBS
+      description: Bit status during a word error for the RAS.
+      bit_offset: 0
+      bit_size: 1
+    - name: CASWEBS
+      description: Bit status during a word error for the CAS.
+      bit_offset: 1
+      bit_size: 1
+    - name: PARWEBS
+      description: Bit status during a word error for the PAR_IN. Only for DIMM parity support.
+      bit_offset: 26
+      bit_size: 1
+    - name: DMWEBS
+      description: Bit status during a word error for the data mask (DM) bit. DMWEBS [0] is for the first DM beat, DMWEBS [1] is for the second DM beat, and so on.
+      bit_offset: 28
+      bit_size: 4
+fieldset/BISTFWR2:
+  description: BIST Fail Word Register 0-2 (BISTFWR0-2).
+  fields:
+    - name: DQWEBS
+      description: Bit status during a word error for each of the 8 data (DQ) bits. The first 8 bits indicate the status of the first data beat (i.e. the status of the data driven out on DQ[7:0] on the rising edge of DQS). The second 8 bits indicate the status of the second data beat (i.e. the status of the data driven out on DQ[7:0] on the falling edge of DQS), and so on. For each of the 8-bit group, the first bit is for DQ[0], the second bit is for DQ[1], and so on.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BISTGSR:
+  description: “BIST General Status Register (BISTGSR)” on page 139.
+  fields:
+    - name: BDONE
+      description: "BIST Done: Indicates, if set, that the BIST has finished executing. This bit is reset to zero when BIST is triggered."
+      bit_offset: 0
+      bit_size: 1
+    - name: BACERR
+      description: "BIST Address/Command Error: indicates, if set, that there is a data comparison error in the address/command lane."
+      bit_offset: 1
+      bit_size: 1
+    - name: BDXERR
+      description: "BIST Data Error: indicates, if set, that there is a data comparison error in the byte lane."
+      bit_offset: 2
+      bit_size: 1
+    - name: PARBER
+      description: "PAR_IN Bit Error (DIMM Only): Indicates the number of bit errors on PAR_IN."
+      bit_offset: 16
+      bit_size: 2
+    - name: DMBER
+      description: "DM Bit Error: Indicates the number of bit errors on data mask (DM) bit. DMBER[1:0] are for even DQS cycles first DM beat, and DMBER[3:2] are for even DQS cycles second DM beat. Similarly, DMBER[5:4] are for odd DQS cycles first DM beat, and DMBER[7:6] are for odd DQS cycles second DM beat."
+      bit_offset: 20
+      bit_size: 8
+    - name: RASBER
+      description: "RAS Bit Error: Indicates the number of bit errors on RAS."
+      bit_offset: 28
+      bit_size: 2
+    - name: CASBER
+      description: "CAS Bit Error: Indicates the number of bit errors on CAS."
+      bit_offset: 30
+      bit_size: 2
+fieldset/BISTLSR:
+  description: “BIST LFSR Seed Register (BISTLSR)” on page 137.
+  fields:
+    - name: SEED
+      description: LFSR seed for pseudo-random BIST patterns.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BISTMSKR0:
+  description: BIST Mask Register 0-2 (BISTMSKR0-2).
+  fields:
+    - name: AMSK
+      description: Mask bit for each of the up to 16 address bits.
+      bit_offset: 0
+      bit_size: 16
+    - name: BAMSK
+      description: Mask bit for each of the up to 3 bank address bits.
+      bit_offset: 16
+      bit_size: 3
+    - name: WEMSK
+      description: Mask bit for the WE#.
+      bit_offset: 19
+      bit_size: 1
+    - name: CKEMSK
+      description: Mask bit for each of the up to 4 CKE bits.
+      bit_offset: 20
+      bit_size: 4
+    - name: CSMSK
+      description: Mask bit for each of the up to 4 CS# bits.
+      bit_offset: 24
+      bit_size: 4
+    - name: ODTMSK
+      description: Mask bit for each of the up to 4 ODT bits.
+      bit_offset: 28
+      bit_size: 4
+fieldset/BISTMSKR1:
+  description: BIST Mask Register 0-2 (BISTMSKR0-2).
+  fields:
+    - name: RASMSK
+      description: Mask bit for the RAS.
+      bit_offset: 0
+      bit_size: 1
+    - name: CASMSK
+      description: Mask bit for the CAS.
+      bit_offset: 1
+      bit_size: 1
+    - name: PARMSK
+      description: Mask bit for the PAR_IN. Only for DIMM parity support and only if the design is compiled for less than 3 ranks.
+      bit_offset: 27
+      bit_size: 1
+    - name: DMMSK
+      description: Mask bit for the data mask (DM) bit.
+      bit_offset: 28
+      bit_size: 4
+fieldset/BISTMSKR2:
+  description: BIST Mask Register 0-2 (BISTMSKR0-2).
+  fields:
+    - name: DQMSK
+      description: Mask bit for each of the 8 data (DQ) bits.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BISTRR:
+  description: “BIST Run Register (BISTRR)” on page 133.
+  fields:
+    - name: BINST
+      description: "BIST Instruction: Selects the BIST instruction to be executed: Valid values are: 000 = NOP: No operation 001 = Run: Triggers the running of the BIST. 010 = Stop: Stops the running of the BIST. 011 = Reset: Resets all BIST run-time registers, such as error counters. 100 – 111 Reserved."
+      bit_offset: 0
+      bit_size: 3
+    - name: BMODE
+      description: "BIST Mode: Selects the mode in which BIST is run. Valid values are: 0 = Loopback mode: Address, commands and data loop back at the PHY I/Os. 1 = DRAM mode: Address, commands and data go to DRAM for normal memory accesses."
+      bit_offset: 3
+      bit_size: 1
+    - name: BINF
+      description: "BIST Infinite Run: Specifies, if set, that the BIST should be run indefinitely until when it is either stopped or a failure has been encountered. Otherwise BIST is run until number of BIST words specified in the BISTWCR register has been generated."
+      bit_offset: 4
+      bit_size: 1
+    - name: NFAIL
+      description: "Number of Failures: Specifies the number of failures after which the execution of commands and the capture of read data should stop if BSONF bit of this register is set. Execution of commands and the capture of read data will stop after (NFAIL+1) failures if BSONF is set."
+      bit_offset: 5
+      bit_size: 8
+    - name: BSONF
+      description: "BIST Stop On Nth Fail: Specifies, if set, that the BIST should stop when an nth data word or address/command comparison error has been encountered."
+      bit_offset: 13
+      bit_size: 1
+    - name: BDXEN
+      description: "BIST DATX8 Enable: Enables the running of BIST on the data byte lane PHYs. This bit is exclusive with BACEN, i.e. both cannot be set to ‘1’ at the same time."
+      bit_offset: 14
+      bit_size: 1
+    - name: BACEN
+      description: "BIST AC Enable: Enables the running of BIST on the address/command lane PHY. This bit is exclusive with BDXEN, i.e. both cannot be set to ‘1’ at the same time."
+      bit_offset: 15
+      bit_size: 1
+    - name: BDMEN
+      description: "BIST Data Mask Enable: Enables, if set, that the data mask BIST should be included in the BIST run, i.e. data pattern generated and loopback data compared. This is valid only for loopback mode."
+      bit_offset: 16
+      bit_size: 1
+    - name: BDPAT
+      description: "BIST Data Pattern: Selects the data pattern used during BIST. Valid values are: 00 = Walking 0 01 = Walking 1 10 = LFSR-based pseudo-random 11 = User programmable (Not valid for AC loopback)."
+      bit_offset: 17
+      bit_size: 2
+    - name: BDXSEL
+      description: "BIST DATX8 Select: Select the byte lane for comparison of loopback/read data. Valid values are 0 to 8."
+      bit_offset: 19
+      bit_size: 4
+    - name: BCKSEL
+      description: "BIST CK Select: Selects the CK that should be used to register the AC loopback signals from the I/Os. Valid values are: 00 = CK[0] 01 = CK[1] 10 = CK[2] 11 = Reserved."
+      bit_offset: 23
+      bit_size: 2
+    - name: BCCSEL
+      description: "BIST Clock Cycle Select: Selects the clock numbers on which the AC loopback data is written into the FIFO. Data is written into the loopback FIFO once every four clock cycles. Valid values are: 00 = Clock cycle 0, 4, 8, 12, etc. 01 = Clock cycle 1, 5, 9, 13, etc. 10 = Clock cycle 2, 6, 10, 14, etc. 11 = Clock cycle 3, 7, 11, 15, etc."
+      bit_offset: 25
+      bit_size: 2
+fieldset/BISTUDPR:
+  description: “BIST User Data Pattern Register (BISTUDPR)” on page 138.
+  fields:
+    - name: BUDP0
+      description: "BIST User Data Pattern 0: Data to be applied on even DQ pins during BIST."
+      bit_offset: 0
+      bit_size: 16
+    - name: BUDP1
+      description: "BIST User Data Pattern 1: Data to be applied on odd DQ pins during BIST."
+      bit_offset: 16
+      bit_size: 16
+fieldset/BISTWCR:
+  description: “BIST Word Count Register (BISTWCR)” on page 136.
+  fields:
+    - name: BWCNT
+      description: "BIST Word Count: Indicates the number of words to generate during BIST. This must be a multiple of DRAM burst length (BL) divided by 2, e.g. for BL=8, valid values are 4, 8, 12, 16, and so on."
+      bit_offset: 0
+      bit_size: 16
+fieldset/BISTWCSR:
+  description: “BIST Word Count Status Register (BISTWCSR)” on page 141.
+  fields:
+    - name: ACWCNT
+      description: "Address/Command Word Count: Indicates the number of words received from the address/command lane."
+      bit_offset: 0
+      bit_size: 16
+    - name: DXWCNT
+      description: "Byte Word Count: Indicates the number of words received from the byte lane."
+      bit_offset: 16
+      bit_size: 16
+fieldset/BISTWER:
+  description: “BIST Word Error Register (BISTWER)” on page 139.
+  fields:
+    - name: ACWER
+      description: "Address/Command Word Error: Indicates the number of word errors on the address/command lane. An error on any bit of the address/command bus increments the error count."
+      bit_offset: 0
+      bit_size: 16
+    - name: DXWER
+      description: "Byte Word Error: Indicates the number of word errors on the byte lane. An error on any bit of the data bus including the data mask bit increments the error count."
+      bit_offset: 16
+      bit_size: 16
+fieldset/CR0:
+  description: Impedance Control Register 0-1 (ZQnCR0-1).
+  fields:
+    - name: ZDATA
+      description: "Impedance Over-Ride Data: Data used to directly drive the impedance control. ZDATA field mapping for D3F I/Os is as follows: ZDATA[27:21] is used to select the pull-up on-die termination impedance ZDATA[20:14] is used to select the pull-down on-die termination impedance ZDATA[13:7] is used to select the pull-up output impedance ZDATA[6:0] is used to select the pull-down output impedance ZDATA field mapping for D3A/B/R I/Os is as follows: ZDATA[27:20] is reserved and returns zeros on reads ZDATA[19:15] is used to select the pull-up on-die termination impedance ZDATA[14:10] is used to select the pull-down on-die termination impedance ZDATA[9:5] is used to select the pull-up output impedance ZDATA[4:0] is used to select the pull-down output impedance The default value is 0x000014A for I/O type D3C/R and 0x0001830 for I/O type D3F."
+      bit_offset: 0
+      bit_size: 28
+    - name: ZDEN
+      description: "Impedance Over-ride Enable: When this bit is set, it allows users to directly drive the impedance control using the data programmed in the ZDATA field. Otherwise, the control is generated automatically by the impedance control logic."
+      bit_offset: 28
+      bit_size: 1
+    - name: ZCALBYP
+      description: "Impedance Calibration Bypass: Bypasses, if set, impedance calibration of this ZQ control block when impedance calibration is already in progress. Impedance calibration can be disabled prior to trigger by using the ZCALEN bit."
+      bit_offset: 29
+      bit_size: 1
+    - name: ZCALEN
+      description: "Impedance Calibration Enable: Enables, if set, the impedance calibration of this ZQ control block when impedance calibration is triggered using either the ZCAL bit of PIR register or the DFI update interface."
+      bit_offset: 30
+      bit_size: 1
+    - name: ZQPD
+      description: "ZQ Power Down: Powers down, if set, the PZQ cell."
+      bit_offset: 31
+      bit_size: 1
+fieldset/CR1:
+  description: Impedance Control Register 0-1 (ZQnCR0-1).
+  fields:
+    - name: ZPROG
+      description: "Impedance Divide Ratio: Selects the external resistor divide ratio to be used to set the output impedance and the on-die termination as follows: ZPROG[7:4] = On-die termination divide select ZPROG[3:0] = Output impedance divide select."
+      bit_offset: 0
+      bit_size: 8
+    - name: DFICU0
+      description: "DFI Controller Update Interface 0: Sets this impedance controller to be enabled for calibration when the DFI controller update interface 0 (channel 0) requests an update."
+      bit_offset: 12
+      bit_size: 1
+    - name: DFICU1
+      description: "DFI Controller Update Interface 1: Sets this impedance controller to be enabled for calibration when the DFI controller update interface 1 (channel 1) requests an update. Only valid in shared-AC mode."
+      bit_offset: 13
+      bit_size: 1
+    - name: DFICCU
+      description: "DFI Concurrent Controller Update Interface: Sets this impedance controller to be enabled for calibration when both of the DFI controller update interfaces request an update on the same clock. This provides the ability to enable impedance calibration updates for the Address/Command lane. Only valid in shared-AC mode."
+      bit_offset: 14
+      bit_size: 1
+    - name: DFIPU0
+      description: "DFI Update Interface 0: Sets this impedance controller to be enabled for calibration when the DFI PHY update interface 0 (channel 0) requests an update."
+      bit_offset: 16
+      bit_size: 1
+    - name: DFIPU1
+      description: "DFI Update Interface 1: Sets this impedance controller to be enabled for calibration when the DFI PHY update interface 1 (channel 1) requests an update. Only valid in shared-AC mode."
+      bit_offset: 17
+      bit_size: 1
+fieldset/DCR:
+  description: “DRAM Configuration Register (DCR)” on page 103.
+  fields:
+    - name: DDRMD
+      description: "DDR Mode: SDRAM DDR mode. Valid values are: 000 = Reserved 001 = Reserved 010 = DDR2 011 = DDR3 100 – 111 = Reserved."
+      bit_offset: 0
+      bit_size: 3
+    - name: DDR8BNK
+      description: "DDR 8-Bank: Indicates, if set, that the SDRAM used has 8 banks. tRPA = tRP+1 and tFAW are used for 8-bank DRAMs, otherwise tRPA = tRP and no tFAW is used. Note that a setting of 1 for DRAMs that have fewer than 8 banks results in correct functionality, but less tight DRAM command spacing for the parameters."
+      bit_offset: 3
+      bit_size: 1
+    - name: PDQ
+      description: "Primary DQ (DDR3 Only): Specifies the DQ pin in a byte that is designated as a primary pin for Multi-Purpose Register (MPR) reads. Valid values are 0 to 7 for DQ[0] to DQ[7], respectively."
+      bit_offset: 4
+      bit_size: 3
+    - name: MPRDQ
+      description: "Multi-Purpose Register (MPR) DQ (DDR3 Only): Specifies the value that is driven on non-primary DQ pins during MPR reads. Valid values are: 0 = Primary DQ drives out the data from MPR (0-1-0-1); non-primary DQs drive ‘0’ 1 = Primary DQ and non-primary DQs all drive the same data from MPR (0-1-0-1)."
+      bit_offset: 7
+      bit_size: 1
+    - name: BYTEMASK
+      description: "Byte Mask: Mask applied to all beats of read data on all bytes lanes during read DQS gate training. This allows training to be conducted based on selected bit(s) from the byte lanes. Valid values for each bit are: 0 = Disable compare for that bit 1 = Enable compare for that bit Note that this mask applies in DDR3 MPR operation mode as well and must be in keeping with the PDQ field setting."
+      bit_offset: 10
+      bit_size: 8
+    - name: NOSRA
+      description: "No Simultaneous Rank Access: Specifies, if set, that simultaneous rank access on the same clock cycle is not allowed. This means that multiple chip select signals should not be asserted at the same time. This may be required on some DIMM systems."
+      bit_offset: 27
+      bit_size: 1
+    - name: DDR2T
+      description: "DDR 2T Timing: Indicates, if set, that 2T timing should be used by PUB internally generated SDRAM transactions."
+      bit_offset: 28
+      bit_size: 1
+    - name: UDIMM
+      description: "Un-buffered DIMM Address Mirroring: Indicates, if set, that there is address mirroring on the second rank of an un-buffered DIMM (the rank connected to CS#[1]). In this case, the PUB re-scrambles the bank and address when sending mode register commands to the second rank. This only applies to PUB internal SDRAM transactions. Transactions generated by the controller must make its own adjustments when using an un-buffered DIMM. DCR[NOSRA] must be set if address mirroring is enabled."
+      bit_offset: 29
+      bit_size: 1
+fieldset/DCUAR:
+  description: “DCU Address Register (DCUAR)” on page 129.
+  fields:
+    - name: CWADDR
+      description: "Cache Word Address: Address of the cache word to be accessed."
+      bit_offset: 0
+      bit_size: 4
+    - name: CSADDR
+      description: "Cache Slice Address: Address of the cache slice to be accessed."
+      bit_offset: 4
+      bit_size: 4
+    - name: CSEL
+      description: "Cache Select: Selects the cache to be accessed. Valid values are: 00 = Command cache 01 = Expected data cache 10 = Read data cache 11 = Reserved."
+      bit_offset: 8
+      bit_size: 2
+    - name: INCA
+      description: "Increment Address: Specifies, if set, that the cache address specified in WADDR and SADDR should be automatically incremented after each access of the cache. The increment happens in such a way that all the slices of a selected word are first accessed before going to the next word."
+      bit_offset: 10
+      bit_size: 1
+    - name: ATYPE
+      description: "Access Type: Specifies the type of access to be performed using this address. Valid values are: 0 = Write access 1 = Read access."
+      bit_offset: 11
+      bit_size: 1
+fieldset/DCUDR:
+  description: “DCU Data Register (DCUDR)” on page 130.
+  fields:
+    - name: CDATA
+      description: "Cache Data: Data to be written to or read from a cache. This data corresponds to the cache word slice specified by the DCU Address Register."
+      bit_offset: 0
+      bit_size: 32
+fieldset/DCUGCR:
+  description: “DCU General Configuration Register (DCUGCR)” on page 132.
+  fields:
+    - name: RCSW
+      description: "Read Capture Start Word: The capture and compare of read data should start after Nth word. For example setting this value to 12 will skip the first 12 read data."
+      bit_offset: 0
+      bit_size: 16
+fieldset/DCULR:
+  description: “DCU Loop Register (DCULR)” on page 131.
+  fields:
+    - name: LSADDR
+      description: "Loop Start Address: Command cache word address where the loop should start."
+      bit_offset: 0
+      bit_size: 4
+    - name: LEADDR
+      description: "Loop End Address: Command cache word address where the loop should end."
+      bit_offset: 4
+      bit_size: 4
+    - name: LCNT
+      description: "Loop Count: The number of times that the loop should be executed if LINF is not set."
+      bit_offset: 8
+      bit_size: 8
+    - name: LINF
+      description: "Loop Infinite: Indicates, if set, that the loop should be executed indefinitely until stopped by the STOP command. Otherwise the loop is execute LCNT times."
+      bit_offset: 16
+      bit_size: 1
+    - name: IDA
+      description: "Increment DRAM Address: Indicates, if set, that DRAM addresses should be incremented every time a DRAM read/write command inside the loop is executed."
+      bit_offset: 17
+      bit_size: 1
+    - name: XLEADDR
+      description: "Expected Data Loop End Address: The last expected data cache word address that contains valid expected data. Expected data should looped between 0 and this address. XLEADDR field uses only the following bits based on the cache depth: DCU expected data cache = 4, XLEADDR[1:0] DCU expected data cache = 8, XLEADDR[2:0] DCU expected data cache = 16, XLEADDR[3:0]."
+      bit_offset: 28
+      bit_size: 4
+fieldset/DCURR:
+  description: “DCU Run Register (DCURR)” on page 130.
+  fields:
+    - name: DINST
+      description: "DCU Instruction: Selects the DCU command to be executed: Valid values are: 0000 = NOP: No operation 0001 = Run: Triggers the execution of commands in the command cache. 0010 = Stop: Stops the execution of commands in the command cache. 0011 = Stop Loop: Stops the execution of an infinite loop in the command cache. 0100 = Reset: Resets all DCU run time registers. See “DCU Status” on page 255 for details. 0101 – 1111 Reserved."
+      bit_offset: 0
+      bit_size: 4
+    - name: SADDR
+      description: "Start Address: Cache word address where the execution of commands should begin."
+      bit_offset: 4
+      bit_size: 4
+    - name: EADDR
+      description: "End Address: Cache word address where the execution of command should end."
+      bit_offset: 8
+      bit_size: 4
+    - name: NFAIL
+      description: "Number of Failures: Specifies the number of failures after which the execution of commands and the capture of read data should stop if SONF bit of this register is set. Execution of commands and the capture of read data will stop after (NFAIL+1) failures if SONF is set. Valid values are from 0 to 254."
+      bit_offset: 12
+      bit_size: 8
+    - name: SONF
+      description: "Stop On Nth Fail: Specifies, if set, that the execution of commands and the capture of read data should stop when there are N read data failures. The number of failures is specified by NFAIL. Otherwise commands execute until the end of the program or until manually stopped using a STOP command."
+      bit_offset: 20
+      bit_size: 1
+    - name: SCOF
+      description: "Stop Capture On Full: Specifies, if set, that the capture of read data should stop when the capture cache is full."
+      bit_offset: 21
+      bit_size: 1
+    - name: RCEN
+      description: "Read Capture Enable: Indicates, if set, that read data coming back from the SDRAM should be captured into the read data cache."
+      bit_offset: 22
+      bit_size: 1
+    - name: XCEN
+      description: "Expected Compare Enable: Indicates, if set, that read data coming back from the SDRAM should be should be compared with the expected data."
+      bit_offset: 23
+      bit_size: 1
+fieldset/DCUSR0:
+  description: DCU Status Register 0-1 (DCUSR0-1).
+  fields:
+    - name: RDONE
+      description: "Run Done: Indicates, if set, that the DCU has finished executing the commands in the command cache. This bit is also set to indicate that a STOP command has successfully been executed and command execution has stopped."
+      bit_offset: 0
+      bit_size: 1
+    - name: CFAIL
+      description: "Capture Fail: Indicates, if set, that at least one read data word has failed."
+      bit_offset: 1
+      bit_size: 1
+    - name: CFULL
+      description: "Capture Full: Indicates, if set, that the capture cache is full."
+      bit_offset: 2
+      bit_size: 1
+fieldset/DCUSR1:
+  description: DCU Status Register 0-1 (DCUSR0-1).
+  fields:
+    - name: RDCNT
+      description: "Read Count: Number of read words returned from the SDRAM."
+      bit_offset: 0
+      bit_size: 16
+    - name: FLCNT
+      description: "Fail Count: Number of read words that have failed."
+      bit_offset: 16
+      bit_size: 8
+    - name: LPCNT
+      description: "Loop Count: Indicates the value of the loop count. This is useful when the program has stopped because of failures to assess how many reads were executed before first fail."
+      bit_offset: 24
+      bit_size: 8
+fieldset/DCUTPR:
+  description: “DCU Timing Parameter Register (DCUTPR)” on page 132.
+  fields:
+    - name: TDCUT0
+      description: DCU Generic Timing Parameter 0.
+      bit_offset: 0
+      bit_size: 8
+    - name: TDCUT1
+      description: DCU Generic Timing Parameter 1.
+      bit_offset: 8
+      bit_size: 8
+    - name: TDCUT2
+      description: DCU Generic Timing Parameter 2.
+      bit_offset: 16
+      bit_size: 8
+    - name: TDCUT3
+      description: DCU Generic Timing Parameter 3.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DSGCR:
+  description: “DDR System General Configuration Register (DSGCR)” on page 101.
+  fields:
+    - name: PUREN
+      description: "PHY Update Request Enable: Specifies if set, that the PHY should issue PHY- initiated update request when there is DDL VT drift."
+      bit_offset: 0
+      bit_size: 1
+    - name: BDISEN
+      description: "Byte Disable Enable: Specifies, if set, that the PHY should respond to DFI byte disable request. Otherwise the byte disable from the DFI is ignored in which case bytes can only be disabled using the DXnGCR register."
+      bit_offset: 1
+      bit_size: 1
+    - name: ZUEN
+      description: "Impedance Update Enable: Specifies, if set, that in addition to DDL VT update, the PHY could also perform impedance calibration (update). Refer to the “Impedance Control Register 0-1 (ZQnCR0-1)” on page 145 bit fields DFICU0, DFICU1 and DFICCU bits to control if an impedance calibration is performed (update) with a DFI controller update request. Refer to the “Impedance Control Register 0-1 (ZQnCR0-1)” on page 145 bit fields DFIPU0 and DFIPU1 bits to control if an impedance calibration is performed (update) with a DFI PHY update request."
+      bit_offset: 2
+      bit_size: 1
+    - name: LPIOPD
+      description: "Low Power I/O Power Down: Specifies, if set, that the PHY should respond to the DFI low power opportunity request and power down the I/Os of the byte."
+      bit_offset: 3
+      bit_size: 1
+    - name: LPPLLPD
+      description: "Low Power PLL Power Down: Specifies, if set, that the PHY should respond to the DFI low power opportunity request and power down the PLL of the byte if the wakeup time request satisfies the PLL lock time."
+      bit_offset: 4
+      bit_size: 1
+    - name: CUAEN
+      description: "Controller Update Acknowledge Enable: Specifies, if set, that the PHY should issue controller update acknowledge when the DFI controller update request is asserted. By default the PHY does not acknowledge controller initiated update requests but simply does an update whenever there is a controller update request. This speeds up the update."
+      bit_offset: 5
+      bit_size: 1
+    - name: DQSGX
+      description: "DQS Gate Extension: Specifies, if set, that the DQS gating must be extended by two DRAM clock cycles and then re-centered, i.e. one clock cycle extension on either side."
+      bit_offset: 6
+      bit_size: 1
+    - name: BRRMODE
+      description: "Bypass Rise-to-Rise Mode: Indicates, if set, that the PHY bypass mode is configured to run in rise-to-rise mode. Otherwise if not set the PHY bypass mode is running in rise-to-fall mode."
+      bit_offset: 7
+      bit_size: 1
+    - name: PUAD
+      description: "PHY Update Acknowledge Delay: Specifies the number of clock cycles that the indication for the completion of PHY update from the PHY to the controller should be delayed. This essentially delays, by this many clock cycles, the de-assertion of dfi_ctrlup_ack and dfi_phyupd_req signals relative to the time when the delay lines or I/Os are updated."
+      bit_offset: 8
+      bit_size: 4
+    - name: DTOODT
+      description: "DTO On-Die Termination: Enables, when set, the on-die termination on the I/O for DTO pins."
+      bit_offset: 12
+      bit_size: 1
+    - name: DTOPDD1
+      description: "DTO Power Down Driver: Powers down, when set, the output driver on the I/O for DTO pins."
+      bit_offset: 13
+      bit_size: 1
+    - name: DTOPDR
+      description: "DTO Power Down Receiver: Powers down, when set, the input receiver on the I/O for DTO pins."
+      bit_offset: 14
+      bit_size: 1
+    - name: DTOIOM
+      description: "DTO I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for DTO pins."
+      bit_offset: 15
+      bit_size: 1
+    - name: DTOOE
+      description: "DTO Output Enable: Enables, when set, the output driver on the I/O for DTO pins."
+      bit_offset: 16
+      bit_size: 1
+    - name: ATOAE
+      description: "ATO Analog Test Enable: Enables, if set, the analog test output (ATO) I/O."
+      bit_offset: 17
+      bit_size: 1
+    - name: RRMODE
+      description: "Rise-to-Rise Mode: Indicates, if set, that the PHY mission mode is configured to run in rise-to-rise mode. Otherwise if not set the PHY mission mode is running in rise-to- fall mode."
+      bit_offset: 18
+      bit_size: 1
+    - name: SDRMODE
+      description: "Single Data Rate Mode: Indicates, if set, that the external controller is configured to run in single data rate (SDR) mode. Otherwise if not set the controller is running in half data rate (HDR) mode. This bit not supported in the current version of the PUB."
+      bit_offset: 19
+      bit_size: 1
+    - name: CKEPDD1
+      description: "CKE Power Down Driver: Powers down, when set, the output driver on the I/O for CKE[3:0] pins. CKEPDD[0] controls the power down for CKE[0], CKEPDD[1] controls the power down for CKE[1], and so on."
+      bit_offset: 20
+      bit_size: 4
+    - name: ODTPDD1
+      description: "ODT Power Down Driver: Powers down, when set, the output driver on the I/O for ODT[3:0] pins. ODTPDD[0] controls the power down for ODT[0], ODTPDD[1] controls the power down for ODT[1], and so on."
+      bit_offset: 24
+      bit_size: 4
+    - name: CKOE
+      description: "SDRAM CK Output Enable: Enables, when set, the output driver on the I/O for SDRAM CK/CK# pins."
+      bit_offset: 28
+      bit_size: 1
+    - name: ODTOE
+      description: "SDRAM ODT Output Enable: Enables, when set, the output driver on the I/O for SDRAM ODT pins."
+      bit_offset: 29
+      bit_size: 1
+    - name: RSTOE
+      description: "SDRAM Reset Output Enable: Enables, when set, the output driver on the I/O for SDRAM RST# pin."
+      bit_offset: 30
+      bit_size: 1
+    - name: CKEOE
+      description: "SDRAM CKE Output Enable: Enables, when set, the output driver on the I/O for SDRAM CKE pins."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DTAR0:
+  description: Data Training Address Register 0-3 (DTAR0-3).
+  fields:
+    - name: DTCOL
+      description: "Data Training Column Address: Selects the SDRAM column address to be used during data training. The lower four bits of this address must always be “000”."
+      bit_offset: 0
+      bit_size: 12
+    - name: DTROW
+      description: "Data Training Row Address: Selects the SDRAM row address to be used during data training."
+      bit_offset: 12
+      bit_size: 16
+    - name: DTBANK
+      description: "Data Training Bank Address: Selects the SDRAM bank address to be used during data training."
+      bit_offset: 28
+      bit_size: 3
+fieldset/DTAR1:
+  description: Data Training Address Register 0-3 (DTAR0-3).
+  fields:
+    - name: DTCOL
+      description: "Data Training Column Address: Selects the SDRAM column address to be used during data training. The lower four bits of this address must always be “000”."
+      bit_offset: 0
+      bit_size: 12
+    - name: DTROW
+      description: "Data Training Row Address: Selects the SDRAM row address to be used during data training."
+      bit_offset: 12
+      bit_size: 16
+    - name: DTBANK
+      description: "Data Training Bank Address: Selects the SDRAM bank address to be used during data training."
+      bit_offset: 28
+      bit_size: 3
+fieldset/DTAR2:
+  description: Data Training Address Register 0-3 (DTAR0-3).
+  fields:
+    - name: DTCOL
+      description: "Data Training Column Address: Selects the SDRAM column address to be used during data training. The lower four bits of this address must always be “000”."
+      bit_offset: 0
+      bit_size: 12
+    - name: DTROW
+      description: "Data Training Row Address: Selects the SDRAM row address to be used during data training."
+      bit_offset: 12
+      bit_size: 16
+    - name: DTBANK
+      description: "Data Training Bank Address: Selects the SDRAM bank address to be used during data training."
+      bit_offset: 28
+      bit_size: 3
+fieldset/DTAR3:
+  description: Data Training Address Register 0-3 (DTAR0-3).
+  fields:
+    - name: DTCOL
+      description: "Data Training Column Address: Selects the SDRAM column address to be used during data training. The lower four bits of this address must always be “000”."
+      bit_offset: 0
+      bit_size: 12
+    - name: DTROW
+      description: "Data Training Row Address: Selects the SDRAM row address to be used during data training."
+      bit_offset: 12
+      bit_size: 16
+    - name: DTBANK
+      description: "Data Training Bank Address: Selects the SDRAM bank address to be used during data training."
+      bit_offset: 28
+      bit_size: 3
+fieldset/DTCR:
+  description: “Data Training Configuration Register (DTCR)” on page 118.
+  fields:
+    - name: DTRPTN
+      description: "Data Training Repeat Number: Repeat number used to confirm stability of DDR write or read. Note: The minimum value should be 0x4 and the maximum value should be 0x14."
+      bit_offset: 0
+      bit_size: 4
+    - name: DTRANK
+      description: "Data Training Rank: Select the SDRAM rank to be used during Read DQS gate training, Read/Write Data Bit Deskew, Read/Write Eye Training."
+      bit_offset: 4
+      bit_size: 2
+    - name: DTMPR
+      description: "Read Data Training Using MPR (DDR3 Only): Specifies, if set, that DQS gate training should use the SDRAM Multi-Purpose Register (MPR) register. Otherwise data-training is performed by first writing to some locations in the SDRAM and then reading them back."
+      bit_offset: 6
+      bit_size: 1
+    - name: DTCMPD
+      description: "Read Data Training Compare Data: Specifies, if set, that DQS gate training should also check if the returning read data is correct. Otherwise data-training only checks if the correct number of DQS edges were returned."
+      bit_offset: 7
+      bit_size: 1
+    - name: DTWDQM
+      description: "Training WDQ Margin: Defines how close to 0 or how close to 2*(wdq calibration_value) the WDQ LCDL can be moved during training. Basically defines how much timing margin."
+      bit_offset: 8
+      bit_size: 4
+    - name: DTWBDDM
+      description: Data Training Write Bit Deskew Data Mask, if set, it enables write bit deskew of the data mask.
+      bit_offset: 12
+      bit_size: 1
+    - name: DTBDC
+      description: "Data Training Bit Deskew Centering: Enables, if set, eye centering capability during write and read bit deskew training."
+      bit_offset: 13
+      bit_size: 1
+    - name: DTWDQMO
+      description: "Data Training WDQ Margin Override: If set, the Training WDQ Margin value specified in DTCR[11:8] (DTWDQM) is used during data training. Otherwise the value is computed as ¼ of the ddr_clk period measurement found during calibration of the WDQ LCDL."
+      bit_offset: 14
+      bit_size: 1
+    - name: DTDBS
+      description: "Data Training Debug Byte Select: Selects the byte during data training single step debug mode. Note: DTDEN is not used to enable this feature."
+      bit_offset: 16
+      bit_size: 4
+    - name: DTDEN
+      description: "Data Training Debug Enable: Enables, if set, the data training single step debug mode."
+      bit_offset: 20
+      bit_size: 1
+    - name: DTDSTP
+      description: "Data Training Debug Step: A write of 1 to this bit steps the data training algorithm through a single step. This bit is used to initiate one step of the data training algorithm in question. This bit is self-clearing. To trigger the next step, this bit must be written to again. Note: The training steps must be repeated in order to get new data in the “Data Training Eye Data Register 0-1 (DTEDR0-1)” on page 122. For example, to see the training results for a different lane, select that lane and repeat the training steps to populate DTEDR0 and DTEDR1 with the correct data."
+      bit_offset: 21
+      bit_size: 1
+    - name: DTEXD
+      description: "Data Training Extended Write DQS: Enables, if set, an extended write DQS whereby two additional pulses of DQS are added as post-amble to a burst of writes. Generally this should only be enabled when running read bit deskew with the intention of performing read eye deskew prior to running write leveling adjustment."
+      bit_offset: 22
+      bit_size: 1
+    - name: RANKEN
+      description: "Rank Enable: Specifies the ranks that are enabled for data-training. Bit 0 controls rank 0, bit 1 controls rank 1, bit 2 controls rank 2, and bit 3 controls rank 3. Setting the bit to ‘1’ enables the rank, and setting it to ‘0’ disables the rank."
+      bit_offset: 24
+      bit_size: 4
+    - name: RFSHDT
+      description: "Refresh During Training: A non-zero value specifies that a burst of refreshes equal to the number specified in this field should be sent to the SDRAM after training each rank except the last rank."
+      bit_offset: 28
+      bit_size: 4
+fieldset/DTDR0:
+  description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+  fields:
+    - name: DTBYTE0
+      description: "Data Training Data: The first 4 bytes of data used during data training. This same data byte is used for each Byte Lane. Default sequence is a walking 1 while toggling data every data cycle."
+      bit_offset: 0
+      bit_size: 8
+    - name: DTBYTE1
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
+    - name: DTBYTE2
+      description: No description available.
+      bit_offset: 16
+      bit_size: 8
+    - name: DTBYTE3
+      description: No description available.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DTDR1:
+  description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+  fields:
+    - name: DTBYTE4
+      description: "Data Training Data: The second 4 bytes of data used during data training. This same data byte is used for each Byte Lane. Default sequence is a walking 1 while toggling data every data cycle."
+      bit_offset: 0
+      bit_size: 8
+    - name: DTBYTE5
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
+    - name: DTBYTE6
+      description: No description available.
+      bit_offset: 16
+      bit_size: 8
+    - name: DTBYTE7
+      description: No description available.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DTEDR0:
+  description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+  fields:
+    - name: DTWLMN
+      description: Data Training WDQ LCDL Minimum.
+      bit_offset: 0
+      bit_size: 8
+    - name: DTWLMX
+      description: Data Training WDQ LCDL Maximum.
+      bit_offset: 8
+      bit_size: 8
+    - name: DTWBMN
+      description: Data Training Write BDL Shift Minimum.
+      bit_offset: 16
+      bit_size: 8
+    - name: DTWBMX
+      description: Data Training Write BDL Shift Maximum.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DTEDR1:
+  description: Data Training Eye Data Register 0-1 (DTEDR0-1).
+  fields:
+    - name: DTRLMN
+      description: Data Training RDQS LCDL Minimum.
+      bit_offset: 0
+      bit_size: 8
+    - name: DTRLMX
+      description: Data Training RDQS LCDL Maximum.
+      bit_offset: 8
+      bit_size: 8
+    - name: DTRBMN
+      description: Data Training Read BDL Shift Minimum.
+      bit_offset: 16
+      bit_size: 8
+    - name: DTRBMX
+      description: Data Training Read BDL Shift Maximum.
+      bit_offset: 24
+      bit_size: 8
+fieldset/DTPR0:
+  description: DRAM Timing Parameters Register 0-2 (DTPR0-2).
+  fields:
+    - name: TRTP
+      description: Internal read to precharge command delay. Valid values are 2 to 15.
+      bit_offset: 0
+      bit_size: 4
+    - name: TWTR
+      description: Internal write to read command delay. Valid values are 1 to 15.
+      bit_offset: 4
+      bit_size: 4
+    - name: TRP
+      description: "Precharge command period: The minimum time between a precharge command and any other command. Note that the Controller automatically derives tRPA for 8- bank DDR2 devices by adding 1 to tRP. Valid values are 2 to 15."
+      bit_offset: 8
+      bit_size: 4
+    - name: TRCD
+      description: Activate to read or write delay. Minimum time from when an activate command is issued to when a read or write to the activated row can be issued. Valid values are 2 to 15.
+      bit_offset: 12
+      bit_size: 4
+    - name: TRAS
+      description: Activate to precharge command delay. Valid values are 2 to 63.
+      bit_offset: 16
+      bit_size: 6
+    - name: TRRD
+      description: Activate to activate command delay (different banks). Valid values are 1 to 15.
+      bit_offset: 22
+      bit_size: 4
+    - name: TRC
+      description: Activate to activate command delay (same bank). Valid values are 2 to 63.
+      bit_offset: 26
+      bit_size: 6
+fieldset/DTPR1:
+  description: DRAM Timing Parameters Register 0-2 (DTPR0-2).
+  fields:
+    - name: TMRD
+      description: "Load mode cycle time: The minimum time between a load mode register command and any other command. For DDR3 this is the minimum time between two load mode register commands. Valid values for DDR2 are 2 to 3. For DDR3, the value used for tMRD is 4 plus the value programmed in these bits, i.e. tMRD value for DDR3 ranges from 4 to 7."
+      bit_offset: 0
+      bit_size: 2
+    - name: TMOD
+      description: "Load mode update delay (DDR3 only). The minimum time between a load mode register command and a non-load mode register command. Valid values are: 000 = 12 001 = 13 010 = 14 011 = 15 100 = 16 101 = 17 110 – 111 = Reserved."
+      bit_offset: 2
+      bit_size: 3
+    - name: TFAW
+      description: 4-bank activate period. No more than 4-bank activate commands may be issued in a given tFAW period. Only applies to 8-bank devices. Valid values are 2 to 63.
+      bit_offset: 5
+      bit_size: 6
+    - name: TRFC
+      description: "Refresh-to-Refresh: Indicates the minimum time between two refresh commands or between a refresh and an active command. This is derived from the minimum refresh interval from the datasheet, tRFC(min), divided by the clock cycle time. The default number of clock cycles is for the largest JEDEC tRFC(min parameter value supported."
+      bit_offset: 11
+      bit_size: 9
+    - name: TWLMRD
+      description: Minimum delay from when write leveling mode is programmed to the first DQS/DQS# rising edge.
+      bit_offset: 20
+      bit_size: 6
+    - name: TWLO
+      description: "Write leveling output delay: Number of clock cycles from when write leveling DQS is driven high by the control block to when the results from the SDRAM on DQ is sampled by the control block. This must include the SDRAM tWLO timing parameter plus the round trip delay from control block to SDRAM back to control block."
+      bit_offset: 26
+      bit_size: 4
+    - name: TAOND_TAOFD
+      description: "ODT turn-on/turn-off delays (DDR2 only). Valid values are: 00 = 2/2.5 01 = 3/3.5 10 = 4/4.5 11 = 5/5.5 Most DDR2 devices utilize a fixed value of 2/2.5. For non-standard SDRAMs, the user must ensure that the operational Write Latency is always greater than or equal to the ODT turn-on delay. For example, a DDR2 SDRAM with CAS latency set to 3 and CAS additive latency set to 0 has a Write Latency of 2. Thus 2/2.5 can be used, but not 3/3.5 or higher."
+      bit_offset: 30
+      bit_size: 2
+fieldset/DTPR2:
+  description: DRAM Timing Parameters Register 0-2 (DTPR0-2).
+  fields:
+    - name: TXS
+      description: Self refresh exit delay. The minimum time between a self refresh exit command and any other command. This parameter must be set to the maximum of the various minimum self refresh exit delay parameters specified in the SDRAM datasheet, i.e. max(tXSNR, tXSRD) for DDR2 and max(tXS, tXSDLL) for DDR3. Valid values are 2 to 1023.
+      bit_offset: 0
+      bit_size: 10
+    - name: TXP
+      description: Power down exit delay. The minimum time between a power down exit command and any other command. This parameter must be set to the maximum of the various minimum power down exit delay parameters specified in the SDRAM datasheet, i.e. max(tXP, tXARD, tXARDS) for DDR2 and max(tXP, tXPDLL) for DDR3. Valid values are 2 to 31.
+      bit_offset: 10
+      bit_size: 5
+    - name: TCKE
+      description: CKE minimum pulse width. Also specifies the minimum time that the SDRAM must remain in power down or self refresh mode. For DDR3 this parameter must be set to the value of tCKESR which is usually bigger than the value of tCKE. Valid values are 2 to 15.
+      bit_offset: 15
+      bit_size: 4
+    - name: TDLLK
+      description: DLL locking time. Valid values are 2 to 1023.
+      bit_offset: 19
+      bit_size: 10
+    - name: TRTODT
+      description: "Read to ODT delay (DDR3 only). Specifies whether ODT can be enabled immediately after the read post-amble or one clock delay has to be added. Valid values are: 0 = ODT may be turned on immediately after read post-amble 1 = ODT may not be turned on until one clock after the read post-amble If tRTODT is set to 1, then the read-to-write latency is increased by 1 if ODT is enabled."
+      bit_offset: 29
+      bit_size: 1
+    - name: TRTW
+      description: "Read to Write command delay. Valid values are: 0 = standard bus turn around delay 1 = add 1 clock to standard bus turn around delay This parameter allows the user to increase the delay between issuing Write commands to the SDRAM when preceded by Read commands. This provides an option to increase bus turn-around margin for high frequency systems."
+      bit_offset: 30
+      bit_size: 1
+    - name: TCCD
+      description: "Read to read and write to write command delay. Valid values are: 0 = BL/2 for DDR2 and 4 for DDR3 1 = BL/2 + 1 for DDR2 and 5 for DDR3."
+      bit_offset: 31
+      bit_size: 1
+fieldset/DXCCR:
+  description: “DATX8 Common Configuration Register (DXCCR)” on page 99.
+  fields:
+    - name: DXODT
+      description: "Data On-Die Termination: Enables, when set, the on-die termination on the I/O for DQ, DM, and DQS/DQS# pins of all DATX8 macros. This bit is ORed with the ODT configuration bit of the individual DATX8 (“DATX8 General Configuration Register (DXnGCR)” on page 148)."
+      bit_offset: 0
+      bit_size: 1
+    - name: DXIOM
+      description: "Data I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for DQ, DM, and DQS/DQS# pins of all DATX8 macros. This bit is ORed with the IOM configuration bit of the individual DATX8."
+      bit_offset: 1
+      bit_size: 1
+    - name: MDLEN
+      description: "Master Delay Line Enable: Enables, if set, all DATX8 master delay line calibration to perform subsequent period measurements following the initial period measurements that are performed after reset or on when calibration is manually triggered. These additional measurements are accumulated and filtered as long as this bit remains high. This bit is ANDed with the MDLEN bit in the individual DATX8."
+      bit_offset: 2
+      bit_size: 1
+    - name: DXPDD1
+      description: "Data Power Down Driver: Powers down, when set, the output driver on I/O for DQ, DM, and DQS/DQS# pins of all DATX8 macros. This bit is ORed with the PDD configuration bit of the individual DATX8."
+      bit_offset: 3
+      bit_size: 1
+    - name: DXPDR
+      description: "Data Power Down Receiver: Powers down, when set, the input receiver on I/O for DQ, DM, and DQS/DQS# pins of all DATX8 macros. This bit is ORed with the PDR configuration bit of the individual DATX8."
+      bit_offset: 4
+      bit_size: 1
+    - name: DQSRES
+      description: "DQS Resistor: Selects the on-die pull-down/pull-up resistor for DQS pins. DQSRES[3] selects pull-down (when set to 0) or pull-up (when set to 1). DQSRES[2:0] selects the resistor value. Refer PHY databook for pull-down/pull-up resistor values (RA_SEL/RB_SEL) for DQS/DQS_b."
+      bit_offset: 5
+      bit_size: 4
+    - name: DQSNRES
+      description: "DQS# Resistor: Selects the on-die pull-up/pull-down resistor for DQS# pins. Same encoding as DQSRES. Refer PHY databook for pull-down/pull-up resistor values (RA_SEL/RB_SEL) for DQS/DQS_b."
+      bit_offset: 9
+      bit_size: 4
+    - name: DXSR
+      description: "Data Slew Rate (D3F I/O Only): Selects slew rate of the I/O for DQ, DM, and DQS/DQS# pins of all DATX8 macros."
+      bit_offset: 13
+      bit_size: 2
+    - name: MSBUDQ
+      description: "Most Significant Byte Unused DQs: Specifies the number of DQ bits that are not used in the most significant byte. The used (valid) bits for this byte are [8-MSBDQ- 1:0]. To disable the whole byte, use the DXnGCR.DXEN register."
+      bit_offset: 15
+      bit_size: 3
+    - name: UDQODT
+      description: "Unused DQ On-Die Termination: Enables, when set, the on-die termination on the I/O for unused DQ pins."
+      bit_offset: 18
+      bit_size: 1
+    - name: UDQPDD1
+      description: "Unused DQ Power Down Driver: Powers down, when set, the output driver on the I/O for unused DQ pins."
+      bit_offset: 19
+      bit_size: 1
+    - name: UDQPDR
+      description: "Unused DQ Power Down Receiver: Powers down, when set, the input receiver on the I/O for unused DQ pins."
+      bit_offset: 20
+      bit_size: 1
+    - name: UDQIOM
+      description: "Unused DQ I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for unused DQ pins."
+      bit_offset: 21
+      bit_size: 1
+    - name: DYNDXPDD1
+      description: "Dynamic Data Power Down Driver: Dynamically powers down, when set, the output driver on I/O for the DQ pins of the active DATX8 macros. Applies only when DXPDD and DXnGCR.DXPDD are not set to 1. Driver is powered-up on a DFI WRITE command and powered-down (twrlat + WL/2 + n) HDR cycles after the last DFI WRITE command. Note that n is defined by the register bit field DXCCR[27:24] (DDPDDCDO)."
+      bit_offset: 22
+      bit_size: 1
+    - name: DYNDXPDR
+      description: "Data Power Down Receiver: Dynamically powers down, when set, the input receiver on I/O for the DQ pins of the active DATX8 macros. Applies only when DXPDR and DXnGCR.DXPDR are not set to 1. Receiver is powered-up on a DFI READ command and powered-down (trddata_en + fixed_read_latency + n) HDR cycles after the last DFI READ command. Note that n is defined by the register bit field DXCCR[31:28] (DDPDRCDO)."
+      bit_offset: 23
+      bit_size: 1
+    - name: DDPDDCDO
+      description: "Dynamic Data Power Down Driver Count Down Offset: Offset applied in calculating window of time where driver is powered up."
+      bit_offset: 24
+      bit_size: 4
+    - name: DDPDRCDO
+      description: "Dynamic Data Power Down Receiver Count Down Offset: Offset applied in calculating window of time where receiver is powered up."
+      bit_offset: 28
+      bit_size: 4
+fieldset/EMR:
+  description: No description available.
+  fields:
+    - name: DE
+      description: "DLL Enable/Disable: Enable (0) or disable (1) the DLL. DLL must be enabled for normal operation."
+      bit_offset: 0
+      bit_size: 1
+    - name: DIC
+      description: "Output Driver Impedance Control: Controls the output drive strength. Valid values are: 0 = Full strength 1 = Reduced strength."
+      bit_offset: 1
+      bit_size: 1
+    - name: RTTL
+      description: On Die Termination low bit:.
+      bit_offset: 2
+      bit_size: 1
+    - name: AL
+      description: "Posted CAS Additive Latency: Setting additive latency that allows read and write commands to be issued to the SDRAM earlier than normal (refer to the SDRAM datasheet for details). Valid values are: 000 = 0 001 = 1 010 = 2 011 = 3 100 = 4 101 = 5 All other settings are reserved and should not be used. The maximum allowed value of AL is tRCD-1."
+      bit_offset: 3
+      bit_size: 3
+    - name: RTTH
+      description: "On Die Termination high bit: Selects the effective resistance for SDRAM on die termination. Valid values are: 00 = ODT disabled 01 = 75 10 = 150 11 = 50 (some vendors)."
+      bit_offset: 6
+      bit_size: 1
+    - name: OCD
+      description: "Off-Chip Driver (OCD) Impedance Calibration: Used to calibrate and match pull-up to pull- down impedance to 18  nominal (refer to the SDRAM datasheet for details). Valid values are: 000 = OCD calibration mode exit 001 = Drive (1) pull-up 010 = Drive (0) pull-down 100 = OCD enter adjust mode 111 = OCD calibration default All other settings are reserved and should not be used. Note that OCD is not supported by all vendors. Refer to the SDRAM datasheet for details on the recommended OCD settings."
+      bit_offset: 7
+      bit_size: 3
+    - name: DQS
+      description: "DQS_b Enable/Disable: When ‘0’, DQS_b is the complement of the differential data strobe pair DQS/DQS_b. When ‘1’, DQS is used in a single-ended mode and the DQS_b pin is disabled. Also used to similarly enable/disable RDQS_b if RDQS is enabled. The Controller does not allow the user to change this bit."
+      bit_offset: 10
+      bit_size: 1
+    - name: RDQS
+      description: "RDQS Enable/Disable: When enabled (‘1’), RDQS is identical in function and timing to data strobe DQS during a read, and ignored during a write. A ‘0’ disables the SDRAM from driving RDQS. The Controller does not allow the user to change this bit."
+      bit_offset: 11
+      bit_size: 1
+    - name: QOFF
+      description: "Output Enable/Disable: When ‘0’, all outputs function normal; when ‘1’ all SDRAM outputs are disabled removing output buffer current. This feature is intended to be used for IDD characterization of read current and should not be used in normal operation."
+      bit_offset: 12
+      bit_size: 1
+fieldset/EMR2:
+  description: No description available.
+  fields:
+    - name: PASR
+      description: "Partial Array Self Refresh: Specifies that data located in areas of the array beyond the specified location will be lost if self refresh is entered. Valid settings for 4 banks are: 000 = Full Array 001 = Half Array (BA[1:0] = 00 & 01) 010 = Quarter Array (BA[1:0] = 00) 011 = Not defined 100 = 3/4 Array (BA[1:0] = 01, 10, & 11) 101 = Half Array (BA[1:0] = 10 & 11) 110 = Quarter Array (BA[1:0] = 11) 111 = Not defined Valid settings for 8 banks are: 000 = Full Array 001 = Half Array (BA[2:0] = 000, 001, 010 & 011) 010 = Quarter Array (BA[2:0] = 000, 001) 011 = 1/8 Array (BA[2:0] = 000) 100 = 3/4 Array (BA[2:0] = 010, 011, 100, 101, 110 & 111) 101 = Half Array (BA[2:0] = 100, 101, 110 & 111) 110 = Quarter Array (BA[2:0] = 110 & 111) 111 = 1/8 Array (BA[2:0] 111)."
+      bit_offset: 0
+      bit_size: 3
+    - name: DCC
+      description: "Duty Cycle Corrector: Enables, if set, duty cycle correction within SDRAM."
+      bit_offset: 3
+      bit_size: 1
+    - name: SRF
+      description: "Self Refresh Rate: Enables, if set, high temperature self refresh rate."
+      bit_offset: 7
+      bit_size: 1
+fieldset/EMR3:
+  description: No description available.
+  fields: []
+fieldset/GCR:
+  description: “DATX8 General Configuration Register (DXnGCR)” on page 148.
+  fields:
+    - name: DXEN
+      description: "Data Byte Enable: Enables, if set, the data byte. Setting this bit to '0' disables the byte, i.e. the byte is not used in PHY initialization or training and is ignored during SDRAM read/write operations."
+      bit_offset: 0
+      bit_size: 1
+    - name: DQSODT
+      description: "DQS On-Die Termination: Enables, when set, the on-die termination on the I/O for DQS/DQS# pin of the byte. This bit is ORed with the common DATX8 ODT configuration bit (see “DATX8 Common Configuration Register (DXCCR)” on page 99). Note: This bit is only valid when DXnGCR0[9] is '0'."
+      bit_offset: 1
+      bit_size: 1
+    - name: DQODT
+      description: "Data On-Die Termination: Enables, when set, the on-die termination on the I/O for DQ and DM pins of the byte. This bit is ORed with the common DATX8 ODT configuration bit (see “DATX8 Common Configuration Register (DXCCR)” on page 99). Note: This bit is only valid when DXnGCR0[10] is '0'."
+      bit_offset: 2
+      bit_size: 1
+    - name: DXIOM
+      description: "Data I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for DQ, DM, and DQS/DQS# pins of the byte. This bit is ORed with the IOM configuration bit of the individual DATX8(see “DATX8 Common Configuration Register (DXCCR)” on page 99)."
+      bit_offset: 3
+      bit_size: 1
+    - name: DXPDD1
+      description: "Data Power Down Driver: Powers down, when set, the output driver on I/O for DQ, DM, and DQS/DQS# pins of the byte. This bit is ORed with the common PDD configuration bit (see “DATX8 Common Configuration Register (DXCCR)” on page 99)."
+      bit_offset: 4
+      bit_size: 1
+    - name: DXPDR
+      description: "Data Power Down Receiver: Powers down, when set, the input receiver on I/O for DQ, DM, and DQS/DQS# pins of the byte. This bit is ORed with the common PDR configuration bit (see “DATX8 Common Configuration Register (DXCCR)” on page 99)."
+      bit_offset: 5
+      bit_size: 1
+    - name: DQSRPD
+      description: "DQSR Power Down: Powers down, if set, the PDQSR cell. This bit is ORed with the common PDR configuration bit (see “DATX8 Common Configuration Register (DXCCR)” on page 99)."
+      bit_offset: 6
+      bit_size: 1
+    - name: DSEN
+      description: "Write DQS Enable: Controls whether the write DQS going to the SDRAM is enabled (toggling) or disabled (static value) and whether the DQS is inverted. DQS# is always the inversion of DQS. These values are valid only when DQS/DQS# output enable is on, otherwise the DQS/DQS# is tristated. Valid settings are: 00 = Reserved 01 = DQS toggling with normal polarity (This should be the default setting) 10 = Reserved 11 = Reserved."
+      bit_offset: 7
+      bit_size: 2
+    - name: DQSRTT
+      description: "DQS Dynamic RTT Control: If set, the on die termination (ODT) control of the DQS/DQS# SSTL I/O is dynamically generated to enable the ODT during read operation and disabled otherwise. By setting this bit to '0' the dynamic ODT feature is disabled. To control ODT statically this bit must be set to '0' and DXnGCR0[1] (DQSODT) is used to enable ODT (when set to '1') or disable ODT(when set to '0')."
+      bit_offset: 9
+      bit_size: 1
+    - name: DQRTT
+      description: "DQ Dynamic RTT Control: If set, the on die termination (ODT) control of the DQ/DM SSTL I/O is dynamically generated to enable the ODT during read operation and disabled otherwise. By setting this bit to '0' the dynamic ODT feature is disabled. To control ODT statically this bit must be set to '0' and DXnGCR0[2] (DQODT) is used to enable ODT (when set to '1') or disable ODT(when set to '0')."
+      bit_offset: 10
+      bit_size: 1
+    - name: RTTOH
+      description: "RTT Output Hold: Indicates the number of clock cycles (from 0 to 3) after the read data postamble for which ODT control should remain set to DQSODT for DQS or DQODT for DQ/DM before disabling it (setting it to ‘0’) when using dynamic ODT control. ODT is disabled almost RTTOH clock cycles after the read postamble."
+      bit_offset: 11
+      bit_size: 2
+    - name: RTTOAL
+      description: "RTT On Additive Latency: Indicates when the ODT control of DQ/DQS SSTL I/Os is set to the value in DQODT/DQSODT during read cycles. Valid values are: 0 = ODT control is set to DQSODT/DQODT almost two cycles before read data preamble 1 = ODT control is set to DQSODT/DQODT almost one cycle before read data preamble."
+      bit_offset: 13
+      bit_size: 1
+    - name: DXOEO
+      description: "Data Byte Output Enable Override: Specifies whether the output I/O output enable for the byte lane should be set to a fixed value. Valid values are: 00 = No override. Output enable is controlled by DFI transactions 01 = output enable is asserted (I/O is forced to output mode). 10 = Output enable is de-asserted (I/O is forced to input mode) 11 = Reserved."
+      bit_offset: 14
+      bit_size: 2
+    - name: PLLRST
+      description: "PLL Rest: Resets the byte PLL by driving the PLL reset pin. This bit is not self- clearing and a '0' must be written to de-assert the reset. This bit is ORed with the global PLLRST configuration bit (see Table 3-10 on page 91)."
+      bit_offset: 16
+      bit_size: 1
+    - name: PLLPD
+      description: "PLL Power Down: Puts the byte PLL in power down mode by driving the PLL power down pin. This bit is not self-clearing and a '0' must be written to de-assert the power-down. This bit is ORed with the global PLLPD configuration bit (see Table 3-10 on page 91)."
+      bit_offset: 17
+      bit_size: 1
+    - name: GSHIFT
+      description: "Gear Shift: Enables, if set, rapid locking mode on the byte PLL. This bit is ORed with the global GSHIFT configuration bit (see Table 3-10 on page 91)."
+      bit_offset: 18
+      bit_size: 1
+    - name: PLLBYP
+      description: "PLL Bypass: Puts the byte PLL in bypass mode by driving the PLL bypass pin. This bit is not self-clearing and a '0' must be written to de-assert the bypass. This bit is ORed with the global BYP configuration bit (see Table 3-10 on page 91)."
+      bit_offset: 19
+      bit_size: 1
+    - name: WLRKEN
+      description: "Write Level Rank Enable: Specifies the ranks that should be write leveled for this byte. Write leveling responses from ranks that are not enabled for write leveling for a particular byte are ignored and write leveling is flagged as done for these ranks. WLRKEN[0] enables rank 0, [1] enables rank 1, [2] enables rank 2, and [3] enables rank 3."
+      bit_offset: 26
+      bit_size: 4
+    - name: MDLEN
+      description: "Master Delay Line Enable: Enables, if set, the DATX8 master delay line calibration to perform subsequent period measurements following the initial period measurements that are performed after reset or when calibration is manually triggered. These additional measurements are accumulated and filtered as long as this bit remains high. This bit is ANDed with the common DATX8 MDL enable bit."
+      bit_offset: 30
+      bit_size: 1
+    - name: CALBYP
+      description: "Calibration Bypass: Prevents, if set, period measurement calibration from automatically triggering after PHY initialization."
+      bit_offset: 31
+      bit_size: 1
+fieldset/GPR0:
+  description: General Purpose Register 0-1 (GPR0-1).
+  fields:
+    - name: GPR0
+      description: "General Purpose Register 0: General purpose register bits."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GPR1:
+  description: General Purpose Register 0-1 (GPR0-1).
+  fields:
+    - name: GPR1
+      description: "General Purpose Register 1: General purpose register bits."
+      bit_offset: 0
+      bit_size: 32
+fieldset/GSR0:
+  description: DATX8 General Status Registers 0-2 (DXnGSR0-2).
+  fields:
+    - name: WDQCAL
+      description: "Write DQ Calibration: Indicates, if set, that the DATX8 has finished doing period measurement calibration for the write DQ LCDL."
+      bit_offset: 0
+      bit_size: 1
+    - name: RDQSCAL
+      description: "Read DQS Calibration: Indicates, if set, that the DATX8 has finished doing period measurement calibration for the read DQS LCDL."
+      bit_offset: 1
+      bit_size: 1
+    - name: RDQSNCAL
+      description: "Read DQS# Calibration (Type B/B1 PHY Only): Indicates, if set, that the DATX8 has finished doing period measurement calibration for the read DQS# LCDL."
+      bit_offset: 2
+      bit_size: 1
+    - name: GDQSCAL
+      description: "Read DQS gating Calibration: Indicates, if set, that the DATX8 has finished doing period measurement calibration for the read DQS gating LCDL."
+      bit_offset: 3
+      bit_size: 1
+    - name: WLCAL
+      description: "Write Leveling Calibration: Indicates, if set, that the DATX8 has finished doing period measurement calibration for the write leveling slave delay line."
+      bit_offset: 4
+      bit_size: 1
+    - name: WLDONE
+      description: "Write Leveling Done: Indicates, if set, that the DATX8 has completed write leveling."
+      bit_offset: 5
+      bit_size: 1
+    - name: WLERR
+      description: "Write Leveling Error: Indicates, if set, that there is a write leveling error in the DATX8."
+      bit_offset: 6
+      bit_size: 1
+    - name: WLPRD
+      description: "Write Leveling Period: Returns the DDR clock period measured by the write leveling LCDL during calibration. The measured period is used to generate the control of the write leveling pipeline which is a function of the write-leveling delay and the clock period. This value is PVT compensated."
+      bit_offset: 7
+      bit_size: 8
+    - name: DPLOCK
+      description: "DATX8 PLL Lock: Indicates, if set, that the DATX8 PLL has locked. This is a direct status of the DATX8 PLL lock pin."
+      bit_offset: 15
+      bit_size: 1
+    - name: GDQSPRD
+      description: "Read DQS gating Period: Returns the DDR clock period measured by the read DQS gating LCDL during calibration. This value is PVT compensated."
+      bit_offset: 16
+      bit_size: 8
+    - name: QSGERR
+      description: "DQS Gate Training Error: Indicates, if set, that there is an error in DQS gate training. One bit for each of the up to 4 ranks."
+      bit_offset: 24
+      bit_size: 4
+    - name: WLDQ
+      description: "Write Leveling DQ Status: Captures the write leveling DQ status from the DRAM during software write leveling."
+      bit_offset: 28
+      bit_size: 1
+fieldset/GSR1:
+  description: DATX8 General Status Registers 0-2 (DXnGSR0-2).
+  fields:
+    - name: DLTDONE
+      description: "Delay Line Test Done: Indicates, if set, that the PHY control block has finished doing period measurement of the DATX8 delay line digital test output."
+      bit_offset: 0
+      bit_size: 1
+    - name: DLTCODE
+      description: "Delay Line Test Code: Returns the code measured by the PHY control block that corresponds to the period of the DATX8 delay line digital test output."
+      bit_offset: 1
+      bit_size: 24
+fieldset/GSR2:
+  description: “DATX8 General Status Register 2 (DXnGSR2)” on page 152.
+  fields:
+    - name: RDERR
+      description: "Read Bit Deskew Error: Indicates, if set, that the DATX8 has encountered an error during execution of the read bit deskew training."
+      bit_offset: 0
+      bit_size: 1
+    - name: RDWN
+      description: "Read Bit Deskew Warning: Indicates, if set, that the DATX8 has encountered a warning during execution of the read bit deskew training."
+      bit_offset: 1
+      bit_size: 1
+    - name: WDERR
+      description: "Write Bit Deskew Error: Indicates, if set, that the DATX8 has encountered an error during execution of the write bit deskew training."
+      bit_offset: 2
+      bit_size: 1
+    - name: WDWN
+      description: "Write Bit Deskew Warning: Indicates, if set, that the DATX8 has encountered a warning during execution of the write bit deskew training."
+      bit_offset: 3
+      bit_size: 1
+    - name: REERR
+      description: "Read Data Eye Training Error: Indicates, if set, that the DATX8 has encountered an error during execution of the read data eye training."
+      bit_offset: 4
+      bit_size: 1
+    - name: REWN
+      description: "Read Data Eye Training Warning: Indicates, if set, that the DATX8 has encountered a warning during execution of the read data eye training."
+      bit_offset: 5
+      bit_size: 1
+    - name: WEERR
+      description: "Write Data Eye Training Error: Indicates, if set, that the DATX8 has encountered an error during execution of the write data eye training."
+      bit_offset: 6
+      bit_size: 1
+    - name: WEWN
+      description: "Write Data Eye Training Warning: Indicates, if set, that the DATX8 has encountered a warning during execution of the write data eye training."
+      bit_offset: 7
+      bit_size: 1
+    - name: ESTAT
+      description: "Error Status: If an error occurred for this lane as indicated by RDERR, WDERR, REERR or WEERR the error status code can provide additional information regard when the error occurred during the algorithm execution."
+      bit_offset: 8
+      bit_size: 4
+fieldset/GTR:
+  description: “DATX8 General Timing Register (DXnGTR)” on page 159.
+  fields:
+    - name: R0DGSL
+      description: "Rank n DQS Gating System Latency: This is used to increase the number of clock cycles needed to expect valid DDR read data by up to seven extra clock cycles. This is used to compensate for board delays and other system delays. Power-up default is 000 (i.e. no extra clock cycles required). The SL fields are initially set by the PUB during automatic DQS data training but these values can be overwritten by a direct write to this register. Every three bits of this register control the latency of each of the (up to) four ranks. R0DGSL controls the latency of rank 0, R1DGSL controls rank 1, and so on. Valid values are 0 to 7:."
+      bit_offset: 0
+      bit_size: 3
+    - name: R1DGSL
+      description: No description available.
+      bit_offset: 3
+      bit_size: 3
+    - name: R2DGSL
+      description: No description available.
+      bit_offset: 6
+      bit_size: 3
+    - name: R3DGSL
+      description: No description available.
+      bit_offset: 9
+      bit_size: 3
+    - name: R0WLSL
+      description: "Rank n Write Leveling System Latency: This is used to adjust the write latency after write leveling. Power-up default is 01 (i.e. no extra clock cycles required). The SL fields are initially set by the PUB during automatic write leveling but these values can be overwritten by a direct write to this register. Every two bits of this register control the latency of each of the (up to) four ranks. R0WLSL controls the latency of rank 0, R1WLSL controls rank 1, and so on. Valid values: 00 = Write latency = WL - 1 01 = Write latency = WL 10 = Write latency = WL + 1 11 = Reserved."
+      bit_offset: 12
+      bit_size: 2
+    - name: R1WLSL
+      description: No description available.
+      bit_offset: 14
+      bit_size: 2
+    - name: R2WLSL
+      description: No description available.
+      bit_offset: 16
+      bit_size: 2
+    - name: R3WLSL
+      description: No description available.
+      bit_offset: 18
+      bit_size: 2
+fieldset/LCDLR0:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: R0WLD
+      description: "Rank 0 Write Leveling Delay: Rank 0 delay select for the write leveling (WL) LCDL."
+      bit_offset: 0
+      bit_size: 8
+    - name: R1WLD
+      description: "Rank 1 Write Leveling Delay: Rank 1 delay select for the write leveling (WL) LCDL."
+      bit_offset: 8
+      bit_size: 8
+    - name: R2WLD
+      description: "Rank 2 Write Leveling Delay: Rank 2 delay select for the write leveling (WL) LCDL."
+      bit_offset: 16
+      bit_size: 8
+    - name: R3WLD
+      description: "Rank 3 Write Leveling Delay: Rank 3 delay select for the write leveling (WL) LCDL."
+      bit_offset: 24
+      bit_size: 8
+fieldset/LCDLR1:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: WDQD
+      description: "Write Data Delay: Delay select for the write data (WDQ) LCDL."
+      bit_offset: 0
+      bit_size: 8
+    - name: RDQSD
+      description: "Read DQS Delay: Delay select for the read DQS (RDQS) LCDL."
+      bit_offset: 8
+      bit_size: 8
+    - name: RDQSND
+      description: "Read DQSN Delay (Type B/B1 PHY Only): Delay select for the read DQSN (RDQS) LCDL."
+      bit_offset: 16
+      bit_size: 8
+fieldset/LCDLR2:
+  description: DATX8 Bit Delay Line Register 0-4 (DXnBDLR0-4).
+  fields:
+    - name: R0DQSGD
+      description: "Rank 0 Read DQS Gating Delay: Rank 0 delay select for the read DQS gating (DQSG) LCDL."
+      bit_offset: 0
+      bit_size: 8
+    - name: R1DQSGD
+      description: "Rank 1 Read DQS Gating Delay: Rank 1 delay select for the read DQS gating (DQSG) LCDL."
+      bit_offset: 8
+      bit_size: 8
+    - name: R2DQSGD
+      description: "Rank 2 Read DQS Gating Delay: Rank 2 delay select for the read DQS gating (DQSG) LCDL."
+      bit_offset: 16
+      bit_size: 8
+    - name: R3DQSGD
+      description: "Rank 3 Read DQS Gating Delay: Rank 3 delay select for the read DQS gating (DQSG) LCDL."
+      bit_offset: 24
+      bit_size: 8
+fieldset/MDLR:
+  description: “DATX8 Master Delay Line Register (DXnMDLR)” on page 157.
+  fields:
+    - name: IPRD
+      description: "Initial Period: Initial period measured by the master delay line calibration for VT drift compensation. This value is used as the denominator when calculating the ratios of updates during VT compensation."
+      bit_offset: 0
+      bit_size: 8
+    - name: TPRD
+      description: "Target Period: Target period measured by the master delay line calibration for VT drift compensation. This is the current measured value of the period and is continuously updated if the MDL is enabled to do so."
+      bit_offset: 8
+      bit_size: 8
+    - name: MDLD
+      description: "MDL Delay: Delay select for the LCDL for the Master Delay Line."
+      bit_offset: 16
+      bit_size: 8
+fieldset/MR:
+  description: No description available.
+  fields:
+    - name: BL
+      description: "Burst Length: Determines the maximum number of column locations that can be accessed during a given read or write command. Valid values are: 010 = 4 011 = 8 All other settings are reserved and should not be used."
+      bit_offset: 0
+      bit_size: 3
+    - name: BT
+      description: "Burst Type: Indicates whether a burst is sequential (0) or interleaved (1)."
+      bit_offset: 3
+      bit_size: 1
+    - name: CL
+      description: "CAS Latency: The delay between when the SDRAM registers a read command to when data is available. Valid values are: 010 = 2 011 = 3 100 = 4 101 = 5 110 = 6 111 = 7 All other settings are reserved and should not be used."
+      bit_offset: 4
+      bit_size: 3
+    - name: TM
+      description: "Operating Mode: Selects either normal operating mode (0) or test mode (1). Test mode is reserved for the manufacturer and should not be used."
+      bit_offset: 7
+      bit_size: 1
+    - name: DR
+      description: "DLL Reset: Writing a ‘1’ to this bit will reset the SDRAM DLL. This bit is self- clearing, i.e. it returns back to ‘0’ after the DLL reset has been issued."
+      bit_offset: 8
+      bit_size: 1
+    - name: WR
+      description: "Write Recovery: This is the value of the write recovery. It is calculated by dividing the datasheet write recovery time, tWR (ns) by the datasheet clock cycle time, tCK (ns) and rounding up a non-integer value to the next integer. Valid values are: 001 = 2 010 = 3 011 = 4 100 = 5 101 = 6 All other settings are reserved and should not be used. NOTE: tWR (ns) is the time from the first SDRAM positive clock edge after the last data-in pair of a write command, to when a precharge of the same bank can be issued."
+      bit_offset: 9
+      bit_size: 3
+    - name: PD
+      description: "Power-Down Control: Controls the exit time for power-down modes. Refer to the SDRAM datasheet for details on power-down modes. Valid values are: 0 = Fast exit 1 = Slow exit."
+      bit_offset: 12
+      bit_size: 1
+fieldset/MR0:
+  description: “Mode Register 0 (MR0)” on page 108.
+  fields:
+    - name: BL
+      description: "Burst Length: Determines the maximum number of column locations that can be accessed during a given read or write command. Valid values are: Valid values for DDR3 are: 00 = 8 (Fixed) 01 = 4 or 8 (On the fly) 10 = 4 (Fixed) 11 = Reserved."
+      bit_offset: 0
+      bit_size: 2
+    - name: CLL
+      description: CAS Latency low bit.
+      bit_offset: 2
+      bit_size: 1
+    - name: BT
+      description: "Burst Type: Indicates whether a burst is sequential (0) or interleaved (1)."
+      bit_offset: 3
+      bit_size: 1
+    - name: CLH
+      description: "CAS Latency: The delay between when the SDRAM registers a read command to when data is available. Valid values are: 0010 = 5 0100 = 6 0110 = 7 1000 = 8 1010 = 9 1100 = 10 1110 = 11 0001 = 12 0011 = 13 0101 = 14 All other settings are reserved and should not be used."
+      bit_offset: 4
+      bit_size: 3
+    - name: TM
+      description: "Operating Mode: Selects either normal operating mode (0) or test mode (1). Test mode is reserved for the manufacturer and should not be used."
+      bit_offset: 7
+      bit_size: 1
+    - name: DR
+      description: "DLL Reset: Writing a ‘1’ to this bit will reset the SDRAM DLL. This bit is self- clearing, i.e. it returns back to ‘0’ after the DLL reset has been issued."
+      bit_offset: 8
+      bit_size: 1
+    - name: WR
+      description: "Write Recovery: This is the value of the write recovery. It is calculated by dividing the datasheet write recovery time, tWR (ns) by the datasheet clock cycle time, tCK (ns) and rounding up a non-integer value to the next integer. Valid values are: 000 = 16 001 = 5 010 = 6 011 = 7 100 = 8 101 = 10 110 = 12 111 = 14 All other settings are reserved and should not be used. NOTE: tWR (ns) is the time from the first SDRAM positive clock edge after the last data-in pair of a write command, to when a precharge of the same bank can be issued."
+      bit_offset: 9
+      bit_size: 3
+    - name: PD
+      description: "Power-Down Control: Controls the exit time for power-down modes. Refer to the SDRAM datasheet for details on power-down modes. Valid values are: 0 = Slow exit (DLL off) 1 = Fast exit (DLL on)."
+      bit_offset: 12
+      bit_size: 1
+fieldset/MR1:
+  description: “Mode Register 1 (MR1)” on page 111.
+  fields:
+    - name: DE
+      description: "DLL Enable/Disable: Enable (0) or disable (1) the DLL. DLL must be enabled for normal operation. Note: SDRAM DLL off mode is not supported."
+      bit_offset: 0
+      bit_size: 1
+    - name: DICL
+      description: Output Driver Impedance Control low bit.
+      bit_offset: 1
+      bit_size: 1
+    - name: RTTL
+      description: On Die Termination low bit.
+      bit_offset: 2
+      bit_size: 1
+    - name: AL
+      description: "Posted CAS Additive Latency: Setting additive latency that allows read and write commands to be issued to the SDRAM earlier than normal (refer to the SDRAM datasheet for details). Valid values are: 00 = 0 (AL disabled) 01 = CL - 1 10 = CL - 2 11 = Reserved."
+      bit_offset: 3
+      bit_size: 2
+    - name: DICH
+      description: "Output Driver Impedance Control high bit: Controls the output drive strength. Valid values are: 00 = RZQ/6 01 = RZQ7 10 = Reserved 11 = Reserved."
+      bit_offset: 5
+      bit_size: 1
+    - name: RTTM
+      description: "On Die Termination mid bit: Selects the effective resistance for SDRAM on die termination. Valid values are: 000 = ODT disabled 001 = RZQ/4 010 = RZQ/2 011 = RZQ/6 100 = RZQ/12 101 = RZQ/8 All other settings are reserved and should not be used. Bit on [9, 6,2]."
+      bit_offset: 6
+      bit_size: 1
+    - name: LEVEL
+      description: "Write Leveling Enable: Enables write-leveling when set."
+      bit_offset: 7
+      bit_size: 1
+    - name: RTTH
+      description: On Die Termination high bit.
+      bit_offset: 9
+      bit_size: 1
+    - name: TDQS
+      description: "Termination Data Strobe: When enabled (‘1’) TDQS provides additional termination resistance outputs that may be useful in some system configurations. Refer to the SDRAM datasheet for details."
+      bit_offset: 11
+      bit_size: 1
+    - name: QOFF
+      description: "Output Enable/Disable: When ‘0’, all outputs function normal; when ‘1’ all SDRAM outputs are disabled removing output buffer current. This feature is intended to be used for IDD characterization of read current and should not be used in normal operation."
+      bit_offset: 12
+      bit_size: 1
+fieldset/MR2:
+  description: “Mode Register 2/Extended Mode Register 2 (MR2/EMR2)” on page 114.
+  fields:
+    - name: PASR
+      description: "Partial Array Self Refresh: Specifies that data located in areas of the array beyond the specified location will be lost if self refresh is entered. Valid settings for 4 banks are: 000 = Full Array 001 = Half Array (BA[1:0] = 00 & 01) 010 = Quarter Array (BA[1:0] = 00) 011 = Not defined 100 = 3/4 Array (BA[1:0] = 01, 10, & 11) 101 = Half Array (BA[1:0] = 10 & 11) 110 = Quarter Array (BA[1:0] = 11) 111 = Not defined Valid settings for 8 banks are: 000 = Full Array 001 = Half Array (BA[2:0] = 000, 001, 010 & 011) 010 = Quarter Array (BA[2:0] = 000, 001) 011 = 1/8 Array (BA[2:0] = 000) 100 = 3/4 Array (BA[2:0] = 010, 011, 100, 101, 110 & 111) 101 = Half Array (BA[2:0] = 100, 101, 110 & 111) 110 = Quarter Array (BA[2:0] = 110 & 111) 111 = 1/8 Array (BA[2:0] 111)."
+      bit_offset: 0
+      bit_size: 3
+    - name: CWL
+      description: "CAS Write Latency: The delay between when the SDRAM registers a write command to when write data is available. Valid values are: 000 = 5 (tCK > 2.5ns) 001 = 6 (2.5ns > tCK > 1.875ns) 010 = 7 (1.875ns > tCK> 1.5ns) 011 = 8 (1.5ns > tCK > 1.25ns) 100 = 9 (1.25ns > tCK > 1.07ns) 101 = 10 (1.07ns > tCK > 0.935ns) 110 = 11 (0.935ns > tCK > 0.833ns) 111 = 12 (0.833ns > tCK > 0.75ns) All other settings are reserved and should not be used."
+      bit_offset: 3
+      bit_size: 3
+    - name: ASR
+      description: "Auto Self-Refresh: When enabled (‘1’), SDRAM automatically provides self-refresh power management functions for all supported operating temperature values. Otherwise the SRT bit must be programmed to indicate the temperature range."
+      bit_offset: 6
+      bit_size: 1
+    - name: SRT
+      description: "Self-Refresh Temperature Range: Selects either normal (‘0’) or extended (‘1’) operating temperature range during self-refresh."
+      bit_offset: 7
+      bit_size: 1
+    - name: RTTWR
+      description: "Dynamic ODT: Selects RTT for dynamic ODT. Valid values are: 00 = Dynamic ODT off 01 = RZQ/4 10 = RZQ/2 11 = Reserved."
+      bit_offset: 9
+      bit_size: 2
+fieldset/MR3:
+  description: “Mode Register 3 (MR3)” on page 116.
+  fields:
+    - name: MPRLOC
+      description: "Multi-Purpose Register (MPR) Location: Selects MPR data location: Valid value are: 00 = Predefined pattern for system calibration All other settings are reserved and should not be used."
+      bit_offset: 0
+      bit_size: 2
+    - name: MPR
+      description: "Multi-Purpose Register Enable: Enables, if set, that read data should come from the Multi-Purpose Register. Otherwise read data come from the DRAM array."
+      bit_offset: 2
+      bit_size: 1
+fieldset/ODTCR:
+  description: “ODT Configuration Register (ODTCR)” on page 117.
+  fields:
+    - name: RDODT0
+      description: "Read ODT: Specifies whether ODT should be enabled (‘1’) or disabled (‘0’) on each of the up to four ranks when a read command is sent to rank n. RDODT0, RDODT1, RDODT2, and RDODT3 specify ODT settings when a read is to rank 0, rank 1, rank 2, and rank 3, respectively. The four bits of each field each represent a rank, the LSB being rank 0 and the MSB being rank 3. Default is to disable ODT during reads."
+      bit_offset: 0
+      bit_size: 4
+    - name: RDODT1
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: RDODT2
+      description: No description available.
+      bit_offset: 8
+      bit_size: 4
+    - name: RDODT3
+      description: No description available.
+      bit_offset: 12
+      bit_size: 4
+    - name: WRODT0
+      description: "Write ODT: Specifies whether ODT should be enabled (‘1’) or disabled (‘0’) on each of the up to four ranks when a write command is sent to rank n. WRODT0, WRODT1, WRODT2, and WRODT3 specify ODT settings when a write is to rank 0, rank 1, rank 2, and rank 3, respectively. The four bits of each field each represent a rank, the LSB being rank 0 and the MSB being rank 3. Default is to enable ODT only on rank being written to."
+      bit_offset: 16
+      bit_size: 4
+    - name: WRODT1
+      description: No description available.
+      bit_offset: 20
+      bit_size: 4
+    - name: WRODT2
+      description: No description available.
+      bit_offset: 24
+      bit_size: 4
+    - name: WRODT3
+      description: No description available.
+      bit_offset: 28
+      bit_size: 4
+fieldset/PGCR0:
+  description: PHY General Configuration Registers 0-1 (PGCR0- 1).
+  fields:
+    - name: WLLVT
+      description: "Write Leveling LCDL Delay VT Compensation: Enables, if set, the VT drift compensation of the write leveling LCDL."
+      bit_offset: 0
+      bit_size: 1
+    - name: WDLVT
+      description: "Write DQ LCDL Delay VT Compensation: Enables, if set, the VT drift compensation of the write DQ LCDL."
+      bit_offset: 1
+      bit_size: 1
+    - name: RDLVT
+      description: "Read DQS LCDL Delay VT Compensation: Enables, if set, the VT drift compensation of the read DQS LCDL."
+      bit_offset: 2
+      bit_size: 1
+    - name: RGLVT
+      description: "Read DQS Gating LCDL Delay VT Compensation: Enables, if set, the VT drift compensation of the read DQS gating LCDL."
+      bit_offset: 3
+      bit_size: 1
+    - name: WDBVT
+      description: "Write Data BDL VT Compensation: Enables, if set, the VT drift compensation of the write data bit delay lines."
+      bit_offset: 4
+      bit_size: 1
+    - name: RDBVT
+      description: "Read Data BDL VT Compensation: Enables, if set, the VT drift compensation of the read data bit delay lines."
+      bit_offset: 5
+      bit_size: 1
+    - name: DLTMODE
+      description: "Delay Line Test Mode: Selects, if set, the delay line oscillator test mode. Setting this bit also clears all delay line register values. For DL oscillator testing, first set this bit, then apply desired non-zero LCDL and BDL register programmings."
+      bit_offset: 6
+      bit_size: 1
+    - name: DLTST
+      description: "Delay Line Test Start: A write of '1' to this bit will trigger delay line oscillator mode period measurement. This bit is not self clearing and needs to be reset to '0' before the measurement can be re-triggered."
+      bit_offset: 7
+      bit_size: 1
+    - name: OSCEN
+      description: "Oscillator Enable: Enables, if set, the delay line oscillation."
+      bit_offset: 8
+      bit_size: 1
+    - name: OSCDIV
+      description: "Oscillator Mode Division: Specifies the factor by which the delay line oscillator mode output is divided down before it is output on the delay line digital test output pin dl_dto. Valid values are: 000 = Divide by 1 001 = Divide by 256 010 = Divide by 512 011 = Divide by 1024 100 = Divide by 2048 101 = Divide by 4096 110 = Divide by 8192 111 = Divide by 65536."
+      bit_offset: 9
+      bit_size: 3
+    - name: OSCWDL
+      description: "Oscillator Mode Write-Leveling Delay Line Select: Selects which of the two write leveling LCDLs is active. The delay select value of the inactive LCDL is set to zero while the delay select value of the active LCDL can be varied by the input write leveling delay select pin. Valid values are: 00 = No WL LCDL is active 01 = DDR WL LCDL is active 10 = SDR WL LCDL is active 11 = Both LCDLs are active."
+      bit_offset: 12
+      bit_size: 2
+    - name: DTOSEL
+      description: "Digital Test Output Select: Selects the PHY digital test output that is driven onto PHY digital test output (phy_dto) pin: Valid values are: 00000 = DATX8 0 PLL digital test output 00001 = DATX8 1 PLL digital test output 00010 = DATX8 2 PLL digital test output 00011 = DATX8 3 PLL digital test output 00100 = DATX8 4 PLL digital test output 00101 = DATX8 5 PLL digital test output 00110 = DATX8 6 PLL digital test output 00111 = DATX8 7 PLL digital test output 01000 = DATX8 8 PLL digital test output 01001 = AC PLL digital test output 01010 – 01111 = Reserved 10000 = DATX8 0 delay line digital test output 10001 = DATX8 1 delay line digital test output 10010 = DATX8 2 delay line digital test output 10011 = DATX8 3 delay line digital test output 10100 = DATX8 4 delay line digital test output 10101 = DATX8 5 delay line digital test output 10110 = DATX8 6 delay line digital test output 10111 = DATX8 7 delay line digital test output 11000 = DATX8 8 delay line digital test output 11001 = AC delay line digital test output 11010 – 11111 = Reserved."
+      bit_offset: 14
+      bit_size: 5
+    - name: PUBMODE
+      description: Enables, if set, the PUB to control the interface to the PHY and SDRAM. In this mode the DFI commands from the controller are ignored. The bit must be set to 0 after the system determines it is convenient to pass control of the DFI bus to the controller. When set to 0 the DFI interface has control of the PHY and SDRAM interface except when triggering pub operations such as BIST, DCU or data training.
+      bit_offset: 25
+      bit_size: 1
+    - name: CKEN
+      description: "CK Enable: Controls whether the CK going to the SDRAM is enabled (toggling) or disabled (static value) and whether the CK is inverted. Two bits for each of the up to three CK pairs. Valid values for the two bits are: 00 = CK disabled (Driven to constant 0) 01 = CK toggling with inverted polarity 10 = CK toggling with normal polarity (This should be the default setting) 11 = CK disabled (Driven to constant 1)."
+      bit_offset: 26
+      bit_size: 6
+fieldset/PGCR1:
+  description: PHY General Configuration Registers 0-1 (PGCR0- 1).
+  fields:
+    - name: PDDISDX
+      description: "Power Down Disabled Byte: Indicates, if set, that the PLL and I/Os of a disabled byte should be powered down."
+      bit_offset: 0
+      bit_size: 1
+    - name: WLMODE
+      description: "Write Leveling (Software) Mode: Indicates, if set, that the PUB is in software write leveling mode in which software executes single steps of DQS pulsing by writing '1' to PIR.WL. The write leveling DQ status from the DRAM is captured in DXnGSR0.WLDQ."
+      bit_offset: 1
+      bit_size: 1
+    - name: WLSTEP
+      description: "Write Leveling Step: Specifies the number of delay step-size increments during each step of write leveling. Valid values are: 0 = computed to be 1/2 of the associated lane's DXnGSR0.WLPRD value 1 = 1 step size."
+      bit_offset: 2
+      bit_size: 1
+    - name: WSLOPT
+      description: "Write System Latency Optimization: controls the insertion of a pipeline stage on the AC signals from the DFI interface to the PHY to cater for a negative write system latency (WSL) value (only -1 possible). 0x0 = A pipeline stage is inserted only if WL2 training results in a WSL of -1 for any rank 0x1 = Inserts a pipeline stage."
+      bit_offset: 4
+      bit_size: 1
+    - name: ACHRST
+      description: "AC PHY High-Speed Reset: a Write of '0' to this bit resets the AC macro without resetting the PUB RTL logic. This bit is not self-clearing and a '1' must be written to de-assert the reset."
+      bit_offset: 5
+      bit_size: 1
+    - name: WLSELT
+      description: "Write Leveling Select Type: Selects the encoding type for the write leveling select signal depending on the desired setup/hold margins for the internal pipelines. Refer to the DDR PHY Databook for details of how the select type is used. Valid values are: 0 = Type 1: Setup margin of 90 degrees and hold margin of 90 degrees 1 = Type 2: Setup margin of 135 degrees and hold margin of 45 degrees."
+      bit_offset: 6
+      bit_size: 1
+    - name: IODDRM
+      description: "I/O DDR Mode (D3F I/O Only): Selects the DDR mode for the I/Os. These bits connect to bits [2:1] of the IOM pin of the SSTL I/O. For more information, refer to the SSTL I/O chapter in the DWC DDR PHY Databook."
+      bit_offset: 7
+      bit_size: 2
+    - name: MDLEN
+      description: "Master Delay Line Enable: Enables, if set, the AC master delay line calibration to perform subsequent period measurements following the initial period measurements that are performed after reset or on when calibration is manually triggered. These additional measurements are accumulated and filtered as long as this bit remains high."
+      bit_offset: 9
+      bit_size: 1
+    - name: LPFEN
+      description: "Low-Pass Filter Enable: Enables, if set, the low pass filtering of MDL period measurements."
+      bit_offset: 10
+      bit_size: 1
+    - name: LPFDEPTH
+      description: "Low-Pass Filter Depth: Specifies the number of measurements over which MDL period measurements are filtered. This determines the time constant of the low pass filter. Valid values are: 00 = 2 01 = 4 10 = 8 11 = 16."
+      bit_offset: 11
+      bit_size: 2
+    - name: FDEPTH
+      description: "Filter Depth: Specifies the number of measurements over which all AC and DATX8 initial period measurements, that happen after reset or when calibration is manually triggered, are averaged. Valid values are: 00 = 2 01 = 4 10 = 8 11 = 16."
+      bit_offset: 13
+      bit_size: 2
+    - name: DLDLMT
+      description: "Delay Line VT Drift Limit: Specifies the minimum change in the delay line VT drift in one direction which should result in the assertion of the delay line VT drift status signal (vt_drift). The limit is specified in terms of delay select values. A value of 0 disables the assertion of delay line VT drift status signal."
+      bit_offset: 15
+      bit_size: 8
+    - name: ZCKSEL
+      description: "Impedance Clock Divider Select: Selects the divide ratio for the clock used by the impedance control logic relative to the clock used by the memory controller and SDRAM. Valid values are: 00 = Divide by 2 01 = Divide by 8 10 = Divide by 32 11 = Divide by 64 For more information, refer to “Impedance Calibration” on page 174."
+      bit_offset: 23
+      bit_size: 2
+    - name: DXHRST
+      description: "DX PHY High-Speed Reset: a Write of '0' to this bit resets the DX macro without resetting the PUB RTL logic. This bit is not self-clearing and a '1' must be written to de-assert the reset."
+      bit_offset: 25
+      bit_size: 1
+    - name: INHVT
+      description: "VT Calculation Inhibit: Inhibits calculation of the next VT compensated delay line values. A value of 1 will inhibit the VT calculation. This bit should be set to 1 during writes to the delay line registers."
+      bit_offset: 26
+      bit_size: 1
+    - name: IOLB
+      description: "I/O Loop-Back Select: Selects where inside the I/O the loop-back of signals happens. Valid values are: 0 = Loopback is after output buffer; output enable must be asserted 1 = Loopback is before output buffer; output enable is don’t care."
+      bit_offset: 27
+      bit_size: 1
+    - name: LBDQSS
+      description: "Loopback DQS Shift: Selects how the read DQS is shifted during loopback to ensure that the read DQS is centered into the read data eye. Valid values are: 1b0 = PUB sets the read DQS LCDL to 0 (internally). DQS is already shifted 90 degrees by write path 1b1 = The read DQS shift is set manually through software."
+      bit_offset: 28
+      bit_size: 1
+    - name: LBGDQS
+      description: "Loopback DQS Gating: Selects the DQS gating mode that should be used when the PHY is in loopback mode, including BIST loopback mode. Valid values are: 00 = DQS gate is always on 01 = DQS gate training will be triggered on the PUB 10 = DQS gate is set manually using software 11 = Reserved."
+      bit_offset: 29
+      bit_size: 2
+    - name: LBMODE
+      description: "Loopback Mode: Indicates, if set, that the PHY/PUB is in loopback mode."
+      bit_offset: 31
+      bit_size: 1
+fieldset/PGCR2:
+  description: “PHY General Configuration Register 2 (PGCR2)” on page 87.
+  fields:
+    - name: TREFPRD
+      description: "Refresh Period: Indicates the period, after which the PUB has to issue a refresh command to the SDRAM. This is derived from the maximum refresh interval from the datasheet, tRFC(max) or REFI, divided by the clock cycle time. A further 400 clocks must be subtracted from the derived number to account for command flow and missed slots of refreshes in the internal PUB blocks. The default corresponds to DDR3 9*7.8us at 1066MHz when a burst of 9 refreshes are issued at every refresh interval."
+      bit_offset: 0
+      bit_size: 18
+    - name: NOBUB
+      description: "No Bubbles: Specified whether reads should be returned to the controller with no bubbles. Enabling no-bubble reads increases the read latency. Valid values are: 0 = Bubbles are allowed during reads 1 = Bubbles are not allowed during reads."
+      bit_offset: 18
+      bit_size: 1
+    - name: FXDLAT
+      description: "Fixed Latency: Specified whether all reads should be returned to the controller with a fixed read latency. Enabling fixed read latency increases the read latency. Valid values are: 0 = Disable fixed read latency 1 = Enable fixed read latency Fixed read latency is calculated as (12 + (maximum DXnGTR.RxDGSL)/2) HDR clock cycles."
+      bit_offset: 19
+      bit_size: 1
+    - name: DTPMXTMR
+      description: "Data Training PUB Mode Timer Exit: Specifies the number of controller clocks to wait when entering and exiting pub mode data training. The default value ensures controller refreshes do not cause memory model errors when entering and exiting data training. The value should be increased if controller initiated SDRAM ZQ short or long operation may occur just before or just after the execution of data training."
+      bit_offset: 20
+      bit_size: 8
+    - name: SHRAC
+      description: "Shared-AC mode: set to 1 to enable shared address/command mode with two independent data channels – available only if shared address/command mode support is compiled in."
+      bit_offset: 28
+      bit_size: 1
+    - name: ACPDDC
+      description: "AC Power-Down with Dual Channels: Set to 1 to power-down address/command lane when both data channels are powered-down. Only valid in shared-AC mode."
+      bit_offset: 29
+      bit_size: 1
+    - name: LPMSTRC0
+      description: "Low-Power Master Channel 0: set to 1 to have channel 0 act as master to drive channel 1 low-power functions simultaneously. Only valid in shared-AC mode."
+      bit_offset: 30
+      bit_size: 1
+    - name: DYNACPDD1
+      description: "Dynamic AC Power Down Driver: Powers down, when set, the output driver on I/O for ADDR and BA. This bit is ORed with bit ACIOCR[3] (ACPDD)."
+      bit_offset: 31
+      bit_size: 1
+fieldset/PGSR0:
+  description: “PHY General Status Registers 0-1 (PGSR0-1)” on page 89.
+  fields:
+    - name: IDONE
+      description: "Initialization Done: Indicates, if set, that the DDR system initialization has completed. This bit is set after all the selected initialization routines in PIR register have completed."
+      bit_offset: 0
+      bit_size: 1
+    - name: PLDONE
+      description: "PLL Lock Done: Indicates, if set, that PLL locking has completed."
+      bit_offset: 1
+      bit_size: 1
+    - name: DCDONE
+      description: "Digital Delay Line (DDL) Calibration Done: Indicates, if set, that DDL calibration has completed."
+      bit_offset: 2
+      bit_size: 1
+    - name: ZCDONE
+      description: "Impedance Calibration Done: Indicates, if set, that impedance calibration has completed."
+      bit_offset: 3
+      bit_size: 1
+    - name: DIDONE
+      description: "DRAM Initialization Done: Indicates, if set, that DRAM initialization has completed."
+      bit_offset: 4
+      bit_size: 1
+    - name: WLDONE
+      description: "Write Leveling Done: Indicates, if set, that write leveling has completed."
+      bit_offset: 5
+      bit_size: 1
+    - name: QSGDONE
+      description: "Read DQS Gate Training Done: Indicates, if set, that DQS gate training has completed."
+      bit_offset: 6
+      bit_size: 1
+    - name: WLADONE
+      description: "Write Leveling Adjustment Done: Indicates, if set, that write leveling adjustment has completed."
+      bit_offset: 7
+      bit_size: 1
+    - name: RDDONE
+      description: "Read Data Bit Deskew Done: Indicates, if set, that read bit deskew has completed."
+      bit_offset: 8
+      bit_size: 1
+    - name: WDDONE
+      description: "Write Data Bit Deskew Done: Indicates, if set, that write bit deskew has completed."
+      bit_offset: 9
+      bit_size: 1
+    - name: REDONE
+      description: "Read Data Eye Training Done: Indicates, if set, that read eye training has completed."
+      bit_offset: 10
+      bit_size: 1
+    - name: WEDONE
+      description: "Write Data Eye Training Done: Indicates, if set, that write eye training has completed."
+      bit_offset: 11
+      bit_size: 1
+    - name: ZCERR
+      description: "Impedance Calibration Error: Indicates, if set, that there is an error in impedance calibration."
+      bit_offset: 20
+      bit_size: 1
+    - name: WLERR
+      description: "Write Leveling Error: Indicates, if set, that there is an error in write leveling."
+      bit_offset: 21
+      bit_size: 1
+    - name: QSGERR
+      description: "Read DQS Gate Training Error: Indicates, if set, that there is an error in DQS gate training."
+      bit_offset: 22
+      bit_size: 1
+    - name: WLAERR
+      description: "Write Data Leveling Adjustment Error: Indicates, if set, that there is an error in write leveling adjustment."
+      bit_offset: 23
+      bit_size: 1
+    - name: RDERR
+      description: "Read Data Bit Deskew Error: Indicates, if set, that there is an error in read bit deskew."
+      bit_offset: 24
+      bit_size: 1
+    - name: WDERR
+      description: "Write Data Bit Deskew Error: Indicates, if set, that there is an error in write bit deskew."
+      bit_offset: 25
+      bit_size: 1
+    - name: REERR
+      description: "Read Data Eye Training Error: Indicates, if set, that there is an error in read eye training."
+      bit_offset: 26
+      bit_size: 1
+    - name: WEERR
+      description: "Write Eye Training Error: Indicates, if set, that there is an error in write eye training."
+      bit_offset: 27
+      bit_size: 1
+    - name: PLDONE_CHN
+      description: "PLL Lock Done per Channel: Indicates PLL locking has completed for each underlying channel. Bit 28 represents channel 0 while bit 29 represents channel 1."
+      bit_offset: 28
+      bit_size: 2
+    - name: APLOCK
+      description: "AC PLL Lock: Indicates, if set, that AC PLL has locked. This is a direct status of the AC PLL lock pin."
+      bit_offset: 31
+      bit_size: 1
+fieldset/PGSR1:
+  description: “PHY General Status Registers 0-1 (PGSR0-1)” on page 89.
+  fields:
+    - name: DLTDONE
+      description: "Delay Line Test Done: Indicates, if set, that the PHY control block has finished doing period measurement of the AC delay line digital test output."
+      bit_offset: 0
+      bit_size: 1
+    - name: DLTCODE
+      description: "Delay Line Test Code: Returns the code measured by the PHY control block that corresponds to the period of the AC delay line digital test output."
+      bit_offset: 1
+      bit_size: 24
+    - name: VTSTOP
+      description: "VT Stop: Indicates, if set, that the VT calculation logic has stopped computing the next values for the VT compensated delay line values. After assertion of the PGCR.INHVT, the VTSTOP bit should be read to ensure all VT compensation logic has stopped computations before writing to the delay line registers."
+      bit_offset: 30
+      bit_size: 1
+    - name: PARERR
+      description: "RDIMM Parity Error: Indicates, if set, that there was a parity error (i.e. err_out_n was sampled low) during one of the transactions to the RDIMM buffer chip. This bit remains asserted until cleared by the PIR.CLRSR."
+      bit_offset: 31
+      bit_size: 1
+fieldset/PIR:
+  description: PHY Initialization Register (PIR).
+  fields:
+    - name: INIT
+      description: "Initialization Trigger: A write of '1' to this bit triggers the DDR system initialization, including PHY initialization, DRAM initialization, and PHY training. The exact initialization steps to be executed are specified in bits 1 to 15 of this register. A bit setting of 1 means the step will be executed as part of the initialization sequence, while a setting of ‘0’ means the step will be bypassed. The initialization trigger bit is self-clearing."
+      bit_offset: 0
+      bit_size: 1
+    - name: ZCAL
+      description: "Impedance Calibration: Performs PHY impedance calibration. When set the impedance calibration will be performed in parallel with PHY initialization (PLL initialization + DDL calibration + PHY reset)."
+      bit_offset: 1
+      bit_size: 1
+    - name: PLLINIT
+      description: "PLL Initialization: Executes the PLL initialization sequence which includes correct driving of PLL power-down, reset and gear shift pins, and then waiting for the PHY PLLs to lock."
+      bit_offset: 4
+      bit_size: 1
+    - name: DCAL
+      description: "Digital Delay Line (DDL) Calibration: Performs PHY delay line calibration."
+      bit_offset: 5
+      bit_size: 1
+    - name: PHYRST
+      description: "PHY Reset: Resets the AC and DATX8 modules by asserting the AC/DATX8 reset pin."
+      bit_offset: 6
+      bit_size: 1
+    - name: DRAMRST
+      description: "DRAM Reset (DDR3 Only): Issues a reset to the DRAM (by driving the DRAM reset pin low) and wait 200us. This can be triggered in isolation or with the full DRAM initialization (DRAMINIT). For the later case, the reset is issued and 200us is waited before starting the full initialization sequence."
+      bit_offset: 7
+      bit_size: 1
+    - name: DRAMINIT
+      description: "DRAM Initialization: Executes the DRAM initialization sequence."
+      bit_offset: 8
+      bit_size: 1
+    - name: WL
+      description: "Write Leveling (DDR3 Only): Executes a PUB write leveling routine."
+      bit_offset: 9
+      bit_size: 1
+    - name: QSGATE
+      description: "Read DQS Gate Training: Executes a PUB training routine to determine the optimum position of the read data DQS strobe for maximum system timing margins."
+      bit_offset: 10
+      bit_size: 1
+    - name: WLADJ
+      description: "Write Leveling Adjust (DDR3 Only): Executes a PUB training routine that re- adjusts the write latency used during write in case the write leveling routine changed the expected latency. Note: Ensure that the DCU command cache is cleared prior to running WLADJ."
+      bit_offset: 11
+      bit_size: 1
+    - name: RDDSKW
+      description: "Read Data Bit Deskew: Executes a PUB training routine to deskew the DQ bits during read."
+      bit_offset: 12
+      bit_size: 1
+    - name: WRDSKW
+      description: "Write Data Bit Deskew: Executes a PUB training routine to deskew the DQ bits during write."
+      bit_offset: 13
+      bit_size: 1
+    - name: RDEYE
+      description: "Read Data Eye Training: Executes a PUB training routine to maximize the read data eye."
+      bit_offset: 14
+      bit_size: 1
+    - name: WREYE
+      description: "Write Data Eye Training: Executes a PUB training routine to maximize the write data eye."
+      bit_offset: 15
+      bit_size: 1
+    - name: ICPC
+      description: "Initialization Complete Pin Configuration: Specifies how the DFI initialization complete output pin (dfi_init_complete) should be used to indicate the status of initialization. Valid value are: 0 = Asserted after PHY initialization (DLL locking and impedance calibration) is complete. 1 = Asserted after PHY initialization is complete and the triggered the PUB initialization (DRAM initialization, data training, or initialization trigger with no selected initialization) is complete."
+      bit_offset: 16
+      bit_size: 1
+    - name: PLLBYP
+      description: "PLL Bypass: A setting of 1 on this bit will put all PHY PLLs in bypass mode."
+      bit_offset: 17
+      bit_size: 1
+    - name: CTLDINIT
+      description: "Controller DRAM Initialization: Indicates, if set, that DRAM initialization will be performed by the controller. Otherwise if not set it indicates that DRAM initialization will be performed using the built-in initialization sequence or using software through the configuration port."
+      bit_offset: 18
+      bit_size: 1
+    - name: RDIMMINIT
+      description: "RDIMM Initialization: Executes the RDIMM buffer chip initialization before executing DRAM initialization. The RDIMM buffer chip initialization is run after the DRAM is reset and CKE have been driven high by the DRAM initialization sequence."
+      bit_offset: 19
+      bit_size: 1
+    - name: CLRSR
+      description: "Clear Status Registers: Writing 1 to this bit clears (reset to 0) select status bits in register PGSR0. This bit is primarily for debug purposes and is typically not needed during normal functional operation. It can be used when PGSR.IDONE=1, to manually clear a selection of the PGSR status bits, although starting a new initialization process (PIR[0].INIT = 1’b1) automatically clears the PGSR status bits associated with the initialization steps enabled. The following list describes which bits within the PGSR0 register are cleared when CLRSR is set to 1’b1 and which bits are not cleared: The following bits are not cleared by PIR[27] (CLRSR): PGSR0[31] (APLOCK) PGSR0[29:28] (PLDONE_CHN) PGSR0[23] (WLAERR) PGSR0[21] (WLERR) PGSR0[4] (DIDONE) PGSR0[2] (DCDONE) PGSR0[1] (PLDONE) PGSR0[0] (IDONE) The following bits are always zero: PGSR0[30] (reserved) PGSR0[19:12] (reserved) The following bits are cleared unconditionally by PIR[27] (CLRSR): PGSR0[27] (WEERR) PGSR0[26] (REERR) PGSR0[25] (WDERR) PGSR0[24] (RDERR) - PGSR0[22] (QSGERR) - PGSR0[20] (ZCERR) - PGSR0[11] (WEDONE) - PGSR0[10] (REDONE) - PGSR0[9] (WDDONE) - PGSR0[8] (RDDONE) - PGSR0[7] (WLADONE) - PGSR0[6] (QSGDONE) - PGSR0[5] (WLDONE) - PGSR0[3] (ZCDONE)."
+      bit_offset: 27
+      bit_size: 1
+    - name: LOCKBYP
+      description: "PLL Lock Bypass: Bypasses or stops, if set, the waiting of PLLs to lock. PLL lock wait is automatically triggered after reset. PLL lock wait may be triggered manually using INIT and PLLINIT bits of the PIR register. This bit is self-clearing."
+      bit_offset: 28
+      bit_size: 1
+    - name: DCALBYP
+      description: "Digital Delay Line (DDL) Calibration Bypass: Bypasses or stops, if set, DDL calibration that automatically triggers after reset. DDL calibration may be triggered manually using INIT and DCAL bits of the PIR register. This bit is self- clearing."
+      bit_offset: 29
+      bit_size: 1
+    - name: ZCALBYP
+      description: "Impedance Calibration Bypass: Bypasses or stops, if set, impedance calibration of all ZQ control blocks that automatically triggers after reset. Impedance calibration may be triggered manually using INIT and ZCAL bits of the PIR register. This bit is self-clearing."
+      bit_offset: 30
+      bit_size: 1
+    - name: INITBYP
+      description: "Initialization Bypass: Bypasses or stops, if set, all initialization routines currently running, including PHY initialization, DRAM initialization, and PHY training. Initialization may be triggered manually using INIT and the other relevant bits of the PIR register. This bit is self-clearing."
+      bit_offset: 31
+      bit_size: 1
+fieldset/PLLCR:
+  description: “PLL Control Register (PLLCR)” on page 91.
+  fields:
+    - name: DTC
+      description: "Digital Test Control: Selects various PLL digital test signals and other test mode signals to be brought out via bit [1] of the PLL digital test output (pll_dto[1]). Valid values are: 00 = ‘0’ (Test output is disabled) 01 = PLL x1 clock (X1) 10 = PLL reference (input) clock (REF_CLK) 11 = PLL feedback clock (FB_X1)."
+      bit_offset: 0
+      bit_size: 2
+    - name: ATC
+      description: "Analog Test Control: Selects various PLL analog test signals to be brought out via PLL analog test output pin (pll_ato). Valid values are: 0000 = Reserved 0001 = vdd_ckin 0010 = vrfbf 0011 = vdd_cko 0100 = vp_cp 0101 = vpfil(vp) 0110 = Reserved 0111 = gd 1000 = vcntrl_atb 1001 = vref_atb 1010 = vpsf_atb 1011 – 1111 = Reserved."
+      bit_offset: 2
+      bit_size: 4
+    - name: ATOEN
+      description: "Analog Test Enable (ATOEN): Selects the analog test signal that is driven on the analog test output pin. Otherwise the analog test output is tri-stated. This allows analog test output pins from multiple PLLs to be connected together. Valid values are: 0000 = All PLL analog test signals are tri-stated 0001 = AC PLL analog test signal is driven out 0010 = DATX8 0 PLL analog test signal is driven out 0011 = DATX8 1 PLL analog test signal is driven out 0100 = DATX8 2 PLL analog test signal is driven out 0101 = DATX8 3 PLL analog test signal is driven out 0110 = DATX8 4 PLL analog test signal is driven out 0111 = DATX8 5 PLL analog test signal is driven out 1000 = DATX8 6 PLL analog test signal is driven out 1001 = DATX8 7 PLL analog test signal is driven out 1010 = DATX8 8 PLL analog test signal is driven out 1011 – 1111 = Reserved."
+      bit_offset: 6
+      bit_size: 4
+    - name: GSHIFT
+      description: "Gear Shift: Enables, if set, rapid locking mode."
+      bit_offset: 10
+      bit_size: 1
+    - name: CPIC
+      description: Charge Pump Integrating Current Control.
+      bit_offset: 11
+      bit_size: 2
+    - name: CPPC
+      description: Charge Pump Proportional Current Control.
+      bit_offset: 13
+      bit_size: 4
+    - name: QPMODE
+      description: "PLL Quadrature Phase Mode: Enables, if set, the quadrature phase clock outputs. This mode is not used in this version of the PHY."
+      bit_offset: 17
+      bit_size: 1
+    - name: FRQSEL
+      description: "PLL Frequency Select: Selects the operating range of the PLL. Valid values for PHYs that go up to 2133 Mbps are: 00 = PLL reference clock (ctl_clk/REF_CLK) ranges from 335MHz to 533MHz 01 = PLL reference clock (ctl_clk/REF_CLK) ranges from 225MHz to 385MHz 10 = Reserved 11 = PLL reference clock (ctl_clk/REF_CLK) ranges from 166MHz to 275MHz Valid values for PHYs that don’t go up to 2133 Mbps are: 00 = PLL reference clock (ctl_clk/REF_CLK) ranges from 250MHz to 400MHz 01 = PLL reference clock (ctl_clk/REF_CLK) ranges from 166MHz to 300MHz 10 = Reserved 11 = Reserved."
+      bit_offset: 18
+      bit_size: 2
+    - name: PLLPD
+      description: "PLL Power Down: Puts the PLLs in power down mode by driving the PLL power down pin. This bit is not self-clearing and a ‘0’ must be written to de-assert the power-down."
+      bit_offset: 29
+      bit_size: 1
+    - name: PLLRST
+      description: "PLL Rest: Resets the PLLs by driving the PLL reset pin. This bit is not self-clearing and a ‘0’ must be written to de-assert the reset."
+      bit_offset: 30
+      bit_size: 1
+    - name: BYP
+      description: "PLL Bypass: Bypasses the PLL, if set, to 1."
+      bit_offset: 31
+      bit_size: 1
+fieldset/PTR0:
+  description: PHY Timing Registers 0-4 (PTR0-4).
+  fields:
+    - name: TPHYRST
+      description: "PHY Reset Time: Number of configuration or APB clock cycles that the PHY reset must remain asserted after PHY calibration is done before the reset to the PHY is de-asserted. This is used to extend the reset to the PHY so that the reset is asserted for some clock cycles after the clocks are stable. Valid values are from 1 to 63 (the value must be non-zero)."
+      bit_offset: 0
+      bit_size: 6
+    - name: TPLLGS
+      description: "PLL Gear Shift Time: Number of configuration or APB clock cycles from when the PLL reset pin is de-asserted to when the PLL gear shift pin is de-asserted. This must correspond to a value that is equal to or more than 4us. Default value corresponds to 4us."
+      bit_offset: 6
+      bit_size: 15
+    - name: TPLLPD
+      description: "PLL Power-Down Time: Number of configuration or APB clock cycles that the PLL must remain in power-down mode, i.e. number of clock cycles from when PLL power-down pin is asserted to when PLL power-down pin is de-asserted. This must correspond to a value that is equal to or more than 1us. Default value corresponds to 1us."
+      bit_offset: 21
+      bit_size: 11
+fieldset/PTR1:
+  description: PHY Timing Registers 0-4 (PTR0-4).
+  fields:
+    - name: TPLLRST
+      description: "PLL Reset Time: Number of configuration or APB clock cycles that the PLL must remain in reset mode, i.e. number of clock cycles from when PLL power-down pin is de-asserted and PLL reset pin is asserted to when PLL reset pin is de-asserted. The setting must correspond to a value that is equal to, or greater than, 3us."
+      bit_offset: 0
+      bit_size: 13
+    - name: TPLLLOCK
+      description: "PLL Lock Time: Number of configuration or APB clock cycles for the PLL to stabilize and lock, i.e. number of clock cycles from when the PLL reset pin is de-asserted to when the PLL has lock and is ready for use. This must correspond to a value that is equal to or more than 100us. Default value corresponds to 100us."
+      bit_offset: 16
+      bit_size: 16
+fieldset/PTR2:
+  description: PHY Timing Registers 0-4 (PTR0-4).
+  fields:
+    - name: TCALON
+      description: "Calibration On Time: Number of clock cycles that the calibration clock is enabled (cal_clk_en asserted)."
+      bit_offset: 0
+      bit_size: 5
+    - name: TCALS
+      description: "Calibration Setup Time: Number of controller clock cycles from when calibration is enabled (cal_en asserted) to when the calibration clock is asserted again (cal_clk_en asserted)."
+      bit_offset: 5
+      bit_size: 5
+    - name: TCALH
+      description: "Calibration Hold Time: Number of controller clock cycles from when the clock was disabled (cal_clk_en deasserted) to when calibration is enable (cal_en asserted)."
+      bit_offset: 10
+      bit_size: 5
+    - name: TWLDLYS
+      description: "Write Leveling Delay Settling Time: Number of controller clock cycles from when a new value of the write leveling delay is applies to the LCDL to when to DQS high is driven high. This allows the delay to settle."
+      bit_offset: 15
+      bit_size: 5
+fieldset/PTR3:
+  description: PHY Timing Registers 0-4 (PTR0-4).
+  fields:
+    - name: TDINIT0
+      description: "DRAM Initialization Time 0: DRAM initialization time in DRAM clock cycles corresponding to the following: DDR3 = CKE low time with power and clock stable (500 us) DDR2 = CKE low time with power and clock stable (200 us) Default value corresponds to DDR3 500 us at 1066 MHz. During Verilog simulations, it is recommended that this value is changed to a much smaller value in order to avoid long simulation times. However, this may cause a memory model error, due to a violation of the CKE setup sequence. This violation is expected if this value is not programmed to the required SDRAM CKE low time, but memory models should be able to tolerate this violation without malfunction of the model."
+      bit_offset: 0
+      bit_size: 20
+    - name: TDINIT1
+      description: "DRAM Initialization Time 1: DRAM initialization time in DRAM clock cycles corresponding to the following: DDR3 = CKE high time to first command (tRFC + 10 ns or 5 tCK, whichever is bigger) DDR2 = CKE high time to first command (400 ns) Default value corresponds to DDR3 tRFC of 360ns at 1066 MHz."
+      bit_offset: 20
+      bit_size: 9
+fieldset/PTR4:
+  description: PHY Timing Registers 0-4 (PTR0-4).
+  fields:
+    - name: TDINIT2
+      description: "DRAM Initialization Time 2: DRAM initialization time in DRAM clock cycles corresponding to the following: DDR3 = Reset low time (200 us on power-up or 100 ns after power-up) Default value corresponds to DDR3 200 us at 1066 MHz."
+      bit_offset: 0
+      bit_size: 18
+    - name: TDINIT3
+      description: "DRAM Initialization Time 3: DRAM initialization time in DRAM clock cycles corresponding to the following: DDR3 = Time from ZQ initialization command to first command (1 us) Default value corresponds to the DDR3 640ns at 1066 MHz."
+      bit_offset: 18
+      bit_size: 10
+fieldset/RDIMMCR0:
+  description: RDIMM Control Register 0-1 (RDIMMCR0-1).
+  fields:
+    - name: RC0
+      description: "Control Word 0 (Global Features Control Word): Bit definitions are: RC0[0]: 0 = Output inversion enabled, 1 = Output inversion disabled. RC0[1]: 0 = Floating outputs disabled, 1 = Floating outputs enabled. RC0[2]: 0 = A outputs enabled, 1 = A outputs disabled. RC0[3]: 0 = B outputs enabled, 1 = B outputs disabled."
+      bit_offset: 0
+      bit_size: 4
+    - name: RC1
+      description: "Control Word 1 (Clock Driver Enable Control Word): Bit definitions are: RC1[0]: 0 = Y0/Y0# clock enabled, 1 = Y0/Y0# clock disabled. RC1[1]: 0 = Y1/Y1# clock enabled, 1 = Y1/Y1# clock disabled. RC1[2]: 0 = Y2/Y2# clock enabled, 1 = Y2/Y2# clock disabled. RC1[3]: 0 = Y3/Y3# clock enabled, 1 = Y3/Y3# clock disabled."
+      bit_offset: 4
+      bit_size: 4
+    - name: RC2
+      description: "Control Word 2 (Timing Control Word): Bit definitions are: RC2[0]: 0 = Standard (1/2 clock) pre-launch, 1 = Prelaunch controlled by RC12. RC2[1]: 0 = Reserved. RC2[2]: 0 = 100 Ohm input bus termination, 1 = 150 Ohm input bus termination. RC2[3]: 0 = Operation frequency band 1, 1 = Test mode frequency band 2."
+      bit_offset: 8
+      bit_size: 4
+    - name: RC3
+      description: "Control Word 3 (Command/Address Signals Driver Characteristics Control Word): RC3[1:0] is driver settings for command/address A outputs, and RC3[3:2] is driver settings for command/address B outputs. Bit definitions are: 00 = Light drive (4 or 5 DRAM loads) 01 = Moderate drive (8 or 10 DRAM loads) 10 = Strong drive (16 or 20 DRAM loads) 11 = Reserved."
+      bit_offset: 12
+      bit_size: 4
+    - name: RC4
+      description: "Control Word 4 (Control Signals Driver Characteristics Control Word): RC4[1:0] is driver settings for control A outputs, and RC4[3:2] is driver settings for control B outputs. Bit definitions are: 00 = Light drive (4 or 5 DRAM loads) 01 = Moderate drive (8 or 10 DRAM loads) 10 = Reserved 11 = Reserved."
+      bit_offset: 16
+      bit_size: 4
+    - name: RC5
+      description: "Control Word 5 (CK Driver Characteristics Control Word): RC5[1:0] is driver settings for clock Y1, Y1#, Y3, and Y3# outputs, and RC5[3:2] is driver settings for clock Y0, Y0#, Y2, and Y2# outputs. Bit definitions are: 00 = Light drive (4 or 5 DRAM loads) 01 = Moderate drive (8 or 10 DRAM loads) 10 = Strong drive (16 or 20 DRAM loads) 11 = Reserved."
+      bit_offset: 20
+      bit_size: 4
+    - name: RC6
+      description: "Control Word 6: Reserved, free to use by vendor."
+      bit_offset: 24
+      bit_size: 4
+    - name: RC7
+      description: "Control Word 7: Reserved, free to use by vendor."
+      bit_offset: 28
+      bit_size: 4
+fieldset/RDIMMCR1:
+  description: RDIMM Control Register 0-1 (RDIMMCR0-1).
+  fields:
+    - name: RC8
+      description: "Control Word 8 (Additional Input Bus Termination Setting Control Word): RC8[2:0] is Input Bus Termination (IBT) setting as follows: 000 = IBT as defined in RC2. 001 = Reserved 010 = 200 Ohm 011 = Reserved 100 = 300 Ohm 101 = Reserved 110 = Reserved 111 = Off RC8[3]: 0 = IBT off when MIRROR is HIGH, 1 = IBT on when MIRROR is high."
+      bit_offset: 0
+      bit_size: 4
+    - name: RC9
+      description: "Control Word 9 (Power Saving Settings Control Word): Bit definitions are: RC9[0]: 0 = Floating outputs as defined in RC0, 1 = Weak drive enabled. RC9[1]: 0 = Reserved. RC9[2]: 0 = CKE power down with IBT ON, QxODT is a function of DxODT, 1 = CKE power down with IBT off, QxODT held LOW. RC9[2] is valid only when RC9[3] is 1. RC9[3]: 0 = CKE power down mode disabled, 1 = CKE power down mode enabled."
+      bit_offset: 4
+      bit_size: 4
+    - name: RC10
+      description: "Control Word 10 (RDIMM Operating Speed Control Word): RC10[2:0] is RDIMM operating speed setting as follows: 000 = DDR3/DDR3L-800 001 = DDR3/DDR3L-1066 010 = DDR3/DDR3L-1333 011 = DDR3/DDR3L-1600 100 = Reserved 101 = Reserved 110 = Reserved 111 = Reserved RC10[3]: Don’t care."
+      bit_offset: 8
+      bit_size: 4
+    - name: RC11
+      description: "Control Word 11 (Operating Voltage VDD Control Word): RC10[1:0] is VDD operating voltage setting as follows: 00 = DDR3 1.5V mode 01 = DDR3L 1.35V mode 10 = Reserved 11 = Reserved RC10[3:2]: Reserved."
+      bit_offset: 12
+      bit_size: 4
+    - name: RC12
+      description: "Control Word 12: Reserved for future use."
+      bit_offset: 16
+      bit_size: 4
+    - name: RC13
+      description: "Control Word 13: Reserved for future use."
+      bit_offset: 20
+      bit_size: 4
+    - name: RC14
+      description: "Control Word 14: Reserved for future use."
+      bit_offset: 24
+      bit_size: 4
+    - name: RC15
+      description: "Control Word 15: Reserved for future use."
+      bit_offset: 28
+      bit_size: 4
+fieldset/RDIMMGCR0:
+  description: RDIMM General Configuration Register 0-1 (RDIMMGCR0-1).
+  fields:
+    - name: RDIMM
+      description: "Registered DIMM: Indicates, if set, that a registered DIMM is used. In this case, the PUB increases the SDRAM write and read latencies (WL/RL) by 1 and also enforces that accesses adhere to RDIMM buffer chip. This only applies to PUB internal SDRAM transactions. Transactions generated by the controller must make its own adjustments to WL/RL when using a registered DIMM. The DCR.NOSRA register bit must be set to ‘1’ if using the standard RDIMM buffer chip so that normal DRAM accesses do not assert multiple chip select bits at the same time."
+      bit_offset: 0
+      bit_size: 1
+    - name: ERRNOREG
+      description: "Parity Error No Registering: Indicates, if set, that parity error signal from the RDIMM should be passed to the DFI controller without any synchronization or registering. Otherwise, the error signal is synchronized as shown in Figure 4-30 on page 262."
+      bit_offset: 1
+      bit_size: 1
+    - name: SOPERR
+      description: "Stop On Parity Error: Indicates, if set, that the PUB is to stop driving commands to the DRAM upon encountering a parity error. Transactions can resume only after status is cleared via PIR.CLRSR."
+      bit_offset: 2
+      bit_size: 1
+    - name: PARINODT
+      description: "PAR_IN On-Die Termination: Enables, when set, the on-die termination on the I/O for PAR_IN pin."
+      bit_offset: 14
+      bit_size: 1
+    - name: PARINPDD
+      description: "PAR_IN Power Down Driver: Powers down, when set, the output driver on the I/O for PAR_IN pin."
+      bit_offset: 15
+      bit_size: 1
+    - name: PARINPDR
+      description: "PAR_IN Power Down Receiver: Powers down, when set, the input receiver on the I/O for PAR_IN pin."
+      bit_offset: 16
+      bit_size: 1
+    - name: PARINIOM
+      description: "PAR_IN I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for PAR_IN pin."
+      bit_offset: 17
+      bit_size: 1
+    - name: PARINOE
+      description: "PAR_IN Output Enable: Enables, when set, the output driver on the I/O for PAR_IN pin."
+      bit_offset: 18
+      bit_size: 1
+    - name: ERROUTODT
+      description: "ERROUT# On-Die Termination: Enables, when set, the on-die termination on the I/O for ERROUT# pin."
+      bit_offset: 19
+      bit_size: 1
+    - name: ERROUTPDD
+      description: "ERROUT# Power Down Driver: Powers down, when set, the output driver on the I/O for ERROUT# pin."
+      bit_offset: 20
+      bit_size: 1
+    - name: ERROUTPDR
+      description: "ERROUT# Power Down Receiver: Powers down, when set, the input receiver on the I/O for ERROUT# pin."
+      bit_offset: 21
+      bit_size: 1
+    - name: ERROUTIOM
+      description: "ERROUT# I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for ERROUT# pin."
+      bit_offset: 22
+      bit_size: 1
+    - name: ERROUTOE
+      description: "ERROUT# Output Enable: Enables, when set, the output driver on the I/O for ERROUT# pin."
+      bit_offset: 23
+      bit_size: 1
+    - name: RDIMMODT
+      description: "RDIMM Outputs On-Die Termination: Enables, when set, the on-die termination on the I/O for QCSEN# and MIRROR pins."
+      bit_offset: 24
+      bit_size: 1
+    - name: RDIMMPDD
+      description: "RDIMM Outputs Power Down Driver: Powers down, when set, the output driver on the I/O for QCSEN# and MIRROR pins."
+      bit_offset: 25
+      bit_size: 1
+    - name: RDIMMPDR
+      description: "RDIMM Outputs Power Down Receiver: Powers down, when set, the input receiver on the I/O for QCSEN# and MIRROR pins."
+      bit_offset: 26
+      bit_size: 1
+    - name: RDIMMIOM
+      description: "RDIMM Outputs I/O Mode: Selects SSTL mode (when set to 0) or CMOS mode (when set to 1) of the I/O for QCSEN# and MIRROR pins."
+      bit_offset: 27
+      bit_size: 1
+    - name: QCSENOE
+      description: "QCSEN# Output Enable: Enables, when set, the output driver on the I/O for QCSEN# pin."
+      bit_offset: 28
+      bit_size: 1
+    - name: MIRROROE
+      description: "MIRROR Output Enable: Enables, when set, the output driver on the I/O for MIRROR pin."
+      bit_offset: 29
+      bit_size: 1
+    - name: QCSEN
+      description: "RDMIMM Quad CS Enable: Enables, if set, the Quad CS mode for the RDIMM registering buffer chip. This register bit controls the buffer chip QCSEN# signal."
+      bit_offset: 30
+      bit_size: 1
+    - name: MIRROR
+      description: "RDIMM Mirror: Selects between two different ballouts of the RDIMM buffer chip for front or back operation. This register bit controls the buffer chip MIRROR signal."
+      bit_offset: 31
+      bit_size: 1
+fieldset/RDIMMGCR1:
+  description: RDIMM General Configuration Register 0-1 (RDIMMGCR0-1).
+  fields:
+    - name: TBCSTAB
+      description: "Stabilization time: Number of DRAM clock cycles for the RDIMM buffer chip to stabilize. This parameter corresponds to the buffer chip tSTAB parameter. Default value is in decimal format and corresponds to 6us at 533MHz."
+      bit_offset: 0
+      bit_size: 12
+    - name: TBCMRD
+      description: "Command word to command word programming delay: Number of DRAM clock cycles between two RDIMM buffer chip command programming accesses. The value used for tBCMRD is 8 plus the value programmed in these bits, i.e. tBCMRD value ranges from 8 to 15. This parameter corresponds to the buffer chip tMRD parameter."
+      bit_offset: 12
+      bit_size: 3
+    - name: CRINIT
+      description: "Control Registers Initialization Enable: Indicates which RDIMM buffer chip control registers (RC0 to RC15) should be initialized (written) when the PUB is triggered to initialize the buffer chip. A setting of ‘1’ on CRINIT[n] bit means that CRn should be written during initialization."
+      bit_offset: 16
+      bit_size: 16
+fieldset/RIDR:
+  description: Revision Identification Register.
+  fields:
+    - name: PUBMNR
+      description: "PUB Minor Revision: Indicates minor update of the PUB such as bug fixes. Normally no new features are included."
+      bit_offset: 0
+      bit_size: 4
+    - name: PUBMDR
+      description: "PUB Moderate Revision: Indicates moderate revision of the PUB such as addition of new features. Normally the new version is still compatible with previous versions."
+      bit_offset: 4
+      bit_size: 4
+    - name: PUBMJR
+      description: "PUB Major Revision: Indicates major revision of the PUB such addition of the features that make the new version not compatible with previous versions."
+      bit_offset: 8
+      bit_size: 4
+    - name: PHYMNR
+      description: "PHY Minor Revision: Indicates minor update of the PHY such as bug fixes. Normally no new features are included."
+      bit_offset: 12
+      bit_size: 4
+    - name: PHYMDR
+      description: "PHY Moderate Revision: Indicates moderate revision of the PHY such as addition of new features. Normally the new version is still compatible with previous versions."
+      bit_offset: 16
+      bit_size: 4
+    - name: PHYMJR
+      description: "PHY Major Revision: Indicates major revision of the PHY such addition of the features that make the new version not compatible with previous versions."
+      bit_offset: 20
+      bit_size: 4
+    - name: UDRID
+      description: "User-Defined Revision ID: General purpose revision identification set by the user."
+      bit_offset: 24
+      bit_size: 8
+fieldset/SR0:
+  description: Impedance Status Register 0-1 (ZQnSR0-1).
+  fields:
+    - name: ZCTRL
+      description: "Impedance Control: Current value of impedance control. ZCTRL field mapping for D3F I/Os is as follows: ZCTRL[27:21] is used to select the pull-up on-die termination impedance ZCTRL[20:14] is used to select the pull-down on-die termination impedance ZCTRL[13:7] is used to select the pull-up output impedance ZCTRL[6:0] is used to select the pull-down output impedance ZCTRL field mapping for D3A/B/R I/Os is as follows: ZCTRL[27:20] is reserved and returns zeros on reads ZCTRL[19:15] is used to select the pull-up on-die termination impedance ZCTRL[14:10] is used to select the pull-down on-die termination impedance ZCTRL[9:5] is used to select the pull-up output impedance ZCTRL[4:0] is used to select the pull-down output impedance Note: The default value is 0x000014A for I/O type D3C/D3R and 0x0001839 for I/O type D3F."
+      bit_offset: 0
+      bit_size: 28
+    - name: ZERR
+      description: "Impedance Calibration Error: If set, indicates that there was an error during impedance calibration."
+      bit_offset: 30
+      bit_size: 1
+    - name: ZDONE
+      description: "Impedance Calibration Done: Indicates that impedance calibration has completed."
+      bit_offset: 31
+      bit_size: 1
+fieldset/SR1:
+  description: Impedance Status Register 0-1 (ZQnSR0-1).
+  fields:
+    - name: ZPD
+      description: "Output impedance pull-down calibration status. Valid status encodings are: 00 = Completed with no errors 01 = Overflow error 10 = Underflow error 11 = Calibration in progress."
+      bit_offset: 0
+      bit_size: 2
+    - name: ZPU
+      description: Output impedance pull-up calibration status. Similar status encodings as ZPD.
+      bit_offset: 2
+      bit_size: 2
+    - name: OPD
+      description: On-die termination (ODT) pull-down calibration status. Similar status encodings as ZPD.
+      bit_offset: 4
+      bit_size: 2
+    - name: OPU
+      description: On-die termination (ODT) pull-up calibration status. Similar status encodings as ZPD.
+      bit_offset: 6
+      bit_size: 2

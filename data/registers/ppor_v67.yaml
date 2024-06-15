@@ -1,0 +1,80 @@
+block/PPOR:
+  description: PPOR.
+  items:
+    - name: RESET_FLAG
+      description: flag indicate reset source.
+      byte_offset: 0
+      fieldset: RESET_FLAG
+    - name: RESET_STATUS
+      description: reset source status.
+      byte_offset: 4
+      fieldset: RESET_STATUS
+    - name: RESET_HOLD
+      description: reset hold attribute.
+      byte_offset: 8
+      fieldset: RESET_HOLD
+    - name: RESET_ENABLE
+      description: reset source enable.
+      byte_offset: 12
+      fieldset: RESET_ENABLE
+    - name: RESET_HOT
+      description: reset type triggered by reset.
+      byte_offset: 16
+      fieldset: RESET_HOT
+    - name: RESET_COLD
+      description: reset type attribute.
+      byte_offset: 20
+      fieldset: RESET_COLD
+    - name: SOFTWARE_RESET
+      description: Software reset counter.
+      byte_offset: 28
+      fieldset: SOFTWARE_RESET
+fieldset/RESET_COLD:
+  description: reset type attribute.
+  fields:
+    - name: FLAG
+      description: "perform cold or warm reset of chip, 0 for warm reset, fuse value and debug connection preserved; 1 for cold reset, fuse value reloaded and debug connection corrupted. This bit is ignored when hot reset selected 0: brownout 1: temperature(not available) 2: resetpin(not available) 4: debug reset 5: jtag reset 8: cpu0 lockup(not available) 9: cpu1 lockup(not available) 10: cpu0 request(not available) 11: cpu1 request(not available) 16: watch dog 0 17: watch dog 1 18: watch dog 2 19: watch dog 3 20: pmic watch dog 31: software."
+      bit_offset: 0
+      bit_size: 32
+fieldset/RESET_ENABLE:
+  description: reset source enable.
+  fields:
+    - name: ENABLE
+      description: "enable of reset sources 0: brownout 1: temperature(not available) 2: resetpin(not available) 4: debug reset 5: jtag reset 8: cpu0 lockup(not available) 9: cpu1 lockup(not available) 10: cpu0 request(not available) 11: cpu1 request(not available) 16: watch dog 0 17: watch dog 1 18: watch dog 2 19: watch dog 3 20: pmic watch dog 31: software."
+      bit_offset: 0
+      bit_size: 32
+fieldset/RESET_FLAG:
+  description: flag indicate reset source.
+  fields:
+    - name: FLAG
+      description: "reset reason of last hard reset, write 1 to clear each bit 0: brownout 1: temperature(not available) 2: resetpin(not available) 4: debug reset 5: jtag reset 8: cpu0 lockup(not available) 9: cpu1 lockup(not available) 10: cpu0 request(not available) 11: cpu1 request(not available) 16: watch dog 0 17: watch dog 1 18: watch dog 2 19: watch dog 3 20: pmic watch dog 31: software."
+      bit_offset: 0
+      bit_size: 32
+fieldset/RESET_HOLD:
+  description: reset hold attribute.
+  fields:
+    - name: STATUS
+      description: "hold arrtibute, when set, SOC keep in reset status until reset source release, or, reset will be released after SOC enter reset status 0: brownout 1: temperature(not available) 2: resetpin(not available) 4: debug reset 5: jtag reset 8: cpu0 lockup(not available) 9: cpu1 lockup(not available) 10: cpu0 request(not available) 11: cpu1 request(not available) 16: watch dog 0 17: watch dog 1 18: watch dog 2 19: watch dog 3 20: pmic watch dog 31: software."
+      bit_offset: 0
+      bit_size: 32
+fieldset/RESET_HOT:
+  description: reset type triggered by reset.
+  fields:
+    - name: TYPE
+      description: "reset type of reset sources, 0 for cold/warm reset, all system control setting cleared including clock, ioc; 1 for hot reset, system control, ioc setting kept, peripheral setting cleared. 0: brownout 1: temperature(not available) 2: resetpin(not available) 4: debug reset 5: jtag reset 8: cpu0 lockup(not available) 9: cpu1 lockup(not available) 10: cpu0 request(not available) 11: cpu1 request(not available) 16: watch dog 0 17: watch dog 1 18: watch dog 2 19: watch dog 3 20: pmic watch dog 31: software."
+      bit_offset: 0
+      bit_size: 32
+fieldset/RESET_STATUS:
+  description: reset source status.
+  fields:
+    - name: STATUS
+      description: "current status of reset sources 0: brownout 1: temperature(not available) 2: resetpin(not available) 4: debug reset 5: jtag reset 8: cpu0 lockup(not available) 9: cpu1 lockup(not available) 10: cpu0 request(not available) 11: cpu1 request(not available) 16: watch dog 0 17: watch dog 1 18: watch dog 2 19: watch dog 3 20: pmic watch dog 31: software."
+      bit_offset: 0
+      bit_size: 32
+fieldset/SOFTWARE_RESET:
+  description: Software reset counter.
+  fields:
+    - name: COUNTER
+      description: counter decrease in 24MHz and stop at 0, trigger reset when value reach 2, software can write 0 to cancel reset.
+      bit_offset: 0
+      bit_size: 32

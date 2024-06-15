@@ -1,0 +1,126 @@
+block/CHANNEL:
+  description: no description available.
+  items:
+    - name: cfg0
+      description: config reg 0.
+      byte_offset: 0
+      fieldset: cfg0
+    - name: cfg1
+      description: config reg 1.
+      byte_offset: 4
+      fieldset: cfg1
+    - name: refcrc
+      description: reference CRC.
+      byte_offset: 8
+      fieldset: refcrc
+    - name: calcrc
+      description: calculated CRC.
+      byte_offset: 12
+      fieldset: calcrc
+block/GWC:
+  description: GWC0.
+  items:
+    - name: glb_ctrl
+      description: control reg.
+      byte_offset: 0
+      fieldset: glb_ctrl
+    - name: irq_mask
+      description: interrupt enable.
+      byte_offset: 4
+      fieldset: irq_mask
+    - name: irq_sts
+      description: interrupt status.
+      byte_offset: 8
+      fieldset: irq_sts
+    - name: CHANNEL
+      description: no description available.
+      array:
+        len: 2
+        stride: 240
+      byte_offset: 16
+      block: CHANNEL
+fieldset/calcrc:
+  description: calculated CRC.
+  fields:
+    - name: CAL_CRC
+      description: calculated CRC for last frame.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cfg0:
+  description: config reg 0.
+  fields:
+    - name: START_COL
+      description: define the window start column number.
+      bit_offset: 0
+      bit_size: 13
+    - name: START_ROW
+      description: define the window start row number.
+      bit_offset: 16
+      bit_size: 12
+    - name: FREEZE
+      description: freeze config. set to freeze all other config registers for current channel. can only be cleared by system reset.
+      bit_offset: 30
+      bit_size: 1
+    - name: ENABLE
+      description: channel enable.
+      bit_offset: 31
+      bit_size: 1
+fieldset/cfg1:
+  description: config reg 1.
+  fields:
+    - name: END_COL
+      description: define the window end column number.
+      bit_offset: 0
+      bit_size: 13
+    - name: END_ROW
+      description: define the window end row number.
+      bit_offset: 16
+      bit_size: 12
+fieldset/glb_ctrl:
+  description: control reg.
+  fields:
+    - name: GWC_EN
+      description: graphic window check enable. set to enable the whole block.
+      bit_offset: 0
+      bit_size: 1
+    - name: CLK_POL
+      description: graphic clock polarity. set to invert input graphic clock.
+      bit_offset: 7
+      bit_size: 1
+fieldset/irq_mask:
+  description: interrupt enable.
+  fields:
+    - name: ERR_MASK
+      description: error interrupt mask.
+      bit_offset: 0
+      bit_size: 1
+    - name: FUNC_MASK
+      description: function interrupt mask.
+      bit_offset: 1
+      bit_size: 1
+    - name: MASK_RREEZ
+      description: freeze mask, set to disable changing ERR_MASK and FUNC_MASK. can only be cleared by system reset.
+      bit_offset: 3
+      bit_size: 1
+fieldset/irq_sts:
+  description: interrupt status.
+  fields:
+    - name: GWC_FAIL_STS
+      description: graphic window check fail interrupt status. will be set if the calculated CRC not equal reference CRC. one bit for each channel. software write 1 to clear.
+      bit_offset: 0
+      bit_size: 16
+    - name: ERR_STS
+      description: error status, it's OR of GWC_FAIL_STS[15:0].
+      bit_offset: 16
+      bit_size: 1
+    - name: FUNC_STS
+      description: function interrupt status. it's set when detect two VSYNC signals after the block is enabled(GWC_EN is set) software write 1 to clear.
+      bit_offset: 17
+      bit_size: 1
+fieldset/refcrc:
+  description: reference CRC.
+  fields:
+    - name: REF_CRC
+      description: "reference CRC polynomial function: 0x104C11DB7."
+      bit_offset: 0
+      bit_size: 32

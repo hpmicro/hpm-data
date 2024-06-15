@@ -1,0 +1,606 @@
+block/DMA_CH:
+  description: no description available.
+  items:
+    - name: CTL
+      description: Channel N Control Register.
+      byte_offset: 0
+      fieldset: CTL
+    - name: BURST_COUNT
+      description: Channel N Source Total Beats Register.
+      byte_offset: 4
+      fieldset: BURST_COUNT
+    - name: SrcAddr
+      description: Channel N Source Register.
+      byte_offset: 8
+      fieldset: SrcAddr
+    - name: DstAddr
+      description: Channel N Destination Register.
+      byte_offset: 16
+      fieldset: DstAddr
+    - name: LLP
+      description: Channel N Linked List Pointer Register.
+      byte_offset: 24
+      fieldset: LLP
+block/DST_CH:
+  description: no description available.
+  items:
+    - name: CTRL
+      description: SMIX Dstination N Control Register.
+      byte_offset: 0
+      fieldset: DST_CH_CTRL
+    - name: GAIN
+      description: SMIX Dstination N Gain Register.
+      byte_offset: 4
+      fieldset: DST_CH_GAIN
+    - name: BUFSIZE
+      description: SMIX Dstination N Max Index Register.
+      byte_offset: 8
+      fieldset: BUFSIZE
+    - name: FADEIN
+      description: SMIX Dstination N Fade-In Configuration Register.
+      byte_offset: 12
+      fieldset: DST_CH_FADEIN
+    - name: FADEOUT
+      description: SMIX Dstination N Fade-Out Configuration Register.
+      byte_offset: 16
+      fieldset: DST_CH_FADEOUT
+    - name: ST
+      description: SMIX Dstination N Status Register.
+      byte_offset: 20
+      fieldset: DST_CH_ST
+    - name: Data
+      description: SMIX Dstination N Data Out Register.
+      byte_offset: 24
+      fieldset: DST_CH_Data
+    - name: SOURCE_EN
+      description: SMIX Dstination N Source Enable Register.
+      byte_offset: 32
+      fieldset: SOURCE_EN
+    - name: SOURCE_ACT
+      description: SMIX Dstination N Source Activation Register.
+      byte_offset: 36
+      fieldset: SOURCE_ACT
+    - name: SOURCE_DEACT
+      description: SMIX Dstination N Source De-Activation Register.
+      byte_offset: 40
+      fieldset: SOURCE_DEACT
+    - name: SOURCE_FADEIN_CTRL
+      description: SMIX Dstination N Source Fade-in Control Register.
+      byte_offset: 44
+      fieldset: SOURCE_FADEIN_CTRL
+    - name: DEACT_ST
+      description: SMIX Dstination N Source Deactivation Status Register.
+      byte_offset: 48
+      fieldset: DEACT_ST
+    - name: SOURCE_MFADEOUT_CTRL
+      description: SMIX Dstination N Source Manual Fade-out Control Register.
+      byte_offset: 52
+      fieldset: SOURCE_MFADEOUT_CTRL
+block/SMIX:
+  description: SMIX.
+  items:
+    - name: DMAC_ID
+      description: DMAC_ID Register.
+      byte_offset: 0
+      fieldset: DMAC_ID
+    - name: DMAC_TC_ST
+      description: Transfer Complete Status.
+      byte_offset: 4
+      fieldset: DMAC_TC_ST
+    - name: DMAC_ABRT_ST
+      description: Transfer Abort Status.
+      byte_offset: 8
+      fieldset: DMAC_ABRT_ST
+    - name: DMAC_ERR_ST
+      description: Transfer Error Status.
+      byte_offset: 12
+      fieldset: DMAC_ERR_ST
+    - name: DMAC_CTRL
+      description: Control Register.
+      byte_offset: 32
+      fieldset: DMAC_CTRL
+    - name: DMAC_ABRT_CMD
+      description: Abort Command Register.
+      byte_offset: 36
+      fieldset: DMAC_ABRT_CMD
+    - name: DMAC_CHEN
+      description: Channel Enable Register.
+      byte_offset: 52
+      fieldset: DMAC_CHEN
+    - name: DMA_CH
+      description: no description available.
+      array:
+        len: 26
+        stride: 32
+      byte_offset: 64
+      block: DMA_CH
+    - name: CALSAT_ST
+      description: SMIX Cal Saturation Status Register.
+      byte_offset: 2048
+      fieldset: CALSAT_ST
+    - name: FDOT_DONE_ST
+      description: SMIX Fade-Out Done Status Register.
+      byte_offset: 2052
+      fieldset: FDOT_DONE_ST
+    - name: DATA_ST
+      description: SMIX Data Status Register.
+      byte_offset: 2056
+      fieldset: DATA_ST
+    - name: DST_CH
+      description: no description available.
+      array:
+        len: 2
+        stride: 64
+      byte_offset: 2112
+      block: DST_CH
+    - name: SOURCE_CH
+      description: no description available.
+      array:
+        len: 14
+        stride: 32
+      byte_offset: 2304
+      block: SOURCE_CH
+block/SOURCE_CH:
+  description: no description available.
+  items:
+    - name: CTRL
+      description: SMIX Source N Control Register.
+      byte_offset: 0
+      fieldset: SOURCE_CH_CTRL
+    - name: GAIN
+      description: SMIX Source N Gain Register.
+      byte_offset: 4
+      fieldset: SOURCE_CH_GAIN
+    - name: FADEIN
+      description: SMIX Source N Fade-in Control Register.
+      byte_offset: 8
+      fieldset: SOURCE_CH_FADEIN
+    - name: FADEOUT
+      description: SMIX Source N Fade-out Control Register.
+      byte_offset: 12
+      fieldset: SOURCE_CH_FADEOUT
+    - name: BufSize
+      description: SMIX Source N Buffer Size Register.
+      byte_offset: 16
+      fieldset: BufSize
+    - name: ST
+      description: SMIX Source N Status Register.
+      byte_offset: 20
+      fieldset: SOURCE_CH_ST
+    - name: Data
+      description: SMIX Source N Data Input Register.
+      byte_offset: 24
+      fieldset: SOURCE_CH_Data
+fieldset/BUFSIZE:
+  description: SMIX Dstination N Max Index Register.
+  fields:
+    - name: MAX_IDX
+      description: The total length of the dst stream -1. If zero, means there is no end of the stream.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BURST_COUNT:
+  description: Channel N Source Total Beats Register.
+  fields:
+    - name: NUM
+      description: the total number of source beats.
+      bit_offset: 0
+      bit_size: 32
+fieldset/BufSize:
+  description: SMIX Source N Buffer Size Register.
+  fields:
+    - name: MAXIDX
+      description: unit as 16-bits per sample. Zero means no length limit. = Act Len-1. The actual length is the up_rate*(input_data_length-4). If the filter processing is down-sampling, the value of up_rate above is 1. If the filter processing is up-sampling, the value of up_rate above is the up-sampling rate.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CALSAT_ST:
+  description: SMIX Cal Saturation Status Register.
+  fields:
+    - name: SRC
+      description: SRC CAL_SAT_ERR. W1C.
+      bit_offset: 0
+      bit_size: 14
+    - name: DST
+      description: DST CAL_SAT_ERR. W1C.
+      bit_offset: 30
+      bit_size: 2
+fieldset/CTL:
+  description: Channel N Control Register.
+  fields:
+    - name: EN
+      description: channel enable bit.
+      bit_offset: 0
+      bit_size: 1
+    - name: TC_INT_EN
+      description: TC interrupt enable.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERR_INT_EN
+      description: Err interrupt enable.
+      bit_offset: 2
+      bit_size: 1
+    - name: ABRT_INT_EN
+      description: Abort interrupt enable.
+      bit_offset: 3
+      bit_size: 1
+    - name: DSTADDRCTRL
+      description: "0x0: Increment address 0x1: Decrement address 0x2: Fixed address 0x3: Reserved, setting the field with this value triggers an error exception."
+      bit_offset: 5
+      bit_size: 2
+    - name: SRCADDRCTRL
+      description: "0x0: Increment address 0x1: Decrement address 0x2: Fixed address 0x3: Reserved, setting the field with this value triggers an error exception."
+      bit_offset: 7
+      bit_size: 2
+    - name: DSTMODE
+      description: "DMA Destination handshake mode 0x0: Normal mode 0x1: Handshake mode."
+      bit_offset: 9
+      bit_size: 1
+    - name: SRCMODE
+      description: "DMA Source handshake mode 0x0: Normal mode 0x1: Handshake mode."
+      bit_offset: 10
+      bit_size: 1
+    - name: DSTWIDTH
+      description: "Destination Transfer Beat Size: 0x0: Byte transfer 0x1: Half-word transfer 0x2: Word transfer."
+      bit_offset: 11
+      bit_size: 2
+    - name: SRCWIDTH
+      description: "Source Transfer Beat Size: 0x0: Byte transfer 0x1: Half-word transfer 0x2: Word transfer."
+      bit_offset: 13
+      bit_size: 2
+    - name: SRCBURSTSIZE
+      description: "0x0: 1 beat per transfer 0x1: 2 beats per transfer 0x2: 4 beats per transfer 0x3: 8 beats per transfer 0x4: 16 beats per transfer 0x5: 32 beats per transfer 0x6: 64 beats per transfer 0x7: 128 beats per transfer."
+      bit_offset: 15
+      bit_size: 4
+    - name: PRIORITY
+      description: "0x0: Lower priority 0x1: Higher priority."
+      bit_offset: 19
+      bit_size: 1
+    - name: DSTREQSEL
+      description: Destination DMA request select. Select the request/ack handshake pair that the destination device is connected to.
+      bit_offset: 21
+      bit_size: 5
+    - name: SRCREQSEL
+      description: Source DMA request select. Select the request/ack handshake pair that the source device is connected to.
+      bit_offset: 26
+      bit_size: 5
+fieldset/DATA_ST:
+  description: SMIX Data Status Register.
+  fields:
+    - name: SRC_DN
+      description: SRC data needed.
+      bit_offset: 0
+      bit_size: 14
+    - name: DST_UNDL
+      description: DST data underflow.
+      bit_offset: 28
+      bit_size: 2
+    - name: DST_DA
+      description: DST data available.
+      bit_offset: 30
+      bit_size: 2
+fieldset/DEACT_ST:
+  description: SMIX Dstination N Source Deactivation Status Register.
+  fields:
+    - name: SRC_DEACT_ST
+      description: Asserted when in de-active mode.
+      bit_offset: 0
+      bit_size: 8
+    - name: DST_DEACT
+      description: Asserted when in de-active mode.
+      bit_offset: 31
+      bit_size: 1
+fieldset/DMAC_ABRT_CMD:
+  description: Abort Command Register.
+  fields:
+    - name: CH
+      description: Write 1 to force the corresponding channel into abort status.
+      bit_offset: 0
+      bit_size: 26
+fieldset/DMAC_ABRT_ST:
+  description: Transfer Abort Status.
+  fields:
+    - name: CH
+      description: The abort status is set when a channel transfer is aborted.
+      bit_offset: 0
+      bit_size: 26
+fieldset/DMAC_CHEN:
+  description: Channel Enable Register.
+  fields:
+    - name: CH
+      description: Write 1 to enable the corresponding channel.
+      bit_offset: 0
+      bit_size: 26
+fieldset/DMAC_CTRL:
+  description: Control Register.
+  fields:
+    - name: SRST
+      description: Software Reset.
+      bit_offset: 0
+      bit_size: 1
+fieldset/DMAC_ERR_ST:
+  description: Transfer Error Status.
+  fields:
+    - name: CH
+      description: "The error status is set when a channel transfer encounters the following error events: . Bus error . Unaligned address . Unaligned transfer width . Reserved configuration."
+      bit_offset: 0
+      bit_size: 26
+fieldset/DMAC_ID:
+  description: DMAC_ID Register.
+  fields:
+    - name: REV
+      description: Revision.
+      bit_offset: 0
+      bit_size: 19
+fieldset/DMAC_TC_ST:
+  description: Transfer Complete Status.
+  fields:
+    - name: CH
+      description: The terminal count status is set when a channel transfer finishes without abort or error events.
+      bit_offset: 0
+      bit_size: 26
+fieldset/DST_CH_CTRL:
+  description: SMIX Dstination N Control Register.
+  fields:
+    - name: MIXER_EN
+      description: mixer function enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: SOFTRST
+      description: Soft reset.
+      bit_offset: 1
+      bit_size: 1
+    - name: DST_EN
+      description: Dst enabled. When disabled, clear the FIFO pointers.
+      bit_offset: 2
+      bit_size: 1
+    - name: DSTFADIN_EN
+      description: FadeIn_Ctrl for destionation. Auto clear.
+      bit_offset: 3
+      bit_size: 1
+    - name: DSTFADOUT_AEN
+      description: Automatically FadeOut_Ctrl for destionation. Only effective after DST_AFADEOUT is assigned a non-zero value.
+      bit_offset: 4
+      bit_size: 1
+    - name: DSTFADOUT_MEN
+      description: Manual FadeOut_Ctrl for destionation. Auto clear.
+      bit_offset: 5
+      bit_size: 1
+    - name: DST_ACT
+      description: activate the destination channel.
+      bit_offset: 6
+      bit_size: 1
+    - name: DST_DEACT
+      description: de-activate the destination channel.
+      bit_offset: 7
+      bit_size: 1
+    - name: FADEOUT_DONE_IE
+      description: Fade-Out interrupt enable.
+      bit_offset: 8
+      bit_size: 1
+    - name: ADEACTFADEOUT_EN
+      description: "AutoDeactAfterFadeOut_En: Asserted to enter de-activated mode after fade-out done."
+      bit_offset: 9
+      bit_size: 1
+    - name: DA_INT_EN
+      description: Data Available IntEn.
+      bit_offset: 10
+      bit_size: 1
+    - name: CALSAT_INT_EN
+      description: Cal Saturation IntEn.
+      bit_offset: 11
+      bit_size: 1
+    - name: THRSH
+      description: FIFO threshold for DMA or Int. >= will generate req. Must be greater or equal than 8. The read burst of DMA should make the fillings in the buffer be greater than 4.
+      bit_offset: 12
+      bit_size: 8
+    - name: DATA_UNFL_IE
+      description: Data Underflow Error IntEn.
+      bit_offset: 20
+      bit_size: 1
+fieldset/DST_CH_Data:
+  description: SMIX Dstination N Data Out Register.
+  fields:
+    - name: VAL
+      description: Output data buffer.
+      bit_offset: 0
+      bit_size: 32
+fieldset/DST_CH_FADEIN:
+  description: SMIX Dstination N Fade-In Configuration Register.
+  fields:
+    - name: DELTA
+      description: Fade-in delta for linear fading in from 0 to 1 (about at most 20s for 48kHz sampled sound) (Using only top 14 bits for mul).
+      bit_offset: 0
+      bit_size: 20
+fieldset/DST_CH_FADEOUT:
+  description: SMIX Dstination N Fade-Out Configuration Register.
+  fields:
+    - name: DELTA
+      description: Fade out in 2^DELTA samples. Now DELTA can be at most 14。.
+      bit_offset: 0
+      bit_size: 20
+fieldset/DST_CH_GAIN:
+  description: SMIX Dstination N Gain Register.
+  fields:
+    - name: VAL
+      description: Unsigned Int, with 12 fractional bits. . The top 3 bits are for shift. Same as SHFT_CTR[2:0].
+      bit_offset: 0
+      bit_size: 15
+fieldset/DST_CH_ST:
+  description: SMIX Dstination N Status Register.
+  fields:
+    - name: MODE
+      description: "The modes are: Mode 0: Disabled: after reset. Program the registers, and DSTn_CTRL [DST_EN] to enter Mode 1. Mode 1: Enabled and not-activated. wait for DSTn_CTRL [DSTFADIN_EN] or DSTn_CTRL [DST_ACT], jump to Mode 3 or Mode 4 based on whether Fade-in enabled. Mode 3: Enabled and activated and fade-in in progress: Can not be fade out. Will send data to DMA. Jump to Mode 4 after fadin op done. Mode 4: Enabled and activated and done fade-in, no fade-out yet: Can be fade out. Will send data to DMA. Mode 5: Enabled and activated and fade-out in progress: After faded out OP. Will send data to DMA. Will transfer to mode 6 or mode 7 depending on the DSTn_CTRL [ADeactFadeOut_En] cfg Mode 6: Enabled and activated and faded-out: faded out is done. Will send data to DMA. Will transfer to mode 7 if manual deactivated. Mode 7: Enabled and De-activated: If configured to enter this mode, after auto or manuallly fade-out, or after manual de-activated. Won't send data to DMA. Won't gen data avail signals. Intf register can be programmed. Will change to Mode 3 or Mode 4 after manual ACT or Fade-in CMD. Will transfer to Mode 0 if DSTn_CTRL [DST_EN] is assigned 0. To support a new stream or, to continue the old stream after a pause."
+      bit_offset: 0
+      bit_size: 3
+    - name: DA
+      description: Data Available.
+      bit_offset: 3
+      bit_size: 1
+    - name: CALSAT
+      description: Saturate Error Found. W1C.
+      bit_offset: 4
+      bit_size: 1
+    - name: FDOUT_DONE
+      description: Fade-Out Done. W1C.
+      bit_offset: 5
+      bit_size: 1
+    - name: FIFO_FILLINGS
+      description: destination channel output FIFO fillings.
+      bit_offset: 6
+      bit_size: 9
+fieldset/DstAddr:
+  description: Channel N Destination Register.
+  fields:
+    - name: PTR
+      description: destination address.
+      bit_offset: 0
+      bit_size: 32
+fieldset/FDOT_DONE_ST:
+  description: SMIX Fade-Out Done Status Register.
+  fields:
+    - name: SRC
+      description: SRC fadeout done. W1C.
+      bit_offset: 0
+      bit_size: 14
+    - name: DST
+      description: DST fadeout done. W1C.
+      bit_offset: 30
+      bit_size: 2
+fieldset/LLP:
+  description: Channel N Linked List Pointer Register.
+  fields:
+    - name: PTR
+      description: the address pointer for the linked list descriptor.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SOURCE_ACT:
+  description: SMIX Dstination N Source Activation Register.
+  fields:
+    - name: VAL
+      description: Manually Activate the channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/SOURCE_CH_CTRL:
+  description: SMIX Source N Control Register.
+  fields:
+    - name: RATECONV
+      description: "0: no rate conversion 1: up-conversion x2 2: up-conversion x3 3: up-conversion x4 4: up-conversion x6 5: up-conversion x8 6: up-conversion x12 7: down-conversion /2."
+      bit_offset: 0
+      bit_size: 3
+    - name: FADEOUT_DONE_IE
+      description: Fade-Out interrupt enable.
+      bit_offset: 6
+      bit_size: 1
+    - name: AUTODEACTAFTERFADEOUT_EN
+      description: Asserted to enter de-activated mode after fade-out done.
+      bit_offset: 7
+      bit_size: 1
+    - name: SHFT_CTRL
+      description: "Shift operation after FIR 0: no shift (when no upsampling or up-sampling-by-2 or up-sampling-by-3) 1: left-shift-by-1 (when up-sampling-by-4 or up-sampling-by-6) 2: left-shift-by-1 (when up-sampling-by-8 or up-sampling-by-12) 7: /2 (when rate /2) Other n: shift-left-by-n, but not suggested to be used."
+      bit_offset: 8
+      bit_size: 3
+    - name: DN_INT_EN
+      description: Data Needed IntEn.
+      bit_offset: 11
+      bit_size: 1
+    - name: CALSAT_INT_EN
+      description: Cal Saturation IntEn.
+      bit_offset: 12
+      bit_size: 1
+    - name: THRSH
+      description: FIFO threshold for DMA or Int. <= will generate req. Must be greater or equal than 8. This threshold is also used to trgger the internal FIR operation. To avoid the reading and writing to the same address in the memory block, the threshold should greater than 4.
+      bit_offset: 13
+      bit_size: 8
+    - name: FIFO_RESET
+      description: Asserted to reset FIFO pointer. Cleared to exit reset state.
+      bit_offset: 21
+      bit_size: 1
+fieldset/SOURCE_CH_Data:
+  description: SMIX Source N Data Input Register.
+  fields:
+    - name: VAL
+      description: Data input register.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SOURCE_CH_FADEIN:
+  description: SMIX Source N Fade-in Control Register.
+  fields:
+    - name: DELTA
+      description: Fade -in confg.
+      bit_offset: 0
+      bit_size: 20
+fieldset/SOURCE_CH_FADEOUT:
+  description: SMIX Source N Fade-out Control Register.
+  fields:
+    - name: DELTA
+      description: Fade out in 2^DELTA samples. Now DELTA can be at most 14。.
+      bit_offset: 0
+      bit_size: 20
+fieldset/SOURCE_CH_GAIN:
+  description: SMIX Source N Gain Register.
+  fields:
+    - name: VAL
+      description: Unsigned Int, with 12 fractional bits. The top 3 bits are for shift. Same as SHFT_CTR[2:0].
+      bit_offset: 0
+      bit_size: 15
+fieldset/SOURCE_CH_ST:
+  description: SMIX Source N Status Register.
+  fields:
+    - name: MODE
+      description: "The modes are: Mode 0: Disabled: after reset. Program the registers, and DSTx_SRC_EN[n] to enter Mode 1. Mode 1: Enabled but not activated: After Enabled. Data needed signal can send out, can receive DMA data. Will enter Mode 2 after manual ACT or Fade-in CMD Mode 2: Enabled and activated and buffer feed-in in progress: Can not be fade out. Will consume data from DMA. If not enter due to Fade-in CMD, will enter Mode 4, else enter Mode 3. This mode is used to make the channel in MIX only after initial data are ready, thus will not stall mix operation due to the lackness of data of this channel omly. Mode 3: Enabled and activated and fade-in in progress: Can not be fade out. Will consume data from DMA. Mode 4: Enabled and activated and done fade-in, no fade-out yet: Can be fade out. Will consume data from DMA. Mode 5: Enabled and activated and fade-out in progress: After faded out done. Will consume data from DMA. Will transfer to mode 6 or mode 7 depending on the SRCn_CTRL[AutoDeactAfterFadeOut_En] cfg Mode 6: Enabled and activated and faded-out: faded out is done. Will consume data from DMA. Will transfer to mode 7 if manual deactivated. Mode 7: Enabled and De-activated: If configured to enter this mode, after auto or manuallly fade-out, or after manual de-activated. Won't consume data from DMA. Won't gen data needed signals. Intf register can be programmed. Will change to Mode 2 after manual ACT or Fade-in CMD. Will transfer to Mode 0 if DSTx_SRC_EN[n] is assigned 0. To support a new stream or, to continue the old stream after a pause."
+      bit_offset: 0
+      bit_size: 3
+    - name: FIRPHASE
+      description: the poly phase counter.
+      bit_offset: 3
+      bit_size: 4
+    - name: DN
+      description: Data needed flag.
+      bit_offset: 7
+      bit_size: 1
+    - name: CALSAT
+      description: Calculation saturation status. W1C.
+      bit_offset: 8
+      bit_size: 1
+    - name: FDOUT_DONE
+      description: Fade-Out Done. W1C.
+      bit_offset: 9
+      bit_size: 1
+    - name: FIFO_FILLINGS
+      description: The fillings of input FIFO.
+      bit_offset: 10
+      bit_size: 9
+fieldset/SOURCE_DEACT:
+  description: SMIX Dstination N Source De-Activation Register.
+  fields:
+    - name: VAL
+      description: Manually DeActivate the channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/SOURCE_EN:
+  description: SMIX Dstination N Source Enable Register.
+  fields:
+    - name: VAL
+      description: After enabled, Data needed req will be asserted. DMA can feed in data. The channel will join in the sum operation of mixer operation.
+      bit_offset: 0
+      bit_size: 8
+fieldset/SOURCE_FADEIN_CTRL:
+  description: SMIX Dstination N Source Fade-in Control Register.
+  fields:
+    - name: AOP
+      description: Asserted to start fade-in operation. When the amplification factors are stable, auto clear.
+      bit_offset: 0
+      bit_size: 8
+fieldset/SOURCE_MFADEOUT_CTRL:
+  description: SMIX Dstination N Source Manual Fade-out Control Register.
+  fields:
+    - name: OP
+      description: Asserted to start fade-out operation. When the amplification factors are stable, auto clear.
+      bit_offset: 0
+      bit_size: 8
+fieldset/SrcAddr:
+  description: Channel N Source Register.
+  fields:
+    - name: PTR
+      description: source address.
+      bit_offset: 0
+      bit_size: 32
