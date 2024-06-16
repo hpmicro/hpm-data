@@ -5,25 +5,7 @@ block/MCHTMR:
       description: Machine Time.
       byte_offset: 0
       bit_size: 64
-      fieldset: MTIME
     - name: MTIMECMP
       description: Machine Time Compare.
       byte_offset: 8
-      bit_size: 64
-      fieldset: MTIMECMP
-fieldset/MTIME:
-  description: Machine Time.
-  bit_size: 64
-  fields:
-    - name: MTIME
-      description: Machine time.
-      bit_offset: 0
-      bit_size: 64
-fieldset/MTIMECMP:
-  description: Machine Time Compare.
-  bit_size: 64
-  fields:
-    - name: MTIMECMP
-      description: Machine time compare.
-      bit_offset: 0
       bit_size: 64
