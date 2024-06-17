@@ -118,6 +118,7 @@ fieldset/CR:
       description: "This bitfield define the input capture mode 100: width measure mode, timer will calculate the input signal period and duty cycle 011: capture at both rising edge and falling edge 010: capture at falling edge 001: capture at rising edge 000: No capture."
       bit_offset: 0
       bit_size: 3
+      enum: CAPMODE
     - name: DBGPAUSE
       description: 1- counter will pause if chip is in debug mode.
       bit_offset: 3
@@ -134,6 +135,7 @@ fieldset/CR:
       description: "select one of DMA request: 00- CMP0 flag 01- CMP1 flag 10- Input signal toggle captured 11- RLD flag, counter reload;."
       bit_offset: 6
       bit_size: 2
+      enum: DMASEL
     - name: CMPEN
       description: 1- Enable the channel output compare function. The output signal can be generated per comparator (CMPx) settings.
       bit_offset: 8
@@ -176,70 +178,34 @@ fieldset/GCR:
 fieldset/IRQEN:
   description: Interrupt request enable register.
   fields:
-    - name: CH0RLDEN
+    - name: CHRLDEN
       description: 1- generate interrupt request when ch0rldf flag is set.
       bit_offset: 0
       bit_size: 1
-    - name: CH0CAPEN
+      array:
+        len: 4
+        stride: 4
+    - name: CHCAPEN
       description: 1- generate interrupt request when ch0capf flag is set.
       bit_offset: 1
       bit_size: 1
-    - name: CH0CMP0EN
+      array:
+        len: 4
+        stride: 4
+    - name: CHCMP0EN
       description: 1- generate interrupt request when ch0cmp0f flag is set.
       bit_offset: 2
       bit_size: 1
-    - name: CH0CMP1EN
+      array:
+        len: 4
+        stride: 4
+    - name: CHCMP1EN
       description: 1- generate interrupt request when ch0cmp1f flag is set.
       bit_offset: 3
       bit_size: 1
-    - name: CH1RLDEN
-      description: 1- generate interrupt request when ch1rldf flag is set.
-      bit_offset: 4
-      bit_size: 1
-    - name: CH1CAPEN
-      description: 1- generate interrupt request when ch1capf flag is set.
-      bit_offset: 5
-      bit_size: 1
-    - name: CH1CMP0EN
-      description: 1- generate interrupt request when ch1cmp0f flag is set.
-      bit_offset: 6
-      bit_size: 1
-    - name: CH1CMP1EN
-      description: 1- generate interrupt request when ch1cmp1f flag is set.
-      bit_offset: 7
-      bit_size: 1
-    - name: CH2RLDEN
-      description: 1- generate interrupt request when ch2rldf flag is set.
-      bit_offset: 8
-      bit_size: 1
-    - name: CH2CAPEN
-      description: 1- generate interrupt request when ch2capf flag is set.
-      bit_offset: 9
-      bit_size: 1
-    - name: CH2CMP0EN
-      description: 1- generate interrupt request when ch2cmp0f flag is set.
-      bit_offset: 10
-      bit_size: 1
-    - name: CH2CMP1EN
-      description: 1- generate interrupt request when ch2cmp1f flag is set.
-      bit_offset: 11
-      bit_size: 1
-    - name: CH3RLDEN
-      description: 1- generate interrupt request when ch3rldf flag is set.
-      bit_offset: 12
-      bit_size: 1
-    - name: CH3CAPEN
-      description: 1- generate interrupt request when ch3capf flag is set.
-      bit_offset: 13
-      bit_size: 1
-    - name: CH3CMP0EN
-      description: 1- generate interrupt request when ch3cmp0f flag is set.
-      bit_offset: 14
-      bit_size: 1
-    - name: CH3CMP1EN
-      description: 1- generate interrupt request when ch3cmp1f flag is set.
-      bit_offset: 15
-      bit_size: 1
+      array:
+        len: 4
+        stride: 4
 fieldset/RLD:
   description: Reload register.
   fields:
@@ -250,67 +216,66 @@ fieldset/RLD:
 fieldset/SR:
   description: Status register.
   fields:
-    - name: CH0RLDF
+    - name: CHRLDF
       description: channel 1 counter reload flag.
       bit_offset: 0
       bit_size: 1
-    - name: CH0CAPF
+      array:
+        len: 4
+        stride: 4
+    - name: CHCAPF
       description: channel 1 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
       bit_offset: 1
       bit_size: 1
-    - name: CH0CMP0F
+      array:
+        len: 4
+        stride: 4
+    - name: CHCMP0F
       description: channel 1 compare value 1 match flag.
       bit_offset: 2
       bit_size: 1
-    - name: CH0CMP1F
+      array:
+        len: 4
+        stride: 4
+    - name: CHCMP1F
       description: channel 1 compare value 1 match flag.
       bit_offset: 3
       bit_size: 1
-    - name: CH1RLDF
-      description: channel 1 counter reload flag.
-      bit_offset: 4
-      bit_size: 1
-    - name: CH1CAPF
-      description: channel 1 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
-      bit_offset: 5
-      bit_size: 1
-    - name: CH1CMP0F
-      description: channel 1 compare value 1 match flag.
-      bit_offset: 6
-      bit_size: 1
-    - name: CH1CMP1F
-      description: channel 1 compare value 1 match flag.
-      bit_offset: 7
-      bit_size: 1
-    - name: CH2RLDF
-      description: channel 2 counter reload flag.
-      bit_offset: 8
-      bit_size: 1
-    - name: CH2CAPF
-      description: channel 2 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
-      bit_offset: 9
-      bit_size: 1
-    - name: CH2CMP0F
-      description: channel 2 compare value 1 match flag.
-      bit_offset: 10
-      bit_size: 1
-    - name: CH2CMP1F
-      description: channel 2 compare value 1 match flag.
-      bit_offset: 11
-      bit_size: 1
-    - name: CH3RLDF
-      description: channel 3 counter reload flag.
-      bit_offset: 12
-      bit_size: 1
-    - name: CH3CAPF
-      description: channel 3 capture flag, the flag will be set at the valid capture edge per CAPMODE setting. If the capture channel is set to measure mode, the flag will be set at rising edge.
-      bit_offset: 13
-      bit_size: 1
-    - name: CH3CMP0F
-      description: channel 3 compare value 1 match flag.
-      bit_offset: 14
-      bit_size: 1
-    - name: CH3CMP1F
-      description: channel 3 compare value 1 match flag.
-      bit_offset: 15
-      bit_size: 1
+      array:
+        len: 4
+        stride: 4
+enum/CAPMODE:
+  bit_size: 3
+  description: capture mode
+  variants:
+    - name: NOCAP
+      description: No capture.
+      value: 0
+    - name: RISING
+      description: Capture at rising edge.
+      value: 1
+    - name: FALLING
+      description: Capture at falling edge.
+      value: 2
+    - name: BOTH
+      description: Capture at both rising and falling edge.
+      value: 3
+    - name: MEASURE_PWM
+      description: Width measure mode, timer will calculate the input signal period and duty cycle.
+      value: 4
+enum/DMASEL:
+  bit_size: 2
+  description: select one of DMA request
+  variants:
+    - name: CMP0
+      description: CMP0 flag
+      value: 0
+    - name: CMP1
+      description: CMP1 flag
+      value: 1
+    - name: CAPF
+      description: Input signal toggle captured, when CAPF = 1
+      value: 2
+    - name: RLD
+      description: RLD flag, counter reload;
+      value: 3
