@@ -40,6 +40,7 @@ The `hpm-metapac` crate has a `metadata` feature, when enabled, it will provide 
 - All resources, for `SYSCTL`
 - All clocks, for `SYSCTL.CLOCK`
 - All GPIOs and it's PADs, for `IOC`
+- Patch vectored interrupt mode, add `CORE_LOCAL` for Non-External Interrupts
 
 ## Data Source
 

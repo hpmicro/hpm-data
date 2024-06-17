@@ -107,7 +107,12 @@ fn main() -> anyhow::Result<()> {
                     core.interrupts
                         .push(hpm_data_serde::chip::core::Interrupt { name, number });
                 }
-                // core.interrupts.extend(interrupts.interrupts);
+
+                // Add Core Local Interrupt as Interrupt 0
+                core.interrupts.push(hpm_data_serde::chip::core::Interrupt {
+                    name: format!("CORE_LOCAL"),
+                    number: 0,
+                });
             }
 
             // append peripherals from includes
