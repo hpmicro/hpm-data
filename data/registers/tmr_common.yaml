@@ -11,35 +11,27 @@ block/CHANNEL:
         len: 2
         stride: 4
       byte_offset: 4
-      fieldset: CMP
     - name: RLD
       description: Reload register.
       byte_offset: 12
-      fieldset: RLD
     - name: CNTUPTVAL
       description: Counter update value register.
       byte_offset: 16
-      fieldset: CNTUPTVAL
     - name: CAPPOS
       description: Capture rising edge register.
       byte_offset: 32
-      fieldset: CAPPOS
     - name: CAPNEG
       description: Capture falling edge register.
       byte_offset: 36
-      fieldset: CAPNEG
     - name: CAPPRD
       description: PWM period measure register.
       byte_offset: 40
-      fieldset: CAPPRD
     - name: CAPDTY
       description: PWM duty cycle measure register.
       byte_offset: 44
-      fieldset: CAPDTY
     - name: CNT
       description: Counter.
       byte_offset: 48
-      fieldset: CNT
 block/TMR:
   description: GPTMR0.
   items:
@@ -62,55 +54,6 @@ block/TMR:
       description: Global control register.
       byte_offset: 520
       fieldset: GCR
-fieldset/CAPDTY:
-  description: PWM duty cycle measure register.
-  fields:
-    - name: MEAS_HIGH
-      description: This register contains the input signal duty cycle when channel is configured to input capture measure mode.
-      bit_offset: 0
-      bit_size: 32
-fieldset/CAPNEG:
-  description: Capture falling edge register.
-  fields:
-    - name: CAPNEG
-      description: This register contains the counter value captured at input signal falling edge.
-      bit_offset: 0
-      bit_size: 32
-fieldset/CAPPOS:
-  description: Capture rising edge register.
-  fields:
-    - name: CAPPOS
-      description: This register contains the counter value captured at input signal rising edge.
-      bit_offset: 0
-      bit_size: 32
-fieldset/CAPPRD:
-  description: PWM period measure register.
-  fields:
-    - name: CAPPRD
-      description: This register contains the input signal period when channel is configured to input capture measure mode.
-      bit_offset: 0
-      bit_size: 32
-fieldset/CMP:
-  description: no description available.
-  fields:
-    - name: CMP
-      description: compare value 0.
-      bit_offset: 0
-      bit_size: 32
-fieldset/CNT:
-  description: Counter.
-  fields:
-    - name: COUNTER
-      description: 32 bit counter value.
-      bit_offset: 0
-      bit_size: 32
-fieldset/CNTUPTVAL:
-  description: Counter update value register.
-  fields:
-    - name: CNTUPTVAL
-      description: counter will be set to this value when software write cntupt bit in CR.
-      bit_offset: 0
-      bit_size: 32
 fieldset/CR:
   description: Control Register.
   fields:
@@ -206,13 +149,6 @@ fieldset/IRQEN:
       array:
         len: 4
         stride: 4
-fieldset/RLD:
-  description: Reload register.
-  fields:
-    - name: RLD
-      description: reload value.
-      bit_offset: 0
-      bit_size: 32
 fieldset/SR:
   description: Status register.
   fields:
