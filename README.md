@@ -17,12 +17,14 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 
 ## MCU Family
 
-- HPM5300
-- HPM6200
-- HPM6300
-- HPM6700/HPM6400
-- HPM6800
-- HPM6E00 (announced)
+(in order of release date)
+
+- HPM6700/HPM6400 - high performance
+- HPM6300 - general purpose
+- HPM6200 - high performance, real-time, mixed signal
+- HPM5300 - general purpose, motion control
+- HPM6800 - display, user interface
+- HPM6E00 (announced) - EtherCAT
 
 ### Support status
 
@@ -31,6 +33,7 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - [x] HPM6300
 - [x] HPM6800
 - [ ] HPM6200
+- [ ] HPM6E00
 
 ### Metadata patch
 
