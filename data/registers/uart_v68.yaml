@@ -319,7 +319,7 @@ fieldset/THR:
       description: Transmit data write port.
       bit_offset: 0
       bit_size: 8
-enum/TX_FIFO_TRIGGER:
+enum/RX_FIFO_TRIGGER:
   description: Transmitter FIFO trigger level.
   bit_size: 2
   variants:
@@ -335,7 +335,7 @@ enum/TX_FIFO_TRIGGER:
     - name: GT_THREE_QUARTER
       description: 3/4 full
       value: 3
-enum/RX_FIFO_TRIGGER:
+enum/TX_FIFO_TRIGGER:
   description: Receiver FIFO trigger level.
   bit_size: 2
   variants:

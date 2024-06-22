@@ -522,6 +522,54 @@ fieldset/RETENTION:
       description: "retention setting while system sleep, each bit represents a resource bit0: soc_pow bit1: soc_rst bit2: cpu0_pow bit3: cpu0_rst bit4: cpu1_pow bit5: cpu1_rst bit6: con_pow bit7: con_rst bit8: vis_pow bit9: vis_rst bit10: xtal bit11: pll0 bit12: pll1 bit13: pll2 bit14: pll3 bit15: pll4."
       bit_offset: 0
       bit_size: 18
+    - name: SOC_POW
+      bit_offset: 0
+      bit_size: 1
+    - name: SOC_RST
+      bit_offset: 1
+      bit_size: 1
+    - name: CPU0_POW
+      bit_offset: 2
+      bit_size: 1
+    - name: CPU0_RST
+      bit_offset: 3
+      bit_size: 1
+    - name: CPU1_POW
+      bit_offset: 4
+      bit_size: 1
+    - name: CPU1_RST
+      bit_offset: 5
+      bit_size: 1
+    - name: CON_POW
+      bit_offset: 6
+      bit_size: 1
+    - name: CON_RST
+      bit_offset: 7
+      bit_size: 1
+    - name: VIS_POW
+      bit_offset: 8
+      bit_size: 1
+    - name: VIS_RST
+      bit_offset: 9
+      bit_size: 1
+    - name: XTAL
+      bit_offset: 10
+      bit_size: 1
+    - name: PLL0
+      bit_offset: 11
+      bit_size: 1
+    - name: PLL1
+      bit_offset: 12
+      bit_size: 1
+    - name: PLL2
+      bit_offset: 13
+      bit_size: 1
+    - name: PLL3
+      bit_offset: 14
+      bit_size: 1
+    - name: PLL4
+      bit_offset: 15
+      bit_size: 1
 fieldset/WAKEUP_ENABLE:
   description: no description available.
   fields:
