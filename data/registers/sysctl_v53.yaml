@@ -438,6 +438,7 @@ fieldset/MONITOR_control:
       description: clock measurement selection.
       bit_offset: 0
       bit_size: 8
+      enum: MONITOR_SELECTION
     - name: REFERENCE
       description: "reference clock selection, 0: 32k 1: 24M."
       bit_offset: 8
@@ -686,3 +687,105 @@ enum/LP_MODE:
       value: 1
     - name: RUN
       value: 2
+enum/MONITOR_SELECTION:
+  description: no description available.
+  bit_size: 8
+  variants:
+    - name: CLK_32K
+      value: 1
+    - name: CLK_RC24M
+      value: 2
+    - name: CLK_XTAL24M
+      value: 3
+    - name: CLK_USB0_PHY
+      value: 4
+    - name: CLK_24M
+      value: 20
+    - name: PLL0CLK0
+      value: 21
+    - name: PLL0CLK1
+      value: 22
+    - name: PLL0CLK2
+      value: 23
+    - name: PLL1CLK0
+      value: 24
+    - name: PLL1CLK1
+      value: 25
+    - name: PLL1CLK2
+      value: 26
+    - name: PLL1CLK3
+      value: 27
+    - name: CLK_TOP_CPU0
+      value: 128
+    - name: CLK_TOP_MCHTMR0
+      value: 129
+    - name: CLK_TOP_CAN0
+      value: 130
+    - name: CLK_TOP_CAN1
+      value: 131
+    - name: CLK_TOP_CAN2
+      value: 132
+    - name: CLK_TOP_CAN3
+      value: 133
+    - name: CLK_TOP_LIN0
+      value: 134
+    - name: CLK_TOP_LIN1
+      value: 135
+    - name: CLK_TOP_LIN2
+      value: 136
+    - name: CLK_TOP_LIN3
+      value: 137
+    - name: CLK_TOP_GPTMR0
+      value: 138
+    - name: CLK_TOP_GPTMR1
+      value: 139
+    - name: CLK_TOP_GPTMR2
+      value: 140
+    - name: CLK_TOP_GPTMR3
+      value: 141
+    - name: CLK_TOP_I2C0
+      value: 142
+    - name: CLK_TOP_I2C1
+      value: 143
+    - name: CLK_TOP_I2C2
+      value: 144
+    - name: CLK_TOP_I2C3
+      value: 145
+    - name: CLK_TOP_SPI0
+      value: 146
+    - name: CLK_TOP_SPI1
+      value: 147
+    - name: CLK_TOP_SPI2
+      value: 148
+    - name: CLK_TOP_SPI3
+      value: 149
+    - name: CLK_TOP_UART0
+      value: 150
+    - name: CLK_TOP_UART1
+      value: 151
+    - name: CLK_TOP_UART2
+      value: 152
+    - name: CLK_TOP_UART3
+      value: 153
+    - name: CLK_TOP_UART4
+      value: 154
+    - name: CLK_TOP_UART5
+      value: 155
+    - name: CLK_TOP_UART6
+      value: 156
+    - name: CLK_TOP_UART7
+      value: 157
+    - name: CLK_TOP_XPI0
+      value: 158
+    - name: CLK_TOP_ANA0
+      value: 159
+    - name: CLK_TOP_ANA1
+      value: 160
+    - name: CLK_TOP_ANA2
+      value: 161
+    - name: CLK_TOP_ANA3
+      value: 162
+    - name: CLK_TOP_REF0
+      value: 163
+    - name: CLK_TOP_REF1
+      value: 164
