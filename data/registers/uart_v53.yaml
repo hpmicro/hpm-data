@@ -179,10 +179,12 @@ fieldset/FCRR:
       description: Transmitter FIFO trigger level.
       bit_offset: 4
       bit_size: 2
+      enum: TX_FIFO_TRIGGER
     - name: RFIFOT
       description: Receiver FIFO trigger level.
       bit_offset: 6
       bit_size: 2
+      enum: RX_FIFO_TRIGGER
     - name: RFIFOT4
       description: rxfifo threshold(0 for 1byte, 0xF for 16bytes). Uart will send rx_dma_req if data in fifo reachs the threshold, also will set the rxdata irq if enabled.
       bit_offset: 8
@@ -474,3 +476,35 @@ fieldset/THR:
       description: Transmit data write port.
       bit_offset: 0
       bit_size: 8
+enum/TX_FIFO_TRIGGER:
+  description: Transmitter FIFO trigger level.
+  bit_size: 2
+  variants:
+    - name: NOT_EMPTY
+      description: 1 byte
+      value: 0
+    - name: GT_ONE_QUARTER
+      description: 1/4 full
+      value: 1
+    - name: GT_HALF
+      description: 1/2 full
+      value: 2
+    - name: GT_THREE_QUARTER
+      description: 3/4 full
+      value: 3
+enum/RX_FIFO_TRIGGER:
+  description: Receiver FIFO trigger level.
+  bit_size: 2
+  variants:
+    - name: NOT_FULL
+      description: 1 byte or more empty space in fifo
+      value: 0
+    - name: LT_THREE_QUARTER
+      description: 3/4 full
+      value: 1
+    - name: LT_HALF
+      description: 1/2 full
+      value: 2
+    - name: LT_ONE_QUARTER
+      description: 1/4 full
+      value: 3
