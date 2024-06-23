@@ -32,7 +32,7 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - [x] HPM6700/HPM6400
 - [x] HPM6300
 - [x] HPM6800
-- [ ] HPM6200
+- [x] HPM6200
 - [ ] HPM6E00
 
 ### Metadata patch

@@ -1,0 +1,580 @@
+block/CHN:
+  description: no description available.
+  items:
+    - name: AOI_16TO8
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 0
+      fieldset: AOI_16TO8
+    - name: AOI_8to7_00_01
+      description: CHN&index0 AOI_16to8_00_01 OR logic cfg.
+      byte_offset: 32
+      fieldset: AOI_8to7_00_01
+    - name: AOI_8to7_02_03
+      description: CHN&index0 AOI_16to8_02_03 OR logic cfg.
+      byte_offset: 36
+      fieldset: AOI_8to7_02_03
+    - name: AOI_8to7_04_05
+      description: CHN&index0 AOI_16to8_04_05 OR logic cfg.
+      byte_offset: 40
+      fieldset: AOI_8to7_04_05
+    - name: AOI_8to7_06
+      description: CHN&index0 AOI_16to8_06 OR logic cfg.
+      byte_offset: 44
+      fieldset: AOI_8to7_06
+    - name: FILTER_2ND
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 48
+      fieldset: FILTER_2ND
+    - name: FILTER_3RD
+      description: no description available.
+      array:
+        len: 7
+        stride: 4
+      byte_offset: 80
+      fieldset: FILTER_3RD
+    - name: CFG_FF
+      description: CHN&index0 cfg ff.
+      byte_offset: 108
+      fieldset: CFG_FF
+block/PLA:
+  description: PLA0.
+  items:
+    - name: CHN
+      description: no description available.
+      array:
+        len: 8
+        stride: 112
+      byte_offset: 0
+      block: CHN
+    - name: FILTER_1ST_PLA_IN
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 960
+      fieldset: FILTER_1ST_PLA_IN
+    - name: FILTER_1ST_PLA_OUT
+      description: no description available.
+      array:
+        len: 9
+        stride: 4
+      byte_offset: 992
+      fieldset: FILTER_1ST_PLA_OUT
+    - name: CHN_CFG_ACTIVE
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 1024
+      fieldset: CHN_CFG_ACTIVE
+fieldset/AOI_16TO8:
+  description: no description available.
+  fields:
+    - name: AOI_16TO8_0
+      description: "select value for AOI_16to8_0. 0: 0. 1: 1st_filter_out[0]. 2: ~1st_filter_out[0]. 3: 1."
+      bit_offset: 0
+      bit_size: 2
+    - name: AOI_16TO8_1
+      description: "select value for AOI_16to8_1. 0: 0. 1: 1st_filter_out[1]. 2: ~1st_filter_out[1]. 3: 1."
+      bit_offset: 2
+      bit_size: 2
+    - name: AOI_16TO8_2
+      description: "select value for AOI_16to8_2. 0: 0. 1: 1st_filter_out[2]. 2: ~1st_filter_out[2]. 3: 1."
+      bit_offset: 4
+      bit_size: 2
+    - name: AOI_16TO8_3
+      description: "select value for AOI_16to8_3. 0: 0. 1: 1st_filter_out[3]. 2: ~1st_filter_out[3]. 3: 1."
+      bit_offset: 6
+      bit_size: 2
+    - name: AOI_16TO8_4
+      description: "select value for AOI_16to8_4. 0: 0. 1: 1st_filter_out[4]. 2: ~1st_filter_out[4]. 3: 1."
+      bit_offset: 8
+      bit_size: 2
+    - name: AOI_16TO8_5
+      description: "select value for AOI_16to8_5. 0: 0. 1: 1st_filter_out[5]. 2: ~1st_filter_out[5]. 3: 1."
+      bit_offset: 10
+      bit_size: 2
+    - name: AOI_16TO8_6
+      description: "select value for AOI_16to8_6. 0: 0. 1: 1st_filter_out[6]. 2: ~1st_filter_out[6]. 3: 1."
+      bit_offset: 12
+      bit_size: 2
+    - name: AOI_16TO8_7
+      description: "select value for AOI_16to8_7. 0: 0. 1: 1st_filter_out[7]. 2: ~1st_filter_out[7]. 3: 1."
+      bit_offset: 14
+      bit_size: 2
+    - name: AOI_16TO8_8
+      description: "select value for AOI_16to8_8. 0: 0. 1: 1st_filter_out[8]. 2: ~1st_filter_out[8]. 3: 1."
+      bit_offset: 16
+      bit_size: 2
+    - name: AOI_16TO8_9
+      description: "select value for AOI_16to8_9. 0: 0. 1: 1st_filter_out[9]. 2: ~1st_filter_out[9]. 3: 1."
+      bit_offset: 18
+      bit_size: 2
+    - name: AOI_16TO8_10
+      description: "select value for AOI_16to8_10. 0: 0. 1: 1st_filter_out[10]. 2: ~1st_filter_out[10]. 3: 1."
+      bit_offset: 20
+      bit_size: 2
+    - name: AOI_16TO8_11
+      description: "select value for AOI_16to8_11. 0: 0. 1: 1st_filter_out[11]. 2: ~1st_filter_out[11]. 3: 1."
+      bit_offset: 22
+      bit_size: 2
+    - name: AOI_16TO8_12
+      description: "select value for AOI_16to8_12. 0: 0. 1: 1st_filter_out[12]. 2: ~1st_filter_out[12]. 3: 1."
+      bit_offset: 24
+      bit_size: 2
+    - name: AOI_16TO8_13
+      description: "select value for AOI_16to8_13. 0: 0. 1: 1st_filter_out[13]. 2: ~1st_filter_out[13]. 3: 1."
+      bit_offset: 26
+      bit_size: 2
+    - name: AOI_16TO8_14
+      description: "select value for AOI_16to8_14. 0: 0. 1: 1st_filter_out[14]. 2: ~1st_filter_out[14]. 3: 1."
+      bit_offset: 28
+      bit_size: 2
+    - name: AOI_16TO8_15
+      description: "select value for AOI_16to8_15. 0: 0. 1: 1st_filter_out[15]. 2: ~1st_filter_out[15]. 3: 1."
+      bit_offset: 30
+      bit_size: 2
+fieldset/AOI_8to7_00_01:
+  description: CHN&index0 AOI_16to8_00_01 OR logic cfg.
+  fields:
+    - name: AOI_8TO7_00_0
+      description: "select value for AOI_8to7_00_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 0
+      bit_size: 2
+    - name: AOI_8TO7_00_1
+      description: "select value for AOI_8to7_00_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 2
+      bit_size: 2
+    - name: AOI_8TO7_00_2
+      description: "select value for AOI_8to7_00_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 4
+      bit_size: 2
+    - name: AOI_8TO7_00_3
+      description: "select value for AOI_8to7_00_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 6
+      bit_size: 2
+    - name: AOI_8TO7_00_4
+      description: "select value for AOI_8to7_00_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 8
+      bit_size: 2
+    - name: AOI_8TO7_00_5
+      description: "select value for AOI_8to7_00_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 10
+      bit_size: 2
+    - name: AOI_8TO7_00_6
+      description: "select value for AOI_8to7_00_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 12
+      bit_size: 2
+    - name: AOI_8TO7_00_7
+      description: "select value for AOI_8to7_00_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 14
+      bit_size: 2
+    - name: AOI_8TO7_01_0
+      description: "select value for AOI_8to7_01_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 16
+      bit_size: 2
+    - name: AOI_8TO7_01_1
+      description: "select value for AOI_8to7_01_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 18
+      bit_size: 2
+    - name: AOI_8TO7_01_2
+      description: "select value for AOI_8to7_01_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 20
+      bit_size: 2
+    - name: AOI_8TO7_01_3
+      description: "select value for AOI_8to7_01_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 22
+      bit_size: 2
+    - name: AOI_8TO7_01_4
+      description: "select value for AOI_8to7_01_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 24
+      bit_size: 2
+    - name: AOI_8TO7_01_5
+      description: "select value for AOI_8to7_01_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 26
+      bit_size: 2
+    - name: AOI_8TO7_01_6
+      description: "select value for AOI_8to7_01_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 28
+      bit_size: 2
+    - name: AOI_8TO7_01_7
+      description: "select value for AOI_8to7_01_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 30
+      bit_size: 2
+fieldset/AOI_8to7_02_03:
+  description: CHN&index0 AOI_16to8_02_03 OR logic cfg.
+  fields:
+    - name: AOI_8TO7_02_0
+      description: "select value for AOI_8to7_02_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 0
+      bit_size: 2
+    - name: AOI_8TO7_02_1
+      description: "select value for AOI_8to7_02_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 2
+      bit_size: 2
+    - name: AOI_8TO7_02_2
+      description: "select value for AOI_8to7_02_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 4
+      bit_size: 2
+    - name: AOI_8TO7_02_3
+      description: "select value for AOI_8to7_02_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 6
+      bit_size: 2
+    - name: AOI_8TO7_02_4
+      description: "select value for AOI_8to7_02_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 8
+      bit_size: 2
+    - name: AOI_8TO7_02_5
+      description: "select value for AOI_8to7_02_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 10
+      bit_size: 2
+    - name: AOI_8TO7_02_6
+      description: "select value for AOI_8to7_02_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 12
+      bit_size: 2
+    - name: AOI_8TO7_02_7
+      description: "select value for AOI_8to7_02_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 14
+      bit_size: 2
+    - name: AOI_8TO7_03_0
+      description: "select value for AOI_8to7_03_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 16
+      bit_size: 2
+    - name: AOI_8TO7_03_1
+      description: "select value for AOI_8to7_03_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 18
+      bit_size: 2
+    - name: AOI_8TO7_03_2
+      description: "select value for AOI_8to7_03_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 20
+      bit_size: 2
+    - name: AOI_8TO7_03_3
+      description: "select value for AOI_8to7_03_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 22
+      bit_size: 2
+    - name: AOI_8TO7_03_4
+      description: "select value for AOI_8to7_03_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 24
+      bit_size: 2
+    - name: AOI_8TO7_03_5
+      description: "select value for AOI_8to7_03_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 26
+      bit_size: 2
+    - name: AOI_8TO7_03_6
+      description: "select value for AOI_8to7_03_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 28
+      bit_size: 2
+    - name: AOI_8TO7_03_7
+      description: "select value for AOI_8to7_03_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 30
+      bit_size: 2
+fieldset/AOI_8to7_04_05:
+  description: CHN&index0 AOI_16to8_04_05 OR logic cfg.
+  fields:
+    - name: AOI_8TO7_04_0
+      description: "select value for AOI_8to7_04_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 0
+      bit_size: 2
+    - name: AOI_8TO7_04_1
+      description: "select value for AOI_8to7_04_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 2
+      bit_size: 2
+    - name: AOI_8TO7_04_2
+      description: "select value for AOI_8to7_04_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 4
+      bit_size: 2
+    - name: AOI_8TO7_04_3
+      description: "select value for AOI_8to7_04_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 6
+      bit_size: 2
+    - name: AOI_8TO7_04_4
+      description: "select value for AOI_8to7_04_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 8
+      bit_size: 2
+    - name: AOI_8TO7_04_5
+      description: "select value for AOI_8to7_04_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 10
+      bit_size: 2
+    - name: AOI_8TO7_04_6
+      description: "select value for AOI_8to7_04_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 12
+      bit_size: 2
+    - name: AOI_8TO7_04_7
+      description: "select value for AOI_8to7_04_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 14
+      bit_size: 2
+    - name: AOI_8TO7_05_0
+      description: "select value for AOI_8to7_05_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 16
+      bit_size: 2
+    - name: AOI_8TO7_05_1
+      description: "select value for AOI_8to7_05_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 18
+      bit_size: 2
+    - name: AOI_8TO7_05_2
+      description: "select value for AOI_8to7_05_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 20
+      bit_size: 2
+    - name: AOI_8TO7_05_3
+      description: "select value for AOI_8to7_05_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 22
+      bit_size: 2
+    - name: AOI_8TO7_05_4
+      description: "select value for AOI_8to7_05_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 24
+      bit_size: 2
+    - name: AOI_8TO7_05_5
+      description: "select value for AOI_8to7_05_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 26
+      bit_size: 2
+    - name: AOI_8TO7_05_6
+      description: "select value for AOI_8to7_05_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 28
+      bit_size: 2
+    - name: AOI_8TO7_05_7
+      description: "select value for AOI_8to7_05_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 30
+      bit_size: 2
+fieldset/AOI_8to7_06:
+  description: CHN&index0 AOI_16to8_06 OR logic cfg.
+  fields:
+    - name: AOI_8TO7_06_0
+      description: "select value for AOI_8to7_06_0. 0: 0. 1: 2nd_filter_out[0]. 2: ~2nd_filter_out[0]. 3: 1."
+      bit_offset: 0
+      bit_size: 2
+    - name: AOI_8TO7_06_1
+      description: "select value for AOI_8to7_06_1. 0: 0. 1: 2nd_filter_out[1]. 2: ~2nd_filter_out[1]. 3: 1."
+      bit_offset: 2
+      bit_size: 2
+    - name: AOI_8TO7_06_2
+      description: "select value for AOI_8to7_06_2. 0: 0. 1: 2nd_filter_out[2]. 2: ~2nd_filter_out[2]. 3: 1."
+      bit_offset: 4
+      bit_size: 2
+    - name: AOI_8TO7_06_3
+      description: "select value for AOI_8to7_06_3. 0: 0. 1: 2nd_filter_out[3]. 2: ~2nd_filter_out[3]. 3: 1."
+      bit_offset: 6
+      bit_size: 2
+    - name: AOI_8TO7_06_4
+      description: "select value for AOI_8to7_06_4. 0: 0. 1: 2nd_filter_out[4]. 2: ~2nd_filter_out[4]. 3: 1."
+      bit_offset: 8
+      bit_size: 2
+    - name: AOI_8TO7_06_5
+      description: "select value for AOI_8to7_06_5. 0: 0. 1: 2nd_filter_out[5]. 2: ~2nd_filter_out[5]. 3: 1."
+      bit_offset: 10
+      bit_size: 2
+    - name: AOI_8TO7_06_6
+      description: "select value for AOI_8to7_06_6. 0: 0. 1: 2nd_filter_out[6]. 2: ~2nd_filter_out[6]. 3: 1."
+      bit_offset: 12
+      bit_size: 2
+    - name: AOI_8TO7_06_7
+      description: "select value for AOI_8to7_06_7. 0: 0. 1: 2nd_filter_out[7]. 2: ~2nd_filter_out[7]. 3: 1."
+      bit_offset: 14
+      bit_size: 2
+fieldset/CFG_FF:
+  description: CHN&index0 cfg ff.
+  fields:
+    - name: SEL_CFG_FF_TYPE
+      description: "cfg_ff type. 0: DFF. 1: 3rd_filter_0. 2: dual-edge DFF. 3: Trigger FF. 4: JK FF. 5. latch. 6: full adder/minus."
+      bit_offset: 0
+      bit_size: 3
+    - name: SEL_CLK_SOURCE
+      description: "cfg_ff clock source. 0: system clock. 1: use 3rd_filter_2 as clock."
+      bit_offset: 3
+      bit_size: 1
+    - name: SEL_ADDER_MINUS
+      description: "0: select adder when cfg_adder_minus active. 1: select minus when cfg_adder_minus active."
+      bit_offset: 4
+      bit_size: 1
+    - name: DIS_OSC_LOOP_CLAMP
+      description: "disable osc loop clamp. 0: enable osc loop clamp when osc ring active. 1: disable or clean current osc loop clamp."
+      bit_offset: 16
+      bit_size: 1
+    - name: OSC_LOOP_CLAMP_VALUE
+      description: "osc loop clamp value when osc ring active. 0: clamp 0. 1: clamp 1."
+      bit_offset: 17
+      bit_size: 1
+fieldset/CHN_CFG_ACTIVE:
+  description: no description available.
+  fields:
+    - name: CFG_ACTIVE
+      description: write 0xF00D to enable all setting. Otherwire, all setting inactive.
+      bit_offset: 0
+      bit_size: 16
+fieldset/FILTER_1ST_PLA_IN:
+  description: no description available.
+  fields:
+    - name: SYNC_EDGE_FILTER_ENABLE
+      description: "sync and edge detector filter. 0: disable. 1: enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: SOFTWARE_INJECT
+      description: "software inject value for sync and edge detector filter. 0: inject low level. 1: inject high level. 2: not inject. 3. inject high level."
+      bit_offset: 1
+      bit_size: 2
+    - name: FILTER_REVERSE
+      description: "reverse sync and edge detector filter's output. 0: not reverse. 1: reverse."
+      bit_offset: 3
+      bit_size: 1
+    - name: EDGE_DECT_ENABLE
+      description: "edge detector enable. 0: disable. bit6/bit5 setting inactive. 1: enable. bit6/bit5 setting active."
+      bit_offset: 4
+      bit_size: 1
+    - name: NEGE_EDGE_DECT_ENABLE
+      description: "nege edge detector enable. 0: disable. 1: enable."
+      bit_offset: 5
+      bit_size: 1
+    - name: POSE_EDGE_DECT_ENABLE
+      description: "pose edge detector enable. 0: disable. 1: enable."
+      bit_offset: 6
+      bit_size: 1
+    - name: FILTER_SYNC_LEVEL
+      description: "synchroniser level. 0: 2 level sync. 1: 3 level sync."
+      bit_offset: 7
+      bit_size: 1
+    - name: FILTER_EXT_ENABLE
+      description: filter extend enable. 0. bypass filter extend. all setting in bit31:12 are inactive 1. enable filter extend, all setting in bit31:12 are active.
+      bit_offset: 8
+      bit_size: 1
+    - name: FILTER_EXT_TYPE
+      description: filter extend type. 0-3：nothing to do. 4： input high level extend. 5： input low level extend. 6： output extend. 7： input pulse extend.
+      bit_offset: 12
+      bit_size: 3
+    - name: FILTER_EXT_COUNTER
+      description: "filter_ext counter value, cycles for filter or extent by system clock。 0：0*apb_clk_period 1：1*apb_clk_period 2: 2*apb_clk_period … 65535: 65535*apb_clk_period."
+      bit_offset: 16
+      bit_size: 16
+fieldset/FILTER_1ST_PLA_OUT:
+  description: no description available.
+  fields:
+    - name: SYNC_EDGE_FILTER_ENABLE
+      description: "sync and edge detector filter. 0: disable. 1: enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: SOFTWARE_INJECT
+      description: "software inject value for sync and edge detector filter. 0: inject low level. 1: inject high level. 2: not inject. 3. inject high level."
+      bit_offset: 1
+      bit_size: 2
+    - name: FILTER_REVERSE
+      description: "reverse sync and edge detector filter's output. 0: not reverse. 1: reverse."
+      bit_offset: 3
+      bit_size: 1
+    - name: EDGE_DECT_ENABLE
+      description: "edge detector enable. 0: disable. bit6/bit5 setting inactive. 1: enable. bit6/bit5 setting active."
+      bit_offset: 4
+      bit_size: 1
+    - name: NEGE_EDGE_DECT_ENABLE
+      description: "nege edge detector enable. 0: disable. 1: enable."
+      bit_offset: 5
+      bit_size: 1
+    - name: POSE_EDGE_DECT_ENABLE
+      description: "pose edge detector enable. 0: disable. 1: enable."
+      bit_offset: 6
+      bit_size: 1
+    - name: FILTER_SYNC_LEVEL
+      description: "synchroniser level. 0: 2 level sync. 1: 3 level sync."
+      bit_offset: 7
+      bit_size: 1
+    - name: FILTER_EXT_ENABLE
+      description: filter extend enable. 0. bypass filter extend. all setting in bit31:12 are inactive 1. enable filter extend, all setting in bit31:12 are active.
+      bit_offset: 8
+      bit_size: 1
+    - name: FILTER_EXT_TYPE
+      description: filter extend type. 0-3：nothing to do. 4： input high level extend. 5： input low level extend. 6： output extend. 7： input pulse extend.
+      bit_offset: 12
+      bit_size: 3
+    - name: FILTER_EXT_COUNTER
+      description: "filter_ext counter value, cycles for filter or extent by system clock。 0：0*apb_clk_period 1：1*apb_clk_period 2: 2*apb_clk_period … 65535: 65535*apb_clk_period."
+      bit_offset: 16
+      bit_size: 16
+fieldset/FILTER_2ND:
+  description: no description available.
+  fields:
+    - name: SYNC_EDGE_FILTER_ENABLE
+      description: "sync and edge detector filter. 0: disable. 1: enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: SOFTWARE_INJECT
+      description: "software inject value for sync and edge detector filter. 0: inject low level. 1: inject high level. 2: not inject. 3. inject high level."
+      bit_offset: 1
+      bit_size: 2
+    - name: FILTER_REVERSE
+      description: "reverse sync and edge detector filter's output. 0: not reverse. 1: reverse."
+      bit_offset: 3
+      bit_size: 1
+    - name: EDGE_DECT_ENABLE
+      description: "edge detector enable. 0: disable. bit6/bit5 setting inactive. 1: enable. bit6/bit5 setting active."
+      bit_offset: 4
+      bit_size: 1
+    - name: NEGE_EDGE_DECT_ENABLE
+      description: "nege edge detector enable. 0: disable. 1: enable."
+      bit_offset: 5
+      bit_size: 1
+    - name: POSE_EDGE_DECT_ENABLE
+      description: "pose edge detector enable. 0: disable. 1: enable."
+      bit_offset: 6
+      bit_size: 1
+    - name: FILTER_SYNC_LEVEL
+      description: "synchroniser level. 0: 2 level sync. 1: 3 level sync."
+      bit_offset: 7
+      bit_size: 1
+    - name: FILTER_EXT_ENABLE
+      description: filter extend enable. 0. bypass filter extend. all setting in bit31:12 are inactive 1. enable filter extend, all setting in bit31:12 are active.
+      bit_offset: 8
+      bit_size: 1
+    - name: FILTER_EXT_TYPE
+      description: filter extend type. 0-3：nothing to do. 4： input high level extend. 5： input low level extend. 6： output extend. 7： input pulse extend.
+      bit_offset: 12
+      bit_size: 3
+    - name: FILTER_EXT_COUNTER
+      description: "filter_ext counter value, cycles for filter or extent by system clock。 0：0*apb_clk_period 1：1*apb_clk_period 2: 2*apb_clk_period … 65535: 65535*apb_clk_period."
+      bit_offset: 16
+      bit_size: 16
+fieldset/FILTER_3RD:
+  description: no description available.
+  fields:
+    - name: SYNC_EDGE_FILTER_ENABLE
+      description: "sync and edge detector filter. 0: disable. 1: enable."
+      bit_offset: 0
+      bit_size: 1
+    - name: SOFTWARE_INJECT
+      description: "software inject value for sync and edge detector filter. 0: inject low level. 1: inject high level. 2: not inject. 3. inject high level."
+      bit_offset: 1
+      bit_size: 2
+    - name: FILTER_REVERSE
+      description: "reverse sync and edge detector filter's output. 0: not reverse. 1: reverse."
+      bit_offset: 3
+      bit_size: 1
+    - name: EDGE_DECT_ENABLE
+      description: "edge detector enable. 0: disable. bit6/bit5 setting inactive. 1: enable. bit6/bit5 setting active."
+      bit_offset: 4
+      bit_size: 1
+    - name: NEGE_EDGE_DECT_ENABLE
+      description: "nege edge detector enable. 0: disable. 1: enable."
+      bit_offset: 5
+      bit_size: 1
+    - name: POSE_EDGE_DECT_ENABLE
+      description: "pose edge detector enable. 0: disable. 1: enable."
+      bit_offset: 6
+      bit_size: 1
+    - name: FILTER_SYNC_LEVEL
+      description: "synchroniser level. 0: 2 level sync. 1: 3 level sync."
+      bit_offset: 7
+      bit_size: 1
+    - name: FILTER_EXT_ENABLE
+      description: filter extend enable. 0. bypass filter extend. all setting in bit31:12 are inactive 1. enable filter extend, all setting in bit31:12 are active.
+      bit_offset: 8
+      bit_size: 1
+    - name: FILTER_EXT_TYPE
+      description: filter extend type. 0-3：nothing to do. 4： input high level extend. 5： input low level extend. 6： output extend. 7： input pulse extend.
+      bit_offset: 12
+      bit_size: 3
+    - name: FILTER_EXT_COUNTER
+      description: "filter_ext counter value, cycles for filter or extent by system clock。 0：0*apb_clk_period 1：1*apb_clk_period 2: 2*apb_clk_period … 65535: 65535*apb_clk_period."
+      bit_offset: 16
+      bit_size: 16

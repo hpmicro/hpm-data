@@ -5,9 +5,655 @@
     version: v62
     block: SYSCTL
 
+- name: PLLCTL
+  address: 0xF4100000
+  registers:
+    kind: pllctl
+    version: v2
+    block: PLLCTLV2
+
+- name: BCFG
+  address: 0xF5008000
+  registers:
+    kind: bcfg
+    version: v62
+    block: BCFG
+- name: BPOR
+  address: 0xF5004000
+  registers:
+    kind: bpor
+    version: v67
+    block: BPOR
+- name: BUTN
+  address: 0xF500C000
+  registers:
+    kind: butn
+    version: common
+    block: BUTN
+
+- name: PCFG
+  address: 0xF40C4000
+  registers:
+    kind: pcfg
+    version: v67
+    block: PCFG
+- name: PPOR
+  address: 0xF40C0000
+  registers:
+    kind: ppor
+    version: v67
+    block: PPOR
+
+# input output and alternate function
+
+- name: IOC
+  address: 0xF4040000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+- name: PIOC
+  address: 0xF40D8000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+- name: BIOC
+  address: 0xF5010000
+  registers:
+    kind: ioc
+    version: common
+    block: IOC
+
+- name: FGPIO
+  address: 0x000C0000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: GPIO0
+  address: 0xF0000000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: GPIO1
+  address: 0xF0004000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: PGPIO
+  address: 0xF40DC000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+- name: BGPIO
+  address: 0xF5014000
+  registers:
+    kind: gpio
+    version: common
+    block: GPIO
+
+- name: GPIOM
+  address: 0xF0008000
+  registers:
+    kind: gpiom
+    version: v67
+    block: GPIOM
+
+# storage peripherals
+
+- name: OTPSHW
+  address: 0xF4080000
+  registers:
+    kind: otp
+    version: common
+    block: OTP
+- name: OTP
+  address: 0xF40C8000
+  registers:
+    kind: otp
+    version: common
+    block: OTP
+
 - name: XPI0
   address: 0xF3040000
   registers:
     kind: xpi
     version: dummy
     block: XPI
+
+# CRC, DMA, and mailboxes
+
+- name: HDMA
+  address: 0xF00C4000
+  registers:
+    kind: dma
+    version: v62
+    block: DMA
+- name: XDMA
+  address: 0xF3048000
+  registers:
+    kind: dma
+    version: v62
+    block: DMA
+
+- name: DMAMUX
+  address: 0xF00C0000
+  registers:
+    kind: dmamux
+    version: common
+    block: DMAMUX
+
+- name: MBX0A
+  address: 0xF00A0000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX0B
+  address: 0xF00A4000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX1A
+  address: 0xF00A8000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+- name: MBX1B
+  address: 0xF00AC000
+  registers:
+    kind: mbx
+    version: common
+    block: MBX
+
+- name: CRC
+  address: 0xF00B8000
+  registers:
+    kind: crc
+    version: common
+    block: CRC
+
+# motion control
+
+- name: PWM0
+  address: 0xF0200000
+  registers:
+    kind: pwm
+    version: v62
+    block: PWM
+- name: PWM1
+  address: 0xF0210000
+  registers:
+    kind: pwm
+    version: v62
+    block: PWM
+- name: PWM2
+  address: 0xF0220000
+  registers:
+    kind: pwm
+    version: v62
+    block: PWM
+- name: PWM3
+  address: 0xF0230000
+  registers:
+    kind: pwm
+    version: v62
+    block: PWM
+
+- name: PLA0
+  address: 0xF020E000
+  registers:
+    kind: pla
+    version: v62
+    block: PLA
+- name: PLA1
+  address: 0xF021E000
+  registers:
+    kind: pla
+    version: v62
+    block: PLA
+
+- name: QEI0
+  address: 0xF0208000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI1
+  address: 0xF0218000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI2
+  address: 0xF0228000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI3
+  address: 0xF0238000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+
+- name: HALL0
+  address: 0xF0204000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL1
+  address: 0xF0214000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL2
+  address: 0xF0224000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL3
+  address: 0xF0234000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+
+- name: TRGM0
+  address: 0xF020C000
+  registers:
+    kind: trgm
+    version: v62
+    block: TRGM
+- name: TRGM1
+  address: 0xF021C000
+  registers:
+    kind: trgm
+    version: v62
+    block: TRGM
+- name: TRGM2
+  address: 0xF022C000
+  registers:
+    kind: trgm
+    version: v62
+    block: TRGM
+- name: TRGM3
+  address: 0xF023C000
+  registers:
+    kind: trgm
+    version: v62
+    block: TRGM
+
+- name: SYNT
+  address: 0xF0240000
+  registers:
+    kind: synt
+    version: v67
+    block: SYNT
+
+# timers
+
+- name: GPTMR0
+  address: 0xF3000000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR1
+  address: 0xF3004000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR2
+  address: 0xF3008000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: GPTMR3
+  address: 0xF300C000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+- name: PTMR
+  address: 0xF40E0000
+  registers:
+    kind: tmr
+    version: common
+    block: TMR
+
+- name: WDG0
+  address: 0xF0090000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+- name: WDG1
+  address: 0xF0094000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+- name: PWDG
+  address: 0xF40E8000
+  registers:
+    kind: wdg
+    version: v67
+    block: WDG
+
+- name: RTC
+  address: 0xF5044000
+  registers:
+    kind: rtc
+    version: common
+    block: RTC
+
+# communication peripherals
+
+- name: UART0
+  address: 0xF0040000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART1
+  address: 0xF0044000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART2
+  address: 0xF0048000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART3
+  address: 0xF004C000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART4
+  address: 0xF0050000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART5
+  address: 0xF0054000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART6
+  address: 0xF0058000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART7
+  address: 0xF005C000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: PUART
+  address: 0xF40E4000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+
+- name: SPI0
+  address: 0xF0030000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+- name: SPI1
+  address: 0xF0034000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+- name: SPI2
+  address: 0xF0038000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+- name: SPI3
+  address: 0xF003C000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+
+- name: I2C0
+  address: 0xF3020000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+- name: I2C1
+  address: 0xF3024000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+- name: I2C2
+  address: 0xF3028000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+- name: I2C3
+  address: 0xF302C000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+
+- name: MCAN0
+  address: 0xF0080000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN1
+  address: 0xF0084000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN2
+  address: 0xF0088000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN3
+  address: 0xF008C000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+
+- name: LIN0
+  address: 0xF3030000
+  registers:
+    kind: lin
+    version: v62
+    block: LIN
+- name: LIN1
+  address: 0xF3034000
+  registers:
+    kind: lin
+    version: v62
+    block: LIN
+- name: LIN2
+  address: 0xF3038000
+  registers:
+    kind: lin
+    version: v62
+    block: LIN
+- name: LIN3
+  address: 0xF303C000
+  registers:
+    kind: lin
+    version: v62
+    block: LIN
+
+- name: PTPC
+  address: 0xF00B0000
+  registers:
+    kind: ptpc
+    version: common
+    block: PTPC
+
+- name: USB0
+  address: 0xF2020000
+  registers:
+    kind: usb
+    version: v67
+    block: USB
+
+# analog peripherals
+
+- name: ADC0
+  address: 0xF0010000
+  registers:
+    kind: adc16
+    version: v63
+    block: ADC
+- name: ADC1
+  address: 0xF0014000
+  registers:
+    kind: adc16
+    version: v63
+    block: ADC
+- name: ADC2
+  address: 0xF0018000
+  registers:
+    kind: adc16
+    version: v63
+    block: ADC
+
+- name: ACMP
+  address: 0xF0020000
+  registers:
+    kind: acmp
+    version: common
+    block: ACMP
+
+- name: DAC0
+  address: 0xF0024000
+  registers:
+    kind: dac
+    version: v53
+    block: DAC
+- name: DAC1
+  address: 0xF0028000
+  registers:
+    kind: dac
+    version: v53
+    block: DAC
+
+- name: TSNS
+  address: 0xF4104000
+  registers:
+    kind: tsns
+    version: common
+    block: TSNS
+
+- name: SDM
+  address: 0xF001C000
+  registers:
+    kind: sdm
+    version: v62
+    block: SDM
+
+# security peripherals
+
+- name: SDP
+  address: 0xF304C000
+  registers:
+    kind: sdp
+    version: v53
+    block: SDP
+
+- name: RNG
+  address: 0xF00C8000
+  registers:
+    kind: rng
+    version: common
+    block: RNG
+
+- name: KEYM
+  address: 0xF00CC000
+  registers:
+    kind: keym
+    version: common
+    block: KEYM
+
+- name: BKEY
+  address: 0xF5048000
+  registers:
+    kind: bkey
+    version: common
+    block: BKEY
+
+- name: PSEC
+  address: 0xF40CC000
+  registers:
+    kind: psec
+    version: common
+    block: PSEC
+
+- name: PMON
+  address: 0xF40D0000
+  registers:
+    kind: pmon
+    version: common
+    block: PMON
+
+- name: BSEC
+  address: 0xF5040000
+  registers:
+    kind: bsec
+    version: common
+    block: BSEC
+
+- name: BMON
+  address: 0xF504C000
+  registers:
+    kind: bmon
+    version: common
+    block: BMON
+
+- name: TAMP
+  address: 0xF5050000
+  registers:
+    kind: tamp
+    version: v62
+    block: TAMP
+
+- name: MONO
+  address: 0xF5054000
+  registers:
+    kind: mono
+    version: common
+    block: MONO

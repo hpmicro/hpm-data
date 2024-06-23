@@ -110,6 +110,8 @@
     version: v63
     block: GPIOM
 
+# storage peripherals
+
 - name: OTPSHW
   address: 0xF4080000
   registers:

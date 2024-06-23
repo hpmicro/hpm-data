@@ -1,0 +1,430 @@
+block/CH:
+  description: no description available.
+  items:
+    - name: SDFIFOCTRL
+      description: Data FIFO Path Control Register.
+      byte_offset: 0
+      fieldset: SDFIFOCTRL
+    - name: SDCTRLP
+      description: Data Path Control Primary Register.
+      byte_offset: 4
+      fieldset: SDCTRLP
+    - name: SDCTRLE
+      description: Data Path Control Extra Register.
+      byte_offset: 8
+      fieldset: SDCTRLE
+    - name: SDST
+      description: Data Path Status.
+      byte_offset: 12
+      fieldset: SDST
+    - name: SDATA
+      description: Data.
+      byte_offset: 16
+      fieldset: SDATA
+    - name: SDFIFO
+      description: FIFO Data.
+      byte_offset: 20
+      fieldset: SDFIFO
+    - name: SCAMP
+      description: instant Amplitude Results.
+      byte_offset: 24
+      fieldset: SCAMP
+    - name: SCHTL
+      description: Amplitude Threshold for High Limit.
+      byte_offset: 28
+      fieldset: SCHTL
+    - name: SCHTLZ
+      description: Amplitude Threshold for zero crossing.
+      byte_offset: 32
+      fieldset: SCHTLZ
+    - name: SCLLT
+      description: Amplitude Threshold for low limit.
+      byte_offset: 36
+      fieldset: SCLLT
+    - name: SCCTRL
+      description: Amplitude Path Control.
+      byte_offset: 40
+      fieldset: SCCTRL
+    - name: SCST
+      description: Amplitude Path Status.
+      byte_offset: 44
+      fieldset: SCST
+block/SDM:
+  description: SDM.
+  items:
+    - name: CTRL
+      description: SDM control register.
+      byte_offset: 0
+      fieldset: CTRL
+    - name: INT_EN
+      description: Interrupt enable register.
+      byte_offset: 4
+      fieldset: INT_EN
+    - name: STATUS
+      description: Status Registers.
+      byte_offset: 8
+      fieldset: STATUS
+    - name: CH
+      description: no description available.
+      array:
+        len: 4
+        stride: 64
+      byte_offset: 16
+      block: CH
+fieldset/CTRL:
+  description: SDM control register.
+  fields:
+    - name: IE
+      description: Interrupt Enable.
+      bit_offset: 1
+      bit_size: 1
+    - name: CH_EN
+      description: Channel Enable.
+      bit_offset: 2
+      bit_size: 4
+    - name: SYNC_MDAT
+      description: Asserted to double sync the mdat input pin before its usage inside the module.
+      bit_offset: 6
+      bit_size: 4
+    - name: SYNC_MCLK
+      description: Asserted to double sync the mclk input pin before its usage inside the module.
+      bit_offset: 10
+      bit_size: 4
+    - name: CHMD
+      description: "Channel Rcv mode Bits[2:0] for Ch0. Bits[5:3] for Ch1 Bits[8:6] for Ch2 Bits[11:9] for Ch3 3'b000: Capture at posedge of MCLK 3'b001: Capture at both posedge and negedge of MCLK 3'b010: Manchestor Mode 3'b011: Capture at negedge of MCLK 3'b100: Capture at every other posedge of MCLK 3'b101: Capture at every other negedge of MCLK Others: Undefined."
+      bit_offset: 14
+      bit_size: 12
+    - name: SFTRST
+      description: software reset the module if asserted to be1’b1.
+      bit_offset: 31
+      bit_size: 1
+fieldset/INT_EN:
+  description: Interrupt enable register.
+  fields:
+    - name: CH0ERR
+      description: Ch0 Error interrupt enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: CH1ERR
+      description: Ch1 Error interrupt enable.
+      bit_offset: 1
+      bit_size: 1
+    - name: CH2ERR
+      description: Ch2 Error interrupt enable.
+      bit_offset: 2
+      bit_size: 1
+    - name: CH3ERR
+      description: Ch3 Error interrupt enable.
+      bit_offset: 3
+      bit_size: 1
+    - name: CH0DRY
+      description: Ch0 Data Ready interrupt enable.
+      bit_offset: 4
+      bit_size: 1
+    - name: CH1DRY
+      description: Ch1 Data Ready interrupt enable.
+      bit_offset: 5
+      bit_size: 1
+    - name: CH2DRY
+      description: Ch2 Data Ready interrupt enable.
+      bit_offset: 6
+      bit_size: 1
+    - name: CH3DRY
+      description: Ch3 Data Ready interrupt enable.
+      bit_offset: 7
+      bit_size: 1
+fieldset/SCAMP:
+  description: instant Amplitude Results.
+  fields:
+    - name: VAL
+      description: instant Amplitude Results.
+      bit_offset: 0
+      bit_size: 16
+fieldset/SCCTRL:
+  description: Amplitude Path Control.
+  fields:
+    - name: EN
+      description: Amplitude Path Enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: IGN_INI_SAMPLES
+      description: "NotZero: Ignore the first samples that are not accurate Zero: Use all samples."
+      bit_offset: 1
+      bit_size: 3
+    - name: CIC_DEC_RATIO
+      description: CIC decimation ratio. 0 means div-by-32.
+      bit_offset: 4
+      bit_size: 5
+    - name: SGD_ORDR
+      description: "CIC order 0: SYNC1 1: SYNC2 2: SYNC3 3: FAST_SYNC."
+      bit_offset: 18
+      bit_size: 2
+    - name: LL_IE
+      description: LLT interrupt Enable.
+      bit_offset: 20
+      bit_size: 1
+    - name: HL_IE
+      description: HLT Interrupt Enable.
+      bit_offset: 21
+      bit_size: 1
+    - name: MF_IE
+      description: Module failure Interrupt enable.
+      bit_offset: 22
+      bit_size: 1
+    - name: HZ_EN
+      description: Zero Crossing Enable.
+      bit_offset: 23
+      bit_size: 1
+fieldset/SCHTL:
+  description: Amplitude Threshold for High Limit.
+  fields:
+    - name: VAL
+      description: Amplitude Threshold for High Limit.
+      bit_offset: 0
+      bit_size: 16
+fieldset/SCHTLZ:
+  description: Amplitude Threshold for zero crossing.
+  fields:
+    - name: VAL
+      description: Amplitude Threshold for zero crossing.
+      bit_offset: 0
+      bit_size: 16
+fieldset/SCLLT:
+  description: Amplitude Threshold for low limit.
+  fields:
+    - name: VAL
+      description: Amplitude Threshold for low limit.
+      bit_offset: 0
+      bit_size: 16
+fieldset/SCST:
+  description: Amplitude Path Status.
+  fields:
+    - name: CMPL
+      description: LLT out of range. Error flag.
+      bit_offset: 0
+      bit_size: 1
+    - name: CMPH
+      description: HLT out of range. Error flag.
+      bit_offset: 1
+      bit_size: 1
+    - name: MF
+      description: power modulator Failure found. MCLK not found. Error flag.
+      bit_offset: 2
+      bit_size: 1
+    - name: HZ
+      description: Amplitude rising above HZ event found.
+      bit_offset: 3
+      bit_size: 1
+fieldset/SDATA:
+  description: Data.
+  fields:
+    - name: VAL
+      description: Data.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SDCTRLE:
+  description: Data Path Control Extra Register.
+  fields:
+    - name: IGN_INI_SAMPLES
+      description: "NotZero: Don't store the first samples that are not accurate Zero: Store all samples."
+      bit_offset: 0
+      bit_size: 3
+    - name: CIC_DEC_RATIO
+      description: CIC decimation ratio. 0 means div-by-256.
+      bit_offset: 3
+      bit_size: 8
+    - name: CIC_SCL
+      description: CIC shift control.
+      bit_offset: 11
+      bit_size: 4
+    - name: PWMSYNC
+      description: Asserted to double sync the PWM trigger signal.
+      bit_offset: 16
+      bit_size: 1
+    - name: SGD_ORDR
+      description: "CIC order 0: SYNC1 1: SYNC2 2: SYNC3 3: FAST_SYNC."
+      bit_offset: 17
+      bit_size: 2
+    - name: DATA_S_T
+      description: '"1: the read output of SData is data and timestamp interleaved. First is data. 0: the read output of SData is data only".'
+      bit_offset: 20
+      bit_size: 1
+    - name: DFIFO_S_T
+      description: "1: the output of SDFIFO is data and timestamp interleaved. First is data. 0: the output of SDFIFO is data only."
+      bit_offset: 21
+      bit_size: 1
+    - name: TIMESTAMP_TYPE
+      description: "1. Use the time (when the data is calculated out) - delta_time_of_filter_span as the timestamp. 0: Use the time when the data is calculated out."
+      bit_offset: 22
+      bit_size: 1
+    - name: CIC_GATE_EN
+      description: "1: the CIC stage can be paused by the mask input. 0: the CIC stage won't be paused by the mask input."
+      bit_offset: 25
+      bit_size: 1
+    - name: CIC_GATE_SEL
+      description: Select the mask signal for CIC gate signal.
+      bit_offset: 26
+      bit_size: 4
+    - name: CIC_GATE_POL
+      description: "1: When mask signal is 1, pause the CIC stage at he rising edge of mask signal. 0: When mask signal is 0, pause the CIC stage at he falling edge of mask signal."
+      bit_offset: 30
+      bit_size: 1
+    - name: CIC_GATE_TYPE
+      description: "1: the gate cycle is determined by SDFIFOCTRLn[GATE_SAMPLES]. 0: the gate cycle is determined by the CIC decimation counter, and the minimal gated off PDM bits are determined by SDFIFOCTRLn[GATE_SAMPLES], and at the same time, to keep alignment with normal PCM sampling time."
+      bit_offset: 31
+      bit_size: 1
+fieldset/SDCTRLP:
+  description: Data Path Control Primary Register.
+  fields:
+    - name: EN
+      description: Data Path Enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: DR_OPT
+      description: "1: Use Data FIFO Ready as data ready when fifo fillings are greater than the threshold 0: Use Data Reg Ready as data ready."
+      bit_offset: 1
+      bit_size: 1
+    - name: D32
+      description: 1:32 bit data 0:16 bit data.
+      bit_offset: 2
+      bit_size: 1
+    - name: WTSYNCEN
+      description: "1: Start to store data only after PWM SYNC event 0: Start to store data whenever enabled."
+      bit_offset: 3
+      bit_size: 1
+    - name: WTSYNMCLR
+      description: "1: Manually clear WTSYNFLG. Auto-clear."
+      bit_offset: 4
+      bit_size: 1
+    - name: WTSYNACLR
+      description: "1: Asserted to Auto clear WTSYNFLG when the SDFFINT is gen 0: WTSYNFLG should be cleared manually by WTSYNMCLR."
+      bit_offset: 5
+      bit_size: 1
+    - name: FFSYNCCLREN
+      description: Auto clear FIFO when a new SDSYNC event is found. Only valid when WTSYNCEN=1.
+      bit_offset: 6
+      bit_size: 1
+    - name: SYNCSEL
+      description: Select the PWM SYNC Source.
+      bit_offset: 7
+      bit_size: 6
+    - name: DRIE
+      description: Ch Data Ready Interrupt Enable.
+      bit_offset: 13
+      bit_size: 1
+    - name: DSATIE
+      description: Ch CIC Data Saturation Interrupt Enable.
+      bit_offset: 14
+      bit_size: 1
+    - name: DFFOVIE
+      description: Ch Data FIFO overflow interrupt enable.
+      bit_offset: 15
+      bit_size: 1
+    - name: AF_IE
+      description: Acknowledge feedback interrupt enable.
+      bit_offset: 16
+      bit_size: 1
+    - name: WDOG_THR
+      description: Watch dog threshold for channel failure of CLK halting.
+      bit_offset: 17
+      bit_size: 8
+    - name: MANCH_THR
+      description: Manchester Decoding threshold. 3/4 of PERIOD_MCLK[7:0].
+      bit_offset: 25
+      bit_size: 7
+fieldset/SDFIFO:
+  description: FIFO Data.
+  fields:
+    - name: VAL
+      description: FIFO Data.
+      bit_offset: 0
+      bit_size: 32
+fieldset/SDFIFOCTRL:
+  description: Data FIFO Path Control Register.
+  fields:
+    - name: D_RDY_INT_EN
+      description: FIFO data ready interrupt enable.
+      bit_offset: 2
+      bit_size: 1
+    - name: THRSH
+      description: FIFO threshold (0,..,16) (fillings > threshold, then gen int).
+      bit_offset: 4
+      bit_size: 5
+    - name: GATE_SAMPLES
+      description: The number-1-3 of input PDM bit samples to be gated when CIC_GATE_EN=1. Max 255. So the minimum gated samples is 4 samples when GATE_SAMPLES=0.
+      bit_offset: 16
+      bit_size: 8
+fieldset/SDST:
+  description: Data Path Status.
+  fields:
+    - name: FILL
+      description: Data FIFO Fillings.
+      bit_offset: 0
+      bit_size: 5
+    - name: WTSYNFLG
+      description: Wait-for-sync event found.
+      bit_offset: 5
+      bit_size: 1
+    - name: DSAT_ERR
+      description: CIC out Data saturation err. Error flag.
+      bit_offset: 6
+      bit_size: 1
+    - name: DOV_ERR
+      description: Data FIFO Overflow Error. Error flag.
+      bit_offset: 7
+      bit_size: 1
+    - name: AF
+      description: Achnowledge flag.
+      bit_offset: 8
+      bit_size: 1
+    - name: FIFO_DR
+      description: FIFO data ready.
+      bit_offset: 9
+      bit_size: 1
+    - name: SDFIFO_D0_T1
+      description: "1: next readout is timestamp 0: next readout is data."
+      bit_offset: 12
+      bit_size: 1
+    - name: SDATA_D0_T1
+      description: "1: next readout is timestamp 0: next readout is data."
+      bit_offset: 13
+      bit_size: 1
+    - name: PERIOD_MCLK
+      description: maxim of mclk spacing in cycles, using edges of mclk signal. In manchester coding mode, it is just the period of MCLK. In other modes, it is almost the half period.
+      bit_offset: 23
+      bit_size: 8
+fieldset/STATUS:
+  description: Status Registers.
+  fields:
+    - name: CH0ERR
+      description: Ch0 Error.
+      bit_offset: 0
+      bit_size: 1
+    - name: CH1ERR
+      description: Ch1 Error.
+      bit_offset: 1
+      bit_size: 1
+    - name: CH2ERR
+      description: Ch2 Error.
+      bit_offset: 2
+      bit_size: 1
+    - name: CH3ERR
+      description: Ch3 Error. ORed together by channel related error signals and corresponding error interrupt enable signals. De-assert this bit by write-1-clear the corresponding error status bits in the channel status registers.
+      bit_offset: 3
+      bit_size: 1
+    - name: CH0DRY
+      description: Ch0 Data Ready.
+      bit_offset: 4
+      bit_size: 1
+    - name: CH1DRY
+      description: Ch1 Data Ready.
+      bit_offset: 5
+      bit_size: 1
+    - name: CH2DRY
+      description: Ch2 Data Ready.
+      bit_offset: 6
+      bit_size: 1
+    - name: CH3DRY
+      description: Ch3 Data Ready. De-assert this bit by reading the data (or data fifo) registers.
+      bit_offset: 7
+      bit_size: 1

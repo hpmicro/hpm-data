@@ -1,0 +1,197 @@
+block/LIN:
+  description: LIN0.
+  items:
+    - name: DATABYTE
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 0
+      fieldset: DATABYTE
+    - name: control
+      description: control register.
+      byte_offset: 32
+      fieldset: control
+    - name: state
+      description: state register.
+      byte_offset: 36
+      fieldset: state
+    - name: error
+      description: error register.
+      byte_offset: 40
+      fieldset: error
+    - name: data_len
+      description: data lenth register.
+      byte_offset: 44
+      fieldset: data_len
+    - name: baudrate_ctl_low
+      description: baudrate control low register.
+      byte_offset: 48
+      fieldset: baudrate_ctl_low
+    - name: bardrate_ctl_high
+      description: baudrate control high register.
+      byte_offset: 52
+      fieldset: bardrate_ctl_high
+    - name: id
+      description: id register.
+      byte_offset: 56
+      fieldset: id
+    - name: tv
+      description: timeout control register.
+      byte_offset: 60
+      fieldset: tv
+fieldset/DATABYTE:
+  description: no description available.
+  fields:
+    - name: DATA_BYTE
+      description: data byte.
+      bit_offset: 0
+      bit_size: 8
+fieldset/bardrate_ctl_high:
+  description: baudrate control high register.
+  fields:
+    - name: BT_DIV_HIGH
+      description: bit div register 8.
+      bit_offset: 0
+      bit_size: 1
+    - name: BT_MUL
+      description: bt_mul register.
+      bit_offset: 1
+      bit_size: 5
+    - name: PRESCL
+      description: prescl register.
+      bit_offset: 6
+      bit_size: 2
+fieldset/baudrate_ctl_low:
+  description: baudrate control low register.
+  fields:
+    - name: BT_DIV_LOW
+      description: bit div register 7:0.
+      bit_offset: 0
+      bit_size: 8
+fieldset/control:
+  description: control register.
+  fields:
+    - name: START_REQ
+      description: master only. Set by host controller of a LIN master to start the LIN transmission. The core will reset the bit after the transmission is finished or an error is occurred.
+      bit_offset: 0
+      bit_size: 1
+    - name: WAKEUP_REQ
+      description: wakeup request. Assert to terminate the Sleep mode of the LIN bus. The bit will be reset by core.
+      bit_offset: 1
+      bit_size: 1
+    - name: RESET_ERROR
+      description: assert 1 to reset the error bits in status register and error register. A read access to this bit delivers always the value 0.
+      bit_offset: 2
+      bit_size: 1
+    - name: RESET_INT
+      description: write 1 to reset the int bit in the status register and the interrupt request output of LIN.
+      bit_offset: 3
+      bit_size: 1
+    - name: DATA_ACK
+      description: slave only. Write 1 after handling a data request interrupt.
+      bit_offset: 4
+      bit_size: 1
+    - name: TRANSMIT
+      description: "1: transmit operation 0: receive operation."
+      bit_offset: 5
+      bit_size: 1
+    - name: SLEEP
+      description: The bit is used by the LIN core to determine whether the LIN bus is in sleep mode or not. Set this bit after sending or receiving a Sleep Mode frame or if a bus idle timeout interrupt is requested or if after a wakeup request there is no response from the master and a timeout is signaled. The bit will be automatically reset by the LIN core.
+      bit_offset: 6
+      bit_size: 1
+    - name: STOP
+      description: slave only. Write 1 when the Host determin do not response to the data request according to a unkown ID.
+      bit_offset: 7
+      bit_size: 1
+fieldset/data_len:
+  description: data lenth register.
+  fields:
+    - name: DATA_LENGTH
+      description: data length.
+      bit_offset: 0
+      bit_size: 4
+    - name: ENH_CHECK
+      description: 1:enhence check mode.
+      bit_offset: 7
+      bit_size: 1
+fieldset/error:
+  description: error register.
+  fields:
+    - name: BIT_ERROR
+      description: bit error.
+      bit_offset: 0
+      bit_size: 1
+    - name: CHK_ERROR
+      description: checksum error.
+      bit_offset: 1
+      bit_size: 1
+    - name: TIMEOUT
+      description: timeout error. The master detects a timeout error if it is expecting data from the bus but no slave does respond. The slave detects a timeout error if it is requesting a data acknowledge to the host controller. The slave detects a timeout if it has transmitted a wakeup signal and it detects no sync field within 150ms.
+      bit_offset: 2
+      bit_size: 1
+    - name: PARITY_ERROR
+      description: slave only. identifier parity error.
+      bit_offset: 3
+      bit_size: 1
+fieldset/id:
+  description: id register.
+  fields:
+    - name: ID
+      description: id register.
+      bit_offset: 0
+      bit_size: 6
+fieldset/state:
+  description: state register.
+  fields:
+    - name: COMPLETE
+      description: set after a transmission has been successful finished and it will reset at the start of a transmission.
+      bit_offset: 0
+      bit_size: 1
+    - name: WAKEUP
+      description: set when transmitting a wakeup signal or when received a wakeup signal. Clear when reset_error bit is 1.
+      bit_offset: 1
+      bit_size: 1
+    - name: ERROR
+      description: set when detecte an error, clear by reset_error.
+      bit_offset: 2
+      bit_size: 1
+    - name: INT
+      description: set when request an interrupt. Reset by reset_int.
+      bit_offset: 3
+      bit_size: 1
+    - name: DATA_REQ
+      description: slave only. Sets after receiving the identifier and requests an interrupt to the host controller.
+      bit_offset: 4
+      bit_size: 1
+    - name: ABORTED
+      description: slave only. This bit is set by LIN core slave if a transmission is aborted after the bneginning of the data field due to a timeout or bit error.
+      bit_offset: 5
+      bit_size: 1
+    - name: BUS_IDLE_TV
+      description: slave only. This bit is set by LIN core if bit sleep is not set and no bus activity is detected for 4s.
+      bit_offset: 6
+      bit_size: 1
+    - name: LIN_ACTIVE
+      description: The bit indicates whether the LIN bus is active or not.
+      bit_offset: 7
+      bit_size: 1
+fieldset/tv:
+  description: timeout control register.
+  fields:
+    - name: WUP_REPEAT_TIME
+      description: slave only. wakeup repeat interval time 00-180ms 01-200ms 10-220ms 11-240ms.
+      bit_offset: 0
+      bit_size: 2
+    - name: BUS_INACTIVITY_TIME
+      description: slave only. LIN bus idle timeout register： 00-4s 01-6s 10-8s 11-10s.
+      bit_offset: 2
+      bit_size: 2
+    - name: MASTER_MODE
+      description: master_mode.
+      bit_offset: 6
+      bit_size: 1
+    - name: INITIAL_MODE
+      description: initial_mode.
+      bit_offset: 7
+      bit_size: 1

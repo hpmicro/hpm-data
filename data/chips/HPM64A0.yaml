@@ -41,6 +41,7 @@ cores:
     peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6700_6400.yaml"
     include_interrupts: "../interrupts/HPM6750.yaml"
     include_dmamux: "../dmamux/HPM6750.yaml"
 _raw: "HPM64A0 汽车级高性能MCU"

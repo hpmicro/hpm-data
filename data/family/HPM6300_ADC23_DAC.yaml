@@ -10,7 +10,8 @@
     kind: adc16
     version: v63
     block: ADC
-- name: DAC
+
+- name: DAC0
   address: 0xF0024000
   registers:
     kind: dac
