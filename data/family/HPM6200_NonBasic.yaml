@@ -1,0 +1,134 @@
+# Non Basic(6220)
+- name: MCAN0
+  address: 0xF0080000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN1
+  address: 0xF0084000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN2
+  address: 0xF0088000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+- name: MCAN3
+  address: 0xF008C000
+  registers:
+    kind: mcan
+    version: v68
+    block: MCAN
+
+- name: UART5
+  address: 0xF0054000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART6
+  address: 0xF0058000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+- name: UART7
+  address: 0xF005C000
+  registers:
+    kind: uart
+    version: v62
+    block: UART
+
+- name: SPI3
+  address: 0xF003C000
+  registers:
+    kind: spi
+    version: v67
+    block: SPI
+
+- name: I2C3
+  address: 0xF302C000
+  registers:
+    kind: i2c
+    version: v67
+    block: I2C
+
+- name: QEI0
+  address: 0xF0208000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI1
+  address: 0xF0218000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI2
+  address: 0xF0228000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+- name: QEI3
+  address: 0xF0238000
+  registers:
+    kind: qei
+    version: v67
+    block: QEI
+
+- name: HALL0
+  address: 0xF0204000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL1
+  address: 0xF0214000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL2
+  address: 0xF0224000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+- name: HALL3
+  address: 0xF0234000
+  registers:
+    kind: hall
+    version: common
+    block: HALL
+
+- name: ADC1
+  address: 0xF0014000
+  registers:
+    kind: adc16
+    version: v63
+    block: ADC
+- name: ADC2
+  address: 0xF0018000
+  registers:
+    kind: adc16
+    version: v63
+    block: ADC
+
+- name: DAC0
+  address: 0xF0024000
+  registers:
+    kind: dac
+    version: v53
+    block: DAC
+- name: DAC1
+  address: 0xF0028000
+  registers:
+    kind: dac
+    version: v53
+    block: DAC
