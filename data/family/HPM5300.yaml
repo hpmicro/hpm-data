@@ -233,6 +233,18 @@
     kind: spi
     version: v53
     block: SPI
+- name: SPI2
+  address: 0xF0078000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
+- name: SPI3
+  address: 0xF007C000
+  registers:
+    kind: spi
+    version: v53
+    block: SPI
 
 - name: I2C0
   address: 0xF0060000
@@ -242,6 +254,18 @@
     block: I2C
 - name: I2C1
   address: 0xF0064000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C2
+  address: 0xF0068000
+  registers:
+    kind: i2c
+    version: v53
+    block: I2C
+- name: I2C3
+  address: 0xF006C000
   registers:
     kind: i2c
     version: v53
