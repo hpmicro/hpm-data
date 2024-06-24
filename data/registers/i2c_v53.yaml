@@ -51,6 +51,7 @@ fieldset/Cfg:
       description: "FIFO Size: 0: 2 bytes 1: 4 bytes 2: 8 bytes 3: 16 bytes."
       bit_offset: 0
       bit_size: 2
+      enum: FIFO_SIZE
 fieldset/Cmd:
   description: Command Register.
   fields:
@@ -58,6 +59,7 @@ fieldset/Cmd:
       description: "Write this register with the following values to perform the corresponding actions: 0x0: no action 0x1: issue a data transaction (Master only) 0x2: respond with an ACK to the received byte 0x3: respond with a NACK to the received byte 0x4: clear the FIFO 0x5: reset the I2C controller (abort current transaction, set the SDA and SCL line to the open-drain mode, reset the Status Register and the Interrupt Enable Register, and empty the FIFO) When issuing a data transaction by writing 0x1 to this register, the CMD field stays at 0x1 for the duration of the entire transaction, and it is only cleared to 0x0 after when the transaction has completed or when the controller loses the arbitration. Note: No transaction will be issued by the controller when all phases (Start, Address, Data and Stop) are disabled."
       bit_offset: 0
       bit_size: 3
+      enum: CMD
 fieldset/Ctrl:
   description: Control Register.
   fields:
@@ -260,3 +262,41 @@ fieldset/TPM:
       description: A multiplication value for I2C timing parameters. All the timing parameters in the Setup Register are multiplied by (TPM+1).
       bit_offset: 0
       bit_size: 5
+enum/FIFO_SIZE:
+  description: FIFO Size
+  bit_size: 2
+  variants:
+    - name: _2Bytes
+      description: 2 bytes
+      value: 0
+    - name: _4Bytes
+      description: 4 bytes
+      value: 1
+    - name: _8Bytes
+      description: 8 bytes
+      value: 2
+    - name: _16Bytes
+      description: 16 bytes
+      value: 3
+enum/CMD:
+  description: Command Register
+  bit_size: 3
+  variants:
+    - name: NoAction
+      description: No action
+      value: 0
+    - name: DataTransaction
+      description: Issue a data transaction (Master only)
+      value: 1
+    - name: ACK
+      description: Respond with an ACK to the received byte
+      value: 2
+    - name: NACK
+      description: Respond with a NACK to the received byte
+      value: 3
+    - name: ClearFIFO
+      description: Clear the FIFO
+      value: 4
+    - name: Reset
+      description: Reset the I2C controller (abort current transaction, set the SDA and SCL line to the open-drain mode, reset the Status Register and the Interrupt Enable Register, and empty the FIFO)
+      value: 5
