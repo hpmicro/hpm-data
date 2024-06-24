@@ -71,6 +71,7 @@ fieldset/Ctrl:
       description: "Transaction direction Master: Set this bit to determine the direction for the next transaction. 0: Transmitter 1: Receiver Slave: The direction of the last received transaction. 0: Receiver 1: Transmitter."
       bit_offset: 8
       bit_size: 1
+      enum: DIR
     - name: PHASE_STOP
       description: Enable this bit to send a STOP condition at the end of a transaction. Master mode only.
       bit_offset: 9
@@ -282,10 +283,10 @@ enum/CMD:
   description: Command Register
   bit_size: 3
   variants:
-    - name: NoAction
+    - name: No_Action
       description: No action
       value: 0
-    - name: DataTransaction
+    - name: Data_Transaction
       description: Issue a data transaction (Master only)
       value: 1
     - name: ACK
@@ -294,9 +295,17 @@ enum/CMD:
     - name: NACK
       description: Respond with a NACK to the received byte
       value: 3
-    - name: ClearFIFO
+    - name: Clear_FIFO
       description: Clear the FIFO
       value: 4
     - name: Reset
       description: Reset the I2C controller (abort current transaction, set the SDA and SCL line to the open-drain mode, reset the Status Register and the Interrupt Enable Register, and empty the FIFO)
       value: 5
+enum/DIR:
+  description: Transaction direction
+  bit_size: 1
+  variants:
+    - name: MASTER_WRITE_SLAVE_READ
+      value: 0
+    - name: MASTER_READ_SLAVE_WRITE
+      value: 1
