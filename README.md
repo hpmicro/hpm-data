@@ -35,15 +35,13 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - [x] HPM6200
 - [ ] HPM6E00
 
-### Metadata patch
+## hpm-metapac
 
-The `hpm-metapac` crate has a `metadata` feature, when enabled, it will provide the basic metadata of the currrent MCU:
-
-- Core name, basic info
-- All resources, for `SYSCTL`
-- All clocks, for `SYSCTL.CLOCK`
-- All GPIOs and it's PADs, for `IOC`
+- The `hpm-metapac` crate has a `metadata` feature, when enabled, it will provide the basic metadata of the currrent MCU
 - Patch vectored interrupt mode, add `CORE_LOCAL` for Non-External Interrupts
+- To best fit for HPM RISC-V's cluster register desigin, the following is added:
+  - All clocks, for `SYSCTL.CLOCK`, in `hpm_metapac::clocks::`
+  - All GPIOs and it's PADs, for `IOC`, in `hpm_metapac::pins::`
 
 ## Data Source
 
