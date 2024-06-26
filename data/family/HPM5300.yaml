@@ -4,31 +4,6 @@
     kind: sysctl
     version: v53
     block: SYSCTL
-  pins:
-    - pin: PA00
-      signal: OBS0
-      alt: 24
-    - pin: PA01
-      signal: OBS1
-      alt: 24
-    - pin: PA02
-      signal: OBS2
-      alt: 24
-    - pin: PA03
-      signal: OBS3
-      alt: 24
-    - pin: PA26
-      signal: OBS0
-      alt: 24
-    - pin: PA27
-      signal: OBS1
-      alt: 24
-    - pin: PA28
-      signal: OBS2
-      alt: 24
-    - pin: PA29
-      signal: OBS3
-      alt: 24
 
 - name: XPI0
   address: 0xF3000000
