@@ -9,6 +9,8 @@ fn parse_signal(signal_name: &str, periph_name: &str) -> String {
         } else {
             suffix.to_string()
         }
+    } else if signal_name.starts_with("I2C") {
+        "GLOBAL".to_string()
     } else {
         periph_name.to_string()
     }
