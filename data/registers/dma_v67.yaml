@@ -108,26 +108,32 @@ fieldset/Ctrl:
       description: "Destination address control 0x0: Increment address 0x1: Decrement address 0x2: Fixed address 0x3: Reserved, setting the field with this value triggers the error exception."
       bit_offset: 12
       bit_size: 2
+      enum: ADDR_CTRL
     - name: SRCADDRCTRL
       description: "Source address control 0x0: Increment address 0x1: Decrement address 0x2: Fixed address 0x3: Reserved, setting the field with this value triggers the error exception."
       bit_offset: 14
       bit_size: 2
+      enum: ADDR_CTRL
     - name: DSTMODE
       description: "Destination DMA handshake mode 0x0: Normal mode 0x1: Handshake mode."
       bit_offset: 16
       bit_size: 1
+      enum: MODE
     - name: SRCMODE
       description: "Source DMA handshake mode 0x0: Normal mode 0x1: Handshake mode."
       bit_offset: 17
       bit_size: 1
+      enum: MODE
     - name: DSTWIDTH
       description: "Destination transfer width. Both the total transfer byte number and the burst transfer byte number should be aligned to the destination transfer width; otherwise the error event will be triggered. For example, destination transfer width should be set as byte transfer if total transfer byte is not aligned to half-word. See field SrcBurstSize above for the definition of burst transfer byte number and section 3.2.8 for the definition of the total transfer byte number. 0x0: Byte transfer 0x1: Half-word transfer 0x2: Word transfer 0x3: Double word transfer 0x4: Quad word transfer 0x5: Eight word transfer 0x6-x7: Reserved, setting this field with a reserved value triggers the error exception for XDMA, the maximum allowed value is 0x3, for HDMA, the maximum allowed value is 0x2."
       bit_offset: 18
       bit_size: 3
+      enum: WIDTH
     - name: SRCWIDTH
       description: "Source transfer width 0x0: Byte transfer 0x1: Half-word transfer 0x2: Word transfer 0x3: Double word transfer 0x4: Quad word transfer 0x5: Eight word transfer 0x6-x7: Reserved, setting this field with a reserved value triggers the error exception for XDMA, the maximum allowed value is 0x3, for HDMA, the maximum allowed value is 0x2."
       bit_offset: 21
       bit_size: 3
+      enum: WIDTH
     - name: SRCBURSTSIZE
       description: "Source burst size. This field indicates the number of transfers before DMA channel re-arbitration. The burst transfer byte number is (SrcBurstSize * SrcWidth). 0x0: 1 transfer 0x1: 2 transfers 0x2: 4 transfers 0x3: 8 transfers 0x4: 16 transfers 0x5: 32 transfers 0x6: 64 transfers 0x7: 128 transfers 0x8: 256 transfers 0x9:512 transfers 0xa: 1024 transfers 0xb-0xf: Reserved, setting this field with a reserved value triggers the error exception for XDMA, the maximum allowed value is 0xa; for HDMA, the maximum allowed value is 0x7."
       bit_offset: 24
@@ -258,3 +264,42 @@ fieldset/TranSize:
       description: Total transfer size from source. The total number of transferred bytes is (TranSize * SrcWidth). This register is cleared when the DMA transfer is done. If a channel is enabled with zero total transfer size, the error event will be triggered and the transfer will be terminated.
       bit_offset: 0
       bit_size: 32
+enum/WIDTH:
+  description: Source transfer width.
+  bit_size: 3
+  variants:
+    - name: BYTE
+      description: Byte transfer. 8 bits.
+      value: 0
+    - name: HALF_WORD
+      description: Half-word transfer. 16 bits.
+      value: 1
+    - name: WORD
+      description: Word transfer. 32 bits.
+      value: 2
+    - name: DOUBLE_WORD
+      description: Double word transfer. 64 bits.
+      value: 3
+enum/MODE:
+  description: Source DMA handshake mode.
+  bit_size: 1
+  variants:
+    - name: NORMAL
+      description: Normal mode.
+      value: 0
+    - name: HANDSHAKE
+      description: Handshake mode.
+      value: 1
+enum/ADDR_CTRL:
+  description: Source address control.
+  bit_size: 2
+  variants:
+    - name: INCREMENT
+      description: Increment address.
+      value: 0
+    - name: DECREMENT
+      description: Decrement address.
+      value: 1
+    - name: FIXED
+      description: Fixed address.
+      value: 2
