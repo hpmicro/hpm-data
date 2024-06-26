@@ -1,11 +1,11 @@
-name: HPM6E80
+name: HPM6E70
 family: HPM6E00 Series
 sub_family: HPM6E00, Dual-core
 packages:
-  - name: HPM6E80xGN
+  - name: HPM6E70xGN
     package: BGA196
     pins: 196
-  - name: HPM6E80xVM
+  - name: HPM6E70xVM
     package: BGA289
     pins: 289
 memory:
@@ -49,10 +49,9 @@ memory:
 cores:
   - name: RV32-IMAFDCPB
     ip-core: Andes D45
-    peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
     gen_dma_channels:
       HDMA: 32
       XDMA: 32
-_raw: "千兆工业以太网互联+EtherCAT, 多达4轴电机控制"
+_raw: "EtherCAT从栈控制器, 多达2轴电机控制"

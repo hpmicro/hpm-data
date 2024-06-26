@@ -1,11 +1,11 @@
-name: HPM6E80
+name: HPM6E60
 family: HPM6E00 Series
-sub_family: HPM6E00, Dual-core
+sub_family: HPM6E00, Single-core
 packages:
-  - name: HPM6E80xGN
+  - name: HPM6E60xGN
     package: BGA196
     pins: 196
-  - name: HPM6E80xVM
+  - name: HPM6E60xVM
     package: BGA289
     pins: 289
 memory:
@@ -14,17 +14,9 @@ memory:
     kind: ram
     name: ILM0
     size: 256K
-  - address: 0x00040000
-    kind: ram
-    name: ILM1
-    size: 256K
   - address: 0x00200000
     kind: ram
     name: DLM0
-    size: 256K
-  - address: 0x00240000
-    kind: ram
-    name: DLM1
     size: 256K
   - address: 0x01200000
     kind: ram
@@ -49,10 +41,9 @@ memory:
 cores:
   - name: RV32-IMAFDCPB
     ip-core: Andes D45
-    peripherals: []
     include_peripherals:
       - "../family/COMMON.yaml"
     gen_dma_channels:
       HDMA: 32
       XDMA: 32
-_raw: "千兆工业以太网互联+EtherCAT, 多达4轴电机控制"
+_raw: "EtherCAT从栈控制器, 多达2轴电机控制"
