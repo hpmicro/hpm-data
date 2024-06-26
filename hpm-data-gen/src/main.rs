@@ -137,9 +137,10 @@ fn main() -> anyhow::Result<()> {
                 for ch in 0..hdma_chs {
                     core.dma_channels
                         .push(hpm_data_serde::chip::core::DmaChannels {
-                            name: format!("HDMA_MUX{}", ch),
+                            name: format!("HDMA_CH{}", ch),
                             dma: "HDMA".to_string(),
                             channel: ch as _,
+                            dmamux_channel: ch as _,
                         });
                 }
 
@@ -147,9 +148,10 @@ fn main() -> anyhow::Result<()> {
                     for ch in 0..xdma_ch {
                         core.dma_channels
                             .push(hpm_data_serde::chip::core::DmaChannels {
-                                name: format!("XDMA_MUX{}", ch),
+                                name: format!("XDMA_CH{}", ch),
                                 dma: "XDMA".to_string(),
-                                channel: (hdma_chs + ch) as _, // xdma starts after hdma
+                                channel: ch as _,
+                                dmamux_channel: (hdma_chs + ch) as _, // xdma starts after hdma
                             });
                     }
                 }

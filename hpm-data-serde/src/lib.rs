@@ -240,6 +240,7 @@ pub mod chip {
             pub dma: String,
             // DMAMUX output channel
             pub channel: u8,
+            pub dmamux_channel: u8,
         }
 
         #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]

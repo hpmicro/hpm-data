@@ -438,6 +438,7 @@ pub struct DmaChannel {
     pub name: String,
     pub dma: String,
     pub channel: u32, // channel in DMAMUX
+    pub dmamux_channel: u32
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize, Hash)]

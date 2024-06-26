@@ -224,6 +224,7 @@ pub struct DmaChannel {
     pub name: &'static str,
     pub dma: &'static str,
     pub channel: u32,
+    pub dmamux_channel: u32,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]
