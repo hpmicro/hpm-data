@@ -1,0 +1,1013 @@
+block/CMD:
+  description: no description available.
+  items:
+    - name: control
+      description: tra&index0_cmd&index1_control.
+      byte_offset: 0
+      fieldset: CMD_control
+    - name: rev_preset
+      description: tra&index0_cmd&index1_rev_preset.
+      byte_offset: 4
+      fieldset: rev_preset
+    - name: pos_preset
+      description: tra&index0_cmd&index1_pos_preset.
+      byte_offset: 8
+      fieldset: pos_preset
+    - name: vel_preset
+      description: tra&index0_cmd&index1_vel_preset.
+      byte_offset: 12
+      fieldset: vel_preset
+    - name: acc_preset
+      description: tra&index0_cmd&index1_acc_preset.
+      byte_offset: 16
+      fieldset: acc_preset
+    - name: jer_preset
+      description: tra&index0_cmd&index1_jer_preset.
+      byte_offset: 20
+      fieldset: jer_preset
+    - name: timestamp
+      description: tra&index0_cmd&index1_timestamp.
+      byte_offset: 24
+      fieldset: CMD_timestamp
+block/EVENT:
+  description: no description available.
+  items:
+    - name: control
+      description: event&index0_control.
+      byte_offset: 0
+      fieldset: EVENT_control
+    - name: preset_0
+      description: event&index0_preset_0.
+      byte_offset: 4
+      fieldset: preset_0
+    - name: preset_1
+      description: event&index0_preset_1.
+      byte_offset: 8
+      fieldset: preset_1
+    - name: preset_2
+      description: event&index0_preset_2.
+      byte_offset: 12
+      fieldset: preset_2
+    - name: preset_3
+      description: event&index0_preset_3.
+      byte_offset: 16
+      fieldset: preset_3
+    - name: timestamp
+      description: event&index0_timestamp.
+      byte_offset: 20
+      fieldset: EVENT_timestamp
+block/MTG0:
+  description: MTG0.
+  items:
+    - name: TRA
+      description: no description available.
+      array:
+        len: 2
+        stride: 4096
+      byte_offset: 0
+      block: TRA
+    - name: EVENT
+      description: no description available.
+      array:
+        len: 4
+        stride: 32
+      byte_offset: 8192
+      block: EVENT
+    - name: sw_event
+      description: sw_event.
+      byte_offset: 8320
+      fieldset: sw_event
+    - name: sw_glb_reset
+      description: sw_glb_reset.
+      byte_offset: 8324
+      fieldset: sw_glb_reset
+    - name: filter_control
+      description: filter_control.
+      byte_offset: 12288
+      fieldset: filter_control
+    - name: filter_rev_value
+      description: filter_rev_value.
+      byte_offset: 12304
+      fieldset: filter_rev_value
+    - name: filter_pos_value
+      description: filter_pos_value.
+      byte_offset: 12308
+      fieldset: filter_pos_value
+    - name: filter_vel_value
+      description: filter_vel_value.
+      byte_offset: 12312
+      fieldset: filter_vel_value
+    - name: filter_acc_value
+      description: filter_acc_value.
+      byte_offset: 12316
+      fieldset: filter_acc_value
+    - name: filter_mot_sel
+      description: filter_mot_sel.
+      byte_offset: 12320
+      fieldset: filter_mot_sel
+    - name: filter_stage_sel
+      description: filter_stage_sel.
+      byte_offset: 12324
+      fieldset: filter_stage_sel
+    - name: filter_time_constant_tp
+      description: filter_time_constant_tp.
+      byte_offset: 12328
+      fieldset: filter_time_constant_tp
+    - name: filter_time_constant_tz
+      description: filter_time_constant_tz.
+      byte_offset: 12332
+      fieldset: filter_time_constant_tz
+    - name: filter_time_constant_tz_1
+      description: filter_time_constant_tz_1.
+      byte_offset: 12336
+      fieldset: filter_time_constant_tz_1
+    - name: filter_zero_tz_sel
+      description: filter_zero_tz_sel.
+      byte_offset: 12340
+      fieldset: filter_zero_tz_sel
+    - name: filter_gain
+      description: filter_gain.
+      byte_offset: 12344
+      fieldset: filter_gain
+    - name: filter_stage_shift0
+      description: filter_stage_shift0.
+      byte_offset: 12348
+      fieldset: filter_stage_shift0
+    - name: filter_stage_shift1
+      description: filter_stage_shift1.
+      byte_offset: 12352
+      fieldset: filter_stage_shift1
+    - name: filter_param_shift
+      description: filter_param_shift.
+      byte_offset: 12356
+      fieldset: filter_param_shift
+    - name: filter_time_shift
+      description: filter_time_shift.
+      byte_offset: 12360
+      fieldset: filter_time_shift
+    - name: filter_ff_shift
+      description: filter_ff_shift.
+      byte_offset: 12364
+      fieldset: filter_ff_shift
+    - name: filter_time1_sw_adjust
+      description: filter_time1_sw_adjust.
+      byte_offset: 12368
+      fieldset: filter_time1_sw_adjust
+    - name: filter_time0_sw_adjust
+      description: filter_time0_sw_adjust.
+      byte_offset: 12372
+      fieldset: filter_time0_sw_adjust
+    - name: filter_error_limit_l
+      description: filter_error_limit.
+      byte_offset: 12384
+      fieldset: filter_error_limit_l
+    - name: filter_error_limit_h
+      description: filter_error_limit.
+      byte_offset: 12388
+      fieldset: filter_error_limit_h
+    - name: filter_timeout_cnt
+      description: filter_timeout_cnt.
+      byte_offset: 12396
+      fieldset: filter_timeout_cnt
+    - name: filter_rev_lock
+      description: filter_rev_lock.
+      byte_offset: 12400
+      fieldset: filter_rev_lock
+    - name: filter_pos_lock
+      description: filter_pos_lock.
+      byte_offset: 12404
+      fieldset: filter_pos_lock
+    - name: filter_vel_lock
+      description: filter_vel_lock.
+      byte_offset: 12408
+      fieldset: filter_vel_lock
+    - name: filter_acc_lock
+      description: filter_acc_lock.
+      byte_offset: 12412
+      fieldset: filter_acc_lock
+block/TRA:
+  description: no description available.
+  items:
+    - name: control
+      description: tra&index0_control.
+      byte_offset: 0
+      fieldset: TRA_control
+    - name: shift
+      description: tra&index0_shift.
+      byte_offset: 4
+      fieldset: shift
+    - name: link
+      description: tra&index0_link.
+      byte_offset: 8
+      fieldset: link
+    - name: CMD
+      description: no description available.
+      array:
+        len: 4
+        stride: 32
+      byte_offset: 32
+      block: CMD
+    - name: lock_rev
+      description: tra&index0_lock_rev.
+      byte_offset: 160
+      fieldset: lock_rev
+    - name: lock_pos
+      description: tra&index0_lock_pos.
+      byte_offset: 164
+      fieldset: lock_pos
+    - name: lock_vel
+      description: tra&index0_lock_vel.
+      byte_offset: 168
+      fieldset: lock_vel
+    - name: lock_acc
+      description: tra&index0_lock_acc.
+      byte_offset: 172
+      fieldset: lock_acc
+    - name: lock_time
+      description: tra&index0_lock_time.
+      byte_offset: 176
+      fieldset: lock_time
+    - name: step_limit_ctrl
+      description: tra&index0_step_limit_ctrl.
+      byte_offset: 192
+      fieldset: step_limit_ctrl
+    - name: vel_step_max
+      description: tra&index0_vel_step_max.
+      byte_offset: 196
+      fieldset: vel_step_max
+    - name: vel_step_min
+      description: tra&index0_vel_step_min.
+      byte_offset: 200
+      fieldset: vel_step_min
+    - name: pos_step_max
+      description: tra&index0_pos_step_max.
+      byte_offset: 204
+      fieldset: pos_step_max
+    - name: pos_step_min
+      description: tra&index0_pos_step_min.
+      byte_offset: 208
+      fieldset: pos_step_min
+    - name: vel_limit_p
+      description: tra&index0_vel_limit_p.
+      byte_offset: 212
+      fieldset: vel_limit_p
+    - name: vel_limit_n
+      description: tra&index0_vel_limit_n.
+      byte_offset: 216
+      fieldset: vel_limit_n
+fieldset/CMD_control:
+  description: tra&index0_cmd&index1_control.
+  fields:
+    - name: OBJECT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 5
+    - name: MODE
+      description: No description available.
+      bit_offset: 29
+      bit_size: 1
+    - name: PASS_IRQ_EN
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: PASS_IRQ
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
+fieldset/CMD_timestamp:
+  description: tra&index0_cmd&index1_timestamp.
+  fields:
+    - name: TIMESTAMP
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/EVENT_control:
+  description: event&index0_control.
+  fields:
+    - name: EVENT_IRQ
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: EVENT_OVER_IRQ
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: EVENT_IRQ_EN
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: EVENT_OVER_IRQ_EN
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: TRIG_NUM
+      description: No description available.
+      bit_offset: 14
+      bit_size: 1
+    - name: OVER_MODE_CMP
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
+    - name: DIR_MODE
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: DIR
+      description: No description available.
+      bit_offset: 17
+      bit_size: 2
+    - name: MODE
+      description: No description available.
+      bit_offset: 19
+      bit_size: 4
+    - name: OBJECT
+      description: No description available.
+      bit_offset: 23
+      bit_size: 4
+    - name: SOURCE_MUX
+      description: No description available.
+      bit_offset: 27
+      bit_size: 4
+    - name: ENABLE
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
+fieldset/EVENT_timestamp:
+  description: event&index0_timestamp.
+  fields:
+    - name: TIMESTAMP
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRA_control:
+  description: tra&index0_control.
+  fields:
+    - name: OVALID_CLEAR
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: SW_LOCK
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: LOCK_IRQ
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: CMD_FAIL_IRQ
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: LOCK_IRQ_EN
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: CMD_FAIL_IRQ_EN
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+fieldset/acc_preset:
+  description: tra&index0_cmd&index1_acc_preset.
+  fields:
+    - name: ACC_PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_acc_lock:
+  description: filter_acc_lock.
+  fields:
+    - name: ACC_STATUS
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_acc_value:
+  description: filter_acc_value.
+  fields:
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_control:
+  description: filter_control.
+  fields:
+    - name: ENABLE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: INIT_EN
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: FF_EN
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: FF_MODE
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: ERR_BYPASS_EN
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: ERR_INI
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+    - name: A_EN
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: EN_TIME0
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+    - name: EN_TIME1
+      description: No description available.
+      bit_offset: 9
+      bit_size: 1
+    - name: SEL_TIME0
+      description: No description available.
+      bit_offset: 10
+      bit_size: 2
+    - name: SEL_TIME1
+      description: No description available.
+      bit_offset: 12
+      bit_size: 2
+    - name: REV_INI_MODE
+      description: No description available.
+      bit_offset: 17
+      bit_size: 1
+    - name: TIMEOUT_EN
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: SW_LOCK
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: ERR_BYPASS_I_F_EN
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: ERR_BYPASS_F_I_EN
+      description: No description available.
+      bit_offset: 22
+      bit_size: 1
+    - name: ERR_BYPASS_STATUS
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: MUL_ERR_IRQ_EN
+      description: No description available.
+      bit_offset: 29
+      bit_size: 1
+    - name: MUL_ERR_IRQ_1
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: MUL_ERR_IRQ_0
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
+fieldset/filter_error_limit_h:
+  description: filter_error_limit.
+  fields:
+    - name: ERROR_LIMIT_H
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_error_limit_l:
+  description: filter_error_limit.
+  fields:
+    - name: ERROR_LIMIT_L
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_ff_shift:
+  description: filter_ff_shift.
+  fields:
+    - name: FILTER_VEL_SHIFT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+    - name: OUTPUT_VEL_SHIFT
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: FILTER_ACC_SHIFT
+      description: No description available.
+      bit_offset: 8
+      bit_size: 4
+    - name: OUTPUT_ACC_SHIFT
+      description: No description available.
+      bit_offset: 12
+      bit_size: 4
+fieldset/filter_gain:
+  description: filter_gain.
+  fields:
+    - name: K
+      description: No description available.
+      bit_offset: 0
+      bit_size: 24
+    - name: GAIN_T1_EN
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: GAIN_T0_EN
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
+fieldset/filter_mot_sel:
+  description: filter_mot_sel.
+  fields:
+    - name: FILTER_ACC_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 6
+    - name: FILTER_VEL_SEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 6
+    - name: OUTPUT_ACC_SEL
+      description: No description available.
+      bit_offset: 16
+      bit_size: 6
+    - name: OUTPUT_VEL_SEL
+      description: No description available.
+      bit_offset: 24
+      bit_size: 6
+fieldset/filter_param_shift:
+  description: filter_param_shift.
+  fields:
+    - name: TZ_SHIFT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+    - name: TZ_1_SHIFT
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: TP_SHIFT
+      description: No description available.
+      bit_offset: 8
+      bit_size: 4
+    - name: GAIN_T1_SHIFT
+      description: No description available.
+      bit_offset: 12
+      bit_size: 4
+    - name: GAIN_T0_SHIFT
+      description: No description available.
+      bit_offset: 16
+      bit_size: 4
+    - name: GAIN_K_SHIFT
+      description: No description available.
+      bit_offset: 20
+      bit_size: 4
+    - name: VEL_SHIFT_PARAM
+      description: No description available.
+      bit_offset: 24
+      bit_size: 4
+    - name: ACC_SHIFT_PARAM
+      description: No description available.
+      bit_offset: 28
+      bit_size: 4
+fieldset/filter_pos_lock:
+  description: filter_pos_lock.
+  fields:
+    - name: POS_STATUS
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_pos_value:
+  description: filter_pos_value.
+  fields:
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_rev_lock:
+  description: filter_rev_lock.
+  fields:
+    - name: REV_STATUS
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_rev_value:
+  description: filter_rev_value.
+  fields:
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_stage_sel:
+  description: filter_stage_sel.
+  fields:
+    - name: STAGE0_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 5
+    - name: STAGE1_SEL
+      description: No description available.
+      bit_offset: 5
+      bit_size: 5
+    - name: STAGE2_SEL
+      description: No description available.
+      bit_offset: 10
+      bit_size: 5
+    - name: STAGE3_SEL
+      description: No description available.
+      bit_offset: 15
+      bit_size: 5
+    - name: STAGE4_SEL
+      description: No description available.
+      bit_offset: 20
+      bit_size: 5
+    - name: STAGE5_SEL
+      description: No description available.
+      bit_offset: 25
+      bit_size: 5
+fieldset/filter_stage_shift0:
+  description: filter_stage_shift0.
+  fields:
+    - name: STAGE0_SHIFT0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+    - name: STAGE0_SHIFT1
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: STAGE1_SHIFT0
+      description: No description available.
+      bit_offset: 8
+      bit_size: 4
+    - name: STAGE1_SHIFT1
+      description: No description available.
+      bit_offset: 12
+      bit_size: 4
+    - name: STAGE2_SHIFT0
+      description: No description available.
+      bit_offset: 16
+      bit_size: 4
+    - name: STAGE2_SHIFT1
+      description: No description available.
+      bit_offset: 20
+      bit_size: 4
+    - name: STAGE3_SHIFT0
+      description: No description available.
+      bit_offset: 24
+      bit_size: 4
+    - name: STAGE3_SHIFT1
+      description: No description available.
+      bit_offset: 28
+      bit_size: 4
+fieldset/filter_stage_shift1:
+  description: filter_stage_shift1.
+  fields:
+    - name: STAGE4_SHIFT0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+    - name: STAGE4_SHIFT1
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: STAGE5_SHIFT0
+      description: No description available.
+      bit_offset: 8
+      bit_size: 4
+    - name: STAGE5_SHIFT1
+      description: No description available.
+      bit_offset: 12
+      bit_size: 4
+fieldset/filter_time0_sw_adjust:
+  description: filter_time0_sw_adjust.
+  fields:
+    - name: TIME
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_time1_sw_adjust:
+  description: filter_time1_sw_adjust.
+  fields:
+    - name: TIME
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_time_constant_tp:
+  description: filter_time_constant_tp.
+  fields:
+    - name: TP
+      description: No description available.
+      bit_offset: 0
+      bit_size: 24
+fieldset/filter_time_constant_tz:
+  description: filter_time_constant_tz.
+  fields:
+    - name: TZ
+      description: No description available.
+      bit_offset: 0
+      bit_size: 24
+fieldset/filter_time_constant_tz_1:
+  description: filter_time_constant_tz_1.
+  fields:
+    - name: TZ_1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 24
+fieldset/filter_time_shift:
+  description: filter_time_shift.
+  fields:
+    - name: VEL_SHIFT_TIME0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+    - name: ACC_SHIFT_TIME0
+      description: No description available.
+      bit_offset: 4
+      bit_size: 4
+    - name: VEL_SHIFT_TIME1
+      description: No description available.
+      bit_offset: 8
+      bit_size: 4
+    - name: ACC_SHIFT_TIME1
+      description: No description available.
+      bit_offset: 12
+      bit_size: 4
+fieldset/filter_timeout_cnt:
+  description: filter_timeout_cnt.
+  fields:
+    - name: TIMEOUT_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_vel_lock:
+  description: filter_vel_lock.
+  fields:
+    - name: VEL_STATUS
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_vel_value:
+  description: filter_vel_value.
+  fields:
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/filter_zero_tz_sel:
+  description: filter_zero_tz_sel.
+  fields:
+    - name: STAGE0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: STAGE1
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: STAGE2
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: STAGE3
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: STAGE4
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: STAGE5
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+fieldset/jer_preset:
+  description: tra&index0_cmd&index1_jer_preset.
+  fields:
+    - name: JER_PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/link:
+  description: tra&index0_link.
+  fields:
+    - name: LINK_CFG_0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 3
+    - name: LINK_CFG_1
+      description: No description available.
+      bit_offset: 4
+      bit_size: 3
+    - name: LINK_CFG_2
+      description: No description available.
+      bit_offset: 8
+      bit_size: 3
+    - name: LINK_CFG_3
+      description: No description available.
+      bit_offset: 12
+      bit_size: 3
+fieldset/lock_acc:
+  description: tra&index0_lock_acc.
+  fields:
+    - name: LOCK_ACC
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/lock_pos:
+  description: tra&index0_lock_pos.
+  fields:
+    - name: LOCK_POS
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/lock_rev:
+  description: tra&index0_lock_rev.
+  fields:
+    - name: LOCK_REV
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/lock_time:
+  description: tra&index0_lock_time.
+  fields:
+    - name: LOCK_TIME
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/lock_vel:
+  description: tra&index0_lock_vel.
+  fields:
+    - name: LOCK_VEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_preset:
+  description: tra&index0_cmd&index1_pos_preset.
+  fields:
+    - name: POS_PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_step_max:
+  description: tra&index0_pos_step_max.
+  fields:
+    - name: POS_STEP_MAX
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_step_min:
+  description: tra&index0_pos_step_min.
+  fields:
+    - name: POS_STEP_MIN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/preset_0:
+  description: event&index0_preset_0.
+  fields:
+    - name: PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/preset_1:
+  description: event&index0_preset_1.
+  fields:
+    - name: PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/preset_2:
+  description: event&index0_preset_2.
+  fields:
+    - name: PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/preset_3:
+  description: event&index0_preset_3.
+  fields:
+    - name: PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/rev_preset:
+  description: tra&index0_cmd&index1_rev_preset.
+  fields:
+    - name: REV_PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/shift:
+  description: tra&index0_shift.
+  fields:
+    - name: VEL_SHIFT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 4
+    - name: ACC_SHIFT
+      description: No description available.
+      bit_offset: 4
+      bit_size: 3
+    - name: JER_SHIFT
+      description: No description available.
+      bit_offset: 8
+      bit_size: 3
+    - name: SHIFT_FAIL_EN
+      description: No description available.
+      bit_offset: 29
+      bit_size: 1
+    - name: VEL_SHIFT_FAIL_IRQ
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: ACC_SHIFT_FAIL_IRQ
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
+fieldset/step_limit_ctrl:
+  description: tra&index0_step_limit_ctrl.
+  fields:
+    - name: VEL_STEP_EN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: VEL_ONE_WAY_EN
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: VEL_ONE_WAY_MODE
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: POS_STEP_EN
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+    - name: POS_STEP_MODE
+      description: No description available.
+      bit_offset: 9
+      bit_size: 1
+    - name: POS_ONE_WAY_EN
+      description: No description available.
+      bit_offset: 10
+      bit_size: 1
+    - name: POS_ONE_WAY_MODE
+      description: No description available.
+      bit_offset: 11
+      bit_size: 1
+    - name: POS_ONE_WAY_FORCE_MODE
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+fieldset/sw_event:
+  description: sw_event.
+  fields:
+    - name: SW_EVENT_TRIG
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+fieldset/sw_glb_reset:
+  description: sw_glb_reset.
+  fields:
+    - name: SW_GLB_RESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+fieldset/vel_limit_n:
+  description: tra&index0_vel_limit_n.
+  fields:
+    - name: VEL_LIMIT_N
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/vel_limit_p:
+  description: tra&index0_vel_limit_p.
+  fields:
+    - name: VEL_LIMIT_P
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/vel_preset:
+  description: tra&index0_cmd&index1_vel_preset.
+  fields:
+    - name: VEL_PRESET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/vel_step_max:
+  description: tra&index0_vel_step_max.
+  fields:
+    - name: VEL_STEP_MAX
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/vel_step_min:
+  description: tra&index0_vel_step_min.
+  fields:
+    - name: VEL_STEP_MIN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32

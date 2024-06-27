@@ -1,422 +1,422 @@
 block/PCFG:
   description: PCFG.
   items:
-  - name: BANDGAP
-    description: BANGGAP control.
-    byte_offset: 0
-    fieldset: BANDGAP
-  - name: LDO1P1
-    description: 1V LDO config.
-    byte_offset: 4
-    fieldset: LDO1P1
-  - name: LDO2P5
-    description: 2.5V LDO config.
-    byte_offset: 8
-    fieldset: LDO2P5
-  - name: DCDC_MODE
-    description: DCDC mode select.
-    byte_offset: 16
-    fieldset: DCDC_MODE
-  - name: DCDC_LPMODE
-    description: DCDC low power mode.
-    byte_offset: 20
-    fieldset: DCDC_LPMODE
-  - name: DCDC_PROT
-    description: DCDC protection.
-    byte_offset: 24
-    fieldset: DCDC_PROT
-  - name: DCDC_CURRENT
-    description: DCDC current estimation.
-    byte_offset: 28
-    fieldset: DCDC_CURRENT
-  - name: DCDC_ADVMODE
-    description: DCDC advance setting.
-    byte_offset: 32
-    fieldset: DCDC_ADVMODE
-  - name: DCDC_ADVPARAM
-    description: DCDC advance parameter.
-    byte_offset: 36
-    fieldset: DCDC_ADVPARAM
-  - name: DCDC_MISC
-    description: DCDC misc parameter.
-    byte_offset: 40
-    fieldset: DCDC_MISC
-  - name: DCDC_DEBUG
-    description: DCDC Debug.
-    byte_offset: 44
-    fieldset: DCDC_DEBUG
-  - name: DCDC_START_TIME
-    description: DCDC ramp time.
-    byte_offset: 48
-    fieldset: DCDC_START_TIME
-  - name: DCDC_RESUME_TIME
-    description: DCDC resume time.
-    byte_offset: 52
-    fieldset: DCDC_RESUME_TIME
-  - name: POWER_TRAP
-    description: SOC power trap.
-    byte_offset: 64
-    fieldset: POWER_TRAP
-  - name: WAKE_CAUSE
-    description: Wake up source.
-    byte_offset: 68
-    fieldset: WAKE_CAUSE
-  - name: WAKE_MASK
-    description: Wake up mask.
-    byte_offset: 72
-    fieldset: WAKE_MASK
-  - name: SCG_CTRL
-    description: Clock gate control in PMIC.
-    byte_offset: 76
-    fieldset: SCG_CTRL
-  - name: RC24M
-    description: RC 24M config.
-    byte_offset: 96
-    fieldset: RC24M
-  - name: RC24M_TRACK
-    description: RC 24M track mode.
-    byte_offset: 100
-    fieldset: RC24M_TRACK
-  - name: TRACK_TARGET
-    description: RC 24M track target.
-    byte_offset: 104
-    fieldset: TRACK_TARGET
-  - name: STATUS
-    description: RC 24M track status.
-    byte_offset: 108
-    fieldset: STATUS
+    - name: BANDGAP
+      description: BANGGAP control.
+      byte_offset: 0
+      fieldset: BANDGAP
+    - name: LDO1P1
+      description: 1V LDO config.
+      byte_offset: 4
+      fieldset: LDO1P1
+    - name: LDO2P5
+      description: 2.5V LDO config.
+      byte_offset: 8
+      fieldset: LDO2P5
+    - name: DCDC_MODE
+      description: DCDC mode select.
+      byte_offset: 16
+      fieldset: DCDC_MODE
+    - name: DCDC_LPMODE
+      description: DCDC low power mode.
+      byte_offset: 20
+      fieldset: DCDC_LPMODE
+    - name: DCDC_PROT
+      description: DCDC protection.
+      byte_offset: 24
+      fieldset: DCDC_PROT
+    - name: DCDC_CURRENT
+      description: DCDC current estimation.
+      byte_offset: 28
+      fieldset: DCDC_CURRENT
+    - name: DCDC_ADVMODE
+      description: DCDC advance setting.
+      byte_offset: 32
+      fieldset: DCDC_ADVMODE
+    - name: DCDC_ADVPARAM
+      description: DCDC advance parameter.
+      byte_offset: 36
+      fieldset: DCDC_ADVPARAM
+    - name: DCDC_MISC
+      description: DCDC misc parameter.
+      byte_offset: 40
+      fieldset: DCDC_MISC
+    - name: DCDC_DEBUG
+      description: DCDC Debug.
+      byte_offset: 44
+      fieldset: DCDC_DEBUG
+    - name: DCDC_START_TIME
+      description: DCDC ramp time.
+      byte_offset: 48
+      fieldset: DCDC_START_TIME
+    - name: DCDC_RESUME_TIME
+      description: DCDC resume time.
+      byte_offset: 52
+      fieldset: DCDC_RESUME_TIME
+    - name: POWER_TRAP
+      description: SOC power trap.
+      byte_offset: 64
+      fieldset: POWER_TRAP
+    - name: WAKE_CAUSE
+      description: Wake up source.
+      byte_offset: 68
+      fieldset: WAKE_CAUSE
+    - name: WAKE_MASK
+      description: Wake up mask.
+      byte_offset: 72
+      fieldset: WAKE_MASK
+    - name: SCG_CTRL
+      description: Clock gate control in PMIC.
+      byte_offset: 76
+      fieldset: SCG_CTRL
+    - name: RC24M
+      description: RC 24M config.
+      byte_offset: 96
+      fieldset: RC24M
+    - name: RC24M_TRACK
+      description: RC 24M track mode.
+      byte_offset: 100
+      fieldset: RC24M_TRACK
+    - name: TRACK_TARGET
+      description: RC 24M track target.
+      byte_offset: 104
+      fieldset: TRACK_TARGET
+    - name: STATUS
+      description: RC 24M track status.
+      byte_offset: 108
+      fieldset: STATUS
 fieldset/BANDGAP:
   description: BANGGAP control.
   fields:
-  - name: VBG_P50_TRIM
-    description: Banggap 1.0V output trim value.
-    bit_offset: 0
-    bit_size: 5
-  - name: VBG_P65_TRIM
-    description: Banggap 1.0V output trim value.
-    bit_offset: 8
-    bit_size: 5
-  - name: VBG_1P0_TRIM
-    description: Banggap 1.0V output trim value.
-    bit_offset: 16
-    bit_size: 5
-  - name: VBG_TRIMMED
-    description: 'Bandgap trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: bandgap is not trimmed 1: bandgap is trimmed.'
-    bit_offset: 31
-    bit_size: 1
+    - name: VBG_P50_TRIM
+      description: Banggap 1.0V output trim value.
+      bit_offset: 0
+      bit_size: 5
+    - name: VBG_P65_TRIM
+      description: Banggap 1.0V output trim value.
+      bit_offset: 8
+      bit_size: 5
+    - name: VBG_1P0_TRIM
+      description: Banggap 1.0V output trim value.
+      bit_offset: 16
+      bit_size: 5
+    - name: VBG_TRIMMED
+      description: "Bandgap trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: bandgap is not trimmed 1: bandgap is trimmed."
+      bit_offset: 31
+      bit_size: 1
 fieldset/DCDC_ADVMODE:
   description: DCDC advance setting.
   fields:
-  - name: EN_DCM
-    description: 'DCM mode 0: CCM mode 1: DCM mode.'
-    bit_offset: 0
-    bit_size: 1
-  - name: EN_IDLE
-    description: 'enable skip when voltage is higher than threshold 0: do not skip 1: skip if voltage is excess.'
-    bit_offset: 1
-    bit_size: 1
-  - name: EN_SKIP
-    description: 'enable skip on narrow pulse 0: do not skip narrow pulse 1: skip narrow pulse.'
-    bit_offset: 2
-    bit_size: 1
-  - name: EN_DCM_EXIT
-    description: 'avoid over voltage 0: stay in DCM mode when voltage excess 1: change to CCM mode when voltage excess.'
-    bit_offset: 3
-    bit_size: 1
-  - name: EN_AUTOLP
-    description: 'enable auto enter low power mode 0: do not enter low power mode 1: enter low power mode if current is detected low.'
-    bit_offset: 4
-    bit_size: 1
-  - name: EN_FF_LOOP
-    description: 'enable feed forward loop 0: feed forward loop is disabled 1: feed forward loop is enabled.'
-    bit_offset: 5
-    bit_size: 1
-  - name: EN_FF_DET
-    description: 'enable feed forward detect 0: feed forward detect is disabled 1: feed forward detect is enabled.'
-    bit_offset: 6
-    bit_size: 1
-  - name: DC_R
-    description: Loop R number.
-    bit_offset: 16
-    bit_size: 4
-  - name: DC_C
-    description: Loop C number.
-    bit_offset: 20
-    bit_size: 2
-  - name: EN_RCSCALE
-    description: Enable RC scale.
-    bit_offset: 24
-    bit_size: 3
+    - name: EN_DCM
+      description: "DCM mode 0: CCM mode 1: DCM mode."
+      bit_offset: 0
+      bit_size: 1
+    - name: EN_IDLE
+      description: "enable skip when voltage is higher than threshold 0: do not skip 1: skip if voltage is excess."
+      bit_offset: 1
+      bit_size: 1
+    - name: EN_SKIP
+      description: "enable skip on narrow pulse 0: do not skip narrow pulse 1: skip narrow pulse."
+      bit_offset: 2
+      bit_size: 1
+    - name: EN_DCM_EXIT
+      description: "avoid over voltage 0: stay in DCM mode when voltage excess 1: change to CCM mode when voltage excess."
+      bit_offset: 3
+      bit_size: 1
+    - name: EN_AUTOLP
+      description: "enable auto enter low power mode 0: do not enter low power mode 1: enter low power mode if current is detected low."
+      bit_offset: 4
+      bit_size: 1
+    - name: EN_FF_LOOP
+      description: "enable feed forward loop 0: feed forward loop is disabled 1: feed forward loop is enabled."
+      bit_offset: 5
+      bit_size: 1
+    - name: EN_FF_DET
+      description: "enable feed forward detect 0: feed forward detect is disabled 1: feed forward detect is enabled."
+      bit_offset: 6
+      bit_size: 1
+    - name: DC_R
+      description: Loop R number.
+      bit_offset: 16
+      bit_size: 4
+    - name: DC_C
+      description: Loop C number.
+      bit_offset: 20
+      bit_size: 2
+    - name: EN_RCSCALE
+      description: Enable RC scale.
+      bit_offset: 24
+      bit_size: 3
 fieldset/DCDC_ADVPARAM:
   description: DCDC advance parameter.
   fields:
-  - name: MAX_DUT
-    description: maximum duty cycle.
-    bit_offset: 0
-    bit_size: 7
-  - name: MIN_DUT
-    description: minimum duty cycle.
-    bit_offset: 8
-    bit_size: 7
+    - name: MAX_DUT
+      description: maximum duty cycle.
+      bit_offset: 0
+      bit_size: 7
+    - name: MIN_DUT
+      description: minimum duty cycle.
+      bit_offset: 8
+      bit_size: 7
 fieldset/DCDC_CURRENT:
   description: DCDC current estimation.
   fields:
-  - name: LEVEL
-    description: DCDC current level, current level is num * 50mA.
-    bit_offset: 0
-    bit_size: 5
-  - name: VALID
-    description: 'Current level valid 0: data is invalid 1: data is valid.'
-    bit_offset: 8
-    bit_size: 1
-  - name: ESTI_EN
-    description: enable current measure.
-    bit_offset: 15
-    bit_size: 1
+    - name: LEVEL
+      description: DCDC current level, current level is num * 50mA.
+      bit_offset: 0
+      bit_size: 5
+    - name: VALID
+      description: "Current level valid 0: data is invalid 1: data is valid."
+      bit_offset: 8
+      bit_size: 1
+    - name: ESTI_EN
+      description: enable current measure.
+      bit_offset: 15
+      bit_size: 1
 fieldset/DCDC_DEBUG:
   description: DCDC Debug.
   fields:
-  - name: UPDATE_TIME
-    description: DCDC voltage change time in 24M clock cycles, default value is 1mS.
-    bit_offset: 0
-    bit_size: 20
+    - name: UPDATE_TIME
+      description: DCDC voltage change time in 24M clock cycles, default value is 1mS.
+      bit_offset: 0
+      bit_size: 20
 fieldset/DCDC_LPMODE:
   description: DCDC low power mode.
   fields:
-  - name: STBY_VOLT
-    description: 'DCDC voltage in mV in standby mode, , value valid through 600-1375, , step 25mV. Hardware select voltage no less than target if not on valid steps, with maximum 1375mV. 600: 600mV 625: 625mV . . . 1375:1375mV.'
-    bit_offset: 0
-    bit_size: 12
+    - name: STBY_VOLT
+      description: "DCDC voltage in mV in standby mode, , value valid through 600-1375, , step 25mV. Hardware select voltage no less than target if not on valid steps, with maximum 1375mV. 600: 600mV 625: 625mV . . . 1375:1375mV."
+      bit_offset: 0
+      bit_size: 12
 fieldset/DCDC_MISC:
   description: DCDC misc parameter.
   fields:
-  - name: EN_STEP
-    description: 'enable stepping in voltage change 0: stepping disabled, 1: steping enabled.'
-    bit_offset: 0
-    bit_size: 1
-  - name: CLK_SEL
-    description: 'clock selection 0: select DCDC internal oscillator 1: select RC24M oscillator.'
-    bit_offset: 1
-    bit_size: 1
-  - name: DELAY
-    description: 'enable delay 0: delay disabled, 1: delay enabled.'
-    bit_offset: 2
-    bit_size: 1
-  - name: OL_HYST
-    description: 'current hysteres range 0: 12.5mV 1: 25mV.'
-    bit_offset: 4
-    bit_size: 1
-  - name: OL_THRE
-    description: overload for threshold for lod power mode.
-    bit_offset: 8
-    bit_size: 2
-  - name: DC_FF
-    description: Loop feed forward number.
-    bit_offset: 16
-    bit_size: 3
-  - name: RC_SCALE
-    description: Loop RC scale threshold.
-    bit_offset: 20
-    bit_size: 1
-  - name: HYST_THRS
-    description: hysteres threshold.
-    bit_offset: 24
-    bit_size: 1
-  - name: HYST_SIGN
-    description: hysteres sign.
-    bit_offset: 25
-    bit_size: 1
-  - name: EN_HYST
-    description: hysteres enable.
-    bit_offset: 28
-    bit_size: 1
+    - name: EN_STEP
+      description: "enable stepping in voltage change 0: stepping disabled, 1: steping enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: CLK_SEL
+      description: "clock selection 0: select DCDC internal oscillator 1: select RC24M oscillator."
+      bit_offset: 1
+      bit_size: 1
+    - name: DELAY
+      description: "enable delay 0: delay disabled, 1: delay enabled."
+      bit_offset: 2
+      bit_size: 1
+    - name: OL_HYST
+      description: "current hysteres range 0: 12.5mV 1: 25mV."
+      bit_offset: 4
+      bit_size: 1
+    - name: OL_THRE
+      description: overload for threshold for lod power mode.
+      bit_offset: 8
+      bit_size: 2
+    - name: DC_FF
+      description: Loop feed forward number.
+      bit_offset: 16
+      bit_size: 3
+    - name: RC_SCALE
+      description: Loop RC scale threshold.
+      bit_offset: 20
+      bit_size: 1
+    - name: HYST_THRS
+      description: hysteres threshold.
+      bit_offset: 24
+      bit_size: 1
+    - name: HYST_SIGN
+      description: hysteres sign.
+      bit_offset: 25
+      bit_size: 1
+    - name: EN_HYST
+      description: hysteres enable.
+      bit_offset: 28
+      bit_size: 1
 fieldset/DCDC_MODE:
   description: DCDC mode select.
   fields:
-  - name: VOLT
-    description: 'DCDC voltage in mV in normal mode, value valid through 600-1375, , step 25mV. Hardware select voltage no less than target if not on valid steps, with maximum 1375mV. 600: 600mV 625: 625mV . . . 1375:1375mV.'
-    bit_offset: 0
-    bit_size: 12
-  - name: MODE
-    description: 'DCDC work mode XX0: trun off 001: basic mode 011: generic mode 101: automatic mode 111: expert mode.'
-    bit_offset: 16
-    bit_size: 3
-  - name: READY
-    description: 'Ready flag 0: DCDC is applying new change 1: DCDC is ready.'
-    bit_offset: 28
-    bit_size: 1
+    - name: VOLT
+      description: "DCDC voltage in mV in normal mode, value valid through 600-1375, , step 25mV. Hardware select voltage no less than target if not on valid steps, with maximum 1375mV. 600: 600mV 625: 625mV . . . 1375:1375mV."
+      bit_offset: 0
+      bit_size: 12
+    - name: MODE
+      description: "DCDC work mode XX0: trun off 001: basic mode 011: generic mode 101: automatic mode 111: expert mode."
+      bit_offset: 16
+      bit_size: 3
+    - name: READY
+      description: "Ready flag 0: DCDC is applying new change 1: DCDC is ready."
+      bit_offset: 28
+      bit_size: 1
 fieldset/DCDC_PROT:
   description: DCDC protection.
   fields:
-  - name: SHORT_FLAG
-    description: 'short circuit flag 0: current is within limit 1: short circuits detected.'
-    bit_offset: 0
-    bit_size: 1
-  - name: SHORT_CURRENT
-    description: 'short circuit current setting 0: 2.0A, 1: 1.3A.'
-    bit_offset: 4
-    bit_size: 1
-  - name: DISABLE_SHORT
-    description: 'disable output short circuit protection 0: short circuits protection enabled, DCDC shut down if short circuit on ouput detected 1: short circuit protection disabled.'
-    bit_offset: 7
-    bit_size: 1
-  - name: OVERVOLT_FLAG
-    description: 'output over voltage flag 0: output is normal 1: output is unexpected high.'
-    bit_offset: 8
-    bit_size: 1
-  - name: DISABLE_OVERVOLTAGE
-    description: 'ouput over voltage protection 0: protection enabled, DCDC will shut down is output voltage is unexpected high 1: protection disabled, DCDC continue to adjust output voltage.'
-    bit_offset: 15
-    bit_size: 1
-  - name: POWER_LOSS_FLAG
-    description: 'power loss 0: input power is good 1: input power is too low.'
-    bit_offset: 16
-    bit_size: 1
-  - name: OVERLOAD_LP
-    description: 'over current in low power mode 0: current is below setting 1: overcurrent happened in low power mode.'
-    bit_offset: 24
-    bit_size: 1
-  - name: ILIMIT_LP
-    description: over current setting for low power mode 0:250mA 1:200mA.
-    bit_offset: 28
-    bit_size: 1
+    - name: SHORT_FLAG
+      description: "short circuit flag 0: current is within limit 1: short circuits detected."
+      bit_offset: 0
+      bit_size: 1
+    - name: SHORT_CURRENT
+      description: "short circuit current setting 0: 2.0A, 1: 1.3A."
+      bit_offset: 4
+      bit_size: 1
+    - name: DISABLE_SHORT
+      description: "disable output short circuit protection 0: short circuits protection enabled, DCDC shut down if short circuit on ouput detected 1: short circuit protection disabled."
+      bit_offset: 7
+      bit_size: 1
+    - name: OVERVOLT_FLAG
+      description: "output over voltage flag 0: output is normal 1: output is unexpected high."
+      bit_offset: 8
+      bit_size: 1
+    - name: DISABLE_OVERVOLTAGE
+      description: "ouput over voltage protection 0: protection enabled, DCDC will shut down is output voltage is unexpected high 1: protection disabled, DCDC continue to adjust output voltage."
+      bit_offset: 15
+      bit_size: 1
+    - name: POWER_LOSS_FLAG
+      description: "power loss 0: input power is good 1: input power is too low."
+      bit_offset: 16
+      bit_size: 1
+    - name: OVERLOAD_LP
+      description: "over current in low power mode 0: current is below setting 1: overcurrent happened in low power mode."
+      bit_offset: 24
+      bit_size: 1
+    - name: ILIMIT_LP
+      description: over current setting for low power mode 0:250mA 1:200mA.
+      bit_offset: 28
+      bit_size: 1
 fieldset/DCDC_RESUME_TIME:
   description: DCDC resume time.
   fields:
-  - name: RESUME_TIME
-    description: Resume delay for DCDC to recover from low power mode, in 24M clock cycles, default value is 1.5mS.
-    bit_offset: 0
-    bit_size: 20
+    - name: RESUME_TIME
+      description: Resume delay for DCDC to recover from low power mode, in 24M clock cycles, default value is 1.5mS.
+      bit_offset: 0
+      bit_size: 20
 fieldset/DCDC_START_TIME:
   description: DCDC ramp time.
   fields:
-  - name: START_TIME
-    description: Start delay for DCDC to turn on, in 24M clock cycles, default value is 3mS.
-    bit_offset: 0
-    bit_size: 20
+    - name: START_TIME
+      description: Start delay for DCDC to turn on, in 24M clock cycles, default value is 3mS.
+      bit_offset: 0
+      bit_size: 20
 fieldset/LDO1P1:
   description: 1V LDO config.
   fields:
-  - name: VOLT
-    description: 'LDO output voltage in mV, value valid through 700-1320, , step 20mV. Hardware select voltage no less than target if not on valid steps, with maximum 1320mV. 700: 700mV 720: 720mV . . . 1320:1320mV.'
-    bit_offset: 0
-    bit_size: 12
-  - name: ENABLE
-    description: 'LDO enable 0: turn off LDO 1: turn on LDO.'
-    bit_offset: 16
-    bit_size: 1
+    - name: VOLT
+      description: "LDO output voltage in mV, value valid through 700-1320, , step 20mV. Hardware select voltage no less than target if not on valid steps, with maximum 1320mV. 700: 700mV 720: 720mV . . . 1320:1320mV."
+      bit_offset: 0
+      bit_size: 12
+    - name: ENABLE
+      description: "LDO enable 0: turn off LDO 1: turn on LDO."
+      bit_offset: 16
+      bit_size: 1
 fieldset/LDO2P5:
   description: 2.5V LDO config.
   fields:
-  - name: VOLT
-    description: 'LDO output voltage in mV, value valid through 2125-2900, step 25mV. Hardware select voltage no less than target if not on valid steps, with maximum 2900mV. 2125: 2125mV 2150: 2150mV . . . 2900:2900mV.'
-    bit_offset: 0
-    bit_size: 12
-  - name: ENABLE
-    description: 'LDO enable 0: turn off LDO 1: turn on LDO.'
-    bit_offset: 16
-    bit_size: 1
-  - name: READY
-    description: 'Ready flag, will set 1ms after enabled or voltage change 0: LDO is not ready for use 1: LDO is ready.'
-    bit_offset: 28
-    bit_size: 1
+    - name: VOLT
+      description: "LDO output voltage in mV, value valid through 2125-2900, step 25mV. Hardware select voltage no less than target if not on valid steps, with maximum 2900mV. 2125: 2125mV 2150: 2150mV . . . 2900:2900mV."
+      bit_offset: 0
+      bit_size: 12
+    - name: ENABLE
+      description: "LDO enable 0: turn off LDO 1: turn on LDO."
+      bit_offset: 16
+      bit_size: 1
+    - name: READY
+      description: "Ready flag, will set 1ms after enabled or voltage change 0: LDO is not ready for use 1: LDO is ready."
+      bit_offset: 28
+      bit_size: 1
 fieldset/POWER_TRAP:
   description: SOC power trap.
   fields:
-  - name: TRAP
-    description: 'Enable trap of SOC power supply, trap is used to hold SOC in low power mode for DCDC to enter further low power mode, this bit will self-clear when power related low pwer flow triggered 0: trap not enabled, pmic side low power function disabled 1: trap enabled, STOP operation leads to PMIC low power flow if SOC is not retentioned.'
-    bit_offset: 0
-    bit_size: 1
-  - name: RETENTION
-    description: 'DCDC enter standby mode, which will reduce voltage for memory content retention 0: Shutdown DCDC 1: reduce DCDC voltage.'
-    bit_offset: 16
-    bit_size: 1
-  - name: TRIGGERED
-    description: 'Low power trap status, thit bit will set when power related low power flow triggered, write 1 to clear this flag. 0: low power trap is not triggered 1: low power trap triggered.'
-    bit_offset: 31
-    bit_size: 1
+    - name: TRAP
+      description: "Enable trap of SOC power supply, trap is used to hold SOC in low power mode for DCDC to enter further low power mode, this bit will self-clear when power related low pwer flow triggered 0: trap not enabled, pmic side low power function disabled 1: trap enabled, STOP operation leads to PMIC low power flow if SOC is not retentioned."
+      bit_offset: 0
+      bit_size: 1
+    - name: RETENTION
+      description: "DCDC enter standby mode, which will reduce voltage for memory content retention 0: Shutdown DCDC 1: reduce DCDC voltage."
+      bit_offset: 16
+      bit_size: 1
+    - name: TRIGGERED
+      description: "Low power trap status, thit bit will set when power related low power flow triggered, write 1 to clear this flag. 0: low power trap is not triggered 1: low power trap triggered."
+      bit_offset: 31
+      bit_size: 1
 fieldset/RC24M:
   description: RC 24M config.
   fields:
-  - name: TRIM_F
-    description: Fine trim for RC24M, bigger value means faster.
-    bit_offset: 0
-    bit_size: 5
-  - name: TRIM_C
-    description: Coarse trim for RC24M, bigger value means faster.
-    bit_offset: 8
-    bit_size: 3
-  - name: RC_TRIMMED
-    description: 'RC24M trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: RC is not trimmed 1: RC is trimmed.'
-    bit_offset: 31
-    bit_size: 1
+    - name: TRIM_F
+      description: Fine trim for RC24M, bigger value means faster.
+      bit_offset: 0
+      bit_size: 5
+    - name: TRIM_C
+      description: Coarse trim for RC24M, bigger value means faster.
+      bit_offset: 8
+      bit_size: 3
+    - name: RC_TRIMMED
+      description: "RC24M trim happened, this bit set by hardware after trim value loaded, and stop load, write 0 will clear this bit and reload trim value 0: RC is not trimmed 1: RC is trimmed."
+      bit_offset: 31
+      bit_size: 1
 fieldset/RC24M_TRACK:
   description: RC 24M track mode.
   fields:
-  - name: TRACK
-    description: 'track mode 0: RC24M free running 1: track RC24M to external XTAL.'
-    bit_offset: 0
-    bit_size: 1
-  - name: RETURN
-    description: 'Retrun default value when XTAL loss 0: remain last tracking value 1: switch to default value.'
-    bit_offset: 4
-    bit_size: 1
-  - name: SEL24M
-    description: 'Select track reference 0: select 32K as reference 1: select 24M XTAL as reference.'
-    bit_offset: 16
-    bit_size: 1
+    - name: TRACK
+      description: "track mode 0: RC24M free running 1: track RC24M to external XTAL."
+      bit_offset: 0
+      bit_size: 1
+    - name: RETURN
+      description: "Retrun default value when XTAL loss 0: remain last tracking value 1: switch to default value."
+      bit_offset: 4
+      bit_size: 1
+    - name: SEL24M
+      description: "Select track reference 0: select 32K as reference 1: select 24M XTAL as reference."
+      bit_offset: 16
+      bit_size: 1
 fieldset/SCG_CTRL:
   description: Clock gate control in PMIC.
   fields:
-  - name: SCG
-    description: 'control whether clock being gated during PMIC low power flow, 2 bits for each peripheral 00,01: reserved 10: clock is always off 11: clock is always on bit6-7:gpio bit8-9:ioc bit10-11: timer bit12-13:wdog bit14-15:uart.'
-    bit_offset: 0
-    bit_size: 32
+    - name: SCG
+      description: "control whether clock being gated during PMIC low power flow, 2 bits for each peripheral 00,01: reserved 10: clock is always off 11: clock is always on bit6-7:gpio bit8-9:ioc bit10-11: timer bit12-13:wdog bit14-15:uart."
+      bit_offset: 0
+      bit_size: 32
 fieldset/STATUS:
   description: RC 24M track status.
   fields:
-  - name: TRIM_F
-    description: default fine trim value.
-    bit_offset: 0
-    bit_size: 5
-  - name: TRIM_C
-    description: default coarse trim value.
-    bit_offset: 8
-    bit_size: 3
-  - name: EN_TRIM
-    description: 'default value takes effect 0: default value is invalid 1: default value is valid.'
-    bit_offset: 15
-    bit_size: 1
-  - name: SEL24M
-    description: 'track is using XTAL24M 0: track is not using XTAL24M 1: track is using XTAL24M.'
-    bit_offset: 16
-    bit_size: 1
-  - name: SEL32K
-    description: 'track is using XTAL32K 0: track is not using XTAL32K 1: track is using XTAL32K.'
-    bit_offset: 20
-    bit_size: 1
+    - name: TRIM_F
+      description: default fine trim value.
+      bit_offset: 0
+      bit_size: 5
+    - name: TRIM_C
+      description: default coarse trim value.
+      bit_offset: 8
+      bit_size: 3
+    - name: EN_TRIM
+      description: "default value takes effect 0: default value is invalid 1: default value is valid."
+      bit_offset: 15
+      bit_size: 1
+    - name: SEL24M
+      description: "track is using XTAL24M 0: track is not using XTAL24M 1: track is using XTAL24M."
+      bit_offset: 16
+      bit_size: 1
+    - name: SEL32K
+      description: "track is using XTAL32K 0: track is not using XTAL32K 1: track is using XTAL32K."
+      bit_offset: 20
+      bit_size: 1
 fieldset/TRACK_TARGET:
   description: RC 24M track target.
   fields:
-  - name: TARGET
-    description: Target frequency multiplier of divided source.
-    bit_offset: 0
-    bit_size: 16
-  - name: PRE_DIV
-    description: Divider for reference source.
-    bit_offset: 16
-    bit_size: 16
+    - name: TARGET
+      description: Target frequency multiplier of divided source.
+      bit_offset: 0
+      bit_size: 16
+    - name: PRE_DIV
+      description: Divider for reference source.
+      bit_offset: 16
+      bit_size: 16
 fieldset/WAKE_CAUSE:
   description: Wake up source.
   fields:
-  - name: CAUSE
-    description: 'wake up cause, each bit represents one wake up source, write 1 to clear the register bit 0: wake up source is not active during last wakeup 1: wake up source is active furing last wakeup bit 0: pmic_enable bit 7: UART interrupt bit 8: TMR interrupt bit 9: WDG interrupt bit10: GPIO in PMIC interrupt bit16: batt security interrupt bit17:batt gpio interrupt bit19:rtc interrupt bit31: pin wakeup.'
-    bit_offset: 0
-    bit_size: 32
+    - name: CAUSE
+      description: "wake up cause, each bit represents one wake up source, write 1 to clear the register bit 0: wake up source is not active during last wakeup 1: wake up source is active furing last wakeup bit 0: pmic_enable bit 7: UART interrupt bit 8: TMR interrupt bit 9: WDG interrupt bit10: GPIO in PMIC interrupt bit16: batt security interrupt bit17:batt gpio interrupt bit19:rtc interrupt bit31: pin wakeup."
+      bit_offset: 0
+      bit_size: 32
 fieldset/WAKE_MASK:
   description: Wake up mask.
   fields:
-  - name: MASK
-    description: 'mask for wake up sources, each bit represents one wakeup source 0: allow source to wake up system 1: disallow source to wakeup system bit 0: pmic_enable bit 7: UART interrupt bit 8: TMR interrupt bit 9: WDG interrupt bit10: GPIO in PMIC interrupt bit16: batt security interrupt bit17:batt gpio interrupt bit19:rtc interrupt bit31: pin wakeup.'
-    bit_offset: 0
-    bit_size: 32
+    - name: MASK
+      description: "mask for wake up sources, each bit represents one wakeup source 0: allow source to wake up system 1: disallow source to wakeup system bit 0: pmic_enable bit 7: UART interrupt bit 8: TMR interrupt bit 9: WDG interrupt bit10: GPIO in PMIC interrupt bit16: batt security interrupt bit17:batt gpio interrupt bit19:rtc interrupt bit31: pin wakeup."
+      bit_offset: 0
+      bit_size: 32

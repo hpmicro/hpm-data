@@ -1,2640 +1,2640 @@
 block/ESC:
   description: ESC.
   items:
-  - name: TYPE
-    description: Type of EtherCAT controller.
-    byte_offset: 0
-    bit_size: 8
-    fieldset: ESC_TYPE
-  - name: REVISION
-    description: Revision of EtherCAT controller.
-    byte_offset: 1
-    bit_size: 8
-    fieldset: REVISION
-  - name: BUILD
-    description: Build of EtherCAT controller.
-    byte_offset: 2
-    bit_size: 16
-    fieldset: BUILD
-  - name: FMMU_NUM
-    description: FMMU supported.
-    byte_offset: 4
-    bit_size: 8
-    fieldset: FMMU_NUM
-  - name: SYNCM_NUM
-    description: SyncManagers supported.
-    byte_offset: 5
-    bit_size: 8
-    fieldset: SYNCM_NUM
-  - name: RAM_SIZE
-    description: RAM Size.
-    byte_offset: 6
-    bit_size: 8
-    fieldset: RAM_SIZE
-  - name: PORT_DESC
-    description: Port Descriptor.
-    byte_offset: 7
-    bit_size: 8
-    fieldset: PORT_DESC
-  - name: FEATURE
-    description: ESC Feature supported.
-    byte_offset: 8
-    bit_size: 16
-    fieldset: FEATURE
-  - name: STATION_ADDR
-    description: Configured Station Address.
-    byte_offset: 16
-    bit_size: 16
-    fieldset: STATION_ADDR
-  - name: STATION_ALS
-    description: Configured Station Alias.
-    byte_offset: 18
-    bit_size: 16
-    fieldset: STATION_ALS
-  - name: REG_WEN
-    description: Register Write Enable.
-    byte_offset: 32
-    bit_size: 8
-    fieldset: REG_WEN
-  - name: REG_WP
-    description: Register Write Protection.
-    byte_offset: 33
-    bit_size: 8
-    fieldset: REG_WP
-  - name: ESC_WEN
-    description: ESC Write Enable.
-    byte_offset: 48
-    bit_size: 8
-    fieldset: ESC_WEN
-  - name: ESC_WP
-    description: ESC Write Protection.
-    byte_offset: 49
-    bit_size: 8
-    fieldset: ESC_WP
-  - name: ESC_RST_ECAT
-    description: ESC Reset ECAT.
-    byte_offset: 64
-    bit_size: 8
-    fieldset: ESC_RST_ECAT
-  - name: ESC_RST_PDI
-    description: ESC Reset PDI.
-    byte_offset: 65
-    bit_size: 8
-    fieldset: ESC_RST_PDI
-  - name: ESC_DL_CTRL
-    description: ESC DL Control.
-    byte_offset: 256
-    fieldset: ESC_DL_CTRL
-  - name: PHYSICAL_RW_OFFSET
-    description: Physical Read/Write Offset.
-    byte_offset: 264
-    bit_size: 16
-    fieldset: PHYSICAL_RW_OFFSET
-  - name: ESC_DL_STAT
-    description: ESC DL Status.
-    byte_offset: 272
-    bit_size: 16
-    fieldset: ESC_DL_STAT
-  - name: AL_CTRL
-    description: AL Control.
-    byte_offset: 288
-    bit_size: 16
-    fieldset: AL_CTRL
-  - name: AL_STAT
-    description: AL Status.
-    byte_offset: 304
-    bit_size: 16
-    fieldset: AL_STAT
-  - name: AL_STAT_CODE
-    description: AL Status Code.
-    byte_offset: 308
-    bit_size: 16
-    fieldset: AL_STAT_CODE
-  - name: RUN_LED_OVRD
-    description: RUN LED Override.
-    byte_offset: 312
-    bit_size: 8
-    fieldset: RUN_LED_OVRD
-  - name: ERR_LED_OVRD
-    description: ERR LED Override.
-    byte_offset: 313
-    bit_size: 8
-    fieldset: ERR_LED_OVRD
-  - name: PDI_CTRL
-    description: PDI Control.
-    byte_offset: 320
-    bit_size: 8
-    fieldset: ESC_PDI_CTRL
-  - name: ESC_CFG
-    description: ESC Configuration.
-    byte_offset: 321
-    bit_size: 8
-    fieldset: ESC_CFG
-  - name: PDI_INFO
-    description: PDI Information.
-    byte_offset: 334
-    bit_size: 16
-    fieldset: PDI_INFO
-  - name: PDI_CFG
-    description: PDI Configuration.
-    byte_offset: 336
-    bit_size: 8
-    fieldset: PDI_CFG
-  - name: PDI_SL_CFG
-    description: PDI Sync/Latch[1:0] Configuration.
-    byte_offset: 337
-    bit_size: 8
-    fieldset: PDI_SL_CFG
-  - name: PDI_EXT_CFG
-    description: PDI Extended Configuration.
-    byte_offset: 338
-    bit_size: 16
-    fieldset: PDI_EXT_CFG
-  - name: ECAT_EVT_MSK
-    description: ECAT Event Mask.
-    byte_offset: 512
-    bit_size: 16
-    fieldset: ECAT_EVT_MSK
-  - name: PDI_AL_EVT_MSK
-    description: PDI AL Event Mask.
-    byte_offset: 516
-    fieldset: PDI_AL_EVT_MSK
-  - name: ECAT_EVT_REQ
-    description: ECAT Event Request.
-    byte_offset: 528
-    bit_size: 16
-    fieldset: ECAT_EVT_REQ
-  - name: AL_EVT_REQ
-    description: AL Event Request.
-    byte_offset: 544
-    fieldset: AL_EVT_REQ
-  - name: RX_ERR_CNT
-    description: no description available.
-    array:
-      len: 4
-      stride: 2
-    byte_offset: 768
-    bit_size: 16
-    fieldset: RX_ERR_CNT
-  - name: FWD_RX_ERR_CNT
-    description: no description available.
-    array:
-      len: 4
-      stride: 1
-    byte_offset: 776
-    bit_size: 8
-    fieldset: FWD_RX_ERR_CNT
-  - name: ECAT_PU_ERR_CNT
-    description: ECAT Processing Unit Error Counter.
-    byte_offset: 780
-    bit_size: 8
-    fieldset: ECAT_PU_ERR_CNT
-  - name: PDI_ERR_CNT
-    description: PDI Error Counter.
-    byte_offset: 781
-    bit_size: 8
-    fieldset: PDI_ERR_CNT
-  - name: LOST_LINK_CNT
-    description: no description available.
-    array:
-      len: 4
-      stride: 1
-    byte_offset: 784
-    bit_size: 8
-    fieldset: LOST_LINK_CNT
-  - name: WDG_DIV
-    description: Watchdog Divider.
-    byte_offset: 1024
-    bit_size: 16
-    fieldset: WDG_DIV
-  - name: WDG_TIME_PDI
-    description: Watchdog Time PDI.
-    byte_offset: 1040
-    bit_size: 16
-    fieldset: WDG_TIME_PDI
-  - name: WDG_TIME_PDAT
-    description: Watchdog Time Process Data.
-    byte_offset: 1056
-    bit_size: 16
-    fieldset: WDG_TIME_PDAT
-  - name: WDG_STAT_PDAT
-    description: Watchdog Status Process Data.
-    byte_offset: 1088
-    bit_size: 16
-    fieldset: WDG_STAT_PDAT
-  - name: WDG_CNT_PDAT
-    description: Watchdog Counter Process Data.
-    byte_offset: 1090
-    bit_size: 8
-    fieldset: WDG_CNT_PDAT
-  - name: WDG_CNT_PDI
-    description: Watchdog Counter PDI.
-    byte_offset: 1091
-    bit_size: 8
-    fieldset: WDG_CNT_PDI
-  - name: EEPROM_CFG
-    description: EEPROM Configuration.
-    byte_offset: 1280
-    bit_size: 8
-    fieldset: EEPROM_CFG
-  - name: EEPROM_PDI_ACC_STAT
-    description: EEPROM PDI Access State.
-    byte_offset: 1281
-    bit_size: 8
-    fieldset: EEPROM_PDI_ACC_STAT
-  - name: EEPROM_CTRL_STAT
-    description: EEPROM Control/Status.
-    byte_offset: 1282
-    bit_size: 16
-    fieldset: EEPROM_CTRL_STAT
-  - name: EEPROM_ADDR
-    description: EEPROM Address.
-    byte_offset: 1284
-    fieldset: EEPROM_ADDR
-  - name: EEPROM_DATA
-    description: EEPROM Data.
-    byte_offset: 1288
-    bit_size: 64
-    fieldset: EEPROM_DATA
-  - name: MII_MNG_CS
-    description: MII Management Control/Status.
-    byte_offset: 1296
-    bit_size: 16
-    fieldset: MII_MNG_CS
-  - name: PHY_ADDR
-    description: PHY Address.
-    byte_offset: 1298
-    bit_size: 8
-    fieldset: PHY_ADDR
-  - name: PHY_REG_ADDR
-    description: PHY Register Address.
-    byte_offset: 1299
-    bit_size: 8
-    fieldset: PHY_REG_ADDR
-  - name: PHY_DATA
-    description: PHY Data.
-    byte_offset: 1300
-    bit_size: 16
-    fieldset: PHY_DATA
-  - name: MIIM_ECAT_ACC_STAT
-    description: MII Management ECAT Access State.
-    byte_offset: 1302
-    bit_size: 8
-    fieldset: MIIM_ECAT_ACC_STAT
-  - name: MIIM_PDI_ACC_STAT
-    description: MII Management PDI Access State.
-    byte_offset: 1303
-    bit_size: 8
-    fieldset: MIIM_PDI_ACC_STAT
-  - name: PHY_STAT
-    description: no description available.
-    array:
-      len: 4
-      stride: 1
-    byte_offset: 1304
-    bit_size: 8
-    fieldset: PHY_STAT
-  - name: FMMU
-    description: no description available.
-    array:
-      len: 8
-      stride: 16
-    byte_offset: 1536
-    block: FMMU
-  - name: SYNCM
-    description: no description available.
-    array:
-      len: 8
-      stride: 8
-    byte_offset: 2048
-    block: SYNCM
-  - name: RCV_TIME
-    description: no description available.
-    array:
-      len: 4
-      stride: 4
-    byte_offset: 2304
-    fieldset: RCV_TIME
-  - name: SYS_TIME
-    description: System Time.
-    byte_offset: 2320
-    bit_size: 64
-    fieldset: SYS_TIME
-  - name: RCVT_ECAT_PU
-    description: Receive Time ECAT Processing Unit.
-    byte_offset: 2328
-    bit_size: 64
-    fieldset: RCVT_ECAT_PU
-  - name: SYS_TIME_OFFSET
-    description: System Time Offset.
-    byte_offset: 2336
-    bit_size: 64
-    fieldset: SYS_TIME_OFFSET
-  - name: SYS_TIME_DELAY
-    description: System Time Delay.
-    byte_offset: 2344
-    fieldset: SYS_TIME_DELAY
-  - name: SYS_TIME_DIFF
-    description: System Time Difference.
-    byte_offset: 2348
-    fieldset: SYS_TIME_DIFF
-  - name: SPD_CNT_START
-    description: Speed Counter Start.
-    byte_offset: 2352
-    bit_size: 16
-    fieldset: SPD_CNT_START
-  - name: SPD_CNT_DIFF
-    description: Speed Counter Diff.
-    byte_offset: 2354
-    bit_size: 16
-    fieldset: SPD_CNT_DIFF
-  - name: SYS_TIME_DIFF_FD
-    description: System Time Difference Filter Depth.
-    byte_offset: 2356
-    bit_size: 8
-    fieldset: SYS_TIME_DIFF_FD
-  - name: SPD_CNT_FD
-    description: Speed Counter Filter Depth.
-    byte_offset: 2357
-    bit_size: 8
-    fieldset: SPD_CNT_FD
-  - name: RCV_TIME_LM
-    description: Receive Time Latch Mode.
-    byte_offset: 2358
-    bit_size: 8
-    fieldset: RCV_TIME_LM
-  - name: CYC_UNIT_CTRL
-    description: Cyclic Unit Control.
-    byte_offset: 2432
-    bit_size: 8
-    fieldset: CYC_UNIT_CTRL
-  - name: SYNCO_ACT
-    description: SYNC Out Unit Activation.
-    byte_offset: 2433
-    bit_size: 8
-    fieldset: SYNCO_ACT
-  - name: PULSE_LEN
-    description: Pulse Length of SyncSignals.
-    byte_offset: 2434
-    bit_size: 16
-    fieldset: PULSE_LEN
-  - name: ACT_STAT
-    description: Activation Status.
-    byte_offset: 2436
-    bit_size: 8
-    fieldset: ACT_STAT
-  - name: SYNC0_STAT
-    description: SYNC0 Status.
-    byte_offset: 2446
-    bit_size: 8
-    fieldset: SYNC0_STAT
-  - name: SYNC1_STAT
-    description: SYNC1 Status.
-    byte_offset: 2447
-    bit_size: 8
-    fieldset: SYNC1_STAT
-  - name: START_TIME_CO
-    description: Start Time Cyclic Operation.
-    byte_offset: 2448
-    bit_size: 64
-    fieldset: START_TIME_CO
-  - name: NXT_SYNC1_PULSE
-    description: Next SYNC1 Pulse.
-    byte_offset: 2456
-    bit_size: 64
-    fieldset: NXT_SYNC1_PULSE
-  - name: SYNC0_CYC_TIME
-    description: SYNC0 Cycle Time.
-    byte_offset: 2464
-    fieldset: SYNC0_CYC_TIME
-  - name: SYNC1_CYC_TIME
-    description: SYNC1 Cycle Time.
-    byte_offset: 2468
-    fieldset: SYNC1_CYC_TIME
-  - name: LATCH0_CTRL
-    description: Latch0 Control.
-    byte_offset: 2472
-    bit_size: 8
-    fieldset: LATCH0_CTRL
-  - name: LATCH1_CTRL
-    description: Latch1 Control.
-    byte_offset: 2473
-    bit_size: 8
-    fieldset: LATCH1_CTRL
-  - name: LATCH0_STAT
-    description: Latch0 Status.
-    byte_offset: 2478
-    bit_size: 8
-    fieldset: LATCH0_STAT
-  - name: LATCH1_STAT
-    description: Latch1 Status.
-    byte_offset: 2479
-    bit_size: 8
-    fieldset: LATCH1_STAT
-  - name: LATCH0_TIME_PE
-    description: Latch0 Time Positive Edge.
-    byte_offset: 2480
-    bit_size: 64
-    fieldset: LATCH0_TIME_PE
-  - name: LATCH0_TIME_NE
-    description: Latch0 Time Negative Edge.
-    byte_offset: 2488
-    bit_size: 64
-    fieldset: LATCH0_TIME_NE
-  - name: LATCH1_TIME_PE
-    description: Latch1 Time Positive Edge.
-    byte_offset: 2496
-    bit_size: 64
-    fieldset: LATCH1_TIME_PE
-  - name: LATCH1_TIME_NE
-    description: Latch1 Time Negative Edge.
-    byte_offset: 2504
-    bit_size: 64
-    fieldset: LATCH1_TIME_NE
-  - name: ECAT_BUF_CET
-    description: EtherCAT Buffer Change Event Time.
-    byte_offset: 2544
-    fieldset: ECAT_BUF_CET
-  - name: PDI_BUF_SET
-    description: PDI Buffer Start Event Time.
-    byte_offset: 2552
-    fieldset: PDI_BUF_SET
-  - name: PDI_BUF_CET
-    description: PDI Buffer Change Event Time.
-    byte_offset: 2556
-    fieldset: PDI_BUF_CET
-  - name: PID
-    description: Product ID.
-    byte_offset: 3584
-    bit_size: 64
-    fieldset: PID
-  - name: VID
-    description: Vendor ID.
-    byte_offset: 3592
-    bit_size: 64
-    fieldset: VID
-  - name: DIO_OUT_DATA
-    description: Digital I/O Output Data.
-    byte_offset: 3840
-    fieldset: DIO_OUT_DATA
-  - name: GPO
-    description: General Purpose Outputs.
-    byte_offset: 3856
-    bit_size: 64
-    fieldset: GPO
-  - name: GPI
-    description: General Purpose Inputs.
-    byte_offset: 3864
-    bit_size: 64
-    fieldset: GPI
-  - name: USER_RAM_BYTE0
-    description: User Ram Byte 0.
-    byte_offset: 3968
-    bit_size: 8
-    fieldset: USER_RAM_BYTE0
-  - name: USER_RAM_BYTE1
-    description: User Ram Byte 1.
-    byte_offset: 3969
-    bit_size: 8
-    fieldset: USER_RAM_BYTE1
-  - name: USER_RAM_BYTE2
-    description: User Ram Byte 2.
-    byte_offset: 3970
-    bit_size: 8
-    fieldset: USER_RAM_BYTE2
-  - name: USER_RAM_BYTE3
-    description: User Ram Byte 3.
-    byte_offset: 3971
-    bit_size: 8
-    fieldset: USER_RAM_BYTE3
-  - name: USER_RAM_BYTE4
-    description: User Ram Byte 4.
-    byte_offset: 3972
-    bit_size: 8
-    fieldset: USER_RAM_BYTE4
-  - name: USER_RAM_BYTE5
-    description: User Ram Byte 5.
-    byte_offset: 3973
-    bit_size: 8
-    fieldset: USER_RAM_BYTE5
-  - name: USER_RAM_BYTE6
-    description: User Ram Byte 6.
-    byte_offset: 3974
-    bit_size: 8
-    fieldset: USER_RAM_BYTE6
-  - name: USER_RAM_BYTE7
-    description: User Ram Byte 7.
-    byte_offset: 3975
-    bit_size: 8
-    fieldset: USER_RAM_BYTE7
-  - name: USER_RAM_BYTE8
-    description: User Ram Byte 8.
-    byte_offset: 3976
-    bit_size: 8
-    fieldset: USER_RAM_BYTE8
-  - name: USER_RAM_BYTE9
-    description: User Ram Byte 9.
-    byte_offset: 3977
-    bit_size: 8
-    fieldset: USER_RAM_BYTE9
-  - name: USER_RAM_BYTE10
-    description: User Ram Byte 10.
-    byte_offset: 3978
-    bit_size: 8
-    fieldset: USER_RAM_BYTE10
-  - name: USER_RAM_BYTE11
-    description: User Ram Byte 11.
-    byte_offset: 3979
-    bit_size: 8
-    fieldset: USER_RAM_BYTE11
-  - name: USER_RAM_BYTE14
-    description: User Ram Byte 14.
-    byte_offset: 3982
-    bit_size: 8
-    fieldset: USER_RAM_BYTE14
-  - name: USER_RAM_BYTE15
-    description: User Ram Byte 15.
-    byte_offset: 3983
-    bit_size: 8
-    fieldset: USER_RAM_BYTE15
-  - name: USER_RAM_BYTE19
-    description: User Ram Byte 19.
-    byte_offset: 3987
-    bit_size: 8
-    fieldset: USER_RAM_BYTE19
-  - name: PDRAM
-    description: Process Data Ram.
-    byte_offset: 4096
-    fieldset: PDRAM
-  - name: PDRAM_ALS
-    description: Process Data Ram Alias.
-    byte_offset: 65536
-    fieldset: PDRAM_ALS
-  - name: GPR_CFG0
-    description: General Purpose Configure 0.
-    byte_offset: 126976
-    fieldset: GPR_CFG0
-  - name: GPR_CFG1
-    description: General Purpose Configure 1.
-    byte_offset: 126980
-    fieldset: GPR_CFG1
-  - name: GPR_CFG2
-    description: General Purpose Configure 2.
-    byte_offset: 126984
-    fieldset: GPR_CFG2
-  - name: PHY_CFG0
-    description: PHY Configure 0.
-    byte_offset: 126992
-    fieldset: PHY_CFG0
-  - name: PHY_CFG1
-    description: PHY Configure 1.
-    byte_offset: 126996
-    fieldset: PHY_CFG1
-  - name: GPIO_CTRL
-    description: GPIO Output Enable.
-    byte_offset: 127008
-    fieldset: GPIO_CTRL
-  - name: GPI_OVERRIDE0
-    description: GPI low word Override value.
-    byte_offset: 127024
-    fieldset: GPI_OVERRIDE0
-  - name: GPI_OVERRIDE1
-    description: GPI high word Override value.
-    byte_offset: 127028
-    fieldset: GPI_OVERRIDE1
-  - name: GPO_REG0
-    description: GPO low word read value.
-    byte_offset: 127032
-    fieldset: GPO_REG0
-  - name: GPO_REG1
-    description: GPO high word read value.
-    byte_offset: 127036
-    fieldset: GPO_REG1
-  - name: GPI_REG0
-    description: GPI low word read value.
-    byte_offset: 127040
-    fieldset: GPI_REG0
-  - name: GPI_REG1
-    description: GPI high word read value.
-    byte_offset: 127044
-    fieldset: GPI_REG1
-  - name: GPR_STATUS
-    description: global status register.
-    byte_offset: 127072
-    fieldset: GPR_STATUS
-  - name: IO_CFG
-    description: no description available.
-    array:
-      len: 9
-      stride: 4
-    byte_offset: 127104
-    fieldset: IO_CFG
+    - name: TYPE
+      description: Type of EtherCAT controller.
+      byte_offset: 0
+      bit_size: 8
+      fieldset: ESC_TYPE
+    - name: REVISION
+      description: Revision of EtherCAT controller.
+      byte_offset: 1
+      bit_size: 8
+      fieldset: REVISION
+    - name: BUILD
+      description: Build of EtherCAT controller.
+      byte_offset: 2
+      bit_size: 16
+      fieldset: BUILD
+    - name: FMMU_NUM
+      description: FMMU supported.
+      byte_offset: 4
+      bit_size: 8
+      fieldset: FMMU_NUM
+    - name: SYNCM_NUM
+      description: SyncManagers supported.
+      byte_offset: 5
+      bit_size: 8
+      fieldset: SYNCM_NUM
+    - name: RAM_SIZE
+      description: RAM Size.
+      byte_offset: 6
+      bit_size: 8
+      fieldset: RAM_SIZE
+    - name: PORT_DESC
+      description: Port Descriptor.
+      byte_offset: 7
+      bit_size: 8
+      fieldset: PORT_DESC
+    - name: FEATURE
+      description: ESC Feature supported.
+      byte_offset: 8
+      bit_size: 16
+      fieldset: FEATURE
+    - name: STATION_ADDR
+      description: Configured Station Address.
+      byte_offset: 16
+      bit_size: 16
+      fieldset: STATION_ADDR
+    - name: STATION_ALS
+      description: Configured Station Alias.
+      byte_offset: 18
+      bit_size: 16
+      fieldset: STATION_ALS
+    - name: REG_WEN
+      description: Register Write Enable.
+      byte_offset: 32
+      bit_size: 8
+      fieldset: REG_WEN
+    - name: REG_WP
+      description: Register Write Protection.
+      byte_offset: 33
+      bit_size: 8
+      fieldset: REG_WP
+    - name: ESC_WEN
+      description: ESC Write Enable.
+      byte_offset: 48
+      bit_size: 8
+      fieldset: ESC_WEN
+    - name: ESC_WP
+      description: ESC Write Protection.
+      byte_offset: 49
+      bit_size: 8
+      fieldset: ESC_WP
+    - name: ESC_RST_ECAT
+      description: ESC Reset ECAT.
+      byte_offset: 64
+      bit_size: 8
+      fieldset: ESC_RST_ECAT
+    - name: ESC_RST_PDI
+      description: ESC Reset PDI.
+      byte_offset: 65
+      bit_size: 8
+      fieldset: ESC_RST_PDI
+    - name: ESC_DL_CTRL
+      description: ESC DL Control.
+      byte_offset: 256
+      fieldset: ESC_DL_CTRL
+    - name: PHYSICAL_RW_OFFSET
+      description: Physical Read/Write Offset.
+      byte_offset: 264
+      bit_size: 16
+      fieldset: PHYSICAL_RW_OFFSET
+    - name: ESC_DL_STAT
+      description: ESC DL Status.
+      byte_offset: 272
+      bit_size: 16
+      fieldset: ESC_DL_STAT
+    - name: AL_CTRL
+      description: AL Control.
+      byte_offset: 288
+      bit_size: 16
+      fieldset: AL_CTRL
+    - name: AL_STAT
+      description: AL Status.
+      byte_offset: 304
+      bit_size: 16
+      fieldset: AL_STAT
+    - name: AL_STAT_CODE
+      description: AL Status Code.
+      byte_offset: 308
+      bit_size: 16
+      fieldset: AL_STAT_CODE
+    - name: RUN_LED_OVRD
+      description: RUN LED Override.
+      byte_offset: 312
+      bit_size: 8
+      fieldset: RUN_LED_OVRD
+    - name: ERR_LED_OVRD
+      description: ERR LED Override.
+      byte_offset: 313
+      bit_size: 8
+      fieldset: ERR_LED_OVRD
+    - name: PDI_CTRL
+      description: PDI Control.
+      byte_offset: 320
+      bit_size: 8
+      fieldset: ESC_PDI_CTRL
+    - name: ESC_CFG
+      description: ESC Configuration.
+      byte_offset: 321
+      bit_size: 8
+      fieldset: ESC_CFG
+    - name: PDI_INFO
+      description: PDI Information.
+      byte_offset: 334
+      bit_size: 16
+      fieldset: PDI_INFO
+    - name: PDI_CFG
+      description: PDI Configuration.
+      byte_offset: 336
+      bit_size: 8
+      fieldset: PDI_CFG
+    - name: PDI_SL_CFG
+      description: PDI Sync/Latch[1:0] Configuration.
+      byte_offset: 337
+      bit_size: 8
+      fieldset: PDI_SL_CFG
+    - name: PDI_EXT_CFG
+      description: PDI Extended Configuration.
+      byte_offset: 338
+      bit_size: 16
+      fieldset: PDI_EXT_CFG
+    - name: ECAT_EVT_MSK
+      description: ECAT Event Mask.
+      byte_offset: 512
+      bit_size: 16
+      fieldset: ECAT_EVT_MSK
+    - name: PDI_AL_EVT_MSK
+      description: PDI AL Event Mask.
+      byte_offset: 516
+      fieldset: PDI_AL_EVT_MSK
+    - name: ECAT_EVT_REQ
+      description: ECAT Event Request.
+      byte_offset: 528
+      bit_size: 16
+      fieldset: ECAT_EVT_REQ
+    - name: AL_EVT_REQ
+      description: AL Event Request.
+      byte_offset: 544
+      fieldset: AL_EVT_REQ
+    - name: RX_ERR_CNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 2
+      byte_offset: 768
+      bit_size: 16
+      fieldset: RX_ERR_CNT
+    - name: FWD_RX_ERR_CNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 1
+      byte_offset: 776
+      bit_size: 8
+      fieldset: FWD_RX_ERR_CNT
+    - name: ECAT_PU_ERR_CNT
+      description: ECAT Processing Unit Error Counter.
+      byte_offset: 780
+      bit_size: 8
+      fieldset: ECAT_PU_ERR_CNT
+    - name: PDI_ERR_CNT
+      description: PDI Error Counter.
+      byte_offset: 781
+      bit_size: 8
+      fieldset: PDI_ERR_CNT
+    - name: LOST_LINK_CNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 1
+      byte_offset: 784
+      bit_size: 8
+      fieldset: LOST_LINK_CNT
+    - name: WDG_DIV
+      description: Watchdog Divider.
+      byte_offset: 1024
+      bit_size: 16
+      fieldset: WDG_DIV
+    - name: WDG_TIME_PDI
+      description: Watchdog Time PDI.
+      byte_offset: 1040
+      bit_size: 16
+      fieldset: WDG_TIME_PDI
+    - name: WDG_TIME_PDAT
+      description: Watchdog Time Process Data.
+      byte_offset: 1056
+      bit_size: 16
+      fieldset: WDG_TIME_PDAT
+    - name: WDG_STAT_PDAT
+      description: Watchdog Status Process Data.
+      byte_offset: 1088
+      bit_size: 16
+      fieldset: WDG_STAT_PDAT
+    - name: WDG_CNT_PDAT
+      description: Watchdog Counter Process Data.
+      byte_offset: 1090
+      bit_size: 8
+      fieldset: WDG_CNT_PDAT
+    - name: WDG_CNT_PDI
+      description: Watchdog Counter PDI.
+      byte_offset: 1091
+      bit_size: 8
+      fieldset: WDG_CNT_PDI
+    - name: EEPROM_CFG
+      description: EEPROM Configuration.
+      byte_offset: 1280
+      bit_size: 8
+      fieldset: EEPROM_CFG
+    - name: EEPROM_PDI_ACC_STAT
+      description: EEPROM PDI Access State.
+      byte_offset: 1281
+      bit_size: 8
+      fieldset: EEPROM_PDI_ACC_STAT
+    - name: EEPROM_CTRL_STAT
+      description: EEPROM Control/Status.
+      byte_offset: 1282
+      bit_size: 16
+      fieldset: EEPROM_CTRL_STAT
+    - name: EEPROM_ADDR
+      description: EEPROM Address.
+      byte_offset: 1284
+      fieldset: EEPROM_ADDR
+    - name: EEPROM_DATA
+      description: EEPROM Data.
+      byte_offset: 1288
+      bit_size: 64
+      fieldset: EEPROM_DATA
+    - name: MII_MNG_CS
+      description: MII Management Control/Status.
+      byte_offset: 1296
+      bit_size: 16
+      fieldset: MII_MNG_CS
+    - name: PHY_ADDR
+      description: PHY Address.
+      byte_offset: 1298
+      bit_size: 8
+      fieldset: PHY_ADDR
+    - name: PHY_REG_ADDR
+      description: PHY Register Address.
+      byte_offset: 1299
+      bit_size: 8
+      fieldset: PHY_REG_ADDR
+    - name: PHY_DATA
+      description: PHY Data.
+      byte_offset: 1300
+      bit_size: 16
+      fieldset: PHY_DATA
+    - name: MIIM_ECAT_ACC_STAT
+      description: MII Management ECAT Access State.
+      byte_offset: 1302
+      bit_size: 8
+      fieldset: MIIM_ECAT_ACC_STAT
+    - name: MIIM_PDI_ACC_STAT
+      description: MII Management PDI Access State.
+      byte_offset: 1303
+      bit_size: 8
+      fieldset: MIIM_PDI_ACC_STAT
+    - name: PHY_STAT
+      description: no description available.
+      array:
+        len: 4
+        stride: 1
+      byte_offset: 1304
+      bit_size: 8
+      fieldset: PHY_STAT
+    - name: FMMU
+      description: no description available.
+      array:
+        len: 8
+        stride: 16
+      byte_offset: 1536
+      block: FMMU
+    - name: SYNCM
+      description: no description available.
+      array:
+        len: 8
+        stride: 8
+      byte_offset: 2048
+      block: SYNCM
+    - name: RCV_TIME
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 2304
+      fieldset: RCV_TIME
+    - name: SYS_TIME
+      description: System Time.
+      byte_offset: 2320
+      bit_size: 64
+      fieldset: SYS_TIME
+    - name: RCVT_ECAT_PU
+      description: Receive Time ECAT Processing Unit.
+      byte_offset: 2328
+      bit_size: 64
+      fieldset: RCVT_ECAT_PU
+    - name: SYS_TIME_OFFSET
+      description: System Time Offset.
+      byte_offset: 2336
+      bit_size: 64
+      fieldset: SYS_TIME_OFFSET
+    - name: SYS_TIME_DELAY
+      description: System Time Delay.
+      byte_offset: 2344
+      fieldset: SYS_TIME_DELAY
+    - name: SYS_TIME_DIFF
+      description: System Time Difference.
+      byte_offset: 2348
+      fieldset: SYS_TIME_DIFF
+    - name: SPD_CNT_START
+      description: Speed Counter Start.
+      byte_offset: 2352
+      bit_size: 16
+      fieldset: SPD_CNT_START
+    - name: SPD_CNT_DIFF
+      description: Speed Counter Diff.
+      byte_offset: 2354
+      bit_size: 16
+      fieldset: SPD_CNT_DIFF
+    - name: SYS_TIME_DIFF_FD
+      description: System Time Difference Filter Depth.
+      byte_offset: 2356
+      bit_size: 8
+      fieldset: SYS_TIME_DIFF_FD
+    - name: SPD_CNT_FD
+      description: Speed Counter Filter Depth.
+      byte_offset: 2357
+      bit_size: 8
+      fieldset: SPD_CNT_FD
+    - name: RCV_TIME_LM
+      description: Receive Time Latch Mode.
+      byte_offset: 2358
+      bit_size: 8
+      fieldset: RCV_TIME_LM
+    - name: CYC_UNIT_CTRL
+      description: Cyclic Unit Control.
+      byte_offset: 2432
+      bit_size: 8
+      fieldset: CYC_UNIT_CTRL
+    - name: SYNCO_ACT
+      description: SYNC Out Unit Activation.
+      byte_offset: 2433
+      bit_size: 8
+      fieldset: SYNCO_ACT
+    - name: PULSE_LEN
+      description: Pulse Length of SyncSignals.
+      byte_offset: 2434
+      bit_size: 16
+      fieldset: PULSE_LEN
+    - name: ACT_STAT
+      description: Activation Status.
+      byte_offset: 2436
+      bit_size: 8
+      fieldset: ACT_STAT
+    - name: SYNC0_STAT
+      description: SYNC0 Status.
+      byte_offset: 2446
+      bit_size: 8
+      fieldset: SYNC0_STAT
+    - name: SYNC1_STAT
+      description: SYNC1 Status.
+      byte_offset: 2447
+      bit_size: 8
+      fieldset: SYNC1_STAT
+    - name: START_TIME_CO
+      description: Start Time Cyclic Operation.
+      byte_offset: 2448
+      bit_size: 64
+      fieldset: START_TIME_CO
+    - name: NXT_SYNC1_PULSE
+      description: Next SYNC1 Pulse.
+      byte_offset: 2456
+      bit_size: 64
+      fieldset: NXT_SYNC1_PULSE
+    - name: SYNC0_CYC_TIME
+      description: SYNC0 Cycle Time.
+      byte_offset: 2464
+      fieldset: SYNC0_CYC_TIME
+    - name: SYNC1_CYC_TIME
+      description: SYNC1 Cycle Time.
+      byte_offset: 2468
+      fieldset: SYNC1_CYC_TIME
+    - name: LATCH0_CTRL
+      description: Latch0 Control.
+      byte_offset: 2472
+      bit_size: 8
+      fieldset: LATCH0_CTRL
+    - name: LATCH1_CTRL
+      description: Latch1 Control.
+      byte_offset: 2473
+      bit_size: 8
+      fieldset: LATCH1_CTRL
+    - name: LATCH0_STAT
+      description: Latch0 Status.
+      byte_offset: 2478
+      bit_size: 8
+      fieldset: LATCH0_STAT
+    - name: LATCH1_STAT
+      description: Latch1 Status.
+      byte_offset: 2479
+      bit_size: 8
+      fieldset: LATCH1_STAT
+    - name: LATCH0_TIME_PE
+      description: Latch0 Time Positive Edge.
+      byte_offset: 2480
+      bit_size: 64
+      fieldset: LATCH0_TIME_PE
+    - name: LATCH0_TIME_NE
+      description: Latch0 Time Negative Edge.
+      byte_offset: 2488
+      bit_size: 64
+      fieldset: LATCH0_TIME_NE
+    - name: LATCH1_TIME_PE
+      description: Latch1 Time Positive Edge.
+      byte_offset: 2496
+      bit_size: 64
+      fieldset: LATCH1_TIME_PE
+    - name: LATCH1_TIME_NE
+      description: Latch1 Time Negative Edge.
+      byte_offset: 2504
+      bit_size: 64
+      fieldset: LATCH1_TIME_NE
+    - name: ECAT_BUF_CET
+      description: EtherCAT Buffer Change Event Time.
+      byte_offset: 2544
+      fieldset: ECAT_BUF_CET
+    - name: PDI_BUF_SET
+      description: PDI Buffer Start Event Time.
+      byte_offset: 2552
+      fieldset: PDI_BUF_SET
+    - name: PDI_BUF_CET
+      description: PDI Buffer Change Event Time.
+      byte_offset: 2556
+      fieldset: PDI_BUF_CET
+    - name: PID
+      description: Product ID.
+      byte_offset: 3584
+      bit_size: 64
+      fieldset: PID
+    - name: VID
+      description: Vendor ID.
+      byte_offset: 3592
+      bit_size: 64
+      fieldset: VID
+    - name: DIO_OUT_DATA
+      description: Digital I/O Output Data.
+      byte_offset: 3840
+      fieldset: DIO_OUT_DATA
+    - name: GPO
+      description: General Purpose Outputs.
+      byte_offset: 3856
+      bit_size: 64
+      fieldset: GPO
+    - name: GPI
+      description: General Purpose Inputs.
+      byte_offset: 3864
+      bit_size: 64
+      fieldset: GPI
+    - name: USER_RAM_BYTE0
+      description: User Ram Byte 0.
+      byte_offset: 3968
+      bit_size: 8
+      fieldset: USER_RAM_BYTE0
+    - name: USER_RAM_BYTE1
+      description: User Ram Byte 1.
+      byte_offset: 3969
+      bit_size: 8
+      fieldset: USER_RAM_BYTE1
+    - name: USER_RAM_BYTE2
+      description: User Ram Byte 2.
+      byte_offset: 3970
+      bit_size: 8
+      fieldset: USER_RAM_BYTE2
+    - name: USER_RAM_BYTE3
+      description: User Ram Byte 3.
+      byte_offset: 3971
+      bit_size: 8
+      fieldset: USER_RAM_BYTE3
+    - name: USER_RAM_BYTE4
+      description: User Ram Byte 4.
+      byte_offset: 3972
+      bit_size: 8
+      fieldset: USER_RAM_BYTE4
+    - name: USER_RAM_BYTE5
+      description: User Ram Byte 5.
+      byte_offset: 3973
+      bit_size: 8
+      fieldset: USER_RAM_BYTE5
+    - name: USER_RAM_BYTE6
+      description: User Ram Byte 6.
+      byte_offset: 3974
+      bit_size: 8
+      fieldset: USER_RAM_BYTE6
+    - name: USER_RAM_BYTE7
+      description: User Ram Byte 7.
+      byte_offset: 3975
+      bit_size: 8
+      fieldset: USER_RAM_BYTE7
+    - name: USER_RAM_BYTE8
+      description: User Ram Byte 8.
+      byte_offset: 3976
+      bit_size: 8
+      fieldset: USER_RAM_BYTE8
+    - name: USER_RAM_BYTE9
+      description: User Ram Byte 9.
+      byte_offset: 3977
+      bit_size: 8
+      fieldset: USER_RAM_BYTE9
+    - name: USER_RAM_BYTE10
+      description: User Ram Byte 10.
+      byte_offset: 3978
+      bit_size: 8
+      fieldset: USER_RAM_BYTE10
+    - name: USER_RAM_BYTE11
+      description: User Ram Byte 11.
+      byte_offset: 3979
+      bit_size: 8
+      fieldset: USER_RAM_BYTE11
+    - name: USER_RAM_BYTE14
+      description: User Ram Byte 14.
+      byte_offset: 3982
+      bit_size: 8
+      fieldset: USER_RAM_BYTE14
+    - name: USER_RAM_BYTE15
+      description: User Ram Byte 15.
+      byte_offset: 3983
+      bit_size: 8
+      fieldset: USER_RAM_BYTE15
+    - name: USER_RAM_BYTE19
+      description: User Ram Byte 19.
+      byte_offset: 3987
+      bit_size: 8
+      fieldset: USER_RAM_BYTE19
+    - name: PDRAM
+      description: Process Data Ram.
+      byte_offset: 4096
+      fieldset: PDRAM
+    - name: PDRAM_ALS
+      description: Process Data Ram Alias.
+      byte_offset: 65536
+      fieldset: PDRAM_ALS
+    - name: GPR_CFG0
+      description: General Purpose Configure 0.
+      byte_offset: 126976
+      fieldset: GPR_CFG0
+    - name: GPR_CFG1
+      description: General Purpose Configure 1.
+      byte_offset: 126980
+      fieldset: GPR_CFG1
+    - name: GPR_CFG2
+      description: General Purpose Configure 2.
+      byte_offset: 126984
+      fieldset: GPR_CFG2
+    - name: PHY_CFG0
+      description: PHY Configure 0.
+      byte_offset: 126992
+      fieldset: PHY_CFG0
+    - name: PHY_CFG1
+      description: PHY Configure 1.
+      byte_offset: 126996
+      fieldset: PHY_CFG1
+    - name: GPIO_CTRL
+      description: GPIO Output Enable.
+      byte_offset: 127008
+      fieldset: GPIO_CTRL
+    - name: GPI_OVERRIDE0
+      description: GPI low word Override value.
+      byte_offset: 127024
+      fieldset: GPI_OVERRIDE0
+    - name: GPI_OVERRIDE1
+      description: GPI high word Override value.
+      byte_offset: 127028
+      fieldset: GPI_OVERRIDE1
+    - name: GPO_REG0
+      description: GPO low word read value.
+      byte_offset: 127032
+      fieldset: GPO_REG0
+    - name: GPO_REG1
+      description: GPO high word read value.
+      byte_offset: 127036
+      fieldset: GPO_REG1
+    - name: GPI_REG0
+      description: GPI low word read value.
+      byte_offset: 127040
+      fieldset: GPI_REG0
+    - name: GPI_REG1
+      description: GPI high word read value.
+      byte_offset: 127044
+      fieldset: GPI_REG1
+    - name: GPR_STATUS
+      description: global status register.
+      byte_offset: 127072
+      fieldset: GPR_STATUS
+    - name: IO_CFG
+      description: no description available.
+      array:
+        len: 9
+        stride: 4
+      byte_offset: 127104
+      fieldset: IO_CFG
 block/FMMU:
   description: no description available.
   items:
-  - name: LOGIC_START_ADDR
-    description: Logical Start Address.
-    byte_offset: 0
-    fieldset: LOGIC_START_ADDR
-  - name: LENGTH
-    description: Length.
-    byte_offset: 4
-    bit_size: 16
-    fieldset: FMMU_LENGTH
-  - name: LOGIC_START_BIT
-    description: Logical Start Bit.
-    byte_offset: 6
-    bit_size: 8
-    fieldset: LOGIC_START_BIT
-  - name: LOGIC_STOP_BIT
-    description: Logical Stop Bit.
-    byte_offset: 7
-    bit_size: 8
-    fieldset: LOGIC_STOP_BIT
-  - name: PHYSICAL_START_ADDR
-    description: Physical Start Address.
-    byte_offset: 8
-    bit_size: 16
-    fieldset: FMMU_PHYSICAL_START_ADDR
-  - name: PHYSICAL_START_BIT
-    description: Physical Start Bit.
-    byte_offset: 10
-    bit_size: 8
-    fieldset: PHYSICAL_START_BIT
-  - name: TYPE
-    description: Type.
-    byte_offset: 11
-    bit_size: 8
-    fieldset: FMMU_TYPE
-  - name: ACTIVATE
-    description: Activate.
-    byte_offset: 12
-    bit_size: 8
-    fieldset: FMMU_ACTIVATE
+    - name: LOGIC_START_ADDR
+      description: Logical Start Address.
+      byte_offset: 0
+      fieldset: LOGIC_START_ADDR
+    - name: LENGTH
+      description: Length.
+      byte_offset: 4
+      bit_size: 16
+      fieldset: FMMU_LENGTH
+    - name: LOGIC_START_BIT
+      description: Logical Start Bit.
+      byte_offset: 6
+      bit_size: 8
+      fieldset: LOGIC_START_BIT
+    - name: LOGIC_STOP_BIT
+      description: Logical Stop Bit.
+      byte_offset: 7
+      bit_size: 8
+      fieldset: LOGIC_STOP_BIT
+    - name: PHYSICAL_START_ADDR
+      description: Physical Start Address.
+      byte_offset: 8
+      bit_size: 16
+      fieldset: FMMU_PHYSICAL_START_ADDR
+    - name: PHYSICAL_START_BIT
+      description: Physical Start Bit.
+      byte_offset: 10
+      bit_size: 8
+      fieldset: PHYSICAL_START_BIT
+    - name: TYPE
+      description: Type.
+      byte_offset: 11
+      bit_size: 8
+      fieldset: FMMU_TYPE
+    - name: ACTIVATE
+      description: Activate.
+      byte_offset: 12
+      bit_size: 8
+      fieldset: FMMU_ACTIVATE
 block/SYNCM:
   description: no description available.
   items:
-  - name: PHYSICAL_START_ADDR
-    description: Physical Start Address.
-    byte_offset: 0
-    bit_size: 16
-    fieldset: SYNCM_PHYSICAL_START_ADDR
-  - name: LENGTH
-    description: Length.
-    byte_offset: 2
-    bit_size: 16
-    fieldset: SYNCM_LENGTH
-  - name: CONTROL
-    description: Control.
-    byte_offset: 4
-    bit_size: 8
-    fieldset: CONTROL
-  - name: STATUS
-    description: Status.
-    byte_offset: 5
-    bit_size: 8
-    fieldset: STATUS
-  - name: ACTIVATE
-    description: Activate.
-    byte_offset: 6
-    bit_size: 8
-    fieldset: SYNCM_ACTIVATE
-  - name: PDI_CTRL
-    description: PDI Control.
-    byte_offset: 7
-    bit_size: 8
-    fieldset: SYNCM_PDI_CTRL
+    - name: PHYSICAL_START_ADDR
+      description: Physical Start Address.
+      byte_offset: 0
+      bit_size: 16
+      fieldset: SYNCM_PHYSICAL_START_ADDR
+    - name: LENGTH
+      description: Length.
+      byte_offset: 2
+      bit_size: 16
+      fieldset: SYNCM_LENGTH
+    - name: CONTROL
+      description: Control.
+      byte_offset: 4
+      bit_size: 8
+      fieldset: CONTROL
+    - name: STATUS
+      description: Status.
+      byte_offset: 5
+      bit_size: 8
+      fieldset: STATUS
+    - name: ACTIVATE
+      description: Activate.
+      byte_offset: 6
+      bit_size: 8
+      fieldset: SYNCM_ACTIVATE
+    - name: PDI_CTRL
+      description: PDI Control.
+      byte_offset: 7
+      bit_size: 8
+      fieldset: SYNCM_PDI_CTRL
 fieldset/ACT_STAT:
   description: Activation Status.
   bit_size: 8
   fields:
-  - name: SYNC0
-    description: 'SYNC0 activation state: 0:First SYNC0 pulse is not pending 1:First SYNC0 pulse is pending.'
-    bit_offset: 0
-    bit_size: 1
-  - name: SYNC1
-    description: 'SYNC1 activation state: 0:First SYNC1 pulse is not pending 1:First SYNC1 pulse is pending.'
-    bit_offset: 1
-    bit_size: 1
-  - name: CHK_RSLT
-    description: 'Start Time Cyclic Operation (0x0990:0x0997) plausibility check result when Sync Out Unit was activated: 0:Start Time was within near future 1:Start Time was out of near future (0x0981[6]).'
-    bit_offset: 2
-    bit_size: 1
+    - name: SYNC0
+      description: "SYNC0 activation state: 0:First SYNC0 pulse is not pending 1:First SYNC0 pulse is pending."
+      bit_offset: 0
+      bit_size: 1
+    - name: SYNC1
+      description: "SYNC1 activation state: 0:First SYNC1 pulse is not pending 1:First SYNC1 pulse is pending."
+      bit_offset: 1
+      bit_size: 1
+    - name: CHK_RSLT
+      description: "Start Time Cyclic Operation (0x0990:0x0997) plausibility check result when Sync Out Unit was activated: 0:Start Time was within near future 1:Start Time was out of near future (0x0981[6])."
+      bit_offset: 2
+      bit_size: 1
 fieldset/AL_CTRL:
   description: AL Control.
   bit_size: 16
   fields:
-  - name: IST
-    description: 'Initiate State Transition of the Device State Machine: 1:Request Init State 3:Request Bootstrap State 2:Request Pre-Operational State 4:Request Safe-Operational State 8:Request Operational State.'
-    bit_offset: 0
-    bit_size: 4
-  - name: EIA
-    description: 'Error Ind Ack: 0:No Ack of Error Ind in AL status register 1:Ack of Error Ind in AL status register.'
-    bit_offset: 4
-    bit_size: 1
-  - name: DI
-    description: 'Device Identification: 0:No request 1:Device Identification request.'
-    bit_offset: 5
-    bit_size: 1
+    - name: IST
+      description: "Initiate State Transition of the Device State Machine: 1:Request Init State 3:Request Bootstrap State 2:Request Pre-Operational State 4:Request Safe-Operational State 8:Request Operational State."
+      bit_offset: 0
+      bit_size: 4
+    - name: EIA
+      description: "Error Ind Ack: 0:No Ack of Error Ind in AL status register 1:Ack of Error Ind in AL status register."
+      bit_offset: 4
+      bit_size: 1
+    - name: DI
+      description: "Device Identification: 0:No request 1:Device Identification request."
+      bit_offset: 5
+      bit_size: 1
 fieldset/AL_EVT_REQ:
   description: AL Event Request.
   fields:
-  - name: ALC_EVT
-    description: 'AL Control event: 0:No AL Control Register change 1:AL Control Register has been written3 (Bit is cleared by reading AL Control register 0x0120:0x0121 from PDI).'
-    bit_offset: 0
-    bit_size: 1
-  - name: DCL_EVT
-    description: 'DC Latch event: 0:No change on DC Latch Inputs 1:At least one change on DC Latch Inputs (Bit is cleared by reading DC Latch event times from PDI, so that Latch 0/1 Status 0x09AE:0x09AF indicates no event. Available if Latch Unit is PDI-controlled).'
-    bit_offset: 1
-    bit_size: 1
-  - name: ST_DC_SYNC0
-    description: 'State of DC SYNC0 (if register 0x0151[3]=1): (Bit is cleared by reading SYNC0 status 0x098E from PDI, use only in Acknowledge mode).'
-    bit_offset: 2
-    bit_size: 1
-  - name: ST_DC_SYNC1
-    description: 'State of DC SYNC1 (if register 0x0151[7]=1): (Bit is cleared by reading of SYNC1 status 0x098F from PDI, use only in Acknowledge mode).'
-    bit_offset: 3
-    bit_size: 1
-  - name: SM_ACT
-    description: 'SyncManager activation register (SyncManager register offset 0x6) changed: 0:No change in any SyncManager 1:At least one SyncManager changed (Bit is cleared by reading SyncManager Activation registers 0x0806 etc. from PDI).'
-    bit_offset: 4
-    bit_size: 1
-  - name: EE_EMU
-    description: 'EEPROM Emulation: 0:No command pending 1:EEPROM command pending (Bit is cleared by acknowledging the command in EEPROM Control/Status register 0x0502:0x0503[10:8] from PDI).'
-    bit_offset: 5
-    bit_size: 1
-  - name: WDG_PD
-    description: 'Watchdog Process Data: 0:Has not expired 1:Has expired (Bit is cleared by reading Watchdog Status Process Data 0x0440 from PDI).'
-    bit_offset: 6
-    bit_size: 1
-  - name: SM_INT
-    description: 'SyncManager interrupts (SyncManager register offset 0x5, bit [0] or [1]): 0:No SyncManager 0 interrupt 1:SyncManager 0 interrupt pending 0:No SyncManager 1 interrupt 1:SyncManager 1 interrupt pending … 0:No SyncManager 15 interrupt 1:SyncManager 15 interrupt pending.'
-    bit_offset: 8
-    bit_size: 16
+    - name: ALC_EVT
+      description: "AL Control event: 0:No AL Control Register change 1:AL Control Register has been written3 (Bit is cleared by reading AL Control register 0x0120:0x0121 from PDI)."
+      bit_offset: 0
+      bit_size: 1
+    - name: DCL_EVT
+      description: "DC Latch event: 0:No change on DC Latch Inputs 1:At least one change on DC Latch Inputs (Bit is cleared by reading DC Latch event times from PDI, so that Latch 0/1 Status 0x09AE:0x09AF indicates no event. Available if Latch Unit is PDI-controlled)."
+      bit_offset: 1
+      bit_size: 1
+    - name: ST_DC_SYNC0
+      description: "State of DC SYNC0 (if register 0x0151[3]=1): (Bit is cleared by reading SYNC0 status 0x098E from PDI, use only in Acknowledge mode)."
+      bit_offset: 2
+      bit_size: 1
+    - name: ST_DC_SYNC1
+      description: "State of DC SYNC1 (if register 0x0151[7]=1): (Bit is cleared by reading of SYNC1 status 0x098F from PDI, use only in Acknowledge mode)."
+      bit_offset: 3
+      bit_size: 1
+    - name: SM_ACT
+      description: "SyncManager activation register (SyncManager register offset 0x6) changed: 0:No change in any SyncManager 1:At least one SyncManager changed (Bit is cleared by reading SyncManager Activation registers 0x0806 etc. from PDI)."
+      bit_offset: 4
+      bit_size: 1
+    - name: EE_EMU
+      description: "EEPROM Emulation: 0:No command pending 1:EEPROM command pending (Bit is cleared by acknowledging the command in EEPROM Control/Status register 0x0502:0x0503[10:8] from PDI)."
+      bit_offset: 5
+      bit_size: 1
+    - name: WDG_PD
+      description: "Watchdog Process Data: 0:Has not expired 1:Has expired (Bit is cleared by reading Watchdog Status Process Data 0x0440 from PDI)."
+      bit_offset: 6
+      bit_size: 1
+    - name: SM_INT
+      description: "SyncManager interrupts (SyncManager register offset 0x5, bit [0] or [1]): 0:No SyncManager 0 interrupt 1:SyncManager 0 interrupt pending 0:No SyncManager 1 interrupt 1:SyncManager 1 interrupt pending … 0:No SyncManager 15 interrupt 1:SyncManager 15 interrupt pending."
+      bit_offset: 8
+      bit_size: 16
 fieldset/AL_STAT:
   description: AL Status.
   bit_size: 16
   fields:
-  - name: AS
-    description: 'Actual State of the Device State Machine: 1:Init State 3:Bootstrap State 2:Pre-Operational State 4:Safe-Operational State 8:Operational State.'
-    bit_offset: 0
-    bit_size: 4
-  - name: EI
-    description: 'Error Ind: 0:Device is in State as requested or Flag cleared by command 1:Device has not entered requested State or changed State as result of a local action.'
-    bit_offset: 4
-    bit_size: 1
-  - name: DI
-    description: 'Device Identification: 0:Device Identification not valid 1:Device Identification loaded.'
-    bit_offset: 5
-    bit_size: 1
+    - name: AS
+      description: "Actual State of the Device State Machine: 1:Init State 3:Bootstrap State 2:Pre-Operational State 4:Safe-Operational State 8:Operational State."
+      bit_offset: 0
+      bit_size: 4
+    - name: EI
+      description: "Error Ind: 0:Device is in State as requested or Flag cleared by command 1:Device has not entered requested State or changed State as result of a local action."
+      bit_offset: 4
+      bit_size: 1
+    - name: DI
+      description: "Device Identification: 0:Device Identification not valid 1:Device Identification loaded."
+      bit_offset: 5
+      bit_size: 1
 fieldset/AL_STAT_CODE:
   description: AL Status Code.
   bit_size: 16
   fields:
-  - name: CODE
-    description: AL Status Code.
-    bit_offset: 0
-    bit_size: 16
+    - name: CODE
+      description: AL Status Code.
+      bit_offset: 0
+      bit_size: 16
 fieldset/BUILD:
   description: Build of EtherCAT controller.
   bit_size: 16
   fields:
-  - name: Z
-    description: maintenance version Z.
-    bit_offset: 0
-    bit_size: 4
-  - name: Y
-    description: minor version Y.
-    bit_offset: 4
-    bit_size: 4
-  - name: BUILD
-    description: No description available.
-    bit_offset: 8
-    bit_size: 8
+    - name: Z
+      description: maintenance version Z.
+      bit_offset: 0
+      bit_size: 4
+    - name: Y
+      description: minor version Y.
+      bit_offset: 4
+      bit_size: 4
+    - name: BUILD
+      description: No description available.
+      bit_offset: 8
+      bit_size: 8
 fieldset/CONTROL:
   description: Control.
   bit_size: 8
   fields:
-  - name: OP_MODE
-    description: 'Operation Mode: 00:Buffered (3 buffer mode) 01:Reserved 10:Mailbox (Single buffer mode) 11:Reserved.'
-    bit_offset: 0
-    bit_size: 2
-  - name: DIR
-    description: 'Direction: 00:Read:ECAT read access, PDI write access. 01:Write:ECAT write access, PDI read access. 10:Reserved 11:Reserved.'
-    bit_offset: 2
-    bit_size: 2
-  - name: INT_ECAT
-    description: 'Interrupt in ECAT Event Request Register: 0:Disabled 1:Enabled.'
-    bit_offset: 4
-    bit_size: 1
-  - name: INT_AL
-    description: 'Interrupt in AL Event Request Register: 0:Disabled 1:Enabled.'
-    bit_offset: 5
-    bit_size: 1
-  - name: WDG_TRG_EN
-    description: 'Watchdog Trigger Enable: 0:Disabled 1:Enabled.'
-    bit_offset: 6
-    bit_size: 1
+    - name: OP_MODE
+      description: "Operation Mode: 00:Buffered (3 buffer mode) 01:Reserved 10:Mailbox (Single buffer mode) 11:Reserved."
+      bit_offset: 0
+      bit_size: 2
+    - name: DIR
+      description: "Direction: 00:Read:ECAT read access, PDI write access. 01:Write:ECAT write access, PDI read access. 10:Reserved 11:Reserved."
+      bit_offset: 2
+      bit_size: 2
+    - name: INT_ECAT
+      description: "Interrupt in ECAT Event Request Register: 0:Disabled 1:Enabled."
+      bit_offset: 4
+      bit_size: 1
+    - name: INT_AL
+      description: "Interrupt in AL Event Request Register: 0:Disabled 1:Enabled."
+      bit_offset: 5
+      bit_size: 1
+    - name: WDG_TRG_EN
+      description: "Watchdog Trigger Enable: 0:Disabled 1:Enabled."
+      bit_offset: 6
+      bit_size: 1
 fieldset/CYC_UNIT_CTRL:
   description: Cyclic Unit Control.
   bit_size: 8
   fields:
-  - name: SYNCO
-    description: 'Cyclic Unit and SYNC0 out unit control: 0:ECAT-controlled 1:PDI-controlled.'
-    bit_offset: 0
-    bit_size: 1
-  - name: LATCHI0
-    description: 'Latch In unit 0: 0:ECAT-controlled 1:PDI-controlled NOTE:Latch interrupt is routed to ECAT/PDI depending on this setting. Always 1 (PDI-controlled) if System Time is PDI controlled.'
-    bit_offset: 4
-    bit_size: 1
-  - name: LATCHI1
-    description: 'Latch In unit 1: 0:ECAT-controlled 1:PDI-controlled NOTE:Latch interrupt is routed to ECAT/PDI depending on this setting.'
-    bit_offset: 5
-    bit_size: 1
+    - name: SYNCO
+      description: "Cyclic Unit and SYNC0 out unit control: 0:ECAT-controlled 1:PDI-controlled."
+      bit_offset: 0
+      bit_size: 1
+    - name: LATCHI0
+      description: "Latch In unit 0: 0:ECAT-controlled 1:PDI-controlled NOTE:Latch interrupt is routed to ECAT/PDI depending on this setting. Always 1 (PDI-controlled) if System Time is PDI controlled."
+      bit_offset: 4
+      bit_size: 1
+    - name: LATCHI1
+      description: "Latch In unit 1: 0:ECAT-controlled 1:PDI-controlled NOTE:Latch interrupt is routed to ECAT/PDI depending on this setting."
+      bit_offset: 5
+      bit_size: 1
 fieldset/DIO_OUT_DATA:
   description: Digital I/O Output Data.
   fields:
-  - name: OD
-    description: Output Data.
-    bit_offset: 0
-    bit_size: 32
+    - name: OD
+      description: Output Data.
+      bit_offset: 0
+      bit_size: 32
 fieldset/ECAT_BUF_CET:
   description: EtherCAT Buffer Change Event Time.
   fields:
-  - name: TIME
-    description: Local time at the beginning of the frame which causes at least one SyncManager to assert an ECAT event.
-    bit_offset: 0
-    bit_size: 32
+    - name: TIME
+      description: Local time at the beginning of the frame which causes at least one SyncManager to assert an ECAT event.
+      bit_offset: 0
+      bit_size: 32
 fieldset/ECAT_EVT_MSK:
   description: ECAT Event Mask.
   bit_size: 16
   fields:
-  - name: MASK
-    description: 'ECAT Event masking of the ECAT Event Request Events for mapping into ECAT event field of EtherCAT frames: 0:Corresponding ECAT Event Request register bit is not mapped 1:Corresponding ECAT Event Request register bit is mapped.'
-    bit_offset: 0
-    bit_size: 16
+    - name: MASK
+      description: "ECAT Event masking of the ECAT Event Request Events for mapping into ECAT event field of EtherCAT frames: 0:Corresponding ECAT Event Request register bit is not mapped 1:Corresponding ECAT Event Request register bit is mapped."
+      bit_offset: 0
+      bit_size: 16
 fieldset/ECAT_EVT_REQ:
   description: ECAT Event Request.
   bit_size: 16
   fields:
-  - name: DCL_EVT
-    description: 'DC Latch event: 0:No change on DC Latch Inputs 1:At least one change on DC Latch Inputs (Bit is cleared by reading DC Latch event times from ECAT for ECAT-controlled Latch Units, so that Latch 0/1 Status 0x09AE:0x09AF indicates no event).'
-    bit_offset: 0
-    bit_size: 1
-  - name: DLS_EVT
-    description: 'DL Status event: 0:No change in DL Status 1:DL Status change (Bit is cleared by reading out DL Status 0x0110:0x0111 from ECAT).'
-    bit_offset: 2
-    bit_size: 1
-  - name: ALS_EVT
-    description: 'AL Status event: 0:No change in AL Status 1:AL Status change (Bit is cleared by reading out AL Status 0x0130:0x0131 from ECAT).'
-    bit_offset: 3
-    bit_size: 1
-  - name: MV
-    description: 'Mirrors values of each SyncManager Status: 0:No Sync Channel 0 event 1:Sync Channel 0 event pending 0:No Sync Channel 1 event 1:Sync Channel 1 event pending … 0:No Sync Channel 7 event 1:Sync Channel 7 event pending.'
-    bit_offset: 4
-    bit_size: 8
+    - name: DCL_EVT
+      description: "DC Latch event: 0:No change on DC Latch Inputs 1:At least one change on DC Latch Inputs (Bit is cleared by reading DC Latch event times from ECAT for ECAT-controlled Latch Units, so that Latch 0/1 Status 0x09AE:0x09AF indicates no event)."
+      bit_offset: 0
+      bit_size: 1
+    - name: DLS_EVT
+      description: "DL Status event: 0:No change in DL Status 1:DL Status change (Bit is cleared by reading out DL Status 0x0110:0x0111 from ECAT)."
+      bit_offset: 2
+      bit_size: 1
+    - name: ALS_EVT
+      description: "AL Status event: 0:No change in AL Status 1:AL Status change (Bit is cleared by reading out AL Status 0x0130:0x0131 from ECAT)."
+      bit_offset: 3
+      bit_size: 1
+    - name: MV
+      description: "Mirrors values of each SyncManager Status: 0:No Sync Channel 0 event 1:Sync Channel 0 event pending 0:No Sync Channel 1 event 1:Sync Channel 1 event pending … 0:No Sync Channel 7 event 1:Sync Channel 7 event pending."
+      bit_offset: 4
+      bit_size: 8
 fieldset/ECAT_PU_ERR_CNT:
   description: ECAT Processing Unit Error Counter.
   bit_size: 8
   fields:
-  - name: CNT
-    description: ECAT Processing Unit error counter (counting is stopped when 0xFF is reached). Counts errors of frames passing the Processing Unit.
-    bit_offset: 0
-    bit_size: 8
+    - name: CNT
+      description: ECAT Processing Unit error counter (counting is stopped when 0xFF is reached). Counts errors of frames passing the Processing Unit.
+      bit_offset: 0
+      bit_size: 8
 fieldset/EEPROM_ADDR:
   description: EEPROM Address.
   fields:
-  - name: ADDR
-    description: 'EEPROM Address 0:First word (= 16 bit) 1:Second word … Actually used EEPROM Address bits: [9-0] : EEPROM size up to 16 Kbit [17-0] : EEPROM size 32 Kbit – 4 Mbit [31-0] : EEPROM Emulation.'
-    bit_offset: 0
-    bit_size: 32
+    - name: ADDR
+      description: "EEPROM Address 0:First word (= 16 bit) 1:Second word … Actually used EEPROM Address bits: [9-0] : EEPROM size up to 16 Kbit [17-0] : EEPROM size 32 Kbit – 4 Mbit [31-0] : EEPROM Emulation."
+      bit_offset: 0
+      bit_size: 32
 fieldset/EEPROM_CFG:
   description: EEPROM Configuration.
   bit_size: 8
   fields:
-  - name: PDI
-    description: 'EEPROM control is offered to PDI: 0:no 1:yes (PDI has EEPROM control).'
-    bit_offset: 0
-    bit_size: 1
-  - name: FORCE_ECAT
-    description: 'Force ECAT access: 0:Do not change Bit 0x0501[0] 1:Reset Bit 0x0501[0] to 0.'
-    bit_offset: 1
-    bit_size: 1
+    - name: PDI
+      description: "EEPROM control is offered to PDI: 0:no 1:yes (PDI has EEPROM control)."
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE_ECAT
+      description: "Force ECAT access: 0:Do not change Bit 0x0501[0] 1:Reset Bit 0x0501[0] to 0."
+      bit_offset: 1
+      bit_size: 1
 fieldset/EEPROM_CTRL_STAT:
   description: EEPROM Control/Status.
   bit_size: 16
   fields:
-  - name: ECAT_WEN
-    description: 'ECAT write enable*2 : 0:Write requests are disabled 1:Write requests are enabled This bit is always 1 if PDI has EEPROM control.'
-    bit_offset: 0
-    bit_size: 1
-  - name: EE_EMU
-    description: 'EPROM emulation: 0:Normal operation (I²C interface used) 1:PDI emulates EEPROM (I²C not used).'
-    bit_offset: 5
-    bit_size: 1
-  - name: NUM_RD_BYTE
-    description: 'Supported number of EEPROM read bytes: 0:4 Bytes 1:8 Bytes.'
-    bit_offset: 6
-    bit_size: 1
-  - name: EE_ALGM
-    description: 'Selected EEPROM Algorithm: 0:1 address byte (1Kbit – 16Kbit EEPROMs) 1:2 address bytes (32Kbit – 4 Mbit EEPROMs).'
-    bit_offset: 7
-    bit_size: 1
-  - name: CMD
-    description: 'Command register*2: Write:Initiate command. Read:Currently executed command Commands: 000:No command/EEPROM idle (clear error bits) 001:Read 010:Write 100:Reload Others:Reserved/invalid commands (do not issue) EEPROM emulation only:after execution, PDI writes command value to indicate operation is ready.'
-    bit_offset: 8
-    bit_size: 3
-  - name: CKSM_ERR
-    description: 'Checksum Error in ESC Configuration Area: 0:Checksum ok 1:Checksum error EEPROM emulation for IP Core only:PDI writes 1 if a CRC failure has occurred for a reload command.'
-    bit_offset: 11
-    bit_size: 1
-  - name: EE_LDS
-    description: 'EEPROM loading status: 0:EEPROM loaded, device information ok 1:EEPROM not loaded, device information not available (EEPROM loading in progress or finished with a failure).'
-    bit_offset: 12
-    bit_size: 1
-  - name: ERR_ACK_CMD
-    description: 'Error Acknowledge/Command*3 : 0:No error 1:Missing EEPROM acknowledge or invalid command EEPROM emulation only:PDI writes 1 if a temporary failure has occurred.'
-    bit_offset: 13
-    bit_size: 1
-  - name: ERR_WEN
-    description: 'Error Write Enable*3 : 0:No error 1:Write Command without Write enable.'
-    bit_offset: 14
-    bit_size: 1
-  - name: BUSY
-    description: 'Busy: 0:EEPROM Interface is idle 1:EEPROM Interface is busy.'
-    bit_offset: 15
-    bit_size: 1
+    - name: ECAT_WEN
+      description: "ECAT write enable*2 : 0:Write requests are disabled 1:Write requests are enabled This bit is always 1 if PDI has EEPROM control."
+      bit_offset: 0
+      bit_size: 1
+    - name: EE_EMU
+      description: "EPROM emulation: 0:Normal operation (I²C interface used) 1:PDI emulates EEPROM (I²C not used)."
+      bit_offset: 5
+      bit_size: 1
+    - name: NUM_RD_BYTE
+      description: "Supported number of EEPROM read bytes: 0:4 Bytes 1:8 Bytes."
+      bit_offset: 6
+      bit_size: 1
+    - name: EE_ALGM
+      description: "Selected EEPROM Algorithm: 0:1 address byte (1Kbit – 16Kbit EEPROMs) 1:2 address bytes (32Kbit – 4 Mbit EEPROMs)."
+      bit_offset: 7
+      bit_size: 1
+    - name: CMD
+      description: "Command register*2: Write:Initiate command. Read:Currently executed command Commands: 000:No command/EEPROM idle (clear error bits) 001:Read 010:Write 100:Reload Others:Reserved/invalid commands (do not issue) EEPROM emulation only:after execution, PDI writes command value to indicate operation is ready."
+      bit_offset: 8
+      bit_size: 3
+    - name: CKSM_ERR
+      description: "Checksum Error in ESC Configuration Area: 0:Checksum ok 1:Checksum error EEPROM emulation for IP Core only:PDI writes 1 if a CRC failure has occurred for a reload command."
+      bit_offset: 11
+      bit_size: 1
+    - name: EE_LDS
+      description: "EEPROM loading status: 0:EEPROM loaded, device information ok 1:EEPROM not loaded, device information not available (EEPROM loading in progress or finished with a failure)."
+      bit_offset: 12
+      bit_size: 1
+    - name: ERR_ACK_CMD
+      description: "Error Acknowledge/Command*3 : 0:No error 1:Missing EEPROM acknowledge or invalid command EEPROM emulation only:PDI writes 1 if a temporary failure has occurred."
+      bit_offset: 13
+      bit_size: 1
+    - name: ERR_WEN
+      description: "Error Write Enable*3 : 0:No error 1:Write Command without Write enable."
+      bit_offset: 14
+      bit_size: 1
+    - name: BUSY
+      description: "Busy: 0:EEPROM Interface is idle 1:EEPROM Interface is busy."
+      bit_offset: 15
+      bit_size: 1
 fieldset/EEPROM_DATA:
   description: EEPROM Data.
   bit_size: 64
   fields:
-  - name: LO
-    description: EEPROM Write data (data to be written to EEPROM) or EEPROM Read data (data read from EEPROM, lower bytes).
-    bit_offset: 0
-    bit_size: 16
-  - name: HI
-    description: EEPROM Read data (data read from EEPROM, higher bytes).
-    bit_offset: 16
-    bit_size: 48
+    - name: LO
+      description: EEPROM Write data (data to be written to EEPROM) or EEPROM Read data (data read from EEPROM, lower bytes).
+      bit_offset: 0
+      bit_size: 16
+    - name: HI
+      description: EEPROM Read data (data read from EEPROM, higher bytes).
+      bit_offset: 16
+      bit_size: 48
 fieldset/EEPROM_PDI_ACC_STAT:
   description: EEPROM PDI Access State.
   bit_size: 8
   fields:
-  - name: ACCESS
-    description: 'Access to EEPROM: 0:PDI releases EEPROM access 1:PDI takes EEPROM access (PDI has EEPROM control).'
-    bit_offset: 0
-    bit_size: 1
+    - name: ACCESS
+      description: "Access to EEPROM: 0:PDI releases EEPROM access 1:PDI takes EEPROM access (PDI has EEPROM control)."
+      bit_offset: 0
+      bit_size: 1
 fieldset/ERR_LED_OVRD:
   description: ERR LED Override.
   bit_size: 8
   fields:
-  - name: LED_CODE
-    description: 'LED code: 0x0:Off 0x1-0xC:Flash 1x – 12x 0xD:Blinking 0xE:Flickering 0xF:On.'
-    bit_offset: 0
-    bit_size: 4
-  - name: EN_OVRD
-    description: 'Enable Override: 0:Override disabled 1:Override enabled.'
-    bit_offset: 4
-    bit_size: 1
+    - name: LED_CODE
+      description: "LED code: 0x0:Off 0x1-0xC:Flash 1x – 12x 0xD:Blinking 0xE:Flickering 0xF:On."
+      bit_offset: 0
+      bit_size: 4
+    - name: EN_OVRD
+      description: "Enable Override: 0:Override disabled 1:Override enabled."
+      bit_offset: 4
+      bit_size: 1
 fieldset/ESC_CFG:
   description: ESC Configuration.
   bit_size: 8
   fields:
-  - name: DEV_EMU
-    description: 'Device emulation (control of AL status): 0:AL status register has to be set by PDI 1:AL status register will be set to value written to AL control register.'
-    bit_offset: 0
-    bit_size: 1
-  - name: ELDAP
-    description: 'Enhanced Link detection all ports: 0:disabled (if bits [7:4]=0) 1:enabled at all ports (overrides bits [7:4]).'
-    bit_offset: 1
-    bit_size: 1
-  - name: DCSOU
-    description: 'Distributed Clocks SYNC Out Unit: 0:disabled (power saving) 1:enabled.'
-    bit_offset: 2
-    bit_size: 1
-  - name: CDLIU
-    description: 'Distributed Clocks Latch In Unit: 0:disabled (power saving) 1:enabled.'
-    bit_offset: 3
-    bit_size: 1
-  - name: ELP0
-    description: 'Enhanced Link port 0: 0:disabled (if bit 1=0) 1:enabled.'
-    bit_offset: 4
-    bit_size: 1
-  - name: ELP1
-    description: 'Enhanced Link port 1: 0:disabled (if bit 1=0) 1:enabled.'
-    bit_offset: 5
-    bit_size: 1
-  - name: ELP2
-    description: 'Enhanced Link port 2: 0:disabled (if bit 1=0) 1:enabled.'
-    bit_offset: 6
-    bit_size: 1
-  - name: ELP3
-    description: 'Enhanced Link port 3: 0:disabled (if bit 1=0) 1:enabled.'
-    bit_offset: 7
-    bit_size: 1
+    - name: DEV_EMU
+      description: "Device emulation (control of AL status): 0:AL status register has to be set by PDI 1:AL status register will be set to value written to AL control register."
+      bit_offset: 0
+      bit_size: 1
+    - name: ELDAP
+      description: "Enhanced Link detection all ports: 0:disabled (if bits [7:4]=0) 1:enabled at all ports (overrides bits [7:4])."
+      bit_offset: 1
+      bit_size: 1
+    - name: DCSOU
+      description: "Distributed Clocks SYNC Out Unit: 0:disabled (power saving) 1:enabled."
+      bit_offset: 2
+      bit_size: 1
+    - name: CDLIU
+      description: "Distributed Clocks Latch In Unit: 0:disabled (power saving) 1:enabled."
+      bit_offset: 3
+      bit_size: 1
+    - name: ELP0
+      description: "Enhanced Link port 0: 0:disabled (if bit 1=0) 1:enabled."
+      bit_offset: 4
+      bit_size: 1
+    - name: ELP1
+      description: "Enhanced Link port 1: 0:disabled (if bit 1=0) 1:enabled."
+      bit_offset: 5
+      bit_size: 1
+    - name: ELP2
+      description: "Enhanced Link port 2: 0:disabled (if bit 1=0) 1:enabled."
+      bit_offset: 6
+      bit_size: 1
+    - name: ELP3
+      description: "Enhanced Link port 3: 0:disabled (if bit 1=0) 1:enabled."
+      bit_offset: 7
+      bit_size: 1
 fieldset/ESC_DL_CTRL:
   description: ESC DL Control.
   fields:
-  - name: FR
-    description: 'Forwarding rule: 0:Forward non-EtherCAT frames: EtherCAT frames are processed, non-EtherCAT frames are forwarded without processing or modification. The source MAC address is not changed for any frame. 1:Destroy non-EtherCAT frames: EtherCAT frames are processed, non-EtherCAT frames are destroyed. The source MAC address is changed by the Processing Unit for every frame (SOURCE_MAC[1] is set.'
-    bit_offset: 0
-    bit_size: 1
-  - name: TU
-    description: 'Temporary use of settings in 0x0100:0x0103[8:15]: 0:permanent use 1:use for about 1 second, then revert to previous settings.'
-    bit_offset: 1
-    bit_size: 1
-  - name: LP0
-    description: 'Loop Port 0: 00:Auto 01:Auto Close 10:Open 11:Closed NOTE: Loop open means sending/receiving over this port is enabled, loop closed means sending/receiving is disabled and frames are forwarded to the next open port internally. Auto:loop closed at link down, opened at link up Auto Close:loop closed at link down, opened with writing 01 again after link up (or receiving a valid Ethernet frame at the closed port) Open:loop open regardless of link state Closed:loop closed regardless of link state.'
-    bit_offset: 8
-    bit_size: 2
-  - name: LP1
-    description: 'Loop Port 1: 00:Auto 01:Auto Close 10:Open 11:Closed.'
-    bit_offset: 10
-    bit_size: 2
-  - name: LP2
-    description: 'Loop Port 2: 00:Auto 01:Auto Close 10:Open 11:Closed.'
-    bit_offset: 12
-    bit_size: 2
-  - name: LP3
-    description: 'Loop Port 3: 00:Auto 01:Auto Close 10:Open 11:Closed.'
-    bit_offset: 14
-    bit_size: 2
-  - name: RFS
-    description: 'RX FIFO Size (ESC delays start of forwarding until FIFO is at least half full). RX FIFO Size/RX delay reduction** : Value:EBUS:MII: 0:-50 ns -40 ns (-80 ns***) 1:-40 ns -40 ns (-80 ns***) 2:-30 ns -40 ns 3:-20 ns -40 ns 4:-10 ns no change 5:no change no change 6:no change no change 7:default default NOTE:EEPROM value is only taken over at first EEPROM load after power-on or reset.'
-    bit_offset: 16
-    bit_size: 3
-  - name: SA
-    description: 'Station alias: 0:Ignore Station Alias 1:Alias can be used for all configured address comm.'
-    bit_offset: 24
-    bit_size: 1
+    - name: FR
+      description: "Forwarding rule: 0:Forward non-EtherCAT frames: EtherCAT frames are processed, non-EtherCAT frames are forwarded without processing or modification. The source MAC address is not changed for any frame. 1:Destroy non-EtherCAT frames: EtherCAT frames are processed, non-EtherCAT frames are destroyed. The source MAC address is changed by the Processing Unit for every frame (SOURCE_MAC[1] is set."
+      bit_offset: 0
+      bit_size: 1
+    - name: TU
+      description: "Temporary use of settings in 0x0100:0x0103[8:15]: 0:permanent use 1:use for about 1 second, then revert to previous settings."
+      bit_offset: 1
+      bit_size: 1
+    - name: LP0
+      description: "Loop Port 0: 00:Auto 01:Auto Close 10:Open 11:Closed NOTE: Loop open means sending/receiving over this port is enabled, loop closed means sending/receiving is disabled and frames are forwarded to the next open port internally. Auto:loop closed at link down, opened at link up Auto Close:loop closed at link down, opened with writing 01 again after link up (or receiving a valid Ethernet frame at the closed port) Open:loop open regardless of link state Closed:loop closed regardless of link state."
+      bit_offset: 8
+      bit_size: 2
+    - name: LP1
+      description: "Loop Port 1: 00:Auto 01:Auto Close 10:Open 11:Closed."
+      bit_offset: 10
+      bit_size: 2
+    - name: LP2
+      description: "Loop Port 2: 00:Auto 01:Auto Close 10:Open 11:Closed."
+      bit_offset: 12
+      bit_size: 2
+    - name: LP3
+      description: "Loop Port 3: 00:Auto 01:Auto Close 10:Open 11:Closed."
+      bit_offset: 14
+      bit_size: 2
+    - name: RFS
+      description: "RX FIFO Size (ESC delays start of forwarding until FIFO is at least half full). RX FIFO Size/RX delay reduction** : Value:EBUS:MII: 0:-50 ns -40 ns (-80 ns***) 1:-40 ns -40 ns (-80 ns***) 2:-30 ns -40 ns 3:-20 ns -40 ns 4:-10 ns no change 5:no change no change 6:no change no change 7:default default NOTE:EEPROM value is only taken over at first EEPROM load after power-on or reset."
+      bit_offset: 16
+      bit_size: 3
+    - name: SA
+      description: "Station alias: 0:Ignore Station Alias 1:Alias can be used for all configured address comm."
+      bit_offset: 24
+      bit_size: 1
 fieldset/ESC_DL_STAT:
   description: ESC DL Status.
   bit_size: 16
   fields:
-  - name: EPLC
-    description: 'PDI operational/EEPROM loaded correctly: 0:EEPROM not loaded, PDI not operational (no access to Process Data RAM) 1:EEPROM loaded correctly, PDI operational (access to Process Data RAM).'
-    bit_offset: 0
-    bit_size: 1
-  - name: WDS
-    description: 'PDI Watchdog Status: 0:Watchdog expired 1:Watchdog reloaded.'
-    bit_offset: 1
-    bit_size: 1
-  - name: ELD
-    description: 'Enhanced Link detection: 0:Deactivated for all ports 1:Activated for at least one port NOTE:EEPROM value is only transferred into this register at first EEPROM load after power-on or reset.'
-    bit_offset: 2
-    bit_size: 1
-  - name: PLP0
-    description: 'Physical link on Port 0: 0:No link 1:Link detected.'
-    bit_offset: 4
-    bit_size: 1
-  - name: PLP1
-    description: 'Physical link on Port 1: 0:No link 1:Link detected.'
-    bit_offset: 5
-    bit_size: 1
-  - name: PLP2
-    description: 'Physical link on Port 2: 0:No link 1:Link detected.'
-    bit_offset: 6
-    bit_size: 1
-  - name: PLP3
-    description: 'Physical link on Port 3: 0:No link 1:Link detected.'
-    bit_offset: 7
-    bit_size: 1
-  - name: LP0
-    description: 'Loop Port 0: 0:Open 1:Closed.'
-    bit_offset: 8
-    bit_size: 1
-  - name: CP0
-    description: 'Communication on Port 0: 0:No stable communication 1:Communication established.'
-    bit_offset: 9
-    bit_size: 1
-  - name: LP1
-    description: 'Loop Port 1: 0:Open 1:Closed.'
-    bit_offset: 10
-    bit_size: 1
-  - name: CP1
-    description: 'Communication on Port 1: 0:No stable communication 1:Communication established.'
-    bit_offset: 11
-    bit_size: 1
-  - name: LP2
-    description: 'Loop Port 2: 0:Open 1:Closed.'
-    bit_offset: 12
-    bit_size: 1
-  - name: CP2
-    description: 'Communication on Port 2: 0:No stable communication 1:Communication established.'
-    bit_offset: 13
-    bit_size: 1
-  - name: LP3
-    description: 'Loop Port 3: 0:Open 1:Closed.'
-    bit_offset: 14
-    bit_size: 1
-  - name: CP3
-    description: 'Communication on Port 3: 0:No stable communication 1:Communication established.'
-    bit_offset: 15
-    bit_size: 1
+    - name: EPLC
+      description: "PDI operational/EEPROM loaded correctly: 0:EEPROM not loaded, PDI not operational (no access to Process Data RAM) 1:EEPROM loaded correctly, PDI operational (access to Process Data RAM)."
+      bit_offset: 0
+      bit_size: 1
+    - name: WDS
+      description: "PDI Watchdog Status: 0:Watchdog expired 1:Watchdog reloaded."
+      bit_offset: 1
+      bit_size: 1
+    - name: ELD
+      description: "Enhanced Link detection: 0:Deactivated for all ports 1:Activated for at least one port NOTE:EEPROM value is only transferred into this register at first EEPROM load after power-on or reset."
+      bit_offset: 2
+      bit_size: 1
+    - name: PLP0
+      description: "Physical link on Port 0: 0:No link 1:Link detected."
+      bit_offset: 4
+      bit_size: 1
+    - name: PLP1
+      description: "Physical link on Port 1: 0:No link 1:Link detected."
+      bit_offset: 5
+      bit_size: 1
+    - name: PLP2
+      description: "Physical link on Port 2: 0:No link 1:Link detected."
+      bit_offset: 6
+      bit_size: 1
+    - name: PLP3
+      description: "Physical link on Port 3: 0:No link 1:Link detected."
+      bit_offset: 7
+      bit_size: 1
+    - name: LP0
+      description: "Loop Port 0: 0:Open 1:Closed."
+      bit_offset: 8
+      bit_size: 1
+    - name: CP0
+      description: "Communication on Port 0: 0:No stable communication 1:Communication established."
+      bit_offset: 9
+      bit_size: 1
+    - name: LP1
+      description: "Loop Port 1: 0:Open 1:Closed."
+      bit_offset: 10
+      bit_size: 1
+    - name: CP1
+      description: "Communication on Port 1: 0:No stable communication 1:Communication established."
+      bit_offset: 11
+      bit_size: 1
+    - name: LP2
+      description: "Loop Port 2: 0:Open 1:Closed."
+      bit_offset: 12
+      bit_size: 1
+    - name: CP2
+      description: "Communication on Port 2: 0:No stable communication 1:Communication established."
+      bit_offset: 13
+      bit_size: 1
+    - name: LP3
+      description: "Loop Port 3: 0:Open 1:Closed."
+      bit_offset: 14
+      bit_size: 1
+    - name: CP3
+      description: "Communication on Port 3: 0:No stable communication 1:Communication established."
+      bit_offset: 15
+      bit_size: 1
 fieldset/ESC_PDI_CTRL:
   description: PDI Control.
   bit_size: 8
   fields:
-  - name: PDI
-    description: 'Process data interface: 0x00:Interface deactivated (no PDI) 0x01:4 Digital Input 0x02:4 Digital Output 0x03:2 Digital Input and 2 Digital Output 0x04:Digital I/O 0x05:SPI Slave 0x06:Oversampling I/O 0x07:EtherCAT Bridge (port 3) 0x08:16 Bit asynchronous Microcontroller interface 0x09:8 Bit asynchronous Microcontroller interface 0x0A:16 Bit synchronous Microcontroller interface 0x0B:8 Bit synchronous Microcontroller interface 0x10:32 Digital Input and 0 Digital Output 0x11:24 Digital Input and 8 Digital Output 0x12:16 Digital Input and 16 Digital Output 0x13:8 Digital Input and 24 Digital Output 0x14:0 Digital Input and 32 Digital Output 0x80:On-chip bus Others:Reserved.'
-    bit_offset: 0
-    bit_size: 8
+    - name: PDI
+      description: "Process data interface: 0x00:Interface deactivated (no PDI) 0x01:4 Digital Input 0x02:4 Digital Output 0x03:2 Digital Input and 2 Digital Output 0x04:Digital I/O 0x05:SPI Slave 0x06:Oversampling I/O 0x07:EtherCAT Bridge (port 3) 0x08:16 Bit asynchronous Microcontroller interface 0x09:8 Bit asynchronous Microcontroller interface 0x0A:16 Bit synchronous Microcontroller interface 0x0B:8 Bit synchronous Microcontroller interface 0x10:32 Digital Input and 0 Digital Output 0x11:24 Digital Input and 8 Digital Output 0x12:16 Digital Input and 16 Digital Output 0x13:8 Digital Input and 24 Digital Output 0x14:0 Digital Input and 32 Digital Output 0x80:On-chip bus Others:Reserved."
+      bit_offset: 0
+      bit_size: 8
 fieldset/ESC_RST_ECAT:
   description: ESC Reset ECAT.
   bit_size: 8
   fields:
-  - name: PR
-    description: 'Progress of the reset procedure: 00:initial/reset state 01:after writing 0x52 (''R''), when previous state was 00 10:after writing 0x45 (''E''), when previous state was 01 11:after writing 0x53 (''S''), when previous state was 10. This value must not be observed because the ESC enters reset when this state is reached, resulting in state 00.'
-    bit_offset: 0
-    bit_size: 2
+    - name: PR
+      description: "Progress of the reset procedure: 00:initial/reset state 01:after writing 0x52 ('R'), when previous state was 00 10:after writing 0x45 ('E'), when previous state was 01 11:after writing 0x53 ('S'), when previous state was 10. This value must not be observed because the ESC enters reset when this state is reached, resulting in state 00."
+      bit_offset: 0
+      bit_size: 2
 fieldset/ESC_RST_PDI:
   description: ESC Reset PDI.
   bit_size: 8
   fields:
-  - name: RST
-    description: A reset is asserted after writing the reset sequence 0x52 ('R'), 0x45 ('E') and 0x53 ('S') in this register with 3 consecutive commands. Any other command which does not continue the sequence by writing the next expected value will cancel the reset procedure.
-    bit_offset: 0
-    bit_size: 8
+    - name: RST
+      description: A reset is asserted after writing the reset sequence 0x52 ('R'), 0x45 ('E') and 0x53 ('S') in this register with 3 consecutive commands. Any other command which does not continue the sequence by writing the next expected value will cancel the reset procedure.
+      bit_offset: 0
+      bit_size: 8
 fieldset/ESC_TYPE:
   description: Type of EtherCAT controller.
   bit_size: 8
   fields:
-  - name: TYPE
-    description: Controller type.
-    bit_offset: 0
-    bit_size: 8
+    - name: TYPE
+      description: Controller type.
+      bit_offset: 0
+      bit_size: 8
 fieldset/ESC_WEN:
   description: ESC Write Enable.
   bit_size: 8
   fields:
-  - name: EN
-    description: If ESC write protection is enabled, this register has to be written in the same Ethernet frame (value does not matter) before other writes to this station are allowed. This bit is self-clearing at the beginning of the next frame (SOF), or if ESC Write Protection is disabled.
-    bit_offset: 0
-    bit_size: 1
+    - name: EN
+      description: If ESC write protection is enabled, this register has to be written in the same Ethernet frame (value does not matter) before other writes to this station are allowed. This bit is self-clearing at the beginning of the next frame (SOF), or if ESC Write Protection is disabled.
+      bit_offset: 0
+      bit_size: 1
 fieldset/ESC_WP:
   description: ESC Write Protection.
   bit_size: 8
   fields:
-  - name: WP
-    description: 'Write protect: 0:Protection disabled 1:Protection enabled All areas are write-protected, except for 0x0030.'
-    bit_offset: 0
-    bit_size: 1
+    - name: WP
+      description: "Write protect: 0:Protection disabled 1:Protection enabled All areas are write-protected, except for 0x0030."
+      bit_offset: 0
+      bit_size: 1
 fieldset/FEATURE:
   description: ESC Feature supported.
   bit_size: 16
   fields:
-  - name: FMMU
-    description: 'FMMU Operation: 0:Bit oriented 1:Byte oriented.'
-    bit_offset: 0
-    bit_size: 1
-  - name: DC
-    description: 'Distributed Clocks: 0:Not available 1:Available.'
-    bit_offset: 2
-    bit_size: 1
-  - name: DCW
-    description: 'Distributed Clocks width: 0:32 bit 1:64 bit.'
-    bit_offset: 3
-    bit_size: 1
-  - name: ELDM
-    description: 'Enhanced Link Detection MII: 0:Not available 1:Available.'
-    bit_offset: 6
-    bit_size: 1
-  - name: SHFE
-    description: 'Seperate Handling of FCS Errors: 0:Not supported 1:Supported, frames with wrong FCS and additional nibble will be counted separately in Forwarded RX Error Counter.'
-    bit_offset: 7
-    bit_size: 1
-  - name: EDSA
-    description: 'Enhanced DC SYNC Activation: 0:Not available 1:Available Note:This feature refers to registers 0x981[7:3] and 0x0984.'
-    bit_offset: 8
-    bit_size: 1
-  - name: LRW
-    description: 'EtherCAT LRW command support: 0:Supported 1:Not supported.'
-    bit_offset: 9
-    bit_size: 1
-  - name: RWC
-    description: 'EtherCAT read/write command support(BRW,APRW,FPRW): 0:Supported 1:Not supported.'
-    bit_offset: 10
-    bit_size: 1
-  - name: FFSC
-    description: 'Fixed FMMU/SyncManager configuration: 0:Variable configuration 1:Fixed configuration (refer to documentation of supporting ESCs).'
-    bit_offset: 11
-    bit_size: 1
+    - name: FMMU
+      description: "FMMU Operation: 0:Bit oriented 1:Byte oriented."
+      bit_offset: 0
+      bit_size: 1
+    - name: DC
+      description: "Distributed Clocks: 0:Not available 1:Available."
+      bit_offset: 2
+      bit_size: 1
+    - name: DCW
+      description: "Distributed Clocks width: 0:32 bit 1:64 bit."
+      bit_offset: 3
+      bit_size: 1
+    - name: ELDM
+      description: "Enhanced Link Detection MII: 0:Not available 1:Available."
+      bit_offset: 6
+      bit_size: 1
+    - name: SHFE
+      description: "Seperate Handling of FCS Errors: 0:Not supported 1:Supported, frames with wrong FCS and additional nibble will be counted separately in Forwarded RX Error Counter."
+      bit_offset: 7
+      bit_size: 1
+    - name: EDSA
+      description: "Enhanced DC SYNC Activation: 0:Not available 1:Available Note:This feature refers to registers 0x981[7:3] and 0x0984."
+      bit_offset: 8
+      bit_size: 1
+    - name: LRW
+      description: "EtherCAT LRW command support: 0:Supported 1:Not supported."
+      bit_offset: 9
+      bit_size: 1
+    - name: RWC
+      description: "EtherCAT read/write command support(BRW,APRW,FPRW): 0:Supported 1:Not supported."
+      bit_offset: 10
+      bit_size: 1
+    - name: FFSC
+      description: "Fixed FMMU/SyncManager configuration: 0:Variable configuration 1:Fixed configuration (refer to documentation of supporting ESCs)."
+      bit_offset: 11
+      bit_size: 1
 fieldset/FMMU_ACTIVATE:
   description: Activate.
   bit_size: 8
   fields:
-  - name: ACT
-    description: 0:FMMU deactivated 1:FMMU activated. FMMU checks logically addressed blocks to be mapped according to configured mapping.
-    bit_offset: 0
-    bit_size: 1
+    - name: ACT
+      description: 0:FMMU deactivated 1:FMMU activated. FMMU checks logically addressed blocks to be mapped according to configured mapping.
+      bit_offset: 0
+      bit_size: 1
 fieldset/FMMU_LENGTH:
   description: Length.
   bit_size: 16
   fields:
-  - name: OFFSET
-    description: Offset from the first logical FMMU byte to the last FMMU byte + 1 (e.g., if two bytes are used, then this parameter shall contain 2).
-    bit_offset: 0
-    bit_size: 16
+    - name: OFFSET
+      description: Offset from the first logical FMMU byte to the last FMMU byte + 1 (e.g., if two bytes are used, then this parameter shall contain 2).
+      bit_offset: 0
+      bit_size: 16
 fieldset/FMMU_NUM:
   description: FMMU supported.
   bit_size: 8
   fields:
-  - name: NUM
-    description: Number of supported FMMU channels (or entities).
-    bit_offset: 0
-    bit_size: 8
+    - name: NUM
+      description: Number of supported FMMU channels (or entities).
+      bit_offset: 0
+      bit_size: 8
 fieldset/FMMU_PHYSICAL_START_ADDR:
   description: Physical Start Address.
   bit_size: 16
   fields:
-  - name: ADDR
-    description: Physical Start Address (mapped to logical Start address).
-    bit_offset: 0
-    bit_size: 16
+    - name: ADDR
+      description: Physical Start Address (mapped to logical Start address).
+      bit_offset: 0
+      bit_size: 16
 fieldset/FMMU_TYPE:
   description: Type.
   bit_size: 8
   fields:
-  - name: MAP_RD
-    description: 0:Ignore mapping for read accesses 1:Use mapping for read accesses.
-    bit_offset: 0
-    bit_size: 1
-  - name: MAP_WR
-    description: 0:Ignore mapping for write accesses 1:Use mapping for write accesses.
-    bit_offset: 1
-    bit_size: 1
+    - name: MAP_RD
+      description: 0:Ignore mapping for read accesses 1:Use mapping for read accesses.
+      bit_offset: 0
+      bit_size: 1
+    - name: MAP_WR
+      description: 0:Ignore mapping for write accesses 1:Use mapping for write accesses.
+      bit_offset: 1
+      bit_size: 1
 fieldset/FWD_RX_ERR_CNT:
   description: no description available.
   bit_size: 8
   fields:
-  - name: ERR_CNT
-    description: Forwarded error counter of Port y (counting is stopped when 0xFF is reached).
-    bit_offset: 0
-    bit_size: 8
+    - name: ERR_CNT
+      description: Forwarded error counter of Port y (counting is stopped when 0xFF is reached).
+      bit_offset: 0
+      bit_size: 8
 fieldset/GPI:
   description: General Purpose Inputs.
   bit_size: 64
   fields:
-  - name: GPID
-    description: General Purpose Input Data.
-    bit_offset: 0
-    bit_size: 64
+    - name: GPID
+      description: General Purpose Input Data.
+      bit_offset: 0
+      bit_size: 64
 fieldset/GPIO_CTRL:
   description: GPIO Output Enable.
   fields:
-  - name: GPO_TRIG_SEL
-    description: 'select the trigger signal to latch GPO. 0000: SOF; 0001: EOF; 0010: pos of SYNC0; 0011: pos of SYNC1; 0100: pos of LATCH0; 0101: pos of LATCH1; 0110: neg of LATCH0; 0111: neg of LATCH1 1000: wdog trigger; 1001: sw set gpio_ctrl[30]; others no trigger.'
-    bit_offset: 0
-    bit_size: 4
-  - name: GPO_TRIG_EN
-    description: use gpo_trig_sel can select the trigger event to latch GPO signal(from core) set to use triggered signal; clr to use GPO signals direclty(from reg or pad).
-    bit_offset: 4
-    bit_size: 1
-  - name: GPI_TRIG_SEL
-    description: 'select the trigger signal to latch GPI. 0000: SOF; 0001: EOF; 0010: pos of SYNC0; 0011: pos of SYNC1; 0100: pos of LATCH0; 0101: pos of LATCH1; 0110: neg of LATCH0; 0111: neg of LATCH1 1000: wdog trigger; 1001: sw set gpio_ctrl[31]; others no trigger.'
-    bit_offset: 8
-    bit_size: 4
-  - name: GPI_TRIG_EN
-    description: 'use gpi_trig_sel can select the trigger event to latch GPI signal(from reg or pad) set to use triggered signal; clr to use signals direclty(from reg or pad) assign pdi_gpi = gpi_trig_en ? gpi_reg : (gpi_override_en ? gpi_override :pad_di_ecat_gpi);.'
-    bit_offset: 12
-    bit_size: 1
-  - name: GPI_OVERRIDE_EN
-    description: set this bit will use GPI from the software register gpi_override0/1 clr to use GPI from pad directly.
-    bit_offset: 13
-    bit_size: 1
-  - name: SW_LATCH_GPO
-    description: if gpo_trig_sel is set to 4'b1001, setting this bit will latch GPO to gpo_reg0/1.
-    bit_offset: 30
-    bit_size: 1
-  - name: SW_LATCH_GPI
-    description: if gpi_trig_sel is set to 4'b1001, setting this bit will latch GPI to gpi_reg0/1.
-    bit_offset: 31
-    bit_size: 1
+    - name: GPO_TRIG_SEL
+      description: "select the trigger signal to latch GPO. 0000: SOF; 0001: EOF; 0010: pos of SYNC0; 0011: pos of SYNC1; 0100: pos of LATCH0; 0101: pos of LATCH1; 0110: neg of LATCH0; 0111: neg of LATCH1 1000: wdog trigger; 1001: sw set gpio_ctrl[30]; others no trigger."
+      bit_offset: 0
+      bit_size: 4
+    - name: GPO_TRIG_EN
+      description: use gpo_trig_sel can select the trigger event to latch GPO signal(from core) set to use triggered signal; clr to use GPO signals direclty(from reg or pad).
+      bit_offset: 4
+      bit_size: 1
+    - name: GPI_TRIG_SEL
+      description: "select the trigger signal to latch GPI. 0000: SOF; 0001: EOF; 0010: pos of SYNC0; 0011: pos of SYNC1; 0100: pos of LATCH0; 0101: pos of LATCH1; 0110: neg of LATCH0; 0111: neg of LATCH1 1000: wdog trigger; 1001: sw set gpio_ctrl[31]; others no trigger."
+      bit_offset: 8
+      bit_size: 4
+    - name: GPI_TRIG_EN
+      description: "use gpi_trig_sel can select the trigger event to latch GPI signal(from reg or pad) set to use triggered signal; clr to use signals direclty(from reg or pad) assign pdi_gpi = gpi_trig_en ? gpi_reg : (gpi_override_en ? gpi_override :pad_di_ecat_gpi);."
+      bit_offset: 12
+      bit_size: 1
+    - name: GPI_OVERRIDE_EN
+      description: set this bit will use GPI from the software register gpi_override0/1 clr to use GPI from pad directly.
+      bit_offset: 13
+      bit_size: 1
+    - name: SW_LATCH_GPO
+      description: if gpo_trig_sel is set to 4'b1001, setting this bit will latch GPO to gpo_reg0/1.
+      bit_offset: 30
+      bit_size: 1
+    - name: SW_LATCH_GPI
+      description: if gpi_trig_sel is set to 4'b1001, setting this bit will latch GPI to gpi_reg0/1.
+      bit_offset: 31
+      bit_size: 1
 fieldset/GPI_OVERRIDE0:
   description: GPI low word Override value.
   fields:
-  - name: GPR_OVERRIDE_LOW
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: GPR_OVERRIDE_LOW
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/GPI_OVERRIDE1:
   description: GPI high word Override value.
   fields:
-  - name: GPR_OVERRIDE_HIGH
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: GPR_OVERRIDE_HIGH
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/GPI_REG0:
   description: GPI low word read value.
   fields:
-  - name: VALUE
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/GPI_REG1:
   description: GPI high word read value.
   fields:
-  - name: VALUE
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/GPO:
   description: General Purpose Outputs.
   bit_size: 64
   fields:
-  - name: GPOD
-    description: General Purpose Output Data.
-    bit_offset: 0
-    bit_size: 64
+    - name: GPOD
+      description: General Purpose Output Data.
+      bit_offset: 0
+      bit_size: 64
 fieldset/GPO_REG0:
   description: GPO low word read value.
   fields:
-  - name: VALUE
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/GPO_REG1:
   description: GPO high word read value.
   fields:
-  - name: VALUE
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: VALUE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/GPR_CFG0:
   description: General Purpose Configure 0.
   fields:
-  - name: PROM_SIZE
-    description: 'Sets EEPROM size: 0:up to 16 kbit EEPROM 1:32 kbit-4Mbit EEPROM.'
-    bit_offset: 0
-    bit_size: 1
-  - name: I2C_SCLK_EN
-    description: No description available.
-    bit_offset: 3
-    bit_size: 1
-  - name: EEPROM_EMU
-    description: 1 is EEPROM emulation mode (default).
-    bit_offset: 12
-    bit_size: 1
-  - name: CLK100_EN
-    description: No description available.
-    bit_offset: 13
-    bit_size: 1
+    - name: PROM_SIZE
+      description: "Sets EEPROM size: 0:up to 16 kbit EEPROM 1:32 kbit-4Mbit EEPROM."
+      bit_offset: 0
+      bit_size: 1
+    - name: I2C_SCLK_EN
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: EEPROM_EMU
+      description: 1 is EEPROM emulation mode (default).
+      bit_offset: 12
+      bit_size: 1
+    - name: CLK100_EN
+      description: No description available.
+      bit_offset: 13
+      bit_size: 1
 fieldset/GPR_CFG1:
   description: General Purpose Configure 1.
   fields:
-  - name: RSTO_OVRD_ENJ
-    description: No description available.
-    bit_offset: 6
-    bit_size: 1
-  - name: RSTO_OVRD
-    description: No description available.
-    bit_offset: 7
-    bit_size: 1
-  - name: LATCH0_FROM_IO
-    description: 0:from TRIGGER_MUX.
-    bit_offset: 8
-    bit_size: 1
-  - name: LATCH1_FROM_IO
-    description: 0:from NTM.
-    bit_offset: 9
-    bit_size: 1
-  - name: SYNC0_DMA_EN
-    description: No description available.
-    bit_offset: 12
-    bit_size: 1
-  - name: SYNC1_DMA_EN
-    description: No description available.
-    bit_offset: 13
-    bit_size: 1
-  - name: RSTO_IRQ_EN
-    description: No description available.
-    bit_offset: 29
-    bit_size: 1
-  - name: SYNC0_IRQ_EN
-    description: No description available.
-    bit_offset: 30
-    bit_size: 1
-  - name: SYNC1_IRQ_EN
-    description: No description available.
-    bit_offset: 31
-    bit_size: 1
+    - name: RSTO_OVRD_ENJ
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: RSTO_OVRD
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: LATCH0_FROM_IO
+      description: 0:from TRIGGER_MUX.
+      bit_offset: 8
+      bit_size: 1
+    - name: LATCH1_FROM_IO
+      description: 0:from NTM.
+      bit_offset: 9
+      bit_size: 1
+    - name: SYNC0_DMA_EN
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: SYNC1_DMA_EN
+      description: No description available.
+      bit_offset: 13
+      bit_size: 1
+    - name: RSTO_IRQ_EN
+      description: No description available.
+      bit_offset: 29
+      bit_size: 1
+    - name: SYNC0_IRQ_EN
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: SYNC1_IRQ_EN
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
 fieldset/GPR_CFG2:
   description: General Purpose Configure 2.
   fields:
-  - name: NMII_LINK0_GPR
-    description: No description available.
-    bit_offset: 20
-    bit_size: 1
-  - name: NMII_LINK0_FROM_IO
-    description: No description available.
-    bit_offset: 21
-    bit_size: 1
-  - name: NMII_LINK1_GPR
-    description: No description available.
-    bit_offset: 24
-    bit_size: 1
-  - name: NMII_LINK1_FROM_IO
-    description: No description available.
-    bit_offset: 25
-    bit_size: 1
-  - name: NMII_LINK2_GPR
-    description: No description available.
-    bit_offset: 28
-    bit_size: 1
-  - name: NMII_LINK2_FROM_IO
-    description: No description available.
-    bit_offset: 29
-    bit_size: 1
+    - name: NMII_LINK0_GPR
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: NMII_LINK0_FROM_IO
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: NMII_LINK1_GPR
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: NMII_LINK1_FROM_IO
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: NMII_LINK2_GPR
+      description: No description available.
+      bit_offset: 28
+      bit_size: 1
+    - name: NMII_LINK2_FROM_IO
+      description: No description available.
+      bit_offset: 29
+      bit_size: 1
 fieldset/GPR_STATUS:
   description: global status register.
   fields:
-  - name: LINK_ACT
-    description: No description available.
-    bit_offset: 0
-    bit_size: 3
-  - name: DEV_STATE
-    description: No description available.
-    bit_offset: 3
-    bit_size: 1
-  - name: LED_RUN
-    description: No description available.
-    bit_offset: 4
-    bit_size: 1
-  - name: LED_ERR
-    description: No description available.
-    bit_offset: 5
-    bit_size: 1
-  - name: LED_STATE_RUN
-    description: No description available.
-    bit_offset: 6
-    bit_size: 1
-  - name: SYNC_OUT0
-    description: No description available.
-    bit_offset: 8
-    bit_size: 1
-  - name: SYNC_OUT1
-    description: No description available.
-    bit_offset: 9
-    bit_size: 1
-  - name: PDI_WD_STATE
-    description: No description available.
-    bit_offset: 16
-    bit_size: 1
-  - name: PDI_WD_TRIGGER
-    description: No description available.
-    bit_offset: 17
-    bit_size: 1
-  - name: PDI_EOF
-    description: No description available.
-    bit_offset: 18
-    bit_size: 1
-  - name: PDI_SOF
-    description: No description available.
-    bit_offset: 19
-    bit_size: 1
-  - name: NLINK0_PADSEL
-    description: No description available.
-    bit_offset: 20
-    bit_size: 4
-  - name: NLINK1_PADSEL
-    description: No description available.
-    bit_offset: 24
-    bit_size: 4
-  - name: NLINK2_PADSEL
-    description: No description available.
-    bit_offset: 28
-    bit_size: 4
+    - name: LINK_ACT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 3
+    - name: DEV_STATE
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: LED_RUN
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: LED_ERR
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+    - name: LED_STATE_RUN
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: SYNC_OUT0
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+    - name: SYNC_OUT1
+      description: No description available.
+      bit_offset: 9
+      bit_size: 1
+    - name: PDI_WD_STATE
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: PDI_WD_TRIGGER
+      description: No description available.
+      bit_offset: 17
+      bit_size: 1
+    - name: PDI_EOF
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: PDI_SOF
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: NLINK0_PADSEL
+      description: No description available.
+      bit_offset: 20
+      bit_size: 4
+    - name: NLINK1_PADSEL
+      description: No description available.
+      bit_offset: 24
+      bit_size: 4
+    - name: NLINK2_PADSEL
+      description: No description available.
+      bit_offset: 28
+      bit_size: 4
 fieldset/IO_CFG:
   description: no description available.
   fields:
-  - name: FUNC_ALT
-    description: 'IO usage: 0:NMII_LINK0 1:NMII_LINK1 2:NMII_LINK2 3:LINK_ACT0 4:LINK_ACT1 5:LINK_ACT2 6:LED_RUN 7:LED_ERR 8:RESET_OUT.'
-    bit_offset: 0
-    bit_size: 4
-  - name: INVERT
-    description: 1:invert the IO.
-    bit_offset: 4
-    bit_size: 1
+    - name: FUNC_ALT
+      description: "IO usage: 0:NMII_LINK0 1:NMII_LINK1 2:NMII_LINK2 3:LINK_ACT0 4:LINK_ACT1 5:LINK_ACT2 6:LED_RUN 7:LED_ERR 8:RESET_OUT."
+      bit_offset: 0
+      bit_size: 4
+    - name: INVERT
+      description: 1:invert the IO.
+      bit_offset: 4
+      bit_size: 1
 fieldset/LATCH0_CTRL:
   description: Latch0 Control.
   bit_size: 8
   fields:
-  - name: POS_EDGE
-    description: 'Latch0 positive edge: 0:Continuous Latch active 1:Single event (only first event active).'
-    bit_offset: 0
-    bit_size: 1
-  - name: NEG_EDGE
-    description: 'Latch0 negative edge: 0:Continuous Latch active 1:Single event (only first event active).'
-    bit_offset: 1
-    bit_size: 1
+    - name: POS_EDGE
+      description: "Latch0 positive edge: 0:Continuous Latch active 1:Single event (only first event active)."
+      bit_offset: 0
+      bit_size: 1
+    - name: NEG_EDGE
+      description: "Latch0 negative edge: 0:Continuous Latch active 1:Single event (only first event active)."
+      bit_offset: 1
+      bit_size: 1
 fieldset/LATCH0_STAT:
   description: Latch0 Status.
   bit_size: 8
   fields:
-  - name: POS_EDGE
-    description: Event Latch0 positive edge. 0:Positive edge not detected or continuous mode 1:Positive edge detected in single event mode only. Flag cleared by reading out Latch0 Time Positive Edge.
-    bit_offset: 0
-    bit_size: 1
-  - name: NEG_EDGE
-    description: Event Latch0 negative edge. 0:Negative edge not detected or continuous mode 1:Negative edge detected in single event mode only. Flag cleared by reading out Latch0 Time Negative Edge.
-    bit_offset: 1
-    bit_size: 1
-  - name: PIN_STAT
-    description: Latch0 pin state.
-    bit_offset: 2
-    bit_size: 1
+    - name: POS_EDGE
+      description: Event Latch0 positive edge. 0:Positive edge not detected or continuous mode 1:Positive edge detected in single event mode only. Flag cleared by reading out Latch0 Time Positive Edge.
+      bit_offset: 0
+      bit_size: 1
+    - name: NEG_EDGE
+      description: Event Latch0 negative edge. 0:Negative edge not detected or continuous mode 1:Negative edge detected in single event mode only. Flag cleared by reading out Latch0 Time Negative Edge.
+      bit_offset: 1
+      bit_size: 1
+    - name: PIN_STAT
+      description: Latch0 pin state.
+      bit_offset: 2
+      bit_size: 1
 fieldset/LATCH0_TIME_NE:
   description: Latch0 Time Negative Edge.
   bit_size: 64
   fields:
-  - name: TIME
-    description: System time at the negative edge of the Latch0 signal.
-    bit_offset: 0
-    bit_size: 64
+    - name: TIME
+      description: System time at the negative edge of the Latch0 signal.
+      bit_offset: 0
+      bit_size: 64
 fieldset/LATCH0_TIME_PE:
   description: Latch0 Time Positive Edge.
   bit_size: 64
   fields:
-  - name: TIME
-    description: System time at the positive edge of the Latch0 signal.
-    bit_offset: 0
-    bit_size: 64
+    - name: TIME
+      description: System time at the positive edge of the Latch0 signal.
+      bit_offset: 0
+      bit_size: 64
 fieldset/LATCH1_CTRL:
   description: Latch1 Control.
   bit_size: 8
   fields:
-  - name: POS_EDGE
-    description: 'Latch1 positive edge: 0:Continuous Latch active 1:Single event (only first event active).'
-    bit_offset: 0
-    bit_size: 1
-  - name: NEG_EDGE
-    description: 'Latch1 negative edge: 0:Continuous Latch active 1:Single event (only first event active).'
-    bit_offset: 1
-    bit_size: 1
+    - name: POS_EDGE
+      description: "Latch1 positive edge: 0:Continuous Latch active 1:Single event (only first event active)."
+      bit_offset: 0
+      bit_size: 1
+    - name: NEG_EDGE
+      description: "Latch1 negative edge: 0:Continuous Latch active 1:Single event (only first event active)."
+      bit_offset: 1
+      bit_size: 1
 fieldset/LATCH1_STAT:
   description: Latch1 Status.
   bit_size: 8
   fields:
-  - name: POS_EDGE
-    description: Event Latch1 positive edge. 0:Positive edge not detected or continuous mode 1:Positive edge detected in single event mode only. Flag cleared by reading out Latch1 Time Positive Edge.
-    bit_offset: 0
-    bit_size: 1
-  - name: NEG_EDGE
-    description: Event Latch1 negative edge. 0:Negative edge not detected or continuous mode 1:Negative edge detected in single event mode only. Flag cleared by reading out Latch1 Time Negative Edge.
-    bit_offset: 1
-    bit_size: 1
-  - name: PIN_STAT
-    description: Latch1 pin state.
-    bit_offset: 2
-    bit_size: 1
+    - name: POS_EDGE
+      description: Event Latch1 positive edge. 0:Positive edge not detected or continuous mode 1:Positive edge detected in single event mode only. Flag cleared by reading out Latch1 Time Positive Edge.
+      bit_offset: 0
+      bit_size: 1
+    - name: NEG_EDGE
+      description: Event Latch1 negative edge. 0:Negative edge not detected or continuous mode 1:Negative edge detected in single event mode only. Flag cleared by reading out Latch1 Time Negative Edge.
+      bit_offset: 1
+      bit_size: 1
+    - name: PIN_STAT
+      description: Latch1 pin state.
+      bit_offset: 2
+      bit_size: 1
 fieldset/LATCH1_TIME_NE:
   description: Latch1 Time Negative Edge.
   bit_size: 64
   fields:
-  - name: TIME
-    description: System time at the negative edge of the Latch1 signal.
-    bit_offset: 0
-    bit_size: 64
+    - name: TIME
+      description: System time at the negative edge of the Latch1 signal.
+      bit_offset: 0
+      bit_size: 64
 fieldset/LATCH1_TIME_PE:
   description: Latch1 Time Positive Edge.
   bit_size: 64
   fields:
-  - name: TIME
-    description: System time at the positive edge of the Latch1 signal.
-    bit_offset: 0
-    bit_size: 64
+    - name: TIME
+      description: System time at the positive edge of the Latch1 signal.
+      bit_offset: 0
+      bit_size: 64
 fieldset/LOGIC_START_ADDR:
   description: Logical Start Address.
   fields:
-  - name: ADDR
-    description: Logical start address within the EtherCAT Address Space.
-    bit_offset: 0
-    bit_size: 32
+    - name: ADDR
+      description: Logical start address within the EtherCAT Address Space.
+      bit_offset: 0
+      bit_size: 32
 fieldset/LOGIC_START_BIT:
   description: Logical Start Bit.
   bit_size: 8
   fields:
-  - name: START
-    description: Logical starting bit that shall be mapped (bits are counted from least significant bit 0 to most significant bit 7).
-    bit_offset: 0
-    bit_size: 3
+    - name: START
+      description: Logical starting bit that shall be mapped (bits are counted from least significant bit 0 to most significant bit 7).
+      bit_offset: 0
+      bit_size: 3
 fieldset/LOGIC_STOP_BIT:
   description: Logical Stop Bit.
   bit_size: 8
   fields:
-  - name: STOP
-    description: Last logical bit that shall be mapped (bits are counted from least significant bit 0 to most significant bit 7).
-    bit_offset: 0
-    bit_size: 3
+    - name: STOP
+      description: Last logical bit that shall be mapped (bits are counted from least significant bit 0 to most significant bit 7).
+      bit_offset: 0
+      bit_size: 3
 fieldset/LOST_LINK_CNT:
   description: no description available.
   bit_size: 8
   fields:
-  - name: CNT
-    description: Lost Link counter of Port y (counting is stopped when 0xff is reached). Counts only if port is open and loop is Auto.
-    bit_offset: 0
-    bit_size: 8
+    - name: CNT
+      description: Lost Link counter of Port y (counting is stopped when 0xff is reached). Counts only if port is open and loop is Auto.
+      bit_offset: 0
+      bit_size: 8
 fieldset/MIIM_ECAT_ACC_STAT:
   description: MII Management ECAT Access State.
   bit_size: 8
   fields:
-  - name: ACC
-    description: 'Access to MII management: 0:ECAT enables PDI takeover of MII management interface 1:ECAT claims exclusive access to MII management interface.'
-    bit_offset: 0
-    bit_size: 1
+    - name: ACC
+      description: "Access to MII management: 0:ECAT enables PDI takeover of MII management interface 1:ECAT claims exclusive access to MII management interface."
+      bit_offset: 0
+      bit_size: 1
 fieldset/MIIM_PDI_ACC_STAT:
   description: MII Management PDI Access State.
   bit_size: 8
   fields:
-  - name: ACC
-    description: 'Access to MII management: 0:ECAT has access to MII management 1:PDI has access to MII management.'
-    bit_offset: 0
-    bit_size: 1
-  - name: FORCE
-    description: 'Force PDI Access State: 0:Do not change Bit 0x0517[0] 1:Reset Bit 0x0517[0] to 0.'
-    bit_offset: 1
-    bit_size: 1
+    - name: ACC
+      description: "Access to MII management: 0:ECAT has access to MII management 1:PDI has access to MII management."
+      bit_offset: 0
+      bit_size: 1
+    - name: FORCE
+      description: "Force PDI Access State: 0:Do not change Bit 0x0517[0] 1:Reset Bit 0x0517[0] to 0."
+      bit_offset: 1
+      bit_size: 1
 fieldset/MII_MNG_CS:
   description: MII Management Control/Status.
   bit_size: 16
   fields:
-  - name: WEN
-    description: 'Write enable*: 0:Write disabled 1:Write enabled This bit is always 1 if PDI has MI control. ET1100-0000/-0001 exception: Bit is not always 1 if PDI has MI control, and bit is writable by PDI.'
-    bit_offset: 0
-    bit_size: 1
-  - name: PDI
-    description: 'Management Interface can be controlled by PDI (registers 0x0516-0x0517): 0:Only ECAT control 1:PDI control possible.'
-    bit_offset: 1
-    bit_size: 1
-  - name: LINK_DC
-    description: 'MI link detection and configuration: 0:Disabled for all ports 1:Enabled for at least one MII port, refer to PHY Port Status (0x0518 ff.) for details.'
-    bit_offset: 2
-    bit_size: 1
-  - name: PHY_ADDR
-    description: 'PHY address of port 0 (this is equal to the PHY address offset, if the PHY addresses are consecutive) IP Core since V3.0.0/3.00c: Translation 0x0512[7]=0: Register 0x0510[7:3] shows PHY address of port 0 Translation 0x0512[7]=1: Register 0x0510[7:3] shows the PHY address which will be used for port 0-3 as requested by 0x0512[4:0] (valid values 0-3).'
-    bit_offset: 3
-    bit_size: 5
-  - name: CMD
-    description: 'Command register*: Write:Initiate command. Read:Currently executed command 00:No command/MI idle (clear error bits) 01:Read 10:Write Others:Reserved/invalid command (do not issue).'
-    bit_offset: 8
-    bit_size: 2
-  - name: RD_ERR
-    description: 'Read error: 0:No read error 1:Read error occurred (PHY or register not available) Cleared by writing to register 0x0511.'
-    bit_offset: 13
-    bit_size: 1
-  - name: CMD_ERR
-    description: 'Command error: 0:Last Command was successful 1:Invalid command or write command without Write Enable Cleared by executing a valid command or by writing “00” to Command register bits [9:8].'
-    bit_offset: 14
-    bit_size: 1
-  - name: BUSY
-    description: 'Busy: 0:MII Management Interface is idle 1:MII Management Interface is busy.'
-    bit_offset: 15
-    bit_size: 1
+    - name: WEN
+      description: "Write enable*: 0:Write disabled 1:Write enabled This bit is always 1 if PDI has MI control. ET1100-0000/-0001 exception: Bit is not always 1 if PDI has MI control, and bit is writable by PDI."
+      bit_offset: 0
+      bit_size: 1
+    - name: PDI
+      description: "Management Interface can be controlled by PDI (registers 0x0516-0x0517): 0:Only ECAT control 1:PDI control possible."
+      bit_offset: 1
+      bit_size: 1
+    - name: LINK_DC
+      description: "MI link detection and configuration: 0:Disabled for all ports 1:Enabled for at least one MII port, refer to PHY Port Status (0x0518 ff.) for details."
+      bit_offset: 2
+      bit_size: 1
+    - name: PHY_ADDR
+      description: "PHY address of port 0 (this is equal to the PHY address offset, if the PHY addresses are consecutive) IP Core since V3.0.0/3.00c: Translation 0x0512[7]=0: Register 0x0510[7:3] shows PHY address of port 0 Translation 0x0512[7]=1: Register 0x0510[7:3] shows the PHY address which will be used for port 0-3 as requested by 0x0512[4:0] (valid values 0-3)."
+      bit_offset: 3
+      bit_size: 5
+    - name: CMD
+      description: "Command register*: Write:Initiate command. Read:Currently executed command 00:No command/MI idle (clear error bits) 01:Read 10:Write Others:Reserved/invalid command (do not issue)."
+      bit_offset: 8
+      bit_size: 2
+    - name: RD_ERR
+      description: "Read error: 0:No read error 1:Read error occurred (PHY or register not available) Cleared by writing to register 0x0511."
+      bit_offset: 13
+      bit_size: 1
+    - name: CMD_ERR
+      description: "Command error: 0:Last Command was successful 1:Invalid command or write command without Write Enable Cleared by executing a valid command or by writing “00” to Command register bits [9:8]."
+      bit_offset: 14
+      bit_size: 1
+    - name: BUSY
+      description: "Busy: 0:MII Management Interface is idle 1:MII Management Interface is busy."
+      bit_offset: 15
+      bit_size: 1
 fieldset/NXT_SYNC1_PULSE:
   description: Next SYNC1 Pulse.
   bit_size: 64
   fields:
-  - name: TIME
-    description: System time of next SYNC1 pulse in ns.
-    bit_offset: 0
-    bit_size: 64
+    - name: TIME
+      description: System time of next SYNC1 pulse in ns.
+      bit_offset: 0
+      bit_size: 64
 fieldset/PDI_AL_EVT_MSK:
   description: PDI AL Event Mask.
   fields:
-  - name: MASK
-    description: 'AL Event masking of the AL Event Request register Events for mapping to PDI IRQ signal: 0:Corresponding AL Event Request register bit is not mapped 1:Corresponding AL Event Request register bit is mapped.'
-    bit_offset: 0
-    bit_size: 32
+    - name: MASK
+      description: "AL Event masking of the AL Event Request register Events for mapping to PDI IRQ signal: 0:Corresponding AL Event Request register bit is not mapped 1:Corresponding AL Event Request register bit is mapped."
+      bit_offset: 0
+      bit_size: 32
 fieldset/PDI_BUF_CET:
   description: PDI Buffer Change Event Time.
   fields:
-  - name: TIME
-    description: Local time when at least one SyncManager asserts a PDI buffer change event.
-    bit_offset: 0
-    bit_size: 32
+    - name: TIME
+      description: Local time when at least one SyncManager asserts a PDI buffer change event.
+      bit_offset: 0
+      bit_size: 32
 fieldset/PDI_BUF_SET:
   description: PDI Buffer Start Event Time.
   fields:
-  - name: TIME
-    description: Local time when at least one SyncManager asserts a PDI buffer start event.
-    bit_offset: 0
-    bit_size: 32
+    - name: TIME
+      description: Local time when at least one SyncManager asserts a PDI buffer start event.
+      bit_offset: 0
+      bit_size: 32
 fieldset/PDI_CFG:
   description: PDI Configuration.
   bit_size: 8
   fields:
-  - name: CLK
-    description: 'On-chip bus clock: 0:asynchronous 1-31:synchronous multiplication factor (N * 25 MHz).'
-    bit_offset: 0
-    bit_size: 5
-  - name: BUS
-    description: 'On-chip bus: 000:Intel® Avalon® 001:AXI® 010:Xilinx® PLB v4.6 100:Xilinx OPB others:reserved.'
-    bit_offset: 5
-    bit_size: 3
+    - name: CLK
+      description: "On-chip bus clock: 0:asynchronous 1-31:synchronous multiplication factor (N * 25 MHz)."
+      bit_offset: 0
+      bit_size: 5
+    - name: BUS
+      description: "On-chip bus: 000:Intel® Avalon® 001:AXI® 010:Xilinx® PLB v4.6 100:Xilinx OPB others:reserved."
+      bit_offset: 5
+      bit_size: 3
 fieldset/PDI_ERR_CNT:
   description: PDI Error Counter.
   bit_size: 8
   fields:
-  - name: CNT
-    description: PDI Error counter (counting is stopped when 0xFF is reached). Counts if a PDI access has an interface error.
-    bit_offset: 0
-    bit_size: 8
+    - name: CNT
+      description: PDI Error counter (counting is stopped when 0xFF is reached). Counts if a PDI access has an interface error.
+      bit_offset: 0
+      bit_size: 8
 fieldset/PDI_EXT_CFG:
   description: PDI Extended Configuration.
   bit_size: 16
   fields:
-  - name: RPS
-    description: 'Read prefetch size (in cycles of PDI width): 0:4 cycles 1:1 cycle (typical) 2:2 cycles 3:Reserved.'
-    bit_offset: 0
-    bit_size: 2
-  - name: OCBST
-    description: 'On-chip bus sub-type for AXI: 000:AXI3 001:AXI4 010:AXI4 LITE others:reserved.'
-    bit_offset: 8
-    bit_size: 3
+    - name: RPS
+      description: "Read prefetch size (in cycles of PDI width): 0:4 cycles 1:1 cycle (typical) 2:2 cycles 3:Reserved."
+      bit_offset: 0
+      bit_size: 2
+    - name: OCBST
+      description: "On-chip bus sub-type for AXI: 000:AXI3 001:AXI4 010:AXI4 LITE others:reserved."
+      bit_offset: 8
+      bit_size: 3
 fieldset/PDI_INFO:
   description: PDI Information.
   bit_size: 16
   fields:
-  - name: PFABW
-    description: 'DI function acknowledge by write: 0:Disabled 1:Enabled.'
-    bit_offset: 0
-    bit_size: 1
-  - name: ECLFE
-    description: 'ESC configuration area loaded from EEPROM: 0:not loaded 1:loaded.'
-    bit_offset: 1
-    bit_size: 1
-  - name: PDIA
-    description: 'PDI active: 0:PDI not active 1:PDI active.'
-    bit_offset: 2
-    bit_size: 1
-  - name: PDICN
-    description: 'PDI configuration invalid: 0:PDI configuration ok 1:PDI configuration invalid.'
-    bit_offset: 3
-    bit_size: 1
+    - name: PFABW
+      description: "DI function acknowledge by write: 0:Disabled 1:Enabled."
+      bit_offset: 0
+      bit_size: 1
+    - name: ECLFE
+      description: "ESC configuration area loaded from EEPROM: 0:not loaded 1:loaded."
+      bit_offset: 1
+      bit_size: 1
+    - name: PDIA
+      description: "PDI active: 0:PDI not active 1:PDI active."
+      bit_offset: 2
+      bit_size: 1
+    - name: PDICN
+      description: "PDI configuration invalid: 0:PDI configuration ok 1:PDI configuration invalid."
+      bit_offset: 3
+      bit_size: 1
 fieldset/PDI_SL_CFG:
   description: PDI Sync/Latch[1:0] Configuration.
   bit_size: 8
   fields:
-  - name: SYNC0_ODP
-    description: 'SYNC0 output driver/polarity: 00:Push-Pull active low 01:Open Drain (active low) 10:Push-Pull active high 11:Open Source (active high).'
-    bit_offset: 0
-    bit_size: 2
-  - name: SYNC0_CFG
-    description: 'SYNC0/LATCH0 configuration*: 0:LATCH0 Input 1:SYNC0 Output.'
-    bit_offset: 2
-    bit_size: 1
-  - name: SYNC0_MAER
-    description: 'SYNC0 mapped to AL Event Request register 0x0220[2]: 0:Disabled 1:Enabled.'
-    bit_offset: 3
-    bit_size: 1
-  - name: SYNC1_ODP
-    description: 'SYNC1 output driver/polarity: 00:Push-Pull active low 01:Open Drain (active low) 10:Push-Pull active high 11:Open Source (active high).'
-    bit_offset: 4
-    bit_size: 2
-  - name: SYNC1_CFG
-    description: 'SYNC1/LATCH1 configuration*: 0:LATCH1 input 1:SYNC1 output.'
-    bit_offset: 6
-    bit_size: 1
-  - name: SYNC1_MAER
-    description: 'SYNC1 mapped to AL Event Request register 0x0220[3]: 0:Disabled 1:Enabled.'
-    bit_offset: 7
-    bit_size: 1
+    - name: SYNC0_ODP
+      description: "SYNC0 output driver/polarity: 00:Push-Pull active low 01:Open Drain (active low) 10:Push-Pull active high 11:Open Source (active high)."
+      bit_offset: 0
+      bit_size: 2
+    - name: SYNC0_CFG
+      description: "SYNC0/LATCH0 configuration*: 0:LATCH0 Input 1:SYNC0 Output."
+      bit_offset: 2
+      bit_size: 1
+    - name: SYNC0_MAER
+      description: "SYNC0 mapped to AL Event Request register 0x0220[2]: 0:Disabled 1:Enabled."
+      bit_offset: 3
+      bit_size: 1
+    - name: SYNC1_ODP
+      description: "SYNC1 output driver/polarity: 00:Push-Pull active low 01:Open Drain (active low) 10:Push-Pull active high 11:Open Source (active high)."
+      bit_offset: 4
+      bit_size: 2
+    - name: SYNC1_CFG
+      description: "SYNC1/LATCH1 configuration*: 0:LATCH1 input 1:SYNC1 output."
+      bit_offset: 6
+      bit_size: 1
+    - name: SYNC1_MAER
+      description: "SYNC1 mapped to AL Event Request register 0x0220[3]: 0:Disabled 1:Enabled."
+      bit_offset: 7
+      bit_size: 1
 fieldset/PDRAM:
   description: Process Data Ram.
   fields:
-  - name: DATA
-    description: Input Data.
-    bit_offset: 0
-    bit_size: 32
+    - name: DATA
+      description: Input Data.
+      bit_offset: 0
+      bit_size: 32
 fieldset/PDRAM_ALS:
   description: Process Data Ram Alias.
   fields:
-  - name: DATA
-    description: No description available.
-    bit_offset: 0
-    bit_size: 32
+    - name: DATA
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
 fieldset/PHYSICAL_RW_OFFSET:
   description: Physical Read/Write Offset.
   bit_size: 16
   fields:
-  - name: OFFSET
-    description: This register is used for ReadWrite commands in Device Addressing mode (FPRW, APRW, BRW). The internal read address is directly taken from the offset address field of the EtherCAT datagram header, while the internal write address is calculated by adding the Physical Read/Write Offset value to the offset address field. Internal read address = ADR, internal write address = ADR + R/W-Offset.
-    bit_offset: 0
-    bit_size: 16
+    - name: OFFSET
+      description: This register is used for ReadWrite commands in Device Addressing mode (FPRW, APRW, BRW). The internal read address is directly taken from the offset address field of the EtherCAT datagram header, while the internal write address is calculated by adding the Physical Read/Write Offset value to the offset address field. Internal read address = ADR, internal write address = ADR + R/W-Offset.
+      bit_offset: 0
+      bit_size: 16
 fieldset/PHYSICAL_START_BIT:
   description: Physical Start Bit.
   bit_size: 8
   fields:
-  - name: START
-    description: Physical starting bit as target of logical start bit mapping (bits are counted from least significant bit 0 to most significant bit 7).
-    bit_offset: 0
-    bit_size: 3
+    - name: START
+      description: Physical starting bit as target of logical start bit mapping (bits are counted from least significant bit 0 to most significant bit 7).
+      bit_offset: 0
+      bit_size: 3
 fieldset/PHY_ADDR:
   description: PHY Address.
   bit_size: 8
   fields:
-  - name: ADDR
-    description: 'Target PHY Address Translation 0x0512[7]=0: 0-3:Target PHY Addresses 0-3 are used to access the PHYs at port 0-3, when the PHY addresses are properly configured 4-31:The configured PHY address of port 0 (PHY address offset) is added to the Target PHY Address values 4-31 when accessing a PHY Translation 0x0512[7]=1: 0-31:Target PHY Addresses is used when accessing a PHY without translation.'
-    bit_offset: 0
-    bit_size: 5
-  - name: SHOW
-    description: 'Target PHY Address translation: 0:Enabled 1:Disabled Refer to 0x0512[4:0] and 0x0510[7:3] for details.'
-    bit_offset: 7
-    bit_size: 1
+    - name: ADDR
+      description: "Target PHY Address Translation 0x0512[7]=0: 0-3:Target PHY Addresses 0-3 are used to access the PHYs at port 0-3, when the PHY addresses are properly configured 4-31:The configured PHY address of port 0 (PHY address offset) is added to the Target PHY Address values 4-31 when accessing a PHY Translation 0x0512[7]=1: 0-31:Target PHY Addresses is used when accessing a PHY without translation."
+      bit_offset: 0
+      bit_size: 5
+    - name: SHOW
+      description: "Target PHY Address translation: 0:Enabled 1:Disabled Refer to 0x0512[4:0] and 0x0510[7:3] for details."
+      bit_offset: 7
+      bit_size: 1
 fieldset/PHY_CFG0:
   description: PHY Configure 0.
   fields:
-  - name: PORT0_RMII_EN
-    description: No description available.
-    bit_offset: 7
-    bit_size: 1
-  - name: PORT1_RMII_EN
-    description: No description available.
-    bit_offset: 15
-    bit_size: 1
-  - name: PORT2_RMII_EN
-    description: No description available.
-    bit_offset: 23
-    bit_size: 1
-  - name: MAC_SPEED
-    description: 1:100M.
-    bit_offset: 30
-    bit_size: 1
+    - name: PORT0_RMII_EN
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: PORT1_RMII_EN
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
+    - name: PORT2_RMII_EN
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: MAC_SPEED
+      description: 1:100M.
+      bit_offset: 30
+      bit_size: 1
 fieldset/PHY_CFG1:
   description: PHY Configure 1.
   fields:
-  - name: RMII_P0_TXCK_REFCLK_OE
-    description: No description available.
-    bit_offset: 0
-    bit_size: 1
-  - name: RMII_P1_TXCK_REFCLK_OE
-    description: No description available.
-    bit_offset: 1
-    bit_size: 1
-  - name: RMII_P2_TXCK_REFCLK_OE
-    description: No description available.
-    bit_offset: 2
-    bit_size: 1
-  - name: REFCK_25M_OE
-    description: No description available.
-    bit_offset: 3
-    bit_size: 1
-  - name: RMII_P0_RXCK_REFCLK_OE
-    description: No description available.
-    bit_offset: 4
-    bit_size: 1
-  - name: RMII_P1_RXCK_REFCLK_OE
-    description: No description available.
-    bit_offset: 5
-    bit_size: 1
-  - name: RMII_P2_RXCK_REFCLK_OE
-    description: No description available.
-    bit_offset: 6
-    bit_size: 1
-  - name: REFCK_25M_INV
-    description: No description available.
-    bit_offset: 7
-    bit_size: 1
-  - name: RMII_REFCLK_SEL
-    description: 0:use RXCK as 50M refclk. 1:use TXCK as 50M refclk.
-    bit_offset: 8
-    bit_size: 3
+    - name: RMII_P0_TXCK_REFCLK_OE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: RMII_P1_TXCK_REFCLK_OE
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: RMII_P2_TXCK_REFCLK_OE
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: REFCK_25M_OE
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: RMII_P0_RXCK_REFCLK_OE
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: RMII_P1_RXCK_REFCLK_OE
+      description: No description available.
+      bit_offset: 5
+      bit_size: 1
+    - name: RMII_P2_RXCK_REFCLK_OE
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: REFCK_25M_INV
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: RMII_REFCLK_SEL
+      description: 0:use RXCK as 50M refclk. 1:use TXCK as 50M refclk.
+      bit_offset: 8
+      bit_size: 3
 fieldset/PHY_DATA:
   description: PHY Data.
   bit_size: 16
   fields:
-  - name: DATA
-    description: PHY Read/Write Data.
-    bit_offset: 0
-    bit_size: 16
+    - name: DATA
+      description: PHY Read/Write Data.
+      bit_offset: 0
+      bit_size: 16
 fieldset/PHY_REG_ADDR:
   description: PHY Register Address.
   bit_size: 8
   fields:
-  - name: ADDR
-    description: Address of PHY Register that shall be read/written.
-    bit_offset: 0
-    bit_size: 5
+    - name: ADDR
+      description: Address of PHY Register that shall be read/written.
+      bit_offset: 0
+      bit_size: 5
 fieldset/PHY_STAT:
   description: no description available.
   bit_size: 8
   fields:
-  - name: PLS
-    description: 'Physical link status (PHY status register 1.2): 0:No physical link 1:Physical link detected.'
-    bit_offset: 0
-    bit_size: 1
-  - name: LS
-    description: 'Link status (100 Mbit/s, Full Duplex, Auto negotiation): 0:No link 1:Link detected.'
-    bit_offset: 1
-    bit_size: 1
-  - name: LSE
-    description: 'Link status error: 0:No error 1:Link error, link inhibited.'
-    bit_offset: 2
-    bit_size: 1
-  - name: RE
-    description: 'Read error: 0:No read error occurred 1:A read error has occurred Cleared by writing any value to at least one of the PHY Port y Status registers.'
-    bit_offset: 3
-    bit_size: 1
-  - name: LPE
-    description: 'Link partner error: 0:No error detected 1:Link partner error.'
-    bit_offset: 4
-    bit_size: 1
-  - name: PCU
-    description: 'PHY configuration updated: 0:No update 1:PHY configuration was updated Cleared by writing any value to at least one of the PHY Port y Status registers.'
-    bit_offset: 5
-    bit_size: 1
+    - name: PLS
+      description: "Physical link status (PHY status register 1.2): 0:No physical link 1:Physical link detected."
+      bit_offset: 0
+      bit_size: 1
+    - name: LS
+      description: "Link status (100 Mbit/s, Full Duplex, Auto negotiation): 0:No link 1:Link detected."
+      bit_offset: 1
+      bit_size: 1
+    - name: LSE
+      description: "Link status error: 0:No error 1:Link error, link inhibited."
+      bit_offset: 2
+      bit_size: 1
+    - name: RE
+      description: "Read error: 0:No read error occurred 1:A read error has occurred Cleared by writing any value to at least one of the PHY Port y Status registers."
+      bit_offset: 3
+      bit_size: 1
+    - name: LPE
+      description: "Link partner error: 0:No error detected 1:Link partner error."
+      bit_offset: 4
+      bit_size: 1
+    - name: PCU
+      description: "PHY configuration updated: 0:No update 1:PHY configuration was updated Cleared by writing any value to at least one of the PHY Port y Status registers."
+      bit_offset: 5
+      bit_size: 1
 fieldset/PID:
   description: Product ID.
   bit_size: 64
   fields:
-  - name: PID
-    description: Product ID.
-    bit_offset: 0
-    bit_size: 64
+    - name: PID
+      description: Product ID.
+      bit_offset: 0
+      bit_size: 64
 fieldset/PORT_DESC:
   description: Port Descriptor.
   bit_size: 8
   fields:
-  - name: PORT0
-    description: 'Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII.'
-    bit_offset: 0
-    bit_size: 2
-  - name: PORT1
-    description: 'Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII.'
-    bit_offset: 2
-    bit_size: 2
-  - name: PORT2
-    description: 'Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII.'
-    bit_offset: 4
-    bit_size: 2
-  - name: PORT3
-    description: 'Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII.'
-    bit_offset: 6
-    bit_size: 2
+    - name: PORT0
+      description: "Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII."
+      bit_offset: 0
+      bit_size: 2
+    - name: PORT1
+      description: "Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII."
+      bit_offset: 2
+      bit_size: 2
+    - name: PORT2
+      description: "Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII."
+      bit_offset: 4
+      bit_size: 2
+    - name: PORT3
+      description: "Port configuration: 00:Not implemented 01:Not configured (SII EEPROM) 10:EBUS 11:MII/RMII/RGMII."
+      bit_offset: 6
+      bit_size: 2
 fieldset/PULSE_LEN:
   description: Pulse Length of SyncSignals.
   bit_size: 16
   fields:
-  - name: LEN
-    description: Pulse length of SyncSignals (in Units of 10ns) 0:Acknowledge mode:SyncSignal will be cleared by reading SYNC[1:0] Status register.
-    bit_offset: 0
-    bit_size: 16
+    - name: LEN
+      description: Pulse length of SyncSignals (in Units of 10ns) 0:Acknowledge mode:SyncSignal will be cleared by reading SYNC[1:0] Status register.
+      bit_offset: 0
+      bit_size: 16
 fieldset/RAM_SIZE:
   description: RAM Size.
   bit_size: 8
   fields:
-  - name: SIZE
-    description: Process Data RAM size supported in KByte.
-    bit_offset: 0
-    bit_size: 8
+    - name: SIZE
+      description: Process Data RAM size supported in KByte.
+      bit_offset: 0
+      bit_size: 8
 fieldset/RCVT_ECAT_PU:
   description: Receive Time ECAT Processing Unit.
   bit_size: 64
   fields:
-  - name: LT
-    description: Local time at the beginning of a frame (start first bit of preamble) received at the ECAT Processing Unit containing a write access to register 0x0900 NOTE:E.g., if port 0 is open, this register reflects the Receive Time Port 0 as a 64 Bit value. Any valid EtherCAT write access to register 0x0900 triggers latching, not only BWR/FPWR commands as with register 0x0900.
-    bit_offset: 0
-    bit_size: 64
+    - name: LT
+      description: Local time at the beginning of a frame (start first bit of preamble) received at the ECAT Processing Unit containing a write access to register 0x0900 NOTE:E.g., if port 0 is open, this register reflects the Receive Time Port 0 as a 64 Bit value. Any valid EtherCAT write access to register 0x0900 triggers latching, not only BWR/FPWR commands as with register 0x0900.
+      bit_offset: 0
+      bit_size: 64
 fieldset/RCV_TIME:
   description: no description available.
   fields:
-  - name: REQ
-    description: 'Write: A write access to register 0x0900 with BWR or FPWR latches the local time at the beginning of the receive frame (start first bit of preamble) at each port. Write (ESC20, ET1200 exception): A write access latches the local time at the beginning of the receive frame at port 0. It enables the time stamping at the other ports. Read: Local time at the beginning of the last receive frame containing a write access to this register. NOTE:FPWR requires an address match for accessing this register like any FPWR command. All write commands with address match will increment the working counter (e.g., APWR), but they will not trigger receive time latching.'
-    bit_offset: 0
-    bit_size: 8
-  - name: LT
-    description: Local time at the beginning of the last receive frame containing a write access to register 0x0900.
-    bit_offset: 8
-    bit_size: 24
+    - name: REQ
+      description: "Write: A write access to register 0x0900 with BWR or FPWR latches the local time at the beginning of the receive frame (start first bit of preamble) at each port. Write (ESC20, ET1200 exception): A write access latches the local time at the beginning of the receive frame at port 0. It enables the time stamping at the other ports. Read: Local time at the beginning of the last receive frame containing a write access to this register. NOTE:FPWR requires an address match for accessing this register like any FPWR command. All write commands with address match will increment the working counter (e.g., APWR), but they will not trigger receive time latching."
+      bit_offset: 0
+      bit_size: 8
+    - name: LT
+      description: Local time at the beginning of the last receive frame containing a write access to register 0x0900.
+      bit_offset: 8
+      bit_size: 24
 fieldset/RCV_TIME_LM:
   description: Receive Time Latch Mode.
   bit_size: 8
   fields:
-  - name: LATCH_MODE
-    description: 'Receive Time Latch Mode: 0:Forwarding mode (used if frames are entering the ESC at port 0 first): Receive time stamps of ports 1-3 are enabled after the write access to 0x0900, so the following frame at ports 1-3 will be time stamped (this is typically the write frame to 0x0900 coming back from the network behind the ESC). 1:Reverse mode (used if frames are entering ESC at port 1-3 first): Receive time stamps of ports 1-3 are immediately taken over from the internal hidden time stamp registers, so the previous frame entering the ESC at ports 1-3 will be time stamped when the write frame to 0x0900 enters port 0 (the previous frame at ports 1-3 is typically the write frame to 0x0900 coming from the master, which will enable time stamp.'
-    bit_offset: 0
-    bit_size: 1
+    - name: LATCH_MODE
+      description: "Receive Time Latch Mode: 0:Forwarding mode (used if frames are entering the ESC at port 0 first): Receive time stamps of ports 1-3 are enabled after the write access to 0x0900, so the following frame at ports 1-3 will be time stamped (this is typically the write frame to 0x0900 coming back from the network behind the ESC). 1:Reverse mode (used if frames are entering ESC at port 1-3 first): Receive time stamps of ports 1-3 are immediately taken over from the internal hidden time stamp registers, so the previous frame entering the ESC at ports 1-3 will be time stamped when the write frame to 0x0900 enters port 0 (the previous frame at ports 1-3 is typically the write frame to 0x0900 coming from the master, which will enable time stamp."
+      bit_offset: 0
+      bit_size: 1
 fieldset/REG_WEN:
   description: Register Write Enable.
   bit_size: 8
   fields:
-  - name: EN
-    description: If register write protection is enabled, this register has to be written in the same Ethernet frame (value does not matter) before other writes to this station are allowed. This bit is self-clearing at the beginning of the next frame (SOF), or if Register Write Protection is disabled.
-    bit_offset: 0
-    bit_size: 1
+    - name: EN
+      description: If register write protection is enabled, this register has to be written in the same Ethernet frame (value does not matter) before other writes to this station are allowed. This bit is self-clearing at the beginning of the next frame (SOF), or if Register Write Protection is disabled.
+      bit_offset: 0
+      bit_size: 1
 fieldset/REG_WP:
   description: Register Write Protection.
   bit_size: 8
   fields:
-  - name: WP
-    description: 'Register write protection: 0:Protection disabled 1:Protection enabled Registers 0x0000:0x0F7F are write-protected, except for 0x0020 and 0x0030.'
-    bit_offset: 0
-    bit_size: 1
+    - name: WP
+      description: "Register write protection: 0:Protection disabled 1:Protection enabled Registers 0x0000:0x0F7F are write-protected, except for 0x0020 and 0x0030."
+      bit_offset: 0
+      bit_size: 1
 fieldset/REVISION:
   description: Revision of EtherCAT controller.
   bit_size: 8
   fields:
-  - name: X
-    description: major version X.
-    bit_offset: 0
-    bit_size: 8
+    - name: X
+      description: major version X.
+      bit_offset: 0
+      bit_size: 8
 fieldset/RUN_LED_OVRD:
   description: RUN LED Override.
   bit_size: 8
   fields:
-  - name: LED_CODE
-    description: 'LED code: 0x0:Off 0x1:Flash 1x 0x2-0xC:Flash 2x – 12x 0xD:Blinking 0xE:Flickering 0xF:On.'
-    bit_offset: 0
-    bit_size: 4
-  - name: EN_OVRD
-    description: 'Enable Override: 0:Override disabled 1:Override enabled.'
-    bit_offset: 4
-    bit_size: 1
+    - name: LED_CODE
+      description: "LED code: 0x0:Off 0x1:Flash 1x 0x2-0xC:Flash 2x – 12x 0xD:Blinking 0xE:Flickering 0xF:On."
+      bit_offset: 0
+      bit_size: 4
+    - name: EN_OVRD
+      description: "Enable Override: 0:Override disabled 1:Override enabled."
+      bit_offset: 4
+      bit_size: 1
 fieldset/RX_ERR_CNT:
   description: no description available.
   bit_size: 16
   fields:
-  - name: IVD_FRM
-    description: Invalid frame counter of Port y (counting is stopped when 0xFF is reached).
-    bit_offset: 0
-    bit_size: 8
-  - name: RX_ERR
-    description: RX Error counter of Port y (counting is stopped when 0xFF is reached).
-    bit_offset: 8
-    bit_size: 8
+    - name: IVD_FRM
+      description: Invalid frame counter of Port y (counting is stopped when 0xFF is reached).
+      bit_offset: 0
+      bit_size: 8
+    - name: RX_ERR
+      description: RX Error counter of Port y (counting is stopped when 0xFF is reached).
+      bit_offset: 8
+      bit_size: 8
 fieldset/SPD_CNT_DIFF:
   description: Speed Counter Diff.
   bit_size: 16
   fields:
-  - name: DIFF
-    description: Representation of the deviation between local clock period and Reference Clock's clock period (representation:two's complement) Range:±(Speed Counter Start – 0x7F).
-    bit_offset: 0
-    bit_size: 16
+    - name: DIFF
+      description: Representation of the deviation between local clock period and Reference Clock's clock period (representation:two's complement) Range:±(Speed Counter Start – 0x7F).
+      bit_offset: 0
+      bit_size: 16
 fieldset/SPD_CNT_FD:
   description: Speed Counter Filter Depth.
   bit_size: 8
   fields:
-  - name: DEPTH
-    description: 'Filter depth for averaging the clock period deviation IP Core since V2.2.0/V2.02a: A write access resets the internal speed counter filter.'
-    bit_offset: 0
-    bit_size: 4
+    - name: DEPTH
+      description: "Filter depth for averaging the clock period deviation IP Core since V2.2.0/V2.02a: A write access resets the internal speed counter filter."
+      bit_offset: 0
+      bit_size: 4
 fieldset/SPD_CNT_START:
   description: Speed Counter Start.
   bit_size: 16
   fields:
-  - name: BW
-    description: Bandwidth for adjustment of local copy of System Time (larger values → smaller bandwidth and smoother adjustment) A write access resets System Time Difference (0x092C:0x092F) and Speed Counter Diff (0x0932:0x0933). Valid values:0x0080 to 0x3FFF.
-    bit_offset: 0
-    bit_size: 15
+    - name: BW
+      description: Bandwidth for adjustment of local copy of System Time (larger values → smaller bandwidth and smoother adjustment) A write access resets System Time Difference (0x092C:0x092F) and Speed Counter Diff (0x0932:0x0933). Valid values:0x0080 to 0x3FFF.
+      bit_offset: 0
+      bit_size: 15
 fieldset/START_TIME_CO:
   description: Start Time Cyclic Operation.
   bit_size: 64
   fields:
-  - name: ST
-    description: Write:Start time (System time) of cyclic operation in ns Read:System time of next SYNC0 pulse in ns.
-    bit_offset: 0
-    bit_size: 64
+    - name: ST
+      description: Write:Start time (System time) of cyclic operation in ns Read:System time of next SYNC0 pulse in ns.
+      bit_offset: 0
+      bit_size: 64
 fieldset/STATION_ADDR:
   description: Configured Station Address.
   bit_size: 16
   fields:
-  - name: ADDR
-    description: Address used for node addressing (FPRD/FPWR/FPRW/FRMW commands).
-    bit_offset: 0
-    bit_size: 16
+    - name: ADDR
+      description: Address used for node addressing (FPRD/FPWR/FPRW/FRMW commands).
+      bit_offset: 0
+      bit_size: 16
 fieldset/STATION_ALS:
   description: Configured Station Alias.
   bit_size: 16
   fields:
-  - name: ADDR
-    description: Alias Address used for node addressing (FPRD/FPWR/FPRW/FRMW commands). The use of this alias is activated by Register DL Control Bit 0x0100[24]. NOTE:EEPROM value is only transferred into this register at first EEPROM load after power-on or reset. ESC20 exception:EEPROM value is transferred into this register after each EEPROM reload command.
-    bit_offset: 0
-    bit_size: 16
+    - name: ADDR
+      description: Alias Address used for node addressing (FPRD/FPWR/FPRW/FRMW commands). The use of this alias is activated by Register DL Control Bit 0x0100[24]. NOTE:EEPROM value is only transferred into this register at first EEPROM load after power-on or reset. ESC20 exception:EEPROM value is transferred into this register after each EEPROM reload command.
+      bit_offset: 0
+      bit_size: 16
 fieldset/STATUS:
   description: Status.
   bit_size: 8
   fields:
-  - name: INT_WR
-    description: 'Interrupt Write: 1:Interrupt after buffer was completely and successfully written 0:Interrupt cleared after first byte of buffer was read NOTE:This interrupt is signalled to the reading side if enabled in the SM Control register.'
-    bit_offset: 0
-    bit_size: 1
-  - name: INT_RD
-    description: 'Interrupt Read: 1:Interrupt after buffer was completely and successfully read 0:Interrupt cleared after first byte of buffer was written NOTE:This interrupt is signalled to the writing side if enabled in the SM Control register.'
-    bit_offset: 1
-    bit_size: 1
-  - name: MBX_MODE
-    description: 'Mailbox mode:mailbox status: 0:Mailbox empty 1:Mailbox full Buffered mode:reserved.'
-    bit_offset: 3
-    bit_size: 1
-  - name: BUF_MODE
-    description: 'Buffered mode:buffer status (last written buffer): 00:1 st buffer 01:2 nd buffer 10:3 rd buffer 11:(no buffer written) Mailbox mode:reserved.'
-    bit_offset: 4
-    bit_size: 2
-  - name: RB_INUSE
-    description: Read buffer in use (opened).
-    bit_offset: 6
-    bit_size: 1
-  - name: WB_INUSE
-    description: Write buffer in use (opened).
-    bit_offset: 7
-    bit_size: 1
+    - name: INT_WR
+      description: "Interrupt Write: 1:Interrupt after buffer was completely and successfully written 0:Interrupt cleared after first byte of buffer was read NOTE:This interrupt is signalled to the reading side if enabled in the SM Control register."
+      bit_offset: 0
+      bit_size: 1
+    - name: INT_RD
+      description: "Interrupt Read: 1:Interrupt after buffer was completely and successfully read 0:Interrupt cleared after first byte of buffer was written NOTE:This interrupt is signalled to the writing side if enabled in the SM Control register."
+      bit_offset: 1
+      bit_size: 1
+    - name: MBX_MODE
+      description: "Mailbox mode:mailbox status: 0:Mailbox empty 1:Mailbox full Buffered mode:reserved."
+      bit_offset: 3
+      bit_size: 1
+    - name: BUF_MODE
+      description: "Buffered mode:buffer status (last written buffer): 00:1 st buffer 01:2 nd buffer 10:3 rd buffer 11:(no buffer written) Mailbox mode:reserved."
+      bit_offset: 4
+      bit_size: 2
+    - name: RB_INUSE
+      description: Read buffer in use (opened).
+      bit_offset: 6
+      bit_size: 1
+    - name: WB_INUSE
+      description: Write buffer in use (opened).
+      bit_offset: 7
+      bit_size: 1
 fieldset/SYNC0_CYC_TIME:
   description: SYNC0 Cycle Time.
   fields:
-  - name: CYC
-    description: Time between two consecutive SYNC0 pulses in ns. 0:Single shot mode, generate only one SYNC0 pulse.
-    bit_offset: 0
-    bit_size: 32
+    - name: CYC
+      description: Time between two consecutive SYNC0 pulses in ns. 0:Single shot mode, generate only one SYNC0 pulse.
+      bit_offset: 0
+      bit_size: 32
 fieldset/SYNC0_STAT:
   description: SYNC0 Status.
   bit_size: 8
   fields:
-  - name: ACK
-    description: SYNC0 state for Acknowledge mode. SYNC0 in Acknowledge mode is cleared by reading this register from PDI, use only in Acknowledge mode.
-    bit_offset: 0
-    bit_size: 1
+    - name: ACK
+      description: SYNC0 state for Acknowledge mode. SYNC0 in Acknowledge mode is cleared by reading this register from PDI, use only in Acknowledge mode.
+      bit_offset: 0
+      bit_size: 1
 fieldset/SYNC1_CYC_TIME:
   description: SYNC1 Cycle Time.
   fields:
-  - name: CYC
-    description: Time between SYNC0 pulse and SYNC1 pulse in ns.
-    bit_offset: 0
-    bit_size: 32
+    - name: CYC
+      description: Time between SYNC0 pulse and SYNC1 pulse in ns.
+      bit_offset: 0
+      bit_size: 32
 fieldset/SYNC1_STAT:
   description: SYNC1 Status.
   bit_size: 8
   fields:
-  - name: ACK
-    description: SYNC1 state for Acknowledge mode. SYNC1 in Acknowledge mode is cleared by reading this register from PDI, use only in Acknowledge mode.
-    bit_offset: 0
-    bit_size: 1
+    - name: ACK
+      description: SYNC1 state for Acknowledge mode. SYNC1 in Acknowledge mode is cleared by reading this register from PDI, use only in Acknowledge mode.
+      bit_offset: 0
+      bit_size: 1
 fieldset/SYNCM_ACTIVATE:
   description: Activate.
   bit_size: 8
   fields:
-  - name: EN
-    description: 'SyncManager Enable/Disable: 0:Disable:Access to Memory without SyncManager control 1:Enable:SyncManager is active and controls Memory area set in configuration.'
-    bit_offset: 0
-    bit_size: 1
-  - name: REPEAT
-    description: 'Repeat Request: A toggle of Repeat Request means that a mailbox retry is needed (primarily used in conjunction with ECAT Read Mailbox).'
-    bit_offset: 1
-    bit_size: 1
-  - name: LATCH_ECAT
-    description: 'Latch Event ECAT: 0:No 1:Generate Latch event when EtherCAT master issues a buffer exchange.'
-    bit_offset: 6
-    bit_size: 1
-  - name: LATCH_PDI
-    description: 'Latch Event PDI: 0:No 1:Generate Latch events when PDI issues a buffer exchange or when PDI accesses buffer start address.'
-    bit_offset: 7
-    bit_size: 1
+    - name: EN
+      description: "SyncManager Enable/Disable: 0:Disable:Access to Memory without SyncManager control 1:Enable:SyncManager is active and controls Memory area set in configuration."
+      bit_offset: 0
+      bit_size: 1
+    - name: REPEAT
+      description: "Repeat Request: A toggle of Repeat Request means that a mailbox retry is needed (primarily used in conjunction with ECAT Read Mailbox)."
+      bit_offset: 1
+      bit_size: 1
+    - name: LATCH_ECAT
+      description: "Latch Event ECAT: 0:No 1:Generate Latch event when EtherCAT master issues a buffer exchange."
+      bit_offset: 6
+      bit_size: 1
+    - name: LATCH_PDI
+      description: "Latch Event PDI: 0:No 1:Generate Latch events when PDI issues a buffer exchange or when PDI accesses buffer start address."
+      bit_offset: 7
+      bit_size: 1
 fieldset/SYNCM_LENGTH:
   description: Length.
   bit_size: 16
   fields:
-  - name: LEN
-    description: Number of bytes assigned to SyncManager (shall be greater than 1, otherwise SyncManager is not activated. If set to 1, only Watchdog Trigger is generated if configured).
-    bit_offset: 0
-    bit_size: 16
+    - name: LEN
+      description: Number of bytes assigned to SyncManager (shall be greater than 1, otherwise SyncManager is not activated. If set to 1, only Watchdog Trigger is generated if configured).
+      bit_offset: 0
+      bit_size: 16
 fieldset/SYNCM_NUM:
   description: SyncManagers supported.
   bit_size: 8
   fields:
-  - name: NUM
-    description: Number of supported SyncManager channels (or entities).
-    bit_offset: 0
-    bit_size: 8
+    - name: NUM
+      description: Number of supported SyncManager channels (or entities).
+      bit_offset: 0
+      bit_size: 8
 fieldset/SYNCM_PDI_CTRL:
   description: PDI Control.
   bit_size: 8
   fields:
-  - name: DEACT
-    description: 'Deactivate SyncManager: Read: 0:Normal operation, SyncManager activated. 1:SyncManager deactivated and reset. SyncManager locks access to Memory area. Write: 0:Activate SyncManager 1:Request SyncManager deactivation NOTE:Writing 1 is delayed until the end of the frame, which is currently processed.'
-    bit_offset: 0
-    bit_size: 1
-  - name: REPEAT_ACK
-    description: 'Repeat Ack: If this is set to the same value as that set by Repeat Request, the PDI acknowledges the execution of a previous set Repeat request.'
-    bit_offset: 1
-    bit_size: 1
+    - name: DEACT
+      description: "Deactivate SyncManager: Read: 0:Normal operation, SyncManager activated. 1:SyncManager deactivated and reset. SyncManager locks access to Memory area. Write: 0:Activate SyncManager 1:Request SyncManager deactivation NOTE:Writing 1 is delayed until the end of the frame, which is currently processed."
+      bit_offset: 0
+      bit_size: 1
+    - name: REPEAT_ACK
+      description: "Repeat Ack: If this is set to the same value as that set by Repeat Request, the PDI acknowledges the execution of a previous set Repeat request."
+      bit_offset: 1
+      bit_size: 1
 fieldset/SYNCM_PHYSICAL_START_ADDR:
   description: Physical Start Address.
   bit_size: 16
   fields:
-  - name: ADDR
-    description: First byte that will be handled by SyncManager.
-    bit_offset: 0
-    bit_size: 16
+    - name: ADDR
+      description: First byte that will be handled by SyncManager.
+      bit_offset: 0
+      bit_size: 16
 fieldset/SYNCO_ACT:
   description: SYNC Out Unit Activation.
   bit_size: 8
   fields:
-  - name: SOUA
-    description: 'Sync Out Unit activation: 0:Deactivated 1:Activated.'
-    bit_offset: 0
-    bit_size: 1
-  - name: SYNC0_GEN
-    description: 'SYNC0 generation: 0:Deactivated 1:SYNC0 pulse is generated.'
-    bit_offset: 1
-    bit_size: 1
-  - name: SYNC1_GEN
-    description: 'SYNC1 generation: 0:Deactivated 1:SYNC1 pulse is generated.'
-    bit_offset: 2
-    bit_size: 1
-  - name: AC
-    description: 'Auto-activation by writing Start Time Cyclic Operation (0x0990:0x0997): 0:Disabled 1:Auto-activation enabled. 0x0981[0] is set automatically after Start Time is written.'
-    bit_offset: 3
-    bit_size: 1
-  - name: EXT
-    description: 'Extension of Start Time Cyclic Operation (0x0990:0x0993): 0:No extension 1:Extend 32 bit written Start Time to 64 bit.'
-    bit_offset: 4
-    bit_size: 1
-  - name: STPC
-    description: 'Start Time plausibility check: 0:Disabled. SyncSignal generation if Start Time is reached. 1:Immediate SyncSignal generation if Start Time is outside near future (see 0x0981[6]).'
-    bit_offset: 5
-    bit_size: 1
-  - name: NFC
-    description: 'Near future configuration (approx.): 0:½ DC width future (231 ns or 263 ns) 1:~2.1 sec. future (231 ns).'
-    bit_offset: 6
-    bit_size: 1
-  - name: SSDP
-    description: 'SyncSignal debug pulse (Vasily bit): 0:Deactivated 1:Immediately generate one ping only on SYNC0-1 according to 0x0981[2:1 for debugging This bit is self-clearing, always read 0. All pulses are generated at the same time, the cycle time is ignored. The configured pulse length is used.'
-    bit_offset: 7
-    bit_size: 1
+    - name: SOUA
+      description: "Sync Out Unit activation: 0:Deactivated 1:Activated."
+      bit_offset: 0
+      bit_size: 1
+    - name: SYNC0_GEN
+      description: "SYNC0 generation: 0:Deactivated 1:SYNC0 pulse is generated."
+      bit_offset: 1
+      bit_size: 1
+    - name: SYNC1_GEN
+      description: "SYNC1 generation: 0:Deactivated 1:SYNC1 pulse is generated."
+      bit_offset: 2
+      bit_size: 1
+    - name: AC
+      description: "Auto-activation by writing Start Time Cyclic Operation (0x0990:0x0997): 0:Disabled 1:Auto-activation enabled. 0x0981[0] is set automatically after Start Time is written."
+      bit_offset: 3
+      bit_size: 1
+    - name: EXT
+      description: "Extension of Start Time Cyclic Operation (0x0990:0x0993): 0:No extension 1:Extend 32 bit written Start Time to 64 bit."
+      bit_offset: 4
+      bit_size: 1
+    - name: STPC
+      description: "Start Time plausibility check: 0:Disabled. SyncSignal generation if Start Time is reached. 1:Immediate SyncSignal generation if Start Time is outside near future (see 0x0981[6])."
+      bit_offset: 5
+      bit_size: 1
+    - name: NFC
+      description: "Near future configuration (approx.): 0:½ DC width future (231 ns or 263 ns) 1:~2.1 sec. future (231 ns)."
+      bit_offset: 6
+      bit_size: 1
+    - name: SSDP
+      description: "SyncSignal debug pulse (Vasily bit): 0:Deactivated 1:Immediately generate one ping only on SYNC0-1 according to 0x0981[2:1 for debugging This bit is self-clearing, always read 0. All pulses are generated at the same time, the cycle time is ignored. The configured pulse length is used."
+      bit_offset: 7
+      bit_size: 1
 fieldset/SYS_TIME:
   description: System Time.
   bit_size: 64
   fields:
-  - name: ST
-    description: No description available.
-    bit_offset: 0
-    bit_size: 64
+    - name: ST
+      description: No description available.
+      bit_offset: 0
+      bit_size: 64
 fieldset/SYS_TIME_DELAY:
   description: System Time Delay.
   fields:
-  - name: DLY
-    description: Delay between Reference Clock and the ESC.
-    bit_offset: 0
-    bit_size: 32
+    - name: DLY
+      description: Delay between Reference Clock and the ESC.
+      bit_offset: 0
+      bit_size: 32
 fieldset/SYS_TIME_DIFF:
   description: System Time Difference.
   fields:
-  - name: NUM
-    description: Mean difference between local copy of System Time and received System Time values Difference = Received System Time – local copy of System Time.
-    bit_offset: 0
-    bit_size: 31
-  - name: DIFF
-    description: 0:Local copy of System Time less than received System Time 1:Local copy of System Time greater than or equal to received System Time.
-    bit_offset: 31
-    bit_size: 1
+    - name: NUM
+      description: Mean difference between local copy of System Time and received System Time values Difference = Received System Time – local copy of System Time.
+      bit_offset: 0
+      bit_size: 31
+    - name: DIFF
+      description: 0:Local copy of System Time less than received System Time 1:Local copy of System Time greater than or equal to received System Time.
+      bit_offset: 31
+      bit_size: 1
 fieldset/SYS_TIME_DIFF_FD:
   description: System Time Difference Filter Depth.
   bit_size: 8
   fields:
-  - name: DEPTH
-    description: 'Filter depth for averaging the received System Time deviation IP Core since V2.2.0/V2.02a: A write access resets System Time Difference (0x092C:0x092F).'
-    bit_offset: 0
-    bit_size: 4
+    - name: DEPTH
+      description: "Filter depth for averaging the received System Time deviation IP Core since V2.2.0/V2.02a: A write access resets System Time Difference (0x092C:0x092F)."
+      bit_offset: 0
+      bit_size: 4
 fieldset/SYS_TIME_OFFSET:
   description: System Time Offset.
   bit_size: 64
   fields:
-  - name: OFFSET
-    description: Difference between local time and System Time. Offset is added to the local time.
-    bit_offset: 0
-    bit_size: 64
+    - name: OFFSET
+      description: Difference between local time and System Time. Offset is added to the local time.
+      bit_offset: 0
+      bit_size: 64
 fieldset/USER_RAM_BYTE0:
   description: User Ram Byte 0.
   bit_size: 8
   fields:
-  - name: EXTF
-    description: Number of extended feature bits.
-    bit_offset: 0
-    bit_size: 8
+    - name: EXTF
+      description: Number of extended feature bits.
+      bit_offset: 0
+      bit_size: 8
 fieldset/USER_RAM_BYTE1:
   description: User Ram Byte 1.
   bit_size: 8
   fields:
-  - name: EDLCR
-    description: Extended DL Control Register (0x0102:0x0103).
-    bit_offset: 0
-    bit_size: 1
-  - name: ALSCR
-    description: AL Status Code Register (0x0134:0x0135).
-    bit_offset: 1
-    bit_size: 1
-  - name: EIM
-    description: ECAT Interrupt Mask (0x0200:0x0201).
-    bit_offset: 2
-    bit_size: 1
-  - name: CSA
-    description: Configured Station Alias (0x0012:0x0013).
-    bit_offset: 3
-    bit_size: 1
-  - name: GPI
-    description: General Purpose Inputs (0x0F18:0x0F1F).
-    bit_offset: 4
-    bit_size: 1
-  - name: GPO
-    description: General Purpose Outputs (0x0F10:0x0F17).
-    bit_offset: 5
-    bit_size: 1
-  - name: AEMW
-    description: AL Event Mask writable (0x0204:0x0207).
-    bit_offset: 6
-    bit_size: 1
-  - name: PRWO
-    description: Physical Read/Write Offset (0x0108:0x0109).
-    bit_offset: 7
-    bit_size: 1
+    - name: EDLCR
+      description: Extended DL Control Register (0x0102:0x0103).
+      bit_offset: 0
+      bit_size: 1
+    - name: ALSCR
+      description: AL Status Code Register (0x0134:0x0135).
+      bit_offset: 1
+      bit_size: 1
+    - name: EIM
+      description: ECAT Interrupt Mask (0x0200:0x0201).
+      bit_offset: 2
+      bit_size: 1
+    - name: CSA
+      description: Configured Station Alias (0x0012:0x0013).
+      bit_offset: 3
+      bit_size: 1
+    - name: GPI
+      description: General Purpose Inputs (0x0F18:0x0F1F).
+      bit_offset: 4
+      bit_size: 1
+    - name: GPO
+      description: General Purpose Outputs (0x0F10:0x0F17).
+      bit_offset: 5
+      bit_size: 1
+    - name: AEMW
+      description: AL Event Mask writable (0x0204:0x0207).
+      bit_offset: 6
+      bit_size: 1
+    - name: PRWO
+      description: Physical Read/Write Offset (0x0108:0x0109).
+      bit_offset: 7
+      bit_size: 1
 fieldset/USER_RAM_BYTE10:
   description: User Ram Byte 10.
   bit_size: 8
   fields:
-  - name: DCL1D
-    description: DC Latch1 disable.
-    bit_offset: 2
-    bit_size: 1
-  - name: APDI
-    description: AXI PDI.
-    bit_offset: 3
-    bit_size: 1
-  - name: PDIFA
-    description: PDI function acknowledge by PDI write.
-    bit_offset: 6
-    bit_size: 1
-  - name: PDIIR
-    description: PDI Information register (0x014E:0x014F).
-    bit_offset: 7
-    bit_size: 1
+    - name: DCL1D
+      description: DC Latch1 disable.
+      bit_offset: 2
+      bit_size: 1
+    - name: APDI
+      description: AXI PDI.
+      bit_offset: 3
+      bit_size: 1
+    - name: PDIFA
+      description: PDI function acknowledge by PDI write.
+      bit_offset: 6
+      bit_size: 1
+    - name: PDIIR
+      description: PDI Information register (0x014E:0x014F).
+      bit_offset: 7
+      bit_size: 1
 fieldset/USER_RAM_BYTE11:
   description: User Ram Byte 11.
   bit_size: 8
   fields:
-  - name: LEDTST
-    description: LED test.
-    bit_offset: 3
-    bit_size: 1
+    - name: LEDTST
+      description: LED test.
+      bit_offset: 3
+      bit_size: 1
 fieldset/USER_RAM_BYTE14:
   description: User Ram Byte 14.
   bit_size: 8
   fields:
-  - name: DIOBS
-    description: Digital I/O PDI byte size.
-    bit_offset: 6
-    bit_size: 2
+    - name: DIOBS
+      description: Digital I/O PDI byte size.
+      bit_offset: 6
+      bit_size: 2
 fieldset/USER_RAM_BYTE15:
   description: User Ram Byte 15.
   bit_size: 8
   fields:
-  - name: DIOPDI
-    description: Digital I/O PDI.
-    bit_offset: 2
-    bit_size: 1
-  - name: SSPDI
-    description: SPI Slave PDI.
-    bit_offset: 3
-    bit_size: 1
-  - name: AUCPDI
-    description: Asynchronous µC PDI.
-    bit_offset: 4
-    bit_size: 1
+    - name: DIOPDI
+      description: Digital I/O PDI.
+      bit_offset: 2
+      bit_size: 1
+    - name: SSPDI
+      description: SPI Slave PDI.
+      bit_offset: 3
+      bit_size: 1
+    - name: AUCPDI
+      description: Asynchronous µC PDI.
+      bit_offset: 4
+      bit_size: 1
 fieldset/USER_RAM_BYTE19:
   description: User Ram Byte 19.
   bit_size: 8
   fields:
-  - name: RGMII
-    description: RGMII.
-    bit_offset: 0
-    bit_size: 1
-  - name: IPARO
-    description: Individual PHY address read out (0x0510[7:3]).
-    bit_offset: 1
-    bit_size: 1
-  - name: CIA
-    description: CLK_PDI_EXT is asynchronous.
-    bit_offset: 2
-    bit_size: 1
-  - name: URGP
-    description: Use RGMII GTX_CLK phase shifted clock input.
-    bit_offset: 4
-    bit_size: 1
-  - name: RMII
-    description: RMII.
-    bit_offset: 5
-    bit_size: 1
-  - name: SCP
-    description: Security CPLD protection.
-    bit_offset: 6
-    bit_size: 1
+    - name: RGMII
+      description: RGMII.
+      bit_offset: 0
+      bit_size: 1
+    - name: IPARO
+      description: Individual PHY address read out (0x0510[7:3]).
+      bit_offset: 1
+      bit_size: 1
+    - name: CIA
+      description: CLK_PDI_EXT is asynchronous.
+      bit_offset: 2
+      bit_size: 1
+    - name: URGP
+      description: Use RGMII GTX_CLK phase shifted clock input.
+      bit_offset: 4
+      bit_size: 1
+    - name: RMII
+      description: RMII.
+      bit_offset: 5
+      bit_size: 1
+    - name: SCP
+      description: Security CPLD protection.
+      bit_offset: 6
+      bit_size: 1
 fieldset/USER_RAM_BYTE2:
   description: User Ram Byte 2.
   bit_size: 8
   fields:
-  - name: WDW
-    description: Watchdog divider writable (0x0400:0x0401) and Watchdog PDI (0x0410:0x0411).
-    bit_offset: 0
-    bit_size: 1
-  - name: WDGCNT
-    description: Watchdog counters (0x0442:0x0443).
-    bit_offset: 1
-    bit_size: 1
-  - name: WP
-    description: Write Protection (0x0020:0x0031).
-    bit_offset: 2
-    bit_size: 1
-  - name: RESET
-    description: Reset (0x0040:0x0041).
-    bit_offset: 3
-    bit_size: 1
-  - name: DCSMET
-    description: DC SyncManager Event Times (0x09F0:0x09FF).
-    bit_offset: 5
-    bit_size: 1
-  - name: EPUPEC
-    description: ECAT Processing Unit/PDI Error Counter (0x030C:0x030D).
-    bit_offset: 6
-    bit_size: 1
-  - name: ESCFG
-    description: 'EEPROM Size configurable (0x0502[7]): 0:EEPROM Size fixed to sizes up to 16 Kbit 1:EEPROM Size configurable.'
-    bit_offset: 7
-    bit_size: 1
+    - name: WDW
+      description: Watchdog divider writable (0x0400:0x0401) and Watchdog PDI (0x0410:0x0411).
+      bit_offset: 0
+      bit_size: 1
+    - name: WDGCNT
+      description: Watchdog counters (0x0442:0x0443).
+      bit_offset: 1
+      bit_size: 1
+    - name: WP
+      description: Write Protection (0x0020:0x0031).
+      bit_offset: 2
+      bit_size: 1
+    - name: RESET
+      description: Reset (0x0040:0x0041).
+      bit_offset: 3
+      bit_size: 1
+    - name: DCSMET
+      description: DC SyncManager Event Times (0x09F0:0x09FF).
+      bit_offset: 5
+      bit_size: 1
+    - name: EPUPEC
+      description: ECAT Processing Unit/PDI Error Counter (0x030C:0x030D).
+      bit_offset: 6
+      bit_size: 1
+    - name: ESCFG
+      description: "EEPROM Size configurable (0x0502[7]): 0:EEPROM Size fixed to sizes up to 16 Kbit 1:EEPROM Size configurable."
+      bit_offset: 7
+      bit_size: 1
 fieldset/USER_RAM_BYTE3:
   description: User Ram Byte 3.
   bit_size: 8
   fields:
-  - name: LLC
-    description: Lost Link Counter (0x0310:0x0313).
-    bit_offset: 3
-    bit_size: 1
-  - name: MMI
-    description: MII Management Interface (0x0510:0x0515).
-    bit_offset: 4
-    bit_size: 1
-  - name: ELDM
-    description: Enhanced Link Detection MII.
-    bit_offset: 5
-    bit_size: 1
-  - name: ELDE
-    description: Enhanced Link Detection EBUS.
-    bit_offset: 6
-    bit_size: 1
-  - name: RLED
-    description: Run LED (DEV_STATE LED).
-    bit_offset: 7
-    bit_size: 1
+    - name: LLC
+      description: Lost Link Counter (0x0310:0x0313).
+      bit_offset: 3
+      bit_size: 1
+    - name: MMI
+      description: MII Management Interface (0x0510:0x0515).
+      bit_offset: 4
+      bit_size: 1
+    - name: ELDM
+      description: Enhanced Link Detection MII.
+      bit_offset: 5
+      bit_size: 1
+    - name: ELDE
+      description: Enhanced Link Detection EBUS.
+      bit_offset: 6
+      bit_size: 1
+    - name: RLED
+      description: Run LED (DEV_STATE LED).
+      bit_offset: 7
+      bit_size: 1
 fieldset/USER_RAM_BYTE4:
   description: User Ram Byte 4.
   bit_size: 8
   fields:
-  - name: LALED
-    description: Link/Activity LED.
-    bit_offset: 0
-    bit_size: 1
-  - name: DLIU
-    description: DC Latch In Unit.
-    bit_offset: 3
-    bit_size: 1
-  - name: DSOU
-    description: DC Sync Out Unit.
-    bit_offset: 5
-    bit_size: 1
-  - name: DTLC
-    description: DC Time loop control assigned to PDI.
-    bit_offset: 6
-    bit_size: 1
-  - name: LDCM
-    description: Link detection and configuration by MI.
-    bit_offset: 7
-    bit_size: 1
+    - name: LALED
+      description: Link/Activity LED.
+      bit_offset: 0
+      bit_size: 1
+    - name: DLIU
+      description: DC Latch In Unit.
+      bit_offset: 3
+      bit_size: 1
+    - name: DSOU
+      description: DC Sync Out Unit.
+      bit_offset: 5
+      bit_size: 1
+    - name: DTLC
+      description: DC Time loop control assigned to PDI.
+      bit_offset: 6
+      bit_size: 1
+    - name: LDCM
+      description: Link detection and configuration by MI.
+      bit_offset: 7
+      bit_size: 1
 fieldset/USER_RAM_BYTE5:
   description: User Ram Byte 5.
   bit_size: 8
   fields:
-  - name: MCPP
-    description: MI control by PDI possible.
-    bit_offset: 0
-    bit_size: 1
-  - name: ATS
-    description: Automatic TX shift.
-    bit_offset: 1
-    bit_size: 1
-  - name: EEU
-    description: EEPROM emulation by µController.
-    bit_offset: 2
-    bit_size: 1
-  - name: DDIOR
-    description: Disable Digital I/O register (0x0F00:0x0F03).
-    bit_offset: 5
-    bit_size: 1
+    - name: MCPP
+      description: MI control by PDI possible.
+      bit_offset: 0
+      bit_size: 1
+    - name: ATS
+      description: Automatic TX shift.
+      bit_offset: 1
+      bit_size: 1
+    - name: EEU
+      description: EEPROM emulation by µController.
+      bit_offset: 2
+      bit_size: 1
+    - name: DDIOR
+      description: Disable Digital I/O register (0x0F00:0x0F03).
+      bit_offset: 5
+      bit_size: 1
 fieldset/USER_RAM_BYTE6:
   description: User Ram Byte 6.
   bit_size: 8
   fields:
-  - name: RELEDOR
-    description: RUN/ERR LED Override (0x0138:0x0139).
-    bit_offset: 2
-    bit_size: 1
+    - name: RELEDOR
+      description: RUN/ERR LED Override (0x0138:0x0139).
+      bit_offset: 2
+      bit_size: 1
 fieldset/USER_RAM_BYTE7:
   description: User Ram Byte 7.
   bit_size: 8
   fields:
-  - name: DCS1D
-    description: DC Sync1 disable.
-    bit_offset: 3
-    bit_size: 1
-  - name: DCRT
-    description: DC Receive Times (0x0900:0x090F).
-    bit_offset: 6
-    bit_size: 1
-  - name: DCST
-    description: DC System Time (0x0910:0x0936).
-    bit_offset: 7
-    bit_size: 1
+    - name: DCS1D
+      description: DC Sync1 disable.
+      bit_offset: 3
+      bit_size: 1
+    - name: DCRT
+      description: DC Receive Times (0x0900:0x090F).
+      bit_offset: 6
+      bit_size: 1
+    - name: DCST
+      description: DC System Time (0x0910:0x0936).
+      bit_offset: 7
+      bit_size: 1
 fieldset/USER_RAM_BYTE8:
   description: User Ram Byte 8.
   bit_size: 8
   fields:
-  - name: DC64
-    description: DC 64 bit.
-    bit_offset: 0
-    bit_size: 1
-  - name: PDICEC
-    description: PDI clears error counter.
-    bit_offset: 2
-    bit_size: 1
-  - name: APDI
-    description: Avalon PDI.
-    bit_offset: 3
-    bit_size: 1
-  - name: OPDI
-    description: OPB PDI.
-    bit_offset: 4
-    bit_size: 1
-  - name: PPDI
-    description: PLB PDI.
-    bit_offset: 5
-    bit_size: 1
+    - name: DC64
+      description: DC 64 bit.
+      bit_offset: 0
+      bit_size: 1
+    - name: PDICEC
+      description: PDI clears error counter.
+      bit_offset: 2
+      bit_size: 1
+    - name: APDI
+      description: Avalon PDI.
+      bit_offset: 3
+      bit_size: 1
+    - name: OPDI
+      description: OPB PDI.
+      bit_offset: 4
+      bit_size: 1
+    - name: PPDI
+      description: PLB PDI.
+      bit_offset: 5
+      bit_size: 1
 fieldset/USER_RAM_BYTE9:
   description: User Ram Byte 9.
   bit_size: 8
   fields:
-  - name: DR
-    description: Direct RESET.
-    bit_offset: 7
-    bit_size: 1
+    - name: DR
+      description: Direct RESET.
+      bit_offset: 7
+      bit_size: 1
 fieldset/VID:
   description: Vendor ID.
   bit_size: 64
   fields:
-  - name: VID
-    description: 'Vendor ID: [23-0] Company [31-24] Department NOTE:Test Vendor IDs have [31:28]=0xE.'
-    bit_offset: 0
-    bit_size: 32
+    - name: VID
+      description: "Vendor ID: [23-0] Company [31-24] Department NOTE:Test Vendor IDs have [31:28]=0xE."
+      bit_offset: 0
+      bit_size: 32
 fieldset/WDG_CNT_PDAT:
   description: Watchdog Counter Process Data.
   bit_size: 8
   fields:
-  - name: CNT
-    description: Watchdog Counter Process Data (counting is stopped when 0xFF is reached). Counts if Process Data Watchdog expires.
-    bit_offset: 0
-    bit_size: 8
+    - name: CNT
+      description: Watchdog Counter Process Data (counting is stopped when 0xFF is reached). Counts if Process Data Watchdog expires.
+      bit_offset: 0
+      bit_size: 8
 fieldset/WDG_CNT_PDI:
   description: Watchdog Counter PDI.
   bit_size: 8
   fields:
-  - name: CNT
-    description: Watchdog PDI counter (counting is stopped when 0xFF is reached). Counts if PDI Watchdog expires.
-    bit_offset: 0
-    bit_size: 8
+    - name: CNT
+      description: Watchdog PDI counter (counting is stopped when 0xFF is reached). Counts if PDI Watchdog expires.
+      bit_offset: 0
+      bit_size: 8
 fieldset/WDG_DIV:
   description: Watchdog Divider.
   bit_size: 16
   fields:
-  - name: DIV
-    description: Watchdog divider:Number of 25 MHz tics (minus 2) that represent the basic watchdog increment. (Default value is 100µs = 2498).
-    bit_offset: 0
-    bit_size: 16
+    - name: DIV
+      description: Watchdog divider:Number of 25 MHz tics (minus 2) that represent the basic watchdog increment. (Default value is 100µs = 2498).
+      bit_offset: 0
+      bit_size: 16
 fieldset/WDG_STAT_PDAT:
   description: Watchdog Status Process Data.
   bit_size: 16
   fields:
-  - name: ST
-    description: Watchdog Status of Process Data (triggered by SyncManagers) 0:Watchdog Process Data expired 1:Watchdog Process Data is active or disabled.
-    bit_offset: 0
-    bit_size: 1
+    - name: ST
+      description: Watchdog Status of Process Data (triggered by SyncManagers) 0:Watchdog Process Data expired 1:Watchdog Process Data is active or disabled.
+      bit_offset: 0
+      bit_size: 1
 fieldset/WDG_TIME_PDAT:
   description: Watchdog Time Process Data.
   bit_size: 16
   fields:
-  - name: TIME
-    description: Watchdog Time Process Data:number of basic watchdog increments (Default value with Watchdog divider 100µs means 100ms Watchdog).
-    bit_offset: 0
-    bit_size: 16
+    - name: TIME
+      description: Watchdog Time Process Data:number of basic watchdog increments (Default value with Watchdog divider 100µs means 100ms Watchdog).
+      bit_offset: 0
+      bit_size: 16
 fieldset/WDG_TIME_PDI:
   description: Watchdog Time PDI.
   bit_size: 16
   fields:
-  - name: TIME
-    description: Watchdog Time PDI:number of basic watchdog increments (Default value with Watchdog divider 100µs means 100ms Watchdog).
-    bit_offset: 0
-    bit_size: 16
+    - name: TIME
+      description: Watchdog Time PDI:number of basic watchdog increments (Default value with Watchdog divider 100µs means 100ms Watchdog).
+      bit_offset: 0
+      bit_size: 16

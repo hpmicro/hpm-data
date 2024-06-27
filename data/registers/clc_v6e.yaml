@@ -1,0 +1,420 @@
+block/CLC0:
+  description: CLC0.
+  items:
+    - name: VDVQ_CHAN
+      description: no description available.
+      array:
+        len: 2
+        stride: 256
+      byte_offset: 0
+      block: VDVQ_CHAN
+    - name: dq_adc_sw_ready
+      description: enable d/q chan software inject adc value.
+      byte_offset: 512
+      fieldset: dq_adc_sw_ready
+block/COEFF:
+  description: no description available.
+  items:
+    - name: coeff_b0
+      description: "&index0 zone &index1 b0."
+      byte_offset: 0
+      fieldset: coeff_b0
+    - name: coeff_b1
+      description: "&index0 zone &index1 b1."
+      byte_offset: 4
+      fieldset: coeff_b1
+    - name: coeff_b2
+      description: "&index0 zone &index1 b2."
+      byte_offset: 8
+      fieldset: coeff_b2
+    - name: coeff_b3
+      description: "&index0 zone &index1 b3."
+      byte_offset: 12
+      fieldset: coeff_b3
+    - name: coeff_a0
+      description: "&index0 zone &index1 a0."
+      byte_offset: 16
+      fieldset: coeff_a0
+    - name: coeff_a1
+      description: "&index0 zone &index1 a1."
+      byte_offset: 20
+      fieldset: coeff_a1
+    - name: coeff_a2
+      description: "&index0 zone &index1 a2."
+      byte_offset: 24
+      fieldset: coeff_a2
+    - name: coeff_ks
+      description: "&index0 zone &index1 kscaling."
+      byte_offset: 28
+      fieldset: coeff_ks
+block/VDVQ_CHAN:
+  description: no description available.
+  items:
+    - name: mode
+      description: "&index0 mode ctrl."
+      byte_offset: 0
+      fieldset: mode
+    - name: adc_expect
+      description: "&index0 adc expect."
+      byte_offset: 4
+      fieldset: adc_expect
+    - name: adc_chan
+      description: "&index0 adc used channel."
+      byte_offset: 8
+      fieldset: adc_chan
+    - name: adc_offset
+      description: "&index0 adc used offset."
+      byte_offset: 12
+      fieldset: adc_offset
+    - name: eadc_lowth
+      description: "&index0 eadc_lowth value used in error adc cofficient selection."
+      byte_offset: 16
+      fieldset: eadc_lowth
+    - name: eadc_highth
+      description: "&index0 eadc_highth value used in error adc cofficient selection."
+      byte_offset: 20
+      fieldset: eadc_highth
+    - name: eadc_midlowth
+      description: "&index0 eadc_midlowth value used in error adc cofficient selection."
+      byte_offset: 24
+      fieldset: eadc_midlowth
+    - name: eadc_midhighth
+      description: "&index0 eadc_midhighth value used in error adc cofficient selection."
+      byte_offset: 28
+      fieldset: eadc_midhighth
+    - name: p2z2_clamp_lo
+      description: "&index0 2p2z output clamp low threshold."
+      byte_offset: 32
+      fieldset: p2z2_clamp_lo
+    - name: p2z2_clamp_hi
+      description: "&index0 2p2z output clamp high threshold."
+      byte_offset: 36
+      fieldset: p2z2_clamp_hi
+    - name: p3z3_clamp_lo
+      description: "&index0 3p3z output clamp low threshold."
+      byte_offset: 40
+      fieldset: p3z3_clamp_lo
+    - name: p3z3_clamp_hi
+      description: "&index0 3p3z output clamp high threshold."
+      byte_offset: 44
+      fieldset: p3z3_clamp_hi
+    - name: COEFF
+      description: no description available.
+      array:
+        len: 3
+        stride: 32
+      byte_offset: 64
+      block: COEFF
+    - name: pwm_period
+      description: "&index0 pwm_period."
+      byte_offset: 160
+      fieldset: pwm_period
+    - name: output_value
+      description: "&index0 output value."
+      byte_offset: 164
+      fieldset: output_value
+    - name: timestamp
+      description: "&index0 adc timestamp used."
+      byte_offset: 168
+      fieldset: timestamp
+    - name: eadc_curr
+      description: "&index0 error adc latest value."
+      byte_offset: 172
+      fieldset: eadc_curr
+    - name: eadc_pre0
+      description: "&index0 error adc previous0 value."
+      byte_offset: 176
+      fieldset: eadc_pre0
+    - name: eadc_pre1
+      description: "&index0 error adc previous1 value."
+      byte_offset: 180
+      fieldset: eadc_pre1
+    - name: p2z2_curr
+      description: "&index0 2p2z latest value."
+      byte_offset: 184
+      fieldset: p2z2_curr
+    - name: p2z2_pre0
+      description: "&index0 2p2z previous0 value."
+      byte_offset: 188
+      fieldset: p2z2_pre0
+    - name: p3z3_curr
+      description: "&index0 3p3z latest value."
+      byte_offset: 196
+      fieldset: p3z3_curr
+    - name: p3z3_forbid_lo
+      description: "&index0 3p3z output forbid low threshold."
+      byte_offset: 204
+      fieldset: p3z3_forbid_lo
+    - name: p3z3_forbid_md
+      description: "&index0 3p3z output forbid middle threshold."
+      byte_offset: 208
+      fieldset: p3z3_forbid_md
+    - name: p3z3_forbid_hi
+      description: "&index0 3p3z output forbid high threshold."
+      byte_offset: 212
+      fieldset: p3z3_forbid_hi
+    - name: adc_sw
+      description: "&index0 adc software inject value."
+      byte_offset: 224
+      fieldset: adc_sw
+    - name: status
+      description: "&index0 irq_status."
+      byte_offset: 252
+      fieldset: status
+fieldset/adc_chan:
+  description: "&index0 adc used channel."
+  fields:
+    - name: ADC_CHAN
+      description: adc used chan ID.
+      bit_offset: 0
+      bit_size: 5
+fieldset/adc_expect:
+  description: "&index0 adc expect."
+  fields:
+    - name: ADC_EXPECT
+      description: adc expect value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/adc_offset:
+  description: "&index0 adc used offset."
+  fields:
+    - name: ADC_OFFSET
+      description: adc used offset.
+      bit_offset: 0
+      bit_size: 32
+fieldset/adc_sw:
+  description: "&index0 adc software inject value."
+  fields:
+    - name: ADC_SW
+      description: adc software inject value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_a0:
+  description: "&index0 zone &index1 a0."
+  fields:
+    - name: COEFF_A0
+      description: coefficient a0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_a1:
+  description: "&index0 zone &index1 a1."
+  fields:
+    - name: COEFF_A1
+      description: coefficient a1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_a2:
+  description: "&index0 zone &index1 a2."
+  fields:
+    - name: COEFF_A2
+      description: coefficient a2.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_b0:
+  description: "&index0 zone &index1 b0."
+  fields:
+    - name: COEFF_B0
+      description: coefficient b0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_b1:
+  description: "&index0 zone &index1 b1."
+  fields:
+    - name: COEFF_B1
+      description: coefficient b1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_b2:
+  description: "&index0 zone &index1 b2."
+  fields:
+    - name: COEFF_B2
+      description: coefficient b2.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_b3:
+  description: "&index0 zone &index1 b3."
+  fields:
+    - name: COEFF_B3
+      description: coefficient b3.
+      bit_offset: 0
+      bit_size: 32
+fieldset/coeff_ks:
+  description: "&index0 zone &index1 kscaling."
+  fields:
+    - name: COEFF_KSCALING
+      description: coefficient kscaling.
+      bit_offset: 0
+      bit_size: 5
+fieldset/dq_adc_sw_ready:
+  description: enable d/q chan software inject adc value.
+  fields:
+    - name: DQ_ADC_SW_READY
+      description: enable d/q chan software inject adc value.
+      bit_offset: 0
+      bit_size: 1
+fieldset/eadc_curr:
+  description: "&index0 error adc latest value."
+  fields:
+    - name: EADC_CURR
+      description: error adc latest value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/eadc_highth:
+  description: "&index0 eadc_highth value used in error adc cofficient selection."
+  fields:
+    - name: EADC_HIGHTH
+      description: if error adc not bigger than eadc_lowth or not less than eadc_highth, use zone 2 cofficient；if not less than midlowth and not bigger than midhighth, use zone 0 cofficient；otherwire, use zone 1 cofficient.
+      bit_offset: 0
+      bit_size: 32
+fieldset/eadc_lowth:
+  description: "&index0 eadc_lowth value used in error adc cofficient selection."
+  fields:
+    - name: EADC_LOWTH
+      description: if error adc not bigger than eadc_lowth or not less than eadc_highth, use zone 2 cofficient；if not less than midlowth and not bigger than midhighth, use zone 0 cofficient；otherwire, use zone 1 cofficient.
+      bit_offset: 0
+      bit_size: 32
+fieldset/eadc_midhighth:
+  description: "&index0 eadc_midhighth value used in error adc cofficient selection."
+  fields:
+    - name: EADC_MIDHIGHTH
+      description: if error adc not bigger than eadc_lowth or not less than eadc_highth, use zone 2 cofficient；if not less than midlowth and not bigger than midhighth, use zone 0 cofficient；otherwire, use zone 1 cofficient.
+      bit_offset: 0
+      bit_size: 32
+fieldset/eadc_midlowth:
+  description: "&index0 eadc_midlowth value used in error adc cofficient selection."
+  fields:
+    - name: EADC_MIDLOWTH
+      description: if error adc not bigger than eadc_lowth or not less than eadc_highth, use zone 2 cofficient；if not less than midlowth and not bigger than midhighth, use zone 0 cofficient；otherwire, use zone 1 cofficient.
+      bit_offset: 0
+      bit_size: 32
+fieldset/eadc_pre0:
+  description: "&index0 error adc previous0 value."
+  fields:
+    - name: EADC_PRE0
+      description: error adc previous 0 value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/eadc_pre1:
+  description: "&index0 error adc previous1 value."
+  fields:
+    - name: EADC_PRE1
+      description: error adc previous 1 value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/mode:
+  description: "&index0 mode ctrl."
+  fields:
+    - name: ENABLE_IRQ
+      description: "enable irq: irq_data_in_forbid , // 10 irq_forb_err_boundary , // 9 irq_p3z3_over_lo , // 8 irq_p3z3_over_hi , // 7 irq_p3z3_err_boundary , // 6 irq_z2_over_sf , // 5 irq_z2_over_lo , // 4 irq_z2_over_hi , // 3 irq_z2_err_boundary , // 2 irq_coef_err_boundary , // 1 irq_valid_clc // 0."
+      bit_offset: 0
+      bit_size: 11
+    - name: DQ_MODE
+      description: dq mode.
+      bit_offset: 16
+      bit_size: 1
+    - name: MASK_MODE
+      description: "open mode: CLC keep working even if bad irq status ocurred."
+      bit_offset: 24
+      bit_size: 1
+    - name: ENABLE_CLC
+      description: enable CLC.
+      bit_offset: 31
+      bit_size: 1
+fieldset/output_value:
+  description: "&index0 output value."
+  fields:
+    - name: OUTPUT_VALUE
+      description: output_value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p2z2_clamp_hi:
+  description: "&index0 2p2z output clamp high threshold."
+  fields:
+    - name: 2P2Z_CLAMP_HI
+      description: 2p2z output clamp high threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p2z2_clamp_lo:
+  description: "&index0 2p2z output clamp low threshold."
+  fields:
+    - name: 2P2Z_CLAMP_LO
+      description: 2p2z output clamp low threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p2z2_curr:
+  description: "&index0 2p2z latest value."
+  fields:
+    - name: 2P2Z_CURR
+      description: 2p2z latest value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p2z2_pre0:
+  description: "&index0 2p2z previous0 value."
+  fields:
+    - name: 2P2Z_PRE0
+      description: 2p2z previous 0 value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p3z3_clamp_hi:
+  description: "&index0 3p3z output clamp high threshold."
+  fields:
+    - name: 3P3Z_CLAMP_HI
+      description: 3p3z output clamp high threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p3z3_clamp_lo:
+  description: "&index0 3p3z output clamp low threshold."
+  fields:
+    - name: 3P3Z_CLAMP_LO
+      description: 3p3z output clamp low threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p3z3_curr:
+  description: "&index0 3p3z latest value."
+  fields:
+    - name: 3P3Z_CURR
+      description: 3p3z latest value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p3z3_forbid_hi:
+  description: "&index0 3p3z output forbid high threshold."
+  fields:
+    - name: 3P3Z_FORBID_HI
+      description: 3p3z output forbid high threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p3z3_forbid_lo:
+  description: "&index0 3p3z output forbid low threshold."
+  fields:
+    - name: 3P3Z_FORBID_LO
+      description: 3p3z output forbid low threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/p3z3_forbid_md:
+  description: "&index0 3p3z output forbid middle threshold."
+  fields:
+    - name: 3P3Z_FORBID_MD
+      description: 3p3z output forbid middle threshold.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pwm_period:
+  description: "&index0 pwm_period."
+  fields:
+    - name: PWM_PERIOD
+      description: pwm_period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/status:
+  description: "&index0 irq_status."
+  fields:
+    - name: STATUS
+      description: "status, write 1 to clear it. : irq_data_in_forbid , // 10 irq_forb_err_boundary , // 9 irq_p3z3_over_lo , // 8 irq_p3z3_over_hi , // 7 irq_p3z3_err_boundary , // 6 irq_z2_over_sf , // 5 irq_z2_over_lo , // 4 irq_z2_over_hi , // 3 irq_z2_err_boundary , // 2 irq_coef_err_boundary , // 1 irq_valid_clc // 0."
+      bit_offset: 0
+      bit_size: 11
+fieldset/timestamp:
+  description: "&index0 adc timestamp used."
+  fields:
+    - name: TIMESTAMP
+      description: timestamp.
+      bit_offset: 0
+      bit_size: 32

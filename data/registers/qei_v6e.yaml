@@ -1,0 +1,1316 @@
+block/COUNT:
+  description: no description available.
+  items:
+    - name: z
+      description: Z counter.
+      byte_offset: 0
+      fieldset: z
+    - name: ph
+      description: Phase counter.
+      byte_offset: 4
+      fieldset: ph
+    - name: spd
+      description: Speed counter.
+      byte_offset: 8
+      fieldset: spd
+    - name: tmr
+      description: Timer counter.
+      byte_offset: 12
+      fieldset: tmr
+block/QEI0:
+  description: QEI0.
+  items:
+    - name: cr
+      description: Control register.
+      byte_offset: 0
+      fieldset: cr
+    - name: phcfg
+      description: Phase configure register.
+      byte_offset: 4
+      fieldset: phcfg
+    - name: wdgcfg
+      description: Watchdog configure register.
+      byte_offset: 8
+      fieldset: wdgcfg
+    - name: phidx
+      description: Phase index register.
+      byte_offset: 12
+      fieldset: phidx
+    - name: trgoen
+      description: Tigger output enable register.
+      byte_offset: 16
+      fieldset: trgoen
+    - name: readen
+      description: Read event enable register.
+      byte_offset: 20
+      fieldset: readen
+    - name: zcmp
+      description: Z comparator.
+      byte_offset: 24
+      fieldset: zcmp
+    - name: phcmp
+      description: Phase comparator.
+      byte_offset: 28
+      fieldset: phcmp
+    - name: spdcmp
+      description: Speed comparator.
+      byte_offset: 32
+      fieldset: spdcmp
+    - name: dmaen
+      description: DMA request enable register.
+      byte_offset: 36
+      fieldset: dmaen
+    - name: sr
+      description: Status register.
+      byte_offset: 40
+      fieldset: sr
+    - name: irqen
+      description: Interrupt request register.
+      byte_offset: 44
+      fieldset: irqen
+    - name: COUNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 16
+      byte_offset: 48
+      block: COUNT
+    - name: zcmp2
+      description: Z comparator.
+      byte_offset: 128
+      fieldset: zcmp2
+    - name: phcmp2
+      description: Phase comparator.
+      byte_offset: 132
+      fieldset: phcmp2
+    - name: spdcmp2
+      description: Speed comparator.
+      byte_offset: 136
+      fieldset: spdcmp2
+    - name: match_cfg
+      description: No description available.
+      byte_offset: 140
+      fieldset: match_cfg
+    - name: FILT_CFG
+      description: no description available.
+      array:
+        len: 6
+        stride: 4
+      byte_offset: 144
+      fieldset: FILT_CFG
+    - name: qei_cfg
+      description: qei config register.
+      byte_offset: 256
+      fieldset: qei_cfg
+    - name: pulse0_num
+      description: pulse0_num.
+      byte_offset: 272
+      fieldset: pulse0_num
+    - name: pulse1_num
+      description: pulse1_num.
+      byte_offset: 276
+      fieldset: pulse1_num
+    - name: cycle0_cnt
+      description: cycle0_cnt.
+      byte_offset: 280
+      fieldset: cycle0_cnt
+    - name: cycle0pulse_cnt
+      description: cycle0pulse_cnt.
+      byte_offset: 284
+      fieldset: cycle0pulse_cnt
+    - name: cycle1_cnt
+      description: cycle1_cnt.
+      byte_offset: 288
+      fieldset: cycle1_cnt
+    - name: cycle1pulse_cnt
+      description: cycle1pulse_cnt.
+      byte_offset: 292
+      fieldset: cycle1pulse_cnt
+    - name: cycle0_snap0
+      description: cycle0_snap0.
+      byte_offset: 296
+      fieldset: cycle0_snap0
+    - name: cycle0_snap1
+      description: cycle0_snap1.
+      byte_offset: 300
+      fieldset: cycle0_snap1
+    - name: cycle1_snap0
+      description: cycle1_snap0.
+      byte_offset: 304
+      fieldset: cycle1_snap0
+    - name: cycle1_snap1
+      description: cycle1_snap1.
+      byte_offset: 308
+      fieldset: cycle1_snap1
+    - name: cycle0_num
+      description: cycle0_num.
+      byte_offset: 320
+      fieldset: cycle0_num
+    - name: cycle1_num
+      description: cycle1_num.
+      byte_offset: 324
+      fieldset: cycle1_num
+    - name: pulse0_cnt
+      description: pulse0_cnt.
+      byte_offset: 328
+      fieldset: pulse0_cnt
+    - name: pulse0cycle_cnt
+      description: pulse0cycle_cnt.
+      byte_offset: 332
+      fieldset: pulse0cycle_cnt
+    - name: pulse1_cnt
+      description: pulse1_cnt.
+      byte_offset: 336
+      fieldset: pulse1_cnt
+    - name: pulse1cycle_cnt
+      description: pulse1cycle_cnt.
+      byte_offset: 340
+      fieldset: pulse1cycle_cnt
+    - name: pulse0_snap0
+      description: pulse0_snap0.
+      byte_offset: 344
+      fieldset: pulse0_snap0
+    - name: pulse0cycle_snap0
+      description: pulse0cycle_snap0.
+      byte_offset: 348
+      fieldset: pulse0cycle_snap0
+    - name: pulse0_snap1
+      description: pulse0_snap1.
+      byte_offset: 352
+      fieldset: pulse0_snap1
+    - name: pulse0cycle_snap1
+      description: pulse0cycle_snap1.
+      byte_offset: 356
+      fieldset: pulse0cycle_snap1
+    - name: pulse1_snap0
+      description: pulse1_snap0.
+      byte_offset: 360
+      fieldset: pulse1_snap0
+    - name: pulse1cycle_snap0
+      description: pulse1cycle_snap0.
+      byte_offset: 364
+      fieldset: pulse1cycle_snap0
+    - name: pulse1_snap1
+      description: pulse1_snap1.
+      byte_offset: 368
+      fieldset: pulse1_snap1
+    - name: pulse1cycle_snap1
+      description: pulse1cycle_snap1.
+      byte_offset: 372
+      fieldset: pulse1cycle_snap1
+    - name: timestamp
+      description: timestamp.
+      byte_offset: 480
+      fieldset: timestamp
+    - name: adc_threshold
+      description: adc_threshold.
+      byte_offset: 496
+      fieldset: adc_threshold
+    - name: adcx_cfg0
+      description: adcx_cfg0.
+      byte_offset: 512
+      fieldset: adcx_cfg0
+    - name: adcx_cfg1
+      description: adcx_cfg1.
+      byte_offset: 516
+      fieldset: adcx_cfg1
+    - name: adcx_cfg2
+      description: adcx_cfg2.
+      byte_offset: 520
+      fieldset: adcx_cfg2
+    - name: adcy_cfg0
+      description: adcy_cfg0.
+      byte_offset: 528
+      fieldset: adcy_cfg0
+    - name: adcy_cfg1
+      description: adcy_cfg1.
+      byte_offset: 532
+      fieldset: adcy_cfg1
+    - name: adcy_cfg2
+      description: adcy_cfg2.
+      byte_offset: 536
+      fieldset: adcy_cfg2
+    - name: cal_cfg
+      description: cal_cfg.
+      byte_offset: 544
+      fieldset: cal_cfg
+    - name: phase_param
+      description: phase_param.
+      byte_offset: 560
+      fieldset: phase_param
+    - name: angle_adj
+      description: angle_adj.
+      byte_offset: 564
+      fieldset: angle_adj
+    - name: pos_threshold
+      description: pos_threshold.
+      byte_offset: 568
+      fieldset: pos_threshold
+    - name: UVW_POS
+      description: no description available.
+      array:
+        len: 6
+        stride: 4
+      byte_offset: 576
+      fieldset: UVW_POS
+    - name: UVW_POS_CFG
+      description: no description available.
+      array:
+        len: 6
+        stride: 4
+      byte_offset: 600
+      fieldset: UVW_POS_CFG
+    - name: phase_cnt
+      description: phase_cnt.
+      byte_offset: 640
+      fieldset: phase_cnt
+    - name: phase_update
+      description: phase_update.
+      byte_offset: 644
+      fieldset: phase_update
+    - name: position
+      description: position.
+      byte_offset: 648
+      fieldset: position
+    - name: position_update
+      description: position_update.
+      byte_offset: 652
+      fieldset: position_update
+    - name: angle
+      description: No description available.
+      byte_offset: 656
+      fieldset: angle
+    - name: pos_timeout
+      description: pos_timeout.
+      byte_offset: 660
+      fieldset: pos_timeout
+fieldset/FILT_CFG:
+  description: no description available.
+  fields:
+    - name: FILTLEN
+      description: This bitfields defines the filter counter length.
+      bit_offset: 0
+      bit_size: 12
+    - name: SYNCEN
+      description: set to enable sychronization input signal with TRGM clock.
+      bit_offset: 12
+      bit_size: 1
+    - name: MODE
+      description: This bitfields defines the filter mode 000-bypass; 100-rapid change mode; 101-delay filter mode; 110-stable low mode; 111-stable high mode.
+      bit_offset: 13
+      bit_size: 3
+    - name: OUTINV
+      description: 1- Filter will invert the output 0- Filter will not invert the output.
+      bit_offset: 16
+      bit_size: 1
+fieldset/UVW_POS:
+  description: no description available.
+  fields:
+    - name: UVW_POS0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/UVW_POS_CFG:
+  description: no description available.
+  fields:
+    - name: W_POS_SEL
+      description: No description available.
+      bit_offset: 0
+      bit_size: 2
+    - name: V_POS_SEL
+      description: No description available.
+      bit_offset: 2
+      bit_size: 2
+    - name: U_POS_SEL
+      description: No description available.
+      bit_offset: 4
+      bit_size: 2
+    - name: POS_EN
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+fieldset/adc_threshold:
+  description: adc_threshold.
+  fields:
+    - name: HIGH_LIMIT
+      description: high limit for SINCOS mode adc result.
+      bit_offset: 0
+      bit_size: 16
+    - name: LOW_LIMIT
+      description: for SINCOS mode, if (max+min/2) of the two adc result, is small than limit, then this value is treated as unvalid, no position output. this is uesd to avoid wrong adc resule(such as 0 or same sin cos value).
+      bit_offset: 16
+      bit_size: 16
+fieldset/adcx_cfg0:
+  description: adcx_cfg0.
+  fields:
+    - name: X_CHAN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 5
+    - name: X_ADC_ENABLE
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: X_ADCSEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+fieldset/adcx_cfg1:
+  description: adcx_cfg1.
+  fields:
+    - name: X_PARAM0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 16
+    - name: X_PARAM1
+      description: No description available.
+      bit_offset: 16
+      bit_size: 16
+fieldset/adcx_cfg2:
+  description: adcx_cfg2.
+  fields:
+    - name: X_OFFSET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/adcy_cfg0:
+  description: adcy_cfg0.
+  fields:
+    - name: Y_CHAN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 5
+    - name: Y_ADC_ENABLE
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: Y_ADCSEL
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+fieldset/adcy_cfg1:
+  description: adcy_cfg1.
+  fields:
+    - name: Y_PARAM0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 16
+    - name: Y_PARAM1
+      description: No description available.
+      bit_offset: 16
+      bit_size: 16
+fieldset/adcy_cfg2:
+  description: adcy_cfg2.
+  fields:
+    - name: Y_OFFSET
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/angle:
+  description: No description available.
+  fields:
+    - name: ANGLE
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/angle_adj:
+  description: angle_adj.
+  fields:
+    - name: ANGLE_ADJ
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cal_cfg:
+  description: cal_cfg.
+  fields:
+    - name: XY_DELAY
+      description: valid x/y delay, larger than this delay will be treated as invalid data. Default 1.25us@200MHz; max 80ms;.
+      bit_offset: 0
+      bit_size: 24
+fieldset/cr:
+  description: Control register.
+  fields:
+    - name: ENCTYP
+      description: "000-abz; 001-pd; 010-ud; 011-UVW(hal) 100-single A; 101-single sin; 110: sin&cos."
+      bit_offset: 0
+      bit_size: 3
+    - name: RD_SEL
+      description: "define the width/counter value(affect width_match, width_match2, width_cur, timer_cur, width_read, timer_read, width_snap0,width_snap1, timer_snap0, timer_snap1) 0 : same as hpm1000/500/500s; 1: use width for position; use timer for angle."
+      bit_offset: 3
+      bit_size: 1
+    - name: RSTCNT
+      description: 1- reset zcnt, spdcnt and tmrcnt to 0. reset phcnt to phidx.
+      bit_offset: 4
+      bit_size: 1
+    - name: SNAPEN
+      description: 1- load phcnt, zcnt, spdcnt and tmrcnt into their snap registers when snapi input assert.
+      bit_offset: 5
+      bit_size: 1
+    - name: FAULTPOS
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: HRDIR1
+      description: 1- HOMEF will set at H falling edge when dir == 1 (positive rotation direction).
+      bit_offset: 8
+      bit_size: 1
+    - name: HRDIR0
+      description: 1- HOMEF will set at H falling edge when dir == 1 (negative rotation direction).
+      bit_offset: 9
+      bit_size: 1
+    - name: HFDIR1
+      description: 1- HOMEF will set at H rising edge when dir == 0 (positive rotation direction).
+      bit_offset: 10
+      bit_size: 1
+    - name: HFDIR0
+      description: 1- HOMEF will set at H rising edge when dir == 1 (negative rotation direction).
+      bit_offset: 11
+      bit_size: 1
+    - name: PAUSEZ
+      description: 1- pause zcnt when PAUSE assert.
+      bit_offset: 12
+      bit_size: 1
+    - name: PAUSEPH
+      description: 1- pause phcnt when PAUSE assert.
+      bit_offset: 13
+      bit_size: 1
+    - name: PAUSESPD
+      description: 1- pause spdcnt when PAUSE assert.
+      bit_offset: 14
+      bit_size: 1
+    - name: PAUSEPOS
+      description: 1- pause position output valid when PAUSE assert.
+      bit_offset: 15
+      bit_size: 1
+    - name: H2RDIR1
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: H2RDIR0
+      description: No description available.
+      bit_offset: 17
+      bit_size: 1
+    - name: H2FDIR1
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: H2FDIR0
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: Z_ONLY_EN
+      description: 1- phcnt will set to phidx when Z input assert(for xy analog signal and digital z, also need set phcaliz).
+      bit_offset: 20
+      bit_size: 1
+    - name: PHCALIZ
+      description: 1- phcnt will set to phidx when Z input assert(for abz digital signsl).
+      bit_offset: 21
+      bit_size: 1
+    - name: ZCNTCFG
+      description: 1- zcnt will increment when phcnt upcount to phmax, decrement when phcnt downcount to 0 0- zcnt will increment or decrement when Z input assert.
+      bit_offset: 22
+      bit_size: 1
+    - name: READ
+      description: 1- load phcnt, zcnt, spdcnt and tmrcnt into their read registers. Hardware auto-clear; read as 0.
+      bit_offset: 31
+      bit_size: 1
+fieldset/cycle0_cnt:
+  description: cycle0_cnt.
+  fields:
+    - name: CYCLE0_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle0_num:
+  description: cycle0_num.
+  fields:
+    - name: CYCLE0_NUM
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle0_snap0:
+  description: cycle0_snap0.
+  fields:
+    - name: CYCLE0_SNAP0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle0_snap1:
+  description: cycle0_snap1.
+  fields:
+    - name: CYCLE0_SNAP1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle0pulse_cnt:
+  description: cycle0pulse_cnt.
+  fields:
+    - name: CYCLE0PULSE_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle1_cnt:
+  description: cycle1_cnt.
+  fields:
+    - name: CYCLE1_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle1_num:
+  description: cycle1_num.
+  fields:
+    - name: CYCLE1_NUM
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle1_snap0:
+  description: cycle1_snap0.
+  fields:
+    - name: CYCLE1_SNAP0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle1_snap1:
+  description: cycle1_snap1.
+  fields:
+    - name: CYCLE1_SNAP1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/cycle1pulse_cnt:
+  description: cycle1pulse_cnt.
+  fields:
+    - name: CYCLE1PULSE_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/dmaen:
+  description: DMA request enable register.
+  fields:
+    - name: FAULTFEN
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: HOME2FEN
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: PULSE1FEN
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: PULSE0FEN
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: CYCLE1FEN
+      description: No description available.
+      bit_offset: 22
+      bit_size: 1
+    - name: CYCLE0FEN
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: DIRCHGFEN
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: POS2CMPFEN
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: WIDTHTMFEN
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+    - name: ZMISSFEN
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+    - name: ZPHFEN
+      description: 1- generate dma request when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPFEN
+      description: 1- generate dma request when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEFEN
+      description: 1- generate dma request when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGFEN
+      description: 1- generate dma request when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/irqen:
+  description: Interrupt request register.
+  fields:
+    - name: FAULTE
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: HOME2E
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: PULSE1E
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: PULSE0E
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: CYCLE1E
+      description: No description available.
+      bit_offset: 22
+      bit_size: 1
+    - name: CYCLE0E
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: DIRCHGE
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: POS2CMPE
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: WIDTHTME
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+    - name: ZMISSE
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+    - name: ZPHIE
+      description: 1- generate interrupt when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPIE
+      description: 1- generate interrupt when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEIE
+      description: 1- generate interrupt when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGIE
+      description: 1- generate interrupt when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/match_cfg:
+  description: No description available.
+  fields:
+    - name: POS_MATCH2_OPT
+      description: No description available.
+      bit_offset: 9
+      bit_size: 1
+    - name: POS_MATCH2_DIR
+      description: No description available.
+      bit_offset: 10
+      bit_size: 1
+    - name: PHASE_MATCH_DIS2
+      description: No description available.
+      bit_offset: 11
+      bit_size: 1
+    - name: SPDCMP2DIS
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: DIRCMP2
+      description: No description available.
+      bit_offset: 13
+      bit_size: 1
+    - name: DIRCMP2DIS
+      description: No description available.
+      bit_offset: 14
+      bit_size: 1
+    - name: ZCMP2DIS
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
+    - name: POS_MATCH_OPT
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: POS_MATCH_DIR
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+    - name: PHASE_MATCH_DIS
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+    - name: SPDCMPDIS
+      description: No description available.
+      bit_offset: 28
+      bit_size: 1
+    - name: DIRCMP
+      description: 0- position compare need positive rotation 1- position compare need negative rotation.
+      bit_offset: 29
+      bit_size: 1
+    - name: DIRCMPDIS
+      description: 1- postion compare not include rotation direction.
+      bit_offset: 30
+      bit_size: 1
+    - name: ZCMPDIS
+      description: 1- postion compare not include zcnt.
+      bit_offset: 31
+      bit_size: 1
+fieldset/ph:
+  description: Phase counter.
+  fields:
+    - name: PHCNT
+      description: phcnt value.
+      bit_offset: 0
+      bit_size: 21
+    - name: BSTAT
+      description: 1- b input is high 0- b input is low.
+      bit_offset: 25
+      bit_size: 1
+    - name: ASTAT
+      description: 1- a input is high 0- a input is low.
+      bit_offset: 26
+      bit_size: 1
+    - name: DIR
+      description: 1- reverse rotation 0- forward rotation.
+      bit_offset: 30
+      bit_size: 1
+fieldset/phase_cnt:
+  description: phase_cnt.
+  fields:
+    - name: PHASE_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/phase_param:
+  description: phase_param.
+  fields:
+    - name: PHASE_PARAM
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/phase_update:
+  description: phase_update.
+  fields:
+    - name: VALUE
+      description: value to be added or minus from phase_cnt. only valid when inc or dec is set in one 32bit write operation.
+      bit_offset: 0
+      bit_size: 30
+    - name: DEC
+      description: set to minus value from phase_cnt(set inc and dec same time willl act inc).
+      bit_offset: 30
+      bit_size: 1
+    - name: INC
+      description: set to add value to phase_cnt.
+      bit_offset: 31
+      bit_size: 1
+fieldset/phcfg:
+  description: Phase configure register.
+  fields:
+    - name: PHMAX
+      description: maximum phcnt number, phcnt will rollover to 0 when it upcount to phmax.
+      bit_offset: 0
+      bit_size: 32
+fieldset/phcmp:
+  description: Phase comparator.
+  fields:
+    - name: PHCMP
+      description: phcnt position compare value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/phcmp2:
+  description: Phase comparator.
+  fields:
+    - name: PHCMP2
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/phidx:
+  description: Phase index register.
+  fields:
+    - name: PHIDX
+      description: phcnt reset value, phcnt will reset to phidx when phcaliz set to 1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_threshold:
+  description: pos_threshold.
+  fields:
+    - name: POS_THRESHOLD
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_timeout:
+  description: pos_timeout.
+  fields:
+    - name: TIMEOUT
+      description: postion timeout value.
+      bit_offset: 0
+      bit_size: 31
+    - name: ENABLE
+      description: enable position timeout feature, if timeout, send valid again.
+      bit_offset: 31
+      bit_size: 1
+fieldset/position:
+  description: position.
+  fields:
+    - name: POSITION
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/position_update:
+  description: position_update.
+  fields:
+    - name: VALUE
+      description: value to be added or minus from position. only valid when inc or dec is set in one 32bit write operation.
+      bit_offset: 0
+      bit_size: 30
+    - name: DEC
+      description: set to minus value from position(set inc and dec same time willl act inc).
+      bit_offset: 30
+      bit_size: 1
+    - name: INC
+      description: set to add value to position.
+      bit_offset: 31
+      bit_size: 1
+fieldset/pulse0_cnt:
+  description: pulse0_cnt.
+  fields:
+    - name: PULSE0_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse0_num:
+  description: pulse0_num.
+  fields:
+    - name: PULSE0_NUM
+      description: for speed detection, will count the cycle number for configed pulse_num.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse0_snap0:
+  description: pulse0_snap0.
+  fields:
+    - name: PULSE0_SNAP0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse0_snap1:
+  description: pulse0_snap1.
+  fields:
+    - name: PULSE0_SNAP1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse0cycle_cnt:
+  description: pulse0cycle_cnt.
+  fields:
+    - name: PULSE0CYCLE_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse0cycle_snap0:
+  description: pulse0cycle_snap0.
+  fields:
+    - name: PULSE0CYCLE_SNAP0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse0cycle_snap1:
+  description: pulse0cycle_snap1.
+  fields:
+    - name: PULSE0CYCLE_SNAP1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1_cnt:
+  description: pulse1_cnt.
+  fields:
+    - name: PULSE1_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1_num:
+  description: pulse1_num.
+  fields:
+    - name: PULSE1_NUM
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1_snap0:
+  description: pulse1_snap0.
+  fields:
+    - name: PULSE1_SNAP0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1_snap1:
+  description: pulse1_snap1.
+  fields:
+    - name: PULSE1_SNAP1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1cycle_cnt:
+  description: pulse1cycle_cnt.
+  fields:
+    - name: PULSE1CYCLE_CNT
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1cycle_snap0:
+  description: pulse1cycle_snap0.
+  fields:
+    - name: PULSE1CYCLE_SNAP0
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/pulse1cycle_snap1:
+  description: pulse1cycle_snap1.
+  fields:
+    - name: PULSE1CYCLE_SNAP1
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/qei_cfg:
+  description: qei config register.
+  fields:
+    - name: SIGA_EN
+      description: No description available.
+      bit_offset: 0
+      bit_size: 1
+    - name: SIGB_EN
+      description: No description available.
+      bit_offset: 1
+      bit_size: 1
+    - name: SIGZ_EN
+      description: No description available.
+      bit_offset: 2
+      bit_size: 1
+    - name: POSIDGE_EN
+      description: No description available.
+      bit_offset: 3
+      bit_size: 1
+    - name: NEGEDGE_EN
+      description: "bit4: negedge enable bit3: posedge enable bit2: W in hal enable bit1: signal b(or V in hal) enable bit0: signal a(or U in hal) enable such as: 01001: use posedge A 11010: use both edge of signal B 11111: use both edge of all HAL siganls."
+      bit_offset: 4
+      bit_size: 1
+    - name: UVW_POS_OPT0
+      description: set to output next area position for QEO use; clr to output exact point position for MMC use.
+      bit_offset: 5
+      bit_size: 1
+    - name: TRIG_CYCLE1_EN
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+    - name: TRIG_CYCLE0_EN
+      description: set to enable trigger start pulse counter for configed cycle_num.
+      bit_offset: 9
+      bit_size: 1
+    - name: TRIG_PULSE1_EN
+      description: No description available.
+      bit_offset: 10
+      bit_size: 1
+    - name: TRIG_PULSE0_EN
+      description: set to enable trigger start cycle counter for configed pulse_num(from the selected edge).
+      bit_offset: 11
+      bit_size: 1
+    - name: SPEED_DIR_CHG_EN
+      description: clear counter if detect direction change.
+      bit_offset: 12
+      bit_size: 1
+    - name: CYCLE1_ONESHOT
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: CYCLE0_ONESHOT
+      description: set to use oneshot mode for configed cycle_num.
+      bit_offset: 17
+      bit_size: 1
+    - name: PULSE1_ONESHOT
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: PULSE0_ONESHOT
+      description: set to use oneshot mode for configed pulse_num.
+      bit_offset: 19
+      bit_size: 1
+    - name: SW_CYCLE1_RESTART
+      description: No description available.
+      bit_offset: 28
+      bit_size: 1
+    - name: SW_CYCLE0_RESTART
+      description: set to restart pulse counter for configed cycle_num. HW auto clear.
+      bit_offset: 29
+      bit_size: 1
+    - name: SW_PULSE1_RESTART
+      description: No description available.
+      bit_offset: 30
+      bit_size: 1
+    - name: SW_PULSE0_RESTART
+      description: set to restart cycle counter for configed pulse_num. HW auto clear.
+      bit_offset: 31
+      bit_size: 1
+fieldset/readen:
+  description: Read event enable register.
+  fields:
+    - name: FAULTFEN
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: HOME2FEN
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: PULSE1FEN
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: PULSE0FEN
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: CYCLE1FEN
+      description: No description available.
+      bit_offset: 22
+      bit_size: 1
+    - name: CYCLE0FEN
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: DIRCHGFEN
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: POS2CMPFEN
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: WIDTHTMFEN
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+    - name: ZMISSFEN
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+    - name: ZPHFEN
+      description: 1- load counters to their read registers when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPFEN
+      description: 1- load counters to their read registers when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEFEN
+      description: 1- load counters to their read registers when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGFEN
+      description: 1- load counters to their read registers when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/spd:
+  description: Speed counter.
+  fields:
+    - name: SPDCNT
+      description: spdcnt value.
+      bit_offset: 0
+      bit_size: 28
+    - name: BSTAT
+      description: 1- b input is high 0- b input is low.
+      bit_offset: 29
+      bit_size: 1
+    - name: ASTAT
+      description: 1- a input is high 0- a input is low.
+      bit_offset: 30
+      bit_size: 1
+    - name: DIR
+      description: 1- reverse rotation 0- forward rotation.
+      bit_offset: 31
+      bit_size: 1
+fieldset/spdcmp:
+  description: Speed comparator.
+  fields:
+    - name: SPDCMP
+      description: spdcnt position compare value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/spdcmp2:
+  description: Speed comparator.
+  fields:
+    - name: SPDCMP2
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32
+fieldset/sr:
+  description: Status register.
+  fields:
+    - name: FAULTF
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: HOME2F
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: PULSE1F
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: PULSE0F
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: CYCLE1F
+      description: No description available.
+      bit_offset: 22
+      bit_size: 1
+    - name: CYCLE0F
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: DIRCHGF
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: POS2CMPF
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: WIDTHTMF
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+    - name: ZMISSF
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+    - name: ZPHF
+      description: z input flag.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPF
+      description: postion compare match flag.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEF
+      description: home flag.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGF
+      description: watchdog flag.
+      bit_offset: 31
+      bit_size: 1
+fieldset/timestamp:
+  description: timestamp.
+  fields:
+    - name: TIMESTAMP
+      description: for SIN/COS mode, it saves the timestampe of the begining of first ADC sample time; for ABZ mode, it saves the timestampe of edge of input signals.
+      bit_offset: 0
+      bit_size: 32
+fieldset/tmr:
+  description: Timer counter.
+  fields:
+    - name: TMRCNT
+      description: 32 bit free run timer.
+      bit_offset: 0
+      bit_size: 32
+fieldset/trgoen:
+  description: Tigger output enable register.
+  fields:
+    - name: FAULTFEN
+      description: No description available.
+      bit_offset: 18
+      bit_size: 1
+    - name: HOME2FEN
+      description: No description available.
+      bit_offset: 19
+      bit_size: 1
+    - name: PULSE1FEN
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: PULSE0FEN
+      description: No description available.
+      bit_offset: 21
+      bit_size: 1
+    - name: CYCLE1FEN
+      description: No description available.
+      bit_offset: 22
+      bit_size: 1
+    - name: CYCLE0FEN
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
+    - name: DIRCHGFEN
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: POS2CMPFEN
+      description: No description available.
+      bit_offset: 25
+      bit_size: 1
+    - name: WIDTHTMFEN
+      description: No description available.
+      bit_offset: 26
+      bit_size: 1
+    - name: ZMISSFEN
+      description: No description available.
+      bit_offset: 27
+      bit_size: 1
+    - name: ZPHFEN
+      description: 1- enable trigger output when zphf flag set.
+      bit_offset: 28
+      bit_size: 1
+    - name: POSCMPFEN
+      description: 1- enable trigger output when poscmpf flag set.
+      bit_offset: 29
+      bit_size: 1
+    - name: HOMEFEN
+      description: 1- enable trigger output when homef flag set.
+      bit_offset: 30
+      bit_size: 1
+    - name: WDGFEN
+      description: 1- enable trigger output when wdg flag set.
+      bit_offset: 31
+      bit_size: 1
+fieldset/wdgcfg:
+  description: Watchdog configure register.
+  fields:
+    - name: WDGTO
+      description: watch dog timeout value.
+      bit_offset: 0
+      bit_size: 28
+    - name: WDOG_CFG
+      description: define as stop if phase_cnt change is less than it if 0, then each change of phase_cnt will clear wdog counter; if 2, then phase_cnt change larger than 2 will clear wdog counter.
+      bit_offset: 28
+      bit_size: 3
+    - name: WDGEN
+      description: 1- enable wdog counter.
+      bit_offset: 31
+      bit_size: 1
+fieldset/z:
+  description: Z counter.
+  fields:
+    - name: ZCNT
+      description: zcnt value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/zcmp:
+  description: Z comparator.
+  fields:
+    - name: ZCMP
+      description: zcnt postion compare value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/zcmp2:
+  description: Z comparator.
+  fields:
+    - name: ZCMP2
+      description: No description available.
+      bit_offset: 0
+      bit_size: 32

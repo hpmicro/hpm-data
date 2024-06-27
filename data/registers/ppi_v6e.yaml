@@ -1,349 +1,349 @@
 block/CMD:
   description: no description available.
   items:
-  - name: cmd_cfg
-    description: cmd_cfg.
-    byte_offset: 0
-    fieldset: cmd_cfg
-  - name: ad_cfg
-    description: ad_cfg.
-    byte_offset: 4
-    fieldset: ad_cfg
-  - name: ctrl_cfg
-    description: ctrl_cfg.
-    byte_offset: 8
-    fieldset: ctrl_cfg
+    - name: cmd_cfg
+      description: cmd_cfg.
+      byte_offset: 0
+      fieldset: cmd_cfg
+    - name: ad_cfg
+      description: ad_cfg.
+      byte_offset: 4
+      fieldset: ad_cfg
+    - name: ctrl_cfg
+      description: ctrl_cfg.
+      byte_offset: 8
+      fieldset: ctrl_cfg
 block/CS:
   description: no description available.
   items:
-  - name: cfg0
-    description: cfg0.
-    byte_offset: 0
-    fieldset: cfg0
-  - name: cfg1
-    description: cfg1.
-    byte_offset: 4
-    fieldset: cfg1
-  - name: cfg2
-    description: cfg2.
-    byte_offset: 8
-    fieldset: cfg2
-  - name: cfg3
-    description: cfg3.
-    byte_offset: 12
-    fieldset: cfg3
-  - name: cfg4
-    description: cfg4.
-    byte_offset: 16
-    fieldset: cfg4
+    - name: cfg0
+      description: cfg0.
+      byte_offset: 0
+      fieldset: cfg0
+    - name: cfg1
+      description: cfg1.
+      byte_offset: 4
+      fieldset: cfg1
+    - name: cfg2
+      description: cfg2.
+      byte_offset: 8
+      fieldset: cfg2
+    - name: cfg3
+      description: cfg3.
+      byte_offset: 12
+      fieldset: cfg3
+    - name: cfg4
+      description: cfg4.
+      byte_offset: 16
+      fieldset: cfg4
 block/PPI:
   description: PPI.
   items:
-  - name: glb_cfg
-    description: glb_cfg.
-    byte_offset: 0
-    fieldset: glb_cfg
-  - name: pad_cfg
-    description: pad_cfg.
-    byte_offset: 4
-    fieldset: pad_cfg
-  - name: clkpin_cfg
-    description: clkpin_cfg.
-    byte_offset: 20
-    fieldset: clkpin_cfg
-  - name: tm_cfg
-    description: tm_cfg.
-    byte_offset: 24
-    fieldset: tm_cfg
-  - name: irq_sts
-    description: irq_sts.
-    byte_offset: 32
-    fieldset: irq_sts
-  - name: irq_en
-    description: irq_en.
-    byte_offset: 36
-    fieldset: irq_en
-  - name: CS
-    description: no description available.
-    array:
-      len: 4
-      stride: 32
-    byte_offset: 64
-    block: CS
-  - name: CMD
-    description: no description available.
-    array:
-      len: 64
-      stride: 16
-    byte_offset: 1024
-    block: CMD
+    - name: glb_cfg
+      description: glb_cfg.
+      byte_offset: 0
+      fieldset: glb_cfg
+    - name: pad_cfg
+      description: pad_cfg.
+      byte_offset: 4
+      fieldset: pad_cfg
+    - name: clkpin_cfg
+      description: clkpin_cfg.
+      byte_offset: 20
+      fieldset: clkpin_cfg
+    - name: tm_cfg
+      description: tm_cfg.
+      byte_offset: 24
+      fieldset: tm_cfg
+    - name: irq_sts
+      description: irq_sts.
+      byte_offset: 32
+      fieldset: irq_sts
+    - name: irq_en
+      description: irq_en.
+      byte_offset: 36
+      fieldset: irq_en
+    - name: CS
+      description: no description available.
+      array:
+        len: 4
+        stride: 32
+      byte_offset: 64
+      block: CS
+    - name: CMD
+      description: no description available.
+      array:
+        len: 64
+        stride: 16
+      byte_offset: 1024
+      block: CMD
 fieldset/ad_cfg:
   description: ad_cfg.
   fields:
-  - name: BYTE_SEL0
-    description: select one of the 4 bytes(11 for 31:24, 10 for 23:16, 01 for 15:8, 00 for 7:0).
-    bit_offset: 0
-    bit_size: 2
-  - name: AD_SEL0
-    description: 1 for address; 0 for data.
-    bit_offset: 2
-    bit_size: 1
-  - name: DIR0
-    description: 0 for OUT; 1 for IN.
-    bit_offset: 3
-    bit_size: 1
-  - name: BYTE_SEL1
-    description: No description available.
-    bit_offset: 4
-    bit_size: 2
-  - name: AD_SEL1
-    description: No description available.
-    bit_offset: 6
-    bit_size: 1
-  - name: DIR1
-    description: No description available.
-    bit_offset: 7
-    bit_size: 1
-  - name: BYTE_SEL2
-    description: No description available.
-    bit_offset: 8
-    bit_size: 2
-  - name: AD_SEL2
-    description: No description available.
-    bit_offset: 10
-    bit_size: 1
-  - name: DIR2
-    description: No description available.
-    bit_offset: 11
-    bit_size: 1
-  - name: BYTE_SEL3
-    description: No description available.
-    bit_offset: 12
-    bit_size: 2
-  - name: AD_SEL3
-    description: No description available.
-    bit_offset: 14
-    bit_size: 1
-  - name: DIR3
-    description: No description available.
-    bit_offset: 15
-    bit_size: 1
+    - name: BYTE_SEL0
+      description: select one of the 4 bytes(11 for 31:24, 10 for 23:16, 01 for 15:8, 00 for 7:0).
+      bit_offset: 0
+      bit_size: 2
+    - name: AD_SEL0
+      description: 1 for address; 0 for data.
+      bit_offset: 2
+      bit_size: 1
+    - name: DIR0
+      description: 0 for OUT; 1 for IN.
+      bit_offset: 3
+      bit_size: 1
+    - name: BYTE_SEL1
+      description: No description available.
+      bit_offset: 4
+      bit_size: 2
+    - name: AD_SEL1
+      description: No description available.
+      bit_offset: 6
+      bit_size: 1
+    - name: DIR1
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
+    - name: BYTE_SEL2
+      description: No description available.
+      bit_offset: 8
+      bit_size: 2
+    - name: AD_SEL2
+      description: No description available.
+      bit_offset: 10
+      bit_size: 1
+    - name: DIR2
+      description: No description available.
+      bit_offset: 11
+      bit_size: 1
+    - name: BYTE_SEL3
+      description: No description available.
+      bit_offset: 12
+      bit_size: 2
+    - name: AD_SEL3
+      description: No description available.
+      bit_offset: 14
+      bit_size: 1
+    - name: DIR3
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
 fieldset/cfg0:
   description: cfg0.
   fields:
-  - name: ADDR_START
-    description: addr_start and addr_end config the address slot for CS0, use high 12bit, the minimun slot is 1Mbyte(addr_start==addr_end).
-    bit_offset: 0
-    bit_size: 12
-  - name: ADDR_END
-    description: No description available.
-    bit_offset: 16
-    bit_size: 12
+    - name: ADDR_START
+      description: addr_start and addr_end config the address slot for CS0, use high 12bit, the minimun slot is 1Mbyte(addr_start==addr_end).
+      bit_offset: 0
+      bit_size: 12
+    - name: ADDR_END
+      description: No description available.
+      bit_offset: 16
+      bit_size: 12
 fieldset/cfg1:
   description: cfg1.
   fields:
-  - name: ADDR_SHIFT
-    description: gennerally should be configured according to port size, 0 for 8bit; 1 for 16bit; 2 for 32bit;.
-    bit_offset: 0
-    bit_size: 4
-  - name: ADDR_MASK
-    description: the high AHB address will AND with {cs0_mask[15:0], 16'hFFFF}, shift right with addr_shift, then output as real address.
-    bit_offset: 16
-    bit_size: 16
+    - name: ADDR_SHIFT
+      description: gennerally should be configured according to port size, 0 for 8bit; 1 for 16bit; 2 for 32bit;.
+      bit_offset: 0
+      bit_size: 4
+    - name: ADDR_MASK
+      description: the high AHB address will AND with {cs0_mask[15:0], 16'hFFFF}, shift right with addr_shift, then output as real address.
+      bit_offset: 16
+      bit_size: 16
 fieldset/cfg2:
   description: cfg2.
   fields:
-  - name: ENABLE
-    description: CS enable.
-    bit_offset: 0
-    bit_size: 1
-  - name: PORT_SIZE
-    description: 00-8bit; 01-16bit; 10-32bit; 11-reserved.
-    bit_offset: 1
-    bit_size: 2
-  - name: INTER_CMD_DLY
-    description: set to none-zero value, will add delay between each command sequence for burst cmd, or splited transfer cmd sequence(such as transfer 32bit on 16bit port), CS will be de-assert during the delay.
-    bit_offset: 4
-    bit_size: 4
-  - name: READY_IN_SEL
-    description: '0: use two stage sync; 1: use one stage sync.'
-    bit_offset: 12
-    bit_size: 1
-  - name: SYNC_CLK_SEL
-    description: CS assert at when clk_div_cnt equal to sync_clk_sel.
-    bit_offset: 20
-    bit_size: 4
-  - name: CS_SYNC_EN
-    description: set to enable CS pin sync with clock counter. Clr if use async mode(no clk pin), or not care the CS start time with clk pin.
-    bit_offset: 28
-    bit_size: 1
+    - name: ENABLE
+      description: CS enable.
+      bit_offset: 0
+      bit_size: 1
+    - name: PORT_SIZE
+      description: 00-8bit; 01-16bit; 10-32bit; 11-reserved.
+      bit_offset: 1
+      bit_size: 2
+    - name: INTER_CMD_DLY
+      description: set to none-zero value, will add delay between each command sequence for burst cmd, or splited transfer cmd sequence(such as transfer 32bit on 16bit port), CS will be de-assert during the delay.
+      bit_offset: 4
+      bit_size: 4
+    - name: READY_IN_SEL
+      description: "0: use two stage sync; 1: use one stage sync."
+      bit_offset: 12
+      bit_size: 1
+    - name: SYNC_CLK_SEL
+      description: CS assert at when clk_div_cnt equal to sync_clk_sel.
+      bit_offset: 20
+      bit_size: 4
+    - name: CS_SYNC_EN
+      description: set to enable CS pin sync with clock counter. Clr if use async mode(no clk pin), or not care the CS start time with clk pin.
+      bit_offset: 28
+      bit_size: 1
 fieldset/cfg3:
   description: cfg3.
   fields:
-  - name: RCMD_START0
-    description: first read cmd start index.
-    bit_offset: 0
-    bit_size: 6
-  - name: RCMD_END0
-    description: first read cmd end index.
-    bit_offset: 8
-    bit_size: 6
-  - name: RCMD_START1
-    description: sequential read cmd start index.
-    bit_offset: 16
-    bit_size: 6
-  - name: RCMD_END1
-    description: sequential read cmd end index.
-    bit_offset: 24
-    bit_size: 6
+    - name: RCMD_START0
+      description: first read cmd start index.
+      bit_offset: 0
+      bit_size: 6
+    - name: RCMD_END0
+      description: first read cmd end index.
+      bit_offset: 8
+      bit_size: 6
+    - name: RCMD_START1
+      description: sequential read cmd start index.
+      bit_offset: 16
+      bit_size: 6
+    - name: RCMD_END1
+      description: sequential read cmd end index.
+      bit_offset: 24
+      bit_size: 6
 fieldset/cfg4:
   description: cfg4.
   fields:
-  - name: WCMD_START0
-    description: first write cmd start index.
-    bit_offset: 0
-    bit_size: 6
-  - name: WCMD_END0
-    description: first write cmd end index.
-    bit_offset: 8
-    bit_size: 6
-  - name: WCMD_START1
-    description: sequential write cmd start index.
-    bit_offset: 16
-    bit_size: 6
-  - name: WCMD_END1
-    description: sequential write cmd end index.
-    bit_offset: 24
-    bit_size: 6
+    - name: WCMD_START0
+      description: first write cmd start index.
+      bit_offset: 0
+      bit_size: 6
+    - name: WCMD_END0
+      description: first write cmd end index.
+      bit_offset: 8
+      bit_size: 6
+    - name: WCMD_START1
+      description: sequential write cmd start index.
+      bit_offset: 16
+      bit_size: 6
+    - name: WCMD_END1
+      description: sequential write cmd end index.
+      bit_offset: 24
+      bit_size: 6
 fieldset/clkpin_cfg:
   description: clkpin_cfg.
   fields:
-  - name: EN
-    description: set to enable clock logic.
-    bit_offset: 0
-    bit_size: 1
-  - name: AON
-    description: '1: always enable clock output; 0: use clk_gate in cmd sequence for whether output clock.'
-    bit_offset: 1
-    bit_size: 1
-  - name: INVERT
-    description: set to invert clock output.
-    bit_offset: 5
-    bit_size: 1
-  - name: LOW
-    description: clock low number.
-    bit_offset: 8
-    bit_size: 4
-  - name: HIGH
-    description: clock high numer.
-    bit_offset: 16
-    bit_size: 4
-  - name: CYCLE
-    description: there will be a system counter run from 0 to cycle, clk output will be set to high when counter is clk_high, and low when counter is clk_low. The output will be system clock if cycle is 0. All 4 CS share same clock configuration(one clock pin with configured frequency). different CS can be assert at different counter value.
-    bit_offset: 24
-    bit_size: 4
+    - name: EN
+      description: set to enable clock logic.
+      bit_offset: 0
+      bit_size: 1
+    - name: AON
+      description: "1: always enable clock output; 0: use clk_gate in cmd sequence for whether output clock."
+      bit_offset: 1
+      bit_size: 1
+    - name: INVERT
+      description: set to invert clock output.
+      bit_offset: 5
+      bit_size: 1
+    - name: LOW
+      description: clock low number.
+      bit_offset: 8
+      bit_size: 4
+    - name: HIGH
+      description: clock high numer.
+      bit_offset: 16
+      bit_size: 4
+    - name: CYCLE
+      description: there will be a system counter run from 0 to cycle, clk output will be set to high when counter is clk_high, and low when counter is clk_low. The output will be system clock if cycle is 0. All 4 CS share same clock configuration(one clock pin with configured frequency). different CS can be assert at different counter value.
+      bit_offset: 24
+      bit_size: 4
 fieldset/cmd_cfg:
   description: cmd_cfg.
   fields:
-  - name: CYCLE_NUM
-    description: cmd clock cycles.
-    bit_offset: 0
-    bit_size: 8
-  - name: CLK_GATE
-    description: the clock gate enable signal, set to output clock signal.
-    bit_offset: 16
-    bit_size: 1
-  - name: CS_VAL
-    description: cs value in current cmd.
-    bit_offset: 17
-    bit_size: 1
+    - name: CYCLE_NUM
+      description: cmd clock cycles.
+      bit_offset: 0
+      bit_size: 8
+    - name: CLK_GATE
+      description: the clock gate enable signal, set to output clock signal.
+      bit_offset: 16
+      bit_size: 1
+    - name: CS_VAL
+      description: cs value in current cmd.
+      bit_offset: 17
+      bit_size: 1
 fieldset/ctrl_cfg:
   description: ctrl_cfg.
   fields:
-  - name: IO_CFG0
-    description: for OUT, it defines the output value(0 or 1); for IN, it defines whether to wait for ready(ready polarity is defined in ctrl_pad_pol).
-    bit_offset: 0
-    bit_size: 1
-  - name: IO_CFG1
-    description: No description available.
-    bit_offset: 4
-    bit_size: 1
-  - name: IO_CFG2
-    description: No description available.
-    bit_offset: 8
-    bit_size: 1
-  - name: IO_CFG3
-    description: No description available.
-    bit_offset: 12
-    bit_size: 1
-  - name: IO_CFG4
-    description: No description available.
-    bit_offset: 16
-    bit_size: 1
-  - name: IO_CFG5
-    description: No description available.
-    bit_offset: 20
-    bit_size: 1
-  - name: IO_CFG6
-    description: No description available.
-    bit_offset: 24
-    bit_size: 1
-  - name: IO_CFG7
-    description: No description available.
-    bit_offset: 28
-    bit_size: 1
+    - name: IO_CFG0
+      description: for OUT, it defines the output value(0 or 1); for IN, it defines whether to wait for ready(ready polarity is defined in ctrl_pad_pol).
+      bit_offset: 0
+      bit_size: 1
+    - name: IO_CFG1
+      description: No description available.
+      bit_offset: 4
+      bit_size: 1
+    - name: IO_CFG2
+      description: No description available.
+      bit_offset: 8
+      bit_size: 1
+    - name: IO_CFG3
+      description: No description available.
+      bit_offset: 12
+      bit_size: 1
+    - name: IO_CFG4
+      description: No description available.
+      bit_offset: 16
+      bit_size: 1
+    - name: IO_CFG5
+      description: No description available.
+      bit_offset: 20
+      bit_size: 1
+    - name: IO_CFG6
+      description: No description available.
+      bit_offset: 24
+      bit_size: 1
+    - name: IO_CFG7
+      description: No description available.
+      bit_offset: 28
+      bit_size: 1
 fieldset/glb_cfg:
   description: glb_cfg.
   fields:
-  - name: SOFT_RESET
-    description: software reset.
-    bit_offset: 0
-    bit_size: 1
-  - name: PAD_OUT_REG_ENJ
-    description: '0: register output, one cycle delay; 1: direct output， no delay but may have timing issue.'
-    bit_offset: 1
-    bit_size: 1
+    - name: SOFT_RESET
+      description: software reset.
+      bit_offset: 0
+      bit_size: 1
+    - name: PAD_OUT_REG_ENJ
+      description: "0: register output, one cycle delay; 1: direct output， no delay but may have timing issue."
+      bit_offset: 1
+      bit_size: 1
 fieldset/irq_en:
   description: irq_en.
   fields:
-  - name: IRQ_TMOUT_EN
-    description: timeout interrupt enable.
-    bit_offset: 0
-    bit_size: 1
+    - name: IRQ_TMOUT_EN
+      description: timeout interrupt enable.
+      bit_offset: 0
+      bit_size: 1
 fieldset/irq_sts:
   description: irq_sts.
   fields:
-  - name: IRQ_TMOUT_STS
-    description: tiemout interrupt status, write 1 to clear.
-    bit_offset: 0
-    bit_size: 1
+    - name: IRQ_TMOUT_STS
+      description: tiemout interrupt status, write 1 to clear.
+      bit_offset: 0
+      bit_size: 1
 fieldset/pad_cfg:
   description: pad_cfg.
   fields:
-  - name: CTRL_PAD_POL
-    description: 'for OUT pad: 0: output the value in cmd 1: output reversed value in cmd for IN pad, defines the signal active value, when ctrl_cfg.io_cfg is set, will wait the active value for ready(generally read or write ready).'
-    bit_offset: 0
-    bit_size: 8
-  - name: CTRL_PAD_OE
-    description: 'the pad output enable signal. 0 for IN; 1 for OUT. NOTE: for unused pads, set both ctrl_pad_oe and ctrl_pad_pol to 0.'
-    bit_offset: 8
-    bit_size: 8
-  - name: DM_PAD_POL
-    description: dm pin polarity.
-    bit_offset: 16
-    bit_size: 4
-  - name: CS_IDLE_ST
-    description: cs pin idle state, default high for active low.
-    bit_offset: 24
-    bit_size: 4
+    - name: CTRL_PAD_POL
+      description: "for OUT pad: 0: output the value in cmd 1: output reversed value in cmd for IN pad, defines the signal active value, when ctrl_cfg.io_cfg is set, will wait the active value for ready(generally read or write ready)."
+      bit_offset: 0
+      bit_size: 8
+    - name: CTRL_PAD_OE
+      description: "the pad output enable signal. 0 for IN; 1 for OUT. NOTE: for unused pads, set both ctrl_pad_oe and ctrl_pad_pol to 0."
+      bit_offset: 8
+      bit_size: 8
+    - name: DM_PAD_POL
+      description: dm pin polarity.
+      bit_offset: 16
+      bit_size: 4
+    - name: CS_IDLE_ST
+      description: cs pin idle state, default high for active low.
+      bit_offset: 24
+      bit_size: 4
 fieldset/tm_cfg:
   description: tm_cfg.
   fields:
-  - name: TM_CFG
-    description: timeout value, max 20us at 200MHz clock.
-    bit_offset: 0
-    bit_size: 12
-  - name: TM_EN
-    description: timeout enable. if enabled, then if each AHB transfer time exceed tm_cfg clock cycles, will assert irq.
-    bit_offset: 16
-    bit_size: 1
+    - name: TM_CFG
+      description: timeout value, max 20us at 200MHz clock.
+      bit_offset: 0
+      bit_size: 12
+    - name: TM_EN
+      description: timeout enable. if enabled, then if each AHB transfer time exceed tm_cfg clock cycles, will assert irq.
+      bit_offset: 16
+      bit_size: 1

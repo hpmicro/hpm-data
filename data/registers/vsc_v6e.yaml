@@ -1,0 +1,432 @@
+block/VSC0:
+  description: VSC0.
+  items:
+    - name: abc_mode
+      description: abc mode.
+      byte_offset: 0
+      fieldset: abc_mode
+    - name: adc_chan_assign
+      description: assign adc_chan for value_a/b/c.
+      byte_offset: 4
+      fieldset: adc_chan_assign
+    - name: value_a_data_opt
+      description: value_a data operation mode.
+      byte_offset: 8
+      fieldset: value_a_data_opt
+    - name: value_b_data_opt
+      description: value_b data operation mode.
+      byte_offset: 16
+      fieldset: value_b_data_opt
+    - name: value_c_data_opt
+      description: value_c data operation mode.
+      byte_offset: 24
+      fieldset: value_c_data_opt
+    - name: value_a_offset
+      description: value_a offset.
+      byte_offset: 32
+      fieldset: value_a_offset
+    - name: value_b_offset
+      description: value_b_offset.
+      byte_offset: 36
+      fieldset: value_b_offset
+    - name: value_c_offset
+      description: value_c offset.
+      byte_offset: 40
+      fieldset: value_c_offset
+    - name: irq_status
+      description: irq status.
+      byte_offset: 44
+      fieldset: irq_status
+    - name: value_a_sw
+      description: value_a software inject value.
+      byte_offset: 48
+      fieldset: value_a_sw
+    - name: value_b_sw
+      description: value_b software inject value.
+      byte_offset: 52
+      fieldset: value_b_sw
+    - name: value_c_sw
+      description: value_c software inject value.
+      byte_offset: 56
+      fieldset: value_c_sw
+    - name: value_sw_ready
+      description: software inject value_a/value_b/value_c ready.
+      byte_offset: 60
+      fieldset: value_sw_ready
+    - name: trigger_sw
+      description: software trigger event.
+      byte_offset: 64
+      fieldset: trigger_sw
+    - name: timelock
+      description: timestamp mode and postion capture ctrl.
+      byte_offset: 68
+      fieldset: timelock
+    - name: position_sw
+      description: position software inject value.
+      byte_offset: 72
+      fieldset: position_sw
+    - name: adc_wait_cycle
+      description: adc wait cycle after trigger adc capture event.
+      byte_offset: 76
+      fieldset: adc_wait_cycle
+    - name: pos_wait_cycle
+      description: pos wait cycle after trigger adc capture event.
+      byte_offset: 80
+      fieldset: pos_wait_cycle
+    - name: irq_enable
+      description: irq bit enable.
+      byte_offset: 84
+      fieldset: irq_enable
+    - name: adc_phase_tolerate
+      description: adc phase tolerate.
+      byte_offset: 88
+      fieldset: adc_phase_tolerate
+    - name: pos_pole
+      description: position pole num.
+      byte_offset: 92
+      fieldset: pos_pole
+    - name: id_posedge
+      description: posedge order Id value.
+      byte_offset: 256
+      fieldset: id_posedge
+    - name: iq_posedge
+      description: posedge order Iq value.
+      byte_offset: 260
+      fieldset: iq_posedge
+    - name: id_negedge
+      description: negedge order Id value.
+      byte_offset: 264
+      fieldset: id_negedge
+    - name: iq_negedge
+      description: negedge order Iq value.
+      byte_offset: 268
+      fieldset: iq_negedge
+    - name: alpha_posedge
+      description: posedge order alpha value.
+      byte_offset: 272
+      fieldset: alpha_posedge
+    - name: beta_posedge
+      description: posedge order beta value.
+      byte_offset: 276
+      fieldset: beta_posedge
+    - name: alpha_negedge
+      description: negedge order alpha value.
+      byte_offset: 280
+      fieldset: alpha_negedge
+    - name: beta_negedge
+      description: negedge order beta value.
+      byte_offset: 284
+      fieldset: beta_negedge
+    - name: timestamp_locked
+      description: timestamp_locked.
+      byte_offset: 288
+      fieldset: timestamp_locked
+    - name: debug_status0
+      description: debug_status0.
+      byte_offset: 292
+      fieldset: debug_status0
+fieldset/abc_mode:
+  description: abc mode.
+  fields:
+    - name: ENABLE_VSC
+      description: "enable vsc convert: 0: disable vsc convert 1: enable vsc convert."
+      bit_offset: 3
+      bit_size: 1
+    - name: VALUE_A_LOC
+      description: "the adc index of value_a: 2'b:00: resevered; 2'b:01: from adc0; 2'b:10: from adc1; 2'b:11: from adc2;."
+      bit_offset: 4
+      bit_size: 2
+    - name: VALUE_B_LOC
+      description: "the adc index of value_b: 2'b:00: resevered; 2'b:01: from adc0; 2'b:10: from adc1; 2'b:11: from adc2;."
+      bit_offset: 8
+      bit_size: 2
+    - name: VALUE_C_LOC
+      description: "the adc index of value_c: 2'b:00: resevered; 2'b:01: from adc0; 2'b:10: from adc1; 2'b:11: from adc2;."
+      bit_offset: 12
+      bit_size: 2
+    - name: VALUE_A_WIDTH
+      description: numbers of value_a for each convert.
+      bit_offset: 16
+      bit_size: 4
+    - name: VALUE_B_WIDTH
+      description: numbers of value_b for each convert.
+      bit_offset: 20
+      bit_size: 4
+    - name: VALUE_C_WIDTH
+      description: numbers of value_c for each convert.
+      bit_offset: 24
+      bit_size: 4
+    - name: PHASE_ABSENT_MODE
+      description: whether using value_a and value_b instead of three phase.
+      bit_offset: 31
+      bit_size: 1
+fieldset/adc_chan_assign:
+  description: assign adc_chan for value_a/b/c.
+  fields:
+    - name: VALUE_A_CHAN
+      description: value_a's adc chan.
+      bit_offset: 0
+      bit_size: 5
+    - name: VALUE_B_CHAN
+      description: value_b's adc chan.
+      bit_offset: 8
+      bit_size: 5
+    - name: VALUE_C_CHAN
+      description: value_c's adc chan.
+      bit_offset: 16
+      bit_size: 5
+fieldset/adc_phase_tolerate:
+  description: adc phase tolerate.
+  fields:
+    - name: ADC_PHASE_TOLERATE
+      description: in adc three-phase mode, if ABS(value_a+value_b+value_c) > adc_phase_tolerate, will trigger irq.
+      bit_offset: 0
+      bit_size: 32
+fieldset/adc_wait_cycle:
+  description: adc wait cycle after trigger adc capture event.
+  fields:
+    - name: ADC_WAIT_CYCLE
+      description: adc wait cycle after trigger adc capture event.
+      bit_offset: 0
+      bit_size: 32
+fieldset/alpha_negedge:
+  description: negedge order alpha value.
+  fields:
+    - name: ALPHA_NEGEDGE
+      description: negedge order alpha value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/alpha_posedge:
+  description: posedge order alpha value.
+  fields:
+    - name: ALPHA_POSEDGE
+      description: posedge order alpha value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/beta_negedge:
+  description: negedge order beta value.
+  fields:
+    - name: BETA_NEGEDGE
+      description: negedge order beta value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/beta_posedge:
+  description: posedge order beta value.
+  fields:
+    - name: BETA_POSEDGE
+      description: posedge order beta value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/debug_status0:
+  description: debug_status0.
+  fields:
+    - name: VALUE_C_COUNTER
+      description: value_c_counter.
+      bit_offset: 0
+      bit_size: 4
+    - name: VALUE_B_COUNTER
+      description: value_b_counter.
+      bit_offset: 4
+      bit_size: 4
+    - name: VALUE_A_COUNTER
+      description: value_a_counter.
+      bit_offset: 8
+      bit_size: 4
+fieldset/id_negedge:
+  description: negedge order Id value.
+  fields:
+    - name: ID_NEGEDGE
+      description: negedge order Id value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/id_posedge:
+  description: posedge order Id value.
+  fields:
+    - name: ID_POSEDGE
+      description: posedge order Id value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/iq_negedge:
+  description: negedge order Iq value.
+  fields:
+    - name: IQ_NEGEDGE
+      description: negedge order Iq value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/iq_posedge:
+  description: posedge order Iq value.
+  fields:
+    - name: IQ_POSEDGE
+      description: posedge order Iq value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/irq_enable:
+  description: irq bit enable.
+  fields:
+    - name: IRQ_ENABLE
+      description: "irq enable bit: bit0: vsc convert done irq. bit1: in adc three-phase mode, if ABS(value_a+value_b+value_c) > adc_phase_tolerate, will trigger irq. bit2: value_c overflow during capture process. bit3: value_b_overflow during capture process. bit4: value_a_overflow during capture process. bit5: adc2 chan not capture enough adc value. bit6: adc1 chan not capture enough adc value. bit7: adc0 chan not capture enough adc value. bit8: position not got valid before pos_wait_cycle timeout. bit9: adc2 wait cycle timeout. bit10: adc1 wait cycle timeout. bit11: adc0 wait cycle timeout. bit12: trigger_in break vsc convert even if adc or position is ready."
+      bit_offset: 0
+      bit_size: 32
+fieldset/irq_status:
+  description: irq status.
+  fields:
+    - name: IRQ_STATUS
+      description: "irq status bit: bit0: vsc convert done irq. bit1: in adc three-phase mode, if ABS(value_a+value_b+value_c) > adc_phase_tolerate, will trigger irq. bit2: value_c overflow during capture process. bit3: value_b_overflow during capture process. bit4: value_a_overflow during capture process. bit5: adc2 chan not capture enough adc value. bit6: adc1 chan not capture enough adc value. bit7: adc0 chan not capture enough adc value. bit8: position not got valid before pos_wait_cycle timeout. bit9: adc2 wait cycle timeout. bit10: adc1 wait cycle timeout. bit11: adc0 wait cycle timeout. bit12: trigger_in break vsc convert even if adc or position is ready."
+      bit_offset: 0
+      bit_size: 32
+fieldset/pos_pole:
+  description: position pole num.
+  fields:
+    - name: POS_POLE
+      description: pole number.
+      bit_offset: 0
+      bit_size: 16
+fieldset/pos_wait_cycle:
+  description: pos wait cycle after trigger adc capture event.
+  fields:
+    - name: POS_WAIT_CYCLE
+      description: position wait cycle after trigger adc capture event.
+      bit_offset: 0
+      bit_size: 32
+fieldset/position_sw:
+  description: position software inject value.
+  fields:
+    - name: POSITION_SW
+      description: position_sw.
+      bit_offset: 0
+      bit_size: 32
+fieldset/timelock:
+  description: timestamp mode and postion capture ctrl.
+  fields:
+    - name: VALUE_COUNTER_SEL
+      description: adc timestamp use which number index of adc_timestamp_sel used.
+      bit_offset: 0
+      bit_size: 4
+    - name: ADC_TIMESTAMP_SEL
+      description: "adc timestamp select： 0：reserved; 1: from value_a; 2: from value_b; 3: from value_c;."
+      bit_offset: 4
+      bit_size: 2
+    - name: POSITION_CAPTURE_MODE
+      description: "postion capture mode: 00: position use last valid data when adc value capture finish 01: position use frist valid data after adc value capture 10: position use last valid data before adc value capture other: reserved."
+      bit_offset: 12
+      bit_size: 2
+fieldset/timestamp_locked:
+  description: timestamp_locked.
+  fields:
+    - name: TIMESTAMP_LOCKED
+      description: timestamp_locked.
+      bit_offset: 0
+      bit_size: 32
+fieldset/trigger_sw:
+  description: software trigger event.
+  fields:
+    - name: TRIGGER_SW
+      description: software trigger to start waiting adc capture value, same as hardwire trigger_in.
+      bit_offset: 0
+      bit_size: 1
+fieldset/value_a_data_opt:
+  description: value_a data operation mode.
+  fields:
+    - name: OPT_0
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 0
+      bit_size: 4
+    - name: OPT_1
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 4
+      bit_size: 4
+    - name: OPT_2
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 8
+      bit_size: 4
+    - name: OPT_3
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 12
+      bit_size: 4
+fieldset/value_a_offset:
+  description: value_a offset.
+  fields:
+    - name: VALUE_A_OFFSET
+      description: value_a offset.
+      bit_offset: 0
+      bit_size: 32
+fieldset/value_a_sw:
+  description: value_a software inject value.
+  fields:
+    - name: VALUE_A_SW
+      description: value_a_sw.
+      bit_offset: 0
+      bit_size: 32
+fieldset/value_b_data_opt:
+  description: value_b data operation mode.
+  fields:
+    - name: OPT_0
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 0
+      bit_size: 4
+    - name: OPT_1
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 4
+      bit_size: 4
+    - name: OPT_2
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 8
+      bit_size: 4
+    - name: OPT_3
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 12
+      bit_size: 4
+fieldset/value_b_offset:
+  description: value_b_offset.
+  fields:
+    - name: VALUE_B_OFFSET
+      description: value_b_offset.
+      bit_offset: 0
+      bit_size: 32
+fieldset/value_b_sw:
+  description: value_b software inject value.
+  fields:
+    - name: VALUE_B_SW
+      description: value_b_sw.
+      bit_offset: 0
+      bit_size: 32
+fieldset/value_c_data_opt:
+  description: value_c data operation mode.
+  fields:
+    - name: OPT_0
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 0
+      bit_size: 4
+    - name: OPT_1
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 4
+      bit_size: 4
+    - name: OPT_2
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 8
+      bit_size: 4
+    - name: OPT_3
+      description: "0: PLUS_MUL_1 1: PLUS_MUL_2 5: PLUS_DIV_2 6: PLUS_DIV_3 7: PLUS_DIV_4 8: MINUS MUL 1 9: MINUS MUL 2 13: MINUS DIV 2 14: MINUS DIV 3 15: MINUS DIV 4."
+      bit_offset: 12
+      bit_size: 4
+fieldset/value_c_offset:
+  description: value_c offset.
+  fields:
+    - name: VALUE_C_OFFSET
+      description: value_c offset.
+      bit_offset: 0
+      bit_size: 32
+fieldset/value_c_sw:
+  description: value_c software inject value.
+  fields:
+    - name: VALUE_C_SW
+      description: value_c_sw.
+      bit_offset: 0
+      bit_size: 32
+fieldset/value_sw_ready:
+  description: software inject value_a/value_b/value_c ready.
+  fields:
+    - name: VALUE_SW_READY
+      description: software inject value_a/value_b/value_c ready.
+      bit_offset: 0
+      bit_size: 1

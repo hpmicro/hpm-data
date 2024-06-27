@@ -1,0 +1,690 @@
+block/QEO:
+  description: QEO0.
+  items:
+    - name: WAVE_mode
+      description: analog waves mode.
+      byte_offset: 0
+      fieldset: WAVE_mode
+    - name: WAVE_resolution
+      description: resolution of wave0/1/2.
+      byte_offset: 4
+      fieldset: WAVE_resolution
+    - name: WAVE_PHASE_SHIFT
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 8
+      fieldset: WAVE_PHASE_SHIFT
+    - name: WAVE_vd_inject
+      description: wave vd inject value.
+      byte_offset: 20
+      fieldset: WAVE_vd_inject
+    - name: WAVE_vq_inject
+      description: wave vq inject value.
+      byte_offset: 32
+      fieldset: WAVE_vq_inject
+    - name: WAVE_vd_vq_load
+      description: load wave0/1/2 vd vq value.
+      byte_offset: 44
+      fieldset: WAVE_vd_vq_load
+    - name: WAVE_AMPLITUDE
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 48
+      fieldset: WAVE_AMPLITUDE
+    - name: WAVE_MID_POINT
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 60
+      fieldset: WAVE_MID_POINT
+    - name: WAVE_LIMIT0
+      description: no description available.
+      array:
+        len: 3
+        stride: 8
+      byte_offset: 72
+      block: WAVE_LIMIT0
+    - name: WAVE_LIMIT1
+      description: no description available.
+      array:
+        len: 3
+        stride: 8
+      byte_offset: 96
+      block: WAVE_LIMIT1
+    - name: WAVE_DEADZONE_SHIFT
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 120
+      fieldset: WAVE_DEADZONE_SHIFT
+    - name: WAVE_pwm_cycle
+      description: pwm_cycle.
+      byte_offset: 132
+      fieldset: WAVE_pwm_cycle
+    - name: ABZ_mode
+      description: wave_a/b/z output mode.
+      byte_offset: 256
+      fieldset: ABZ_mode
+    - name: ABZ_resolution
+      description: resolution of wave_a/b/z.
+      byte_offset: 260
+      fieldset: ABZ_resolution
+    - name: ABZ_PHASE_SHIFT
+      description: no description available.
+      array:
+        len: 3
+        stride: 4
+      byte_offset: 264
+      fieldset: ABZ_PHASE_SHIFT
+    - name: ABZ_line_width
+      description: Two-phase orthogonality wave 1/4 period.
+      byte_offset: 276
+      fieldset: ABZ_line_width
+    - name: ABZ_wdog_width
+      description: wdog width of qeo.
+      byte_offset: 280
+      fieldset: ABZ_wdog_width
+    - name: ABZ_postion_sync
+      description: sync abz owned postion.
+      byte_offset: 284
+      fieldset: ABZ_postion_sync
+    - name: ABZ_overall_offset
+      description: abz overall position offset.
+      byte_offset: 288
+      fieldset: ABZ_overall_offset
+    - name: ABZ_z_start
+      description: zero phase start line num.
+      byte_offset: 292
+      fieldset: ABZ_z_start
+    - name: ABZ_z_end
+      description: zero phase end line num.
+      byte_offset: 296
+      fieldset: ABZ_z_end
+    - name: ABZ_z_offset
+      description: zero phase start and end 1/4 line num.
+      byte_offset: 300
+      fieldset: ABZ_z_offset
+    - name: ABZ_z_pulse_width
+      description: zero pulse witdth.
+      byte_offset: 304
+      fieldset: ABZ_z_pulse_width
+    - name: PWM_mode
+      description: pwm mode.
+      byte_offset: 320
+      fieldset: PWM_mode
+    - name: PWM_resolution
+      description: resolution of pwm.
+      byte_offset: 324
+      fieldset: PWM_resolution
+    - name: PWM_PHASE_SHIFT
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 328
+      fieldset: PWM_PHASE_SHIFT
+    - name: PWM_PHASE_TABLE
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 344
+      fieldset: PWM_PHASE_TABLE
+    - name: PWM_postion_software
+      description: softwave inject postion.
+      byte_offset: 504
+      fieldset: PWM_postion_software
+    - name: PWM_postion_sel
+      description: select softwave inject postion.
+      byte_offset: 508
+      fieldset: PWM_postion_sel
+    - name: PWM_status
+      description: qeo status.
+      byte_offset: 512
+      fieldset: PWM_status
+    - name: PWM_debug0
+      description: qeo debug 0.
+      byte_offset: 516
+      fieldset: PWM_debug0
+    - name: PWM_debug1
+      description: qeo debug 1.
+      byte_offset: 520
+      fieldset: PWM_debug1
+    - name: PWM_debug2
+      description: qeo debug 2.
+      byte_offset: 524
+      fieldset: PWM_debug2
+    - name: PWM_debug3
+      description: qeo debug 3.
+      byte_offset: 528
+      fieldset: PWM_debug3
+    - name: PWM_debug4
+      description: qeo debug 4.
+      byte_offset: 532
+      fieldset: PWM_debug4
+    - name: PWM_debug5
+      description: qeo debug 5.
+      byte_offset: 536
+      fieldset: PWM_debug5
+block/WAVE_LIMIT0:
+  description: no description available.
+  items:
+    - name: min_level0
+      description: wave0 low area limit value.
+      byte_offset: 0
+      fieldset: min_level0
+    - name: max_level0
+      description: wave0 high area limit value.
+      byte_offset: 4
+      fieldset: max_level0
+block/WAVE_LIMIT1:
+  description: no description available.
+  items:
+    - name: min_level1
+      description: wave0 low area limit value level1.
+      byte_offset: 0
+      fieldset: min_level1
+    - name: max_level1
+      description: wave0 high area limit value level1.
+      byte_offset: 4
+      fieldset: max_level1
+fieldset/ABZ_PHASE_SHIFT:
+  description: no description available.
+  fields:
+    - name: VAL
+      description: wave_a phase shifter value, default is 0x0. write other value will shift phase early as (cfg_value/2^32) period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_line_width:
+  description: Two-phase orthogonality wave 1/4 period.
+  fields:
+    - name: LINE
+      description: the num of system clk by 1/4 period when using as Two-phase orthogonality.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_mode:
+  description: wave_a/b/z output mode.
+  fields:
+    - name: A_TYPE
+      description: "wave_a type: 0: Two-phase orthogonality wave_a. 1: pulse wave of pulse/reverse type. 2: up wave of up/down type. 3: Three-phase orthogonality wave_a."
+      bit_offset: 0
+      bit_size: 2
+    - name: B_TYPE
+      description: "wave_b type: 0: Two-phase orthogonality wave_b. 1: reverse wave of pulse/reverse type. 2: down wave of up/down type. 3: Three-phase orthogonality wave_b."
+      bit_offset: 4
+      bit_size: 2
+    - name: Z_TYPE
+      description: "wave_z type: 0: zero pulse type, start and end line number decided by z_start、z_end and z_offset. 1: zero pulse type, z output start to high when position= z_start, and mantain numbers of 1/4 line cfg in z_pulse_width register 2: reserved 3: wave_z output as tree-phase wave same as wave_a/wave_b."
+      bit_offset: 8
+      bit_size: 2
+    - name: A_POLARITY
+      description: "wave_a polarity. 0: normal output. 1: invert normal output."
+      bit_offset: 12
+      bit_size: 1
+    - name: B_POLARITY
+      description: "wave_b polarity. 0: normal output. 1: invert normal output."
+      bit_offset: 16
+      bit_size: 1
+    - name: Z_POLARITY
+      description: "wave_z polarity. 0: normal output. 1: invert normal output."
+      bit_offset: 20
+      bit_size: 1
+    - name: EN_WDOG
+      description: "enable abz wdog: 0: disable abz wdog. 1: enable abz wdog."
+      bit_offset: 24
+      bit_size: 1
+    - name: POSITION_SYNC_MODE
+      description: "position sync mode: 0: only sync integer line part into qeo own position. 1: sync integer and fraction part into qeo own position."
+      bit_offset: 27
+      bit_size: 1
+    - name: REVERSE_EDGE_TYPE
+      description: "pulse reverse wave，reverse edge point: 0: between pulse's posedge and negedge, min period dedicated by the num line_width 1: edge change point flow pulse's negedge."
+      bit_offset: 28
+      bit_size: 1
+    - name: ABZ_OUTPUT_ENABLE
+      description: abz output enable： 0：abz output disable, all keep 0 1：abz output enable.
+      bit_offset: 31
+      bit_size: 1
+fieldset/ABZ_overall_offset:
+  description: abz overall position offset.
+  fields:
+    - name: VAL
+      description: abz position overall offset, it affects abz position before resolution convert.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_postion_sync:
+  description: sync abz owned postion.
+  fields:
+    - name: POSTION
+      description: "load next valid postion into abz owned postion. always read 0 0: sync abz owned postion with next valid postion. 1: not sync."
+      bit_offset: 0
+      bit_size: 1
+fieldset/ABZ_resolution:
+  description: resolution of wave_a/b/z.
+  fields:
+    - name: LINES
+      description: wave_a/b/z resolution.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_wdog_width:
+  description: wdog width of qeo.
+  fields:
+    - name: WIDTH
+      description: wave will step 1/4 line to reminder user QEO still in controlled if QEO has no any toggle after the num of wdog_width sys clk.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_z_end:
+  description: zero phase end line num.
+  fields:
+    - name: Z_END
+      description: number of Z end line.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_z_offset:
+  description: zero phase start and end 1/4 line num.
+  fields:
+    - name: Z_START_OFFSET
+      description: number of Z start 1/4 line.
+      bit_offset: 4
+      bit_size: 2
+    - name: Z_END_OFFSET
+      description: number of Z end 1/4 line.
+      bit_offset: 8
+      bit_size: 2
+fieldset/ABZ_z_pulse_width:
+  description: zero pulse witdth.
+  fields:
+    - name: VAL
+      description: number of z_pulse_width.
+      bit_offset: 0
+      bit_size: 32
+fieldset/ABZ_z_start:
+  description: zero phase start line num.
+  fields:
+    - name: Z_START
+      description: number of Z start line.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_PHASE_SHIFT:
+  description: no description available.
+  fields:
+    - name: VAL
+      description: pwm_a phase shifter value, default is 0x0. write other value will shift phase early as (cfg_value/2^32) period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_PHASE_TABLE:
+  description: no description available.
+  fields:
+    - name: PWM0
+      description: pwm phase table value.
+      bit_offset: 0
+      bit_size: 2
+    - name: PWM1
+      description: pwm phase table value.
+      bit_offset: 2
+      bit_size: 2
+    - name: PWM2
+      description: pwm phase table value.
+      bit_offset: 4
+      bit_size: 2
+    - name: PWM3
+      description: pwm phase table value.
+      bit_offset: 6
+      bit_size: 2
+    - name: PWM4
+      description: pwm phase table value.
+      bit_offset: 8
+      bit_size: 2
+    - name: PWM5
+      description: pwm phase table value.
+      bit_offset: 10
+      bit_size: 2
+    - name: PWM6
+      description: pwm phase table value.
+      bit_offset: 12
+      bit_size: 2
+    - name: PWM7
+      description: pwm phase table value.
+      bit_offset: 14
+      bit_size: 2
+fieldset/PWM_debug0:
+  description: qeo debug 0.
+  fields:
+    - name: VALUE_DAC0
+      description: wave0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_debug1:
+  description: qeo debug 1.
+  fields:
+    - name: PAD_A
+      description: pad_a observe.
+      bit_offset: 16
+      bit_size: 1
+    - name: PAD_B
+      description: pad_b observe.
+      bit_offset: 20
+      bit_size: 1
+    - name: PAD_Z
+      description: pad_z observe.
+      bit_offset: 24
+      bit_size: 1
+    - name: QEO_FINISH
+      description: qeo finish observe.
+      bit_offset: 28
+      bit_size: 1
+fieldset/PWM_debug2:
+  description: qeo debug 2.
+  fields:
+    - name: ABZ_OWN_POSTION
+      description: abz_own_postion observe.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_debug3:
+  description: qeo debug 3.
+  fields:
+    - name: ABZ_OWN_POSTION
+      description: abz_own_postion observe.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_debug4:
+  description: qeo debug 4.
+  fields:
+    - name: VALUE_DAC1
+      description: wave1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_debug5:
+  description: qeo debug 5.
+  fields:
+    - name: VALUE_DAC2
+      description: wave2.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_mode:
+  description: pwm mode.
+  fields:
+    - name: PHASE_NUM
+      description: pwm force phase number.
+      bit_offset: 0
+      bit_size: 4
+    - name: REVISE_UP_DN
+      description: "exchange PWM pairs’ output 0: not exchange. 1: exchange."
+      bit_offset: 4
+      bit_size: 1
+    - name: PWM_SAFETY_BYPASS
+      description: "PWM safety mode bypass 0: not bypass 1: bypass."
+      bit_offset: 8
+      bit_size: 1
+    - name: PWM_ENTER_SAFETY_MODE
+      description: "PWM enter safety mode 0: not enter 1: enter."
+      bit_offset: 9
+      bit_size: 1
+    - name: ENABLE_PWM
+      description: "enable PWM force output 0: disable 1: enable."
+      bit_offset: 15
+      bit_size: 1
+    - name: PWM0_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 16
+      bit_size: 2
+    - name: PWM1_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 18
+      bit_size: 2
+    - name: PWM2_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 20
+      bit_size: 2
+    - name: PWM3_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 22
+      bit_size: 2
+    - name: PWM4_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 24
+      bit_size: 2
+    - name: PWM5_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 26
+      bit_size: 2
+    - name: PWM6_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 28
+      bit_size: 2
+    - name: PWM7_SAFETY
+      description: PWM safety mode phase table.
+      bit_offset: 30
+      bit_size: 2
+fieldset/PWM_postion_sel:
+  description: select softwave inject postion.
+  fields:
+    - name: POSTION_SEL
+      description: "enable softwave inject postion. 0: disable. 1: enable."
+      bit_offset: 0
+      bit_size: 1
+fieldset/PWM_postion_software:
+  description: softwave inject postion.
+  fields:
+    - name: POSTION_SOFTWAVE
+      description: softwave inject postion.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_resolution:
+  description: resolution of pwm.
+  fields:
+    - name: LINES
+      description: pwm resolution.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_status:
+  description: qeo status.
+  fields:
+    - name: PWM_SAFETY
+      description: pwm_fault status.
+      bit_offset: 0
+      bit_size: 1
+    - name: PWM_FOURCE
+      description: qeo_pwm_force observe.
+      bit_offset: 16
+      bit_size: 16
+fieldset/WAVE_AMPLITUDE:
+  description: no description available.
+  fields:
+    - name: AMP_VAL
+      description: amplitude scaling value. bit15-12 are integer part value. bit11-0 are fraction value.
+      bit_offset: 0
+      bit_size: 16
+    - name: EN_SCAL
+      description: "enable wave amplitude scaling. 0: disable; 1: enable."
+      bit_offset: 16
+      bit_size: 1
+fieldset/WAVE_DEADZONE_SHIFT:
+  description: no description available.
+  fields:
+    - name: VAL
+      description: wave0 deadzone shifter value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAVE_MID_POINT:
+  description: no description available.
+  fields:
+    - name: VAL
+      description: wave0 output middle point, use this value as 32 bit signed value. bit 31 is signed bit. bit30-27 is integer part value. bit26-0 is fraction value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAVE_PHASE_SHIFT:
+  description: no description available.
+  fields:
+    - name: VAL
+      description: wave0 phase shifter value, default is 0x0. write other value will shift phase early as (cfg_value/2^32) period.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAVE_mode:
+  description: analog waves mode.
+  fields:
+    - name: WAVES_OUTPUT_TYPE
+      description: "wave0/1/2 output mode. 0: cosine wave. 1: saddle wave. 2. abs cosine wave. 3. saw wave."
+      bit_offset: 0
+      bit_size: 2
+    - name: VD_VQ_SEL
+      description: "vd_vq sel ctrl: 0: from CLC. 1: from software."
+      bit_offset: 2
+      bit_size: 1
+    - name: EN_WAVE_VD_VQ_INJECT
+      description: "wave VdVq inject enable. 0: disable VdVq inject. 1: enable VdVq inject."
+      bit_offset: 4
+      bit_size: 1
+    - name: ENABLE_POS_VALID
+      description: "enable position valid to trigger analog wave calcuation 0: disable. 1: enable."
+      bit_offset: 5
+      bit_size: 1
+    - name: ENABLE_DQ_VALID
+      description: "enable vd or vq valid to trigger analog wave calcuation 0: disable. 1: enable."
+      bit_offset: 6
+      bit_size: 1
+    - name: SADDLE_TYPE
+      description: "saddle type seclect; 0:standard saddle. 1: triple-cos saddle."
+      bit_offset: 7
+      bit_size: 1
+    - name: WAVE0_BELOW_MIN_LIMIT
+      description: "wave0 below min limit mode. 0: output 0. 1: output all bits are 1. 2: output as level_min_limit0.level1_min_limit."
+      bit_offset: 8
+      bit_size: 2
+    - name: WAVE0_LOW_AREA0_LIMIT
+      description: "wave0 low area0 limit mode. 0: output 0. 1: output as level_min_limit0.level1_min_limit."
+      bit_offset: 10
+      bit_size: 1
+    - name: WAVE0_LOW_AREA1_LIMIT
+      description: "wave0 low area1 limit mode. 0: output 0. 1: output as level_min_limit0.level1_min_limit."
+      bit_offset: 11
+      bit_size: 1
+    - name: WAVE0_HIGH_AREA0_LIMIT
+      description: "wave0 high area0 limit mode. 0: output all bits are 1. 1: output as level_max_limit0.level0_max_limit."
+      bit_offset: 12
+      bit_size: 1
+    - name: WAVE0_HIGH_AREA1_LIMIT
+      description: "wave0 high area1 limit mode. 0: output all bits are 1. 1: output as level_max_limit0.level0_max_limit."
+      bit_offset: 13
+      bit_size: 1
+    - name: WAVE0_ABOVE_MAX_LIMIT
+      description: "wave0 above max limit mode. 0: output all bits are 1. 1: output 0x0. 2: output as level_max_limit0.level0_max_limit."
+      bit_offset: 14
+      bit_size: 2
+    - name: WAVE1_BELOW_MIN_LIMIT
+      description: "wave1 below min limit mode. 0: output 0. 1: output all bits are 1. 2: output as level_min_limit1.level1_min_limit."
+      bit_offset: 16
+      bit_size: 2
+    - name: WAVE1_LOW_AREA0_LIMIT
+      description: "wave1 low area0 limit mode. 0: output 0. 1: output as level_min_limit1.level1_min_limit."
+      bit_offset: 18
+      bit_size: 1
+    - name: WAVE1_LOW_AREA1_LIMIT
+      description: "wave1 low area1 limit mode. 0: output 0. 1: output as level_min_limit1.level1_min_limit."
+      bit_offset: 19
+      bit_size: 1
+    - name: WAVE1_HIGH_AREA0_LIMIT
+      description: "wave1 high area0 limit mode. 0: output all bits are 1. 1: output as level_max_limit1.level0_max_limit."
+      bit_offset: 20
+      bit_size: 1
+    - name: WAVE1_HIGH_AREA1_LIMIT
+      description: "wave1 high area1 limit mode. 0: output all bits are 1. 1: output as level_max_limit1.level0_max_limit."
+      bit_offset: 21
+      bit_size: 1
+    - name: WAVE1_ABOVE_MAX_LIMIT
+      description: "wave1 above max limit mode. 0: output all bits are 1. 1: output 0x0. 2: output as level_max_limit1.level0_max_limit."
+      bit_offset: 22
+      bit_size: 2
+    - name: WAVE2_BELOW_MIN_LIMIT
+      description: "wave2 below min limit mode. 0: output 0. 1: output all bits are 1. 2: output as level_min_limit2.level1_min_limit."
+      bit_offset: 24
+      bit_size: 2
+    - name: WAVE2_LOW_AREA0_LIMIT
+      description: "wave2 low area0 limit mode. 0: output 0. 1: output as level_min_limit2.level1_min_limit."
+      bit_offset: 26
+      bit_size: 1
+    - name: WAVE2_LOW_AREA1_LIMIT
+      description: "wave2 low area1 limit mode. 0: output 0. 1: output as level_min_limit2.level1_min_limit."
+      bit_offset: 27
+      bit_size: 1
+    - name: WAVE2_HIGH_AREA0_LIMIT
+      description: "wave2 high area0 limit mode. 0: output all bits are 1. 1: output as level_max_limit2.level0_max_limit."
+      bit_offset: 28
+      bit_size: 1
+    - name: WAVE2_HIGH_AREA1_LIMIT
+      description: "wave2 high area1 limit mode. 0: output all bits are 1. 1: output as level_max_limit2.level0_max_limit."
+      bit_offset: 29
+      bit_size: 1
+    - name: WAVE2_ABOVE_MAX_LIMIT
+      description: "wave2 above max limit mode. 0: output all bits are 1. 1: output 0x0. 2: output as level_max_limit2.level0_max_limit."
+      bit_offset: 30
+      bit_size: 2
+fieldset/WAVE_pwm_cycle:
+  description: pwm_cycle.
+  fields:
+    - name: VAL
+      description: pwm_cycle.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAVE_resolution:
+  description: resolution of wave0/1/2.
+  fields:
+    - name: LINES
+      description: wave0/1/2 resolution.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAVE_vd_inject:
+  description: wave vd inject value.
+  fields:
+    - name: VD_VAL
+      description: Vd inject value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/WAVE_vd_vq_load:
+  description: load wave0/1/2 vd vq value.
+  fields:
+    - name: LOAD
+      description: "load wave0/1/2 vd vq value. always read 0 0: vd vq keep previous value. 1: load wave0/1/2 vd vq value at sametime."
+      bit_offset: 0
+      bit_size: 1
+fieldset/WAVE_vq_inject:
+  description: wave vq inject value.
+  fields:
+    - name: VQ_VAL
+      description: Vq inject value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/max_level0:
+  description: wave0 high area limit value.
+  fields:
+    - name: LIMIT_LEVEL0
+      description: high area limit level0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/max_level1:
+  description: wave0 high area limit value level1.
+  fields:
+    - name: LIMIT_LEVEL1
+      description: high area limit level1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/min_level0:
+  description: wave0 low area limit value.
+  fields:
+    - name: LIMIT_LEVEL0
+      description: low area limit level0.
+      bit_offset: 0
+      bit_size: 32
+fieldset/min_level1:
+  description: wave0 low area limit value level1.
+  fields:
+    - name: LIMIT_LEVEL1
+      description: low area limit level1.
+      bit_offset: 0
+      bit_size: 32
