@@ -56,6 +56,14 @@ pub fn add_ioc_pins_from_sdk<P: AsRef<Path>>(
         })
         .collect();
 
+    // fix wrong pins
+    if chip_name.starts_with("HPM53") {
+        pins = pins
+            .into_iter()
+            .filter(|p| !p.name.starts_with("PX"))
+            .collect();
+    }
+
     pins.sort_by_key(|p| p.index);
 
     for core in &mut chip.cores {
