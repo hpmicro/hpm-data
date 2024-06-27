@@ -150,7 +150,7 @@ impl Gen {
             writeln!(&mut extra, "pub mod resources {{").unwrap();
             let mut resources = core.resources.clone();
             resources.sort_by_key(|r| r.index);
-            for res in &core.resources {
+            for res in &resources {
                 writeln!(
                     &mut extra,
                     "    pub const {}: usize = {};",
@@ -165,7 +165,7 @@ impl Gen {
 
             let mut clocks = core.clocks.clone();
             clocks.sort_by_key(|r| r.index);
-            for clk in &core.clocks {
+            for clk in &clocks {
                 writeln!(
                     &mut extra,
                     "    pub const {}: usize = {};",
