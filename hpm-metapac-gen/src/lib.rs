@@ -177,7 +177,9 @@ impl Gen {
             writeln!(&mut extra, "}}").unwrap();
 
             writeln!(&mut extra, "pub mod pins {{").unwrap();
-            for pin in &core.pins {
+            let mut pins = core.pins.clone();
+            pins.sort_by_key(|r| r.index);
+            for pin in &pins {
                 writeln!(
                     &mut extra,
                     "    pub const {}: usize = {};",
