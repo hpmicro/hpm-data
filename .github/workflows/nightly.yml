@@ -40,8 +40,8 @@ jobs:
         git add .
         git config user.name "hpm-data builder"
         git config user.email "action@github.com"
-        git commit -m "hpm-rs/hpm-data master $COMMIT" --allow-empty
-        git tag -a hpm-data-$COMMIT -m "Generated from hpm-data $COMMIT"
+        git commit -m "andelf/hpm-data master $COMMIT" --allow-empty
+        git tag -a hpm-data-$COMMIT -m "Generated from andelf/hpm-data $COMMIT"
     - name: Test
       run: |
         cd build/hpm-metapac/
