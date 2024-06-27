@@ -540,4 +540,75 @@
     kind: tsns
     version: common
     block: TSNS
+
 # security peripherals
+
+- name: SDP
+  address: 0xF3040000
+  registers:
+    kind: sdp
+    version: v53
+    block: SDP
+
+- name: RNG
+  address: 0xF304C000
+  registers:
+    kind: rng
+    version: common
+    block: RNG
+
+- name: KEYM
+  address: 0xF3054000
+  registers:
+    kind: keym
+    version: common
+    block: KEYM
+
+- name: BKEY
+  address: 0xF4248000
+  registers:
+    kind: bkey
+    version: common
+    block: BKEY
+
+- name: PSEC
+  address: 0xF3044000
+  registers:
+    kind: psec
+    version: common
+    block: PSEC
+
+- name: PMON
+  address: 0xF3048000
+  registers:
+    kind: pmon
+    version: common
+    block: PMON
+
+- name: BSEC
+  address: 0xF4240000
+  registers:
+    kind: bsec
+    version: common
+    block: BSEC
+
+- name: BMON
+  address: 0xF424C000
+  registers:
+    kind: bmon
+    version: common
+    block: BMON
+
+- name: TAMP
+  address: 0xF4250000
+  registers:
+    kind: tamp
+    version: v62
+    block: TAMP
+
+- name: MONO
+  address: 0xF4254000
+  registers:
+    kind: mono
+    version: common
+    block: MONO
