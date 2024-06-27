@@ -59,7 +59,7 @@
     block: IOC
 
 - name: FGPIO
-  address: 0x000C0000
+  address: 0x00300000
   registers:
     kind: gpio
     version: v53
