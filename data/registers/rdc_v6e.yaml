@@ -1,4 +1,4 @@
-block/RDC0:
+block/RDC:
   description: RDC0.
   items:
     - name: rdc_ctl

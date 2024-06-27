@@ -17,7 +17,7 @@ block/COUNT:
       description: Timer counter.
       byte_offset: 12
       fieldset: tmr
-block/QEI0:
+block/QEI:
   description: QEI0.
   items:
     - name: cr

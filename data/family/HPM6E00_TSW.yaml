@@ -1,0 +1,6 @@
+- name: TSW
+  address: 0xF140C000
+  registers:
+    kind: tsw
+    version: v6e
+    block: TSW

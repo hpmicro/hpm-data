@@ -64,7 +64,7 @@
     version: v53
     block: MMC
 
-- name: RDC
+- name: RDC0
   address: 0xF0320000
   registers:
     kind: rdc

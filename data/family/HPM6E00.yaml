@@ -231,7 +231,114 @@
 
 # motion control
 
-# TODO
+- name: PWM0
+  address: 0xF0420000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+- name: PWM1
+  address: 0xF0424000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+- name: PWM2
+  address: 0xF0428000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+- name: PWM3
+  address: 0xF042C000
+  registers:
+    kind: pwm
+    version: v53
+    block: PWM
+
+- name: TRGM0
+  address: 0xF047C000
+  registers:
+    kind: trgm
+    version: v53
+    block: TRGM
+
+- name: SYNT
+  address: 0xF0328000
+  registers:
+    kind: synt
+    version: v53
+    block: SYNT
+
+# QEIv2
+- name: QEI0
+  address: 0xF0400000
+  registers:
+    kind: qei
+    version: v6e
+    block: QEI
+- name: QEI1
+  address: 0xF0404000
+  registers:
+    kind: qei
+    version: v6e
+    block: QEI
+
+# QEOv2
+- name: QEO0
+  address: 0xF0410000
+  registers:
+    kind: qeo
+    version: v6e
+    block: QEO
+- name: QEO1
+  address: 0xF0414000
+  registers:
+    kind: qeo
+    version: v6e
+    block: QEO
+
+- name: MTG0
+  address: 0xF0490000
+  registers:
+    kind: mtg
+    version: v6e
+    block: MTG
+
+- name: PLB
+  address: 0xF0460000
+  registers:
+    kind: plb
+    version: v53
+    block: PLB
+
+- name: RDC0
+  address: 0xF0440000
+  registers:
+    kind: rdc
+    version: v6e
+    block: RDC
+
+- name: SEI
+  address: 0xF0470000
+  registers:
+    kind: sei
+    version: v6e
+    block: SEI
+
+- name: VSC0
+  address: 0xF04A0000
+  registers:
+    kind: vsc
+    version: v6e
+    block: VSC
+
+- name: CLC0
+  address: 0xF04B0000
+  registers:
+    kind: clc
+    version: v6e
+    block: CLC
 
 # timers
 
@@ -259,30 +366,7 @@
     kind: tmr
     version: common
     block: TMR
-- name: GPTMR4
-  address: 0xF0010000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR5
-  address: 0xF0014000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR6
-  address: 0xF0018000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
-- name: GPTMR7
-  address: 0xF001C000
-  registers:
-    kind: tmr
-    version: common
-    block: TMR
+
 - name: NTMR0
   address: 0xF1410000
   registers:
@@ -314,18 +398,7 @@
     kind: wdg
     version: v68
     block: WDG
-- name: WDG2
-  address: 0xF00B8000
-  registers:
-    kind: wdg
-    version: v68
-    block: WDG
-- name: WDG3
-  address: 0xF00BC000
-  registers:
-    kind: wdg
-    version: v68
-    block: WDG
+
 - name: PWDG
   address: 0xF4128000
   registers:
@@ -391,55 +464,6 @@
     version: v53
     block: UART
 
-- name: UART8
-  address: 0xF0180000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART9
-  address: 0xF0184000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART10
-  address: 0xF0188000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART11
-  address: 0xF018C000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART12
-  address: 0xF0190000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART13
-  address: 0xF0194000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART14
-  address: 0xF0198000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-- name: UART15
-  address: 0xF019C000
-  registers:
-    kind: uart
-    version: v53
-    block: UART
-
 - name: PUART
   address: 0xF4124000
   registers:
@@ -471,30 +495,6 @@
     kind: spi
     version: v53
     block: SPI
-- name: SPI4
-  address: 0xF01B0000
-  registers:
-    kind: spi
-    version: v53
-    block: SPI
-- name: SPI5
-  address: 0xF01B4000
-  registers:
-    kind: spi
-    version: v53
-    block: SPI
-- name: SPI6
-  address: 0xF01B8000
-  registers:
-    kind: spi
-    version: v53
-    block: SPI
-- name: SPI7
-  address: 0xF01BC000
-  registers:
-    kind: spi
-    version: v53
-    block: SPI
 
 - name: I2C0
   address: 0xF0060000
@@ -520,30 +520,6 @@
     kind: i2c
     version: v53
     block: I2C
-- name: I2C4
-  address: 0xF01A0000
-  registers:
-    kind: i2c
-    version: v53
-    block: I2C
-- name: I2C5
-  address: 0xF01A4000
-  registers:
-    kind: i2c
-    version: v53
-    block: I2C
-- name: I2C6
-  address: 0xF01A8000
-  registers:
-    kind: i2c
-    version: v53
-    block: I2C
-- name: I2C7
-  address: 0xF01AC000
-  registers:
-    kind: i2c
-    version: v53
-    block: I2C
 
 - name: MCAN0
   address: 0xF0300000
@@ -565,30 +541,6 @@
     block: MCAN
 - name: MCAN3
   address: 0xF030C000
-  registers:
-    kind: mcan
-    version: v53
-    block: MCAN
-- name: MCAN4
-  address: 0xF0310000
-  registers:
-    kind: mcan
-    version: v53
-    block: MCAN
-- name: MCAN5
-  address: 0xF0314000
-  registers:
-    kind: mcan
-    version: v53
-    block: MCAN
-- name: MCAN6
-  address: 0xF0318000
-  registers:
-    kind: mcan
-    version: v53
-    block: MCAN
-- name: MCAN7
-  address: 0xF031C000
   registers:
     kind: mcan
     version: v53
@@ -630,13 +582,6 @@
     version: v6e
     block: ESC
 
-- name: TSW
-  address: 0xF140C000
-  registers:
-    kind: tsw
-    version: v6e
-    block: TSW
-
 # analog peripherals
 
 - name: ADC0
@@ -653,12 +598,6 @@
     block: ADC
 - name: ADC2
   address: 0xF0108000
-  registers:
-    kind: adc16
-    version: v6e
-    block: ADC
-- name: ADC3
-  address: 0xF010C000
   registers:
     kind: adc16
     version: v6e
@@ -698,12 +637,6 @@
 
 - name: SDM0
   address: 0xF0450000
-  registers:
-    kind: sdm
-    version: v6e
-    block: SDM
-- name: SDM1
-  address: 0xF0454000
   registers:
     kind: sdm
     version: v6e

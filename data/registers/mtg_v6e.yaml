@@ -56,7 +56,7 @@ block/EVENT:
       description: event&index0_timestamp.
       byte_offset: 20
       fieldset: EVENT_timestamp
-block/MTG0:
+block/MTG:
   description: MTG0.
   items:
     - name: TRA
