@@ -24,7 +24,7 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - HPM6200 - high performance, real-time, mixed signal
 - HPM5300 - general purpose, motion control
 - HPM6800 - display, user interface
-- HPM6E00 (announced) - EtherCAT
+- HPM6E00 - EtherCAT
 
 ### Support status
 
@@ -33,7 +33,7 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - [x] HPM6300
 - [x] HPM6800
 - [x] HPM6200
-- [ ] HPM6E00
+- [ ] HPM6E00 - WIP
 
 ## hpm-metapac
 

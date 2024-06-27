@@ -507,12 +507,12 @@ fn gen_memory_x(out_dir: &Path, chip: &Chip) {
     let dlm = chip
         .memory
         .iter()
-        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "DLM")
+        .find(|r| r.kind == MemoryRegionKind::Ram && (r.name == "DLM" || r.name == "DLM0"))
         .unwrap();
     let ilm = chip
         .memory
         .iter()
-        .find(|r| r.kind == MemoryRegionKind::Ram && r.name == "ILM")
+        .find(|r| r.kind == MemoryRegionKind::Ram && (r.name == "ILM" || r.name == "ILM0"))
         .unwrap();
     let axi_sram = chip
         .memory
