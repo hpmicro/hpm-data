@@ -40,6 +40,8 @@ cores:
     include_peripherals:
       - "../family/COMMON.yaml"
       - "../family/HPM6800.yaml"
+      - "../family/HPM6800_NonBasic.yaml"
+      - "../family/HPM6800_Adv.yaml"
     include_interrupts: "../interrupts/HPM6880.yaml"
     include_dmamux: "../dmamux/HPM6880.yaml"
     gen_dma_channels:

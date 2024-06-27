@@ -1,0 +1,13 @@
+- name: GPU
+  address: 0xF1080000
+  registers:
+    kind: gpu
+    version: v68
+    block: GPU
+
+- name: JPEG
+  address: 0xF1014000
+  registers:
+    kind: jpeg
+    version: common
+    block: JPEG
