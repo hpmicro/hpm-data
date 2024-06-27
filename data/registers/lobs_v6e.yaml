@@ -1,0 +1,336 @@
+block/LOBS:
+  description: LOBS.
+  items:
+  - name: CTRL
+    description: Control Register.
+    byte_offset: 0
+    fieldset: CTRL
+  - name: STREAMCTRL
+    description: Stream Control Register.
+    byte_offset: 12
+    fieldset: STREAMCTRL
+  - name: PTACTION
+    description: Pre-trigger Action Register.
+    byte_offset: 16
+    fieldset: PTACTION
+  - name: STARTADDR
+    description: Start Address Register.
+    byte_offset: 20
+    fieldset: STARTADDR
+  - name: ENDADDR
+    description: End Address Register.
+    byte_offset: 24
+    fieldset: ENDADDR
+  - name: CTSR
+    description: Current Trigger State Register.
+    byte_offset: 32
+    fieldset: CTSR
+  - name: CCVR
+    description: Current Counter Value Register.
+    byte_offset: 36
+    fieldset: CCVR
+  - name: CAVR
+    description: Current Action Value Register.
+    byte_offset: 40
+    fieldset: CAVR
+  - name: FIFOSTATE
+    description: Fifo State Register.
+    byte_offset: 48
+    fieldset: FIFOSTATE
+  - name: FINALADDR
+    description: Final Address Register.
+    byte_offset: 52
+    fieldset: FINALADDR
+  - name: GRPSELA
+    description: Group Select Register.
+    byte_offset: 80
+    fieldset: GRPSELA
+  - name: GRPENA
+    description: Group Enable Register.
+    byte_offset: 84
+    fieldset: GRPENA
+  - name: SIGSELA0
+    description: Signal Select0 Register.
+    byte_offset: 88
+    fieldset: SIGSELA0
+  - name: SIGSELA1
+    description: Signal Select1 Register.
+    byte_offset: 96
+    fieldset: SIGSELA1
+  - name: SIGENA0
+    description: Signal Enable0 Register.
+    byte_offset: 152
+    fieldset: SIGENA0
+  - name: SIGENA1
+    description: Signal Enable1 Register.
+    byte_offset: 156
+    fieldset: SIGENA1
+  - name: SIGSEL0
+    description: Signal Select Register.
+    byte_offset: 256
+    fieldset: SIGSEL0
+  - name: TRIGCTRL0
+    description: Trigger Control Register.
+    byte_offset: 260
+    fieldset: TRIGCTRL0
+  - name: NEXTSTATE0
+    description: Next State Register.
+    byte_offset: 264
+    fieldset: NEXTSTATE0
+  - name: ACTION0
+    description: Action Register.
+    byte_offset: 268
+    fieldset: ACTION0
+  - name: COUNTCOMP0
+    description: Signal Mask Register.
+    byte_offset: 288
+    fieldset: COUNTCOMP0
+  - name: SIGMASK0
+    description: Counter Compare Register.
+    byte_offset: 320
+    fieldset: SIGMASK0
+  - name: COMPEN0
+    description: Compare Enable register.
+    byte_offset: 324
+    fieldset: COMPEN0
+fieldset/ACTION0:
+  description: Action Register.
+  fields:
+  - name: TRACE
+    description: Trace active. 0b0 Trace is not active. 0b1 Trace is active.
+    bit_offset: 3
+    bit_size: 1
+fieldset/CAVR:
+  description: Current Action Value Register.
+  fields:
+  - name: TRACE
+    description: Trace active. 0b0 Trace is not active. 0b1 Trace is active.
+    bit_offset: 3
+    bit_size: 1
+fieldset/CCVR:
+  description: Current Counter Value Register.
+  fields:
+  - name: CCVR
+    description: Returns the counter value when the CTSR was last read. If the CTSR has never been read, then the value in the CCVR is undefined.
+    bit_offset: 0
+    bit_size: 32
+fieldset/COMPEN0:
+  description: Compare Enable register.
+  fields: []
+fieldset/COUNTCOMP0:
+  description: Signal Mask Register.
+  fields:
+  - name: TRACE
+    description: A value that, when reached in the associated up-counter for this Trigger State, causes a Trigger Counter Comparison match to occur.
+    bit_offset: 0
+    bit_size: 32
+fieldset/CTRL:
+  description: Control Register.
+  fields:
+  - name: RUN
+    description: Run control. 0 LOBS disabled. Register programming permitted. 1 LOBS enabled.
+    bit_offset: 0
+    bit_size: 1
+fieldset/CTSR:
+  description: Current Trigger State Register.
+  fields:
+  - name: CTSR
+    description: 'Reads current Trigger State. This is a one-hot encoded field. When CTRL.RUN: 0 RAZ. 1 Returns current Trigger State. If FINALSTATE is 1, then the CTSR field gives the Trigger State when FINALSTATE became 1.'
+    bit_offset: 0
+    bit_size: 5
+  - name: FINALSTATE
+    description: 0 LOBS is still tracing. 1 Indicates that the LOBS has stopped advancing Trigger States and stopped trace. FINALSTATE can be set by TRIGCTRL.COUNTBRK reaching the final loop count, or by programming NEXTSTATEto zero.
+    bit_offset: 31
+    bit_size: 1
+fieldset/ENDADDR:
+  description: End Address Register.
+  fields:
+  - name: ADDR
+    description: End address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/FIFOSTATE:
+  description: Fifo State Register.
+  fields:
+  - name: EMPTY
+    description: FIFO empty.
+    bit_offset: 0
+    bit_size: 1
+  - name: FULL
+    description: FIFO full.
+    bit_offset: 1
+    bit_size: 1
+fieldset/FINALADDR:
+  description: Final Address Register.
+  fields:
+  - name: ADDR
+    description: Final address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/GRPENA:
+  description: Group Enable Register.
+  fields:
+  - name: EN
+    description: Enable trace group number0-1.
+    bit_offset: 0
+    bit_size: 2
+fieldset/GRPSELA:
+  description: Group Select Register.
+  fields:
+  - name: NUM0
+    description: Select trace group number0.
+    bit_offset: 0
+    bit_size: 4
+  - name: NUM1
+    description: Select trace group number1.
+    bit_offset: 4
+    bit_size: 4
+fieldset/NEXTSTATE0:
+  description: Next State Register.
+  fields:
+  - name: NEXTSTATE
+    description: Selects the next state to move to after the Trigger Condition has been met in the current state. 0x0 Do not change state. This is the final Trigger State. 0x1 Selects Trigger State 0. 0x2 Selects Trigger State 1. 0x4 Selects Trigger State 2. 0x8 Selects Trigger State 3. 0x10 Selects Trigger State 4.
+    bit_offset: 0
+    bit_size: 5
+fieldset/PTACTION:
+  description: Pre-trigger Action Register.
+  fields:
+  - name: TRACE
+    description: Enables trace.
+    bit_offset: 3
+    bit_size: 1
+fieldset/SIGENA0:
+  description: Signal Enable0 Register.
+  fields:
+  - name: EN
+    description: Enable trace signal number0-3.
+    bit_offset: 0
+    bit_size: 4
+fieldset/SIGENA1:
+  description: Signal Enable1 Register.
+  fields:
+  - name: EN
+    description: Enable trace signal number0-3.
+    bit_offset: 0
+    bit_size: 4
+fieldset/SIGMASK0:
+  description: Counter Compare Register.
+  fields:
+  - name: NUM0
+    description: Select compare signal number0.
+    bit_offset: 0
+    bit_size: 8
+  - name: NUM1
+    description: Select compare signal number1.
+    bit_offset: 8
+    bit_size: 8
+  - name: NUM2
+    description: Select compare signal number2.
+    bit_offset: 16
+    bit_size: 8
+  - name: NUM3
+    description: Select compare signal number3.
+    bit_offset: 24
+    bit_size: 8
+fieldset/SIGSEL0:
+  description: Signal Select Register.
+  fields:
+  - name: EN
+    description: Selects Signal Group. 0x1 Selects Signal Group 0. 0x2 Selects Signal Group 1. 0x4 Selects Signal Group 2. 0x8 Selects Signal Group 3. 0x10 Selects Signal Group 4. 0x20 Selects Signal Group 5. 0x40 Selects Signal Group 6. 0x80 Selects Signal Group 7. 0x100 Selects Signal Group 8. 0x200 Selects Signal Group 9. 0x400 Selects Signal Group 10. 0x800 Selects Signal Group 11.
+    bit_offset: 0
+    bit_size: 12
+fieldset/SIGSELA0:
+  description: Signal Select0 Register.
+  fields:
+  - name: NUM0
+    description: Select trace signal number0 in group0.
+    bit_offset: 0
+    bit_size: 8
+  - name: NUM1
+    description: Select trace signal number1 in group0.
+    bit_offset: 8
+    bit_size: 8
+  - name: NUM2
+    description: Select trace signal number2 in group0.
+    bit_offset: 16
+    bit_size: 8
+  - name: NUM3
+    description: Select trace signal number3 in group0.
+    bit_offset: 24
+    bit_size: 8
+fieldset/SIGSELA1:
+  description: Signal Select1 Register.
+  fields:
+  - name: NUM0
+    description: Select trace signal number0 in group1.
+    bit_offset: 0
+    bit_size: 8
+  - name: NUM1
+    description: Select trace signal number1 in group1.
+    bit_offset: 8
+    bit_size: 8
+  - name: NUM2
+    description: Select trace signal number2 in group1.
+    bit_offset: 16
+    bit_size: 8
+  - name: NUM3
+    description: Select trace signal number3 in group1.
+    bit_offset: 24
+    bit_size: 8
+fieldset/STARTADDR:
+  description: Start Address Register.
+  fields:
+  - name: ADDR
+    description: Start address.
+    bit_offset: 0
+    bit_size: 32
+fieldset/STREAMCTRL:
+  description: Stream Control Register.
+  fields:
+  - name: BURST
+    description: Burst Cfg 0b011 Incr4 0b101 Incr8 0b111 Incr16.
+    bit_offset: 0
+    bit_size: 3
+  - name: SAMPLE
+    description: Sample Rate 0b110 Incr4 take one every four 0b101 Incr8 take one every five 0b100 Incr16 take one every six.
+    bit_offset: 3
+    bit_size: 4
+  - name: CLEAR
+    description: FIFO Overflow Clear.
+    bit_offset: 7
+    bit_size: 1
+  - name: SEL
+    description: Signal Group Select 0 128bit from one group 1 from 2 groups, 4bit in each group.
+    bit_offset: 8
+    bit_size: 1
+fieldset/TRIGCTRL0:
+  description: Trigger Control Register.
+  fields:
+  - name: COMP
+    description: Trigger Signal Comparison type select. 0b000 Trigger Signal Comparisons disabled. The enabled counters count clocks immediately after the Trigger State has been entered and generate a programmable Output Action and transition to the next Trigger State when the Counter Compare Register count is reached, that is when a Trigger Counter Comparison match occurs. 0b001 Compare type is equal (==). 0b010 Compare type is greater than (>). 0b011 Compare type is greater than or equal (>=). 0b101 Compare type is not equal (!=). 0b110 Compare type is less than (<). 0b111 Compare type is less than or equal (<=).
+    bit_offset: 0
+    bit_size: 3
+  - name: COMPSEL
+    description: Comparison mode. Acts as both a counter enable and a select for the comparison mode. 0b0 Disable counters and select Trigger Signal Comparison mode. 0b1 Enable counters and select Trigger Counter Comparison mode.
+    bit_offset: 3
+    bit_size: 1
+  - name: WATCHRST
+    description: Counter reset. 0b0 Do not reset the counter after a Trigger Signal Comparison match. 0b1 Reset the counter after a Trigger Signal Comparison match The counter acts like an activity watchdog timer, only allowing advancement to the next Trigger State when the Trigger Counter Comparison is reached. The counter is reset by a signal comparison.
+    bit_offset: 4
+    bit_size: 1
+  - name: COUNTSRC
+    description: Counter source select. 0b0 Counter is incremented every ELACLK cycle. 0b1 Counter is incremented when Trigger Signal Comparison matches.
+    bit_offset: 5
+    bit_size: 1
+  - name: TRACE
+    description: Trace capture control. 0b00 Trace is captured when Trigger Signal Comparison succeeds. 0b01 Trace is captured when Trigger Counter Comparison succeeds. 0b10 Trace is captured every ELACLK cycle. 0b11 Reserved.
+    bit_offset: 6
+    bit_size: 2
+  - name: COUNTCLR
+    description: Counter clear. 0b0 Do not clear the counter value when moving to a different NEXTSTATE. 0b1 Clear the counter value when moving to a different NEXTSTATE. Note TRIGCTRL.WATCHRST must be 0b0 when using this feature.
+    bit_offset: 8
+    bit_size: 1
+  - name: COUNTERBRK
+    description: 'Loop counter break. The loop counter break uses the Trigger State counter to break loops between Trigger States after a Trigger Counter Comparison. When the counter comparison matches, the Trigger State goes into a final state,which stops trace writes and leaves the output actions at the previous Trigger State ACTION value. 0b0 Normal operation. 0b1 Break Trigger State loop: A counter comparison match causes a transition to the final state, otherwise go to the NEXTSTATE Trigger State as the counter increments.'
+    bit_offset: 9
+    bit_size: 1

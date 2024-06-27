@@ -1,0 +1,132 @@
+block/ACMP:
+  description: ACMP0.
+  items:
+  - name: CHANNEL
+    description: no description available.
+    array:
+      len: 2
+      stride: 32
+    byte_offset: 0
+    block: CHANNEL
+block/CHANNEL:
+  description: no description available.
+  items:
+  - name: cfg
+    description: Configure Register.
+    byte_offset: 0
+    fieldset: cfg
+  - name: daccfg
+    description: DAC configure register.
+    byte_offset: 4
+    fieldset: daccfg
+  - name: sr
+    description: Status register.
+    byte_offset: 16
+    fieldset: sr
+  - name: irqen
+    description: Interrupt request enable register.
+    byte_offset: 20
+    fieldset: irqen
+  - name: dmaen
+    description: DMA request enable register.
+    byte_offset: 24
+    fieldset: dmaen
+fieldset/cfg:
+  description: Configure Register.
+  fields:
+  - name: FLTLEN
+    description: This bitfield define the ACMP output digital filter length. The unit is ACMP clock cycle.
+    bit_offset: 0
+    bit_size: 12
+  - name: SYNCEN
+    description: 'This bit enable the comparator output synchronization. 0: ACMP output not synchronized with ACMP clock. 1: ACMP output synchronized with ACMP clock.'
+    bit_offset: 12
+    bit_size: 1
+  - name: FLTMODE
+    description: 'This bitfield define the ACMP output digital filter mode: 000-bypass 100-change immediately; 101-change after filter; 110-stalbe low; 111-stable high.'
+    bit_offset: 13
+    bit_size: 3
+  - name: OPOL
+    description: 'The output polarity control bit. 0: The ACMP output remain un-changed. 1: The ACMP output is inverted.'
+    bit_offset: 16
+    bit_size: 1
+  - name: WINEN
+    description: 'This bit enable the comparator window mode. 0: Window mode is disabled 1: Window mode is enabled.'
+    bit_offset: 17
+    bit_size: 1
+  - name: FLTBYPS
+    description: 'This bit bypass the comparator output digital filter. 0: The ACMP output need pass digital filter 1: The ACMP output digital filter is bypassed.'
+    bit_offset: 18
+    bit_size: 1
+  - name: CMPOEN
+    description: 'This bit enable the comparator output on pad. 0: ACMP output disabled 1: ACMP output enabled.'
+    bit_offset: 19
+    bit_size: 1
+  - name: PINSEL
+    description: MIN select, from pad_ai_acmp[7:1] and dac_out.
+    bit_offset: 20
+    bit_size: 3
+  - name: DAC_TRIG_EN
+    description: if set, the dac value is from moto system when valid if clr, use dac_cfg value.
+    bit_offset: 23
+    bit_size: 1
+  - name: MINSEL
+    description: PIN select, from pad_ai_acmp[7:1] and dac_out.
+    bit_offset: 24
+    bit_size: 3
+  - name: CMPEN
+    description: 'This bit enable the comparator. 0: ACMP disabled 1: ACMP enabled.'
+    bit_offset: 27
+    bit_size: 1
+  - name: HPMODE
+    description: 'This bit enable the comparator high performance mode. 0: HP mode disabled 1: HP mode enabled.'
+    bit_offset: 28
+    bit_size: 1
+  - name: DACEN
+    description: 'This bit enable the comparator internal DAC 0: DAC disabled 1: DAC enabled.'
+    bit_offset: 29
+    bit_size: 1
+  - name: HYST
+    description: 'This bitfield configure the comparator hysteresis. 00: Hysteresis level 0 01: Hysteresis level 1 10: Hysteresis level 2 11: Hysteresis level 3.'
+    bit_offset: 30
+    bit_size: 2
+fieldset/daccfg:
+  description: DAC configure register.
+  fields:
+  - name: DACCFG
+    description: 8bit DAC digital value output to analog block.
+    bit_offset: 0
+    bit_size: 8
+fieldset/dmaen:
+  description: DMA request enable register.
+  fields:
+  - name: REDGEN
+    description: Output rising edge flag DMA request enable bit.
+    bit_offset: 0
+    bit_size: 1
+  - name: FEDGEN
+    description: Output falling edge flag DMA request enable bit.
+    bit_offset: 1
+    bit_size: 1
+fieldset/irqen:
+  description: Interrupt request enable register.
+  fields:
+  - name: REDGEN
+    description: Output rising edge flag interrupt enable bit.
+    bit_offset: 0
+    bit_size: 1
+  - name: FEDGEN
+    description: Output falling edge flag interrupt enable bit.
+    bit_offset: 1
+    bit_size: 1
+fieldset/sr:
+  description: Status register.
+  fields:
+  - name: REDGF
+    description: Output rising edge flag. Write 1 to clear this flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: FEDGF
+    description: Output falling edge flag. Write 1 to clear this flag.
+    bit_offset: 1
+    bit_size: 1

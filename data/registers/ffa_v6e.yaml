@@ -1,0 +1,424 @@
+block/FFA:
+  description: FFA.
+  items:
+  - name: CTRL
+    description: No description available.
+    byte_offset: 0
+    fieldset: CTRL
+  - name: STATUS
+    description: No description available.
+    byte_offset: 4
+    fieldset: STATUS
+  - name: INT_EN
+    description: No description available.
+    byte_offset: 8
+    fieldset: INT_EN
+  - name: FP_CTRL
+    description: No description available.
+    byte_offset: 16
+    fieldset: FP_CTRL
+  - name: FP_ST
+    description: No description available.
+    byte_offset: 20
+    fieldset: FP_ST
+  - name: OP_CTRL
+    description: No description available.
+    byte_offset: 32
+    fieldset: OP_CTRL
+  - name: OP_CMD
+    description: No description available.
+    byte_offset: 36
+    fieldset: OP_CMD
+  - name: OP_FFT_MISC
+    description: No description available.
+    byte_offset: 40
+    fieldset: OP_FFT_MISC
+  - name: OP_FIR_MISC
+    description: No description available.
+    byte_offset: 40
+    fieldset: OP_FIR_MISC
+  - name: OP_REG0
+    description: No description available.
+    byte_offset: 40
+    fieldset: OP_REG0
+  - name: OP_FIR_MISC1
+    description: No description available.
+    byte_offset: 44
+    fieldset: OP_FIR_MISC1
+  - name: OP_REG1
+    description: No description available.
+    byte_offset: 44
+    fieldset: OP_REG1
+  - name: OP_FFT_INRBUF
+    description: No description available.
+    byte_offset: 48
+    fieldset: OP_FFT_INRBUF
+  - name: OP_REG2
+    description: No description available.
+    byte_offset: 48
+    fieldset: OP_REG2
+  - name: OP_FIR_INBUF
+    description: No description available.
+    byte_offset: 52
+    fieldset: OP_FIR_INBUF
+  - name: OP_REG3
+    description: No description available.
+    byte_offset: 52
+    fieldset: OP_REG3
+  - name: OP_FFT_OUTRBUF
+    description: No description available.
+    byte_offset: 56
+    fieldset: OP_FFT_OUTRBUF
+  - name: OP_FIR_COEFBUF
+    description: No description available.
+    byte_offset: 56
+    fieldset: OP_FIR_COEFBUF
+  - name: OP_REG4
+    description: No description available.
+    byte_offset: 56
+    fieldset: OP_REG4
+  - name: OP_FIR_OUTBUF
+    description: No description available.
+    byte_offset: 60
+    fieldset: OP_FIR_OUTBUF
+  - name: OP_REG5
+    description: No description available.
+    byte_offset: 60
+    fieldset: OP_REG5
+  - name: OP_REG6
+    description: No description available.
+    byte_offset: 64
+    fieldset: OP_REG6
+  - name: OP_REG7
+    description: No description available.
+    byte_offset: 68
+    fieldset: OP_REG7
+fieldset/CTRL:
+  description: No description available.
+  fields:
+  - name: EN
+    description: Asserted to enable the module.
+    bit_offset: 0
+    bit_size: 1
+  - name: SFTRST
+    description: software reset the module if asserted to be 1. EN is only active after this bit is zero.
+    bit_offset: 31
+    bit_size: 1
+fieldset/FP_CTRL:
+  description: No description available.
+  fields:
+  - name: IN_MAX
+    description: The input max exp for float. When used as float input, this field must be configured. The absolute value of input data should be smalller than pow(2, (IN_MAX+1)). So this suggested value is (ceil(log2(fabs(in[])))-1).
+    bit_offset: 0
+    bit_size: 8
+  - name: OUT_MAX
+    description: The output max exp for float. When used as float output, this field must be configured. The absolute value of output data should be smalller than pow(2, (OUT_MAX+1)). So this suggested value is (ceil(log2(fabs(out[])))-1).
+    bit_offset: 8
+    bit_size: 8
+  - name: COEF_MAX
+    description: The coef max exp for float. When used as float input, this field must be configured. The absolute value of coefficients should be smalller than pow(2, (COEF_MAX+1)). So this suggested value is (ceil(log2(fabs(coef[])))-1).
+    bit_offset: 16
+    bit_size: 8
+  - name: OPT_BIAS_EXP
+    description: Asserted to use biased exp as exp input and exp output.
+    bit_offset: 24
+    bit_size: 1
+  - name: EXP_ST_SEL
+    description: '2''b00: exp for input data 2''b01: exp for output data 2''b10: exp for coef data.'
+    bit_offset: 25
+    bit_size: 2
+  - name: COEF_NAN_IE
+    description: COEF_NAN interrupt enable.
+    bit_offset: 27
+    bit_size: 1
+  - name: IN_NAN_IE
+    description: IN_NAN interrupt enable.
+    bit_offset: 28
+    bit_size: 1
+  - name: COEF_SAT_IE
+    description: COEF_SAT interrupt enable.
+    bit_offset: 29
+    bit_size: 1
+  - name: IN_SAT_IE
+    description: IN_SAT interrupt enable.
+    bit_offset: 31
+    bit_size: 1
+fieldset/FP_ST:
+  description: No description available.
+  fields:
+  - name: EXP_MIN
+    description: The min exp for float.
+    bit_offset: 0
+    bit_size: 8
+  - name: EXP_MAX
+    description: The max exp for float.
+    bit_offset: 8
+    bit_size: 8
+  - name: COEF_NAN
+    description: COEF_NAN found.
+    bit_offset: 27
+    bit_size: 1
+  - name: IN_NAN
+    description: IN_NAN found.
+    bit_offset: 28
+    bit_size: 1
+  - name: COEF_SAT
+    description: the float coef is saturated when converted from float to fix due to small FLT_CTRL[COEF_MAX].
+    bit_offset: 29
+    bit_size: 1
+  - name: IN_SAT
+    description: the float input is saturated when converted from float to fix due to small FLT_CTRL[IN_MAX].
+    bit_offset: 31
+    bit_size: 1
+fieldset/INT_EN:
+  description: No description available.
+  fields:
+  - name: OP_CMD_DONE
+    description: Indicate that operation cmd is done, and data are available in system memory.
+    bit_offset: 0
+    bit_size: 1
+  - name: NXT_CMD_RD_DONE
+    description: Indicate that next command sequence is already read into the module.
+    bit_offset: 1
+    bit_size: 1
+  - name: RD_ERR
+    description: Enable Data Read Error interrupt.
+    bit_offset: 3
+    bit_size: 1
+  - name: RD_NXT_ERR
+    description: Enable Read Bus Error for NXT DATA interrupt.
+    bit_offset: 4
+    bit_size: 1
+  - name: WR_ERR
+    description: Enable Data Write Error interrupt.
+    bit_offset: 5
+    bit_size: 1
+  - name: FFT_OV
+    description: FFT Overflow Err.
+    bit_offset: 6
+    bit_size: 1
+  - name: FIR_OV
+    description: FIR Overflow err.
+    bit_offset: 7
+    bit_size: 1
+  - name: WRSV1
+    description: Reserved.
+    bit_offset: 8
+    bit_size: 24
+fieldset/OP_CMD:
+  description: No description available.
+  fields:
+  - name: NXT_CMD_LEN
+    description: The length of nxt commands in 32-bit words.
+    bit_offset: 0
+    bit_size: 8
+  - name: IND_TYPE
+    description: 'Input data type: 0:Real Q31, 1:Real Q15, 2:Complex Q31, 3:Complex Q15 4:complex sp float 5: real sp float.'
+    bit_offset: 9
+    bit_size: 3
+  - name: COEF_TYPE
+    description: 'Coef data type (used for FIR): 0:Real Q31, 1:Real Q15, 2:Complex Q31, 3:Complex Q15 4:complex sp float 5: real sp float.'
+    bit_offset: 12
+    bit_size: 3
+  - name: OUTD_TYPE
+    description: 'Output data type: 0:Real Q31, 1:Real Q15, 2:Complex Q31, 3:Complex Q15 4:complex sp float 5: real sp float.'
+    bit_offset: 15
+    bit_size: 3
+  - name: CMD
+    description: 'The Command Used: 0: FIR 2: FFT Others: Reserved.'
+    bit_offset: 18
+    bit_size: 6
+  - name: CONJ_C
+    description: asserted to have conjuate value for coefs in computation.
+    bit_offset: 24
+    bit_size: 1
+fieldset/OP_CTRL:
+  description: No description available.
+  fields:
+  - name: EN
+    description: Whether CUR_CMD is enabled. Asserted to enable the CUR_CMD.
+    bit_offset: 0
+    bit_size: 1
+  - name: NXT_EN
+    description: Whether NXT_CMD is enabled. Asserted to enable the NXT_CMD when CUR_CMD is done, or CUR_CMD is not enabled..
+    bit_offset: 1
+    bit_size: 1
+  - name: NXT_ADDR
+    description: The address for the next command. It will be processed after CUR_CMD is executed and done..
+    bit_offset: 2
+    bit_size: 30
+fieldset/OP_FFT_INRBUF:
+  description: No description available.
+  fields:
+  - name: LOC
+    description: The input (real) data buffer pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_FFT_MISC:
+  description: No description available.
+  fields:
+  - name: IND_BLK
+    description: Memory block for indata. Should be assigned as 0.
+    bit_offset: 0
+    bit_size: 2
+  - name: TMP_BLK
+    description: Memory block for indata. Should be assigned as 1.
+    bit_offset: 2
+    bit_size: 2
+  - name: IFFT
+    description: Asserted to indicate IFFT.
+    bit_offset: 6
+    bit_size: 1
+  - name: FFT_LEN
+    description: FFT length 0:8, ..., n:2^(3+n).
+    bit_offset: 7
+    bit_size: 4
+fieldset/OP_FFT_OUTRBUF:
+  description: No description available.
+  fields:
+  - name: LOC
+    description: The output (real) data buffer pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_FIR_COEFBUF:
+  description: No description available.
+  fields:
+  - name: LOC
+    description: The coef buf pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_FIR_INBUF:
+  description: No description available.
+  fields:
+  - name: LOC
+    description: The input data buffer pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_FIR_MISC:
+  description: No description available.
+  fields:
+  - name: FIR_COEF_TAPS
+    description: Length of FIR coefs （max 256）.
+    bit_offset: 0
+    bit_size: 14
+fieldset/OP_FIR_MISC1:
+  description: No description available.
+  fields:
+  - name: FIR_DATA_TAPS
+    description: The input data data length.
+    bit_offset: 0
+    bit_size: 16
+  - name: IND_MEM_BLK
+    description: Should be assigned as 2.
+    bit_offset: 16
+    bit_size: 2
+  - name: COEF_MEM_BLK
+    description: Should be assigned as 1.
+    bit_offset: 18
+    bit_size: 2
+  - name: OUTD_MEM_BLK
+    description: Should be assigned as 0.
+    bit_offset: 20
+    bit_size: 2
+fieldset/OP_FIR_OUTBUF:
+  description: No description available.
+  fields:
+  - name: LOC
+    description: The output data buffer pointer. The length of the output buffer should be （FIR_DATA_TAPS - FIR_COEF_TAPS + 1）.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG0:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG1:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG2:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG3:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG4:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG5:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG6:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/OP_REG7:
+  description: No description available.
+  fields:
+  - name: CT
+    description: Contents.
+    bit_offset: 0
+    bit_size: 32
+fieldset/STATUS:
+  description: No description available.
+  fields:
+  - name: OP_CMD_DONE
+    description: Indicate that operation cmd is done, and data are available in system memory.
+    bit_offset: 0
+    bit_size: 1
+  - name: NXT_CMD_RD_DONE
+    description: Indicate that next command sequence is already read into the module.
+    bit_offset: 1
+    bit_size: 1
+  - name: RD_ERR
+    description: AXI Data Read Error.
+    bit_offset: 3
+    bit_size: 1
+  - name: RD_NXT_ERR
+    description: AXI Read Bus Error for NXT DATA.
+    bit_offset: 4
+    bit_size: 1
+  - name: WR_ERR
+    description: AXI Data Write Error.
+    bit_offset: 5
+    bit_size: 1
+  - name: FFT_OV
+    description: FFT Overflow Err.
+    bit_offset: 6
+    bit_size: 1
+  - name: FIR_OV
+    description: FIR Overflow err.
+    bit_offset: 7
+    bit_size: 1
+  - name: FP_SAT
+    description: Ored together by ( FP_ST[IN_SAT] & FP_CTRL[IN_SAT_IE] ) | ( FP_ST[COEF_SAT] & FP_CTRL[COEF_SAT_IE] ).
+    bit_offset: 8
+    bit_size: 1
+  - name: FP_NAN
+    description: Ored together by ( FP_ST[IN_NAN] & FP_CTRL[IN_NAN_IE] ) | ( FP_ST[COEF_NAN] & FP_CTRL[COEF_NAN_IE] ).
+    bit_offset: 9
+    bit_size: 1

@@ -51,6 +51,8 @@ cores:
     ip-core: Andes D45
     include_peripherals:
       - "../family/COMMON.yaml"
+      - "../family/HPM6E00.yaml"
+    include_interrupts: "../interrupts/HPM6E80.yaml"
     gen_dma_channels:
       HDMA: 32
       XDMA: 32
