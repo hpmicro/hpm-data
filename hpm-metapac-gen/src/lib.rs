@@ -47,7 +47,7 @@ impl Gen {
         }
     }
 
-    fn gen_chip(&mut self, chip_core_name: &str, chip: &Chip, core: &Core, core_index: usize) {
+    fn gen_chip(&mut self, chip_core_name: &str, chip: &Chip, core: &Core, _core_index: usize) {
         let mut ir = ir::IR::new();
 
         let mut dev = ir::Device {
@@ -116,7 +116,6 @@ impl Gen {
             )
             .unwrap();
         }
-        writeln!(&mut extra, "pub const CORE_INDEX: usize = {};", core_index).unwrap();
 
         let flash_regions: Vec<&MemoryRegion> = chip
             .memory
@@ -149,6 +148,8 @@ impl Gen {
         // Generate Register Block indices
         {
             writeln!(&mut extra, "pub mod resources {{").unwrap();
+            let mut resources = core.resources.clone();
+            resources.sort_by_key(|r| r.index);
             for res in &core.resources {
                 writeln!(
                     &mut extra,
@@ -161,6 +162,9 @@ impl Gen {
             writeln!(&mut extra, "}}").unwrap();
 
             writeln!(&mut extra, "pub mod clocks {{").unwrap();
+
+            let mut clocks = core.clocks.clone();
+            clocks.sort_by_key(|r| r.index);
             for clk in &core.clocks {
                 writeln!(
                     &mut extra,
