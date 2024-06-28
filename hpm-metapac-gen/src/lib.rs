@@ -148,9 +148,7 @@ impl Gen {
         // Generate Register Block indices
         {
             writeln!(&mut extra, "pub mod resources {{").unwrap();
-            let mut resources = core.resources.clone();
-            resources.sort_by_key(|r| r.index);
-            for res in &resources {
+            for res in &core.resources {
                 writeln!(
                     &mut extra,
                     "    pub const {}: usize = {};",
@@ -163,9 +161,7 @@ impl Gen {
 
             writeln!(&mut extra, "pub mod clocks {{").unwrap();
 
-            let mut clocks = core.clocks.clone();
-            clocks.sort_by_key(|r| r.index);
-            for clk in &clocks {
+            for clk in &core.clocks {
                 writeln!(
                     &mut extra,
                     "    pub const {}: usize = {};",

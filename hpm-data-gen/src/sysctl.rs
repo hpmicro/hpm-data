@@ -51,24 +51,19 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
     const SYSCTL_RESOURCE_LINKABLE_START: u32 = 256;
 
     let header_file = match chip_name {
-        n if n.starts_with("HPM5301") => sdk_path.join("soc/HPM5301/hpm_sysctl_regs.h"),
-        n if n.starts_with("HPM53") => sdk_path.join("soc/HPM5361/hpm_sysctl_regs.h"),
-        n if n.starts_with("HPM62") => sdk_path.join("soc/HPM6280/hpm_sysctl_regs.h"),
-        n if n.starts_with("HPM63") => sdk_path.join("soc/HPM6360/hpm_sysctl_regs.h"),
+        n if n.starts_with("HPM53") => sdk_path.join("soc/HPM5300/ip/hpm_sysctl_regs.h"),
+        n if n.starts_with("HPM62") => sdk_path.join("soc/HPM6200/ip/hpm_sysctl_regs.h"),
+        n if n.starts_with("HPM63") => sdk_path.join("soc/HPM6300/ip/hpm_sysctl_regs.h"),
         n if n.starts_with("HPM67") || n.starts_with("HPM64") => {
-            sdk_path.join("soc/HPM6750/hpm_sysctl_regs.h")
+            sdk_path.join("soc/HPM6700/ip/hpm_sysctl_regs.h")
         }
-        n if n.starts_with("HPM6830") => sdk_path.join("soc/HPM6830/hpm_sysctl_regs.h"),
-        n if n.starts_with("HPM6850") => sdk_path.join("soc/HPM6850/hpm_sysctl_regs.h"),
-        n if n.starts_with("HPM6880") => sdk_path.join("soc/HPM6880/hpm_sysctl_regs.h"),
-        n if n.starts_with("HPM6E") => {
-            eprintln!("HPM6E Series is not supported yet");
-            return Ok(());
-        }
+        n if n.starts_with("HPM68") => sdk_path.join("soc/HPM6800/ip/hpm_sysctl_regs.h"),
+        n if n.starts_with("HPM6E") => sdk_path.join("soc/HPM6E00/ip/hpm_sysctl_regs.h"),
         _ => anyhow::bail!("Unknown chip: {}", chip_name),
     };
 
-    let content = std::fs::read_to_string(&header_file)?;
+    let content = std::fs::read_to_string(&header_file)
+        .expect(format!("Failed to read file: {:?}", &header_file).as_str());
 
     // #define SYSCTL_RESOURCE_MCT0 (258UL)
     let resource_pattern =
@@ -110,6 +105,7 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
                 index: *idx as _,
             })
             .collect();
+        core.resources.sort_by_key(|r| r.index);
         core.clocks = clocks
             .iter()
             .map(|(name, idx)| hpm_data_serde::chip::core::Clock {
@@ -117,6 +113,7 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
                 index: *idx as _,
             })
             .collect();
+        core.clocks.sort_by_key(|r| r.index);
 
         for periph in &mut core.peripherals {
             let resource = resources
