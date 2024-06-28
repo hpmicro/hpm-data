@@ -34,7 +34,6 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - [x] HPM5300
 - [x] HPM6800
 - [x] HPM6E00
-  - pinmux is missing
 
 ## hpm-metapac
 
