@@ -235,26 +235,26 @@
   address: 0xF0420000
   registers:
     kind: pwm
-    version: v53
-    block: PWM
+    version: v6e
+    block: PWMV2
 - name: PWM1
   address: 0xF0424000
   registers:
     kind: pwm
-    version: v53
-    block: PWM
+    version: v6e
+    block: PWMV2
 - name: PWM2
   address: 0xF0428000
   registers:
     kind: pwm
-    version: v53
-    block: PWM
+    version: v6e
+    block: PWMV2
 - name: PWM3
   address: 0xF042C000
   registers:
     kind: pwm
-    version: v53
-    block: PWM
+    version: v6e
+    block: PWMV2
 
 - name: TRGM0
   address: 0xF047C000
@@ -309,7 +309,7 @@
   address: 0xF0460000
   registers:
     kind: plb
-    version: v53
+    version: v6e
     block: PLB
 
 - name: RDC0
@@ -346,64 +346,64 @@
   address: 0xF0000000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: GPTMR1
   address: 0xF0004000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: GPTMR2
   address: 0xF0008000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: GPTMR3
   address: 0xF000C000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 
 - name: NTMR0
   address: 0xF1410000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: NTMR1
   address: 0xF1414000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: PTMR
   address: 0xF4120000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 
 - name: WDG0
   address: 0xF00B0000
   registers:
     kind: wdg
-    version: v68
+    version: v53
     block: WDG
 - name: WDG1
   address: 0xF00B4000
   registers:
     kind: wdg
-    version: v68
+    version: v53
     block: WDG
 
 - name: PWDG
   address: 0xF4128000
   registers:
     kind: wdg
-    version: v68
+    version: v53
     block: WDG
 
 - name: RTC

@@ -1,0 +1,114 @@
+block/PLB:
+  description: PLB.
+  items:
+    - name: TYPE_A
+      description: no description available.
+      array:
+        len: 8
+        stride: 32
+      byte_offset: 0
+      block: TYPE_A
+    - name: TYPE_B
+      description: no description available.
+      array:
+        len: 8
+        stride: 32
+      byte_offset: 1024
+      block: TYPE_B
+block/TYPE_A:
+  description: no description available.
+  items:
+    - name: LOOKUP_TABLE
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 0
+      fieldset: LOOKUP_TABLE
+    - name: sw_inject
+      description: TYPE A CHN&index0 software inject.
+      byte_offset: 16
+      fieldset: TYPE_A_sw_inject
+block/TYPE_B:
+  description: no description available.
+  items:
+    - name: LUT
+      description: no description available.
+      array:
+        len: 2
+        stride: 4
+      byte_offset: 0
+      fieldset: LUT
+    - name: CMP
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 8
+      fieldset: CMP
+    - name: mode
+      description: TYPE B CHN&index0 mode ctrl.
+      byte_offset: 24
+      fieldset: mode
+    - name: sw_inject
+      description: TYPE B CHN&index0 software inject.
+      byte_offset: 28
+      fieldset: TYPE_B_sw_inject
+fieldset/CMP:
+  description: no description available.
+  fields:
+    - name: CMP_VALUE
+      description: cmp value, using as data unit operation.
+      bit_offset: 0
+      bit_size: 32
+fieldset/LOOKUP_TABLE:
+  description: no description available.
+  fields:
+    - name: LOOKUP_TABLE
+      description: using 4 bit trig_in as lookup index. software can program this register as trig_in's true table.
+      bit_offset: 0
+      bit_size: 16
+fieldset/LUT:
+  description: no description available.
+  fields:
+    - name: LOOKUP_TABLE
+      description: lut0 and lut1 union as 64bit, consider each 4bit as one slice. then, total 16 slice. slice0 as bit3:0, slice1 as bit7:4...etc. using 4bit trig in as index of slice. the operate sel in data unit of type B channle is decided by which slice value choosed by trig_in.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TYPE_A_sw_inject:
+  description: TYPE A CHN&index0 software inject.
+  fields:
+    - name: SW_INJECT
+      description: software can inject value to TYPEA's output.
+      bit_offset: 0
+      bit_size: 4
+fieldset/TYPE_B_sw_inject:
+  description: TYPE B CHN&index0 software inject.
+  fields:
+    - name: SOFTWARE_INJECT
+      description: data unit value can be changed if program this register.
+      bit_offset: 0
+      bit_size: 32
+fieldset/mode:
+  description: TYPE B CHN&index0 mode ctrl.
+  fields:
+    - name: OUT0_SEL
+      description: trig out 0 output type in current channel.
+      bit_offset: 0
+      bit_size: 4
+    - name: OUT1_SEL
+      description: trig out 1 output type in current channel.
+      bit_offset: 4
+      bit_size: 4
+    - name: OUT2_SEL
+      description: trig out 2 output type in current channel.
+      bit_offset: 8
+      bit_size: 4
+    - name: OUT3_SEL
+      description: trig out 3 output type in current channel.
+      bit_offset: 12
+      bit_size: 4
+    - name: OPT_SEL
+      description: operation selection in data unit.
+      bit_offset: 16
+      bit_size: 1

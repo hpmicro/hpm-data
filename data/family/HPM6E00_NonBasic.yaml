@@ -180,38 +180,38 @@
   address: 0xF0010000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: GPTMR5
   address: 0xF0014000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: GPTMR6
   address: 0xF0018000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 - name: GPTMR7
   address: 0xF001C000
   registers:
     kind: tmr
-    version: common
+    version: v6e
     block: TMR
 
 - name: WDG2
   address: 0xF00B8000
   registers:
     kind: wdg
-    version: v68
+    version: v53
     block: WDG
 - name: WDG3
   address: 0xF00BC000
   registers:
     kind: wdg
-    version: v68
+    version: v53
     block: WDG
 
 - name: SDM1

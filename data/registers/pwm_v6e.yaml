@@ -1,0 +1,810 @@
+block/CAL:
+  description: no description available.
+  items:
+    - name: cfg0
+      description: No description available.
+      byte_offset: 0
+      fieldset: CAL_cfg0
+    - name: cfg1
+      description: No description available.
+      byte_offset: 4
+      fieldset: CAL_cfg1
+block/CMP:
+  description: no description available.
+  items:
+    - name: cfg
+      description: No description available.
+      byte_offset: 0
+      fieldset: cfg
+block/CNT:
+  description: no description available.
+  items:
+    - name: cfg0
+      description: No description available.
+      byte_offset: 0
+      fieldset: CNT_cfg0
+    - name: cfg1
+      description: No description available.
+      byte_offset: 4
+      fieldset: CNT_cfg1
+    - name: cfg2
+      description: No description available.
+      byte_offset: 8
+      fieldset: cfg2
+    - name: cfg3
+      description: No description available.
+      byte_offset: 12
+      fieldset: cfg3
+block/PWM:
+  description: no description available.
+  items:
+    - name: cfg0
+      description: No description available.
+      byte_offset: 0
+      fieldset: PWM_cfg0
+    - name: cfg1
+      description: No description available.
+      byte_offset: 4
+      fieldset: PWM_cfg1
+    - name: dead_area
+      description: No description available.
+      byte_offset: 8
+      fieldset: dead_area
+block/PWMV2:
+  description: PWM0.
+  items:
+    - name: work_ctrl0
+      description: No description available.
+      byte_offset: 0
+      fieldset: work_ctrl0
+    - name: unlock
+      description: No description available.
+      byte_offset: 4
+      fieldset: unlock
+    - name: SHADOW_VAL
+      description: no description available.
+      array:
+        len: 28
+        stride: 4
+      byte_offset: 8
+      fieldset: SHADOW_VAL
+    - name: force_mode
+      description: No description available.
+      byte_offset: 120
+      fieldset: force_mode
+    - name: work_ctrl1
+      description: No description available.
+      byte_offset: 124
+      fieldset: work_ctrl1
+    - name: PWM
+      description: no description available.
+      array:
+        len: 8
+        stride: 16
+      byte_offset: 256
+      block: PWM
+    - name: TRIGGER_CFG
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 384
+      fieldset: TRIGGER_CFG
+    - name: glb_ctrl
+      description: No description available.
+      byte_offset: 496
+      fieldset: glb_ctrl
+    - name: glb_ctrl2
+      description: No description available.
+      byte_offset: 500
+      fieldset: glb_ctrl2
+    - name: CNT_RELOAD_WORK
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 512
+      fieldset: CNT_RELOAD_WORK
+    - name: CMP_VAL_WORK
+      description: no description available.
+      array:
+        len: 24
+        stride: 4
+      byte_offset: 528
+      fieldset: CMP_VAL_WORK
+    - name: force_work
+      description: No description available.
+      byte_offset: 636
+      fieldset: force_work
+    - name: CNT_VAL
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 672
+      fieldset: CNT_VAL
+    - name: DAC_VALUE_SV
+      description: no description available.
+      array:
+        len: 4
+        stride: 4
+      byte_offset: 688
+      fieldset: DAC_VALUE_SV
+    - name: CAPTURE_POS
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 768
+      fieldset: CAPTURE_POS
+    - name: CAPTURE_NEG
+      description: no description available.
+      array:
+        len: 8
+        stride: 4
+      byte_offset: 896
+      fieldset: CAPTURE_NEG
+    - name: irq_sts
+      description: No description available.
+      byte_offset: 1024
+      fieldset: irq_sts
+    - name: irq_en
+      description: No description available.
+      byte_offset: 1028
+      fieldset: irq_en
+    - name: irq_sts_cmp
+      description: No description available.
+      byte_offset: 1040
+      fieldset: irq_sts_cmp
+    - name: irq_sts_reload
+      description: No description available.
+      byte_offset: 1044
+      fieldset: irq_sts_reload
+    - name: irq_sts_cap_pos
+      description: No description available.
+      byte_offset: 1048
+      fieldset: irq_sts_cap_pos
+    - name: irq_sts_cap_neg
+      description: No description available.
+      byte_offset: 1052
+      fieldset: irq_sts_cap_neg
+    - name: irq_sts_fault
+      description: No description available.
+      byte_offset: 1056
+      fieldset: irq_sts_fault
+    - name: irq_sts_burstend
+      description: No description available.
+      byte_offset: 1060
+      fieldset: irq_sts_burstend
+    - name: irq_en_cmp
+      description: No description available.
+      byte_offset: 1072
+      fieldset: irq_en_cmp
+    - name: irq_en_reload
+      description: No description available.
+      byte_offset: 1076
+      fieldset: irq_en_reload
+    - name: irq_en_cap_pos
+      description: No description available.
+      byte_offset: 1080
+      fieldset: irq_en_cap_pos
+    - name: irq_en_cap_neg
+      description: No description available.
+      byte_offset: 1084
+      fieldset: irq_en_cap_neg
+    - name: irq_en_fault
+      description: No description available.
+      byte_offset: 1088
+      fieldset: irq_en_fault
+    - name: irq_en_burstend
+      description: No description available.
+      byte_offset: 1092
+      fieldset: irq_en_burstend
+    - name: dma_en
+      description: No description available.
+      byte_offset: 1152
+      fieldset: dma_en
+    - name: CNT
+      description: no description available.
+      array:
+        len: 4
+        stride: 16
+      byte_offset: 1280
+      block: CNT
+    - name: cnt_glbcfg
+      description: No description available.
+      byte_offset: 1344
+      fieldset: cnt_glbcfg
+    - name: CAL
+      description: no description available.
+      array:
+        len: 16
+        stride: 16
+      byte_offset: 1536
+      block: CAL
+    - name: CMP
+      description: no description available.
+      array:
+        len: 24
+        stride: 16
+      byte_offset: 2048
+      block: CMP
+fieldset/CAL_cfg0:
+  description: No description available.
+  fields:
+    - name: CAL_D_PARAM
+      description: dac/counter value parameter.
+      bit_offset: 0
+      bit_size: 5
+    - name: CAL_T_PARAM
+      description: period parameter.
+      bit_offset: 8
+      bit_size: 5
+    - name: CAL_LL_PARAM
+      description: low limit parameter.
+      bit_offset: 16
+      bit_size: 5
+    - name: CAL_LU_PARAM
+      description: up limit parameter.
+      bit_offset: 24
+      bit_size: 5
+fieldset/CAL_cfg1:
+  description: No description available.
+  fields:
+    - name: CAL_IN_OFF
+      description: offset for calculation unit, select from one of the shadow_val.
+      bit_offset: 0
+      bit_size: 5
+    - name: CAL_LIM_LO
+      description: low limit offset selection, select from one of the shadow_val.
+      bit_offset: 8
+      bit_size: 5
+    - name: CAL_LL_EN
+      description: set to enable low limit.
+      bit_offset: 15
+      bit_size: 1
+    - name: CAL_LIM_UP
+      description: up limit offset selection, select from one of the shadow_val.
+      bit_offset: 16
+      bit_size: 5
+    - name: CAL_LU_EN
+      description: set to enable up limit.
+      bit_offset: 23
+      bit_size: 1
+    - name: CAL_IN_INDEX
+      description: 0~3 to select one of the dac input value; 4~7 to select one of the current counter value.
+      bit_offset: 24
+      bit_size: 3
+    - name: CAL_T_INDEX
+      description: select one of 4 counter reload time.
+      bit_offset: 28
+      bit_size: 2
+fieldset/CAPTURE_NEG:
+  description: no description available.
+  fields:
+    - name: CAPTURE_NEG
+      description: counter value captured at input negedge.
+      bit_offset: 8
+      bit_size: 24
+fieldset/CAPTURE_POS:
+  description: no description available.
+  fields:
+    - name: CNT_INDEX
+      description: related counter.
+      bit_offset: 0
+      bit_size: 2
+    - name: CAPTURE_SELGPIO
+      description: "0: result from CAP[ 7:0], from trgm 1: result from CAP[15:8], from gpio."
+      bit_offset: 4
+      bit_size: 1
+    - name: CAPTURE_POS
+      description: related counter value captured at input negedge.
+      bit_offset: 8
+      bit_size: 24
+fieldset/CMP_VAL_WORK:
+  description: no description available.
+  fields:
+    - name: VALUE
+      description: compare point working register.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CNT_RELOAD_WORK:
+  description: no description available.
+  fields:
+    - name: VALUE
+      description: counter0 reload working register.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CNT_VAL:
+  description: no description available.
+  fields:
+    - name: VALUE
+      description: main counter value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/CNT_cfg0:
+  description: No description available.
+  fields:
+    - name: CNT_D_PARAM
+      description: input dac data parameter.
+      bit_offset: 0
+      bit_size: 5
+    - name: RLD_UPDATE_TIME
+      description: "define when to use the calculation output value as reload time 00: software set work_ctrl1.shadow_lock bit 01: use compare point selected by rld_cmp_sel0 or rld_cmp_sel1 10: counter reload time 11: use rld_trig_sel to select one of the input trigger NOTE: 00 is not recommended since the update time is not controllable, may cause error in complex application."
+      bit_offset: 8
+      bit_size: 2
+    - name: RLD_TRIG_SEL
+      description: select one trigger from 8, should set to pulse in trig_mux.
+      bit_offset: 12
+      bit_size: 3
+    - name: RLD_CMP_SEL0
+      description: select one compare point from 24, set to 0x1F to disable current selection.
+      bit_offset: 16
+      bit_size: 5
+    - name: RLD_CMP_SEL1
+      description: select one compare point from 24, set to 0x1F to disable current selection, used for reload value, compare value, force value update.
+      bit_offset: 24
+      bit_size: 5
+fieldset/CNT_cfg1:
+  description: No description available.
+  fields:
+    - name: CNT_IN_OFF
+      description: input data offset selection, from one of the shadow_val, default just shadow reload time.
+      bit_offset: 0
+      bit_size: 5
+    - name: CNT_LIM_LO
+      description: low limit offset selection, from one of the shadow_val.
+      bit_offset: 8
+      bit_size: 5
+    - name: CNT_LL_EN
+      description: set to enable low limit.
+      bit_offset: 15
+      bit_size: 1
+    - name: CNT_LIM_UP
+      description: up limit offset selection, from one of the shadow_val.
+      bit_offset: 16
+      bit_size: 5
+    - name: CNT_LU_EN
+      description: set to enable up limit, use cnt_lu_off to select one of the shadow register value as limitation.
+      bit_offset: 23
+      bit_size: 1
+    - name: CNT_DAC_INDEX
+      description: select one of the dac value.
+      bit_offset: 24
+      bit_size: 2
+fieldset/DAC_VALUE_SV:
+  description: no description available.
+  fields:
+    - name: VALUE
+      description: save dac0_value when dac0_valid if dac_sw_mode is 0; software write dac_value directly if dac_sw_mode is 1.
+      bit_offset: 0
+      bit_size: 32
+fieldset/PWM_cfg0:
+  description: No description available.
+  fields:
+    - name: POLARITY_OPT0
+      description: set to use shadow polarity.
+      bit_offset: 0
+      bit_size: 1
+    - name: OUT_POLARITY
+      description: output polarity, set to 1 will invert the output(after pwm selection, pair mode, dead area insertion, before force/fault) when polarity_opt0 is set, this bit is controlled by shadow register, can't be writable; read as working register use compare channel settings(in cmp_cfg) as shadow register update.
+      bit_offset: 1
+      bit_size: 1
+    - name: POL_UPDATE_SEL
+      description: "used when polarity_opt0 is set, define when to update polarity working register. 0: software set work_ctrl1.shadow_lock bit 1: update at reload point;."
+      bit_offset: 2
+      bit_size: 1
+    - name: FAULT_EN_SYNC
+      description: set to enable the input faults from trig_mux(trigger_in[0] for channel0/1, 1 for 23, 2 for 45, 3 for 67).
+      bit_offset: 4
+      bit_size: 1
+    - name: FAULT_EN_ASYNC
+      description: set to enable the input async faults from pad directly.
+      bit_offset: 5
+      bit_size: 1
+    - name: FAULT_POL_ASYNC
+      description: fault polarity for input fault from pad, 1-active low; 0-active high;.
+      bit_offset: 6
+      bit_size: 1
+    - name: FAULT_SEL_ASYNC
+      description: select from 16bit async fault from pad.
+      bit_offset: 8
+      bit_size: 4
+    - name: TRIG_SEL4
+      description: for N=0/2/4/6, clear to select 2 compare point(N*2~N*2+1); set to select 4 compare point(N*2~N*2+3); or use 2 compare point(N*2+2~N*2+3); for N=1/3/5/7, this bit is no means, it can work on pair mode, or use 2 compare point (N*2+2~N*2+3); assume select ab or abcd, abcd can between 0 and 2T. output will be 1 when counter value between a and b; if b<=a then output all 0; if b>=(T+a), then output all 1;.
+      bit_offset: 24
+      bit_size: 1
+fieldset/PWM_cfg1:
+  description: No description available.
+  fields:
+    - name: FAULT_REC_SEL
+      description: select one trigger from 8, should set to pulse in trig_mux, used for fault recovery if fault_rec_time is set to 2'b10.
+      bit_offset: 0
+      bit_size: 3
+    - name: PWM_FORCE_SEL
+      description: select one trigger from 8 as force signal, should be level signal, 1 for force active, 0 for no force.
+      bit_offset: 4
+      bit_size: 3
+    - name: FORCE_ACT_SEL
+      description: select one trigger from 8, should set to pulse in trig_mux, will load hw/sw force at this time.
+      bit_offset: 8
+      bit_size: 3
+    - name: FORCE_TRIG_SEL
+      description: select one trigger from 8, should set to pulse in trig_mux, will load shadow register(force)mode) to force_mode_work at this time.
+      bit_offset: 12
+      bit_size: 3
+    - name: FORCE_TIME
+      description: "00: force immediately 01: force at main counter reload time 10: force at trig signal selected by force_act_sel 11: no force the force assert/deassert will happen at the force_time; qeo force and value also latched at this time."
+      bit_offset: 16
+      bit_size: 2
+    - name: PWM_LOGIC
+      description: "valid only for pwm0/2/4/6 when trig_sel4 is set 00: ab OR cd; 01: ab AND cd; 10: ab XOR cd; 11: cd."
+      bit_offset: 18
+      bit_size: 2
+    - name: PAIR_MODE
+      description: if set to 1, PWM work at pair mode, pwm_cfg for channel 2m is used for channel 2m+1(m=0,1,2,3), except the dead area, which is separate for each channel even in pair mode software need set this bit for both channel of one pair, otherwise result unknown.
+      bit_offset: 20
+      bit_size: 1
+    - name: SW_FORCE_EN
+      description: 0 for hardware force, from trig_mux selected by pwm_force_sel 1 for software force, from glb_ctrl.sw_force.
+      bit_offset: 21
+      bit_size: 1
+    - name: FAULT_REC_TIME
+      description: "00: immediately 01: after main counter reload time 10: use fault_rec_sel to select one of the input trigger 11: software write fault_clear in glb_ctrl2, no effort if pwm_fault is still assert."
+      bit_offset: 22
+      bit_size: 2
+    - name: FAULT_MODE
+      description: "00: force output 0 01: force output 1 1x: output highz(pad_oe_*=0)."
+      bit_offset: 24
+      bit_size: 2
+    - name: FORCE_UPDATE_TIME
+      description: "define when to use the shadow register value for working register(force_mode) 00: software set work_ctrl1.shadow_lock bit 01: use the related counter rld_cmp_sel0 and rld_cmp_sel1, to select one compare point 10: related counter reload time(selected by pwm_cnt) 11: use force_trig_sel to select one of the input trigger NOTE: 00/01 are not recommended since the update time is not controllable, may cause error in complex application. 00 is used for initialization or debug, not suggest for real time update."
+      bit_offset: 26
+      bit_size: 2
+    - name: HIGHZ_EN_N
+      description: 0 to highz pwm outputs(pad_oe*=0), software need set this bit to 1 to enable pwm output.
+      bit_offset: 28
+      bit_size: 1
+fieldset/SHADOW_VAL:
+  description: no description available.
+  fields:
+    - name: VALUE
+      description: shadow registers, if used as reload or compare point, shall be 24bit clock cycles plus 1bit half cycle and 7bit high-resolution delay.
+      bit_offset: 0
+      bit_size: 32
+fieldset/TRIGGER_CFG:
+  description: no description available.
+  fields:
+    - name: TRIGGER_OUT_SEL
+      description: select one from 24 compare result as trigger out, set at compare point, clear at reload point.
+      bit_offset: 0
+      bit_size: 5
+fieldset/cfg:
+  description: No description available.
+  fields:
+    - name: CMP_CNT
+      description: select one from 4 counters, only for N>=16. for N<16, this field is0, every 4 compare point related to one counter(0123 for counter0, 4567 for counter1….).
+      bit_offset: 14
+      bit_size: 2
+    - name: CMP_IN_SEL
+      description: 0x00~0x1B select one of the shadow_val directly 0x20~0x2F select one of the calculation cell output 0x30~0x37 select one of capture_pos value(low 8bit are 0) 0x38+k select T/4 0x3E select 0xFFFFF000 0x3F select 0xFFFFFF00 others select 0.
+      bit_offset: 16
+      bit_size: 6
+    - name: CMP_UPDATE_TIME
+      description: "define when to use the shadow register value for working register(trig_cmp) 000: software set work_ctrl1.shadow_lock bit 001: update immediately(at next cycle) 010: related counter reload time 011: use cmp_update_trigger(from trig_mux, selected by cmp_trig_sel) 100: use the related counter rld_cmp_sel0 to select one compare point 101: use the related counter rld_cmp_sel1, to select one compare point 11x: reserved, no update."
+      bit_offset: 24
+      bit_size: 3
+    - name: CMP_TRIG_SEL
+      description: select one trigger from 8, should set to pulse in trig_mux.
+      bit_offset: 28
+      bit_size: 3
+fieldset/cfg2:
+  description: No description available.
+  fields:
+    - name: CNT_TRIG0
+      description: change counter value to one of the calculation cell output when cnt_update_triger0 issued.
+      bit_offset: 0
+      bit_size: 4
+    - name: CNT_UPDATE_EN0
+      description: set to enable using trig0 to load calculation cell output to counter.
+      bit_offset: 7
+      bit_size: 1
+    - name: CNT_UPDATE_TRIG0
+      description: select one trigger from 8, should set to pulse in trig_mux.
+      bit_offset: 8
+      bit_size: 3
+    - name: CNT_TRIG1
+      description: change counter value to one of the calculation cell output when cnt_update_triger1 issued.
+      bit_offset: 12
+      bit_size: 4
+    - name: CNT_UPDATE_EN1
+      description: set to enable using trig1 to load calculation cell output to counter.
+      bit_offset: 19
+      bit_size: 1
+    - name: CNT_UPDATE_TRIG1
+      description: select one trigger from 8, should set to pulse in trig_mux.
+      bit_offset: 20
+      bit_size: 3
+    - name: CNT_RELOAD_TRIG
+      description: select one trigger from 8, should set to pulse in trig_mux.
+      bit_offset: 24
+      bit_size: 3
+    - name: CNT_RELOAD_EN
+      description: set to use input signal(selected by cnt_reload_trig) to reload timer.
+      bit_offset: 31
+      bit_size: 1
+fieldset/cfg3:
+  description: No description available.
+  fields:
+    - name: CNT_BURST
+      description: output pwm wave for configured burst(timer period), 0 for one burst; 1 for two burst. set to 0xFFFF for always output pwm wave bit's only used when setting cnt_sw_start or trigger selected by cnt_start_sel.
+      bit_offset: 0
+      bit_size: 16
+    - name: CNT_HW_START_EN
+      description: enable use trigger to start pwm output(at next reload point), by cnt_start_sel.
+      bit_offset: 17
+      bit_size: 1
+    - name: CNT_START_SEL
+      description: select one trigger from 8, should set to pulse in trig_mux.
+      bit_offset: 20
+      bit_size: 3
+fieldset/cnt_glbcfg:
+  description: No description available.
+  fields:
+    - name: TIMER_ENABLE
+      description: "1 to enable the main cycle counter; 0 to stop the counter; NOTE: when counter stopped, the related trigger_out will be cleared to 0, the related pwm output will keep value not changed."
+      bit_offset: 0
+      bit_size: 4
+    - name: TIMER_RESET
+      description: set to clear current timer. Auto clear.
+      bit_offset: 8
+      bit_size: 4
+    - name: CNT_SW_START
+      description: set to start pwm output(at next reload point), write only, Auto clear. User can disable pwm output before burst end by start again with cnt_burst=0.
+      bit_offset: 16
+      bit_size: 4
+fieldset/dead_area:
+  description: No description available.
+  fields:
+    - name: DEAD_AREA
+      description: "16bit cycle delay plus 8bit hr_delay min value is 2 cycles, less than 0x200 will be treated as no dead area; NOTE: dead insertion must be configured with pair, that is, for pwm 01/23/45/67. otherwise the result maybe UNKNOWN!!!."
+      bit_offset: 0
+      bit_size: 24
+fieldset/dma_en:
+  description: No description available.
+  fields:
+    - name: DMA0_SEL
+      description: selelct one of compare point(0~23) or one reload point(24~27) as dma0.
+      bit_offset: 0
+      bit_size: 5
+    - name: DMA0_EN
+      description: enable dma0.
+      bit_offset: 7
+      bit_size: 1
+    - name: DMA1_SEL
+      description: selelct one of compare point(0~23) or one reload point(24~27) as dma0.
+      bit_offset: 8
+      bit_size: 5
+    - name: DMA1_EN
+      description: enable dma1.
+      bit_offset: 15
+      bit_size: 1
+    - name: DMA2_SEL
+      description: selelct one of compare point(0~23) or one reload point(24~27) as dma0.
+      bit_offset: 16
+      bit_size: 5
+    - name: DMA2_EN
+      description: enable dma2.
+      bit_offset: 23
+      bit_size: 1
+    - name: DMA3_SEL
+      description: selelct one of compare point(0~23) or one reload point(24~27) as dma0.
+      bit_offset: 24
+      bit_size: 5
+    - name: DMA3_EN
+      description: enable dma3.
+      bit_offset: 31
+      bit_size: 1
+fieldset/force_mode:
+  description: No description available.
+  fields:
+    - name: FORCE_MODE
+      description: "2bit for each PWM channel(0~7); 00: force output 0 01: force output 1 10: output highz(pad_oe_*=0) 11: no force this field may be changed by software as shadow register , the update time should be defined by chan_cfg.load, only for PWM channels."
+      bit_offset: 0
+      bit_size: 16
+    - name: POLARITY
+      description: one bit for one pwm channel, it's used as shadow register when pwm_cfg0.polarity_opt0 is set. output polarity, set to 1 will invert the output(after pwm selection, pair mode, dead area insertion, before force/fault).
+      bit_offset: 16
+      bit_size: 8
+fieldset/force_work:
+  description: No description available.
+  fields:
+    - name: FORCE_MODE
+      description: force_mode work register.
+      bit_offset: 0
+      bit_size: 16
+    - name: OUT_POLARITY
+      description: force working register.
+      bit_offset: 16
+      bit_size: 8
+fieldset/glb_ctrl:
+  description: No description available.
+  fields:
+    - name: FRAC_DISABLE
+      description: set to disable bit[7:0] in DAC value when Calculation Unit use it.
+      bit_offset: 3
+      bit_size: 1
+    - name: HR_PWM_EN
+      description: set to enable hr pwm, clear to bypass delay chain.
+      bit_offset: 4
+      bit_size: 1
+    - name: OUTPUT_DELAY
+      description: add delay after dead_area insertiong logic, for hr_pwm.
+      bit_offset: 8
+      bit_size: 2
+    - name: SW_FORCE
+      description: software write 1 to start software force, if the pwm_cfg[n].sw_force_en is set, force will take effort.
+      bit_offset: 16
+      bit_size: 8
+fieldset/glb_ctrl2:
+  description: No description available.
+  fields:
+    - name: SHADOW_LOCK_EN
+      description: enable shadow_lock feature, if cleared, shadow_lock will be always 0.
+      bit_offset: 0
+      bit_size: 1
+    - name: FAULT_CLEAR
+      description: software write 1 to clear fault event if pwm_cfg.fault_rec_time is 2'b11. software need to clear it after the fault signal is de-assert and before next fault one bit for one pwm channel.
+      bit_offset: 8
+      bit_size: 8
+    - name: DEBUG_IN_EN
+      description: set to enable debug_in signal as fault signal, generally disable pwm output.
+      bit_offset: 21
+      bit_size: 1
+    - name: DAC_SW_MODE
+      description: set for software DAC mode, software can write dac_value*_sv directly, and dac_valid from moto system is ignored.
+      bit_offset: 24
+      bit_size: 4
+fieldset/irq_en:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_OVERFLOW
+      description: enable interrupt when calculation unit overflow.
+      bit_offset: 31
+      bit_size: 1
+fieldset/irq_en_burstend:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_BURSTEND
+      description: interrupt enable field for output burst done event , and each bit means one main counter.
+      bit_offset: 0
+      bit_size: 4
+fieldset/irq_en_cap_neg:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_CAP_NEG
+      description: interrupt enable field for negedge capture event , and each bit means one capture channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/irq_en_cap_pos:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_CAP_POS
+      description: interrupt enable field for posedge capture event , and each bit means one capture channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/irq_en_cmp:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_CMP
+      description: interrupt enable field for compare point match event, and each bit means one compare point.
+      bit_offset: 0
+      bit_size: 24
+fieldset/irq_en_fault:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_FAULT
+      description: interrupt enable field for external fault event , and each bit means one external fault channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/irq_en_reload:
+  description: No description available.
+  fields:
+    - name: IRQ_EN_RELOAD
+      description: interrupt enable field for reload event , and each bit means one main counter.
+      bit_offset: 0
+      bit_size: 4
+fieldset/irq_sts:
+  description: No description available.
+  fields:
+    - name: IRQ_CMP
+      description: for 24 channel, compare event.
+      bit_offset: 0
+      bit_size: 1
+    - name: IRQ_RELOAD
+      description: when clock counter reach the reload time.
+      bit_offset: 1
+      bit_size: 1
+    - name: IRQ_CAPTURE_POS
+      description: capture posedge status.
+      bit_offset: 2
+      bit_size: 1
+    - name: IRQ_CAPTURE_NEG
+      description: capture negedge status.
+      bit_offset: 3
+      bit_size: 1
+    - name: IRQ_FAULT
+      description: for external fault event.
+      bit_offset: 4
+      bit_size: 1
+    - name: IRQ_BURSTEND
+      description: end of output burst.
+      bit_offset: 5
+      bit_size: 1
+    - name: IRQ_CAL_OVERFLOW
+      description: end of output burst.
+      bit_offset: 31
+      bit_size: 1
+fieldset/irq_sts_burstend:
+  description: No description available.
+  fields:
+    - name: IRQ_STS_BURSTEND
+      description: interrupt flag for output burst done event , and each bit means one main counter.
+      bit_offset: 0
+      bit_size: 4
+fieldset/irq_sts_cap_neg:
+  description: No description available.
+  fields:
+    - name: IRQ_STS_CAP_NEG
+      description: interrupt flag for negedge capture event , and each bit means one capture channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/irq_sts_cap_pos:
+  description: No description available.
+  fields:
+    - name: IRQ_STS_CAP_POS
+      description: interrupt flag for posedge capture event , and each bit means one capture channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/irq_sts_cmp:
+  description: No description available.
+  fields:
+    - name: IRQ_STS_CMP
+      description: interrupt flag for compare point match event, and each bit means one compare point.
+      bit_offset: 0
+      bit_size: 24
+fieldset/irq_sts_fault:
+  description: No description available.
+  fields:
+    - name: IRQ_STS_FAULT
+      description: interrupt flag for external fault event , and each bit means one external fault channel.
+      bit_offset: 0
+      bit_size: 8
+fieldset/irq_sts_reload:
+  description: No description available.
+  fields:
+    - name: IRQ_STS_RELOAD
+      description: interrupt flag for reload event , and each bit means one main counter.
+      bit_offset: 0
+      bit_size: 4
+fieldset/unlock:
+  description: No description available.
+  fields:
+    - name: UNLOCK_BIT
+      description: bit2 to bit 29 for value_shadow, bit30 for force_mode the shadow registers can be updated only when related unlock_bit is set; this register can only be updated after unlock.
+      bit_offset: 0
+      bit_size: 32
+fieldset/work_ctrl0:
+  description: No description available.
+  fields:
+    - name: SHADOW_UNLOCK
+      description: write 0x… first to unlock, then set related bits in unlock_sel to unlock following shadow registers(from 0x04 to 0x78), otherwise the shadow registers can not be written. The shadow registers will be loaded to work registers only when shadow_lock is 1 or lock is not enabled This bit can be cleared by set shadow_lock bit in work_ctrl1.
+      bit_offset: 31
+      bit_size: 1
+fieldset/work_ctrl1:
+  description: No description available.
+  fields:
+    - name: SHADOW_LOCK
+      description: one to lock, sofware can't write any shadow registers Software have to write 0x…. to work_ctrl0 to clear this bit.
+      bit_offset: 31
+      bit_size: 1

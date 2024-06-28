@@ -191,7 +191,7 @@ fieldset/DCDC_MISC:
   description: DCDC misc parameter.
   fields:
     - name: EN_STEP
-      description: "enable stepping in voltage change 0: stepping disabled, 1: steping enabled."
+      description: "enable stepping in voltage change 0: stepping disabled 1: steping enabled."
       bit_offset: 0
       bit_size: 1
     - name: CLK_SEL
@@ -238,7 +238,7 @@ fieldset/DCDC_MODE:
       bit_offset: 0
       bit_size: 12
     - name: MODE
-      description: "DCDC work mode XX0: turn off 001: basic mode 011: generic mode 101: automatic mode 111: expert mode."
+      description: "DCDC work mode XX0: trun off 001: basic mode 011: generic mode 101: automatic mode 111: expert mode."
       bit_offset: 16
       bit_size: 3
     - name: READY
@@ -257,7 +257,7 @@ fieldset/DCDC_PROT:
       bit_offset: 4
       bit_size: 1
     - name: DISABLE_SHORT
-      description: "disable output short circuit protection 0: short circuits protection enabled, DCDC shut down if short circuit on output detected 1: short circuit protection disabled."
+      description: "disable output short circuit protection 0: short circuits protection enabled, DCDC shut down if short circuit on ouput detected 1: short circuit protection disabled."
       bit_offset: 7
       bit_size: 1
     - name: OVERVOLT_FLAG
@@ -265,7 +265,7 @@ fieldset/DCDC_PROT:
       bit_offset: 8
       bit_size: 1
     - name: DISABLE_OVERVOLTAGE
-      description: "output over voltage protection 0: protection enabled, DCDC will shut down is output voltage is unexpected high 1: protection disabled, DCDC continue to adjust output voltage."
+      description: "ouput over voltage protection 0: protection enabled, DCDC will shut down is output voltage is unexpected high 1: protection disabled, DCDC continue to adjust output voltage."
       bit_offset: 15
       bit_size: 1
     - name: POWER_LOSS_FLAG

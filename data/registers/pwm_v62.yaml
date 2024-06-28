@@ -117,6 +117,10 @@ block/PWM:
       description: hrpwm config register.
       byte_offset: 1056
       fieldset: hrpwm_cfg
+    - name: ana_cfg0
+      description: analog config register.
+      byte_offset: 1060
+      fieldset: ana_cfg0
 fieldset/ANASTS:
   description: no description available.
   fields:
@@ -232,6 +236,13 @@ fieldset/PWMCFG:
     - name: HR_UPDATE_MODE
       description: "0: update the hr value for the first edge at reload point; 1: update the hr value for the first edge at the last edge; all others will be updated at previous edge for pair mode, only pwm_cfg 0/2/4/6 are used."
       bit_offset: 29
+      bit_size: 1
+fieldset/ana_cfg0:
+  description: analog config register.
+  fields:
+    - name: CAL_SW_TRIG_H
+      description: No description available.
+      bit_offset: 16
       bit_size: 1
 fieldset/cnt:
   description: Counter.
@@ -378,6 +389,10 @@ fieldset/hrpwm_cfg:
     - name: CAL_START
       description: calibration start. software setting this bit to start calibration process. each bit for one channel.
       bit_offset: 0
+      bit_size: 8
+    - name: CAL_SW_EN
+      description: software calibration enable, internal use only.
+      bit_offset: 8
       bit_size: 8
 fieldset/irqen:
   description: Interrupt request enable register.

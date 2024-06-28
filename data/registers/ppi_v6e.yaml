@@ -85,7 +85,7 @@ fieldset/ad_cfg:
       bit_offset: 0
       bit_size: 2
     - name: AD_SEL0
-      description: 1 for address; 0 for data.
+      description: 0 for data; 1 for address.
       bit_offset: 2
       bit_size: 1
     - name: DIR0
@@ -223,7 +223,7 @@ fieldset/clkpin_cfg:
       bit_offset: 0
       bit_size: 1
     - name: AON
-      description: "1: always enable clock output; 0: use clk_gate in cmd sequence for whether output clock."
+      description: "0: use clk_gate in cmd sequence for whether output clock 1: always enable clock output;."
       bit_offset: 1
       bit_size: 1
     - name: INVERT

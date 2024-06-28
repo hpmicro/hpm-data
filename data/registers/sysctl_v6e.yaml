@@ -161,7 +161,7 @@ block/SYSCTL:
     - name: RESOURCE
       description: no description available.
       array:
-        len: 228
+        len: 380
         stride: 4
       byte_offset: 0
       fieldset: RESOURCE
@@ -250,7 +250,7 @@ fieldset/ADCCLK:
   description: no description available.
   fields:
     - name: MUX
-      description: "current mux 0: ana clock N 1: axi clock."
+      description: "current mux 0: ana clock N 1: ahb0 clock."
       bit_offset: 8
       bit_size: 1
     - name: PRESERVE
@@ -383,7 +383,7 @@ fieldset/I2SCLK:
   description: no description available.
   fields:
     - name: MUX
-      description: "current mux 0: aud clock 0 1: aud clock 1."
+      description: "current mux 0: aud clock N 1: aud clock 0 for others , aud clock 1 for i2s0."
       bit_offset: 8
       bit_size: 1
     - name: PRESERVE

@@ -49,55 +49,89 @@ block/LOBS:
       description: Group Enable Register.
       byte_offset: 84
       fieldset: GRPENA
-    - name: SIGSELA0
-      description: Signal Select0 Register.
-      byte_offset: 88
-      fieldset: SIGSELA0
     - name: SIGSELA1
       description: Signal Select1 Register.
-      byte_offset: 96
+      byte_offset: 88
       fieldset: SIGSELA1
-    - name: SIGENA0
-      description: Signal Enable0 Register.
+    - name: SIGSELA2
+      description: Signal Select2 Register.
+      byte_offset: 96
+      fieldset: SIGSELA2
+    - name: SIGENA
+      description: Signal Enable Register.
       byte_offset: 152
-      fieldset: SIGENA0
-    - name: SIGENA1
-      description: Signal Enable1 Register.
-      byte_offset: 156
-      fieldset: SIGENA1
-    - name: SIGSEL0
-      description: Signal Select Register.
+      fieldset: SIGENA
+    - name: STATE
+      description: no description available.
+      array:
+        len: 5
+        stride: 256
       byte_offset: 256
-      fieldset: SIGSEL0
-    - name: TRIGCTRL0
+      block: STATE
+    - name: LAR
+      description: Lock Access Register.
+      byte_offset: 4016
+      fieldset: LAR
+block/STATE:
+  description: no description available.
+  items:
+    - name: SIGSEL
+      description: Signal Select Register.
+      byte_offset: 0
+      fieldset: SIGSEL
+    - name: TRIGCTRL
       description: Trigger Control Register.
-      byte_offset: 260
-      fieldset: TRIGCTRL0
-    - name: NEXTSTATE0
+      byte_offset: 4
+      fieldset: TRIGCTRL
+    - name: NEXTSTATE
       description: Next State Register.
-      byte_offset: 264
-      fieldset: NEXTSTATE0
-    - name: ACTION0
+      byte_offset: 8
+      fieldset: NEXTSTATE
+    - name: ACTION
       description: Action Register.
-      byte_offset: 268
-      fieldset: ACTION0
-    - name: COUNTCOMP0
-      description: Signal Mask Register.
-      byte_offset: 288
-      fieldset: COUNTCOMP0
-    - name: SIGMASK0
+      byte_offset: 12
+      fieldset: ACTION
+    - name: COUNTCOMP
       description: Counter Compare Register.
-      byte_offset: 320
-      fieldset: SIGMASK0
-    - name: COMPEN0
+      byte_offset: 32
+      fieldset: COUNTCOMP
+    - name: EXTMASK
+      description: External Mask Register.
+      byte_offset: 48
+      fieldset: EXTMASK
+    - name: EXTCOMP
+      description: External Compare Register.
+      byte_offset: 52
+      fieldset: EXTCOMP
+    - name: SIGMASK
+      description: Signal Mask Register.
+      byte_offset: 64
+      fieldset: SIGMASK
+    - name: COMPEN
       description: Compare Enable register.
-      byte_offset: 324
-      fieldset: COMPEN0
-fieldset/ACTION0:
+      byte_offset: 68
+      fieldset: COMPEN
+    - name: SIGCOMP0
+      description: Signal Compare Register0.
+      byte_offset: 128
+      fieldset: SIGCOMP0
+    - name: SIGCOMP1
+      description: Signal Compare Register1.
+      byte_offset: 132
+      fieldset: SIGCOMP1
+    - name: SIGCOMP2
+      description: Signal Compare Register2.
+      byte_offset: 136
+      fieldset: SIGCOMP2
+    - name: SIGCOMP3
+      description: Signal Compare Register3.
+      byte_offset: 140
+      fieldset: SIGCOMP3
+fieldset/ACTION:
   description: Action Register.
   fields:
     - name: TRACE
-      description: Trace active. 0b0 Trace is not active. 0b1 Trace is active.
+      description: Trace active. 0b0 Trace disable. 0b1 Trace enable.
       bit_offset: 3
       bit_size: 1
 fieldset/CAVR:
@@ -114,13 +148,17 @@ fieldset/CCVR:
       description: Returns the counter value when the CTSR was last read. If the CTSR has never been read, then the value in the CCVR is undefined.
       bit_offset: 0
       bit_size: 32
-fieldset/COMPEN0:
+fieldset/COMPEN:
   description: Compare Enable register.
-  fields: []
-fieldset/COUNTCOMP0:
-  description: Signal Mask Register.
   fields:
-    - name: TRACE
+    - name: EN
+      description: Select compare signal number0-3.
+      bit_offset: 0
+      bit_size: 4
+fieldset/COUNTCOMP:
+  description: Counter Compare Register.
+  fields:
+    - name: VALUE
       description: A value that, when reached in the associated up-counter for this Trigger State, causes a Trigger Counter Comparison match to occur.
       bit_offset: 0
       bit_size: 32
@@ -149,6 +187,20 @@ fieldset/ENDADDR:
       description: End address.
       bit_offset: 0
       bit_size: 32
+fieldset/EXTCOMP:
+  description: External Compare Register.
+  fields:
+    - name: VALUE
+      description: External Compare.
+      bit_offset: 0
+      bit_size: 32
+fieldset/EXTMASK:
+  description: External Mask Register.
+  fields:
+    - name: VALUE
+      description: External Mask.
+      bit_offset: 0
+      bit_size: 32
 fieldset/FIFOSTATE:
   description: Fifo State Register.
   fields:
@@ -170,22 +222,33 @@ fieldset/FINALADDR:
 fieldset/GRPENA:
   description: Group Enable Register.
   fields:
-    - name: EN
-      description: Enable trace group number0-1.
+    - name: EN1
+      description: Enable sample group number1.
       bit_offset: 0
-      bit_size: 2
+      bit_size: 1
+    - name: EN2
+      description: Enable sample group number2.
+      bit_offset: 1
+      bit_size: 1
 fieldset/GRPSELA:
   description: Group Select Register.
   fields:
-    - name: NUM0
-      description: Select trace group number0.
+    - name: NUM1
+      description: Select sample group number1.
       bit_offset: 0
       bit_size: 4
-    - name: NUM1
-      description: Select trace group number1.
+    - name: NUM2
+      description: Select sample group number2.
       bit_offset: 4
       bit_size: 4
-fieldset/NEXTSTATE0:
+fieldset/LAR:
+  description: Lock Access Register.
+  fields:
+    - name: VALUE
+      description: Lock Access Value.
+      bit_offset: 0
+      bit_size: 32
+fieldset/NEXTSTATE:
   description: Next State Register.
   fields:
     - name: NEXTSTATE
@@ -199,22 +262,47 @@ fieldset/PTACTION:
       description: Enables trace.
       bit_offset: 3
       bit_size: 1
-fieldset/SIGENA0:
-  description: Signal Enable0 Register.
+fieldset/SIGCOMP0:
+  description: Signal Compare Register0.
   fields:
-    - name: EN
-      description: Enable trace signal number0-3.
+    - name: VALUE0
+      description: Compare golden value for Signal Group signals[31:0].
+      bit_offset: 0
+      bit_size: 32
+fieldset/SIGCOMP1:
+  description: Signal Compare Register1.
+  fields:
+    - name: VALUE1
+      description: Compare golden value for Signal Group signals[63:32].
+      bit_offset: 0
+      bit_size: 32
+fieldset/SIGCOMP2:
+  description: Signal Compare Register2.
+  fields:
+    - name: VALUE2
+      description: Compare golden value for Signal Group signals[95:64].
+      bit_offset: 0
+      bit_size: 32
+fieldset/SIGCOMP3:
+  description: Signal Compare Register3.
+  fields:
+    - name: VALUE3
+      description: Compare golden value for Signal Group signals[127:96].
+      bit_offset: 0
+      bit_size: 32
+fieldset/SIGENA:
+  description: Signal Enable Register.
+  fields:
+    - name: EN1
+      description: Enable sample signal number1.
       bit_offset: 0
       bit_size: 4
-fieldset/SIGENA1:
-  description: Signal Enable1 Register.
-  fields:
-    - name: EN
-      description: Enable trace signal number0-3.
-      bit_offset: 0
+    - name: EN2
+      description: Enable sample signal number2.
+      bit_offset: 4
       bit_size: 4
-fieldset/SIGMASK0:
-  description: Counter Compare Register.
+fieldset/SIGMASK:
+  description: Signal Mask Register.
   fields:
     - name: NUM0
       description: Select compare signal number0.
@@ -232,49 +320,49 @@ fieldset/SIGMASK0:
       description: Select compare signal number3.
       bit_offset: 24
       bit_size: 8
-fieldset/SIGSEL0:
+fieldset/SIGSEL:
   description: Signal Select Register.
   fields:
     - name: EN
       description: Selects Signal Group. 0x1 Selects Signal Group 0. 0x2 Selects Signal Group 1. 0x4 Selects Signal Group 2. 0x8 Selects Signal Group 3. 0x10 Selects Signal Group 4. 0x20 Selects Signal Group 5. 0x40 Selects Signal Group 6. 0x80 Selects Signal Group 7. 0x100 Selects Signal Group 8. 0x200 Selects Signal Group 9. 0x400 Selects Signal Group 10. 0x800 Selects Signal Group 11.
       bit_offset: 0
       bit_size: 12
-fieldset/SIGSELA0:
-  description: Signal Select0 Register.
-  fields:
-    - name: NUM0
-      description: Select trace signal number0 in group0.
-      bit_offset: 0
-      bit_size: 8
-    - name: NUM1
-      description: Select trace signal number1 in group0.
-      bit_offset: 8
-      bit_size: 8
-    - name: NUM2
-      description: Select trace signal number2 in group0.
-      bit_offset: 16
-      bit_size: 8
-    - name: NUM3
-      description: Select trace signal number3 in group0.
-      bit_offset: 24
-      bit_size: 8
 fieldset/SIGSELA1:
   description: Signal Select1 Register.
   fields:
-    - name: NUM0
-      description: Select trace signal number0 in group1.
+    - name: NUM1
+      description: Select sample signal bit number1 in first group.
       bit_offset: 0
       bit_size: 8
-    - name: NUM1
-      description: Select trace signal number1 in group1.
+    - name: NUM2
+      description: Select sample signal bit number2 in first group.
       bit_offset: 8
       bit_size: 8
-    - name: NUM2
-      description: Select trace signal number2 in group1.
+    - name: NUM3
+      description: Select sample signal bit number3 in first group.
       bit_offset: 16
       bit_size: 8
+    - name: NUM4
+      description: Select sample signal bit number4 in first group.
+      bit_offset: 24
+      bit_size: 8
+fieldset/SIGSELA2:
+  description: Signal Select2 Register.
+  fields:
+    - name: NUM1
+      description: Select sample signal bit number1 in second group.
+      bit_offset: 0
+      bit_size: 8
+    - name: NUM2
+      description: Select sample signal bit number2 in second group.
+      bit_offset: 8
+      bit_size: 8
     - name: NUM3
-      description: Select trace signal number3 in group1.
+      description: Select sample signal bit number3 in second group.
+      bit_offset: 16
+      bit_size: 8
+    - name: NUM4
+      description: Select sample signal bit number4 in second group.
       bit_offset: 24
       bit_size: 8
 fieldset/STARTADDR:
@@ -288,14 +376,14 @@ fieldset/STREAMCTRL:
   description: Stream Control Register.
   fields:
     - name: BURST
-      description: Burst Cfg 0b011 Incr4 0b101 Incr8 0b111 Incr16.
+      description: Burst Cfg 3b011 Incr4 3b101 Incr8 3b111 Incr16.
       bit_offset: 0
       bit_size: 3
     - name: SAMPLE
-      description: Sample Rate 0b110 Incr4 take one every four 0b101 Incr8 take one every five 0b100 Incr16 take one every six.
+      description: Sample Rate 4 take one every 5 5 take one every 6 6 take one every 7.
       bit_offset: 3
       bit_size: 4
-    - name: CLEAR
+    - name: FULL_CLEAR
       description: FIFO Overflow Clear.
       bit_offset: 7
       bit_size: 1
@@ -303,7 +391,7 @@ fieldset/STREAMCTRL:
       description: Signal Group Select 0 128bit from one group 1 from 2 groups, 4bit in each group.
       bit_offset: 8
       bit_size: 1
-fieldset/TRIGCTRL0:
+fieldset/TRIGCTRL:
   description: Trigger Control Register.
   fields:
     - name: COMP
@@ -314,23 +402,7 @@ fieldset/TRIGCTRL0:
       description: Comparison mode. Acts as both a counter enable and a select for the comparison mode. 0b0 Disable counters and select Trigger Signal Comparison mode. 0b1 Enable counters and select Trigger Counter Comparison mode.
       bit_offset: 3
       bit_size: 1
-    - name: WATCHRST
-      description: Counter reset. 0b0 Do not reset the counter after a Trigger Signal Comparison match. 0b1 Reset the counter after a Trigger Signal Comparison match The counter acts like an activity watchdog timer, only allowing advancement to the next Trigger State when the Trigger Counter Comparison is reached. The counter is reset by a signal comparison.
-      bit_offset: 4
-      bit_size: 1
-    - name: COUNTSRC
-      description: Counter source select. 0b0 Counter is incremented every ELACLK cycle. 0b1 Counter is incremented when Trigger Signal Comparison matches.
-      bit_offset: 5
-      bit_size: 1
     - name: TRACE
-      description: Trace capture control. 0b00 Trace is captured when Trigger Signal Comparison succeeds. 0b01 Trace is captured when Trigger Counter Comparison succeeds. 0b10 Trace is captured every ELACLK cycle. 0b11 Reserved.
+      description: Trace capture control. 0b10 Trace is captured every ELACLK cycle. others Reserved.
       bit_offset: 6
       bit_size: 2
-    - name: COUNTCLR
-      description: Counter clear. 0b0 Do not clear the counter value when moving to a different NEXTSTATE. 0b1 Clear the counter value when moving to a different NEXTSTATE. Note TRIGCTRL.WATCHRST must be 0b0 when using this feature.
-      bit_offset: 8
-      bit_size: 1
-    - name: COUNTERBRK
-      description: "Loop counter break. The loop counter break uses the Trigger State counter to break loops between Trigger States after a Trigger Counter Comparison. When the counter comparison matches, the Trigger State goes into a final state,which stops trace writes and leaves the output actions at the previous Trigger State ACTION value. 0b0 Normal operation. 0b1 Break Trigger State loop: A counter comparison match causes a transition to the final state, otherwise go to the NEXTSTATE Trigger State as the counter increments."
-      bit_offset: 9
-      bit_size: 1

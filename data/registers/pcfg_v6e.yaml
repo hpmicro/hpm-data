@@ -301,10 +301,6 @@ fieldset/LDO1P1:
       description: "LDO output voltage in mV, value valid through 700-1320, , step 20mV. Hardware select voltage no less than target if not on valid steps, with maximum 1320mV. 700: 700mV 720: 720mV . . . 1320:1320mV."
       bit_offset: 0
       bit_size: 12
-    - name: ENABLE
-      description: "LDO enable 0: turn off LDO 1: turn on LDO."
-      bit_offset: 16
-      bit_size: 1
 fieldset/LDO2P5:
   description: 2.5V LDO config.
   fields:

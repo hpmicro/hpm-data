@@ -125,10 +125,6 @@ fieldset/MODCTRL:
       description: HASH Check Enable Bit. 1x1, HASH check need, hash result will compare with the HASHRSLT 0-7 registers; 1x0, HASH check is not enabled, HASHRSLT0-7 store the HASH result. For SHA1, will use HASHRSLT0-3 words, and HASH 256 will use HASH0-7 words.
       bit_offset: 10
       bit_size: 1
-    - name: CRCEN
-      description: CRC enable. 1x1, CRC is enabled. 1x0, CRC is disabled.
-      bit_offset: 11
-      bit_size: 1
     - name: HASALG
       description: HASH Algorithem selection. 0x0 SHA1 — 0x1 CRC32 — 0x2 SHA256 —.
       bit_offset: 12

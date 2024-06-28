@@ -20,7 +20,7 @@ block/FEMC:
     - name: BR
       description: no description available.
       array:
-        len: 3
+        len: 7
         stride: 4
       byte_offset: 16
       fieldset: BR

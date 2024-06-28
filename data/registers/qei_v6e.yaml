@@ -238,10 +238,6 @@ block/QEI:
       description: phase_param.
       byte_offset: 560
       fieldset: phase_param
-    - name: angle_adj
-      description: angle_adj.
-      byte_offset: 564
-      fieldset: angle_adj
     - name: pos_threshold
       description: pos_threshold.
       byte_offset: 568
@@ -410,13 +406,6 @@ fieldset/angle:
   description: No description available.
   fields:
     - name: ANGLE
-      description: No description available.
-      bit_offset: 0
-      bit_size: 32
-fieldset/angle_adj:
-  description: angle_adj.
-  fields:
-    - name: ANGLE_ADJ
       description: No description available.
       bit_offset: 0
       bit_size: 32

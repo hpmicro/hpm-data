@@ -1,4 +1,4 @@
-# has MONITOR, OPMODE
+# has CNT_MODE
 block/CHANNEL:
   description: no description available.
   items:
@@ -119,6 +119,10 @@ fieldset/CR:
     - name: OPMODE
       description: "0: round mode 1: one-shot mode, timer will stopped at reload point. NOTE: reload irq will be always set at one-shot mode at end."
       bit_offset: 17
+      bit_size: 1
+    - name: CNT_MODE
+      description: "0: internal counting mode, timer increase each gptmr clock cycle. 1: external counting mode, timer increase at each input signal posedge, reload/compare feature can still work but change at input signal posedge."
+      bit_offset: 18
       bit_size: 1
     - name: CNTUPT
       description: 1- update counter to new value as CNTUPTVAL This bit will be auto cleared after 1 cycle.
