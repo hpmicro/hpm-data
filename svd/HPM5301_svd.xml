@@ -994,7 +994,7 @@ Note: combinational interrupt is sensitive to environment noise</description>
     <peripheral>
       <name>PLICSW</name>
       <description>PLICSW</description>
-      <groupName>PLIC_SW</groupName>
+      <groupName>PLICSW</groupName>
       <baseAddress>0xe6400000</baseAddress>
       <addressBlock>
         <offset>0x1000</offset>
@@ -1058,7 +1058,7 @@ Note: combinational interrupt is sensitive to environment noise</description>
     <peripheral>
       <name>GPTMR0</name>
       <description>GPTMR0</description>
-      <groupName>TMR</groupName>
+      <groupName>GPTMR</groupName>
       <baseAddress>0xf0000000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
@@ -1079,7 +1079,7 @@ Note: combinational interrupt is sensitive to environment noise</description>
             <addressOffset>0x0</addressOffset>
             <size>32</size>
             <resetValue>0x00000000</resetValue>
-            <resetMask>0x80007FFF</resetMask>
+            <resetMask>0x8003FFFF</resetMask>
             <fields>
               <field>
                 <name>CNTUPT</name>
@@ -1088,6 +1088,34 @@ This bit will be auto cleared after 1 cycle</description>
                 <bitOffset>31</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>write-only</access>
+              </field>
+              <field>
+                <name>OPMODE</name>
+                <description>0:  round mode
+1:  one-shot mode, timer will stopped at reload point.user need clear CEN and set it to start timer agian.
+NOTE: reload irq will be always set at one-shot mode at end</description>
+                <bitOffset>17</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>MONITOR_SEL</name>
+                <description>set to monitor input signal high level time(chan_meas_high)
+clr to monitor input signal period(chan_meas_prd)</description>
+                <bitOffset>16</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>MONITOR_EN</name>
+                <description>set to monitor input signal period or high level time.
+When this bit is set, if detected period less than val_0 or more than val_1, will set related irq_sts
+* only can be used when trig_mode is selected as measure mode(100)
+* the time may not correct after reload, so monitor is disabled after reload point, and enabled again after two continul posedge.
+if no posedge after reload for more than val_1, will also assert irq_capt</description>
+                <bitOffset>15</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
               </field>
               <field>
                 <name>CNTRST</name>
@@ -1594,13 +1622,13 @@ User should set this bit before set CMPEN to 1.</description>
     <peripheral derivedFrom="GPTMR0">
       <name>GPTMR1</name>
       <description>GPTMR1</description>
-      <groupName>TMR</groupName>
+      <groupName>GPTMR</groupName>
       <baseAddress>0xf0004000</baseAddress>
     </peripheral>
     <peripheral derivedFrom="GPTMR0">
       <name>PTMR</name>
       <description>PTMR</description>
-      <groupName>TMR</groupName>
+      <groupName>GPTMR</groupName>
       <baseAddress>0xf4120000</baseAddress>
     </peripheral>
     <peripheral>
@@ -5296,7 +5324,7 @@ Note: Reading this register can read back wdt real time counter value, while it 
 Write one to clear the bit</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>write-only</access>
             </field>
             <field>
               <name>OT_RST</name>
@@ -5304,7 +5332,7 @@ Write one to clear the bit</description>
 This bit can be cleared only by refreshing wdt or reset</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-only</access>
+              <access>write-only</access>
             </field>
             <field>
               <name>OT_INT</name>
@@ -5312,7 +5340,7 @@ This bit can be cleared only by refreshing wdt or reset</description>
 This bit can be cleared only by refreshing wdt or reset</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-only</access>
+              <access>write-only</access>
             </field>
             <field>
               <name>CTL_UNL_FAIL</name>
@@ -5320,7 +5348,7 @@ This bit can be cleared only by refreshing wdt or reset</description>
 Write one to clear the bit</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>write-only</access>
             </field>
             <field>
               <name>CTL_VIO</name>
@@ -5328,7 +5356,7 @@ Write one to clear the bit</description>
 Write one to clear the bit</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>write-only</access>
             </field>
             <field>
               <name>REF_UNL_FAIL</name>
@@ -5336,7 +5364,7 @@ Write one to clear the bit</description>
 Write one to clear the bit</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>write-only</access>
             </field>
             <field>
               <name>REF_VIO</name>
@@ -5344,7 +5372,7 @@ Write one to clear the bit</description>
 Write one to clear the bit</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <access>write-only</access>
             </field>
           </fields>
         </register>
@@ -9991,14 +10019,14 @@ should set to (21-convert_clock_number+1).</description>
       <baseAddress>0xf30b0000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x80</size>
+        <size>0x40</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
         <cluster>
-          <dim>4</dim>
+          <dim>2</dim>
           <dimIncrement>0x20</dimIncrement>
-          <dimIndex>chn0,chn1,chn2,chn3</dimIndex>
+          <dimIndex>chn0,chn1</dimIndex>
           <name>CHANNEL[%s]</name>
           <description>no description available</description>
           <addressOffset>0x0</addressOffset>
@@ -10008,7 +10036,7 @@ should set to (21-convert_clock_number+1).</description>
             <addressOffset>0x0</addressOffset>
             <size>32</size>
             <resetValue>0x00000000</resetValue>
-            <resetMask>0xFF7FFFFF</resetMask>
+            <resetMask>0xFFFFFFFF</resetMask>
             <fields>
               <field>
                 <name>HYST</name>
@@ -10053,6 +10081,14 @@ should set to (21-convert_clock_number+1).</description>
                 <description>PIN select, from pad_ai_acmp[7:1] and dac_out</description>
                 <bitOffset>24</bitOffset>
                 <bitWidth>3</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>DAC_TRIG_EN</name>
+                <description>if set, the dac value is from moto system when valid
+if clr, use dac_cfg value</description>
+                <bitOffset>23</bitOffset>
+                <bitWidth>1</bitWidth>
                 <access>read-write</access>
               </field>
               <field>
@@ -10972,8 +11008,8 @@ Note, clock cycle is base on 24M</description>
             <field>
               <name>MUX</name>
               <description>current mux
-0: ahb0 clock N
-1: ana clock</description>
+0: ahb0 clock
+1: ana clock N</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -11021,8 +11057,8 @@ Note, clock cycle is base on 24M</description>
             <field>
               <name>MUX</name>
               <description>current mux
-0: ahb0 clock N
-1: ana clock</description>
+0: ahb0 clock
+1: ana clock N</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -11570,7 +11606,7 @@ For pull up:
       <baseAddress>0xf40c0000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x200</size>
+        <size>0x180</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -11623,9 +11659,9 @@ For pull up:
           </fields>
         </register>
         <cluster>
-          <dim>3</dim>
+          <dim>2</dim>
           <dimIncrement>0x80</dimIncrement>
-          <dimIndex>pll0,pll1,pll2</dimIndex>
+          <dimIndex>pll0,pll1</dimIndex>
           <name>PLL[%s]</name>
           <description>no description available</description>
           <addressOffset>0x80</addressOffset>
@@ -12083,7 +12119,7 @@ This register should not be changed during PLL and spread spectrum enabled.  If 
     <peripheral>
       <name>PCFG</name>
       <description>PCFG</description>
-      <groupName>PMU</groupName>
+      <groupName>PCFG</groupName>
       <baseAddress>0xf4104000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
@@ -12211,7 +12247,7 @@ This register should not be changed during PLL and spread spectrum enabled.  If 
             <field>
               <name>MODE</name>
               <description>DCDC work mode
-XX0: turn off
+XX0: trun off
 001: basic mode
 011: generic mode
 101: automatic mode
@@ -12291,7 +12327,7 @@ XX0: turn off
             </field>
             <field>
               <name>DISABLE_OVERVOLTAGE</name>
-              <description>output over voltage protection
+              <description>ouput over voltage protection
 0: protection enabled, DCDC will shut down is output voltage is unexpected high
 1: protection disabled, DCDC continue to adjust output voltage</description>
               <bitOffset>15</bitOffset>
@@ -12310,7 +12346,7 @@ XX0: turn off
             <field>
               <name>DISABLE_SHORT</name>
               <description>disable output short circuit protection
-0: short circuits protection enabled, DCDC shut down if short circuit on output detected
+0: short circuits protection enabled, DCDC shut down if short circuit on ouput detected
 1: short circuit protection disabled</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12567,7 +12603,7 @@ XX0: turn off
             <field>
               <name>EN_STEP</name>
               <description>enable stepping in voltage change
-0: stepping disabled,
+0: stepping disabled
 1: steping enabled</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
