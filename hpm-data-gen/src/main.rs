@@ -2,6 +2,7 @@ use std::{collections::HashMap, path::Path};
 
 mod dma;
 mod interrupts;
+mod iomux;
 mod pinmux;
 mod pins;
 mod registers;
@@ -196,6 +197,11 @@ fn main() -> anyhow::Result<()> {
         sysctl::add_sysctl_from_sdk(data_dir, chip)?;
     }
 
+    stopwatch.section("Handle iomux");
+    for chip in &mut chips {
+        iomux::add_iomux_from_sdk(data_dir, chip)?;
+    }
+
     stopwatch.section("Handle IOC pins");
     for chip in &mut chips {
         pins::add_ioc_pins_from_sdk(data_dir, chip)?;
@@ -204,7 +210,7 @@ fn main() -> anyhow::Result<()> {
     stopwatch.section("Writing chip data");
     for chip in &chips {
         println!(
-            "chip: {}, peripherals: {}",
+            "    chip: {}, peripherals: {}",
             chip.name,
             chip.cores[0].peripherals.len()
         );

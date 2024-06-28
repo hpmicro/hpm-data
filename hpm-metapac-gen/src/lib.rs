@@ -96,14 +96,6 @@ impl Gen {
 
         ir.devices.insert("".to_string(), dev);
 
-        /*
-        let mut extra = format!(
-            "pub fn GPIO(n: usize) -> gpio::Gpio {{
-            unsafe {{ gpio::Gpio::from_ptr(({} + {}*n) as _) }}
-        }}",
-            gpio_base, gpio_stride,
-        );
-        */
         let mut extra = format!("");
 
         for (module, version) in &peripheral_versions {
@@ -147,7 +139,9 @@ impl Gen {
         // ==============================
         // Generate Register Block indices
         {
+            // All SYSCTL resources
             writeln!(&mut extra, "pub mod resources {{").unwrap();
+            writeln!(&mut extra, "   //! `SYSCTL.RESOURCE` definitions").unwrap();
             for res in &core.resources {
                 writeln!(
                     &mut extra,
@@ -159,8 +153,9 @@ impl Gen {
             }
             writeln!(&mut extra, "}}").unwrap();
 
+            // All clocks
             writeln!(&mut extra, "pub mod clocks {{").unwrap();
-
+            writeln!(&mut extra, "   //! `SYSCTL.CLOCK` definitions").unwrap();
             for clk in &core.clocks {
                 writeln!(
                     &mut extra,
@@ -172,13 +167,29 @@ impl Gen {
             }
             writeln!(&mut extra, "}}").unwrap();
 
+            // All pin pads
             writeln!(&mut extra, "pub mod pins {{").unwrap();
+            writeln!(&mut extra, "   //! Pin pad definitions").unwrap();
             for pin in &core.pins {
                 writeln!(
                     &mut extra,
                     "    pub const {}: usize = {};",
                     pin.name.to_ascii_uppercase(),
                     pin.index
+                )
+                .unwrap();
+            }
+            writeln!(&mut extra, "}}").unwrap();
+
+            // All iomux consts
+            writeln!(&mut extra, "pub mod iomux {{").unwrap();
+            writeln!(&mut extra, "   //! `FUNC_CTL` function mux definitions").unwrap();
+            for mux in &core.iomuxes {
+                writeln!(
+                    &mut extra,
+                    "    pub const {}: u8 = {};",
+                    mux.name.to_ascii_uppercase(),
+                    mux.value
                 )
                 .unwrap();
             }

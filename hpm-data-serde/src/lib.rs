@@ -71,6 +71,8 @@ pub mod chip {
         pub clocks: Vec<core::Clock>,
         #[serde(default)]
         pub pins: Vec<core::IoPin>,
+        #[serde(default)]
+        pub iomuxes: Vec<core::IoMux>,
 
         // include fields, for common peripherals
         #[serde(skip_serializing_if = "Option::is_none")]
@@ -262,6 +264,13 @@ pub mod chip {
             pub name: String,
             // IOC pad index
             pub index: usize,
+        }
+
+        #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+        pub struct IoMux {
+            pub name: String,
+            // alt func value
+            pub value: u8,
         }
     }
 }

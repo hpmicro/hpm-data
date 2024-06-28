@@ -346,6 +346,8 @@ pub struct Core {
     pub clocks: Vec<Clock>,
     #[serde(default)]
     pub pins: Vec<IoPin>,
+    #[serde(default)]
+    pub iomuxes: Vec<IoMux>,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
@@ -362,6 +364,12 @@ pub struct Clock {
 pub struct IoPin {
     pub name: String,
     pub index: u32,
+}
+
+#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
+pub struct IoMux {
+    pub name: String,
+    pub value: u32,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]

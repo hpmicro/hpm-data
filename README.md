@@ -28,12 +28,13 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 
 ### Support status
 
-- [x] HPM5300
 - [x] HPM6700/HPM6400
 - [x] HPM6300
-- [x] HPM6800
 - [x] HPM6200
-- [ ] HPM6E00 - WIP
+- [x] HPM5300
+- [x] HPM6800
+- [x] HPM6E00
+  - pinmux is missing
 
 ## hpm-metapac
 
@@ -42,6 +43,7 @@ All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hp
 - To best fit for HPM RISC-V's cluster register desigin, the following is added:
   - All clocks, for `SYSCTL.CLOCK`, in `hpm_metapac::clocks::`
   - All GPIOs and it's PADs, for `IOC`, in `hpm_metapac::pins::`
+  - All IOMUX settings (`FUNC_CTL`) in `hpm_metapac::iomux::`
 
 ## Data Source
 
