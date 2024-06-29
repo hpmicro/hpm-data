@@ -1,3 +1,4 @@
+# DMA with 32 channels, with SwapTable
 block/CHCTRL:
   description: no description available.
   items:
@@ -81,14 +82,20 @@ fieldset/ChAbort:
     - name: CHABORT
       description: "Write 1 to bit n to abort channel n. The bits should only be set when the corresponding channels are enabled. Otherwise, the writes will be ignored for channels that are not enabled. (N: Number of channels)."
       bit_offset: 0
-      bit_size: 32
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
 fieldset/ChEN:
   description: Channel Enable Register.
   fields:
     - name: CHEN
       description: Alias of the Enable field of all ChnCtrl registers.
       bit_offset: 0
-      bit_size: 32
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
 fieldset/ChanReqCtrl:
   description: Channel &index0 DMA Request Control Register.
   fields:
@@ -255,28 +262,40 @@ fieldset/INTABORTSTS:
     - name: STS
       description: "The abort status of channel, one bit per channel. The abort status is set when a channel transfer is aborted. 0x0: Channel n has no abort status 0x1: Channel n has abort status."
       bit_offset: 0
-      bit_size: 32
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
 fieldset/INTERRSTS:
   description: Error Interrupt Status Register.
   fields:
     - name: STS
       description: "The error status, one bit per channel. The error status is set when a channel transfer encounters the following error events: - Bus error - Unaligned address - Unaligned transfer width - Reserved configuration 0x0: Channel n has no error status 0x1: Channel n has error status."
       bit_offset: 0
-      bit_size: 32
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
 fieldset/INTHALFSTS:
   description: Harlf Complete Interrupt Status.
   fields:
     - name: STS
       description: half transfer done irq status.
       bit_offset: 0
-      bit_size: 32
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
 fieldset/INTTCSTS:
   description: Trans Complete Interrupt Status Register.
   fields:
     - name: STS
       description: "The terminal count status, one bit per channel. The terminal count status is set when a channel transfer finishes without the abort or error event. 0x0: Channel n has no terminal count status 0x1: Channel n has terminal count status."
       bit_offset: 0
-      bit_size: 32
+      bit_size: 1
+      array:
+        len: 32
+        stride: 1
 fieldset/LLPointer:
   description: Channel &index0 Linked List Pointer Low Part Register.
   fields:
