@@ -13,7 +13,6 @@ block/CHCTRL:
     - name: SrcAddr
       description: Channel &index0 Source Address Low Part Register.
       byte_offset: 8
-      fieldset: SrcAddr
     - name: ChanReqCtrl
       description: Channel &index0 DMA Request Control Register.
       byte_offset: 12
@@ -21,7 +20,6 @@ block/CHCTRL:
     - name: DstAddr
       description: Channel &index0 Destination Address Low Part Register.
       byte_offset: 16
-      fieldset: DstAddr
     - name: SwapTable
       description: swap table register.
       byte_offset: 20
@@ -238,13 +236,6 @@ fieldset/DMACtrl:
       description: "Software reset control. Write 1 to this bit to reset the DMA core and disable all channels. Note: The software reset may cause the in-completion of AXI transaction."
       bit_offset: 0
       bit_size: 1
-fieldset/DstAddr:
-  description: Channel &index0 Destination Address Low Part Register.
-  fields:
-    - name: DSTADDRL
-      description: Low part of the destination starting address. When the transfer completes, the value of {DstAddrH,DstAddrL} is updated to the ending address. This address must be aligned to the destination transfer size; otherwise the error event will be triggered.
-      bit_offset: 0
-      bit_size: 32
 fieldset/IDMisc:
   description: ID Misc.
   fields:
@@ -303,13 +294,6 @@ fieldset/LLPointer:
       description: Low part of the pointer to the next descriptor. The pointer must be double word aligned.
       bit_offset: 3
       bit_size: 29
-fieldset/SrcAddr:
-  description: Channel &index0 Source Address Low Part Register.
-  fields:
-    - name: SRCADDRL
-      description: Low part of the source starting address. When the transfer completes, the value of {SrcAddrH,SrcAddrL} is updated to the ending address. This address must be aligned to the source transfer size; otherwise, an error event will be triggered.
-      bit_offset: 0
-      bit_size: 32
 fieldset/SwapTable:
   description: swap table register.
   fields:

@@ -13,19 +13,15 @@ block/CHCTRL:
     - name: SrcAddr
       description: Channel n Source Address Low Part Register.
       byte_offset: 8
-      fieldset: SrcAddr
     - name: SrcAddrH
       description: Channel n Source Address High Part Register.
       byte_offset: 12
-      fieldset: SrcAddrH
     - name: DstAddr
       description: Channel n Destination Address Low Part Register.
       byte_offset: 16
-      fieldset: DstAddr
     - name: DstAddrH
       description: Channel n Destination Address High Part Register.
       byte_offset: 20
-      fieldset: DstAddrH
     - name: LLPointer
       description: Channel n Linked List Pointer Low Part Register.
       byte_offset: 24
@@ -203,20 +199,6 @@ fieldset/DMACtrl:
       description: "Software reset control. Write 1 to this bit to reset the DMA core and disable all channels. Note: The software reset may cause the in-completion of AXI transaction."
       bit_offset: 0
       bit_size: 1
-fieldset/DstAddr:
-  description: Channel n Destination Address Low Part Register.
-  fields:
-    - name: DSTADDRL
-      description: Low part of the destination starting address. When the transfer completes, the value of {DstAddrH,DstAddrL} is updated to the ending address. This address must be aligned to the destination transfer size; otherwise the error event will be triggered.
-      bit_offset: 0
-      bit_size: 32
-fieldset/DstAddrH:
-  description: Channel n Destination Address High Part Register.
-  fields:
-    - name: DSTADDRH
-      description: High part of the destination starting address. When the transfer completes, the value of {DstAddrH,DstAddrL} is updated to the ending address. This address must be aligned to the destination transfer size; otherwise the error event will be triggered. This register exists only when the address bus width is wider than 32 bits.
-      bit_offset: 0
-      bit_size: 32
 fieldset/IntStatus:
   description: Interrupt Status Register.
   fields:
@@ -257,20 +239,6 @@ fieldset/LLPointerH:
   fields:
     - name: LLPOINTERH
       description: High part of the pointer to the next descriptor. This register exists only when the address bus width is wider than 32 bits.
-      bit_offset: 0
-      bit_size: 32
-fieldset/SrcAddr:
-  description: Channel n Source Address Low Part Register.
-  fields:
-    - name: SRCADDRL
-      description: Low part of the source starting address. When the transfer completes, the value of {SrcAddrH,SrcAddrL} is updated to the ending address. This address must be aligned to the source transfer size; otherwise, an error event will be triggered.
-      bit_offset: 0
-      bit_size: 32
-fieldset/SrcAddrH:
-  description: Channel n Source Address High Part Register.
-  fields:
-    - name: SRCADDRH
-      description: High part of the source starting address. When the transfer completes, the value of {SrcAddrH,SrcAddrL} is updated to the ending address. This register exists only when the address bus width is wider than 32 bits.
       bit_offset: 0
       bit_size: 32
 fieldset/TranSize:
