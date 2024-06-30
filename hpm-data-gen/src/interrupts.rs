@@ -23,6 +23,10 @@ pub fn fill_peripheral_interrupts(chip: &mut hpm_data_serde::Chip) -> anyhow::Re
                 if !interrupt.name.starts_with(&periph.name) {
                     continue;
                 }
+                // special handling for UART10+
+                if periph.name.starts_with("UART") && periph.name != interrupt.name {
+                    continue;
+                }
                 // println!("matches interrupt: {:#?}", interrupt);
 
                 let signal = parse_interrupt_signal(&interrupt.name);

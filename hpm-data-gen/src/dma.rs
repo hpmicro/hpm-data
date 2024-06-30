@@ -31,7 +31,9 @@ pub fn handle_chip_dmamux_include<P: AsRef<Path>>(
 
             for (signal_name, request_no) in dmamux {
                 for periph in core.peripherals.iter_mut() {
-                    if signal_name.starts_with(&periph.name) {
+                    let signal_periph_prefix =
+                        signal_name.split('_').next().expect("empty signal_name");
+                    if periph.name == signal_periph_prefix {
                         // println!("matches signal_name: {:#?}", signal_name);
 
                         let signal = parse_signal(&signal_name, &periph.name);
