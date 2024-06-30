@@ -325,6 +325,7 @@ fieldset/SDRCTRL0:
       description: 2 Bank selection bit 0b - SDRAM device has 4 banks. 1b - SDRAM device has 2 banks.
       bit_offset: 14
       bit_size: 1
+      enum: BANK2_SEL
 fieldset/SDRCTRL1:
   description: SDRAM Control Register 1.
   fields:
@@ -649,3 +650,13 @@ enum/IO_CSX:
     - name: SRAM_CE
       description: SRAM CE#
       value: 0b0110
+enum/BANK2_SEL:
+  description: 2 Bank selection bit.
+  bit_size: 1
+  variants:
+    - name: BANK_NUM_4
+      description: SDRAM device has 4 banks
+      value: 0
+    - name: BANK_NUM_2
+      description: SDRAM device has 2 banks
+      value: 1
