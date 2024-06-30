@@ -141,6 +141,7 @@ fieldset/BR:
       description: Memory size 00000b - 4KB 00001b - 8KB 00010b - 16KB 00011b - 32KB 00100b - 64KB 00101b - 128KB 00110b - 256KB 00111b - 512KB 01000b - 1MB 01001b - 2MB 01010b - 4MB 01011b - 8MB 01100b - 16MB 01101b - 32MB 01110b - 64MB 01111b - 128MB 10000b - 256MB 10001b - 512MB 10010b - 1GB 10011b - 2GB 10100-11111b - 4GB.
       bit_offset: 1
       bit_size: 5
+      enum: MEMORY_SIZE
     - name: BASE
       description: Base Address This field determines high position 20 bits of SoC level Base Address. SoC level Base Address low position 12 bits are all zero.
       bit_offset: 12
@@ -194,6 +195,7 @@ fieldset/DATSZ:
       description: Data Size in Byte When IP command is not a write/read operation, DATSZ field would be ignored. 000b - 4 001b - 1 010b - 2 011b - 3 100b - 4 101b - 4 110b - 4 111b - 4.
       bit_offset: 0
       bit_size: 3
+      enum: DATA_SIZE
 fieldset/DLYCFG:
   description: Delay Line Config Register.
   fields:
@@ -254,6 +256,7 @@ fieldset/IOCTRL:
       description: IO_CSX output selection 0001b - SDRAM CS1 0110b - SRAM CE#.
       bit_offset: 4
       bit_size: 4
+      enum: IO_CSX
 fieldset/IPCMD:
   description: IP Command Register.
   fields:
@@ -261,6 +264,7 @@ fieldset/IPCMD:
       description: "SDRAM Commands: • 0x8: READ • 0x9: WRITE • 0xA: MODESET • 0xB: ACTIVE • 0xC: AUTO REFRESH • 0xD: SELF REFRESH • 0xE: PRECHARGE • 0xF: PRECHARGE ALL • Others: RSVD NOTE: SELF REFRESH is sent to all SDRAM devices because they shared same CLK pin."
       bit_offset: 0
       bit_size: 16
+      enum: CMD
     - name: KEY
       description: This field should be written with 0x5AA5 when trigging an IP command for all device types. The memory device is selected by BRx settings and IPCR0 registers.
       bit_offset: 16
@@ -293,6 +297,7 @@ fieldset/SDRCTRL0:
       description: Port Size 00b - 8bit 01b - 16bit 10b - 32bit.
       bit_offset: 0
       bit_size: 2
+      enum: SDRAM_PORT_SIZE
     - name: HIGHBAND
       description: "high band select 0: use data[15:0] for 16bit SDRAM; 1: use data[31:16] for 16bit SDRAM; only used when Port Size is 16bit(PORTSZ=01b)."
       bit_offset: 3
@@ -301,6 +306,7 @@ fieldset/SDRCTRL0:
       description: Burst Length 000b - 1 001b - 2 010b - 4 011b - 8 100b - 8 101b - 8 110b - 8 111b - 8.
       bit_offset: 4
       bit_size: 3
+      enum: BURST_LEN
     - name: COL8
       description: Column 8 selection bit 0b - Column address bit number is decided by COL field. 1b - Column address bit number is 8. COL field is ignored.
       bit_offset: 7
@@ -309,10 +315,12 @@ fieldset/SDRCTRL0:
       description: Column address bit number 00b - 12 bit 01b - 11 bit 10b - 10 bit 11b - 9 bit.
       bit_offset: 8
       bit_size: 2
+      enum: COL_BITS
     - name: CAS
       description: CAS Latency 00b - 1 01b - 1 10b - 2 11b - 3.
       bit_offset: 10
       bit_size: 2
+      enum: CAS
     - name: BANK2
       description: 2 Bank selection bit 0b - SDRAM device has 4 banks. 1b - SDRAM device has 2 banks.
       bit_offset: 14
@@ -393,10 +401,12 @@ fieldset/SRCTRL0:
       description: port size 0b - 8bit 1b - 16bit.
       bit_offset: 0
       bit_size: 1
+      enum: SRAM_PORT_SIZE
     - name: ADM
       description: address data mode 00b - address and data MUX mode 11b - address and data non-MUX mode.
       bit_offset: 8
       bit_size: 2
+      enum: ADDRESS_DATA_MUX
     - name: ADVP
       description: ADV polarity 0b - ADV is active low 1b - ADV is active high.
       bit_offset: 10
@@ -447,3 +457,195 @@ fieldset/STAT0:
       description: Indicating whether it is in IDLE state. When IDLE=1, it is in IDLE state. There is no pending AXI command in internal queue and no pending device access.
       bit_offset: 0
       bit_size: 1
+enum/MEMORY_SIZE:
+  description: Memory size.
+  bit_size: 5
+  variants:
+    - name: _4KB
+      description: 4KB
+      value: 0
+    - name: _8KB
+      description: 8KB
+      value: 1
+    - name: _16KB
+      description: 16KB
+      value: 0b10
+    - name: _32KB
+      description: 32KB
+      value: 0b11
+    - name: _64KB
+      description: 64KB
+      value: 0b100
+    - name: _128KB
+      description: 128KB
+      value: 0b101
+    - name: _256KB
+      description: 256KB
+      value: 0b110
+    - name: _512KB
+      description: 512KB
+      value: 0b111
+    - name: _1MB
+      description: 1MB
+      value: 0b1000
+    - name: _2MB
+      description: 2MB
+      value: 0b1001
+    - name: _4MB
+      description: 4MB
+      value: 0b1010
+    - name: _8MB
+      description: 8MB
+      value: 0b1011
+    - name: _16MB
+      description: 16MB
+      value: 0b1100
+    - name: _32MB
+      description: 32MB
+      value: 0b1101
+    - name: _64MB
+      description: 64MB
+      value: 0b1110
+    - name: _128MB
+      description: 128MB
+      value: 0b1111
+    - name: _256MB
+      description: 256MB
+      value: 0b10000
+    - name: _512MB
+      description: 512MB
+      value: 0b10001
+    - name: _1GB
+      description: 1GB
+      value: 0b10010
+    - name: _2GB
+      description: 2GB
+      value: 0b10011
+    - name: _4GB
+      description: 4GB
+      value: 0b10100
+enum/SDRAM_PORT_SIZE:
+  description: Port Size.
+  bit_size: 2
+  variants:
+    - name: _8BIT
+      description: 8bit
+      value: 0
+    - name: _16BIT
+      description: 16bit
+      value: 1
+    - name: _32BIT
+      description: 32bit
+      value: 2
+enum/SRAM_PORT_SIZE:
+  description: port size.
+  bit_size: 1
+  variants:
+    - name: _8BIT
+      description: 8bit
+      value: 0
+    - name: _16BIT
+      description: 16bit
+      value: 1
+enum/ADDRESS_DATA_MUX:
+  description: address data mode.
+  bit_size: 2
+  variants:
+    - name: MUX
+      description: address and data MUX mode
+      value: 0
+    - name: NONE
+      description: address and data non-MUX mode
+      value: 3
+enum/DATA_SIZE:
+  description: Data Size.
+  bit_size: 3
+  variants:
+    - name: _8BIT
+      description: 4
+      value: 0b001
+    - name: _16BIT
+      description: 1
+      value: 0b010
+    - name: _24BIT
+      description: 2
+      value: 0b011
+    - name: _32BIT
+      description: 3
+      value: 0b100
+enum/CMD:
+  description: SDRAM Commands.
+  bit_size: 16
+  variants:
+    - name: READ
+      description: READ
+      value: 0x8
+    - name: WRITE
+      description: WRITE
+      value: 0x9
+    - name: MODESET
+      description: MODESET
+      value: 0xA
+    - name: ACTIVE
+      description: ACTIVE
+      value: 0xB
+    - name: AUTO_REFRESH
+      description: AUTO REFRESH
+      value: 0xC
+    - name: SELF_REFRESH
+      description: SELF REFRESH
+      value: 0xD
+    - name: PRECHARGE
+      description: PRECHARGE
+      value: 0xE
+    - name: PRECHARGE_ALL
+      description: PRECHARGE ALL
+      value: 0xF
+enum/BURST_LEN:
+  description: Burst Length.
+  bit_size: 3
+  variants:
+    - name: _1
+      value: 0b000
+    - name: _2
+      value: 0b001
+    - name: _4
+      value: 0b010
+    - name: _8
+      value: 0b011
+enum/COL_BITS:
+  description: Column address bit number.
+  bit_size: 2
+  variants:
+    - name: _12BIT
+      description: 12 bit
+      value: 0
+    - name: _11BIT
+      description: 11 bit
+      value: 1
+    - name: _10BIT
+      description: 10 bit
+      value: 2
+    - name: _9BIT
+      description: 9 bit
+      value: 3
+enum/CAS:
+  description: CAS Latency.
+  bit_size: 2
+  variants:
+    - name: _1
+      value: 0b00
+    - name: _2
+      value: 0b10
+    - name: _3
+      value: 0b11
+enum/IO_CSX:
+  description: IO_CSX output selection.
+  bit_size: 4
+  variants:
+    - name: SDRAM_CS1
+      description: SDRAM CS1
+      value: 0b0001
+    - name: SRAM_CE
+      description: SRAM CE#
+      value: 0b0110
