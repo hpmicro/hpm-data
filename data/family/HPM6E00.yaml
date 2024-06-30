@@ -35,7 +35,7 @@
   address: 0xF4100000
   registers:
     kind: ppor
-    version: v6e
+    version: v53
     block: PPOR
 
 # input output and alternate function
@@ -129,7 +129,7 @@
   address: 0xF300C000
   registers:
     kind: femc
-    version: v6e
+    version: common
     block: FEMC
 
 - name: PPI
