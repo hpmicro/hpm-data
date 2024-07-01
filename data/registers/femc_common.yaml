@@ -180,6 +180,7 @@ fieldset/CTRL:
       description: DQS (read strobe) mode 0b - Dummy read strobe loopbacked internally 1b - Dummy read strobe loopbacked from DQS pad.
       bit_offset: 2
       bit_size: 1
+      enum: DQS
     - name: CTO
       description: Command Execution timeout cycles When Command Execution time exceed this timeout cycles, IPCMDERR or AXICMDERR interrupt is generated. When CTO is set to zero, timeout cycle is 256*1024 cycle. otherwisee timeout cycle is CTO*1024 cycle.
       bit_offset: 16
@@ -264,7 +265,7 @@ fieldset/IPCMD:
       description: "SDRAM Commands: • 0x8: READ • 0x9: WRITE • 0xA: MODESET • 0xB: ACTIVE • 0xC: AUTO REFRESH • 0xD: SELF REFRESH • 0xE: PRECHARGE • 0xF: PRECHARGE ALL • Others: RSVD NOTE: SELF REFRESH is sent to all SDRAM devices because they shared same CLK pin."
       bit_offset: 0
       bit_size: 16
-      enum: CMD
+      enum: SDRAM_CMD
     - name: KEY
       description: This field should be written with 0x5AA5 when trigging an IP command for all device types. The memory device is selected by BRx settings and IPCR0 registers.
       bit_offset: 16
@@ -307,20 +308,25 @@ fieldset/SDRCTRL0:
       bit_offset: 4
       bit_size: 3
       enum: BURST_LEN
-    - name: COL8
-      description: Column 8 selection bit 0b - Column address bit number is decided by COL field. 1b - Column address bit number is 8. COL field is ignored.
-      bit_offset: 7
-      bit_size: 1
+    #- name: COL8
+    #  description: Column 8 selection bit 0b - Column address bit number is decided by COL field. 1b - Column address bit number is 8. COL field is ignored.
+    #  bit_offset: 7
+    #  bit_size: 1
+    #- name: COL
+    #  description: Column address bit number 00b - 12 bit 01b - 11 bit 10b - 10 bit 11b - 9 bit.
+    #  bit_offset: 8
+    #  bit_size: 2
+    #  enum: COL_ADDR_BITS
     - name: COL
-      description: Column address bit number 00b - 12 bit 01b - 11 bit 10b - 10 bit 11b - 9 bit.
-      bit_offset: 8
-      bit_size: 2
-      enum: COL_BITS
+      description: Merged COL and COL8 register
+      bit_offset: 7
+      bit_size: 3
+      enum: COL_ADDR_BITS
     - name: CAS
       description: CAS Latency 00b - 1 01b - 1 10b - 2 11b - 3.
       bit_offset: 10
       bit_size: 2
-      enum: CAS
+      enum: CAS_LATENCY
     - name: BANK2
       description: 2 Bank selection bit 0b - SDRAM device has 4 banks. 1b - SDRAM device has 2 banks.
       bit_offset: 14
@@ -559,22 +565,19 @@ enum/ADDRESS_DATA_MUX:
       description: address and data non-MUX mode
       value: 3
 enum/DATA_SIZE:
-  description: Data Size.
+  description: Data Size. 000b - 4 001b - 1 010b - 2 011b - 3 100b - 4 101b - 4 110b - 4 111b - 4.
   bit_size: 3
   variants:
     - name: _8BIT
-      description: 4
       value: 0b001
     - name: _16BIT
-      description: 1
       value: 0b010
     - name: _24BIT
-      description: 2
       value: 0b011
     - name: _32BIT
-      description: 3
+      description: 32bit, and other variants
       value: 0b100
-enum/CMD:
+enum/SDRAM_CMD:
   description: SDRAM Commands.
   bit_size: 16
   variants:
@@ -584,8 +587,8 @@ enum/CMD:
     - name: WRITE
       description: WRITE
       value: 0x9
-    - name: MODESET
-      description: MODESET
+    - name: MODE_SET
+      description: MODE_SET
       value: 0xA
     - name: ACTIVE
       description: ACTIVE
@@ -614,23 +617,26 @@ enum/BURST_LEN:
       value: 0b010
     - name: _8
       value: 0b011
-enum/COL_BITS:
-  description: Column address bit number.
-  bit_size: 2
+enum/COL_ADDR_BITS:
+  description: Column address bit number. merged with COL8
+  bit_size: 3
   variants:
     - name: _12BIT
       description: 12 bit
-      value: 0
+      value: 0b000
     - name: _11BIT
       description: 11 bit
-      value: 1
+      value: 0b010
     - name: _10BIT
       description: 10 bit
-      value: 2
+      value: 0b100
     - name: _9BIT
       description: 9 bit
-      value: 3
-enum/CAS:
+      value: 0b110
+    - name: _8BIT
+      description: 8 bit (COL8)
+      value: 0b001
+enum/CAS_LATENCY:
   description: CAS Latency.
   bit_size: 2
   variants:
@@ -659,4 +665,14 @@ enum/BANK2_SEL:
       value: 0
     - name: BANK_NUM_2
       description: SDRAM device has 2 banks
+      value: 1
+enum/DQS:
+  description: DQS (read strobe) mode.
+  bit_size: 1
+  variants:
+    - name: INTERNAL
+      description: Dummy read strobe loopbacked internally
+      value: 0
+    - name: FROM_PAD
+      description: Dummy read strobe loopbacked from DQS pad
       value: 1
