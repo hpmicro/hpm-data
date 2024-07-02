@@ -333,6 +333,7 @@ fieldset/CNT_cfg0:
       description: "define when to use the calculation output value as reload time 00: software set work_ctrl1.shadow_lock bit 01: use compare point selected by rld_cmp_sel0 or rld_cmp_sel1 10: counter reload time 11: use rld_trig_sel to select one of the input trigger NOTE: 00 is not recommended since the update time is not controllable, may cause error in complex application."
       bit_offset: 8
       bit_size: 2
+      enum: RELOAD_UPDATE_TRIGGER
     - name: RLD_TRIG_SEL
       description: select one trigger from 8, should set to pulse in trig_mux.
       bit_offset: 12
@@ -394,6 +395,7 @@ fieldset/PWM_cfg0:
       description: "used when polarity_opt0 is set, define when to update polarity working register. 0: software set work_ctrl1.shadow_lock bit 1: update at reload point;."
       bit_offset: 2
       bit_size: 1
+      enum: SHADOW_OUTPUT_POLARITY
     - name: FAULT_EN_SYNC
       description: set to enable the input faults from trig_mux(trigger_in[0] for channel0/1, 1 for 23, 2 for 45, 3 for 67).
       bit_offset: 4
@@ -437,10 +439,12 @@ fieldset/PWM_cfg1:
       description: "00: force immediately 01: force at main counter reload time 10: force at trig signal selected by force_act_sel 11: no force the force assert/deassert will happen at the force_time; qeo force and value also latched at this time."
       bit_offset: 16
       bit_size: 2
+      enum: FORCE_TRIGGER
     - name: PWM_LOGIC
       description: "valid only for pwm0/2/4/6 when trig_sel4 is set 00: ab OR cd; 01: ab AND cd; 10: ab XOR cd; 11: cd."
       bit_offset: 18
       bit_size: 2
+      enum: PWM_LOGIC
     - name: PAIR_MODE
       description: if set to 1, PWM work at pair mode, pwm_cfg for channel 2m is used for channel 2m+1(m=0,1,2,3), except the dead area, which is separate for each channel even in pair mode software need set this bit for both channel of one pair, otherwise result unknown.
       bit_offset: 20
@@ -453,14 +457,17 @@ fieldset/PWM_cfg1:
       description: "00: immediately 01: after main counter reload time 10: use fault_rec_sel to select one of the input trigger 11: software write fault_clear in glb_ctrl2, no effort if pwm_fault is still assert."
       bit_offset: 22
       bit_size: 2
+      enum: FAULT_RECOVERY_TRIGGER
     - name: FAULT_MODE
       description: "00: force output 0 01: force output 1 1x: output highz(pad_oe_*=0)."
       bit_offset: 24
       bit_size: 2
+      enum: FAULT_MODE
     - name: FORCE_UPDATE_TIME
       description: "define when to use the shadow register value for working register(force_mode) 00: software set work_ctrl1.shadow_lock bit 01: use the related counter rld_cmp_sel0 and rld_cmp_sel1, to select one compare point 10: related counter reload time(selected by pwm_cnt) 11: use force_trig_sel to select one of the input trigger NOTE: 00/01 are not recommended since the update time is not controllable, may cause error in complex application. 00 is used for initialization or debug, not suggest for real time update."
       bit_offset: 26
       bit_size: 2
+      enum: FORCE_SHADOW_UPDATE_TRIGGER
     - name: HIGHZ_EN_N
       description: 0 to highz pwm outputs(pad_oe*=0), software need set this bit to 1 to enable pwm output.
       bit_offset: 28
@@ -490,10 +497,12 @@ fieldset/cfg:
       description: 0x00~0x1B select one of the shadow_val directly 0x20~0x2F select one of the calculation cell output 0x30~0x37 select one of capture_pos value(low 8bit are 0) 0x38+k select T/4 0x3E select 0xFFFFF000 0x3F select 0xFFFFFF00 others select 0.
       bit_offset: 16
       bit_size: 6
+      enum: CMP_SOURCE
     - name: CMP_UPDATE_TIME
       description: "define when to use the shadow register value for working register(trig_cmp) 000: software set work_ctrl1.shadow_lock bit 001: update immediately(at next cycle) 010: related counter reload time 011: use cmp_update_trigger(from trig_mux, selected by cmp_trig_sel) 100: use the related counter rld_cmp_sel0 to select one compare point 101: use the related counter rld_cmp_sel1, to select one compare point 11x: reserved, no update."
       bit_offset: 24
       bit_size: 3
+      enum: CMP_SHADOW_UPDATE_TRIGGER
     - name: CMP_TRIG_SEL
       description: select one trigger from 8, should set to pulse in trig_mux.
       bit_offset: 28
@@ -611,22 +620,36 @@ fieldset/force_mode:
     - name: FORCE_MODE
       description: "2bit for each PWM channel(0~7); 00: force output 0 01: force output 1 10: output highz(pad_oe_*=0) 11: no force this field may be changed by software as shadow register , the update time should be defined by chan_cfg.load, only for PWM channels."
       bit_offset: 0
-      bit_size: 16
+      bit_size: 2
+      array:
+        len: 8
+        stride: 2
+      enum: FORCE_MODE
     - name: POLARITY
       description: one bit for one pwm channel, it's used as shadow register when pwm_cfg0.polarity_opt0 is set. output polarity, set to 1 will invert the output(after pwm selection, pair mode, dead area insertion, before force/fault).
       bit_offset: 16
-      bit_size: 8
+      bit_size: 1
+      array:
+        len: 8
+        stride: 1
 fieldset/force_work:
   description: No description available.
   fields:
     - name: FORCE_MODE
       description: force_mode work register.
       bit_offset: 0
-      bit_size: 16
+      bit_size: 2
+      array:
+        len: 8
+        stride: 2
+      enum: FORCE_MODE
     - name: OUT_POLARITY
       description: force working register.
       bit_offset: 16
-      bit_size: 8
+      bit_size: 1
+      array:
+        len: 8
+        stride: 1
 fieldset/glb_ctrl:
   description: No description available.
   fields:
@@ -808,3 +831,166 @@ fieldset/work_ctrl1:
       description: one to lock, sofware can't write any shadow registers Software have to write 0x…. to work_ctrl0 to clear this bit.
       bit_offset: 31
       bit_size: 1
+enum/RELOAD_UPDATE_TRIGGER:
+  bit_size: 2
+  description: define when to use the calculation output value as reload time
+  variants:
+    - name: ON_SHLK
+      description: software set work_ctrl1.shadow_lock bit
+      value: 0
+    - name: ON_COMPARE_POINT
+      description: use compare point selected by rld_cmp_sel0 or rld_cmp_sel1
+      value: 1
+    - name: ON_RELOAD
+      description: counter reload time
+      value: 2
+    - name: ON_TRIGGER
+      description: use rld_trig_sel to select one of the input trigger
+      value: 3
+enum/CMP_SHADOW_UPDATE_TRIGGER:
+  bit_size: 3
+  description: define when to use the shadow register value for working register(trig_cmp)
+  variants:
+    - name: ON_SHLK
+      description: software set work_ctrl1.shadow_lock bit
+      value: 0
+    - name: ON_MODIFY
+      description: update immediately(at next cycle)
+      value: 1
+    - name: ON_RELOAD
+      description: related counter reload time
+      value: 2
+    - name: ON_TRIGMUX
+      description: use cmp_update_trigger(from trig_mux, selected by cmp_trig_sel)
+      value: 3
+    - name: ON_RLD_CMP_SEL0
+      description: use the related counter rld_cmp_sel0 to select one compare point
+      value: 4
+    - name: ON_RLD_CMP_SEL1
+      description: use the related counter rld_cmp_sel1, to select one compare point
+      value: 5
+    - name: NONE
+      description: reserved, no update
+      value: 6
+enum/CMP_SOURCE:
+  bit_size: 6
+  description: select one of the calculation cell output
+  variants:
+    - name: SHADOW_VAL
+      value: 0
+    - name: CALCULATE
+      value: 0x20
+    - name: CAPTURE_POS
+      value: 0x30
+    - name: COUNTERS
+      description: select T/4
+      value: 0x38
+    - name: _0xFFFFF000
+      description: select 0xFFFFF000
+      value: 0x3e
+    - name: _0xFFFFFF00
+      description: select 0xFFFFFF00
+      value: 0x3F
+enum/FORCE_TRIGGER:
+  bit_size: 2
+  description: define when to use the shadow register value for working register(force_mode)
+  variants:
+    - name: IMMEDIATELY
+      description: force immediately
+      value: 0
+    - name: ON_RELOAD
+      description: force at main counter reload time
+      value: 1
+    - name: ON_TRIGMUX
+      description: force at trig signal selected by force_act_sel
+      value: 2
+    - name: NNONE
+      description: no force the force assert/deassert will happen at the force_time; qeo force and value also latched at this time
+      value: 3
+enum/FORCE_SHADOW_UPDATE_TRIGGER:
+  bit_size: 2
+  description: define when to use the shadow register value for working register(force_mode)
+  variants:
+    - name: IMMEDIATELY
+      description: software set work_ctrl1.shadow_lock bit
+      value: 0
+    - name: ON_CMP_POINT
+      description: related counter reload time(selected by pwm_cnt)
+      value: 1
+    - name: ON_RELOAD
+      description: use the related counter rld_cmp_sel0 and rld_cmp_sel1, to select one compare point
+      value: 2
+    - name: NONE
+      description: after SHSYNCI assert
+      value: 3
+enum/FAULT_RECOVERY_TRIGGER:
+  bit_size: 2
+  description: define when to use the shadow register value for working register(force_mode)
+  variants:
+    - name: IMMEDIATELY
+      description: immediately
+      value: 0
+    - name: ON_RELOAD
+      description: after main counter reload time
+      value: 1
+    - name: ON_HW_EVENT
+      description: after hardware event assert
+      value: 2
+    - name: ON_FAULT_CLEAR
+      description: after software write faultclr bit in GCR register
+      value: 3
+enum/PWM_LOGIC:
+  bit_size: 2
+  description: valid only for pwm0/2/4/6 when trig_sel4 is set
+  variants:
+    - name: AB_OR_CD
+      description: ab OR cd
+      value: 0
+    - name: AB_AND_CD
+      description: ab AND cd
+      value: 1
+    - name: AB_XOR_CD
+      description: ab XOR cd
+      value: 2
+    - name: CD
+      description: cd
+      value: 3
+enum/SHADOW_OUTPUT_POLARITY:
+  bit_size: 1
+  description: used when polarity_opt0 is set
+  variants:
+    - name: ON_SHLK
+      description: software set work_ctrl1.shadow_lock bit
+      value: 0
+    - name: ON_RELOAD
+      description: update at reload point
+      value: 1
+enum/FORCE_MODE:
+  bit_size: 2
+  description: "00: force output 0 01: force output 1 1x: output highz(pad_oe_*=0)"
+  variants:
+    - name: _0
+      description: force output 0
+      value: 0
+    - name: _1
+      description: force output 1
+      value: 1
+    - name: HIGH_Z
+      description: output highz(pad_oe_*=0)
+      value: 2
+    - name: NO_FORCE
+      description: no force
+      value: 3
+enum/FAULT_MODE:
+  bit_size: 2
+  description: "00: force output 0 01: force output 1 1x: output highz(pad_oe_*=0)"
+  variants:
+    - name: _0
+      description: force output 0
+      value: 0
+    - name: _1
+      description: force output 1
+      value: 1
+    - name: HIGH_Z
+      description: output highz(pad_oe_*=0)
+      value: 2

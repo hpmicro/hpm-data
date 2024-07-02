@@ -150,6 +150,7 @@ fieldset/CMPCFG:
       description: "This bitfield select when the comparator shadow register will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
       bit_offset: 2
       bit_size: 2
+      enum: SHADOW_UPDATE_TRIGGER
     - name: XCNTCMPEN
       description: This bitfield enable the comparator to compare xcmp with xcnt.
       bit_offset: 4
@@ -181,6 +182,7 @@ fieldset/PWMCFG:
       description: "This bitfield select when the FRCMD shadow register will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
       bit_offset: 26
       bit_size: 2
+      enum: SHADOW_UPDATE_TRIGGER
     - name: OEN
       description: PWM output enable 1- output is enabled 0- output is disabled.
       bit_offset: 28
@@ -365,6 +367,7 @@ fieldset/shcr:
       description: "This bitfield select when the counter related shadow registers (STA and RLD) will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
       bit_offset: 1
       bit_size: 2
+      enum: SHADOW_UPDATE_TRIGGER
     - name: CNTSHDWSEL
       description: This bitfield select one of the comparators as hardware event time to load the counter related shadow registers (STA and RLD).
       bit_offset: 3
@@ -421,3 +424,19 @@ fieldset/unlk:
       description: write 0xB0382607 to unlock the shadow registers of register offset from 0x04 to 0x78, otherwise the shadow registers can not be written.
       bit_offset: 0
       bit_size: 32
+enum/SHADOW_UPDATE_TRIGGER:
+  description: no description available.
+  bit_size: 2
+  variants:
+    - name: ON_SHLK
+      description: after software set shlk bit of shlk register
+      value: 0
+    - name: ON_MODIFY
+      description: immediately after the register being modified
+      value: 1
+    - name: ON_HW_EVENT
+      description: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode.
+      value: 2
+    - name: ON_SHSYNCI
+      description: after SHSYNCI assert.
+      value: 3
