@@ -2,13 +2,13 @@ name: HPM5321
 family: HPM5300 Series
 sub_family: HPM5300, Single-core, Communication
 packages:
-  - name: HPM5321xCB
+  - name: HPM5321xCBx
     package: LQFP100
     pins: 100
-  - name: HPM5321xCF
+  - name: HPM5321xCFx
     package: LQFP64
     pins: 64
-  - name: HPM5321xEG
+  - name: HPM5321xEGx
     package: QFN48
     pins: 48
 memory:

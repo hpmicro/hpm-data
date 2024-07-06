@@ -2,10 +2,10 @@ name: HPM6730
 family: HPM6700/6400 Series
 sub_family: HPM6700, Dual-core
 packages:
-  - name: HPM6730xAN
+  - name: HPM6730xANx
     package: BGA196
     pins: 196
-  - name: HPM6730xVM
+  - name: HPM6730xVMx
     package: BGA289
     pins: 289
 memory:

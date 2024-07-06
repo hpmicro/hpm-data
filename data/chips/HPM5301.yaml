@@ -2,7 +2,7 @@ name: HPM5301
 family: HPM5300 Series
 sub_family: HPM5300, Single-core, Basic
 packages:
-  - name: HPM5301xEG
+  - name: HPM5301xEGx
     package: QFN48
     pins: 48
 memory:

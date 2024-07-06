@@ -2,10 +2,10 @@ name: HPM6260
 family: HPM6200 Series
 sub_family: HPM6200, Single-core, Full Featured
 packages:
-  - name: HPM6260xEP
+  - name: HPM6260xEPx
     package: BGA116
     pins: 116
-  - name: HPM6260xPA
+  - name: HPM6260xPAx
     package: LQFP144
     pins: 144
 memory:

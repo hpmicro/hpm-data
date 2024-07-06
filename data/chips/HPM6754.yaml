@@ -2,10 +2,10 @@ name: HPM6754
 family: HPM6700/6400 Series
 sub_family: HPM6700, Dual-core
 packages:
-  - name: HPM6754xAN
+  - name: HPM6754xANx
     package: BGA196
     pins: 196
-  - name: HPM6754xVM
+  - name: HPM6754xVMx
     package: BGA289
     pins: 289
 memory:

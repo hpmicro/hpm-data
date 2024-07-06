@@ -2,7 +2,7 @@ name: HPM6330
 family: HPM6300 Series
 sub_family: HPM6300, Basic Enhanced
 packages:
-  - name: HPM6330-LQFP80
+  - name: HPM6330xCEx
     package: LQFP80
     pins: 80
 memory:

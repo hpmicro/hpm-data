@@ -2,13 +2,13 @@ name: HPM5361
 family: HPM5300 Series
 sub_family: HPM5300, Single-core, Full Featured
 packages:
-  - name: HPM5361xCB
+  - name: HPM5361xCBx
     package: LQFP100
     pins: 100
-  - name: HPM5361xCF
+  - name: HPM5361xCFx
     package: LQFP64
     pins: 64
-  - name: HPM5361xEG
+  - name: HPM5361xEGx
     package: QFN48
     pins: 48
 memory:

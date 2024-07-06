@@ -2,10 +2,10 @@ name: HPM6450
 family: HPM6700/6400 Series
 sub_family: HPM6400, Single-core
 packages:
-  - name: HPM6450xAN
+  - name: HPM6450xANx
     package: BGA196
     pins: 196
-  - name: HPM6450xVM
+  - name: HPM6450xVMx
     package: BGA289
     pins: 289
 memory:

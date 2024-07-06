@@ -3,10 +3,10 @@ family: HPM6700/6400 Series
 sub_family: HPM6400, Single-core, 1GHz
 packages:
   # C- -40- 85°C
-  - name: HPM64G0xAN
+  - name: HPM64G0xANx
     package: BGA196-P0.65-10x10
     pins: 196
-  - name: HPM64G0xVM
+  - name: HPM64G0xVMx
     package: BGA289-P0.8-14x14
     pins: 289
 memory:

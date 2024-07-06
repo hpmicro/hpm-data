@@ -2,10 +2,7 @@ name: HPM6830
 family: HPM6800 Series
 sub_family: HPM6800, Basic
 packages:
-  - name: HPM6830-BGA289
-    package: BGA289
-    pins: 289
-  - name: HPM6830xBD
+  - name: HPM6830xBDx
     package: BGA417
     pins: 417
 memory:

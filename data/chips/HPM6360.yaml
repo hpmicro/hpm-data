@@ -2,16 +2,16 @@ name: HPM6360
 family: HPM6300 Series
 sub_family: HPM6300, Full Featured
 packages:
-  - name: HPM6360xEP
+  - name: HPM6360xEPx
     package: BGA116
     pins: 116
-  - name: HPM6360xDC
+  - name: HPM6360xDCx
     package: BGA172
     pins: 172
-  - name: HPM6360xCB
+  - name: HPM6360xCBx
     package: LQFP100
     pins: 100
-  - name: HPM6360xPA
+  - name: HPM6360xPAx
     package: LQFP144
     pins: 144
 memory:

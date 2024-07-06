@@ -2,10 +2,10 @@ name: HPM6340
 family: HPM6300 Series
 sub_family: HPM6300, No USB, No Ethernet
 packages:
-  - name: HPM6340xEP
+  - name: HPM6340xEPx
     package: BGA116
     pins: 116
-  - name: HPM6340xPA
+  - name: HPM6340xPAx
     package: LQFP144
     pins: 144
 memory:

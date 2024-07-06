@@ -2,10 +2,10 @@ name: HPM6320
 family: HPM6300 Series
 sub_family: HPM6300, Basic
 packages:
-  - name: HPM6320xEP
+  - name: HPM6320xEPx
     package: BGA116
     pins: 116
-  - name: HPM6320xPA
+  - name: HPM6320xPAx
     package: LQFP144
     pins: 144
 memory:

@@ -2,10 +2,10 @@ name: HPM6E60
 family: HPM6E00 Series
 sub_family: HPM6E00, Single-core
 packages:
-  - name: HPM6E60xGN
+  - name: HPM6E60xGNx
     package: BGA196
     pins: 196
-  - name: HPM6E60xVM
+  - name: HPM6E60xVMx
     package: BGA289
     pins: 289
 memory:
