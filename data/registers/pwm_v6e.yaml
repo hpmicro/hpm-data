@@ -479,6 +479,14 @@ fieldset/SHADOW_VAL:
       description: shadow registers, if used as reload or compare point, shall be 24bit clock cycles plus 1bit half cycle and 7bit high-resolution delay.
       bit_offset: 0
       bit_size: 32
+    - name: INT
+      description: Integer part of the shadow value.
+      bit_offset: 8
+      bit_size: 24
+    - name: FRAC
+      description: Fractional part of the shadow value.
+      bit_offset: 0
+      bit_size: 8
 fieldset/TRIGGER_CFG:
   description: no description available.
   fields:
