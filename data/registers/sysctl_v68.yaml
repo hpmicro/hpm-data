@@ -363,6 +363,7 @@ fieldset/LP:
       description: "Low power mode, system behavior after WFI 00: CPU clock stop after WFI 01: System enter low power mode after WFI 10: Keep running after WFI 11: reserved."
       bit_offset: 0
       bit_size: 2
+      enum: LP_MODE
     - name: RESET_FLAG
       description: "CPU0 reset flag, indicate a reset event got active, write 1 to clear this bit 0: CPU0 reset not happened 1: CPU0 reset happened."
       bit_offset: 8
@@ -626,6 +627,16 @@ enum/CLOCK_MUX:
     - name: PLL4CLK0
       description: Defaults to 594MHz
       value: 7
+enum/LP_MODE:
+  description: In low power mode, the behavior after setting CPU WFI
+  bit_size: 2
+  variants:
+    - name: WAIT
+      value: 0
+    - name: STOP
+      value: 1
+    - name: RUN
+      value: 2
 enum/MONITOR_SELECTION:
   description: no description available.
   bit_size: 8
