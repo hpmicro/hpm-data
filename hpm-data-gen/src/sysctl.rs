@@ -84,7 +84,7 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
     let clock_top_pattern =
         regex::Regex::new(r"#define\s+SYSCTL_CLOCK_CLK_TOP_(\w+)\s+\((\d+)UL\)")
             .expect("Invalid regex");
-    let clocks: HashMap<String, u32> = clock_top_pattern
+    let mut clocks: HashMap<String, u32> = clock_top_pattern
         .captures_iter(&content)
         .map(|cap| {
             (
@@ -93,6 +93,13 @@ pub fn add_sysctl_from_sdk<P: AsRef<Path>>(
             )
         })
         .collect();
+
+    // Fix: `#define SYSCTL_CLOCK_CLK_TOP_MCHTMR (3UL)`
+    if chip_name.starts_with("HPM67") || chip_name.starts_with("HPM64") {
+        if let Some(i) = clocks.remove("MCHTMR") {
+            clocks.insert("MCHTMR1".to_string(), i);
+        }
+    }
 
     // println!("clocks: {:#?}", clocks);
 
