@@ -2,10 +2,10 @@ name: HPM6E70
 family: HPM6E00 Series
 sub_family: HPM6E00, Dual-core
 packages:
-  - name: HPM6E70xGN
+  - name: HPM6E70xGNx
     package: BGA196
     pins: 196
-  - name: HPM6E70xVM
+  - name: HPM6E70xVMx
     package: BGA289
     pins: 289
 memory:

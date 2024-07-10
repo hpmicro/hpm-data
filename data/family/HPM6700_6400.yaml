@@ -359,6 +359,55 @@
     kind: uart
     version: v67
     block: UART
+# UART8-15
+- name: UART8
+  address: 0xF0060000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART9
+  address: 0xF0064000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART10
+  address: 0xF0068000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART11
+  address: 0xF006C000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART12
+  address: 0xF0070000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART13
+  address: 0xF0074000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART14
+  address: 0xF0078000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
+- name: UART15
+  address: 0xF007C000
+  registers:
+    kind: uart
+    version: v67
+    block: UART
 
 - name: PUART
   address: 0xF40E4000
