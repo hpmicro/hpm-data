@@ -32,6 +32,10 @@ fn match_peripheral_name(chip_name: &str, sdk_name: &str, periph_name: &str) -> 
         pname = pname.replace("CAN", "MCAN")
     }
 
+    if chip_name.starts_with("HPM63") {
+        pname = pname.replace("DMA0", "HDMA").replace("DMA1", "XDMA");
+    }
+
     pname == periph_name
 }
 
