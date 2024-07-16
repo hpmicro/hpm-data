@@ -64,16 +64,30 @@ fn get_pmic_periph_and_func(func: &str) -> Option<(String, String)> {
     }
 }
 
+fn convert_acmp_func(instance: &str, func: &str) -> String {
+    if func.contains("_") && func.starts_with("CMP") {
+        func.to_string()
+    } else if !func.contains("_") && instance.starts_with("ACMP") {
+        // for 6E00
+        let inst_no: u32 = instance[4..].parse::<u32>().unwrap();
+        format!("CMP{}_{}", inst_no, func)
+    } else {
+        panic!("Unknown ACMP func: {}", func);
+    }
+}
+
 pub fn handle_pinmux<P: AsRef<Path>>(
     path: P,
     chip: &mut hpm_data_serde::Chip,
 ) -> anyhow::Result<()> {
-    let data = std::fs::read_to_string(path)?;
+    let data = std::fs::read_to_string(&path)?;
     let pinmux: PinmuxRaw = serde_json::from_str(&data)?;
+
+    let chip_name = &chip.name;
 
     let pins = pinmux.data;
 
-    // println!("Found {} pins", pins.len());
+    println!("Found {} pins", path.as_ref().display());
 
     // peripheral_name, signal_name, pin_name, alt_num
     let mut pinmux_alt_defs: HashSet<(String, String, String, u32)> = HashSet::new();
@@ -90,7 +104,40 @@ pub fn handle_pinmux<P: AsRef<Path>>(
                 ));
             }
         }
-        // TODO: handle ANALOGS
+
+        //  Analog peripherals
+        if pin.specials.contains_key("ANALOGS") {
+            for (_name, alt_def) in &pin.specials["ANALOGS"] {
+                // ADC0, ADC1, ADC3
+                if alt_def.instance.starts_with("ADC") {
+                    let periph = alt_def.instance.to_string();
+                    // "INA0" => "IN0"
+                    // HPM6750's ADC12 (ADC0, ADC1, ADC2) supports differential input: VINP, VINN
+                    let mut signal_name = alt_def
+                        .func
+                        .replace("VINP", "INP")
+                        .replace("VINN", "INN")
+                        .replace("INA", "IN")
+                        .to_string();
+                    // IN01 => IN1
+                    if signal_name.len() == 4 && signal_name.starts_with("0") {
+                        signal_name = signal_name.replace("IN0", "IN");
+                    }
+                    pinmux_alt_defs.insert((periph, signal_name, pin.name.clone(), 0));
+                } else if alt_def.instance.starts_with("DAC") {
+                    let periph = alt_def.instance.to_string();
+                    let signal_name = alt_def.func.to_string(); // OUT
+
+                    pinmux_alt_defs.insert((periph, signal_name, pin.name.clone(), 0));
+                } else if alt_def.instance.starts_with("ACMP") {
+                    let periph = alt_def.instance.to_string();
+                    let signal_name = convert_acmp_func(&periph, &alt_def.func);
+
+                    pinmux_alt_defs.insert((periph, signal_name, pin.name.clone(), 0));
+                }
+            }
+        }
+        // power domain peripherals
         if pin.specials.contains_key("PMIC") {
             for (_alt_name, alt_def) in &pin.specials["PMIC"] {
                 if let Some((periph, signal_name)) = get_pmic_periph_and_func(&alt_def.func) {
