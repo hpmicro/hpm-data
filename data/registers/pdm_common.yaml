@@ -118,6 +118,7 @@ fieldset/CIC_CFG:
       description: "Sigma_delta_order[1:0] 2'b00: 7 2'b01: 6 2'b10: 5 Others: unused."
       bit_offset: 8
       bit_size: 2
+      enum: SIGMA_DELTA_ORDER
     - name: POST_SCALE
       description: the shift value after CIC results.
       bit_offset: 10
@@ -268,3 +269,16 @@ fieldset/ST:
       description: data accessed out of boundary error.
       bit_offset: 3
       bit_size: 1
+enum/SIGMA_DELTA_ORDER:
+  description: Sigma delta order.
+  bit_size: 2
+  variants:
+    - name: _5
+      description: 5.
+      value: 2
+    - name: _6
+      description: 6.
+      value: 1
+    - name: _7
+      description: 7.
+      value: 0
