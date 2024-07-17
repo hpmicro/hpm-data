@@ -83,11 +83,7 @@ pub fn handle_pinmux<P: AsRef<Path>>(
     let data = std::fs::read_to_string(&path)?;
     let pinmux: PinmuxRaw = serde_json::from_str(&data)?;
 
-    let chip_name = &chip.name;
-
     let pins = pinmux.data;
-
-    println!("Found {} pins", path.as_ref().display());
 
     // peripheral_name, signal_name, pin_name, alt_num
     let mut pinmux_alt_defs: HashSet<(String, String, String, u32)> = HashSet::new();
@@ -108,18 +104,19 @@ pub fn handle_pinmux<P: AsRef<Path>>(
         //  Analog peripherals
         if pin.specials.contains_key("ANALOGS") {
             for (_name, alt_def) in &pin.specials["ANALOGS"] {
-                // ADC0, ADC1, ADC3
+                // ADC0, ADC1, ADC2, ADC3
                 if alt_def.instance.starts_with("ADC") {
                     let periph = alt_def.instance.to_string();
-                    // "INA0" => "IN0"
-                    // HPM6750's ADC12 (ADC0, ADC1, ADC2) supports differential input: VINP, VINN
+                    // Conversions:
+                    // - VINP => INP, VINN => INN (HPM6750's ADC12 (ADC0, ADC1, ADC2) supports differential input: VINP, VINN)
+                    // - INA0 => IN0
+                    // - IN01 => IN1
                     let mut signal_name = alt_def
                         .func
                         .replace("VINP", "INP")
                         .replace("VINN", "INN")
                         .replace("INA", "IN")
                         .to_string();
-                    // IN01 => IN1
                     if signal_name.len() == 4 && signal_name.starts_with("0") {
                         signal_name = signal_name.replace("IN0", "IN");
                     }
