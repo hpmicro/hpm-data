@@ -253,6 +253,7 @@ fieldset/ADCCLK:
       description: "clock source selection 0: ahb clock 1: adc clock 0 2: adc clock 1 3: adc clock 2."
       bit_offset: 8
       bit_size: 3
+      enum: ADC_CLK_MUX
     - name: LOC_BUSY
       description: "local busy 0: a change is pending for current node 1: current node is changing status."
       bit_offset: 30
@@ -870,3 +871,19 @@ enum/MONITOR_SELECTION:
       value: 193
     - name: CLK_TOP_SDXC1
       value: 194
+enum/ADC_CLK_MUX:
+  description: no description available.
+  bit_size: 3
+  variants:
+    - name: AHB
+      description: AHB clock
+      value: 0
+    - name: ADC0
+      description: ADC clock 0
+      value: 1
+    - name: ADC1
+      description: ADC clock 1
+      value: 2
+    - name: ADC2
+      description: ADC clock 2
+      value: 3

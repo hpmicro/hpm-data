@@ -241,6 +241,7 @@ fieldset/ADCCLK:
       description: "current mux 0: ana clock 1: ahb clock."
       bit_offset: 8
       bit_size: 1
+      enum: ANA_CLK_MUX
     - name: PRESERVE
       description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
       bit_offset: 28
@@ -346,6 +347,7 @@ fieldset/DACCLK:
       description: "current mux 0: ana clock 1: ahb clock."
       bit_offset: 8
       bit_size: 1
+      enum: ANA_CLK_MUX
     - name: PRESERVE
       description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
       bit_offset: 28
@@ -827,3 +829,11 @@ enum/SUB_DIV:
       value: 14
     - name: DIV16
       value: 15
+enum/ANA_CLK_MUX:
+  description: no description available.
+  bit_size: 1
+  variants:
+    - name: AHB
+      value: 0
+    - name: ANA
+      value: 1
