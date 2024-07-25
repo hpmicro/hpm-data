@@ -107,7 +107,6 @@ block/ADC:
         stride: 2
       byte_offset: 5120
       bit_size: 16
-      fieldset: ADC16_PARAMS
     - name: adc16_config0
       description: No description available.
       byte_offset: 5188
@@ -131,14 +130,6 @@ block/PRD_CFG:
       description: No description available.
       byte_offset: 8
       fieldset: prd_result
-fieldset/ADC16_PARAMS:
-  description: no description available.
-  bit_size: 16
-  fields:
-    - name: PARAM_VAL
-      description: No description available.
-      bit_offset: 0
-      bit_size: 16
 fieldset/BUS_RESULT:
   description: no description available.
   fields:
@@ -300,6 +291,7 @@ fieldset/conv_cfg1:
       description: "clock_period, N half clock cycle per half adc cycle 0 for same adc_clk and bus_clk, 1 for 1:2, 2 for 1:3, ... 15 for 1:16 Note: set to 2 can genenerate 66.7MHz adc_clk at 200MHz bus_clk."
       bit_offset: 0
       bit_size: 4
+      enum: CLOCK_DIVIDER
     - name: CONVERT_CLOCK_NUMBER
       description: "convert clock numbers, set to 21 (0x15) for 16bit mode, which means convert need 21 adc clock cycles(based on clock after divider); user can use small value to get faster conversion, but less accuracy, need to config cov_end_cnt at adc16_config1 also. Ex: use 200MHz bus clock for adc, set sample_clock_number to 4, sample_clock_number_shift to 0, covert_clk_number to 21 for 16bit mode, clock_divder to 3, then each ADC conversion(plus sample) need 25 cycles(50MHz)."
       bit_offset: 4
@@ -562,3 +554,39 @@ fieldset/trigmux_en:
       description: No description available.
       bit_offset: 24
       bit_size: 1
+enum/CLOCK_DIVIDER:
+  description: Clock divider.
+  bit_size: 4
+  variants:
+    - name: DIV1
+      value: 0
+    - name: DIV2
+      value: 1
+    - name: DIV3
+      value: 2
+    - name: DIV4
+      value: 3
+    - name: DIV5
+      value: 4
+    - name: DIV6
+      value: 5
+    - name: DIV7
+      value: 6
+    - name: DIV8
+      value: 7
+    - name: DIV9
+      value: 8
+    - name: DIV10
+      value: 9
+    - name: DIV11
+      value: 10
+    - name: DIV12
+      value: 11
+    - name: DIV13
+      value: 12
+    - name: DIV14
+      value: 13
+    - name: DIV15
+      value: 14
+    - name: DIV16
+      value: 15
