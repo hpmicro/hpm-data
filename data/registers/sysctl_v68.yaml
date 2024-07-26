@@ -334,6 +334,7 @@ fieldset/I2SCLK:
       description: "current mux 0: aud clock N 1: aud clock 0."
       bit_offset: 8
       bit_size: 1
+      enum: I2S_CLK_MUX
     - name: PRESERVE
       description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
       bit_offset: 28
@@ -808,5 +809,17 @@ enum/ANA_CLK_MUX:
   variants:
     - name: ANA
       value: 0
-    - name: AXI
+    # renamed from AXI(AXIS), for consistency with hpm_sdk
+    - name: AHB
+      description: AXI, AXIS
+      value: 1
+enum/I2S_CLK_MUX:
+  description: no description available.
+  bit_size: 1
+  variants:
+    - name: AUD
+      description: Using AUD clock N
+      value: 0
+    - name: AHB
+      description: Using AHB0
       value: 1

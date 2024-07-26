@@ -402,6 +402,7 @@ fieldset/I2SCLK:
       description: "current mux 0: aud clock 0 1: aud clock 1."
       bit_offset: 8
       bit_size: 1
+      enum: I2S_CLK_MUX
     - name: PRESERVE
       description: "preserve function against global select 0: select global clock setting 1: not select global clock setting."
       bit_offset: 28
@@ -836,4 +837,12 @@ enum/ANA_CLK_MUX:
     - name: AHB
       value: 0
     - name: ANA
+      value: 1
+enum/I2S_CLK_MUX:
+  description: no description available.
+  bit_size: 1
+  variants:
+    - name: AUD0
+      value: 0
+    - name: AUD1
       value: 1

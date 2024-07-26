@@ -253,7 +253,7 @@ fieldset/ADCCLK:
       description: "clock source selection 0: ahb clock 1: adc clock 0 2: adc clock 1 3: adc clock 2."
       bit_offset: 8
       bit_size: 3
-      enum: ADC_CLK_MUX
+      enum: ANA_CLK_MUX
     - name: LOC_BUSY
       description: "local busy 0: a change is pending for current node 1: current node is changing status."
       bit_offset: 30
@@ -380,6 +380,7 @@ fieldset/I2SCLK:
       description: "clock source selection 0: ahb clock 1: i2s clock 0 2: i2s clock 1 3: i2s clock 2."
       bit_offset: 8
       bit_size: 3
+      enum: I2S_CLK_MUX
     - name: LOC_BUSY
       description: "local busy 0: a change is pending for current node 1: current node is changing status."
       bit_offset: 30
@@ -871,19 +872,36 @@ enum/MONITOR_SELECTION:
       value: 193
     - name: CLK_TOP_SDXC1
       value: 194
-enum/ADC_CLK_MUX:
+enum/ANA_CLK_MUX:
   description: no description available.
   bit_size: 3
   variants:
     - name: AHB
       description: AHB clock
       value: 0
-    - name: ADC0
+    - name: ANA0
       description: ADC clock 0
       value: 1
-    - name: ADC1
+    - name: ANA1
       description: ADC clock 1
       value: 2
-    - name: ADC2
+    - name: ANA2
       description: ADC clock 2
+      value: 3
+    # FIXME: in UM, CLK_TOP_ADC3 is provided, but not in the enum
+enum/I2S_CLK_MUX:
+  description: no description available.
+  bit_size: 3
+  variants:
+    - name: AHB
+      description: AHB clock
+      value: 0
+    - name: I2S0
+      description: I2S clock 0
+      value: 1
+    - name: I2S1
+      description: I2S clock 1
+      value: 2
+    - name: I2S2
+      description: I2S clock 2
       value: 3
