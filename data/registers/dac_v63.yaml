@@ -86,10 +86,12 @@ fieldset/STEP_CFG:
       description: 0 for up, 1 for down.
       bit_offset: 28
       bit_size: 1
+      enum: STEP_DIR
     - name: ROUND_MODE
       description: "0: stop at end point; 1: reload start point, step again."
       bit_offset: 29
       bit_size: 1
+      enum: ROUND_MODE
 fieldset/ana_cfg0:
   description: No description available.
   fields:
@@ -180,22 +182,13 @@ fieldset/cfg1:
 fieldset/cfg2:
   description: No description available.
   fields:
-    - name: STEP_SW_TRIG0
+    - name: STEP_SW_TRIG
       description: software trigger0 for step mode, W1C in single mode. RW in continual mode.
       bit_offset: 0
       bit_size: 1
-    - name: STEP_SW_TRIG1
-      description: No description available.
-      bit_offset: 1
-      bit_size: 1
-    - name: STEP_SW_TRIG2
-      description: No description available.
-      bit_offset: 2
-      bit_size: 1
-    - name: STEP_SW_TRIG3
-      description: No description available.
-      bit_offset: 3
-      bit_size: 1
+      array:
+        len: 4
+        stride: 1
     - name: BUF_SW_TRIG
       description: software trigger for buffer mode, W1C in single mode. RW in continual mode.
       bit_offset: 4
@@ -308,3 +301,19 @@ enum/DAC_MODE:
       value: 2
     - name: TRIGGER
       value: 3
+enum/STEP_DIR:
+  description: No description available.
+  bit_size: 1
+  variants:
+    - name: UP
+      value: 0
+    - name: DOWN
+      value: 1
+enum/ROUND_MODE:
+  description: No description available.
+  bit_size: 1
+  variants:
+    - name: STOP
+      value: 0
+    - name: RELOAD
+      value: 1
