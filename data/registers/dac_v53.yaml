@@ -50,7 +50,7 @@ block/DAC:
     - name: cfg0_bak
       description: No description available.
       byte_offset: 68
-      fieldset: cfg0_bak
+      fieldset: cfg0
     - name: status0
       description: No description available.
       byte_offset: 72
@@ -138,6 +138,7 @@ fieldset/cfg0:
       description: "00: direct mode, DAC output the fixed configured data(from sw_dac_data) 01: step mode, DAC output from start_point to end point, with configured step, can step up or step down 10: buffer mode, read data from buffer, then output to analog, internal DMA will load next burst if enough space in local FIFO; 11: trigger mode, DAC output from external trigger signals Note: Trigger mode is not supported in hpm63xx and hpm62xx families."
       bit_offset: 4
       bit_size: 2
+      enum: DAC_MODE
     - name: HW_TRIG_EN
       description: set to use trigger signal from trigger_mux, user should config it to pulse in single mode, and level in continual mode.
       bit_offset: 6
@@ -146,41 +147,7 @@ fieldset/cfg0:
       description: "0: single mode, one trigger pulse will send one 12bit data to DAC analog; 1: continual mode, if trigger signal(either or HW) is set, DAC will send data if FIFO is not empty, if trigger signal is clear, DAC will stop send data."
       bit_offset: 7
       bit_size: 1
-    - name: SYNC_MODE
-      description: "1: sync dac clock and ahb clock. all HW trigger signals are pulse in sync mode, can get faster response; 0: async dac clock and ahb_clock all HW trigger signals should be level and should be more than one dac clock cycle, used to get accurate output frequency(which may not be divided from AHB clock)."
-      bit_offset: 8
-      bit_size: 1
-    - name: DMA_AHB_EN
-      description: set to enable internal DMA, it will read one burst if enough space in FIFO. Should only be used in buffer mode.
-      bit_offset: 9
-      bit_size: 1
-    - name: SW_DAC_DATA
-      description: dac data used in direct mode(dac_mode==2'b10).
-      bit_offset: 16
-      bit_size: 12
-fieldset/cfg0_bak:
-  description: No description available.
-  fields:
-    - name: HBURST_CFG
-      description: "DAC support following fixed burst only 000-SINGLE; 011-INCR4; 101: INCR8 others are reserved."
-      bit_offset: 0
-      bit_size: 3
-    - name: BUF_DATA_MODE
-      description: "data structure for buffer mode, 0: each 32-bit data contains 2 points, b11:0 for first, b27:16 for second. 1: each 32-bit data contains 1 point, b11:0 for first."
-      bit_offset: 3
-      bit_size: 1
-    - name: DAC_MODE
-      description: "00: direct mode, DAC output the fixed configured data(from sw_dac_data) 01: step mode, DAC output from start_point to end point, with configured step, can step up or step down 10: buffer mode, read data from buffer, then output to analog, internal DMA will load next burst if enough space in local FIFO;."
-      bit_offset: 4
-      bit_size: 2
-    - name: HW_TRIG_EN
-      description: set to use trigger signal from trigger_mux, user should config it to pulse in single mode, and level in continual mode.
-      bit_offset: 6
-      bit_size: 1
-    - name: TRIG_MODE
-      description: "0: single mode, one trigger pulse will send one 12bit data to DAC analog; 1: continual mode, if trigger signal(either or HW) is set, DAC will send data if FIFO is not empty, if trigger signal is clear, DAC will stop send data."
-      bit_offset: 7
-      bit_size: 1
+      enum: TRIG_MODE
     - name: SYNC_MODE
       description: "1: sync dac clock and ahb clock. all HW trigger signals are pulse in sync mode, can get faster response; 0: async dac clock and ahb_clock all HW trigger signals should be level and should be more than one dac clock cycle, used to get accurate output frequency(which may not be divided from AHB clock)."
       bit_offset: 8
@@ -204,6 +171,7 @@ fieldset/cfg1:
       description: "clock divider config for ana_clk to dac analog; 00: div2 01: div4 10: div6 11: div8."
       bit_offset: 16
       bit_size: 2
+      enum: ANA_DIV
     - name: ANA_CLK_EN
       description: set to enable analog clock(divided by ana_div_cfg) need to be set in direct mode and trigger mode.
       bit_offset: 18
@@ -315,3 +283,35 @@ fieldset/status0:
       description: No description available.
       bit_offset: 8
       bit_size: 16
+enum/ANA_DIV:
+  description: No description available.
+  bit_size: 2
+  variants:
+    - name: DIV2
+      value: 0
+    - name: DIV4
+      value: 1
+    - name: DIV6
+      value: 2
+    - name: DIV8
+      value: 3
+enum/TRIG_MODE:
+  description: No description available.
+  bit_size: 1
+  variants:
+    - name: SINGLE
+      value: 0
+    - name: CONTINUAL
+      value: 1
+enum/DAC_MODE:
+  description: No description available.
+  bit_size: 2
+  variants:
+    - name: DIRECT
+      value: 0
+    - name: STEP
+      value: 1
+    - name: BUFFER
+      value: 2
+    - name: TRIGGER
+      value: 3
