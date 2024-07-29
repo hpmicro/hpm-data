@@ -133,10 +133,12 @@ fieldset/cfg0:
       description: "DAC support following fixed burst only 000-SINGLE; 011-INCR4; 101: INCR8 others are reserved."
       bit_offset: 0
       bit_size: 3
+      enum: HBURST_CFG
     - name: BUF_DATA_MODE
       description: "data structure for buffer mode, 0: each 32-bit data contains 2 points, b11:0 for first, b27:16 for second. 1: each 32-bit data contains 1 point, b11:0 for first."
       bit_offset: 3
       bit_size: 1
+      enum: BUF_DATA_MODE
     - name: DAC_MODE
       description: "00: direct mode, DAC output the fixed configured data(from sw_dac_data) 01: step mode, DAC output from start_point to end point, with configured step, can step up or step down 10: buffer mode, read data from buffer, then output to analog, internal DMA will load next burst if enough space in local FIFO; 11: trigger mode, DAC output from external trigger signals Note: Trigger mode is not supported in hpm63xx and hpm62xx families."
       bit_offset: 4
@@ -316,4 +318,22 @@ enum/ROUND_MODE:
     - name: STOP
       value: 0
     - name: RELOAD
+      value: 1
+enum/HBURST_CFG:
+  description: No description available.
+  bit_size: 3
+  variants:
+    - name: SINGLE
+      value: 0
+    - name: INCR4
+      value: 0b011
+    - name: INCR8
+      value: 0b101
+enum/BUF_DATA_MODE:
+  description: Format of buffer data.
+  bit_size: 1
+  variants:
+    - name: TWO_POINTS
+      value: 0
+    - name: ONE_POINT
       value: 1
