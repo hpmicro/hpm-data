@@ -75,6 +75,21 @@ block/QEI:
         stride: 16
       byte_offset: 48
       block: COUNT
+    - name: COUNT_CURRENT
+      description: no description available.
+      byte_offset: 48
+      block: COUNT
+    - name: COUNT_READ
+      description: no description available.
+      byte_offset: 52
+      block: COUNT
+    - name: COUNT_SNAP
+      description: no description available.
+      array:
+        len: 2
+        stride: 16
+      byte_offset: 56
+      block: COUNT
     - name: zcmp2
       description: Z comparator.
       byte_offset: 128
@@ -429,6 +444,7 @@ fieldset/cr:
       description: "define the width/counter value(affect width_match, width_match2, width_cur, timer_cur, width_read, timer_read, width_snap0,width_snap1, timer_snap0, timer_snap1) 0 : same as hpm1000/500/500s; 1: use width for position; use timer for angle."
       bit_offset: 3
       bit_size: 1
+      enum: SPD_TMR_READ_SEL
     - name: RSTCNT
       description: 1- reset zcnt, spdcnt and tmrcnt to 0. reset phcnt to phidx.
       bit_offset: 4
@@ -1349,3 +1365,13 @@ enum/FILTER_MODE:
     - name: VALLEY
       description: Stable high mode
       value: 0b111
+enum/SPD_TMR_READ_SEL:
+  description: "Read register select."
+  bit_size: 1
+  variants:
+    - name: SPD_TMR
+      description: As speed and timer
+      value: 0
+    - name: POS_ANGLE
+      description: Speed for postion, timer for angle
+      value: 1
