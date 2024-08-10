@@ -287,6 +287,7 @@ fieldset/FILT_CFG:
       description: This bitfields defines the filter mode 000-bypass; 100-rapid change mode; 101-delay filter mode; 110-stable low mode; 111-stable high mode.
       bit_offset: 13
       bit_size: 3
+      enum: FILTER_MODE
     - name: OUTINV
       description: 1- Filter will invert the output 0- Filter will not invert the output.
       bit_offset: 16
@@ -404,6 +405,7 @@ fieldset/cr:
       description: "000-abz; 001-pd; 010-ud; 011-UVW(hal) 100-single A; 101-single sin; 110: sin&cos."
       bit_offset: 0
       bit_size: 3
+      enum: WORK_MODE
     - name: RD_SEL
       description: "define the width/counter value(affect width_match, width_match2, width_cur, timer_cur, width_read, timer_read, width_snap0,width_snap1, timer_snap0, timer_snap1) 0 : same as hpm1000/500/500s; 1: use width for position; use timer for angle."
       bit_offset: 3
@@ -1229,3 +1231,47 @@ fieldset/zcmp2:
       description: No description available.
       bit_offset: 0
       bit_size: 32
+enum/WORK_MODE:
+  description: "Decoder work mode."
+  bit_size: 3
+  variants:
+    - name: ABZ
+      description: "ABZ."
+      value: 0
+    - name: PD
+      description: "PD."
+      value: 1
+    - name: UD
+      description: "UD."
+      value: 2
+    - name: UVW
+      description: "UVW."
+      value: 3
+    - name: SINGLE
+      description: "Single A."
+      value: 4
+    - name: SIN
+      description: "Single sin."
+      value: 5
+    - name: SIN_COS
+      description: "Sin & Cos."
+      value: 6
+enum/FILTER_MODE:
+  description: "Filter mode."
+  bit_size: 3
+  variants:
+    - name: BYPASS
+      description: Bypass
+      value: 0b000
+    - name: BURR
+      description: Rapid change mode
+      value: 0b100
+    - name: DELAY
+      description: Delay filter mode
+      value: 0b101
+    - name: PEAK
+      description: Stable low mode
+      value: 0b110
+    - name: VALLEY
+      description: Stable high mode
+      value: 0b111
