@@ -96,8 +96,8 @@ fieldset/CAPNEG:
   fields:
     - name: CAPNEG
       description: counter value captured at input signal falling edge.
-      bit_offset: 0
-      bit_size: 32
+      bit_offset: 4
+      bit_size: 28
 fieldset/CAPPOS:
   description: no description available.
   fields:
@@ -146,6 +146,7 @@ fieldset/CMPCFG:
       description: comparator mode 0- output compare mode 1- input capture mode.
       bit_offset: 1
       bit_size: 1
+      enum: CMP_MODE
     - name: CMPSHDWUPT
       description: "This bitfield select when the comparator shadow register will be loaded to its work register 00: after software set shlk bit of shlk register 01: immediately after the register being modified 10: after hardware event assert, user can select one of the comparators to generate this hardware event. The comparator can be either output compare mode or input capture mode. 11: after SHSYNCI assert."
       bit_offset: 2
@@ -436,3 +437,13 @@ enum/SHADOW_UPDATE_TRIGGER:
     - name: ON_SHSYNCI
       description: after SHSYNCI assert.
       value: 3
+enum/CMP_MODE:
+  description: comparator mode
+  bit_size: 1
+  variants:
+    - name: OUTPUT_COMPARE
+      description: output compare mode
+      value: 0
+    - name: INPUT_CAPTURE
+      description: input capture mode
+      value: 1
