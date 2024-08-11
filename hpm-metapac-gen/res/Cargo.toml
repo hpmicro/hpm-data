@@ -1,6 +1,6 @@
 [package]
 name = "hpm-metapac"
-version = "0.0.3"
+version = "0.0.4"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/andelf/hpm-data"
@@ -22,7 +22,6 @@ targets = []
 
 [dependencies]
 riscv = "0.11.1"
-# riscv-rt = { version = "0.12.2", optional = true }
 vcell = "0.1"
 
 [features]
