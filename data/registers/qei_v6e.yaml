@@ -83,11 +83,12 @@ block/QEI:
       description: no description available.
       byte_offset: 52
       block: COUNT
-    - name: COUNT_SNAP
+    - name: COUNT_SNAP0
       description: no description available.
-      array:
-        len: 2
-        stride: 16
+      byte_offset: 56
+      block: COUNT
+    - name: COUNT_SNAP1
+      description: no description available.
       byte_offset: 56
       block: COUNT
     - name: zcmp2
@@ -112,6 +113,30 @@ block/QEI:
         len: 6
         stride: 4
       byte_offset: 144
+      fieldset: FILT_CFG
+    - name: FILT_CFG_A
+      description: no description available.
+      byte_offset: 144
+      fieldset: FILT_CFG
+    - name: FILT_CFG_B
+      description: no description available.
+      byte_offset: 148
+      fieldset: FILT_CFG
+    - name: FILT_CFG_Z
+      description: no description available.
+      byte_offset: 152
+      fieldset: FILT_CFG
+    - name: FILT_CFG_H
+      description: no description available.
+      byte_offset: 156
+      fieldset: FILT_CFG
+    - name: FILT_CFG_H2
+      description: no description available.
+      byte_offset: 160
+      fieldset: FILT_CFG
+    - name: FILT_CFG_F
+      description: no description available.
+      byte_offset: 164
       fieldset: FILT_CFG
     - name: qei_cfg
       description: qei config register.
@@ -514,9 +539,10 @@ fieldset/cr:
       bit_offset: 21
       bit_size: 1
     - name: ZCNTCFG
-      description: 1- zcnt will increment when phcnt upcount to phmax, decrement when phcnt downcount to 0 0- zcnt will increment or decrement when Z input assert.
+      description: Counting mode of Z-phase counter. 1- zcnt will increment when phcnt upcount to phmax, decrement when phcnt downcount to 0 0- zcnt will increment or decrement when Z input assert.
       bit_offset: 22
       bit_size: 1
+      enum: Z_CNT_MODE
     - name: READ
       description: 1- load phcnt, zcnt, spdcnt and tmrcnt into their read registers. Hardware auto-clear; read as 0.
       bit_offset: 31
@@ -732,6 +758,7 @@ fieldset/match_cfg:
       description: No description available.
       bit_offset: 13
       bit_size: 1
+      enum: DIR
     - name: DIRCMP2DIS
       description: No description available.
       bit_offset: 14
@@ -760,6 +787,7 @@ fieldset/match_cfg:
       description: 0- position compare need positive rotation 1- position compare need negative rotation.
       bit_offset: 29
       bit_size: 1
+      enum: DIR
     - name: DIRCMPDIS
       description: 1- postion compare not include rotation direction.
       bit_offset: 30
@@ -787,6 +815,7 @@ fieldset/ph:
       description: 1- reverse rotation 0- forward rotation.
       bit_offset: 30
       bit_size: 1
+      enum: DIR
 fieldset/phase_cnt:
   description: phase_cnt.
   fields:
@@ -1139,6 +1168,7 @@ fieldset/spd:
       description: 1- reverse rotation 0- forward rotation.
       bit_offset: 31
       bit_size: 1
+      enum: DIR
 fieldset/spdcmp:
   description: Speed comparator.
   fields:
@@ -1374,4 +1404,24 @@ enum/SPD_TMR_READ_SEL:
       value: 0
     - name: POS_ANGLE
       description: Speed for postion, timer for angle
+      value: 1
+enum/Z_CNT_MODE:
+  description: "Z counter inc mode."
+  bit_size: 1
+  variants:
+    - name: ON_Z_INPUT
+      description: "Z counter."
+      value: 0
+    - name: ON_PHASE_COUNT_MAX
+      description: "Z counter with phase."
+      value: 1
+enum/DIR:
+  description: "Rotation direction."
+  bit_size: 1
+  variants:
+    - name: FORWARD
+      description: Forward
+      value: 0
+    - name: REVERSE
+      description: Reverse
       value: 1
