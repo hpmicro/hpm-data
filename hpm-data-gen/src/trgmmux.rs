@@ -62,8 +62,19 @@ pub fn add_trgmmux_from_sdk<P: AsRef<Path>>(
                 value: *val as _,
             })
             .collect();
-        core.resources.sort_by_key(|r| r.index);
+        core.trgmmuxes
+            .sort_by(|a, b| trgm_cmp_key(a).cmp(&trgm_cmp_key(b)));
     }
 
     Ok(())
+}
+
+// TRGM0_FILTER_SRC_PWM0_IN0 => ("TRGM0_FILTER", 0)
+fn trgm_cmp_key(val: &hpm_data_serde::chip::core::TrgmMux) -> (&str, u32) {
+    let i: usize = val.name.find('_').unwrap();
+    val.name[i + 1..]
+        .find('_')
+        .map_or((&val.name, val.value as u32), |j| {
+            (&val.name[..i + j + 1], val.value as u32)
+        })
 }
