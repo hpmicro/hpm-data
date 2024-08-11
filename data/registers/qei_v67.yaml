@@ -96,6 +96,7 @@ fieldset/cr:
       description: 00-abz; 01-pd; 10-ud; 11-reserved.
       bit_offset: 0
       bit_size: 2
+      enum: WORK_MODE
     - name: RSTCNT
       description: 1- reset zcnt, spdcnt and tmrcnt to 0. reset phcnt to phidx.
       bit_offset: 4
@@ -205,6 +206,7 @@ fieldset/ph:
       description: 1- reverse rotation 0- forward rotation.
       bit_offset: 30
       bit_size: 1
+      enum: DIR
 fieldset/phcfg:
   description: Phase configure register.
   fields:
@@ -220,6 +222,7 @@ fieldset/phcfg:
       description: 1- zcnt will increment when phcnt upcount to phmax, decrement when phcnt downcount to 0 0- zcnt will increment or decrement when Z input assert.
       bit_offset: 22
       bit_size: 1
+      enum: Z_CNT_MODE
 fieldset/phcmp:
   description: Phase comparator.
   fields:
@@ -231,6 +234,7 @@ fieldset/phcmp:
       description: 0- position compare need positive rotation 1- position compare need negative rotation.
       bit_offset: 29
       bit_size: 1
+      enum: DIR
     - name: DIRCMPDIS
       description: 1- postion compare not include rotation direction.
       bit_offset: 30
@@ -284,6 +288,7 @@ fieldset/spd:
       description: 1- reverse rotation 0- forward rotation.
       bit_offset: 31
       bit_size: 1
+      enum: DIR
 fieldset/spdcmp:
   description: Speed comparator.
   fields:
@@ -361,3 +366,36 @@ fieldset/zcmp:
       description: zcnt postion compare value.
       bit_offset: 0
       bit_size: 32
+enum/WORK_MODE:
+  description: "Decoder work mode."
+  bit_size: 2
+  variants:
+    - name: ABZ
+      description: "ABZ."
+      value: 0
+    - name: PD
+      description: PD mode, Pluse + Direction.
+      value: 1
+    - name: UD
+      description: UD mode, Up pluse + Down pluse.
+      value: 2
+enum/Z_CNT_MODE:
+  description: "Z counter inc mode."
+  bit_size: 1
+  variants:
+    - name: ON_Z_INPUT
+      description: "Z counter."
+      value: 0
+    - name: ON_PHASE_COUNT_MAX
+      description: "Z counter with phase."
+      value: 1
+enum/DIR:
+  description: "Rotation direction."
+  bit_size: 1
+  variants:
+    - name: FORWARD
+      description: Forward
+      value: 0
+    - name: REVERSE
+      description: Reverse
+      value: 1
