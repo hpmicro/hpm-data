@@ -348,6 +348,8 @@ pub struct Core {
     pub pins: Vec<IoPin>,
     #[serde(default)]
     pub iomuxes: Vec<IoMux>,
+    #[serde(default)]
+    pub trgmmuxes: Vec<TrgmMux>,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
@@ -368,6 +370,12 @@ pub struct IoPin {
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
 pub struct IoMux {
+    pub name: String,
+    pub value: u32,
+}
+
+#[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
+pub struct TrgmMux {
     pub name: String,
     pub value: u32,
 }

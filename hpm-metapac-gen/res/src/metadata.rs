@@ -132,6 +132,7 @@ pub struct Metadata {
     pub resources: &'static [Resource],
     pub clocks: &'static [Clock],
     pub pins: &'static [IoPin],
+    pub trgmmux: &'static [TrgmMux],
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]
@@ -150,6 +151,12 @@ pub struct Clock {
 pub struct IoPin {
     pub name: &'static str,
     pub index: u32,
+}
+
+#[derive(Debug, Eq, PartialEq, Clone)]
+pub struct TrgmMux {
+    pub name: &'static str,
+    pub value: u32,
 }
 
 #[derive(Debug, Eq, PartialEq, Clone)]

@@ -141,7 +141,7 @@ impl Gen {
         {
             // All SYSCTL resources
             writeln!(&mut extra, "pub mod resources {{").unwrap();
-            writeln!(&mut extra, "   //! `SYSCTL.RESOURCE` definitions").unwrap();
+            writeln!(&mut extra, "    //! `SYSCTL.RESOURCE` definitions").unwrap();
             for res in &core.resources {
                 writeln!(
                     &mut extra,
@@ -155,7 +155,7 @@ impl Gen {
 
             // All clocks
             writeln!(&mut extra, "pub mod clocks {{").unwrap();
-            writeln!(&mut extra, "   //! `SYSCTL.CLOCK` definitions").unwrap();
+            writeln!(&mut extra, "    //! `SYSCTL.CLOCK` definitions").unwrap();
             for clk in &core.clocks {
                 writeln!(
                     &mut extra,
@@ -169,7 +169,7 @@ impl Gen {
 
             // All pin pads
             writeln!(&mut extra, "pub mod pins {{").unwrap();
-            writeln!(&mut extra, "   //! Pin pad definitions").unwrap();
+            writeln!(&mut extra, "    //! Pin pad definitions").unwrap();
             for pin in &core.pins {
                 writeln!(
                     &mut extra,
@@ -183,11 +183,25 @@ impl Gen {
 
             // All iomux consts
             writeln!(&mut extra, "pub mod iomux {{").unwrap();
-            writeln!(&mut extra, "   //! `FUNC_CTL` function mux definitions").unwrap();
+            writeln!(&mut extra, "    //! `FUNC_CTL` function mux definitions").unwrap();
             for mux in &core.iomuxes {
                 writeln!(
                     &mut extra,
                     "    pub const {}: u8 = {};",
+                    mux.name.to_ascii_uppercase(),
+                    mux.value
+                )
+                .unwrap();
+            }
+            writeln!(&mut extra, "}}").unwrap();
+
+            // ALL TRGMMUX consts
+            writeln!(&mut extra, "pub mod trgmmux {{").unwrap();
+            writeln!(&mut extra, "    //! `TRGMMUX` definitions").unwrap();
+            for mux in &core.trgmmuxes {
+                writeln!(
+                    &mut extra,
+                    "    pub const {}: usize = {};",
                     mux.name.to_ascii_uppercase(),
                     mux.value
                 )
@@ -253,7 +267,7 @@ impl Gen {
                 pub(crate) static RESOURCES: &[Resource] = {};
                 pub(crate) static CLOCKS: &[Clock] = {};
                 pub(crate) static PINS: &[IoPin] = {};
-
+                pub(crate) static TRGMMUX: &[TrgmMux] = {};
             ",
             stringify(&core.peripherals),
             stringify(&core.interrupts),
@@ -261,6 +275,7 @@ impl Gen {
             stringify(&core.resources),
             stringify(&core.clocks),
             stringify(&core.pins),
+            stringify(&core.trgmmuxes),
         )
         .unwrap();
 
@@ -298,6 +313,7 @@ impl Gen {
                 resources: RESOURCES,
                 clocks: CLOCKS,
                 pins: PINS,
+                trgmmux: TRGMMUX,
             }};",
             deduped_file,
             &chip.name,

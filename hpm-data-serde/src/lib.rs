@@ -73,6 +73,8 @@ pub mod chip {
         pub pins: Vec<core::IoPin>,
         #[serde(default)]
         pub iomuxes: Vec<core::IoMux>,
+        #[serde(default)]
+        pub trgmmuxes: Vec<core::TrgmMux>,
 
         // include fields, for common peripherals
         #[serde(skip_serializing_if = "Option::is_none")]
@@ -270,6 +272,13 @@ pub mod chip {
         pub struct IoMux {
             pub name: String,
             // alt func value
+            pub value: u8,
+        }
+
+        #[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+        pub struct TrgmMux {
+            pub name: String,
+            // signal offset
             pub value: u8,
         }
     }

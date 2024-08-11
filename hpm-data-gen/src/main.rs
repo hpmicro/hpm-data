@@ -7,6 +7,7 @@ mod pinmux;
 mod pins;
 mod registers;
 mod sysctl;
+mod trgmmux;
 
 #[macro_export]
 macro_rules! regex {
@@ -206,6 +207,11 @@ fn main() -> anyhow::Result<()> {
     stopwatch.section("Handle IOC pins");
     for chip in &mut chips {
         pins::add_ioc_pins_from_sdk(data_dir, chip)?;
+    }
+
+    stopwatch.section("Handle TRGM MUX");
+    for chip in &mut chips {
+        trgmmux::add_trgmmux_from_sdk(data_dir, chip)?;
     }
 
     stopwatch.section("Writing chip data");
