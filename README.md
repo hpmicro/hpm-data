@@ -34,12 +34,13 @@ with a tag of `hpm-data-<commit-hash>`.
 
 ```toml
 [dependencies]
-hpm-metapac = { version = "0.0.3", git = "https://github.com/hpmicro-rs/hpm-metapac.git", tag = "hpm-data-6740ca6fd1ed6d9bb57944b42aa299761b974713" }
+hpm-metapac = { version = "0.0.3", git = "https://github.com/hpmicro-rs/hpm-metapac.git", tag = "hpm-data-6740ca6fd1ed6d9bb57944b42aa299761b974713", features = ["hpm5361"] }
 
 # If you want to use the metadata feature in build.rs
 [build-dependencies]
 hpm-metapac = { version = "0.0.3", git = "https://github.com/hpmicro-rs/hpm-metapac.git", tag = "hpm-data-6740ca6fd1ed6d9bb57944b42aa299761b974713", default-features = false, features = [
     "metadata",
+    "hpm5361",
 ] }
 ```
 
