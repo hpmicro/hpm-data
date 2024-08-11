@@ -62,38 +62,79 @@ fieldset/ADC_MATRIX_SEL:
     - name: QEI0_ADC0_SEL
       description: No description available.
       bit_offset: 0
-      bit_size: 8
+      bit_size: 7
+      enum: ADC_SEL
+    - name: QEI0_ADC0_INVERT
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
     - name: QEI0_ADC1_SEL
       description: No description available.
       bit_offset: 8
-      bit_size: 8
+      bit_size: 7
+      enum: ADC_SEL
+    - name: QEI0_ADC1_INVERT
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
     - name: QEI1_ADC0_SEL
       description: No description available.
       bit_offset: 16
-      bit_size: 8
+      bit_size: 7
+      enum: ADC_SEL
+    - name: QEI1_ADC0_INVERT
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
     - name: QEI1_ADC1_SEL
       description: 0-adc0; 1-adc1; 2-rdc_adc0; 3-rdc_adc1; bit7 is used to invert adc_value; others reserved.
       bit_offset: 24
-      bit_size: 8
+      bit_size: 7
+      enum: ADC_SEL
+    - name: QEI1_ADC1_INVERT
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
 fieldset/DAC_MATRIX_SEL:
   description: dac matrix select register.
+  # invert bit is extract from enum
   fields:
     - name: ACMP0_DAC_SEL
       description: No description available.
       bit_offset: 0
-      bit_size: 8
+      bit_size: 7
+      enum: DAC_SEL
+    - name: ACMP0_DAC_INVERT
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
     - name: ACMP1_DAC_SEL
       description: No description available.
       bit_offset: 8
-      bit_size: 8
+      bit_size: 7
+      enum: DAC_SEL
+    - name: ACMP1_DAC_INVERT
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
     - name: DAC0_DAC_SEL
       description: No description available.
       bit_offset: 16
-      bit_size: 8
+      bit_size: 7
+      enum: DAC_SEL
+    - name: DAC0_DAC_INVERT
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
     - name: DAC1_DAC_SEL
       description: 0-qeo0_dac0; 1-qeo0_dac1; 2-qeo0_dac2; 3-qeo1_dac0; 4-qeo1_dac1; 5-qeo1_dac2; 6-rdc_dac0; 7-rdc_dac1; bit7 is used to invert dac_value; others reserved.
       bit_offset: 24
-      bit_size: 8
+      bit_size: 7
+      enum: DAC_SEL
+    - name: DAC1_DAC_INVERT
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
 fieldset/DMACFG:
   description: no description available.
   fields:
@@ -141,30 +182,60 @@ fieldset/POS_MATRIX_SEL0:
     - name: SEI_POSIN0_SEL
       description: No description available.
       bit_offset: 0
-      bit_size: 8
+      bit_size: 7
+      enum: POS_SEL
+    - name: SEI_POSIN0_INVERT
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
     - name: SEI_POSIN1_SEL
       description: No description available.
       bit_offset: 8
-      bit_size: 8
+      bit_size: 7
+      enum: POS_SEL
+    - name: SEI_POSIN1_INVERT
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
     - name: MMC0_POSIN_SEL
       description: No description available.
       bit_offset: 16
-      bit_size: 8
+      bit_size: 7
+      enum: POS_SEL
+    - name: MMC0_POSIN_INVERT
+      description: No description available.
+      bit_offset: 23
+      bit_size: 1
     - name: MMC1_POSIN_SEL
       description: 0-sei_pos_out0; 1-sei_pos_out1; 2-qei0_pos; 3-qei1_pos; 4-mmc0_pos_out0; 5-mmc0_pos_out1; 6-mmc1_pos_out0; 7-mmc1_pos_out1; bit7 is used to invert position value; others reserved.
       bit_offset: 24
-      bit_size: 8
+      bit_size: 7
+      enum: POS_SEL
+    - name: MMC1_POSIN_INVERT
+      description: No description available.
+      bit_offset: 31
+      bit_size: 1
 fieldset/POS_MATRIX_SEL1:
   description: position matrix select register1.
   fields:
     - name: QEO0_POS_SEL
       description: No description available.
       bit_offset: 0
-      bit_size: 8
+      bit_size: 7
+      enum: POS_SEL
+    - name: QEO0_POS_INVERT
+      description: No description available.
+      bit_offset: 7
+      bit_size: 1
     - name: QEO1_POS_SEL
       description: No description available.
       bit_offset: 8
-      bit_size: 8
+      bit_size: 7
+      enum: POS_SEL
+    - name: QEO1_POS_INVERT
+      description: No description available.
+      bit_offset: 15
+      bit_size: 1
 fieldset/TRGM_IN:
   description: no description available.
   fields:
@@ -198,3 +269,55 @@ fieldset/TRGOCFG:
       description: 1- Invert the output.
       bit_offset: 11
       bit_size: 1
+enum/DAC_SEL:
+  description: DAC selections, 0-qeo0_dac0; 1-qeo0_dac1; 2-qeo0_dac2; 3-qeo1_dac0; 4-qeo1_dac1; 5-qeo1_dac2; 6-rdc_dac0; 7-rdc_dac1; bit7 is used to invert dac_value; others reserved.
+  bit_size: 7
+  variants:
+    - name: qeo0_dac0
+      value: 0
+    - name: qeo0_dac1
+      value: 1
+    - name: qeo0_dac2
+      value: 2
+    - name: qeo1_dac0
+      value: 3
+    - name: qeo1_dac1
+      value: 4
+    - name: qeo1_dac2
+      value: 5
+    - name: rdc_dac0
+      value: 6
+    - name: rdc_dac1
+      value: 7
+enum/ADC_SEL:
+  description: ADC selections, 0-adc0; 1-adc1; 2-rdc_adc0; 3-rdc_adc1; bit7 is used to invert adc_value; others reserved.
+  bit_size: 7
+  variants:
+    - name: adc0
+      value: 0
+    - name: adc1
+      value: 1
+    - name: rdc_adc0
+      value: 2
+    - name: rdc_adc1
+      value: 3
+enum/POS_SEL:
+  description: Position selections, 0-sei_pos_out0; 1-sei_pos_out1; 2-qei0_pos; 3-qei1_pos; 4-mmc0_pos_out0; 5-mmc0_pos_out1; 6-mmc1_pos_out0; 7-mmc1_pos_out1; bit7 is used to invert position value; others reserved.
+  bit_size: 7
+  variants:
+    - name: sei_pos_out0
+      value: 0
+    - name: sei_pos_out1
+      value: 1
+    - name: qei0_pos
+      value: 2
+    - name: qei1_pos
+      value: 3
+    - name: mmc0_pos_out0
+      value: 4
+    - name: mmc0_pos_out1
+      value: 5
+    - name: mmc1_pos_out0
+      value: 6
+    - name: mmc1_pos_out1
+      value: 7
