@@ -165,6 +165,7 @@ fieldset/FILTCFG:
       description: This bitfields defines the filter mode 000-bypass; 100-rapid change mode; 101-delay filter mode; 110-stalbe low mode; 111-stable high mode.
       bit_offset: 13
       bit_size: 3
+      enum: FILTER_MODE
     - name: OUTINV
       description: 1- Filter will invert the output 0- Filter will not invert the output.
       bit_offset: 16
@@ -320,4 +321,23 @@ enum/POS_SEL:
     - name: mmc1_pos_out0
       value: 6
     - name: mmc1_pos_out1
+      value: 7
+enum/FILTER_MODE:
+  description: "Filter mode."
+  bit_size: 3
+  variants:
+    - name: BYPASS
+      description: Bypass
+      value: 0
+    - name: RAPID_CHANGE
+      description: Rapid change mode
+      value: 4
+    - name: DELAY
+      description: Delay filter mode
+      value: 5
+    - name: STABLE_LOW
+      description: Stable low mode
+      value: 6
+    - name: STABLE_HIGH
+      description: Stable high mode
       value: 7
