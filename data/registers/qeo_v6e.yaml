@@ -215,26 +215,32 @@ fieldset/ABZ_mode:
       description: "wave_a type: 0: Two-phase orthogonality wave_a. 1: pulse wave of pulse/reverse type. 2: up wave of up/down type. 3: Three-phase orthogonality wave_a."
       bit_offset: 0
       bit_size: 2
+      enum: A_WAVE_TYPE
     - name: B_TYPE
       description: "wave_b type: 0: Two-phase orthogonality wave_b. 1: reverse wave of pulse/reverse type. 2: down wave of up/down type. 3: Three-phase orthogonality wave_b."
       bit_offset: 4
       bit_size: 2
+      enum: B_WAVE_TYPE
     - name: Z_TYPE
       description: "wave_z type: 0: zero pulse type, start and end line number decided by z_start、z_end and z_offset. 1: zero pulse type, z output start to high when position= z_start, and mantain numbers of 1/4 line cfg in z_pulse_width register 2: reserved 3: wave_z output as tree-phase wave same as wave_a/wave_b."
       bit_offset: 8
       bit_size: 2
+      enum: Z_WAVE_TYPE
     - name: A_POLARITY
       description: "wave_a polarity. 0: normal output. 1: invert normal output."
       bit_offset: 12
       bit_size: 1
+      enum: WAVE_POLARITY
     - name: B_POLARITY
       description: "wave_b polarity. 0: normal output. 1: invert normal output."
       bit_offset: 16
       bit_size: 1
+      enum: WAVE_POLARITY
     - name: Z_POLARITY
       description: "wave_z polarity. 0: normal output. 1: invert normal output."
       bit_offset: 20
       bit_size: 1
+      enum: WAVE_POLARITY
     - name: EN_WDOG
       description: "enable abz wdog: 0: disable abz wdog. 1: enable abz wdog."
       bit_offset: 24
@@ -247,6 +253,7 @@ fieldset/ABZ_mode:
       description: "pulse reverse wave，reverse edge point: 0: between pulse's posedge and negedge, min period dedicated by the num line_width 1: edge change point flow pulse's negedge."
       bit_offset: 28
       bit_size: 1
+      enum: REVERSE_EDGE_TYPE
     - name: ABZ_OUTPUT_ENABLE
       description: abz output enable： 0：abz output disable, all keep 0 1：abz output enable.
       bit_offset: 31
@@ -321,38 +328,14 @@ fieldset/PWM_PHASE_SHIFT:
 fieldset/PWM_PHASE_TABLE:
   description: no description available.
   fields:
-    - name: PWM0
+    - name: PWM
       description: pwm phase table value.
+      array:
+        len: 8
+        stride: 2
       bit_offset: 0
       bit_size: 2
-    - name: PWM1
-      description: pwm phase table value.
-      bit_offset: 2
-      bit_size: 2
-    - name: PWM2
-      description: pwm phase table value.
-      bit_offset: 4
-      bit_size: 2
-    - name: PWM3
-      description: pwm phase table value.
-      bit_offset: 6
-      bit_size: 2
-    - name: PWM4
-      description: pwm phase table value.
-      bit_offset: 8
-      bit_size: 2
-    - name: PWM5
-      description: pwm phase table value.
-      bit_offset: 10
-      bit_size: 2
-    - name: PWM6
-      description: pwm phase table value.
-      bit_offset: 12
-      bit_size: 2
-    - name: PWM7
-      description: pwm phase table value.
-      bit_offset: 14
-      bit_size: 2
+      enum: PWM_MODE
 fieldset/PWM_debug0:
   description: qeo debug 0.
   fields:
@@ -430,38 +413,14 @@ fieldset/PWM_mode:
       description: "enable PWM force output 0: disable 1: enable."
       bit_offset: 15
       bit_size: 1
-    - name: PWM0_SAFETY
+    - name: PWM_SAFETY
       description: PWM safety mode phase table.
+      array:
+        len: 8
+        stride: 2
       bit_offset: 16
       bit_size: 2
-    - name: PWM1_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 18
-      bit_size: 2
-    - name: PWM2_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 20
-      bit_size: 2
-    - name: PWM3_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 22
-      bit_size: 2
-    - name: PWM4_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 24
-      bit_size: 2
-    - name: PWM5_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 26
-      bit_size: 2
-    - name: PWM6_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 28
-      bit_size: 2
-    - name: PWM7_SAFETY
-      description: PWM safety mode phase table.
-      bit_offset: 30
-      bit_size: 2
+      enum: PWM_MODE
 fieldset/PWM_postion_sel:
   description: select softwave inject postion.
   fields:
@@ -533,6 +492,7 @@ fieldset/WAVE_mode:
       description: "wave0/1/2 output mode. 0: cosine wave. 1: saddle wave. 2. abs cosine wave. 3. saw wave."
       bit_offset: 0
       bit_size: 2
+      enum: WAVES_OUTPUT_TYPE
     - name: VD_VQ_SEL
       description: "vd_vq sel ctrl: 0: from CLC. 1: from software."
       bit_offset: 2
@@ -553,6 +513,7 @@ fieldset/WAVE_mode:
       description: "saddle type seclect; 0:standard saddle. 1: triple-cos saddle."
       bit_offset: 7
       bit_size: 1
+      enum: SADDLE_TYPE
     - name: WAVE0_BELOW_MIN_LIMIT
       description: "wave0 below min limit mode. 0: output 0. 1: output all bits are 1. 2: output as level_min_limit0.level1_min_limit."
       bit_offset: 8
@@ -688,3 +649,110 @@ fieldset/min_level1:
       description: low area limit level1.
       bit_offset: 0
       bit_size: 32
+enum/SADDLE_TYPE:
+  description: "saddle type seclect."
+  bit_size: 1
+  variants:
+    - name: STANDARD
+      description: standard saddle
+      value: 0
+    - name: TRIPLE_COS
+      description: triple-cos saddle
+      value: 1
+enum/WAVES_OUTPUT_TYPE:
+  description: "wave0/1/2 output mode."
+  bit_size: 2
+  variants:
+    - name: COSINE
+      description: cosine wave
+      value: 0
+    - name: SADDLE
+      description: saddle wave
+      value: 1
+    - name: ABS_COSINE
+      description: abs cosine wave
+      value: 2
+    - name: SAW
+      description: saw wave
+      value: 3
+enum/REVERSE_EDGE_TYPE:
+  description: "pulse reverse wave，reverse edge point."
+  bit_size: 1
+  variants:
+    - name: BETWEEN_POS_NEG
+      description: between pulse's posedge and negedge
+      value: 0
+    - name: EDGE_CHANGE_POINT
+      description: edge change point flow pulse's negedge
+      value: 1
+enum/Z_WAVE_TYPE:
+  description: "wave_z type."
+  bit_size: 2
+  variants:
+    - name: ZERO_PULSE_HIGH_25
+      description: zero pulse and output high at both wave_a and wave_b are high. mantain about 25% period
+      value: 0
+    - name: ZERO_PULSE_HIGH_75
+      description: zero pulse output high about 75% period. start from 0 to 75% period
+      value: 1
+    - name: ZERO_PULSE_HIGH_100
+      description: zero pulse output high about 100% period
+      value: 2
+    - name: THREE_PHASE
+      description: wave_z output as tree-phase wave same as wave_a/wave_b
+      value: 3
+enum/A_WAVE_TYPE:
+  description: "wave_a type."
+  bit_size: 2
+  variants:
+    - name: TWO_PHASE
+      description: Two-phase orthogonality wave_a
+      value: 0
+    - name: PULSE
+      description: pulse wave of pulse/reverse type
+      value: 1
+    - name: UP
+      description: up wave of up/down type
+      value: 2
+    - name: THREE_PHASE
+      description: Three-phase orthogonality wave_a
+      value: 3
+enum/B_WAVE_TYPE:
+  description: "wave_b type."
+  bit_size: 2
+  variants:
+    - name: TWO_PHASE
+      description: Two-phase orthogonality wave_b
+      value: 0
+    - name: REVERSE
+      description: reverse wave of pulse/reverse type
+      value: 1
+    - name: DOWN
+      description: down wave of up/down type
+      value: 2
+    - name: THREE_PHASE
+      description: Three-phase orthogonality wave_b
+      value: 3
+enum/WAVE_POLARITY:
+  description: "wave polarity."
+  bit_size: 1
+  variants:
+    - name: NORMAL
+      description: normal output
+      value: 0
+    - name: INVERT
+      description: invert normal output
+      value: 1
+enum/PWM_MODE:
+  description: "PWM safety mode phase table."
+  bit_size: 2
+  variants:
+    - name: NORMAL
+      description: normal output
+      value: 0
+    - name: FORCE_0
+      description: force output 0
+      value: 2
+    - name: FORCE_1
+      description: force output 1
+      value: 3
