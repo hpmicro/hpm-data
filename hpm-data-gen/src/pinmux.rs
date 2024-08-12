@@ -40,7 +40,8 @@ struct PinmuxRaw {
 
 // The following peripherals are supported now.
 const PERIPHERAL_LIST: &[&str] = &[
-    "GPTMR", "I2C", "SPI", "UART", "MCAN", "USB", "I2S", "PWM", "ACMP", "CAM", "FEMC", "PWM", "QEI",
+    "GPTMR", "I2C", "SPI", "UART", "MCAN", "USB", "I2S", "PWM", "ACMP", "CAM", "FEMC", "PWM",
+    "QEI", "TRGM",
 ];
 
 fn normalize_func(module: &str, func: &str) -> String {
@@ -188,9 +189,22 @@ pub fn handle_pinmux<P: AsRef<Path>>(
                         .collect()
                 })
                 .unwrap_or_default();
-            peripheral.pins.sort_by(|a, b| a.signal.cmp(&b.signal));
+            peripheral
+                .pins
+                .sort_by(|a, b| pin_cmp_key(a).cmp(&pin_cmp_key(b)));
         }
     }
 
     Ok(())
+}
+
+// Compare order: signal, pin, alt
+fn pin_cmp_key(
+    p: &hpm_data_serde::chip::core::peripheral::Pin,
+) -> (
+    &str,
+    &hpm_data_serde::chip::core::peripheral::pin::Pin,
+    &Option<u8>,
+) {
+    (&p.signal, &p.pin, &p.alt)
 }
