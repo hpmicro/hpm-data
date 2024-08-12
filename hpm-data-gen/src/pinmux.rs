@@ -188,6 +188,7 @@ pub fn handle_pinmux<P: AsRef<Path>>(
                         .collect()
                 })
                 .unwrap_or_default();
+            peripheral.pins.sort_by(|a, b| a.signal.cmp(&b.signal));
         }
     }
 
