@@ -130,7 +130,7 @@
     block: OTP
 
 - name: FEMC
-  address: 0xF0008000
+  address: 0xF3050000
   registers:
     kind: femc
     version: common
@@ -487,13 +487,13 @@
     block: PTPC
 
 - name: ENET0
-  address: 0xF00D0000
+  address: 0xF2000000
   registers:
     kind: enet
     version: v67
     block: ENET
 - name: ENET1
-  address: 0xF00D4000
+  address: 0xF2004000
   registers:
     kind: enet
     version: v67
@@ -640,6 +640,8 @@
     block: VAD
 
 # motor control
+
+# splited into 4 blocks, MOT0, MOT1, MOT2, MOT3
 
 - name: PWM0
   address: 0xF0200000
