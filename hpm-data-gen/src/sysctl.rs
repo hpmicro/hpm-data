@@ -14,7 +14,7 @@ const SYSCTL_RESOURCE_LINKABLE_START: u32 = 256;
 static HPM_SDK_BASE: LazyLock<PathBuf> = LazyLock::new(|| {
     std::env::var("HPM_SDK_BASE")
         .map(PathBuf::from)
-        .unwrap_or_else(|_| std::env::current_dir().unwrap().join("../hpm_sdk"))
+        .unwrap_or_else(|_| std::env::current_dir().unwrap().join("./hpm_sdk"))
 });
 
 static HPM5300_SYSCTL: LazyLock<SysctlInfo> = LazyLock::new(|| {
