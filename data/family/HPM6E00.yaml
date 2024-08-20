@@ -576,7 +576,7 @@
 # EtherCAT
 
 - name: ESC
-  address: 0xF1408000
+  address: 0xF1700000
   registers:
     kind: esc
     version: v6e
