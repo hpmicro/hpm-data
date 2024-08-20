@@ -293,8 +293,11 @@ fieldset/int_en:
   fields:
     - name: WDOG
       description: set if one chanel watch dog event triggered.
+      array:
+        len: 16
+        stride: 1
       bit_offset: 0
-      bit_size: 16
+      bit_size: 1
     - name: AHB_ERR
       description: set if got hresp=1, generally caused by wrong trg_dma_addr or seq_dma_addr.
       bit_offset: 21
@@ -344,8 +347,11 @@ fieldset/int_sts:
   fields:
     - name: WDOG
       description: set if one chanel watch dog event triggered.
+      array:
+        len: 16
+        stride: 1
       bit_offset: 0
-      bit_size: 16
+      bit_size: 1
     - name: AHB_ERR
       description: set if got hresp=1, generally caused by wrong trg_dma_addr or seq_dma_addr.
       bit_offset: 21

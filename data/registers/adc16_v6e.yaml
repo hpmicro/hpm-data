@@ -301,8 +301,11 @@ fieldset/int_en:
   fields:
     - name: WDOG
       description: set if one chanel watch dog event triggered.
+      array:
+        len: 16
+        stride: 1
       bit_offset: 0
-      bit_size: 16
+      bit_size: 1
     - name: STOP_POS
       description: No description available.
       bit_offset: 20
@@ -356,8 +359,11 @@ fieldset/int_sts:
   fields:
     - name: WDOG
       description: set if one chanel watch dog event triggered.
+      array:
+        len: 16
+        stride: 1
       bit_offset: 0
-      bit_size: 16
+      bit_size: 1
     - name: STOP_POS
       description: No description available.
       bit_offset: 20
@@ -540,8 +546,11 @@ fieldset/trigmux_en:
   fields:
     - name: WDOG
       description: No description available.
+      array:
+        len: 16
+        stride: 1
       bit_offset: 0
-      bit_size: 16
+      bit_size: 1
     - name: STOP_POS
       description: No description available.
       bit_offset: 20
