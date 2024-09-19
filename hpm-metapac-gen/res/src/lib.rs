@@ -1,3 +1,4 @@
+//! Peripheral Access Crate (PAC) for all HPMicro chips, including metadata.
 #![no_std]
 #![allow(non_snake_case)]
 #![allow(unused)]
