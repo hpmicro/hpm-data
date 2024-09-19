@@ -4,8 +4,8 @@
 [![Crates.io][badge-crates-io]][crates-io]
 [![Docs.rs][badge-docs-rs]][docs-rs]
 
-[badge-actions]: https://img.shields.io/github/actions/workflow/status/andelf/hpm-data/build.yml?style=for-the-badge&label=CI&20Tests
-[actions-build]: https://github.com/andelf/hpm-data/actions/workflows/build.yml
+[badge-actions]: https://img.shields.io/github/actions/workflow/status/hpmicro/hpm-data/build.yml?style=for-the-badge&label=CI&20Tests
+[actions-build]: https://github.com/hpmicro/hpm-data/actions/workflows/build.yml
 [badge-crates-io]: https://img.shields.io/crates/v/hpm-metapac.svg?style=for-the-badge
 [crates-io]: https://crates.io/crates/hpm-metapac
 [badge-docs-rs]: https://img.shields.io/docsrs/hpm-metapac?style=for-the-badge
@@ -13,7 +13,7 @@
 
 The structured MCU DB of HPM MCUs. The home of [hpm-metapac][docs-rs].
 
-All PRs and Issues are handled in [andelf/hpm-data](https://github.com/andelf/hpm-data).
+All PRs and Issues are handled in [hpmicro/hpm-data](https://github.com/hpmicro/hpm-data).
 
 `hpm-metapac` is generated from this repo. For each commit(or push) of hpm-data, it's pushed to <https://github.com/hpmicro-rs/hpm-metapac>,
 with a tag of `hpm-data-<commit-hash>`.
@@ -56,29 +56,38 @@ pac::IOC
     .modify(|w| w.set_alt_select(iomux::IOC_PA25_FUNC_CTL_PWM1_P_1));
 ```
 
+### Development
+
+To get a local build of `hpm-metapac`, you can use the following commands:
+
+```sh
+./d download-all
+./d gen
+```
+
+Now you have a local build of `hpm-metapac` in the `build/hpm-metapac` directory.
+
+```toml
+[dependencies]
+hpm-metapac = { path = "path/to/hpm-data/build/hpm-metapac", features = ["hpm5361"] }
+```
+
 ## Support Status
 
 - All peripherals are supported
 - All MCU families are supported
-- Peripherals that have a HAL driver or raw PAC demo in [hpm-hal](https://github.com/hpmicro-rs/hpm-hal) is reviewed and tested
+- Peripherals that have an HAL driver or raw PAC demo in [hpm-hal](https://github.com/hpmicro/hpm-hal) are reviewed and tested
 
 ### MCU Family
 
 (in order of release date)
 
-- HPM6700/HPM6400 - high performance
-- HPM6300 - general purpose
-- HPM6200 - high performance, real-time, mixed signal
-- HPM5300 - general purpose, motion control
-- HPM6800 - display, user interface
+- HPM6700/HPM6400 - High performance
+- HPM6300 - General purpose
+- HPM6200 - High performance, real-time, mixed signal
+- HPM5300 - General purpose, motion control
+- HPM6800 - Display dirver, user interface
 - HPM6E00 - EtherCAT
-
-- [x] HPM6700/HPM6400
-- [x] HPM6300
-- [x] HPM6200
-- [x] HPM5300
-- [x] HPM6800
-- [x] HPM6E00
 
 ## Data Source
 
@@ -86,3 +95,7 @@ pac::IOC
 - <https://github.com/hpmicro/hpm_pinmux_tool>
 - <https://github.com/hpmicro/hpm_sdk>
 - <https://tools.hpmicro.com/pinmux>
+
+## Project History
+
+As of 2024-09-19, this project is transferred from [andelf](https://github.com/andelf) to [hpmicro](https://github.com/hpmicro).
