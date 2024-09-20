@@ -50,8 +50,11 @@ case "$CMD" in
         RUST_BACKTRACE=1 cargo run -p hpm-data-gen
         RUST_BACKTRACE=1 cargo run -p hpm-metapac-gen -- "HPM53*" "HPM67*" "HPM64*" "HPM62*" "HPM63*" "HPM68*" "HPM6E*"
     ;;
-    ci)
-        echo TODO $CMD
+    prepare-publish)
+        cd build/hpm-metapac/
+        cp -v ../../README.md .
+        cp -v ../../LICENSE* .
+        find src -iname '*.rs' -exec rustfmt -v {} \;
     ;;
     *)
         echo "unknown command"

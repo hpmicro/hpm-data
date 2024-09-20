@@ -10,6 +10,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # due to lack of perimissions, the nightly is published via a different repository
     if: ${{ github.repository == 'andelf/hpm-data' }}
     steps:
     - uses: actions/checkout@v3
@@ -32,16 +33,14 @@ jobs:
         git clone --depth 1 git@github.com:hpmicro-rs/hpm-metapac.git build/hpm-metapac/
         ./d download-all
         ./d gen
+        ./d prepare-publish
         cd build/hpm-metapac/
-        cp -v ../../README.md .
-        cp -v ../../LICENSE* .
-        find src -iname '*.rs' -exec rustfmt -v {} \;
         git init
         git add .
         git config user.name "hpm-data builder"
         git config user.email "action@github.com"
-        git commit -m "andelf/hpm-data master $COMMIT" --allow-empty
-        git tag -a hpm-data-$COMMIT -m "Generated from andelf/hpm-data $COMMIT"
+        git commit -m "hpmicro/hpm-data master $COMMIT" --allow-empty
+        git tag -a hpm-data-$COMMIT -m "Generated from hpmicro/hpm-data $COMMIT"
     - name: Test
       run: |
         cd build/hpm-metapac/
