@@ -6,7 +6,7 @@
     block: SDP
 
 - name: RNG
-  address: 0xF00C8000
+  address: 0xF304C000
   registers:
     kind: rng
     version: common
