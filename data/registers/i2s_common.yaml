@@ -64,14 +64,17 @@ fieldset/CFGR:
       description: "Channel length (number of bits per audio channel) 0: 16-bit wide 1: 32-bit wide The bit write operation has a meaning only if DATSIZ = 00 otherwise the channel length is fixed to 32-bit by hardware whatever the value filled in. Note: For correct operation, this bit should be configured when the I2S is disabled."
       bit_offset: 0
       bit_size: 1
+      enum: CHANNEL_SIZE
     - name: DATSIZ
       description: "Data length to be transferred 00: 16-bit data length 01: 24-bit data length 10: 32-bit data length 11: Not allowed Note: For correct operation, these bits should be configured when the I2S is disabled."
       bit_offset: 1
       bit_size: 2
+      enum: DATA_SIZE
     - name: STD
       description: "I2S standard selection 00: I2S Philips standard. 01: MSB justified standard (left justified) 10: LSB justified standard (right justified) 11: PCM standard Note: For correct operation, these bits should be configured when the I2S is disabled."
       bit_offset: 3
       bit_size: 2
+      enum: STD
     - name: TDM_EN
       description: "TDM mode 0: not TDM mode 1: TDM mode."
       bit_offset: 5
@@ -290,3 +293,42 @@ fieldset/TXDSLOT:
       description: No description available.
       bit_offset: 0
       bit_size: 16
+enum/DATA_SIZE:
+  description: Data length to be transferred.
+  bit_size: 2
+  variants:
+    - name: _16BIT
+      value: 0
+      description: 16-bit data length
+    - name: _24BIT
+      value: 1
+      description: 24-bit data length
+    - name: _32BIT
+      value: 2
+      description: 32-bit data length
+enum/STD:
+  description: I2S standard selection.
+  bit_size: 2
+  variants:
+    - name: PHILIPS
+      value: 0
+      description: I2S Philips
+    - name: MSB
+      value: 1
+      description: MSB fist
+    - name: LSB
+      value: 2
+      description: LSB first
+    - name: PCM
+      value: 3
+      description: PCM
+enum/CHANNEL_SIZE:
+  description: Channel length.
+  bit_size: 1
+  variants:
+    - name: _16BIT
+      value: 0
+      description: 16-bit wide
+    - name: _32BIT
+      value: 1
+      description: 32-bit wide
