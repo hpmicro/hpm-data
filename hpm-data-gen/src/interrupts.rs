@@ -18,12 +18,14 @@ fn parse_interrupts_from_header(header_path: &Path) -> anyhow::Result<HashMap<St
 
     for cap in pattern.captures_iter(&content) {
         let irq_name = cap.get(1).unwrap().as_str().to_string();
-        let irq_number = cap
-            .get(2)
-            .unwrap()
-            .as_str()
-            .parse::<u8>()
-            .expect("Failed to parse interrupt number");
+        let irq_number_str = cap.get(2).unwrap().as_str();
+        let irq_number = irq_number_str.parse::<u8>().map_err(|_| {
+            anyhow::anyhow!(
+                "Failed to parse interrupt number '{}' in {:?}",
+                irq_number_str,
+                header_path
+            )
+        })?;
 
         // Apply naming fixes for consistency
         let fixed_name = fix_interrupt_naming(&irq_name);
