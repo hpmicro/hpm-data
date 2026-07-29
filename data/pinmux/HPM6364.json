@@ -5,7 +5,7 @@
         {
             "name": "PA00",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[00]": {
                     "index": "0",
@@ -43,12 +43,13 @@
                     "func": "DATA[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA01",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[01]": {
                     "index": "0",
@@ -86,12 +87,13 @@
                     "func": "DATA[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA02",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[02]": {
                     "index": "0",
@@ -129,12 +131,13 @@
                     "func": "CLK"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA03",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[03]": {
                     "index": "0",
@@ -172,12 +175,13 @@
                     "func": "CMD"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA04",
             "type": "GPIOT",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[04]": {
                     "index": "0",
@@ -222,12 +226,13 @@
                     "func": "DATA[3]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA05",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[05]": {
                     "index": "0",
@@ -272,12 +277,13 @@
                     "func": "DATA[2]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA06",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[06]": {
                     "index": "0",
@@ -336,12 +342,13 @@
                     "func": "TXEN"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA07",
             "type": "GPIO",
-            "bank": "B0",
+            "bank": "B00",
             "alts": {
                 "GPIO.A.A[07]": {
                     "index": "0",
@@ -393,12 +400,13 @@
                     "func": "TXD[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B00"
         },
         {
             "name": "PA08",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[08]": {
                     "index": "0",
@@ -471,12 +479,13 @@
                     "func": "TXD[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA09",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[09]": {
                     "index": "0",
@@ -542,12 +551,13 @@
                     "func": "RXD[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA10",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[10]": {
                     "index": "0",
@@ -613,12 +623,13 @@
                     "func": "RXD[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA11",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[11]": {
                     "index": "0",
@@ -677,12 +688,13 @@
                     "func": "RXDV"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA12",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[12]": {
                     "index": "0",
@@ -741,12 +753,13 @@
                     "func": "REFCLK"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA13",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[13]": {
                     "index": "0",
@@ -819,12 +832,13 @@
                     "func": "REF1"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA14",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[14]": {
                     "index": "0",
@@ -897,12 +911,13 @@
                     "func": "REF0"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA15",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[15]": {
                     "index": "0",
@@ -975,12 +990,13 @@
                     "func": "CLK_OBS[3]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA16",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[16]": {
                     "index": "0",
@@ -1046,12 +1062,13 @@
                     "func": "CLK_OBS[2]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA17",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[17]": {
                     "index": "0",
@@ -1103,12 +1120,13 @@
                     "func": "CLK_OBS[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA18",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[18]": {
                     "index": "0",
@@ -1160,12 +1178,13 @@
                     "func": "CLK_OBS[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA19",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[19]": {
                     "index": "0",
@@ -1224,12 +1243,13 @@
                     "func": "RXDV"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA20",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[20]": {
                     "index": "0",
@@ -1281,12 +1301,13 @@
                     "func": "TXD[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA21",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[21]": {
                     "index": "0",
@@ -1345,12 +1366,13 @@
                     "func": "TXD[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA22",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[22]": {
                     "index": "0",
@@ -1416,12 +1438,13 @@
                     "func": "REFCLK"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA23",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[23]": {
                     "index": "0",
@@ -1480,12 +1503,13 @@
                     "func": "TXEN"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA24",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[24]": {
                     "index": "0",
@@ -1551,12 +1575,13 @@
                     "func": "TXD[2]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA25",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[25]": {
                     "index": "0",
@@ -1622,12 +1647,13 @@
                     "func": "MDC"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA26",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[26]": {
                     "index": "0",
@@ -1700,12 +1726,13 @@
                     "func": "MDIO"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA27",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[27]": {
                     "index": "0",
@@ -1743,12 +1770,13 @@
                     "func": "COL"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA28",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[28]": {
                     "index": "0",
@@ -1793,12 +1821,13 @@
                     "func": "P[08]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA29",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[29]": {
                     "index": "0",
@@ -1843,12 +1872,13 @@
                     "func": "P[09]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA30",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[30]": {
                     "index": "0",
@@ -1893,12 +1923,13 @@
                     "func": "P[10]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PA31",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.A[31]": {
                     "index": "0",
@@ -1936,12 +1967,13 @@
                     "func": "P[11]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB00",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[00]": {
                     "index": "0",
@@ -1979,12 +2011,13 @@
                     "func": "P[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB01",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[01]": {
                     "index": "0",
@@ -2022,12 +2055,13 @@
                     "func": "P[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB02",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[02]": {
                     "index": "0",
@@ -2065,12 +2099,13 @@
                     "func": "P[2]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB03",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[03]": {
                     "index": "0",
@@ -2115,12 +2150,13 @@
                     "func": "P[3]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB04",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[04]": {
                     "index": "0",
@@ -2165,12 +2201,13 @@
                     "func": "P[4]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB05",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[05]": {
                     "index": "0",
@@ -2215,12 +2252,13 @@
                     "func": "P[5]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB06",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[06]": {
                     "index": "0",
@@ -2258,12 +2296,13 @@
                     "func": "P[6]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB07",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[07]": {
                     "index": "0",
@@ -2308,12 +2347,13 @@
                     "func": "P[7]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB08",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[08]": {
                     "index": "0",
@@ -2358,12 +2398,13 @@
                     "func": "FAULT[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB09",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[09]": {
                     "index": "0",
@@ -2408,12 +2449,13 @@
                     "func": "FAULT[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB10",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[10]": {
                     "index": "0",
@@ -2458,12 +2500,13 @@
                     "func": "FAULT[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB11",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[11]": {
                     "index": "0",
@@ -2508,12 +2551,13 @@
                     "func": "FAULT[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB12",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[12]": {
                     "index": "0",
@@ -2558,12 +2602,13 @@
                     "func": "P[0]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB13",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[13]": {
                     "index": "0",
@@ -2608,12 +2653,13 @@
                     "func": "P[1]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB14",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[14]": {
                     "index": "0",
@@ -2672,12 +2718,13 @@
                     "func": "P[2]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB15",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[15]": {
                     "index": "0",
@@ -2729,12 +2776,13 @@
                     "func": "P[3]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB16",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[16]": {
                     "index": "0",
@@ -2786,12 +2834,13 @@
                     "func": "P[4]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB17",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[17]": {
                     "index": "0",
@@ -2829,12 +2878,13 @@
                     "func": "P[5]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB18",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[18]": {
                     "index": "0",
@@ -2900,12 +2950,13 @@
                     "func": "P[6]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB19",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[19]": {
                     "index": "0",
@@ -2964,12 +3015,13 @@
                     "func": "P[7]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB20",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[20]": {
                     "index": "0",
@@ -3035,12 +3087,13 @@
                     "func": "P[00]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB21",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[21]": {
                     "index": "0",
@@ -3099,12 +3152,13 @@
                     "func": "P[01]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB22",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[22]": {
                     "index": "0",
@@ -3170,12 +3224,13 @@
                     "func": "REF0"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB23",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[23]": {
                     "index": "0",
@@ -3241,12 +3296,13 @@
                     "func": "REF1"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB24",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[24]": {
                     "index": "0",
@@ -3298,12 +3354,13 @@
                     "func": "P[04]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB25",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[25]": {
                     "index": "0",
@@ -3355,12 +3412,13 @@
                     "func": "P[05]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB26",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[26]": {
                     "index": "0",
@@ -3398,12 +3456,13 @@
                     "func": "P[06]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB27",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[27]": {
                     "index": "0",
@@ -3448,12 +3507,13 @@
                     "func": "P[07]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB28",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[28]": {
                     "index": "0",
@@ -3498,12 +3558,13 @@
                     "func": "P[08]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB29",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[29]": {
                     "index": "0",
@@ -3548,12 +3609,13 @@
                     "func": "P[09]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB30",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[30]": {
                     "index": "0",
@@ -3605,12 +3667,13 @@
                     "func": "P[10]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PB31",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.B[31]": {
                     "index": "0",
@@ -3655,12 +3718,13 @@
                     "func": "P[11]"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PC00",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.C[00]": {
                     "index": "0",
@@ -3719,12 +3783,13 @@
                     "func": "ID"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PC01",
             "type": "GPIOT",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.C[01]": {
                     "index": "0",
@@ -3776,12 +3841,13 @@
                     "func": "PWR"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PC02",
             "type": "GPIO",
-            "bank": "B1",
+            "bank": "B01",
             "alts": {
                 "GPIO.A.C[02]": {
                     "index": "0",
@@ -3833,12 +3899,13 @@
                     "func": "OC"
                 }
             },
-            "specials": {}
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PC03",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[03]": {
                     "index": "0",
@@ -3894,18 +3961,19 @@
                 "ANALOGS": {
                     "DAC0.A.OUT": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "DAC",
                         "instance": "DAC0",
                         "group": "A",
                         "func": "OUT"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC04",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[04]": {
                     "index": "0",
@@ -3968,18 +4036,19 @@
                 "ANALOGS": {
                     "ADC0.A.INA0": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA0"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC05",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[05]": {
                     "index": "0",
@@ -4042,18 +4111,19 @@
                 "ANALOGS": {
                     "ADC0.A.INA1": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA1"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC06",
             "type": "GPIOT",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[06]": {
                     "index": "0",
@@ -4116,18 +4186,19 @@
                 "ANALOGS": {
                     "ADC0.A.INA2": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA2"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC07",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[07]": {
                     "index": "0",
@@ -4197,18 +4268,19 @@
                 "ANALOGS": {
                     "ADC0.A.INA3": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA3"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC08",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[08]": {
                     "index": "0",
@@ -4271,25 +4343,26 @@
                 "ANALOGS": {
                     "ADC0.A.INA4": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA4"
                     },
                     "ADC1.A.INA0": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA0"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC09",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[09]": {
                     "index": "0",
@@ -4345,25 +4418,26 @@
                 "ANALOGS": {
                     "ADC0.A.INA5": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA5"
                     },
                     "ADC1.A.INA1": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA1"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC10",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[10]": {
                     "index": "0",
@@ -4419,25 +4493,26 @@
                 "ANALOGS": {
                     "ADC0.A.INA6": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA6"
                     },
                     "ADC1.A.INA2": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA2"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC11",
             "type": "GPIOT",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[11]": {
                     "index": "0",
@@ -4493,32 +4568,33 @@
                 "ANALOGS": {
                     "ADC0.A.INA7": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA7"
                     },
                     "ADC1.A.INA3": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA3"
                     },
                     "ACMP.A.CMP1_INP7": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP7"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC12",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[12]": {
                     "index": "0",
@@ -4574,39 +4650,40 @@
                 "ANALOGS": {
                     "ADC0.A.INA8": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA8"
                     },
                     "ADC1.A.INA4": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA4"
                     },
                     "ADC2.A.INA0": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA0"
                     },
                     "ACMP.A.CMP1_INP6": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP6"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC13",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[13]": {
                     "index": "0",
@@ -4655,39 +4732,40 @@
                 "ANALOGS": {
                     "ADC0.A.INA9": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA9"
                     },
                     "ADC1.A.INA5": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA5"
                     },
                     "ADC2.A.INA1": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA1"
                     },
                     "ACMP.A.CMP1_INP5": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP5"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC14",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[14]": {
                     "index": "0",
@@ -4743,46 +4821,47 @@
                 "ANALOGS": {
                     "ADC0.A.INA10": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA10"
                     },
                     "ADC1.A.INA6": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA6"
                     },
                     "ADC2.A.INA2": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA2"
                     },
                     "ACMP.A.CMP0_INN7": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN7"
                     },
                     "ACMP.A.CMP1_INN7": {
                         "index": "ANALOG_E",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN7"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC15",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[15]": {
                     "index": "0",
@@ -4817,46 +4896,47 @@
                 "ANALOGS": {
                     "ADC0.A.INA11": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA11"
                     },
                     "ADC1.A.INA7": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA7"
                     },
                     "ADC2.A.INA3": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA3"
                     },
                     "ACMP.A.CMP0_INN6": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN6"
                     },
                     "ACMP.A.CMP1_INN6": {
                         "index": "ANALOG_E",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN6"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC16",
             "type": "GPIOT",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[16]": {
                     "index": "0",
@@ -4898,46 +4978,47 @@
                 "ANALOGS": {
                     "ADC0.A.INA12": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA12"
                     },
                     "ADC1.A.INA8": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA8"
                     },
                     "ADC2.A.INA4": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA4"
                     },
                     "ACMP.A.CMP0_INN5": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN5"
                     },
                     "ACMP.A.CMP1_INN5": {
                         "index": "ANALOG_E",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN5"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC17",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[17]": {
                     "index": "0",
@@ -4972,39 +5053,40 @@
                 "ANALOGS": {
                     "ADC0.A.INA13": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA13"
                     },
                     "ADC1.A.INA9": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA9"
                     },
                     "ADC2.A.INA5": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA5"
                     },
                     "ACMP.A.CMP0_INN4": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN4"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC18",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[18]": {
                     "index": "0",
@@ -5053,39 +5135,40 @@
                 "ANALOGS": {
                     "ADC0.A.INA14": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA14"
                     },
                     "ADC1.A.INA10": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA10"
                     },
                     "ADC2.A.INA6": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA6"
                     },
                     "ACMP.A.CMP0_INN3": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN3"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC19",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[19]": {
                     "index": "0",
@@ -5127,39 +5210,40 @@
                 "ANALOGS": {
                     "ADC0.A.INA15": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC0",
                         "group": "A",
                         "func": "INA15"
                     },
                     "ADC1.A.INA11": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA11"
                     },
                     "ADC2.A.INA7": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA7"
                     },
                     "ACMP.A.CMP0_INN2": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN2"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC20",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[20]": {
                     "index": "0",
@@ -5222,39 +5306,40 @@
                 "ANALOGS": {
                     "ADC1.A.INA12": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA12"
                     },
                     "ADC2.A.INA8": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA8"
                     },
                     "ACMP.A.CMP0_INP7": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP7"
                     },
                     "ACMP.A.CMP1_INN4": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN4"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC21",
             "type": "GPIOT",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[21]": {
                     "index": "0",
@@ -5310,39 +5395,40 @@
                 "ANALOGS": {
                     "ADC1.A.INA13": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA13"
                     },
                     "ADC2.A.INA9": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA9"
                     },
                     "ACMP.A.CMP0_INP6": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP6"
                     },
                     "ACMP.A.CMP1_INN3": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN3"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC22",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[22]": {
                     "index": "0",
@@ -5398,39 +5484,40 @@
                 "ANALOGS": {
                     "ADC1.A.INA14": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA14"
                     },
                     "ADC2.A.INA10": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA10"
                     },
                     "ACMP.A.CMP0_INP5": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP5"
                     },
                     "ACMP.A.CMP1_INN2": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN2"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC23",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[23]": {
                     "index": "0",
@@ -5479,39 +5566,40 @@
                 "ANALOGS": {
                     "ADC1.A.INA15": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC1",
                         "group": "A",
                         "func": "INA15"
                     },
                     "ADC2.A.INA11": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA11"
                     },
                     "ACMP.A.CMP0_INP4": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP4"
                     },
                     "ACMP.A.CMP1_INP4": {
                         "index": "ANALOG_D",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP4"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC24",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[24]": {
                     "index": "0",
@@ -5553,32 +5641,33 @@
                 "ANALOGS": {
                     "ADC2.A.INA12": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA12"
                     },
                     "ACMP.A.CMP0_INP3": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP3"
                     },
                     "ACMP.A.CMP1_INP3": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP3"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC25",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[25]": {
                     "index": "0",
@@ -5620,32 +5709,33 @@
                 "ANALOGS": {
                     "ADC2.A.INA13": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA13"
                     },
                     "ACMP.A.CMP0_INP2": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP2"
                     },
                     "ACMP.A.CMP1_INP2": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP2"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC26",
             "type": "GPIOT",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[26]": {
                     "index": "0",
@@ -5694,32 +5784,33 @@
                 "ANALOGS": {
                     "ADC2.A.INA14": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA14"
                     },
                     "ACMP.A.CMP0_INN1": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INN1"
                     },
                     "ACMP.A.CMP1_INN1": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INN1"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
         },
         {
             "name": "PC27",
             "type": "GPIO",
-            "bank": "B2",
+            "bank": "B02",
             "alts": {
                 "GPIO.A.C[27]": {
                     "index": "0",
@@ -5768,32 +5859,49 @@
                 "ANALOGS": {
                     "ADC2.A.INA15": {
                         "index": "ANALOG_A",
-                        "module": "ANALOGS",
+                        "module": "ADC",
                         "instance": "ADC2",
                         "group": "A",
                         "func": "INA15"
                     },
                     "ACMP.A.CMP0_INP1": {
                         "index": "ANALOG_B",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP0_INP1"
                     },
                     "ACMP.A.CMP1_INP1": {
                         "index": "ANALOG_C",
-                        "module": "ANALOGS",
+                        "module": "ACMP",
                         "instance": "ACMP",
                         "group": "A",
                         "func": "CMP1_INP1"
                     }
                 }
-            }
+            },
+            "io_power": "VIO_B02"
+        },
+        {
+            "name": "PX07",
+            "type": "GPIOT",
+            "bank": "B01",
+            "alts": {
+                "FEMC.B.DQS": {
+                    "index": "12",
+                    "module": "FEMC",
+                    "instance": "FEMC",
+                    "group": "B",
+                    "func": "DQS"
+                }
+            },
+            "specials": {},
+            "io_power": "VIO_B01"
         },
         {
             "name": "PY00",
             "type": "GPIO",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[00]": {
                     "index": "0",
@@ -5833,24 +5941,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[00]": {
+                    "PMIC.A.PGPIO_Y[00]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[00]"
                     },
-                    "PMIC1.A.JTAG.TDO": {
+                    "PMIC.A.JTAG.TDO": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "JTAG.TDO"
                     },
-                    "PMIC2.A.PTMR.COMP[0]": {
+                    "PMIC.A.PTMR.COMP[0]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.COMP[0]"
                     }
@@ -5860,7 +5968,7 @@
         {
             "name": "PY01",
             "type": "GPIO",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[01]": {
                     "index": "0",
@@ -5893,24 +6001,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[01]": {
+                    "PMIC.A.PGPIO_Y[01]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[01]"
                     },
-                    "PMIC1.A.JTAG.TDI": {
+                    "PMIC.A.JTAG.TDI": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "JTAG.TDI"
                     },
-                    "PMIC2.A.PTMR.CAPT[0]": {
+                    "PMIC.A.PTMR.CAPT[0]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.CAPT[0]"
                     }
@@ -5920,7 +6028,7 @@
         {
             "name": "PY02",
             "type": "GPIO",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[02]": {
                     "index": "0",
@@ -5953,24 +6061,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[02]": {
+                    "PMIC.A.PGPIO_Y[02]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[02]"
                     },
-                    "PMIC1.A.JTAG.TCK": {
+                    "PMIC.A.JTAG.TCK": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "JTAG.TCK"
                     },
-                    "PMIC2.A.PTMR.COMP[1]": {
+                    "PMIC.A.PTMR.COMP[1]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.COMP[1]"
                     }
@@ -5980,7 +6088,7 @@
         {
             "name": "PY03",
             "type": "GPIOT",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[03]": {
                     "index": "0",
@@ -6006,24 +6114,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[03]": {
+                    "PMIC.A.PGPIO_Y[03]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[03]"
                     },
-                    "PMIC1.A.JTAG.TMS": {
+                    "PMIC.A.JTAG.TMS": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "JTAG.TMS"
                     },
-                    "PMIC2.A.PTMR.CAPT[1]": {
+                    "PMIC.A.PTMR.CAPT[1]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.CAPT[1]"
                     }
@@ -6033,7 +6141,7 @@
         {
             "name": "PY04",
             "type": "GPIO",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[04]": {
                     "index": "0",
@@ -6080,24 +6188,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[04]": {
+                    "PMIC.A.PGPIO_Y[04]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[04]"
                     },
-                    "PMIC1.A.JTAG.TRST": {
+                    "PMIC.A.JTAG.TRST": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "JTAG.TRST"
                     },
-                    "PMIC2.A.PTMR.COMP[2]": {
+                    "PMIC.A.PTMR.COMP[2]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.COMP[2]"
                     }
@@ -6107,7 +6215,7 @@
         {
             "name": "PY05",
             "type": "GPIO",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[05]": {
                     "index": "0",
@@ -6154,24 +6262,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[05]": {
+                    "PMIC.A.PGPIO_Y[05]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[05]"
                     },
-                    "PMIC1.A.PWDG.RST": {
+                    "PMIC.A.PWDG.RST": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PWDG.RST"
                     },
-                    "PMIC2.A.PTMR.CAPT[2]": {
+                    "PMIC.A.PTMR.CAPT[2]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.CAPT[2]"
                     }
@@ -6181,7 +6289,7 @@
         {
             "name": "PY06",
             "type": "GPIO",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[06]": {
                     "index": "0",
@@ -6214,24 +6322,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[06]": {
+                    "PMIC.A.PGPIO_Y[06]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[06]"
                     },
-                    "PMIC1.A.PUART.TXD": {
+                    "PMIC.A.PUART.TXD": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PUART.TXD"
                     },
-                    "PMIC2.A.PTMR.COMP[3]": {
+                    "PMIC.A.PTMR.COMP[3]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.COMP[3]"
                     }
@@ -6241,7 +6349,7 @@
         {
             "name": "PY07",
             "type": "GPIOT",
-            "bank": "B4",
+            "bank": "VPMC",
             "alts": {
                 "GPIO.A.Y[07]": {
                     "index": "0",
@@ -6274,24 +6382,24 @@
             },
             "specials": {
                 "PMIC": {
-                    "PMIC0.A.PGPIO_Y[07]": {
+                    "PMIC.A.PGPIO_Y[07]": {
                         "index": "0",
                         "module": "PMIC",
-                        "instance": "PMIC0",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PGPIO_Y[07]"
                     },
-                    "PMIC1.A.PUART.RXD": {
+                    "PMIC.A.PUART.RXD": {
                         "index": "1",
                         "module": "PMIC",
-                        "instance": "PMIC1",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PUART.RXD"
                     },
-                    "PMIC2.A.PTMR.CAPT[3]": {
+                    "PMIC.A.PTMR.CAPT[3]": {
                         "index": "2",
                         "module": "PMIC",
-                        "instance": "PMIC2",
+                        "instance": "PMIC",
                         "group": "A",
                         "func": "PTMR.CAPT[3]"
                     }
@@ -6301,7 +6409,7 @@
         {
             "name": "PZ00",
             "type": "HVIO",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[00]": {
                     "index": "0",
@@ -6327,24 +6435,24 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[00]": {
+                    "BATT.A.BGPIO_Z[00]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[00]"
                     },
-                    "BATT1.A.PWR_ON": {
+                    "BATT.A.PWR_ON": {
                         "index": "1",
                         "module": "BATT",
-                        "instance": "BATT1",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "PWR_ON"
                     },
-                    "BATT2.A.TAMP[00]": {
+                    "BATT.A.TAMP[00]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[00]"
                     }
@@ -6354,7 +6462,7 @@
         {
             "name": "PZ01",
             "type": "HVIO",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[01]": {
                     "index": "0",
@@ -6380,24 +6488,24 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[01]": {
+                    "BATT.A.BGPIO_Z[01]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[01]"
                     },
-                    "BATT1.A.RESETN": {
+                    "BATT.A.RESETN": {
                         "index": "1",
                         "module": "BATT",
-                        "instance": "BATT1",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "RESETN"
                     },
-                    "BATT2.A.TAMP[01]": {
+                    "BATT.A.TAMP[01]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[01]"
                     }
@@ -6407,7 +6515,7 @@
         {
             "name": "PZ02",
             "type": "HVIO",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[02]": {
                     "index": "0",
@@ -6433,24 +6541,24 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[02]": {
+                    "BATT.A.BGPIO_Z[02]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[02]"
                     },
-                    "BATT1.A.PBUTN": {
+                    "BATT.A.PBUTN": {
                         "index": "1",
                         "module": "BATT",
-                        "instance": "BATT1",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "PBUTN"
                     },
-                    "BATT2.A.TAMP[02]": {
+                    "BATT.A.TAMP[02]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[02]"
                     }
@@ -6460,7 +6568,7 @@
         {
             "name": "PZ03",
             "type": "HVIOT",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[03]": {
                     "index": "0",
@@ -6486,24 +6594,24 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[03]": {
+                    "BATT.A.BGPIO_Z[03]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[03]"
                     },
-                    "BATT1.A.WBUTN": {
+                    "BATT.A.WBUTN": {
                         "index": "1",
                         "module": "BATT",
-                        "instance": "BATT1",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "WBUTN"
                     },
-                    "BATT2.A.TAMP[03]": {
+                    "BATT.A.TAMP[03]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[03]"
                     }
@@ -6513,7 +6621,7 @@
         {
             "name": "PZ04",
             "type": "HVIO",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[04]": {
                     "index": "0",
@@ -6539,24 +6647,24 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[04]": {
+                    "BATT.A.BGPIO_Z[04]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[04]"
                     },
-                    "BATT1.A.PLED": {
+                    "BATT.A.PLED": {
                         "index": "1",
                         "module": "BATT",
-                        "instance": "BATT1",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "PLED"
                     },
-                    "BATT2.A.TAMP[04]": {
+                    "BATT.A.TAMP[04]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[04]"
                     }
@@ -6566,7 +6674,7 @@
         {
             "name": "PZ05",
             "type": "HVIO",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[05]": {
                     "index": "0",
@@ -6592,24 +6700,24 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[05]": {
+                    "BATT.A.BGPIO_Z[05]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[05]"
                     },
-                    "BATT1.A.WLED": {
+                    "BATT.A.WLED": {
                         "index": "1",
                         "module": "BATT",
-                        "instance": "BATT1",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "WLED"
                     },
-                    "BATT2.A.TAMP[05]": {
+                    "BATT.A.TAMP[05]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[05]"
                     }
@@ -6619,7 +6727,7 @@
         {
             "name": "PZ06",
             "type": "HVIO",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[06]": {
                     "index": "0",
@@ -6645,17 +6753,17 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[06]": {
+                    "BATT.A.BGPIO_Z[06]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[06]"
                     },
-                    "BATT2.A.TAMP[06]": {
+                    "BATT.A.TAMP[06]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[06]"
                     }
@@ -6665,7 +6773,7 @@
         {
             "name": "PZ07",
             "type": "HVIOT",
-            "bank": "B3",
+            "bank": "VBAT",
             "alts": {
                 "GPIO.A.Z[07]": {
                     "index": "0",
@@ -6691,17 +6799,17 @@
             },
             "specials": {
                 "BATT": {
-                    "BATT0.A.BGPIO_Z[07]": {
+                    "BATT.A.BGPIO_Z[07]": {
                         "index": "0",
                         "module": "BATT",
-                        "instance": "BATT0",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "BGPIO_Z[07]"
                     },
-                    "BATT2.A.TAMP[07]": {
+                    "BATT.A.TAMP[07]": {
                         "index": "2",
                         "module": "BATT",
-                        "instance": "BATT2",
+                        "instance": "BATT",
                         "group": "A",
                         "func": "TAMP[07]"
                     }
